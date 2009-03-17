@@ -1,0 +1,112 @@
+=================================
+OCRFeeder - A Complete OCR Suite
+=================================
+
+:Author: Joaquim Rocha
+:Contact: joaquimrocha1 {AT} gmail {DOT} com
+:Date: 2009-03-18
+:Web site: http://code.google.com/p/ocrfeeder/
+:License: OCRFeeder is published under the GNU AGPL v3 license.
+
+.. contents::
+
+
+Introduction
+==============
+
+OCRFeeder is a complete Optical Character Recognition and Document Analysis
+and Recognition program.
+
+This document explains what's needed to and how to install and run OCRFeeder.
+
+ODFPy is developed by OpenDocument Fellowship:
+http://opendocumentfellowship.com
+
+
+System Requirements
+====================
+
+The following list presents the system requirements for this project to run
+with all its functionalities. Each dependence has the minimum version that
+should be used. While newer versions are likely to keep working as well,
+older versions may or may not work as they were not tested.
+
+    * Python (version 2.5);
+    * PyGTK (version 2.13);
+    * Python Image Library (version 1.1);
+    * PyGoocanvas (version 0.12);
+    * Ghostscript (version 8.63);
+    * Unpaper (version 0.3);
+
+The module ODFPy is included as part of this project in order to make the
+installation and execution of the project easier.
+
+Since this project doesn't use a particular OCR engine, no engine was listed
+as a dependence above. Nevertheless, the project is not usable without an
+OCR engine. The configuration XML file for the engine Ocrad is already
+included with the project so only what's needed to be installed for a first
+test is the Ocrad engine itself. In case the user doesn't want to use Ocrad,
+the configuration file that is placed in the OCRFeeder's configuration folder
+(~/.ocrfeeder) must be deleted.
+
+Other engines that might also be considered are Gocr and Tesseract.
+
+
+Installation on Ubuntu
+=======================
+
+The only packages needed to be installed on Ubuntu 8.10 is PyGoocanvas and
+Unpaper, the rest of the dependences are already installed in a fresh install
+of this version of Ubuntu. The engine Ocrad is also installed for the reasons
+explained in the previous section.
+
+To install PyGoocanvas, Ocrad and Unpaper, the following command should be
+executed as superuser:
+
+    # apt-get install python-pygoocanvas ocrad unpaper
+
+After all of the packages finish the installation, the project is ready to
+be executed and used.
+
+
+Command Line Usage
+===================
+
+This section explains how to use OCRFeeder from the command line.
+
+The command line interface part of OCRFeeder aims at users who want to perform
+quick and unattended conversions of document images to editable formats. It
+also makes this project usable from other applications.
+
+Two parameters are mandatory:
+
+    1) the path to each document image to be processed is given after the parameter
+        --images;
+    2) the name of the document to be generated is given after the parameter
+        --o.
+
+For example:
+
+    $ ocrfeeder-cli --images ~/image1.png ~/image2.jpeg 
+        --o converted_document
+
+The pages of the generated documents honor the order of the given paths.
+
+It is also possible to specify the format of the document to be generated
+(HTML or ODT) with the option --format. In case no format is specified,
+the images will be exported to ODT. Continuing with the example above:
+
+    $ ocrfeeder-cli --images ~/image1.png ~/image2.jpeg --format HTML
+      --o converted_document
+
+OCRFeeder Studio (the graphical user interface part) can also be launched
+from the command line. Two options can be used to load images right after
+the program initiates. Those are --images which will add the images given
+as the option's arguments and --dir that will add all the images under a
+given directory path. The options can be used individually or combined,
+for example:
+
+    $ ocrfeeder --images ~/image1.png ~/image2.jpeg 
+        --dir ~/Desktop
+
+For any usage, the options and parameters can be given in any order.

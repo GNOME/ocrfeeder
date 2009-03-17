@@ -1,0 +1,100 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+###########################################################################
+#    OCRFeeder - The complete OCR suite
+#    Copyright (C) 2009 Joaquim Rocha
+# 
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+###########################################################################
+
+import sys
+import os
+import gtk
+import math
+from util.cliutils import ArgsRetriever
+from util.graphics import getBoundsFromStartEndPoints, convertPixbufToImage, getTextSizeFromImage
+from feeder.ocrEngines import Engine, OcrEnginesManager
+from studio.configuration import ConfigurationManager
+from studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
+from feeder.imageManipulation import *
+from feeder.layoutAnalysis import *
+from feeder.documentGeneration import OdtGenerator, HtmlGenerator
+
+def printError(message):
+	print message
+	sys.exit(1)
+
+cli_command_retriever = ArgsRetriever(sys.argv)
+images = cli_command_retriever.getParams('--images')
+window_size = cli_command_retriever.getParams('--window-size') or None
+export_format = cli_command_retriever.getParams('--format')
+file_name = cli_command_retriever.getParams('--o')
+if not file_name:
+	printError('Error: Output name. Please choose the output name.')
+	
+file_name = file_name.pop()
+
+configuration_manager = ConfigurationManager()
+ocr_engines_manager = OcrEnginesManager(configuration_manager)
+ocr_engines_manager.makeEnginesFromFolder(configuration_manager.user_engines_folder)
+ocr_engines = ocr_engines_manager.ocr_engines
+
+engine = ocr_engines[1]
+
+def createDataBoxFromBlock(block, image, window_size):
+	leftmost_x, highest_y, rightmost_x, lowest_y = (block.translateToUnits(window_size))
+	rightmost_x = min(rightmost_x, image.size[0])
+	lowest_y = min(lowest_y, image.size[1])
+	dimensions = getBoundsFromStartEndPoints((leftmost_x, highest_y), (rightmost_x, lowest_y))
+	x, y, width, height = dimensions
+	image_clip = image.crop((int(leftmost_x), int(highest_y), int(rightmost_x), int(lowest_y)))
+	image.crop((331, 77, 506, 292)).save('/tmp/FUCK.png', 'PNG')
+	return DataBox(x, y, width, height, image_clip)
+
+
+pages = []
+for image in images:
+	if os.path.isfile(image):
+		print 'ERROR'
+	page_data = PageData(image)
+	data_boxes = []
+	image_obj = Image.open(image)
+	image_processor = ImageProcessor(image, window_size)
+	block_retriever = BlockRetriever(image_processor.imageToBinary())
+	blocks = block_retriever.getAllBlocks()
+	for block in blocks:
+		data_box = createDataBoxFromBlock(block, image_obj, image_processor.window_size)
+		engine.setImage(data_box.image)
+		text = engine.read()
+		type = engine.classify(text)
+		if type == TEXT_TYPE:
+			text_size = getTextSizeFromImage(Image.open(image))
+			if text_size:
+				y_resolution = float(page_data.resolution[1])
+				text_size /= y_resolution
+				text_size *= 72.0
+				data_box.setFontSize(math.floor(text_size))
+			data_box.setText(text)
+		data_box.setType(type)
+		data_boxes.append(data_box)
+	page_data.data_boxes = data_boxes
+	pages.append(page_data)
+
+document_generator = OdtGenerator(file_name)
+if 'HTML' in export_format:
+	document_generator = HtmlGenerator(file_name)
+for page in pages:
+	document_generator.addPage(page)
+document_generator.save()

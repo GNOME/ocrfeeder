@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engine>
+	<name>gocr</name>
+	<engine_path>/usr/bin/gocr</engine_path>
+	<arguments>$IMAGE</arguments>
+</engine>

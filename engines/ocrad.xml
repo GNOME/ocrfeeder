@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engine>
+	<name>ocrad</name>
+	<engine_path>/usr/bin/ocrad</engine_path>
+	<arguments>$IMAGE</arguments>
+</engine>
