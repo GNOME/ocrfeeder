@@ -271,8 +271,8 @@ class PlainFrame(gtk.Frame):
         label_widget = gtk.Label()
         label_widget.set_markup('<b>' + label + '</b>')
         self.set_label_widget(label_widget)
-        self.container = gtk.Alignment()
-        self.container.set_padding(0, 0, 12, 0)
+        self.container = gtk.Alignment(0, 0, 1, 1)
+        self.container.set_padding(12, 0, 12, 12)
         super(PlainFrame, self).add(self.container)
         self.set_shadow_type(gtk.SHADOW_NONE)
     

@@ -207,7 +207,7 @@ class BoxEditor(gtk.ScrolledWindow):
         
         self.make_text_button = self.__makeRadioButton(_('Text'), 'gnome-mime-text')
         self.make_image_button = self.__makeRadioButton(_('Image'), 'gnome-mime-image', self.make_text_button)
-        box_type_frame = gtk.Frame(_('Type'))
+        box_type_frame = PlainFrame(_('Type'))
         box_type_table = gtk.Table(1, 2, True)
         box_type_table.attach(self.make_text_button, 0, 1, 0, 1)
         box_type_table.attach(self.make_image_button, 1, 2, 0, 1)
@@ -217,9 +217,11 @@ class BoxEditor(gtk.ScrolledWindow):
         self.image_width = image_width
         self.image_height = image_height
         
-        self.contents.pack_start(self.image_window, False, False)
+        image_frame = PlainFrame(_('Clip'))
+        image_frame.add(self.image_window)
+        self.contents.pack_start(image_frame, False, False)
         
-        dimensions_frame = gtk.Frame(_('Bounds'))
+        dimensions_frame = PlainFrame(_('Bounds'))
         
         dimensions_table = gtk.Table(2, 4, True)
         dimensions_table.attach(gtk.Label(_('X')), 0, 1, 0, 1)
@@ -366,7 +368,7 @@ class BoxEditor(gtk.ScrolledWindow):
         hbox.add(self.ocr_combo_box)
         
         # Text Properties
-        text_properties_frame = gtk.Frame(_('Text Properties'))
+        text_properties_frame = PlainFrame(_('Text Properties'))
         text_properties_notebook = gtk.Notebook()
         text_properties_notebook.set_tab_pos(gtk.POS_TOP)
         # Textview widget
@@ -380,18 +382,18 @@ class BoxEditor(gtk.ScrolledWindow):
         # Style widget
         self.font_button = gtk.FontButton()
         vbox = gtk.VBox()
-        font_selection_frame = gtk.Frame(_('Font'))
+        font_selection_frame = PlainFrame(_('Font'))
         font_selection_frame.add(self.font_button)
         vbox.pack_start(font_selection_frame, False, False)
         
         align_buttons_box = gtk.HBox()
         for button in self.__makeAlignButtons():
             align_buttons_box.pack_start(button, False)
-        align_buttons_frame = gtk.Frame(_('Align'))
+        align_buttons_frame = PlainFrame(_('Align'))
         align_buttons_frame.add(align_buttons_box)
         vbox.pack_start(align_buttons_frame, False)
         
-        spacing_frame = gtk.Frame(_('Spacing'))
+        spacing_frame = PlainFrame(_('Spacing'))
         self.letter_spacing_spin = gtk.SpinButton(gtk.Adjustment(0.0, 0.0, 5000.0, 0.5, 100.0, 0.0), 1.0, 1)
         self.line_spacing_spin = gtk.SpinButton(gtk.Adjustment(0.0, 0.0, 5000.0, 0.5, 100.0, 0.0), 1.0, 1)
         spacing_table = gtk.Table(2,2)
@@ -536,7 +538,7 @@ class PagesToExportDialog(gtk.Dialog):
         self.set_icon_from_file(WINDOW_ICON)
     
     def __makePageSelectionArea(self):
-        page_selection_frame = gtk.Frame(_('Pages to export'))
+        page_selection_frame = PlainFrame(_('Pages to export'))
         vbox = gtk.VBox()
         self.all_pages_button = gtk.RadioButton(None, _('All'))
         self.current_page_button = gtk.RadioButton(self.all_pages_button, _('Current'))
@@ -555,7 +557,7 @@ class ExportDialog(gtk.Dialog):
         self.set_icon_from_file(WINDOW_ICON)
     
     def __makeFormatSelectionArea(self, format_choices):
-        page_selection_frame = gtk.Frame(_('Choose the format'))
+        page_selection_frame = PlainFrame(_('Choose the format'))
         vbox = gtk.VBox()
         self.format_combo = gtk.combo_box_new_text()
         for format in format_choices:
@@ -579,8 +581,8 @@ class PageSizeDialog(gtk.Dialog):
         self.set_icon_from_file(WINDOW_ICON)
     
     def __makePageSizeArea(self, page_size):
-        page_size_frame = gtk.Frame(_('Page size'))
-        size_box = gtk.VBox()
+        page_size_frame = PlainFrame(_('Page size'))
+        size_box = gtk.VBox(spacing = 12)
         self.paper_sizes = gtk.combo_box_new_text()
         papers = PAPER_SIZES.keys()
         papers.sort()
@@ -601,7 +603,7 @@ class PageSizeDialog(gtk.Dialog):
         page_size_frame.add(size_box)
         self.vbox.add(page_size_frame)
         
-        affected_pages_frame = gtk.Frame(_('Affected pages'))
+        affected_pages_frame = PlainFrame(_('Affected pages'))
         affected_pages_box = gtk.VBox()
         self.current_page_radio = gtk.RadioButton(None, _('Current'))
         self.all_pages_radio = gtk.RadioButton(self.current_page_radio, _('All'))
@@ -672,11 +674,11 @@ class UnpaperDialog(gtk.Dialog):
         self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
         self.preview.connect('clicked', self.__getPreview)
-        self.set_size_request(500, 350)
+        self.set_size_request(500, -1)
     
     def __makeNoiseFilter(self):
         
-        noise_filter_frame = gtk.Frame(_('Noise Filter Intensity'))
+        noise_filter_frame = PlainFrame(_('Noise Filter Intensity'))
         noise_filter_box = gtk.VBox()
         self.noise_filter_default = gtk.RadioButton(None, _('Default'))
         self.noise_filter_custom = gtk.RadioButton(self.noise_filter_default, _('Custom'))
@@ -694,7 +696,7 @@ class UnpaperDialog(gtk.Dialog):
     
     def __makeGrayFilter(self):
         
-        gray_filter_frame = gtk.Frame(_('Gray Filter Size'))
+        gray_filter_frame = PlainFrame(_('Gray Filter Size'))
         gray_filter_box = gtk.VBox()
         self.gray_filter_default = gtk.RadioButton(None, _('Default'))
         self.gray_filter_custom = gtk.RadioButton(self.gray_filter_default, _('Custom'))
@@ -712,16 +714,17 @@ class UnpaperDialog(gtk.Dialog):
     
     def __makeBlackFilter(self):
         
-        black_filter_frame = gtk.Frame(_('Black Filter'))
+        black_filter_frame = PlainFrame(_('Black Filter'))
         self.black_filter_usage = gtk.CheckButton(_('Use'))
         self.black_filter_usage.set_active(True)
         black_filter_frame.add(self.black_filter_usage)
         self.options_box.pack_start(black_filter_frame, False)
     
     def __makePreviewArea(self):
-        preview_frame = gtk.Frame(_('Preview'))
+        preview_frame = PlainFrame(_('Preview'))
         preview_box = gtk.VBox()
         self.preview_area = gtk.ScrolledWindow()
+        self.preview_area.set_shadow_type(gtk.SHADOW_IN)
         self.preview_area.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.preview_area.set_size_request(200, 250)
         self.preview = gtk.Button(_('Preview'))
@@ -734,7 +737,7 @@ class UnpaperDialog(gtk.Dialog):
         self.vbox.add(main_area)
     
     def __makeExtraOptions(self):
-        options_frame = gtk.Frame(_('Extra Options'))
+        options_frame = PlainFrame(_('Extra Options'))
         self.extra_options = gtk.Entry()
         options_frame.add(self.extra_options)
         self.options_box.pack_start(options_frame, False)
@@ -1050,7 +1053,7 @@ class OcrManagerDialog(gtk.Dialog):
         self.edit_engine.connect('clicked', self.__edit)
     
     def __makeMainArea(self):
-        frame = gtk.Frame(_('OCR Engines'))
+        frame = PlainFrame(_('OCR Engines'))
         engines_box = gtk.HBox(spacing = 10)
         self.tree_view = gtk.TreeView(self.list_store)
         text_cell = gtk.CellRendererText()
