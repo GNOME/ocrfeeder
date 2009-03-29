@@ -186,10 +186,12 @@ class MainWindow:
         for gtkaction in [self.action_group.get_action(action) for action in actions]:
             gtkaction.set_sensitive(has_images)
         
-class BoxEditor(gtk.VBox):
+class BoxEditor(gtk.ScrolledWindow):
     
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
+        self.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        self.contents = gtk.VBox()
         self.pixbuf = pixbuf
         self.image_window = gtk.ScrolledWindow()
         self.image_window.set_size_request(200, 200)
@@ -210,12 +212,12 @@ class BoxEditor(gtk.VBox):
         box_type_table.attach(self.make_text_button, 0, 1, 0, 1)
         box_type_table.attach(self.make_image_button, 1, 2, 0, 1)
         box_type_frame.add(box_type_table)
-        self.pack_start(box_type_frame, False, False)
+        self.contents.pack_start(box_type_frame, False, False)
         
         self.image_width = image_width
         self.image_height = image_height
         
-        self.pack_start(self.image_window, False, False)
+        self.contents.pack_start(self.image_window, False, False)
         
         dimensions_frame = gtk.Frame(_('Bounds'))
         
@@ -232,7 +234,7 @@ class BoxEditor(gtk.VBox):
         
         dimensions_frame.add(dimensions_table)
         
-        self.pack_start(dimensions_frame, False, False)
+        self.contents.pack_start(dimensions_frame, False, False)
         
         self.setXRange()
         self.setYRange()
@@ -240,9 +242,10 @@ class BoxEditor(gtk.VBox):
         self.setHeightRange()
         
         self.text_properties_frame = self.__makeOcrProperties(ocr_engines_list)        
-        self.add(self.text_properties_frame)
+        self.contents.pack_start(self.text_properties_frame, False, False)
         
-        self.set_spacing(10)
+        self.contents.set_spacing(10)
+        self.add_with_viewport(self.contents)
         self.show_all()
     
     def displayImage(self, pixbuf):
