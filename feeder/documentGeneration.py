@@ -243,6 +243,7 @@ class OdtGenerator(DocumentGenerator):
         self.page_layouts = []
         self.page_masters = []
         self.page_styles = []
+        self.temp_images = []
         frame_style = Style(name='FrameStyle', family = 'graphic')
         frame_style.addElement(GraphicProperties(borderlinewidth='none'))
         self.document.styles.addElement(frame_style)
@@ -276,6 +277,7 @@ class OdtGenerator(DocumentGenerator):
         self.current_page.addElement(photo_frame)
         location = self.document.addPicture(image_file)
         photo_frame.addElement(Image(href=location))
+        self.temp_images.append(image_file)
     
     def newPage(self, page_data):
         master_name = self.__handlePageMaster(page_data)
@@ -298,6 +300,11 @@ class OdtGenerator(DocumentGenerator):
         if not name.lower().endswith('.odt'):
             name += '.odt'
         self.document.save(name)
+        for image in self.temp_images:
+            try:
+                os.unlink(image)
+            except:
+                debug('Error removing image: %s' % image)
     
     def __handlePageMaster(self, page_data):
         layout_name = 'Page%s%s' % (page_data.width, page_data.height)
