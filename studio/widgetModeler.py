@@ -446,11 +446,15 @@ class ImageReviewer_Controler:
     
     def __askForNumberOfPages(self, title, pixbufs_sorted):
         export_dialog = PagesToExportDialog(title)
+        image_reviewers = self.getImageReviewers(pixbufs_sorted)
+        # When there's only one document loaded or none,
+        # we don't ask for the number of pages to export
+        if len(image_reviewers) < 2:
+            return image_reviewers
         response = export_dialog.run()
-        image_reviewers = [self.__getCurrentReviewer()]
         if response == gtk.RESPONSE_ACCEPT:
-            if export_dialog.all_pages_button.get_active():
-                image_reviewers = self.getImageReviewers(pixbufs_sorted)
+            if export_dialog.current_page_button.get_active():
+                image_reviewers = [self.__getCurrentReviewer()]
             export_dialog.destroy()
             return image_reviewers
         else:
