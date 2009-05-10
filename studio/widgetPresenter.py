@@ -29,7 +29,6 @@ import gobject
 import goocanvas
 import gtk
 import os.path
-import popen2
 import pygtk
 import signal
 import subprocess
