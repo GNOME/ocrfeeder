@@ -51,7 +51,7 @@ OCRFEEDER_STUDIO_COMMENTS = _('The complete OCR suite.')
 RESOURCES_DIR = os.path.join(os.path.dirname(__file__), os.path.pardir, 'resources')
 
 # I18N
-DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', [])
+DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
 LOCALE_DIR = os.path.join(os.path.dirname(__file__), os.path.pardir, 'locale')
 
