@@ -1,0 +1,6 @@
+include ocrfeeder ocrfeeder-cli README COPYING
+recursive-include resources/icons *
+recursive-include locale *
+recursive-include po *.po
+recursive-include engines *.xml
+
