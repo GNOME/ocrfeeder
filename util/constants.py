@@ -18,19 +18,20 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
+import sys
 import os
 import gettext
 _ = gettext.gettext
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder Studio'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
-OCRFEEDER_STUDIO_VERSION = '0.1alpha'
+OCRFEEDER_STUDIO_VERSION = '0.2'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),
                                 ('Portuguese', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),]
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008 Joaquim Rocha '
-OCRFEEDER_WEBSITE = 'http://code.google.com/p/ocrfeeder/'
+OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
 GPL_STATEMENT = """
     OCRFeeder is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -48,12 +49,12 @@ GPL_STATEMENT = """
 OCRFEEDER_STUDIO_COMMENTS = _('The complete OCR suite.')
 
 # DIRECTORIES
-RESOURCES_DIR = os.path.join(os.path.dirname(__file__), os.path.pardir, 'resources')
+RESOURCES_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
 
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
-LOCALE_DIR = os.path.join(os.path.dirname(__file__), os.path.pardir, 'locale')
+LOCALE_DIR = os.path.join(RESOURCES_DIR, 'locale')
 
 # CUSTOM ICONS
 DETECT_ICON = os.path.join(RESOURCES_DIR, 'icons', 'detect_icon.svg')
