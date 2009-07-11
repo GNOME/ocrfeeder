@@ -208,12 +208,6 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if key_name == 'down':
                 self.zoom(-0.2)
                 return True
-        if key_name == 'minus':
-            self.zoom(-0.2)
-            return True
-        if key_name == 'plus':
-            self.zoom(0.2)
-            return True
     
     def pressedWithinArea(self, item, target, event):
         self.deselectAreas()
