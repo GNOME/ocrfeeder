@@ -68,6 +68,7 @@ class MainWindow:
             <menuitem action="ZoomIn"/>
             <menuitem action="ZoomOut"/>
             <menuitem action="ResetZoom"/>
+            <menuitem action="ZoomFit"/>
         </menu>
         <menu action="Document">
             <menuitem action="OCRFeederDetection"/>
@@ -147,6 +148,7 @@ class MainWindow:
                                   ('View', None, _('_View')),
                                   ('ZoomIn', gtk.STOCK_ZOOM_IN, _('Zoom In'), None, _("Zoom In"), menu_items['zoom_in']),
                                   ('ZoomOut', gtk.STOCK_ZOOM_OUT, _('Zoom Out'), None, _("Zoom Out"), menu_items['zoom_out']),
+                                  ('ZoomFit', gtk.STOCK_ZOOM_FIT, _('Best Fit'), '<control>f', _("Best Fit"), menu_items['zoom_fit']),
                                   ('ResetZoom', gtk.STOCK_ZOOM_100, _('Normal Size'), None, _("Normal Size"), menu_items['reset_zoom']),
                                   ('Document', None, _('_Document')),
                                   ('Tools', None, _('_Tools')),

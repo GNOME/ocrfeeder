@@ -118,6 +118,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
         else:
             self.set_scale(new_zoom)
         self.emit('changed_zoom', self.get_scale())
+
+    def getImageSize(self):
+        return self.image.props.height, self.image.props.width
     
     def startSelectionArea(self, item, target, event):
         self.deselectAreas()

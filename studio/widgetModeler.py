@@ -187,6 +187,8 @@ class ImageReviewer:
         self.ocr_engines = ocr_engines
         self.editor_list = []
         self.page = PageData(self.path_to_image)
+
+        selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
     
     def setTextFillColor(self, color):
         self.text_box_fill_color = color
@@ -301,6 +303,24 @@ class ImageReviewer:
     def updateBoxesColors(self):
         for editor in self.editor_list:
             editor.updateBoxColor()
+
+    def zoomFitCb(self, widget, data):
+        self.zoomFit()
+        widget.disconnect_by_func(self.zoomFitCb)
+
+    def zoomFit(self):
+        parent = self.selectable_boxes_area.get_parent()
+        parent_height, parent_width = parent.allocation.height, parent.allocation.width
+        image_height, image_width = self.selectable_boxes_area.getImageSize()
+        changed = False
+        if image_height > parent_height:
+            image_height = parent_height / image_height
+            changed = True
+        if image_width > parent_width:
+            image_width = parent_width / image_width
+            changed = True
+        if changed:
+            self.selectable_boxes_area.zoom(min(image_height, image_width), False)
     
 class ImageReviewer_Controler:
     
@@ -567,6 +587,10 @@ class ImageReviewer_Controler:
     def zoomOut(self, zoom_value = -0.2):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(-abs(zoom_value))
+
+    def zoomFit(self):
+        current_reviewer = self.__getCurrentReviewer()
+        current_reviewer.zoomFit()
     
     def resetZoom(self):
         current_reviewer = self.__getCurrentReviewer()
