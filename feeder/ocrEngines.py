@@ -50,8 +50,12 @@ class Engine:
         self.__color_information = None
     
     def setImage(self, image):
-        image_file = tempfile.mkstemp(suffix = '.' + self.image_format)[1]
-        image.save(image_file, format = self.image_format)
+        image_file = tempfile.mkstemp(suffix = '.' + self.image_format.lower())[1]
+        image = image.convert('L')
+        try:
+            image.save(image_file, format = self.image_format)
+        except KeyError:
+            image.save(image_file)
         self.image_path = image_file
     
     def read(self):
