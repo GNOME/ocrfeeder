@@ -729,7 +729,7 @@ class Editor:
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
             for i in xrange(len(self.ocr_engines)):
-                if self.ocr_engines[i].name == engine_name:
+                if self.ocr_engines[i][0].name == engine_name:
                     selected_engine_index = i
                     break
         self.box_editor.selectOcrEngine(selected_engine_index)
@@ -754,11 +754,11 @@ class Editor:
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
             for i in xrange(len(self.ocr_engines)):
-                if self.ocr_engines[i].name == engine_name:
+                if self.ocr_engines[i][0].name == engine_name:
                     selected_engine_index = i
                     break
         if selected_engine_index != None:
-            engine = self.ocr_engines[selected_engine_index]
+            engine = self.ocr_engines[selected_engine_index][0]
             type = engine.classify(self.box_editor.getText())
             self.box_editor.setType(type)
     
