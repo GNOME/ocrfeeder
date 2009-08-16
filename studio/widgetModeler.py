@@ -711,9 +711,7 @@ class Editor:
         return (x, y, width, height)
     
     def updateOcrEngines(self, engines_list):
-        engines_names = []
-        for engine in engines_list:
-            engines_names.append(engine.name)
+        engines_names = [engine.name for engine, path in engines_list]
         self.box_editor.setOcrEngines(engines_names)
     
     def __pressedImageContextButton(self, toggle_button):
@@ -740,7 +738,7 @@ class Editor:
         if angle:
             image = graphics.getImageRotated(image, angle)
         if selected_engine_index != None:
-            engine = self.ocr_engines[selected_engine_index]
+            engine = self.ocr_engines[selected_engine_index][0]
             engine.setImage(image)
             text = engine.read()
             self.box_editor.setText(text)

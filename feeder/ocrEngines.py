@@ -110,12 +110,27 @@ class OcrEnginesManager:
         self.configuration_manager = configuration_manager
     
     def getEnginesNames(self):
-        return [engine.name for engine in self.ocr_engines]
+        return [engine.name for engine, path in self.ocr_engines]
+    
+    def getEnginePath(self, engine):
+        for eng, path in self.ocr_engines:
+            if eng == engine:
+                return path
+        return None
+    
+    def replaceEngine(self, engine, new_engine):
+        for i in xrange(len(self.ocr_engines)):
+            eng, path = self.ocr_engines[i]
+            if eng == engine:
+                new_path = self.engineToXml(new_engine, path)
+                self.ocr_engines[i] = new_engine, path
+                return True
+        return False
     
     def makeEnginesFromFolder(self, folder):
         self.ocr_engines = []
         for xml_file in self.getXmlFilesInFolder(folder):
-            self.ocr_engines.append(self.getEngineFromXml(xml_file))
+            self.ocr_engines.append((self.getEngineFromXml(xml_file), xml_file))
     
     def getEngineFromXml(self, xml_file_name):
         document = minidom.parse(xml_file_name)
@@ -135,16 +150,15 @@ class OcrEnginesManager:
         return engine
     
     def delete(self, index):
-        engine = self.ocr_engines[index].name
-        path = os.path.join(self.configuration_manager.user_engines_folder, engine + '.xml')
+        path = self.ocr_engines[index][1]
         os.remove(path)
         del self.ocr_engines[index]
     
     def addNewEngine(self, engine):
-        self.ocr_engines.append(engine)
-        self.engineToXml(engine)
+        path = self.engineToXml(engine)
+        self.ocr_engines.append((engine,path))
     
-    def engineToXml(self, engine):
+    def engineToXml(self, engine, path = None):
         engine_info = {'name': engine.name, 'engine_path': engine.engine_path, 'arguments': engine.arguments, 'image_format': engine.image_format, 'failure_string': engine.failure_string}
         doc = minidom.Document()
         root_node = doc.createElement('engine')
@@ -154,14 +168,15 @@ class OcrEnginesManager:
             new_node = doc.createElement(key)
             new_node.appendChild(doc.createTextNode(value))
             root_node.appendChild(new_node)
-        engine_content = doc.ttesseractoxml(encoding = 'utf-8')
+        engine_content = doc.toxml(encoding = 'utf-8')
         engine_content += '\n' + root_node.toxml(encoding = 'utf-8')
-        new_engine = os.path.join(self.configuration_manager.user_engines_folder, engine_info['name'] + '.xml')
-        new_engine = lib.getNonExistingFileName(new_engine)
-        new_engine_file = open(new_engine, 'w')
-        new_engine_file.write(engine_content)
-        new_engine_file.close()
-        
+        if not path:
+            path = os.path.join(self.configuration_manager.user_engines_folder, engine_info['name'] + '.xml')
+            path = lib.getNonExistingFileName(path)
+        engine_file = open(path, 'w')
+        engine_file.write(engine_content)
+        engine_file.close()
+        return path
 
 class WrongSettingsForEngine(Exception):
     

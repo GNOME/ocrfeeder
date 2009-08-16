@@ -32,6 +32,7 @@ import os.path
 import pygtk
 import signal
 import subprocess
+import sys
 import threading
 import time
 pygtk.require('2.0')
@@ -1091,7 +1092,7 @@ class OcrManagerDialog(gtk.Dialog):
     def __edit(self, widget):
         index = self.__getSelectedIndex()
         if index != None:
-            engine = self.engines_manager.ocr_engines[index]
+            engine = self.engines_manager.ocr_engines[index][0]
             if engine:
                 self.__engine_settings(widget, engine)
     
@@ -1166,12 +1167,14 @@ class OcrSettingsDialog(gtk.Dialog):
                                              self.failure_string_entry.get_text()
                                              )
             if self.engine:
+                self.engine_manager.replaceEngine(self.engine, engine)
                 self.engine = engine
             else:
                 self.engine_manager.addNewEngine(engine)
             return True
         except:
             SimpleDialog(_('Error setting the new engine, please check your engine settings.'), _('Warning'), 'warning').run()
+            print sys.exc_info()
             return False
     
     def __packSettingInFrame(self, table, position, entry_name, entry, entry_text, aditional_info = None):
