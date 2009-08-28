@@ -905,8 +905,8 @@ class PreferencesDialog(gtk.Dialog):
         self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
         index = self.engines_combo.get_active()
         if index != -1:
-            lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index].name)
-            self.configuration_manager.setFavoriteEngine(self.ocr_engines[index].name)
+            lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
+            self.configuration_manager.setFavoriteEngine(self.ocr_engines[index][0].name)
     
     def __makeGeneralPreferences(self, *args):
         general_box = gtk.VBox(spacing = 10)
@@ -986,9 +986,9 @@ class PreferencesDialog(gtk.Dialog):
         engines_frame = PlainFrame(_('OCR Engines'))
         self.engines_combo = gtk.combo_box_new_text()
         for engine in self.ocr_engines:
-            self.engines_combo.append_text(engine.name)
+            self.engines_combo.append_text(engine[0].name)
         try:
-            index = [engine.name for engine in self.ocr_engines].index(self.configuration_manager.favorite_engine)
+            index = [engine.name for engine, path in self.ocr_engines].index(self.configuration_manager.favorite_engine)
         except ValueError:
             index = 0
         self.engines_combo.set_active(index)
