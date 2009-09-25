@@ -344,18 +344,11 @@ class ImageReviewer_Controler:
         image_reviewer.setImageStrokeColor(self.configuration_manager.getImageStroke())
         self.image_reviewer_dict[pixbuf] = image_reviewer
         self.addImageReviewer(image_reviewer.reviewer_area)
+        return image_reviewer
     
     def addImageFromPath(self, image_path):
         pixbuf, image, iter = self.source_images_selector_widget.source_images_selector.addImage(image_path)
-        image_reviewer = ImageReviewer(image, self.ocr_engines)
-        image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
-        image_reviewer.setTextFillColor(self.configuration_manager.getTextFill())
-        image_reviewer.setTextStrokeColor(self.configuration_manager.getTextStroke())
-        image_reviewer.setImageFillColor(self.configuration_manager.getImageFill())
-        image_reviewer.setImageStrokeColor(self.configuration_manager.getImageStroke())
-        self.image_reviewer_dict[pixbuf] = image_reviewer
-        self.addImageReviewer(image_reviewer.reviewer_area)
-        return image_reviewer
+        return self.addImage(pixbuf, image)
     
     def addImageReviewer(self, image_reviewer_widget):
         self.notebook.append_page(image_reviewer_widget, None)
