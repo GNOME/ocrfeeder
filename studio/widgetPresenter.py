@@ -1179,8 +1179,10 @@ class OcrSettingsDialog(gtk.Dialog):
     
     def __packSettingInFrame(self, table, position, entry_name, entry, entry_text, aditional_info = None):
         label = gtk.Label(entry_name)
+        label_alignment = gtk.Alignment()
+        label_alignment.add(label)
         entry.set_text(entry_text)
-        table.attach(label, 0, 1, position, position + 1)
+        table.attach(label_alignment, 0, 1, position, position + 1)
         table.attach(entry, 1, 2, position, position + 1)
         if aditional_info:
             entry.set_tooltip_text(aditional_info)
