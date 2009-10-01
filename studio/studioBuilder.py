@@ -177,14 +177,13 @@ class Studio:
             self.saveProjectAs()
     
     def appendProject(self, widget = None):
-        self.__appendProject()
+        self.__loadProject(False)
     
     def openProject(self, widget = None):
-        self.clear()
-        self.__appendProject()
+        self.__loadProject()
     
-    def __appendProject(self):
-        project_title = self.source_images_controler.openProject()
+    def __loadProject(self, clear_current = True):
+        project_title = self.source_images_controler.openProject(clear_current)
         if project_title:
             self.setProjectName(project_title)
         

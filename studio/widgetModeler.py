@@ -443,19 +443,21 @@ class ImageReviewer_Controler:
         project_saver = ProjectSaver(pages_data, self.configuration_manager.getTemporaryDir())
         project_saver.serialize(project_name)
     
-    def openProject(self):
+    def openProject(self, clear_current = True):
         open_dialog = FileDialog('open', file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
         response = open_dialog.run()
+        project_file = None
         if response == gtk.RESPONSE_OK:
             project_file = open_dialog.get_filename()
             project_loader = ProjectLoader(project_file)
             pages = project_loader.loadConfiguration()
+            if pages and clear_current:
+                self.clear()
             for page in pages:
                 image_reviewer = self.addImageFromPath(page.image_path)
                 image_reviewer.updatePageData(page)
-            open_dialog.destroy()
-            return project_file
         open_dialog.destroy()
+        return project_file
     
     def __askForNumberOfPages(self, title, pixbufs_sorted):
         export_dialog = PagesToExportDialog(title)
