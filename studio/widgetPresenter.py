@@ -184,7 +184,8 @@ class MainWindow:
         actions = ['ZoomIn', 'ZoomOut', 'ResetZoom', 
                    'Export', 'GenerateODT', 'Unpaper', 
                    'DeletePage', 'SaveProject', 'SaveProjectAs',
-                   'OCRFeederDetection']
+                   'OCRFeederDetection', 'EditPage', 'ClearProject',
+                   'AppendProject', 'ZoomFit']
         for gtkaction in [self.action_group.get_action(action) for action in actions]:
             gtkaction.set_sensitive(has_images)
         
