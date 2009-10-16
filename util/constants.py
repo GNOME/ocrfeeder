@@ -25,7 +25,7 @@ _ = gettext.gettext
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder Studio'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
-OCRFEEDER_STUDIO_VERSION = '0.2'
+OCRFEEDER_STUDIO_VERSION = '0.3'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),
