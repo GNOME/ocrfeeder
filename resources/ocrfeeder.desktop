@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.2
+Type=Application
+Name=OCRFeeder
+Comment=The complete OCR suite.
+TryExec=ocrfeeder
+Exec=ocrfeeder
+Icon=ocrfeeder
+MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/tiff;
+Categories=Application;Office;
