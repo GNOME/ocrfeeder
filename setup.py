@@ -27,6 +27,10 @@ setup(name = 'OCRFeeder',
      data_files = [(constants.RESOURCES_DIR + '/icons', ['resources/icons/detect_icon.svg',
                                                          'resources/icons/ocr.svg',
                                                          'resources/icons/window_icon.png']
-                    ),
+                   ),
+                   ('/usr/share/icons/hicolor/scalable/apps', ['resources/icons/ocrfeeder.svg']
+                   ),
+                   ('/usr/share/applications', ['resources/ocrfeeder.desktop']
+                   ),
                    ] + get_locale_files()
      )
