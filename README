@@ -66,9 +66,19 @@ executed as superuser:
 
     # apt-get install python-pygoocanvas ocrad unpaper
 
-After all of the packages finish the installation, the project is ready to
-be executed and used.
+After all of the packages finish the installation, OCRFeeder is ready to be 
+installed. To install it, all that is needed is to run setup.py script as 
+superuser:
 
+    # setup.py install
+
+OCRFeeder can now be run by calling it from a desktop menu or by running the 
+*ocrfeeder* command.
+When using the GNOME desktop, if the desktop menu entry is not showing the 
+OCRFeeder's icon, the following command must be used to update the icon cache 
+(as superuser):
+
+    # gtk-update-icon-cache -f -t /usr/share/icons/hicolor
 
 Command Line Usage
 ===================
