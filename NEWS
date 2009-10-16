@@ -1,0 +1,36 @@
+Version 0.3
+============
+
+New Features
+-------------
+
+* Add a setup.py script that makes installation easier
+* Add the zoom fit option to the zoom options and apply
+  it when an image is loaded
+
+Improvements
+-------------
+
+* Code improvements
+* Align label to the left on the OCR engine's settings
+  dialog
+* Tesseract OCR engine can now be more successfully
+  used
+* Better desktop integration by using an application
+  icon a desktop file
+* Update README instructions
+
+New and Updated Translations
+-----------------------------
+
+* Renard Voß [de]
+
+Bug Fixes
+----------
+
+* Correct a few issues in the OCR engines manager dialog
+* Correct engine name access
+* Fix project being cleared whether a new project is
+  successfully loaded or not
+* Correct actions availability depending on the existence
+  of images
