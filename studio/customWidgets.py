@@ -28,6 +28,9 @@ _ = gettext.gettext
 
 class SelectableBoxesArea(goocanvas.Canvas):
     
+    IMAGE_FRAME_THICKNESS = 20
+    IMAGE_FRAME_COLOR = '#717171'
+    
     __gtype_name__ = 'SelectableBoxesArea'
     
     __gsignals__ = {
@@ -51,9 +54,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
     def __init__(self, image_path):
         super(SelectableBoxesArea, self).__init__()
         self.image = goocanvas.Image()
+        self.frame = []
         self.setBackgroundImage(image_path)
         self.grab_focus(self.image)
-        self.set_bounds(0, 0, self.image.props.width, self.image.props.height)
         style = gtk.widget_get_default_style()
         self.set_property('background-color', style.bg[gtk.STATE_NORMAL].to_string())
         self.get_root_item().add_child(self.image, -1)
@@ -88,6 +91,29 @@ class SelectableBoxesArea(goocanvas.Canvas):
     def setBackgroundImage(self, image_path):
         pixbuf = gtk.gdk.pixbuf_new_from_file(image_path)
         self.image.set_property('pixbuf', pixbuf)
+        self.set_bounds(0, 0, self.image.props.width * 2, self.image.props.height * 1.5)
+        for line in self.frame:
+            line.remove()
+        self.__createFrame()
+        for line in self.frame:
+            self.get_root_item().add_child(line, -1)
+    
+    def __createFrame(self):
+        line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR,
+                              line_width = 0)
+        line.props.x = self.image.props.x + self.image.props.width
+        line.props.y = self.image.props.y
+        line.props.width = self.IMAGE_FRAME_THICKNESS
+        line.props.height = self.image.props.height + self.IMAGE_FRAME_THICKNESS
+        self.frame.append(line)
+        
+        line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR,
+                              line_width = 0)
+        line.props.x = self.image.props.x
+        line.props.y = self.image.props.y + self.image.props.height
+        line.props.width = self.image.props.width + 1
+        line.props.height = self.IMAGE_FRAME_THICKNESS
+        self.frame.append(line)
     
     def setCurrentArea(self, area):
         self.set_data('current_area', area)
@@ -259,7 +285,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
     
     def getAllAreas(self):
         bounds = goocanvas.Bounds(*self.get_bounds())
-        areas = [area for area in self.get_items_in_area(bounds, True, True, True) if isinstance(area, goocanvas.Rect)]
+        areas = [area for area in self.get_items_in_area(bounds, True, True, True) if isinstance(area, goocanvas.Rect) and area not in self.frame]
         return areas
 
 class PlainFrame(gtk.Frame):
