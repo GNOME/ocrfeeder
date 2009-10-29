@@ -140,12 +140,12 @@ class OcrEnginesManager:
     def getEngineFromXml(self, xml_file_name):
         document = minidom.parse(xml_file_name)
         root_node = document.documentElement
-        arguments = []
+        arguments = {}
         for child in root_node.childNodes:
             if child.childNodes:
                 if child.childNodes[0].nodeType == child.TEXT_NODE:
-                    arguments.append('%s = "%s"' % (child.localName, child.childNodes[0].nodeValue))
-        return eval('Engine(%s)' % ', '.join(arguments))
+                    arguments[str(child.localName)] = child.childNodes[0].nodeValue
+        return Engine(**arguments)
     
     def getXmlFilesInFolder(self, folder):
         return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
