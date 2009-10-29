@@ -130,7 +130,12 @@ class OcrEnginesManager:
     def makeEnginesFromFolder(self, folder):
         self.ocr_engines = []
         for xml_file in self.getXmlFilesInFolder(folder):
-            self.ocr_engines.append((self.getEngineFromXml(xml_file), xml_file))
+            try:
+                self.ocr_engines.append((self.getEngineFromXml(xml_file), xml_file))
+            except WrongSettingsForEngine, we:
+                lib.debug("Cannot load engine at %s: %s" %( xml_file, str(we)))
+        if not len(self.ocr_engines):
+                lib.debug("Warning: no engines found!")
     
     def getEngineFromXml(self, xml_file_name):
         document = minidom.parse(xml_file_name)
