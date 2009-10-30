@@ -53,12 +53,11 @@ RESOURCES_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
 if not os.path.exists(RESOURCES_DIR):
     # Are we at a devel setup? If so, search our resources under any
     # of the python paths.
-    for pa in sys.path:
-        res_path2 = os.path.join(pa,'resources')
-        if os.path.exists(res_path2):
-            RESOURCES_DIR = res_path2
+    for path in sys.path:
+        resources_path = os.path.join(path,'resources')
+        if os.path.exists(resources_path):
+            RESOURCES_DIR = resources_path
             break
-    # pa and res_path2 should not be used outside this loop.
 
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
