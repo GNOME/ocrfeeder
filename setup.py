@@ -10,7 +10,7 @@ def get_locale_files():
     file_list = []
     for file in files:
         file_list.append((os.path.dirname(os.path.join(constants.RESOURCES_DIR, file)), [file]))
-        return file_list
+    return file_list
 
 setup(name = 'OCRFeeder',
      version = constants.OCRFEEDER_STUDIO_VERSION,
