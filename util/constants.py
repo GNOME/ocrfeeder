@@ -20,8 +20,6 @@
 
 import sys
 import os
-import gettext
-_ = gettext.gettext
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder Studio'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
@@ -48,7 +46,7 @@ GPL_STATEMENT = """
     You should have received a copy of the GNU General Public License
     along with OCRFeeder.  If not, see <http://www.gnu.org/licenses/>.
 """
-OCRFEEDER_STUDIO_COMMENTS = _('The complete OCR suite.')
+OCRFEEDER_STUDIO_COMMENTS = 'The complete OCR suite.'
 
 # DIRECTORIES
 RESOURCES_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')

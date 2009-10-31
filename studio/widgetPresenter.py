@@ -1204,7 +1204,7 @@ class CustomAboutDialog(gtk.AboutDialog):
         self.set_website_label(OCRFEEDER_WEBSITE)
         self.set_license(GPL_STATEMENT)
         self.set_artists(OCRFEEDER_STUDIO_ARTISTS)
-        self.set_comments(OCRFEEDER_STUDIO_COMMENTS)
+        self.set_comments(_(OCRFEEDER_STUDIO_COMMENTS))
         translator_credits = ''
         for translator in OCRFEEDER_STUDIO_TRANSLATORS:
             translator_credits += translator[0] + ': ' + translator[1] + '\n'
