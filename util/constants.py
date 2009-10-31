@@ -29,7 +29,9 @@ OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),
                                 ('Portuguese', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),
                                 ('German', 'Renard Voß <renardvoss@gmx.de>'),
-                                ('Italian', 'Andrea Grandi <a.grandi@gmail.com>'),]
+                                ('Italian', 'Andrea Grandi <a.grandi@gmail.com>'),
+                                ('French', 'Philippe Normand <phil@base-art.net>'),
+                               ]
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008 Joaquim Rocha '
 OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
 GPL_STATEMENT = """
