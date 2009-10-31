@@ -31,6 +31,7 @@ OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.
                                 ('German', 'Renard Voß <renardvoss@gmx.de>'),
                                 ('Italian', 'Andrea Grandi <a.grandi@gmail.com>'),
                                 ('French', 'Philippe Normand <phil@base-art.net>'),
+                                ('Galician', 'Xabier Rodríguez Calvar <xrcalvar@igalia.com>'),
                                ]
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008 Joaquim Rocha '
 OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
