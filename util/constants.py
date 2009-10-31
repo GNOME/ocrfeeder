@@ -52,20 +52,20 @@ GPL_STATEMENT = """
 OCRFEEDER_STUDIO_COMMENTS = 'The complete OCR suite.'
 
 # DIRECTORIES
-RESOURCES_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
-if not os.path.exists(RESOURCES_DIR):
-    # Are we at a devel setup? If so, search our resources under any
-    # of the python paths.
-    for path in sys.path:
-        resources_path = os.path.join(path,'resources')
-        if os.path.exists(resources_path):
-            RESOURCES_DIR = resources_path
-            break
+DEFAULT_SYSTEM_APP_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
+APP_DIR = DEFAULT_SYSTEM_APP_DIR
+RESOURCES_DIR = APP_DIR
+
+# If the path does not exist (devel setup) set the 
+# APP_DIR and RESOURCES_DIR to local paths
+if not os.path.exists(APP_DIR):
+    APP_DIR = os.path.dirname(os.path.dirname(__file__))
+    RESOURCES_DIR = os.path.join(APP_DIR, 'resources')
 
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
-LOCALE_DIR = os.path.join(RESOURCES_DIR, 'locale')
+LOCALE_DIR = os.path.join(APP_DIR, 'locale')
 
 # CUSTOM ICONS
 DETECT_ICON = os.path.join(RESOURCES_DIR, 'icons', 'detect_icon.svg')
