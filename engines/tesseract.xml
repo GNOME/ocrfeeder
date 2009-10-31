@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine>
+	<name>Tesseract</name>
+    <image_format>TIF</image_format>
+	<engine_path>/usr/bin/tesseract</engine_path>
+	<arguments>$IMAGE $FILE; cat $FILE.txt</arguments>
+</engine>
