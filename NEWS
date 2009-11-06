@@ -1,3 +1,41 @@
+Version 0.4
+============
+
+New Features
+-------------
+
+* Add the debian package generation
+* Add Tesseract's example configuration file
+* Add pot file
+* Development setup possible by using the local folder
+  instead of only accepting the system's resources one
+  when the latter does not exist (thanks to P. Christeas)
+
+Improvements
+-------------
+
+* Code improvements
+* The background color of the page area is now equal to
+  the system's normal state's background color
+* The page now shows a frame around it, for a better
+  visualization
+* Continue the execution even if an engine fails to be
+  recognized (thanks to P. Christeas)
+
+Bug Fixes
+----------
+
+* Fix MANIFEST.in to include missing files
+
+New and Updated Translations
+-----------------------------
+
+* Andrea Grandi [it]
+* Andrés Gómez [es]
+* Phillip Normand [fr]
+* Xabier Rodríguez Calvar [gl]
+
+
 Version 0.3
 ============
 

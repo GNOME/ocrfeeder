@@ -1,5 +1,5 @@
-include ocrfeeder ocrfeeder-cli README COPYING
-recursive-include resources/icons *
+include ocrfeeder ocrfeeder-cli README COPYING NEWS TRANSLATORS
+recursive-include resources *
 recursive-include locale *
 recursive-include po *.po
 recursive-include engines *.xml

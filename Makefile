@@ -2,7 +2,7 @@ PYTHON=`which python`
 DESTDIR=/
 BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
-VERSION=0.3
+VERSION=0.4
 
 all:
 	@echo "make source   - Create source package"
