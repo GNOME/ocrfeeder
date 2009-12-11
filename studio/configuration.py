@@ -263,8 +263,9 @@ class ConfigurationManager:
         if not folder_contents:
             dir_name = os.path.dirname(__file__)
             engines_folder = os.path.abspath(os.path.join(dir_name, os.pardir, 'engines'))
-            for file in [item for item in os.listdir(engines_folder) if item.endswith('.xml')]:
-                shutil.copyfile(os.path.join(engines_folder, file), os.path.join(self.user_engines_folder, file))
+            if os.path.exists(engines_folder):
+                for file in [item for item in os.listdir(engines_folder) if item.endswith('.xml')]:
+                    shutil.copyfile(os.path.join(engines_folder, file), os.path.join(self.user_engines_folder, file))
     
     def setTemporaryDir(self, temp_dir):
         self.temporary_dir = temp_dir

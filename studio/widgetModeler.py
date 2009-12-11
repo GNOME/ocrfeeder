@@ -732,7 +732,7 @@ class Editor:
         angle = self.box_editor.getAngle()
         if angle:
             image = graphics.getImageRotated(image, angle)
-        if selected_engine_index != None:
+        if selected_engine_index != -1:
             engine = self.ocr_engines[selected_engine_index][0]
             engine.setImage(image)
             text = engine.read()
