@@ -252,8 +252,18 @@ class SelectableBoxesArea(goocanvas.Canvas):
     def dragArea(self, item, target, event):
         if item.get_data('distance'):
             distance_x, distance_y = item.get_data('distance')
-            item.props.x = event.x - distance_x
-            item.props.y = event.y - distance_y
+            new_x, new_y = event.x - distance_x, event.y - distance_y
+            dimensions = (new_x, new_y, item.props.width, item.props.height)
+            item.props.x = new_x
+            item.props.y = new_y
+            if new_x <= self.image.props.x:
+                item.props.x = self.image.props.x
+            if new_x + item.props.width >= self.image.props.width:
+                item.props.x = self.image.props.width - item.props.width
+            if new_y <= self.image.props.y:
+                item.props.y = self.image.props.y
+            if new_y + item.props.height >= self.image.props.height:
+                item.props.y = self.image.props.height - item.props.height
             self.emit('dragged_box', item)
     
     def setAreaFillRgba(self, rgba):
