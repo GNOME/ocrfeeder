@@ -19,13 +19,28 @@
 ###########################################################################
 
 from studio.dataHolder import PageData, DataBox, TextData
-from util.lib import debug
+from feeder.ocrEngines import Engine
+from util.lib import debug, getExecPath
 from xml.dom import minidom
 import os.path
 import re
 import shutil
 import tempfile
 import zipfile
+
+PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
+                                    'image_format': 'TIF',
+                                    'engine_path': 'tesseract',
+                                    'arguments': '$IMAGE $FILE; cat $FILE.txt'},
+                      'ocrad': {'name': 'Ocrad',
+                                'image_format': 'PPM',
+                                'engine_path': 'ocrad',
+                                'arguments': '$IMAGE'},
+                      'gocr': {'name': 'GOCR',
+                               'image_format': 'PPM',
+                               'engine_path': 'gocr',
+                               'arguments': '$IMAGE'},
+                     }
 
 class ProjectSaver:
     
@@ -259,13 +274,27 @@ class ConfigurationManager:
     def makeUserConfigurationFolder(self):
         if not os.path.exists(self.user_engines_folder):
             os.makedirs(self.user_engines_folder)
-        folder_contents = [item for item in os.listdir(self.user_engines_folder) if item.endswith('.xml')]
-        if not folder_contents:
-            dir_name = os.path.dirname(__file__)
-            engines_folder = os.path.abspath(os.path.join(dir_name, os.pardir, 'engines'))
-            if os.path.exists(engines_folder):
-                for file in [item for item in os.listdir(engines_folder) if item.endswith('.xml')]:
-                    shutil.copyfile(os.path.join(engines_folder, file), os.path.join(self.user_engines_folder, file))
+        if [file_name for file_name in os.listdir(self.user_engines_folder)\
+            if file_name.endswith('.xml')]:
+            return
+        engines_paths = [(name, getExecPath(conf['engine_path']))\
+                         for name, conf in PREDEFINED_ENGINES.items()]
+        for name, path in engines_paths:
+            if not path:
+                continue
+            engine_name = PREDEFINED_ENGINES[name].get('name', None)
+            arguments = PREDEFINED_ENGINES[name].get('arguments', None)
+            if not arguments or not engine_name:
+                continue
+            image_format = PREDEFINED_ENGINES[name].get('image_format', 'PPM')
+            failure_string = PREDEFINED_ENGINES[name].get('failure_string', '')
+            engine = Engine(engine_name,
+                            path,
+                            arguments,
+                            image_format = image_format,
+                            failure_string = failure_string)
+            engine_file = os.path.join(self.user_engines_folder, name)
+            engine.saveToXml('%s.xml' % engine_file)
     
     def setTemporaryDir(self, temp_dir):
         self.temporary_dir = temp_dir

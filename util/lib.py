@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-import os.path
+import os
 import mimetypes
 import tempfile
 import gtk
@@ -97,3 +97,14 @@ def getStandardDeviation(list_of_values):
 def debug(*args):
     if OCRFEEDER_DEBUG:
         print 'OCRFEEDER DEBUG :::::: ', args
+
+def getExecPath(exec_name):
+    real_exec_name = None
+    if os.path.isfile(exec_name) and os.access(exec_name, os.X_OK):
+        real_exec_name = exec_name
+    exec_base_name = os.path.basename(exec_name)
+    for path in os.environ["PATH"].split(os.pathsep):
+        exec_path = os.path.join(path, exec_base_name)
+        if os.path.isfile(exec_path) and os.access(exec_path, os.X_OK):
+            real_exec_name = exec_path
+    return real_exec_name
