@@ -28,7 +28,7 @@ _ = gettext.gettext
 
 class SelectableBoxesArea(goocanvas.Canvas):
     
-    IMAGE_FRAME_THICKNESS = 20
+    IMAGE_FRAME_THICKNESS = 5
     IMAGE_FRAME_COLOR = '#717171'
     
     __gtype_name__ = 'SelectableBoxesArea'
