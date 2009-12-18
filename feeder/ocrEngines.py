@@ -22,7 +22,7 @@ import string
 
 import tempfile
 import os
-from xml.dom import minidom
+import xml.etree.ElementTree as ET
 from xml.parsers.expat import ExpatError
 from studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
 from util import lib
@@ -102,6 +102,20 @@ class Engine:
                 if ((color[1])[0] - (color[1])[1])>10 or ((color[1])[0] - (color[1])[2])>10:
                     return False
         return True
+    
+    def saveToXml(self, file_path):
+        engine_info = {'name': self.name,
+                       'engine_path': self.engine_path,
+                       'arguments': self.arguments,
+                       'image_format': self.image_format,
+                       'failure_string': self.failure_string}
+        root = ET.Element('engine')
+        for key, value in engine_info.items():
+            if not key or not value:
+                continue
+            subelement = ET.SubElement(root, key)
+            subelement.text = str(value)
+        return ET.ElementTree(root).write(file_path, 'UTF-8')
 
 class OcrEnginesManager:
     
@@ -138,13 +152,13 @@ class OcrEnginesManager:
                 lib.debug("Warning: no engines found!")
     
     def getEngineFromXml(self, xml_file_name):
-        document = minidom.parse(xml_file_name)
-        root_node = document.documentElement
+        document = ET.parse(xml_file_name)
+        root_node = document.getroot()
         arguments = {}
-        for child in root_node.childNodes:
-            if child.childNodes:
-                if child.childNodes[0].nodeType == child.TEXT_NODE:
-                    arguments[str(child.localName)] = child.childNodes[0].nodeValue
+        for child in root_node.getchildren():
+            arg_name = child.tag
+            arg_value = child.text
+            arguments[arg_name] = arg_value
         return Engine(**arguments)
     
     def getXmlFilesInFolder(self, folder):
@@ -164,23 +178,10 @@ class OcrEnginesManager:
         self.ocr_engines.append((engine,path))
     
     def engineToXml(self, engine, path = None):
-        engine_info = {'name': engine.name, 'engine_path': engine.engine_path, 'arguments': engine.arguments, 'image_format': engine.image_format, 'failure_string': engine.failure_string}
-        doc = minidom.Document()
-        root_node = doc.createElement('engine')
-        for key, value in engine_info.items():
-            if not value:
-                continue
-            new_node = doc.createElement(key)
-            new_node.appendChild(doc.createTextNode(value))
-            root_node.appendChild(new_node)
-        engine_content = doc.toxml(encoding = 'utf-8')
-        engine_content += '\n' + root_node.toxml(encoding = 'utf-8')
         if not path:
             path = os.path.join(self.configuration_manager.user_engines_folder, engine_info['name'] + '.xml')
             path = lib.getNonExistingFileName(path)
-        engine_file = open(path, 'w')
-        engine_file.write(engine_content)
-        engine_file.close()
+        engine_content = engine.saveToXml(path)
         return path
 
 class WrongSettingsForEngine(Exception):
