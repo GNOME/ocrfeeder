@@ -23,7 +23,7 @@ import os
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder Studio'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
-OCRFEEDER_STUDIO_VERSION = '0.4'
+OCRFEEDER_STUDIO_VERSION = '0.5'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.com>'),
@@ -33,6 +33,7 @@ OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.
                                 ('French', 'Philippe Normand <phil@base-art.net>'),
                                 ('Galician', 'Xabier Rodríguez Calvar <xrcalvar@igalia.com>'),
                                 ('Spanish', 'Andrés Gómez <agomez@igalia.com>'),
+                                ('Simplified Chinese', '刘洪德 (Hongde Liu) <enginespot@gmail.com>')
                                ]
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008 Joaquim Rocha '
 OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
