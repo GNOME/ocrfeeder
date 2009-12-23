@@ -2,6 +2,7 @@ PYTHON=`which python`
 DESTDIR=/
 BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
+PO_DIR=po
 VERSION=0.4
 
 all:
@@ -33,3 +34,24 @@ clean:
 	$(MAKE) -f $(CURDIR)/debian/rules clean
 	rm -rf build/ MANIFEST
 	find . -name '*.pyc' -delete
+
+compilemessages:
+	@# Compile .po to .mo
+	@# Use it such as: make compilemessages L=pt_PT
+	@if [ ! -z $(L) ]; then \
+	  if [ -f "$(PO_DIR)/$(L).po" ]; then \
+	    mkdir -p locale/$(L)/LC_MESSAGES; \
+	    msgfmt --output-file=locale/$(L)/LC_MESSAGES/$(PROJECT).mo $(PO_DIR)/$(L).po; \
+	    echo Generated locale/$(L)/LC_MESSAGES/$(PROJECT).mo; \
+	  else \
+	    echo $(PO_DIR)/$(L).po was not found.;\
+	  fi \
+	else \
+	    echo Please provide the L argument. E.g.: make compilemessages L=pt_PT; \
+	fi
+
+generatepot:
+	@# After this, use the following command to initiate an empty po: msginit --input=po/ocrfeeder.pot --locale=en_US
+	@# To update an existing po, do this: msgmerge -U po/en_US.po new_en_US.po        the po/en_US.po will be updated.
+	xgettext --language=Python --keyword=_ --output=$(PO_DIR)/$(PROJECT).pot studio/*.py feeder/*.py util/*.py ocrfeeder ocrfeeder-cli
+
