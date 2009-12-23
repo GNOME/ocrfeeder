@@ -1,3 +1,32 @@
+Version 0.5
+============
+
+New Features
+-------------
+
+* Detect Tesseract, Ocrad and GOCR from the system when no engines are configured
+
+Improvements
+-------------
+
+* Code improvements
+* Add verifications to prevent failure when engines' files don't exist
+* Replace usage of minidom by ElementTree in the feeder module
+* Add compilemessages and generatepot command to Makefile.
+
+Bug Fixes
+----------
+
+* Correct Philippe Normand's name
+* Correct boxes allowed limits when dragging
+* Lower the images' border to 5 pixels
+
+New and Updated Translations
+-----------------------------
+
+* 刘洪德 (Hongde Liu) [zh_CN]
+
+
 Version 0.4
 ============
 
