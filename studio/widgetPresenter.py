@@ -1049,6 +1049,10 @@ class OcrManagerDialog(gtk.Dialog):
         self.list_store = gtk.ListStore(str)
         self.vbox.add(self.__makeMainArea())
         self.__getEngines()
+        first_iter = self.list_store.get_iter_first()
+        if first_iter:
+            selection = self.tree_view.get_selection()
+            selection.select_iter(first_iter)
         self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
         self.delete_engine.connect('clicked', self.__delete)
