@@ -60,20 +60,20 @@ def createDataBoxFromBlock(block, image, window_size):
 	dimensions = getBoundsFromStartEndPoints((leftmost_x, highest_y), (rightmost_x, lowest_y))
 	x, y, width, height = dimensions
 	image_clip = image.crop((int(leftmost_x), int(highest_y), int(rightmost_x), int(lowest_y)))
-	image.crop((331, 77, 506, 292)).save('/tmp/FUCK.png', 'PNG')
 	return DataBox(x, y, width, height, image_clip)
 
 
 pages = []
 for image in images:
-	if os.path.isfile(image):
-		print 'ERROR'
+	if not os.path.isfile(image):
+		printError("Error: The image '%s' is not a file or does not exist." % image)
 	page_data = PageData(image)
 	data_boxes = []
 	image_obj = Image.open(image)
 	image_processor = ImageProcessor(image, window_size)
 	block_retriever = BlockRetriever(image_processor.imageToBinary())
 	blocks = block_retriever.getAllBlocks()
+	engine, engine_file = engine
 	for block in blocks:
 		data_box = createDataBoxFromBlock(block, image_obj, image_processor.window_size)
 		engine.setImage(data_box.image)
