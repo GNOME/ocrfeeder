@@ -36,7 +36,8 @@ OCRFEEDER_STUDIO_TRANSLATORS = [('English', 'Joaquim Rocha <joaquimrocha1@gmail.
                                 ('Simplified Chinese', '刘洪德 (Hongde Liu) <enginespot@gmail.com>'),
                                 ('Swedish', 'Daniel Nylander <po@danielnylander.se>'),
                                ]
-OCRFEEDER_COPYRIGHT = 'Copyright © 2008 Joaquim Rocha '
+OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2010 Joaquim Rocha\n' \
+                      'Copyright © 2009-2010 Igalia, SL'
 OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
 GPL_STATEMENT = """
     OCRFeeder is free software: you can redistribute it and/or modify
