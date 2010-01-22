@@ -12,7 +12,7 @@ def get_locale_files():
         file_list.append((os.path.dirname(os.path.join(constants.DEFAULT_SYSTEM_APP_DIR, file)), [file]))
     return file_list
 
-setup(name = 'OCRFeeder',
+setup(name = 'ocrfeeder',
      version = constants.OCRFEEDER_STUDIO_VERSION,
      description = '''A complete Optical Character Recognition and
                       Document Analysis and Recognition program.''',
