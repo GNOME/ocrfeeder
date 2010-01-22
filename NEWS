@@ -1,3 +1,27 @@
+Version 0.6
+============
+
+Improvements
+-------------
+
+* Several code improvements
+* Hide import pdf and unpaper menus if the respective commands are not available
+* Removed Studio from the application name
+* Removed unneeded engines folder
+* Updated copyright notice on the about dialog
+* Lowered the package name font case
+
+Bug Fixes
+----------
+
+* Added missing dependencies to debian/control (gc#5)
+
+New and Updated Translations
+-----------------------------
+
+* Daniel Nylander [sv_SV]
+
+
 Version 0.5
 ============
 

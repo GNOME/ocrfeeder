@@ -3,7 +3,7 @@ DESTDIR=/
 BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
 PO_DIR=po
-VERSION=0.5
+VERSION=0.6
 
 all:
 	@echo "make source   - Create source package"
