@@ -80,30 +80,6 @@ class DocumentGenerator:
         elif align == ALIGN_FILL:
             return 'justified'
 
-class PdfGenerator(DocumentGenerator):
-    
-    def __init__(self, name, image_path):
-        width, height = getImagePrintSize(image_path)
-        self.document = canvas.Canvas(name, pagesize = (width * inch, height * inch))
-    
-    def addText(self, data_box):
-        text = data_box.getText()
-        text_object = self.document.beginText()
-        text_object.setTextOrigin(data_box.x, data_box.y)
-        text_object.setFont('Times-Roman', data_box.text_data.size)
-        text_object.moveCursor(0, data_box.text_data.size)
-        text_object.textLines(text)
-        self.document.drawText(text_object)
-    
-    def addImage(self, data_box):
-        pass
-    
-    def save(self):
-        self.document.save()
-    
-    def newPage(self):
-        self.document.showPage()
-
 class HtmlGenerator(DocumentGenerator):
     
     def __init__(self, name):
