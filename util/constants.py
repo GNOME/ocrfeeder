@@ -21,7 +21,7 @@
 import sys
 import os
 
-OCRFEEDER_STUDIO_NAME = 'OCRFeeder Studio'
+OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
 OCRFEEDER_STUDIO_VERSION = '0.5'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
