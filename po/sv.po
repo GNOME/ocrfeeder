@@ -1,0 +1,619 @@
+# Swedish translation for ocrfeeder.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the ocrfeeder package.
+# Daniel Nylander <po@danielnylander.se>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-23 20:42+0000\n"
+"PO-Revision-Date: 2009-12-28 22:05+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: studio/studioBuilder.py:103
+msgid "Images"
+msgstr "Bilder"
+
+#: studio/studioBuilder.py:111
+msgid "PDF"
+msgstr "PDF"
+
+#: studio/studioBuilder.py:134
+msgid "Export pages"
+msgstr "Exportera sidor"
+
+#: studio/studioBuilder.py:148
+msgid "Are you sure you want to delete the current image?"
+msgstr "Är du säker på att du vill ta bort den aktuella bilden?"
+
+#: studio/studioBuilder.py:235
+msgid "The project hasn't been saved."
+msgstr "Projektet har inte sparats."
+
+#: studio/studioBuilder.py:236
+msgid "Do you want to save it before closing?"
+msgstr "Vill du spara det innan det stängs?"
+
+#: studio/studioBuilder.py:237
+msgid "Close anyway"
+msgstr "Stäng ändå"
+
+#: studio/widgetModeler.py:134
+#: studio/widgetPresenter.py:1068
+msgid "Delete"
+msgstr "Ta bort"
+
+#: studio/widgetModeler.py:362
+#: studio/widgetPresenter.py:580
+#: studio/widgetPresenter.py:587
+msgid "Page size"
+msgstr "Sidstorlek"
+
+#: studio/widgetModeler.py:363
+msgid "Resolution"
+msgstr "Upplösning"
+
+#: studio/widgetModeler.py:366
+msgid "Zoom"
+msgstr "Zoom"
+
+#: studio/widgetModeler.py:412
+msgid "Export to HTML"
+msgstr "Exportera till HTML"
+
+#: studio/widgetModeler.py:426
+#: studio/widgetPresenter.py:161
+msgid "Export to ODT"
+msgstr "Exportera till ODT"
+
+#: studio/widgetModeler.py:447
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder-projekt"
+
+#: studio/widgetModeler.py:503
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+"<b>En fil med namnet \"%(name)s\" finns redan. Vill du ersätta den?</b>\n"
+"\n"
+"Filen finns i \"%(dir)s\". Ersätter du den så kommer den att skrivas över."
+
+#: studio/widgetModeler.py:510
+msgid "Replace"
+msgstr "Ersätt"
+
+#: studio/widgetPresenter.py:134
+msgid "_File"
+msgstr "_Arkiv"
+
+#: studio/widgetPresenter.py:135
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#: studio/widgetPresenter.py:135
+msgid "Exit the program"
+msgstr "Avsluta programmet"
+
+#: studio/widgetPresenter.py:136
+msgid "_Open"
+msgstr "_Öppna"
+
+#: studio/widgetPresenter.py:136
+msgid "Open project"
+msgstr "Öppna projekt"
+
+#: studio/widgetPresenter.py:137
+msgid "_Save"
+msgstr "_Spara"
+
+#: studio/widgetPresenter.py:137
+msgid "Save project"
+msgstr "Spara projektet"
+
+#: studio/widgetPresenter.py:138
+msgid "_Save As"
+msgstr "Spara so_m"
+
+#: studio/widgetPresenter.py:138
+msgid "Save project with a chosen name"
+msgstr "Spara projektet med ett valt namn"
+
+#: studio/widgetPresenter.py:139
+msgid "_Add Image"
+msgstr "_Lägg till bild"
+
+#: studio/widgetPresenter.py:139
+msgid "Add another image"
+msgstr "Lägg till ytterligare en bild"
+
+#: studio/widgetPresenter.py:140
+msgid "Add _Folder"
+msgstr "Lägg till _mapp"
+
+#: studio/widgetPresenter.py:140
+msgid "Add all images in a folder"
+msgstr "Lägg till alla bilder i en mapp"
+
+#: studio/widgetPresenter.py:141
+msgid "Append Project"
+msgstr "Lägg till i projekt"
+
+#: studio/widgetPresenter.py:141
+msgid "Load a project and append it to the current one"
+msgstr "Läs in ett projekt och lägg till det till det aktuella"
+
+#: studio/widgetPresenter.py:142
+msgid "_Import PDF"
+msgstr "_Importera PDF"
+
+#: studio/widgetPresenter.py:142
+msgid "Import PDF"
+msgstr "Importera PDF"
+
+#: studio/widgetPresenter.py:143
+msgid "_Export..."
+msgstr "_Exportera..."
+
+#: studio/widgetPresenter.py:143
+msgid "Export to a chosen format"
+msgstr "Exportera till ett valt format"
+
+#: studio/widgetPresenter.py:144
+msgid "_Edit"
+msgstr "R_edigera"
+
+#: studio/widgetPresenter.py:145
+msgid "_Edit Page"
+msgstr "R_edigera sida"
+
+#: studio/widgetPresenter.py:145
+msgid "Edit page settings"
+msgstr "Redigera sidinställningar"
+
+#: studio/widgetPresenter.py:146
+msgid "_Preferences"
+msgstr "_Inställningar"
+
+#: studio/widgetPresenter.py:146
+msgid "Configure the application"
+msgstr "Konfigurera programmet"
+
+#: studio/widgetPresenter.py:147
+msgid "_Delete Page"
+msgstr "Ta _bort sida"
+
+#: studio/widgetPresenter.py:147
+msgid "Delete current page"
+msgstr "Ta bort aktuell sida"
+
+#: studio/widgetPresenter.py:148
+msgid "_Clear Project"
+msgstr "_Töm projektet"
+
+#: studio/widgetPresenter.py:148
+msgid "Delete all images"
+msgstr "Ta bort alla bilder"
+
+#: studio/widgetPresenter.py:149
+msgid "_View"
+msgstr "_Visa"
+
+#: studio/widgetPresenter.py:150
+msgid "Zoom In"
+msgstr "Zooma in"
+
+#: studio/widgetPresenter.py:151
+msgid "Zoom Out"
+msgstr "Zooma ut"
+
+#: studio/widgetPresenter.py:152
+msgid "Best Fit"
+msgstr "Bästa passning"
+
+#: studio/widgetPresenter.py:153
+msgid "Normal Size"
+msgstr "Normal storlek"
+
+#: studio/widgetPresenter.py:154
+msgid "_Document"
+msgstr "_Dokument"
+
+#: studio/widgetPresenter.py:155
+msgid "_Tools"
+msgstr "Ver_ktyg"
+
+#: studio/widgetPresenter.py:156
+msgid "_OCR Engines"
+msgstr "_OCR-motorer"
+
+#: studio/widgetPresenter.py:156
+msgid "Manage OCR engines"
+msgstr "Hantera OCR-motorer"
+
+#: studio/widgetPresenter.py:157
+msgid "_Unpaper"
+msgstr "_Unpaper"
+
+#: studio/widgetPresenter.py:157
+msgid "Process image with unpaper"
+msgstr "Behandla bilden med unpaper"
+
+#: studio/widgetPresenter.py:158
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: studio/widgetPresenter.py:159
+msgid "_About"
+msgstr "_Om"
+
+#: studio/widgetPresenter.py:159
+msgid "About this application"
+msgstr "Om detta program"
+
+#: studio/widgetPresenter.py:160
+msgid "_Recognize Document"
+msgstr "_Känn igen dokument"
+
+#: studio/widgetPresenter.py:160
+msgid "Automatic Detection and Recognition"
+msgstr "Automatisk identifiering och igenkänning"
+
+#: studio/widgetPresenter.py:161
+msgid "_Generate ODT"
+msgstr "_Generera ODT"
+
+#: studio/widgetPresenter.py:211
+#: studio/widgetPresenter.py:382
+msgid "Text"
+msgstr "Text"
+
+#: studio/widgetPresenter.py:212
+msgid "Image"
+msgstr "Bild"
+
+#: studio/widgetPresenter.py:213
+msgid "Type"
+msgstr "Typ"
+
+#: studio/widgetPresenter.py:223
+msgid "Clip"
+msgstr "Klipp"
+
+#: studio/widgetPresenter.py:227
+msgid "Bounds"
+msgstr "Gränser"
+
+#: studio/widgetPresenter.py:230
+msgid "X"
+msgstr "X"
+
+#: studio/widgetPresenter.py:232
+msgid "Y"
+msgstr "Y"
+
+#: studio/widgetPresenter.py:235
+#: studio/widgetPresenter.py:601
+msgid "Width"
+msgstr "Bredd"
+
+#: studio/widgetPresenter.py:237
+#: studio/widgetPresenter.py:603
+msgid "Height"
+msgstr "Höjd"
+
+#: studio/widgetPresenter.py:333
+msgid "Left"
+msgstr "Vänster"
+
+#: studio/widgetPresenter.py:337
+msgid "Left aligned"
+msgstr "Vänsterjusterat"
+
+#: studio/widgetPresenter.py:339
+msgid "Center"
+msgstr "Centrera"
+
+#: studio/widgetPresenter.py:344
+msgid "Centered"
+msgstr "Centrerad"
+
+#: studio/widgetPresenter.py:346
+msgid "Right"
+msgstr "Höger"
+
+#: studio/widgetPresenter.py:351
+msgid "Right aligned"
+msgstr "Högerjusterad"
+
+#: studio/widgetPresenter.py:353
+msgid "Fill"
+msgstr "Fyll"
+
+#: studio/widgetPresenter.py:358
+msgid "Filled"
+msgstr "Fylld"
+
+#: studio/widgetPresenter.py:364
+msgid "OCR"
+msgstr "OCR"
+
+#: studio/widgetPresenter.py:374
+msgid "Text Properties"
+msgstr "Textegenskaper"
+
+#: studio/widgetPresenter.py:388
+msgid "Font"
+msgstr "Typsnitt"
+
+#: studio/widgetPresenter.py:395
+msgid "Align"
+msgstr "Justera"
+
+#: studio/widgetPresenter.py:399
+msgid "Spacing"
+msgstr "Mellanrum"
+
+#: studio/widgetPresenter.py:403
+msgid "Line"
+msgstr "Linje"
+
+#: studio/widgetPresenter.py:405
+msgid "Letter"
+msgstr "Bokstav"
+
+#: studio/widgetPresenter.py:410
+msgid "Style"
+msgstr "Stil"
+
+#: studio/widgetPresenter.py:415
+#: studio/widgetPresenter.py:428
+msgid "Angle"
+msgstr "Vinkel"
+
+#: studio/widgetPresenter.py:426
+msgid "Detect"
+msgstr "Identifiera"
+
+#: studio/widgetPresenter.py:510
+msgid "Save File"
+msgstr "Spara fil"
+
+#: studio/widgetPresenter.py:513
+msgid "Open File"
+msgstr "Öppna fil"
+
+#: studio/widgetPresenter.py:517
+msgid "Open Folder"
+msgstr "Öppna mapp"
+
+#: studio/widgetPresenter.py:544
+msgid "Pages to export"
+msgstr "Sidor att exportera"
+
+#: studio/widgetPresenter.py:546
+#: studio/widgetPresenter.py:612
+msgid "All"
+msgstr "Alla"
+
+#: studio/widgetPresenter.py:547
+#: studio/widgetPresenter.py:611
+msgid "Current"
+msgstr "Aktuell"
+
+#: studio/widgetPresenter.py:563
+msgid "Choose the format"
+msgstr "Välj format"
+
+#: studio/widgetPresenter.py:592
+#: studio/widgetPresenter.py:687
+#: studio/widgetPresenter.py:705
+#: studio/widgetPresenter.py:1011
+msgid "Custom"
+msgstr "Anpassad"
+
+#: studio/widgetPresenter.py:609
+msgid "Affected pages"
+msgstr "Påverkade sidor"
+
+#: studio/widgetPresenter.py:663
+msgid "Unpaper Image Processor"
+msgstr "Bildbehandlaren Unpaper"
+
+#: studio/widgetPresenter.py:684
+msgid "Noise Filter Intensity"
+msgstr "Intensistet för brusfilter"
+
+#: studio/widgetPresenter.py:686
+#: studio/widgetPresenter.py:704
+msgid "Default"
+msgstr "Standard"
+
+#: studio/widgetPresenter.py:688
+#: studio/widgetPresenter.py:706
+msgid "None"
+msgstr "Ingen"
+
+#: studio/widgetPresenter.py:702
+msgid "Gray Filter Size"
+msgstr "Storlek för gråfilter"
+
+#: studio/widgetPresenter.py:720
+msgid "Black Filter"
+msgstr "Svartfilter"
+
+#: studio/widgetPresenter.py:721
+msgid "Use"
+msgstr "Använd"
+
+#: studio/widgetPresenter.py:727
+#: studio/widgetPresenter.py:733
+msgid "Preview"
+msgstr "Förhandsvisa"
+
+#: studio/widgetPresenter.py:743
+msgid "Extra Options"
+msgstr "Extra alternativ"
+
+#: studio/widgetPresenter.py:777
+msgid "Performing Unpaper"
+msgstr "Genomför unpaper"
+
+#: studio/widgetPresenter.py:777
+msgid "Performing unpaper. Please wait..."
+msgstr "Genomför unpaper. Vänta..."
+
+#: studio/widgetPresenter.py:847
+#: studio/widgetPresenter.py:858
+msgid "An error occured!"
+msgstr "Ett fel inträffade!"
+
+#: studio/widgetPresenter.py:847
+#: studio/widgetPresenter.py:858
+msgid "Error"
+msgstr "Fel"
+
+#: studio/widgetPresenter.py:867
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: studio/widgetPresenter.py:916
+msgid "General"
+msgstr "Allmänt"
+
+#: studio/widgetPresenter.py:919
+msgid "Temporary folder"
+msgstr "Temporär mapp"
+
+#: studio/widgetPresenter.py:923
+#: studio/widgetPresenter.py:979
+msgid "Choose"
+msgstr "Välj"
+
+#: studio/widgetPresenter.py:940
+msgid "Appearance"
+msgstr "Utseende"
+
+#: studio/widgetPresenter.py:943
+msgid "Select boxes colors"
+msgstr "Välj rutfärger"
+
+#: studio/widgetPresenter.py:950
+msgid "Text fill color"
+msgstr "Fyllnadsfärg för text"
+
+#: studio/widgetPresenter.py:953
+msgid "Text stroke color"
+msgstr "Strykfärg för text"
+
+#: studio/widgetPresenter.py:956
+msgid "Image fill color"
+msgstr "Fyllnadsfärg för bilder"
+
+#: studio/widgetPresenter.py:959
+msgid "Image stroke color"
+msgstr "Strykfärg för bilder"
+
+#: studio/widgetPresenter.py:972
+msgid "Tools"
+msgstr "Verktyg"
+
+#: studio/widgetPresenter.py:975
+msgid "Path to unpaper"
+msgstr "Sökväg till unpaper"
+
+#: studio/widgetPresenter.py:987
+#: studio/widgetPresenter.py:1046
+#: studio/widgetPresenter.py:1059
+#: studio/widgetPresenter.py:1128
+msgid "OCR Engines"
+msgstr "OCR-motorer"
+
+#: studio/widgetPresenter.py:997
+msgid "Favorite engine:"
+msgstr "Favoritmotor:"
+
+#: studio/widgetPresenter.py:1009
+msgid "Window size"
+msgstr "Fönsterstorlek"
+
+#: studio/widgetPresenter.py:1010
+msgid "Automatic"
+msgstr "Automatiskt"
+
+#: studio/widgetPresenter.py:1063
+msgid "Engine"
+msgstr "Motor"
+
+#: studio/widgetPresenter.py:1067
+msgid "Add"
+msgstr "Lägg till"
+
+#: studio/widgetPresenter.py:1069
+msgid "Edit"
+msgstr "Redigera"
+
+#: studio/widgetPresenter.py:1082
+msgid "Are you sure you want to delete this engine?"
+msgstr "Är du säker på att du vill ta bort denna motor?"
+
+#: studio/widgetPresenter.py:1130
+#, python-format
+msgid "%s engine"
+msgstr "%s-motor"
+
+#: studio/widgetPresenter.py:1153
+msgid "Name"
+msgstr "Namn"
+
+#: studio/widgetPresenter.py:1153
+msgid "Engine name"
+msgstr "Namn på motor"
+
+#: studio/widgetPresenter.py:1155
+msgid "Image format"
+msgstr "Bildformat"
+
+#: studio/widgetPresenter.py:1155
+msgid "The required image format"
+msgstr "Det nödvändiga bildformatet"
+
+#: studio/widgetPresenter.py:1157
+msgid "Failure string"
+msgstr "Felsträng"
+
+#: studio/widgetPresenter.py:1157
+msgid "The failure string or character that this engine uses"
+msgstr "Felsträngen eller tecknet som denna motor använder"
+
+#: studio/widgetPresenter.py:1159
+msgid "Engine Path"
+msgstr "Sökväg till motor"
+
+#: studio/widgetPresenter.py:1159
+msgid "The path to the engine program"
+msgstr "Sökvägen till motorprogrammet"
+
+#: studio/widgetPresenter.py:1161
+msgid "Engine arguments"
+msgstr "Argument för motor"
+
+#: studio/widgetPresenter.py:1161
+msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
+msgstr "Argument, använd $IMAGE för bild och $FILE om den skriver till en fil"
+
+#: studio/widgetPresenter.py:1177
+msgid "Error setting the new engine, please check your engine settings."
+msgstr "Fel vid inställning av nya motorn. Kontrollera inställningarna för motorn."
+
+#: studio/widgetPresenter.py:1177
+msgid "Warning"
+msgstr "Varning"
+
