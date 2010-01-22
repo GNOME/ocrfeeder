@@ -10,7 +10,7 @@ Package: ocrfeeder
 Architecture: all
 Homepage: http://live.gnome.org/OCRFeeder
 XB-Python-Version: ${python:Versions}
-Depends: ${misc:Depends}, ${python:Depends}
+Depends: python-gtk2 (>=2.13), python-imaging (>=1.1), python-pygoocanvas (>=0.12.0), ${misc:Depends}, ${python:Depends}
 Description: Document layout analysis and optical character recognition system
  It will process the given images and automatically outline its contents, 
  distinguish between what represents graphics and text and perform OCR 
