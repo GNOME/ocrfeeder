@@ -85,3 +85,6 @@ if os.environ.get(_OCRFEEDER_TEST_MODE):
 OCRFEEDER_DEBUG = False
 if os.environ.get(_OCRFEEDER_DEBUG_MODE):
     OCRFEEDER_DEBUG = True
+    
+UNPAPER_COMMAND = 'unpaper'
+GHOSTSCRIPT_COMMAND = 'gs'

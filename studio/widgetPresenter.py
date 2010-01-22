@@ -173,6 +173,14 @@ class MainWindow:
         detection_icon = gtk.image_new_from_file(DETECT_ICON)
         detection_icon.show()
         detection_button.set_icon_widget(detection_icon)
+        
+        if not lib.getExecPath(UNPAPER_COMMAND):
+            unpaper_menu = ui_manager.get_widget('/MenuBar/Tools/Unpaper')
+            unpaper_menu.hide()
+        if not lib.getExecPath(GHOSTSCRIPT_COMMAND):
+            import_pdf_menu = ui_manager.get_widget('/MenuBar/File/ImportPDF')
+            import_pdf_menu.hide()
+
         self.action_group = action_group
     
     def setDestroyEvent(self, function):
