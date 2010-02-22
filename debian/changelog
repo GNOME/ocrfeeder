@@ -1,23 +1,23 @@
-ocrfeeder (0.6) unstable; urgency=low
+ocrfeeder (0.6-1) UNRELEASED; urgency=low
 
   * Version 0.6
 
- -- Joaquim Manuel Pereira Rocha (Joaquim Rocha) <jrocha@igalia.com>  Fri, 22 Jan 2010 12:00:00 +0200
+ -- Joaquim Rocha <jrocha@igalia.com>  Fri, 22 Jan 2010 12:00:00 +0200
 
-ocrfeeder (0.5) unstable; urgency=low
+ocrfeeder (0.5-1) UNRELEASED; urgency=low
 
   * Version 0.5.
 
- -- Joaquim Manuel Pereira Rocha (Joaquim Rocha) <jrocha@igalia.com>  Wed, 23 Dec 2009 12:00:00 +0200
+ -- Joaquim Rocha <jrocha@igalia.com>  Wed, 23 Dec 2009 12:00:00 +0200
 
-ocrfeeder (0.4) unstable; urgency=low
+ocrfeeder (0.4-1) UNRELEASED; urgency=low
 
   * Version 0.4.
 
- -- Joaquim Manuel Pereira Rocha (Joaquim Rocha) <jrocha@igalia.com>  Fri, 06 Nov 2009 12:00:00 +0200
+ -- Joaquim Rocha <jrocha@igalia.com>  Fri, 06 Nov 2009 12:00:00 +0200
 
-ocrfeeder (0.3) UNRELEASED; urgency=low
+ocrfeeder (0.3-1) UNRELEASED; urgency=low
 
   * Initial release.
 
- -- Joaquim Manuel Pereira Rocha (Joaquim Rocha) <jrocha@igalia.com>  Fri, 23 Oct 2009 22:34:45 +0200
+ -- Joaquim Rocha <jrocha@igalia.com>  Fri, 23 Oct 2009 22:34:45 +0200
