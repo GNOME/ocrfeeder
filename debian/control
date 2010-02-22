@@ -12,6 +12,6 @@ Architecture: all
 XB-Python-Version: ${python:Versions}
 Depends: python-gtk2 (>=2.13), python-imaging (>=1.1), python-pygoocanvas (>=0.12.0), ${misc:Depends}, ${python:Depends}
 Description: Document layout analysis and optical character recognition system
- It will process the given images and automatically outline its contents, 
- distinguish between what represents graphics and text and perform OCR 
+ It will process the given images and automatically outline its contents,
+ distinguish between what represents graphics and text and perform OCR
  over the latter. It generates multiple formats being its main one ODT.
