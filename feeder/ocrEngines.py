@@ -179,7 +179,7 @@ class OcrEnginesManager:
     
     def engineToXml(self, engine, path = None):
         if not path:
-            path = os.path.join(self.configuration_manager.user_engines_folder, engine_info['name'] + '.xml')
+            path = os.path.join(self.configuration_manager.user_engines_folder, engine.name + '.xml')
             path = lib.getNonExistingFileName(path)
         engine_content = engine.saveToXml(path)
         return path
