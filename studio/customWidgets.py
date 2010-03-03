@@ -27,7 +27,8 @@ import gettext
 _ = gettext.gettext
 
 class SelectableBoxesArea(goocanvas.Canvas):
-    
+
+    MINIMUM_ZOOM_HEIGHT = 50
     IMAGE_FRAME_THICKNESS = 5
     IMAGE_FRAME_COLOR = '#717171'
     
@@ -137,14 +138,18 @@ class SelectableBoxesArea(goocanvas.Canvas):
     
     def zoom(self, zoom_value, add_zoom = True):
         new_zoom = zoom_value
+        set_zoom = False
         if add_zoom:
             current_zoom = self.get_scale()
             new_zoom = current_zoom + zoom_value
-            if 2 > new_zoom > 0.2:
-                self.set_scale(new_zoom)
+            if new_zoom * self.image.props.height >= self.MINIMUM_ZOOM_HEIGHT:
+                set_zoom = True
         else:
+            if new_zoom * self.image.props.height >= self.MINIMUM_ZOOM_HEIGHT:
+                set_zoom = True
+        if set_zoom:
             self.set_scale(new_zoom)
-        self.emit('changed_zoom', self.get_scale())
+            self.emit('changed_zoom', self.get_scale())
 
     def getImageSize(self):
         return self.image.props.height, self.image.props.width

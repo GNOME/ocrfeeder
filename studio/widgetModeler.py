@@ -575,11 +575,11 @@ class ImageReviewer_Controler:
             reviewer.setImageStrokeColor(self.configuration_manager.getImageStroke())
             reviewer.updateBoxesColors()
     
-    def zoomIn(self, zoom_value = 0.2):
+    def zoomIn(self, zoom_value = 0.05):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(zoom_value)
     
-    def zoomOut(self, zoom_value = -0.2):
+    def zoomOut(self, zoom_value = -0.05):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(-abs(zoom_value))
 
