@@ -67,7 +67,7 @@ class Engine:
         text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
         try:
             try:
-                text = unicode(text, 'latin-1', 'replace').encode('utf-8', 'replace')
+                text = unicode(text, 'utf-8', 'replace')
             except UnicodeDecodeError:
                 text = unicode(text, 'ascii', 'replace').encode('utf-8', 'replace')
         finally:
