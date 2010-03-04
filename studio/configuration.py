@@ -35,11 +35,11 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                       'ocrad': {'name': 'Ocrad',
                                 'image_format': 'PPM',
                                 'engine_path': 'ocrad',
-                                'arguments': '$IMAGE'},
+                                'arguments': '-F utf8 $IMAGE'},
                       'gocr': {'name': 'GOCR',
                                'image_format': 'PPM',
                                'engine_path': 'gocr',
-                               'arguments': '$IMAGE'},
+                               'arguments': '-f UTF8 $IMAGE'},
                      }
 
 class ProjectSaver:
