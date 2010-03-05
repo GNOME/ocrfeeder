@@ -21,14 +21,20 @@
 import tempfile
 from util.lib import debug
 
+import gettext
 import Image, ImageDraw
 import os.path
 from util import graphics
+import sys
+
+_ = gettext.gettext
 
 class ImageProcessor:
     
     def __init__(self, path_to_image, window_size = None):
         self.window_size = window_size
+        error_message = _("A problem occurred while trying to open the image:\n %s\n"
+                          "Ensure the image exists or try converting it to another format.") % path_to_image
         if os.path.isfile(path_to_image):
             try:
                 self.original_image = Image.open(path_to_image)
@@ -37,9 +43,11 @@ class ImageProcessor:
                     self.window_size = self.original_image.size[1] / 60.
                 debug('Window Size: ', self.window_size)
             except:
-                raise ImageManipulationError
+                debug(sys.exc_info())
+                raise ImageManipulationError(error_message)
         else:
-            raise IOError
+            debug(sys.exc_info())
+            raise ImageManipulationError(error_message)
             
     def __windowContrast(self, bgcolor, x, y, constrast_tolerance = 120):
         image = self.black_n_white_image
@@ -123,8 +131,11 @@ class ContentAnalyser:
 
 class ImageManipulationError(Exception):
     
-    def __init__(self):
-        pass
+    def __init__(self, value):
+        self.value = value
+    
+    def __str__(self):
+        return self.value
     
 class InsuficientPointsForPolygon(Exception):
     

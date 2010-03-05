@@ -29,7 +29,7 @@ from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
 from util.lib import debug
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
-    PageSizeDialog, getPopupMenu, QuestionDialog, UnpaperDialog
+    PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog
 import gettext
 import gobject
 import gtk
@@ -381,7 +381,14 @@ class ImageReviewer_Controler:
             window_size = None
         else:
             window_size = float(window_size)
-        image_processor = ImageProcessor(image_reviewer.path_to_image, window_size)
+        try:
+            image_processor = ImageProcessor(image_reviewer.path_to_image, window_size)
+        except Exception as e:
+            message = '<b>%s</b>\n%s' % (_('Warning:'), str(e)) 
+            warning_dialog = WarningDialog(message)
+            warning_dialog.run()
+            warning_dialog.destroy()
+            return
         while gtk.events_pending():
             gtk.main_iteration()
         block_retriever = BlockRetriever(image_processor.imageToBinary())
