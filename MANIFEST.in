@@ -1,6 +1,6 @@
 include ocrfeeder ocrfeeder-cli README COPYING NEWS TRANSLATORS Makefile
 recursive-include resources *
 recursive-include locale *
-recursive-include po *.po
+recursive-include po *
 recursive-include debian changelog compat control copyright rules 
 
