@@ -3,6 +3,7 @@ DESTDIR=/
 BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
 PO_DIR=po
+PO_FILES=$(wildcard $(PO_DIR)/*.po)
 VERSION=0.6
 
 all:
@@ -12,16 +13,33 @@ all:
 	@echo "make builddeb - Generate a deb package"
 	@echo "make clean    - Get rid of scratch and byte files"
 
-source:
+po/$(PROJECT).pot:
+	cd $(PO_DIR); intltool-update -p -g $(PROJECT)
+
+update-po: $(PO_DIR)/$(PROJECT).pot
+	cd $(PO_DIR); intltool-update -r -g $(PROJECT)
+
+%.mo : %.po
+	@langname=`basename $(<) .po`; \
+	dirname=locale/$$langname/LC_MESSAGES/; \
+	echo Generating $$dirname/$(PROJECT).mo; \
+	mkdir -p $$dirname; \
+	msgfmt $< -o $$dirname/$(PROJECT).mo; \
+
+generate-mo: $(patsubst %.po,%.mo,$(PO_FILES))
+
+i18n: po/$(PROJECT).pot update-po generate-mo 
+
+source: i18n
 	$(PYTHON) setup.py sdist $(COMPILE)
 
-install:
+install: i18n
 	$(PYTHON) setup.py install --root $(DESTDIR) $(COMPILE)
 
-buildrpm:
+buildrpm: i18n
 	$(PYTHON) setup.py bdist_rpm --post-install=rpm/postinstall --pre-uninstall=rpm/preuninstall
 
-builddeb:
+builddeb: i18n
 	# build the source package in the parent directory
 	# then rename it to project_version.orig.tar.gz
 	$(PYTHON) setup.py sdist $(COMPILE) --dist-dir=../ 
@@ -33,22 +51,8 @@ clean:
 	$(PYTHON) setup.py clean
 	$(MAKE) -f $(CURDIR)/debian/rules clean
 	rm -rf build/ MANIFEST
+	rm -rf locale po/$(PROJECT).pot
 	find . -name '*.pyc' -delete
-
-compilemessages:
-	@# Compile .po to .mo
-	@# Use it such as: make compilemessages L=pt_PT
-	@if [ ! -z $(L) ]; then \
-	  if [ -f "$(PO_DIR)/$(L).po" ]; then \
-	    mkdir -p locale/$(L)/LC_MESSAGES; \
-	    msgfmt --output-file=locale/$(L)/LC_MESSAGES/$(PROJECT).mo $(PO_DIR)/$(L).po; \
-	    echo Generated locale/$(L)/LC_MESSAGES/$(PROJECT).mo; \
-	  else \
-	    echo $(PO_DIR)/$(L).po was not found.;\
-	  fi \
-	else \
-	    echo Please provide the L argument. E.g.: make compilemessages L=pt_PT; \
-	fi
 
 generatepot:
 	@# After this, use the following command to initiate an empty po: msginit --input=po/ocrfeeder.pot --locale=en_US
