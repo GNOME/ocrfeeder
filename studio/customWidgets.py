@@ -68,6 +68,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.image.connect('button_release_event', self.endSelectionArea)
         self.image.connect('motion_notify_event', self.updateSelectionArea)
         self.image.connect('key_press_event', self.pressedKeyOnImage)
+        self.connect('scroll-event', self.scrollEventCb)
         self.selected_area = None
         self.currently_created_area = None
     
@@ -270,6 +271,15 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if new_y + item.props.height >= self.image.props.height:
                 item.props.y = self.image.props.height - item.props.height
             self.emit('dragged_box', item)
+    
+    def scrollEventCb(self, widget, event):
+        if event.state == gtk.gdk.CONTROL_MASK:
+            if event.direction == gtk.gdk.SCROLL_UP or \
+               event.direction == gtk.gdk.SCROLL_RIGHT:
+                self.zoom(0.05)
+            elif event.direction == gtk.gdk.SCROLL_DOWN or \
+                 event.direction == gtk.gdk.SCROLL_LEFT:
+                self.zoom(-0.05)
     
     def setAreaFillRgba(self, rgba):
         self.area_fill_rgba = rgba
