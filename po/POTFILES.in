@@ -1,0 +1,17 @@
+[encoding: UTF-8]
+ocrfeeder
+ocrfeeder-cli
+studio/configuration.py
+studio/customWidgets.py
+studio/dataHolder.py
+studio/studioBuilder.py
+studio/widgetModeler.py
+studio/widgetPresenter.py
+feeder/documentGeneration.py
+feeder/imageManipulation.py
+feeder/layoutAnalysis.py
+feeder/ocrEngines.py
+util/cliutils.py
+util/constants.py
+util/graphics.py
+util/lib.py
