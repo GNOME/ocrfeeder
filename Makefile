@@ -4,7 +4,7 @@ BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
 PO_DIR=po
 PO_FILES=$(wildcard $(PO_DIR)/*.po)
-VERSION=0.6
+VERSION=0.6.1
 
 all:
 	@echo "make source   - Create source package"

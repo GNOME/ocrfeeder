@@ -1,3 +1,27 @@
+Version 0.6.1
+==============
+
+New Features
+-------------
+
+* Add zoom control from mouse wheel
+
+Improvements
+-------------
+
+* Show error dialogs when not able to open messages
+* Make i18n more compliant with intltool
+* Add the format to the default engines' arguments
+* Change zoom factor and fixed allowed zoom levels
+* Improve Debian package (thanks to Alberto Garcia)
+
+Bug Fixes
+----------
+
+* Fix encoding problem (gc#8)
+* Fix getting the engine name (gc#10)
+
+
 Version 0.6
 ============
 
