@@ -153,6 +153,8 @@ class Studio:
         delete_dialog.destroy()
     
     def __addImagesToReviewer(self, images):
+        if not images:
+            return
         for image in images:
             pixbuf, image, iter = self.source_images_selector.addImage(image)
             self.source_images_controler.addImage(pixbuf, image)
