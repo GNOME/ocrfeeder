@@ -37,6 +37,7 @@ import math
 import os.path
 import pygtk
 import threading
+import sys
 pygtk.require('2.0')
 _ = gettext.gettext
 
@@ -383,9 +384,8 @@ class ImageReviewer_Controler:
             window_size = float(window_size)
         try:
             image_processor = ImageProcessor(image_reviewer.path_to_image, window_size)
-        except Exception as e:
-            message = '<b>%s</b>\n%s' % (_('Warning:'), str(e)) 
-            warning_dialog = WarningDialog(message)
+        except:
+            warning_dialog = WarningDialog(str(sys.exc_info()[1]))
             warning_dialog.run()
             warning_dialog.destroy()
             return
