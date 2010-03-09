@@ -45,12 +45,15 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
         os.mkdir(dir_name)
     except:
         pass
-    command = 'gs -SDEVICE=jpeg -r600x600 -sPAPERSIZE=letter ' \
+    debug('Converting PDF: ', pdf_file, ' to image')
+    resolution = 300
+    command = 'gs -SDEVICE=jpeg -r%(resolution)sx%(resolution)s -sPAPERSIZE=letter ' \
               '-sOutputFile="%(temp_name)s/%(file_name)s_%%04d.jpg" ' \
               '-dNOPAUSE -dBATCH -- "%(pdf_file)s"' % \
               {'temp_name': dir_name,
                'file_name': os.path.basename(pdf_file),
-               'pdf_file': pdf_file}
+               'pdf_file': pdf_file,
+               'resolution': resolution}
     os.popen(command)
     return dir_name
 
