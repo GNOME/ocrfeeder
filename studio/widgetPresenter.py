@@ -1224,10 +1224,7 @@ class CustomAboutDialog(gtk.AboutDialog):
         self.set_license(GPL_STATEMENT)
         self.set_artists(OCRFEEDER_STUDIO_ARTISTS)
         self.set_comments(_(OCRFEEDER_STUDIO_COMMENTS))
-        translator_credits = ''
-        for translator in OCRFEEDER_STUDIO_TRANSLATORS:
-            translator_credits += translator[0] + ': ' + translator[1] + '\n'
-        self.set_translator_credits(translator_credits)
+        self.set_translator_credits(_('translator-credits'))
         self.set_icon_from_file(WINDOW_ICON)
 
 def getPopupMenu(menus_info):
