@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: orcfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-03-08 20:00+0000\n"
-"PO-Revision-Date: 2010-03-09 20:27+0100\n"
+"POT-Creation-Date: 2010-03-09 19:29+0000\n"
+"PO-Revision-Date: 2010-03-09 20:37+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -606,6 +606,12 @@ msgstr ""
 #: ../studio/widgetPresenter.py:1196
 msgid "Warning"
 msgstr "Advertencia"
+
+#: ../studio/widgetPresenter.py:1227
+msgid "translator-credits"
+msgstr ""
+"Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
+"Andrés Gómez <agomez@igalia.com>, 2009"
 
 #: ../feeder/imageManipulation.py:36
 #, python-format
