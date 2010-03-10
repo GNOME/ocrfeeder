@@ -3,7 +3,7 @@ DESTDIR=/
 BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
 PO_DIR=po
-PO_FILES=$(wildcard $(PO_DIR)/*.po)
+LINGUAS=$(shell cat $(PO_DIR)/LINGUAS)
 VERSION=0.6.1
 
 all:
@@ -26,7 +26,7 @@ update-po: $(PO_DIR)/$(PROJECT).pot
 	mkdir -p $$dirname; \
 	msgfmt $< -o $$dirname/$(PROJECT).mo; \
 
-generate-mo: $(patsubst %.po,%.mo,$(PO_FILES))
+generate-mo: $(patsubst %,$(PO_DIR)/%.mo,$(LINGUAS))
 
 i18n: po/$(PROJECT).pot update-po generate-mo 
 
