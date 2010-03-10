@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=0.5
 Type=Application
-Name=OCRFeeder
-Comment=The complete OCR suite.
+_Name=OCRFeeder
+_Comment=The complete OCR suite.
 TryExec=ocrfeeder
 Exec=ocrfeeder
 Icon=ocrfeeder

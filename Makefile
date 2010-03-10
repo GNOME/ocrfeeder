@@ -4,6 +4,7 @@ BUILDIR=$(CURDIR)/debian/ocrfeeder
 PROJECT=ocrfeeder
 PO_DIR=po
 LINGUAS=$(shell cat $(PO_DIR)/LINGUAS)
+RESOURCES_DIR=resources
 VERSION=0.6.1
 
 all:
@@ -28,7 +29,10 @@ update-po: $(PO_DIR)/$(PROJECT).pot
 
 generate-mo: $(patsubst %,$(PO_DIR)/%.mo,$(LINGUAS))
 
-i18n: po/$(PROJECT).pot update-po generate-mo 
+$(RESOURCES_DIR)/$(PROJECT).desktop: $(RESOURCES_DIR)/$(PROJECT).desktop.in $(PO_DIR)/*.po
+	@intltool-merge -d $(PO_DIR) $(RESOURCES_DIR)/$(PROJECT).desktop.in $(RESOURCES_DIR)/$(PROJECT).desktop
+
+i18n: po/$(PROJECT).pot update-po generate-mo $(RESOURCES_DIR)/$(PROJECT).desktop
 
 source: i18n
 	$(PYTHON) setup.py sdist $(COMPILE)
@@ -51,7 +55,7 @@ clean:
 	$(PYTHON) setup.py clean
 	$(MAKE) -f $(CURDIR)/debian/rules clean
 	rm -rf build/ MANIFEST
-	rm -rf locale po/$(PROJECT).pot
+	rm -rf locale po/$(PROJECT).pot $(RESOURCES_DIR)/$(PROJECT).desktop
 	find . -name '*.pyc' -delete
 
 generatepot:
