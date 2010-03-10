@@ -126,6 +126,7 @@ class SourceImagesSelectorIconView(gtk.IconView):
         self.set_columns(1)
         self.set_reorderable(True)
         self.add_events(gtk.gdk.BUTTON_PRESS_MASK)
+        self.set_selection_mode(gtk.SELECTION_BROWSE)
         self.connect('button-press-event', self.pressedRightButton)
     
     def pressedRightButton(self, target, event):
