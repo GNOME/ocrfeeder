@@ -1,18 +1,18 @@
 [encoding: UTF-8]
+feeder/documentGeneration.py
+feeder/imageManipulation.py
+feeder/layoutAnalysis.py
+feeder/ocrEngines.py
 ocrfeeder
 ocrfeeder-cli
+resources/ocrfeeder.desktop.in
 studio/configuration.py
 studio/customWidgets.py
 studio/dataHolder.py
 studio/studioBuilder.py
 studio/widgetModeler.py
 studio/widgetPresenter.py
-feeder/documentGeneration.py
-feeder/imageManipulation.py
-feeder/layoutAnalysis.py
-feeder/ocrEngines.py
 util/cliutils.py
 util/constants.py
 util/graphics.py
 util/lib.py
-resources/ocrfeeder.desktop.in
