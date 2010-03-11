@@ -70,6 +70,7 @@ def getImagesFromFolder(folder):
             type, detail = mime_type.split('/')
             if type == 'image' and not detail.startswith('svg'):
                 images.append(item)
+    images.sort()
     return images
 
 def getDictFromVariables(variable_list, instance):
