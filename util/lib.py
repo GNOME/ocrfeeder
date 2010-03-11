@@ -47,11 +47,12 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
         pass
     debug('Converting PDF: ', pdf_file, ' to image')
     resolution = 300
+    file_name = os.path.splitext(os.path.basename(pdf_file))[0]
     command = 'gs -SDEVICE=jpeg -r%(resolution)sx%(resolution)s -sPAPERSIZE=letter ' \
               '-sOutputFile="%(temp_name)s/%(file_name)s_%%04d.jpg" ' \
               '-dNOPAUSE -dBATCH -- "%(pdf_file)s"' % \
               {'temp_name': dir_name,
-               'file_name': os.path.basename(pdf_file),
+               'file_name': file_name,
                'pdf_file': pdf_file,
                'resolution': resolution}
     os.popen(command)
