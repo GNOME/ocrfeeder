@@ -1,81 +1,100 @@
 # Swedish translation for ocrfeeder.
-# Copyright (C) 2009 Free Software Foundation, Inc.
+# Copyright (C) 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the ocrfeeder package.
-# Daniel Nylander <po@danielnylander.se>, 2009.
+# Daniel Nylander <po@danielnylander.se>, 2009, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-23 20:42+0000\n"
-"PO-Revision-Date: 2009-12-28 22:05+0100\n"
+"POT-Creation-Date: 2010-03-12 08:18+0100\n"
+"PO-Revision-Date: 2010-03-12 08:19+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: studio/studioBuilder.py:103
+#: ../feeder/imageManipulation.py:36
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"Ett problem inträffade vid försök att öppna bilden:\n"
+" %s\n"
+"Försäkra dig om att bilden finns eller försök att konvertera den till ett annat format."
+
+#: ../resources/ocrfeeder.desktop.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/ocrfeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "Den kompletta OCR-sviten."
+
+#: ../studio/studioBuilder.py:103
 msgid "Images"
 msgstr "Bilder"
 
-#: studio/studioBuilder.py:111
+#: ../studio/studioBuilder.py:111
 msgid "PDF"
 msgstr "PDF"
 
-#: studio/studioBuilder.py:134
+#: ../studio/studioBuilder.py:134
 msgid "Export pages"
 msgstr "Exportera sidor"
 
-#: studio/studioBuilder.py:148
+#: ../studio/studioBuilder.py:148
 msgid "Are you sure you want to delete the current image?"
 msgstr "Är du säker på att du vill ta bort den aktuella bilden?"
 
-#: studio/studioBuilder.py:235
+#: ../studio/studioBuilder.py:237
 msgid "The project hasn't been saved."
 msgstr "Projektet har inte sparats."
 
-#: studio/studioBuilder.py:236
+#: ../studio/studioBuilder.py:238
 msgid "Do you want to save it before closing?"
 msgstr "Vill du spara det innan det stängs?"
 
-#: studio/studioBuilder.py:237
+#: ../studio/studioBuilder.py:239
 msgid "Close anyway"
 msgstr "Stäng ändå"
 
-#: studio/widgetModeler.py:134
-#: studio/widgetPresenter.py:1068
+#: ../studio/widgetModeler.py:136
+#: ../studio/widgetPresenter.py:1087
 msgid "Delete"
 msgstr "Ta bort"
 
-#: studio/widgetModeler.py:362
-#: studio/widgetPresenter.py:580
-#: studio/widgetPresenter.py:587
+#: ../studio/widgetModeler.py:364
+#: ../studio/widgetPresenter.py:588
+#: ../studio/widgetPresenter.py:595
 msgid "Page size"
 msgstr "Sidstorlek"
 
-#: studio/widgetModeler.py:363
+#: ../studio/widgetModeler.py:365
 msgid "Resolution"
 msgstr "Upplösning"
 
-#: studio/widgetModeler.py:366
+#: ../studio/widgetModeler.py:368
 msgid "Zoom"
 msgstr "Zoom"
 
-#: studio/widgetModeler.py:412
+#: ../studio/widgetModeler.py:420
 msgid "Export to HTML"
 msgstr "Exportera till HTML"
 
-#: studio/widgetModeler.py:426
-#: studio/widgetPresenter.py:161
+#: ../studio/widgetModeler.py:434
+#: ../studio/widgetPresenter.py:161
 msgid "Export to ODT"
 msgstr "Exportera till ODT"
 
-#: studio/widgetModeler.py:447
+#: ../studio/widgetModeler.py:455
 msgid "OCRFeeder Projects"
 msgstr "OCRFeeder-projekt"
 
-#: studio/widgetModeler.py:503
+#: ../studio/widgetModeler.py:511
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -86,534 +105,543 @@ msgstr ""
 "\n"
 "Filen finns i \"%(dir)s\". Ersätter du den så kommer den att skrivas över."
 
-#: studio/widgetModeler.py:510
+#: ../studio/widgetModeler.py:518
 msgid "Replace"
 msgstr "Ersätt"
 
-#: studio/widgetPresenter.py:134
+#: ../studio/widgetPresenter.py:134
 msgid "_File"
 msgstr "_Arkiv"
 
-#: studio/widgetPresenter.py:135
+#: ../studio/widgetPresenter.py:135
 msgid "_Quit"
 msgstr "A_vsluta"
 
-#: studio/widgetPresenter.py:135
+#: ../studio/widgetPresenter.py:135
 msgid "Exit the program"
 msgstr "Avsluta programmet"
 
-#: studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:136
 msgid "_Open"
 msgstr "_Öppna"
 
-#: studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:136
 msgid "Open project"
 msgstr "Öppna projekt"
 
-#: studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:137
 msgid "_Save"
 msgstr "_Spara"
 
-#: studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:137
 msgid "Save project"
 msgstr "Spara projektet"
 
-#: studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:138
 msgid "_Save As"
 msgstr "Spara so_m"
 
-#: studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:138
 msgid "Save project with a chosen name"
 msgstr "Spara projektet med ett valt namn"
 
-#: studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:139
 msgid "_Add Image"
 msgstr "_Lägg till bild"
 
-#: studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:139
 msgid "Add another image"
 msgstr "Lägg till ytterligare en bild"
 
-#: studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:140
 msgid "Add _Folder"
 msgstr "Lägg till _mapp"
 
-#: studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:140
 msgid "Add all images in a folder"
 msgstr "Lägg till alla bilder i en mapp"
 
-#: studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:141
 msgid "Append Project"
 msgstr "Lägg till i projekt"
 
-#: studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:141
 msgid "Load a project and append it to the current one"
 msgstr "Läs in ett projekt och lägg till det till det aktuella"
 
-#: studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:142
 msgid "_Import PDF"
 msgstr "_Importera PDF"
 
-#: studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:142
 msgid "Import PDF"
 msgstr "Importera PDF"
 
-#: studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:143
 msgid "_Export..."
 msgstr "_Exportera..."
 
-#: studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:143
 msgid "Export to a chosen format"
 msgstr "Exportera till ett valt format"
 
-#: studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:144
 msgid "_Edit"
 msgstr "R_edigera"
 
-#: studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:145
 msgid "_Edit Page"
 msgstr "R_edigera sida"
 
-#: studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:145
 msgid "Edit page settings"
 msgstr "Redigera sidinställningar"
 
-#: studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:146
 msgid "_Preferences"
 msgstr "_Inställningar"
 
-#: studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:146
 msgid "Configure the application"
 msgstr "Konfigurera programmet"
 
-#: studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:147
 msgid "_Delete Page"
 msgstr "Ta _bort sida"
 
-#: studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:147
 msgid "Delete current page"
 msgstr "Ta bort aktuell sida"
 
-#: studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:148
 msgid "_Clear Project"
 msgstr "_Töm projektet"
 
-#: studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:148
 msgid "Delete all images"
 msgstr "Ta bort alla bilder"
 
-#: studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:149
 msgid "_View"
 msgstr "_Visa"
 
-#: studio/widgetPresenter.py:150
+#: ../studio/widgetPresenter.py:150
 msgid "Zoom In"
 msgstr "Zooma in"
 
-#: studio/widgetPresenter.py:151
+#: ../studio/widgetPresenter.py:151
 msgid "Zoom Out"
 msgstr "Zooma ut"
 
-#: studio/widgetPresenter.py:152
+#: ../studio/widgetPresenter.py:152
 msgid "Best Fit"
 msgstr "Bästa passning"
 
-#: studio/widgetPresenter.py:153
+#: ../studio/widgetPresenter.py:153
 msgid "Normal Size"
 msgstr "Normal storlek"
 
-#: studio/widgetPresenter.py:154
+#: ../studio/widgetPresenter.py:154
 msgid "_Document"
 msgstr "_Dokument"
 
-#: studio/widgetPresenter.py:155
+#: ../studio/widgetPresenter.py:155
 msgid "_Tools"
 msgstr "Ver_ktyg"
 
-#: studio/widgetPresenter.py:156
+#: ../studio/widgetPresenter.py:156
 msgid "_OCR Engines"
 msgstr "_OCR-motorer"
 
-#: studio/widgetPresenter.py:156
+#: ../studio/widgetPresenter.py:156
 msgid "Manage OCR engines"
 msgstr "Hantera OCR-motorer"
 
-#: studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:157
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:157
 msgid "Process image with unpaper"
 msgstr "Behandla bilden med unpaper"
 
-#: studio/widgetPresenter.py:158
+#: ../studio/widgetPresenter.py:158
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: studio/widgetPresenter.py:159
+#: ../studio/widgetPresenter.py:159
 msgid "_About"
 msgstr "_Om"
 
-#: studio/widgetPresenter.py:159
+#: ../studio/widgetPresenter.py:159
 msgid "About this application"
 msgstr "Om detta program"
 
-#: studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:160
 msgid "_Recognize Document"
 msgstr "_Känn igen dokument"
 
-#: studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:160
 msgid "Automatic Detection and Recognition"
 msgstr "Automatisk identifiering och igenkänning"
 
-#: studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:161
 msgid "_Generate ODT"
 msgstr "_Generera ODT"
 
-#: studio/widgetPresenter.py:211
-#: studio/widgetPresenter.py:382
+#: ../studio/widgetPresenter.py:219
+#: ../studio/widgetPresenter.py:390
 msgid "Text"
 msgstr "Text"
 
-#: studio/widgetPresenter.py:212
+#: ../studio/widgetPresenter.py:220
 msgid "Image"
 msgstr "Bild"
 
-#: studio/widgetPresenter.py:213
+#: ../studio/widgetPresenter.py:221
 msgid "Type"
 msgstr "Typ"
 
-#: studio/widgetPresenter.py:223
+#: ../studio/widgetPresenter.py:231
 msgid "Clip"
 msgstr "Klipp"
 
-#: studio/widgetPresenter.py:227
+#: ../studio/widgetPresenter.py:235
 msgid "Bounds"
 msgstr "Gränser"
 
-#: studio/widgetPresenter.py:230
+#: ../studio/widgetPresenter.py:238
 msgid "X"
 msgstr "X"
 
-#: studio/widgetPresenter.py:232
+#: ../studio/widgetPresenter.py:240
 msgid "Y"
 msgstr "Y"
 
-#: studio/widgetPresenter.py:235
-#: studio/widgetPresenter.py:601
+#: ../studio/widgetPresenter.py:243
+#: ../studio/widgetPresenter.py:609
 msgid "Width"
 msgstr "Bredd"
 
-#: studio/widgetPresenter.py:237
-#: studio/widgetPresenter.py:603
+#: ../studio/widgetPresenter.py:245
+#: ../studio/widgetPresenter.py:611
 msgid "Height"
 msgstr "Höjd"
 
-#: studio/widgetPresenter.py:333
+#: ../studio/widgetPresenter.py:341
 msgid "Left"
 msgstr "Vänster"
 
-#: studio/widgetPresenter.py:337
+#: ../studio/widgetPresenter.py:345
 msgid "Left aligned"
 msgstr "Vänsterjusterat"
 
-#: studio/widgetPresenter.py:339
+#: ../studio/widgetPresenter.py:347
 msgid "Center"
 msgstr "Centrera"
 
-#: studio/widgetPresenter.py:344
+#: ../studio/widgetPresenter.py:352
 msgid "Centered"
 msgstr "Centrerad"
 
-#: studio/widgetPresenter.py:346
+#: ../studio/widgetPresenter.py:354
 msgid "Right"
 msgstr "Höger"
 
-#: studio/widgetPresenter.py:351
+#: ../studio/widgetPresenter.py:359
 msgid "Right aligned"
 msgstr "Högerjusterad"
 
-#: studio/widgetPresenter.py:353
+#: ../studio/widgetPresenter.py:361
 msgid "Fill"
 msgstr "Fyll"
 
-#: studio/widgetPresenter.py:358
+#: ../studio/widgetPresenter.py:366
 msgid "Filled"
 msgstr "Fylld"
 
-#: studio/widgetPresenter.py:364
+#: ../studio/widgetPresenter.py:372
 msgid "OCR"
 msgstr "OCR"
 
-#: studio/widgetPresenter.py:374
+#. Text Properties
+#: ../studio/widgetPresenter.py:382
 msgid "Text Properties"
 msgstr "Textegenskaper"
 
-#: studio/widgetPresenter.py:388
+#: ../studio/widgetPresenter.py:396
 msgid "Font"
 msgstr "Typsnitt"
 
-#: studio/widgetPresenter.py:395
+#: ../studio/widgetPresenter.py:403
 msgid "Align"
 msgstr "Justera"
 
-#: studio/widgetPresenter.py:399
+#: ../studio/widgetPresenter.py:407
 msgid "Spacing"
 msgstr "Mellanrum"
 
-#: studio/widgetPresenter.py:403
+#: ../studio/widgetPresenter.py:411
 msgid "Line"
 msgstr "Linje"
 
-#: studio/widgetPresenter.py:405
+#: ../studio/widgetPresenter.py:413
 msgid "Letter"
 msgstr "Bokstav"
 
-#: studio/widgetPresenter.py:410
+#: ../studio/widgetPresenter.py:418
 msgid "Style"
 msgstr "Stil"
 
-#: studio/widgetPresenter.py:415
-#: studio/widgetPresenter.py:428
+#: ../studio/widgetPresenter.py:423
+#: ../studio/widgetPresenter.py:436
 msgid "Angle"
 msgstr "Vinkel"
 
-#: studio/widgetPresenter.py:426
+#: ../studio/widgetPresenter.py:434
 msgid "Detect"
 msgstr "Identifiera"
 
-#: studio/widgetPresenter.py:510
+#: ../studio/widgetPresenter.py:518
 msgid "Save File"
 msgstr "Spara fil"
 
-#: studio/widgetPresenter.py:513
+#: ../studio/widgetPresenter.py:521
 msgid "Open File"
 msgstr "Öppna fil"
 
-#: studio/widgetPresenter.py:517
+#: ../studio/widgetPresenter.py:525
 msgid "Open Folder"
 msgstr "Öppna mapp"
 
-#: studio/widgetPresenter.py:544
+#: ../studio/widgetPresenter.py:552
 msgid "Pages to export"
 msgstr "Sidor att exportera"
 
-#: studio/widgetPresenter.py:546
-#: studio/widgetPresenter.py:612
+#: ../studio/widgetPresenter.py:554
+#: ../studio/widgetPresenter.py:620
 msgid "All"
 msgstr "Alla"
 
-#: studio/widgetPresenter.py:547
-#: studio/widgetPresenter.py:611
+#: ../studio/widgetPresenter.py:555
+#: ../studio/widgetPresenter.py:619
 msgid "Current"
 msgstr "Aktuell"
 
-#: studio/widgetPresenter.py:563
+#: ../studio/widgetPresenter.py:571
 msgid "Choose the format"
 msgstr "Välj format"
 
-#: studio/widgetPresenter.py:592
-#: studio/widgetPresenter.py:687
-#: studio/widgetPresenter.py:705
-#: studio/widgetPresenter.py:1011
+#: ../studio/widgetPresenter.py:600
+#: ../studio/widgetPresenter.py:702
+#: ../studio/widgetPresenter.py:720
+#: ../studio/widgetPresenter.py:1026
 msgid "Custom"
 msgstr "Anpassad"
 
-#: studio/widgetPresenter.py:609
+#: ../studio/widgetPresenter.py:617
 msgid "Affected pages"
 msgstr "Påverkade sidor"
 
-#: studio/widgetPresenter.py:663
+#: ../studio/widgetPresenter.py:678
 msgid "Unpaper Image Processor"
 msgstr "Bildbehandlaren Unpaper"
 
-#: studio/widgetPresenter.py:684
+#: ../studio/widgetPresenter.py:699
 msgid "Noise Filter Intensity"
 msgstr "Intensistet för brusfilter"
 
-#: studio/widgetPresenter.py:686
-#: studio/widgetPresenter.py:704
+#: ../studio/widgetPresenter.py:701
+#: ../studio/widgetPresenter.py:719
 msgid "Default"
 msgstr "Standard"
 
-#: studio/widgetPresenter.py:688
-#: studio/widgetPresenter.py:706
+#: ../studio/widgetPresenter.py:703
+#: ../studio/widgetPresenter.py:721
 msgid "None"
 msgstr "Ingen"
 
-#: studio/widgetPresenter.py:702
+#: ../studio/widgetPresenter.py:717
 msgid "Gray Filter Size"
 msgstr "Storlek för gråfilter"
 
-#: studio/widgetPresenter.py:720
+#: ../studio/widgetPresenter.py:735
 msgid "Black Filter"
 msgstr "Svartfilter"
 
-#: studio/widgetPresenter.py:721
+#: ../studio/widgetPresenter.py:736
 msgid "Use"
 msgstr "Använd"
 
-#: studio/widgetPresenter.py:727
-#: studio/widgetPresenter.py:733
+#: ../studio/widgetPresenter.py:742
+#: ../studio/widgetPresenter.py:748
 msgid "Preview"
 msgstr "Förhandsvisa"
 
-#: studio/widgetPresenter.py:743
+#: ../studio/widgetPresenter.py:758
 msgid "Extra Options"
 msgstr "Extra alternativ"
 
-#: studio/widgetPresenter.py:777
+#: ../studio/widgetPresenter.py:792
 msgid "Performing Unpaper"
 msgstr "Genomför unpaper"
 
-#: studio/widgetPresenter.py:777
+#: ../studio/widgetPresenter.py:792
 msgid "Performing unpaper. Please wait..."
 msgstr "Genomför unpaper. Vänta..."
 
-#: studio/widgetPresenter.py:847
-#: studio/widgetPresenter.py:858
+#: ../studio/widgetPresenter.py:862
+#: ../studio/widgetPresenter.py:873
 msgid "An error occured!"
 msgstr "Ett fel inträffade!"
 
-#: studio/widgetPresenter.py:847
-#: studio/widgetPresenter.py:858
+#: ../studio/widgetPresenter.py:862
+#: ../studio/widgetPresenter.py:873
 msgid "Error"
 msgstr "Fel"
 
-#: studio/widgetPresenter.py:867
+#: ../studio/widgetPresenter.py:882
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: studio/widgetPresenter.py:916
+#: ../studio/widgetPresenter.py:931
 msgid "General"
 msgstr "Allmänt"
 
-#: studio/widgetPresenter.py:919
+#: ../studio/widgetPresenter.py:934
 msgid "Temporary folder"
 msgstr "Temporär mapp"
 
-#: studio/widgetPresenter.py:923
-#: studio/widgetPresenter.py:979
+#: ../studio/widgetPresenter.py:938
+#: ../studio/widgetPresenter.py:994
 msgid "Choose"
 msgstr "Välj"
 
-#: studio/widgetPresenter.py:940
+#: ../studio/widgetPresenter.py:955
 msgid "Appearance"
 msgstr "Utseende"
 
-#: studio/widgetPresenter.py:943
+#: ../studio/widgetPresenter.py:958
 msgid "Select boxes colors"
 msgstr "Välj rutfärger"
 
-#: studio/widgetPresenter.py:950
+#: ../studio/widgetPresenter.py:965
 msgid "Text fill color"
 msgstr "Fyllnadsfärg för text"
 
-#: studio/widgetPresenter.py:953
+#: ../studio/widgetPresenter.py:968
 msgid "Text stroke color"
 msgstr "Strykfärg för text"
 
-#: studio/widgetPresenter.py:956
+#: ../studio/widgetPresenter.py:971
 msgid "Image fill color"
 msgstr "Fyllnadsfärg för bilder"
 
-#: studio/widgetPresenter.py:959
+#: ../studio/widgetPresenter.py:974
 msgid "Image stroke color"
 msgstr "Strykfärg för bilder"
 
-#: studio/widgetPresenter.py:972
+#: ../studio/widgetPresenter.py:987
 msgid "Tools"
 msgstr "Verktyg"
 
-#: studio/widgetPresenter.py:975
+#: ../studio/widgetPresenter.py:990
 msgid "Path to unpaper"
 msgstr "Sökväg till unpaper"
 
-#: studio/widgetPresenter.py:987
-#: studio/widgetPresenter.py:1046
-#: studio/widgetPresenter.py:1059
-#: studio/widgetPresenter.py:1128
+#: ../studio/widgetPresenter.py:1002
+#: ../studio/widgetPresenter.py:1061
+#: ../studio/widgetPresenter.py:1078
+#: ../studio/widgetPresenter.py:1147
 msgid "OCR Engines"
 msgstr "OCR-motorer"
 
-#: studio/widgetPresenter.py:997
+#: ../studio/widgetPresenter.py:1012
 msgid "Favorite engine:"
 msgstr "Favoritmotor:"
 
-#: studio/widgetPresenter.py:1009
+#: ../studio/widgetPresenter.py:1024
 msgid "Window size"
 msgstr "Fönsterstorlek"
 
-#: studio/widgetPresenter.py:1010
+#: ../studio/widgetPresenter.py:1025
 msgid "Automatic"
 msgstr "Automatiskt"
 
-#: studio/widgetPresenter.py:1063
+#: ../studio/widgetPresenter.py:1082
 msgid "Engine"
 msgstr "Motor"
 
-#: studio/widgetPresenter.py:1067
+#: ../studio/widgetPresenter.py:1086
 msgid "Add"
 msgstr "Lägg till"
 
-#: studio/widgetPresenter.py:1069
+#: ../studio/widgetPresenter.py:1088
 msgid "Edit"
 msgstr "Redigera"
 
-#: studio/widgetPresenter.py:1082
+#: ../studio/widgetPresenter.py:1101
 msgid "Are you sure you want to delete this engine?"
 msgstr "Är du säker på att du vill ta bort denna motor?"
 
-#: studio/widgetPresenter.py:1130
+#: ../studio/widgetPresenter.py:1149
 #, python-format
 msgid "%s engine"
 msgstr "%s-motor"
 
-#: studio/widgetPresenter.py:1153
+#: ../studio/widgetPresenter.py:1172
 msgid "Name"
 msgstr "Namn"
 
-#: studio/widgetPresenter.py:1153
+#: ../studio/widgetPresenter.py:1172
 msgid "Engine name"
 msgstr "Namn på motor"
 
-#: studio/widgetPresenter.py:1155
+#: ../studio/widgetPresenter.py:1174
 msgid "Image format"
 msgstr "Bildformat"
 
-#: studio/widgetPresenter.py:1155
+#: ../studio/widgetPresenter.py:1174
 msgid "The required image format"
 msgstr "Det nödvändiga bildformatet"
 
-#: studio/widgetPresenter.py:1157
+#: ../studio/widgetPresenter.py:1176
 msgid "Failure string"
 msgstr "Felsträng"
 
-#: studio/widgetPresenter.py:1157
+#: ../studio/widgetPresenter.py:1176
 msgid "The failure string or character that this engine uses"
 msgstr "Felsträngen eller tecknet som denna motor använder"
 
-#: studio/widgetPresenter.py:1159
+#: ../studio/widgetPresenter.py:1178
 msgid "Engine Path"
 msgstr "Sökväg till motor"
 
-#: studio/widgetPresenter.py:1159
+#: ../studio/widgetPresenter.py:1178
 msgid "The path to the engine program"
 msgstr "Sökvägen till motorprogrammet"
 
-#: studio/widgetPresenter.py:1161
+#: ../studio/widgetPresenter.py:1180
 msgid "Engine arguments"
 msgstr "Argument för motor"
 
-#: studio/widgetPresenter.py:1161
+#: ../studio/widgetPresenter.py:1180
 msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
 msgstr "Argument, använd $IMAGE för bild och $FILE om den skriver till en fil"
 
-#: studio/widgetPresenter.py:1177
+#: ../studio/widgetPresenter.py:1196
 msgid "Error setting the new engine, please check your engine settings."
 msgstr "Fel vid inställning av nya motorn. Kontrollera inställningarna för motorn."
 
-#: studio/widgetPresenter.py:1177
+#: ../studio/widgetPresenter.py:1196
 msgid "Warning"
 msgstr "Varning"
+
+#: ../studio/widgetPresenter.py:1227
+msgid "translator-credits"
+msgstr ""
+"Daniel Nylander <po@danielnylander.se>\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>."
 
