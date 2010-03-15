@@ -9,14 +9,33 @@ msgstr ""
 "Project-Id-Version: orcfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-03-10 11:30+0000\n"
-"PO-Revision-Date: 2010-03-14 23:09+0100\n"
+"POT-Creation-Date: 2010-03-15 18:04+0000\n"
+"PO-Revision-Date: 2010-03-15 19:26+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../feeder/imageManipulation.py:36
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"Ocurrió un problema al intentar abrir la imagen:\n"
+" %s\n"
+"Asegúrese de que la imagen existe o intente convertirla a otro formato."
+
+#: ../resources/ocrfeeder.desktop.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/ocrfeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "La aplicación completa de OCR"
 
 #: ../studio/studioBuilder.py:103
 msgid "Images"
@@ -46,36 +65,36 @@ msgstr "¿Quiere guardar antes de cerrar?"
 msgid "Close anyway"
 msgstr "Cerrar de todas formas"
 
-#: ../studio/widgetModeler.py:135 ../studio/widgetPresenter.py:1087
+#: ../studio/widgetModeler.py:136 ../studio/widgetPresenter.py:1087
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../studio/widgetModeler.py:363 ../studio/widgetPresenter.py:588
+#: ../studio/widgetModeler.py:364 ../studio/widgetPresenter.py:588
 #: ../studio/widgetPresenter.py:595
 msgid "Page size"
 msgstr "Tamaño de página"
 
-#: ../studio/widgetModeler.py:364
+#: ../studio/widgetModeler.py:365
 msgid "Resolution"
 msgstr "Resolución"
 
-#: ../studio/widgetModeler.py:367
+#: ../studio/widgetModeler.py:368
 msgid "Zoom"
 msgstr "Ampliación"
 
-#: ../studio/widgetModeler.py:419
+#: ../studio/widgetModeler.py:420
 msgid "Export to HTML"
 msgstr "Exportar a HTML"
 
-#: ../studio/widgetModeler.py:433 ../studio/widgetPresenter.py:161
+#: ../studio/widgetModeler.py:434 ../studio/widgetPresenter.py:161
 msgid "Export to ODT"
 msgstr "Exportar a ODT"
 
-#: ../studio/widgetModeler.py:454
+#: ../studio/widgetModeler.py:455
 msgid "OCRFeeder Projects"
 msgstr "Proyectos de OCRFeeder"
 
-#: ../studio/widgetModeler.py:510
+#: ../studio/widgetModeler.py:511
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -87,7 +106,7 @@ msgstr ""
 "El archivo ya existe en «%(dir)s». Al reemplazar se sobreescribirá el "
 "contenido."
 
-#: ../studio/widgetModeler.py:517
+#: ../studio/widgetModeler.py:518
 msgid "Replace"
 msgstr "Reemplazar"
 
@@ -120,8 +139,9 @@ msgid "Save project"
 msgstr "Guardar proyecto"
 
 #: ../studio/widgetPresenter.py:138
-msgid "_Save As"
-msgstr "Guardar co_mo"
+#| msgid "_Save As"
+msgid "_Save As…"
+msgstr "Guardar co_mo…"
 
 #: ../studio/widgetPresenter.py:138
 msgid "Save project with a chosen name"
@@ -160,7 +180,8 @@ msgid "Import PDF"
 msgstr "Importar PDF"
 
 #: ../studio/widgetPresenter.py:143
-msgid "_Export..."
+#| msgid "_Export..."
+msgid "_Export…"
 msgstr "_Exportar…"
 
 #: ../studio/widgetPresenter.py:143
@@ -372,13 +393,18 @@ msgstr "Letra"
 msgid "Style"
 msgstr "Estilo"
 
-#: ../studio/widgetPresenter.py:423 ../studio/widgetPresenter.py:436
+#: ../studio/widgetPresenter.py:423
 msgid "Angle"
 msgstr "Ángulo"
 
 #: ../studio/widgetPresenter.py:434
 msgid "Detect"
 msgstr "Detectar"
+
+#: ../studio/widgetPresenter.py:436
+#| msgid "Angle"
+msgid "Angle:"
+msgstr "Ángulo:"
 
 #: ../studio/widgetPresenter.py:518
 msgid "Save File"
@@ -408,10 +434,10 @@ msgstr "Actual"
 msgid "Choose the format"
 msgstr "Elegir el formato"
 
-#: ../studio/widgetPresenter.py:600 ../studio/widgetPresenter.py:702
-#: ../studio/widgetPresenter.py:720 ../studio/widgetPresenter.py:1026
-msgid "Custom"
-msgstr "Personalizado"
+#: ../studio/widgetPresenter.py:600
+#| msgid "Custom"
+msgid "Custom…"
+msgstr "Personalizado..."
 
 #: ../studio/widgetPresenter.py:617
 msgid "Affected pages"
@@ -428,6 +454,11 @@ msgstr "Intensidad del filtro de ruido"
 #: ../studio/widgetPresenter.py:701 ../studio/widgetPresenter.py:719
 msgid "Default"
 msgstr "Predeterminado"
+
+#: ../studio/widgetPresenter.py:702 ../studio/widgetPresenter.py:720
+#: ../studio/widgetPresenter.py:1026
+msgid "Custom"
+msgstr "Personalizado"
 
 #: ../studio/widgetPresenter.py:703 ../studio/widgetPresenter.py:721
 msgid "None"
@@ -458,11 +489,13 @@ msgid "Performing Unpaper"
 msgstr "Realizar unpaper"
 
 #: ../studio/widgetPresenter.py:792
-msgid "Performing unpaper. Please wait..."
+#| msgid "Performing unpaper. Please wait..."
+msgid "Performing unpaper. Please wait…"
 msgstr "Realizando unpaper. Espere…"
 
 #: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
-msgid "An error occured!"
+#| msgid "An error occured!"
+msgid "An error occurred!"
 msgstr "Ocurrió un error"
 
 #: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
@@ -490,7 +523,8 @@ msgid "Appearance"
 msgstr "Apariencia"
 
 #: ../studio/widgetPresenter.py:958
-msgid "Select boxes colors"
+#| msgid "Select boxes colors"
+msgid "Select boxes' colors"
 msgstr "Seleccionar cajas de colores"
 
 #: ../studio/widgetPresenter.py:965
@@ -592,16 +626,15 @@ msgid "Engine arguments"
 msgstr "Argumentos del motor"
 
 #: ../studio/widgetPresenter.py:1180
-msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
+#| msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
-"Para los argumentos, use $IMAGE para imágenes y $FILE si se escribe a un "
-"archivo"
+"Argumentos: use $IMAGE para imágenes y $FILE si se escribe a un archivo"
 
 #: ../studio/widgetPresenter.py:1196
-msgid "Error setting the new engine, please check your engine settings."
-msgstr ""
-"Ocurrió un error configurando el motor nuevo, compruebe los ajustes de su "
-"motor."
+#| msgid "Error setting the new engine, please check your engine settings."
+msgid "Error setting the new engine; please check your engine settings."
+msgstr "Error al configurar el motor nuevo; compruebe los ajustes de su motor."
 
 #: ../studio/widgetPresenter.py:1196
 msgid "Warning"
@@ -612,23 +645,3 @@ msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
 "Andrés Gómez <agomez@igalia.com>, 2009"
-
-#: ../feeder/imageManipulation.py:36
-#, python-format
-msgid ""
-"A problem occurred while trying to open the image:\n"
-" %s\n"
-"Ensure the image exists or try converting it to another format."
-msgstr ""
-"Ocurrió un problema al intentar abrir la imagen:\n"
-" %s\n"
-"Asegúrese de que la imagen existe o intente convertirla a otro formato."
-
-#: ../resources/ocrfeeder.desktop.in.h:1
-#| msgid "OCRFeeder Projects"
-msgid "OCRFeeder"
-msgstr "OCRFeeder"
-
-#: ../resources/ocrfeeder.desktop.in.h:2
-msgid "The complete OCR suite."
-msgstr "La aplicación completa de OCR"
