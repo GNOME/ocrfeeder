@@ -1,0 +1,617 @@
+# Norwegian bokmål translation of ocrfeeder.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Kjartan Maraas <kmaraas@broadpark.no>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder\n"
+"Report-Msgid-Bugs-To:\n"
+"POT-Creation-Date: 2010-03-15 11:21+0100\n"
+"PO-Revision-Date: 2010-03-15 11:27+0100\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../feeder/imageManipulation.py:36
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+
+#: ../resources/ocrfeeder.desktop.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/ocrfeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "Komplett OCR-suite."
+
+#: ../studio/studioBuilder.py:103
+msgid "Images"
+msgstr "Bilder"
+
+#: ../studio/studioBuilder.py:111
+msgid "PDF"
+msgstr "PDF"
+
+#: ../studio/studioBuilder.py:134
+msgid "Export pages"
+msgstr "Eksporter sider"
+
+#: ../studio/studioBuilder.py:148
+msgid "Are you sure you want to delete the current image?"
+msgstr "Er du sikker på at du vil slette dette bildet?"
+
+#: ../studio/studioBuilder.py:237
+msgid "The project hasn't been saved."
+msgstr "Prosjektet er ikke lagret."
+
+#: ../studio/studioBuilder.py:238
+msgid "Do you want to save it before closing?"
+msgstr "Vil du lagre det før du lukker programmet?"
+
+#: ../studio/studioBuilder.py:239
+msgid "Close anyway"
+msgstr "Lukk likevel"
+
+#: ../studio/widgetModeler.py:136 ../studio/widgetPresenter.py:1087
+msgid "Delete"
+msgstr "Slett"
+
+#: ../studio/widgetModeler.py:364 ../studio/widgetPresenter.py:588
+#: ../studio/widgetPresenter.py:595
+msgid "Page size"
+msgstr "Papirstørrelse"
+
+#: ../studio/widgetModeler.py:365
+msgid "Resolution"
+msgstr "Oppløsing"
+
+#: ../studio/widgetModeler.py:368
+msgid "Zoom"
+msgstr "Zoom"
+
+#: ../studio/widgetModeler.py:420
+msgid "Export to HTML"
+msgstr "Eksporter til HTML"
+
+#: ../studio/widgetModeler.py:434 ../studio/widgetPresenter.py:161
+msgid "Export to ODT"
+msgstr "Eksporter til ODT"
+
+#: ../studio/widgetModeler.py:455
+msgid "OCRFeeder Projects"
+msgstr ""
+
+#: ../studio/widgetModeler.py:511
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+
+#: ../studio/widgetModeler.py:518
+msgid "Replace"
+msgstr "Erstatt"
+
+#: ../studio/widgetPresenter.py:134
+msgid "_File"
+msgstr "_Fil"
+
+#: ../studio/widgetPresenter.py:135
+msgid "_Quit"
+msgstr "A_vslutt"
+
+#: ../studio/widgetPresenter.py:135
+msgid "Exit the program"
+msgstr "Avslutt programmet"
+
+#: ../studio/widgetPresenter.py:136
+msgid "_Open"
+msgstr "_Åpne"
+
+#: ../studio/widgetPresenter.py:136
+msgid "Open project"
+msgstr "Åpne prosjekt"
+
+#: ../studio/widgetPresenter.py:137
+msgid "_Save"
+msgstr "_Lagre"
+
+#: ../studio/widgetPresenter.py:137
+msgid "Save project"
+msgstr "Lagre prosjekt"
+
+#: ../studio/widgetPresenter.py:138
+msgid "_Save As"
+msgstr "L_agre som"
+
+#: ../studio/widgetPresenter.py:138
+msgid "Save project with a chosen name"
+msgstr "Lagre prosjektet med et nytt navn"
+
+#: ../studio/widgetPresenter.py:139
+msgid "_Add Image"
+msgstr "_Legg til bilde"
+
+#: ../studio/widgetPresenter.py:139
+msgid "Add another image"
+msgstr "Legg til et nytt bilde"
+
+#: ../studio/widgetPresenter.py:140
+msgid "Add _Folder"
+msgstr "Legg til _mappe"
+
+#: ../studio/widgetPresenter.py:140
+msgid "Add all images in a folder"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:141
+msgid "Append Project"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:141
+msgid "Load a project and append it to the current one"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:142
+msgid "_Import PDF"
+msgstr "_Importer PDF"
+
+#: ../studio/widgetPresenter.py:142
+msgid "Import PDF"
+msgstr "Importer PDF"
+
+#: ../studio/widgetPresenter.py:143
+msgid "_Export..."
+msgstr "_Eksporter..."
+
+#: ../studio/widgetPresenter.py:143
+msgid "Export to a chosen format"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:144
+msgid "_Edit"
+msgstr "R_ediger"
+
+#: ../studio/widgetPresenter.py:145
+msgid "_Edit Page"
+msgstr "R_ediger side"
+
+#: ../studio/widgetPresenter.py:145
+msgid "Edit page settings"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:146
+msgid "_Preferences"
+msgstr "_Brukervalg"
+
+#: ../studio/widgetPresenter.py:146
+msgid "Configure the application"
+msgstr "Konfigurer programmet"
+
+#: ../studio/widgetPresenter.py:147
+msgid "_Delete Page"
+msgstr "_Slett side"
+
+#: ../studio/widgetPresenter.py:147
+msgid "Delete current page"
+msgstr "Slett aktiv side"
+
+#: ../studio/widgetPresenter.py:148
+msgid "_Clear Project"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:148
+msgid "Delete all images"
+msgstr "Slett alle bilder"
+
+#: ../studio/widgetPresenter.py:149
+msgid "_View"
+msgstr "_Vis"
+
+#: ../studio/widgetPresenter.py:150
+msgid "Zoom In"
+msgstr "Zoom inn"
+
+#: ../studio/widgetPresenter.py:151
+msgid "Zoom Out"
+msgstr "Zoom ut"
+
+#: ../studio/widgetPresenter.py:152
+msgid "Best Fit"
+msgstr "Beste tilpasning"
+
+#: ../studio/widgetPresenter.py:153
+msgid "Normal Size"
+msgstr "Normal størrelse"
+
+#: ../studio/widgetPresenter.py:154
+msgid "_Document"
+msgstr "_Dokument"
+
+#: ../studio/widgetPresenter.py:155
+msgid "_Tools"
+msgstr "Verk_tøy"
+
+#: ../studio/widgetPresenter.py:156
+msgid "_OCR Engines"
+msgstr "_OCR-motorer"
+
+#: ../studio/widgetPresenter.py:156
+msgid "Manage OCR engines"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:157
+msgid "_Unpaper"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:157
+msgid "Process image with unpaper"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:158
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: ../studio/widgetPresenter.py:159
+msgid "_About"
+msgstr "_Om"
+
+#: ../studio/widgetPresenter.py:159
+msgid "About this application"
+msgstr "Om dette programmet"
+
+#: ../studio/widgetPresenter.py:160
+msgid "_Recognize Document"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:160
+msgid "Automatic Detection and Recognition"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:161
+msgid "_Generate ODT"
+msgstr "_Generer ODT"
+
+#: ../studio/widgetPresenter.py:219 ../studio/widgetPresenter.py:390
+msgid "Text"
+msgstr "Tekst"
+
+#: ../studio/widgetPresenter.py:220
+msgid "Image"
+msgstr "Bilde"
+
+#: ../studio/widgetPresenter.py:221
+msgid "Type"
+msgstr "Type"
+
+#: ../studio/widgetPresenter.py:231
+msgid "Clip"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:235
+msgid "Bounds"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:238
+msgid "X"
+msgstr "X"
+
+#: ../studio/widgetPresenter.py:240
+msgid "Y"
+msgstr "Y"
+
+#: ../studio/widgetPresenter.py:243 ../studio/widgetPresenter.py:609
+msgid "Width"
+msgstr "Bredde"
+
+#: ../studio/widgetPresenter.py:245 ../studio/widgetPresenter.py:611
+msgid "Height"
+msgstr "Høyde"
+
+#: ../studio/widgetPresenter.py:341
+msgid "Left"
+msgstr "Venstre"
+
+#: ../studio/widgetPresenter.py:345
+msgid "Left aligned"
+msgstr "Venstrejustert"
+
+#: ../studio/widgetPresenter.py:347
+msgid "Center"
+msgstr "Senter"
+
+#: ../studio/widgetPresenter.py:352
+msgid "Centered"
+msgstr "Sentrert"
+
+#: ../studio/widgetPresenter.py:354
+msgid "Right"
+msgstr "Høyre"
+
+#: ../studio/widgetPresenter.py:359
+msgid "Right aligned"
+msgstr "Høyrejustert"
+
+#: ../studio/widgetPresenter.py:361
+msgid "Fill"
+msgstr "Fyll"
+
+#: ../studio/widgetPresenter.py:366
+msgid "Filled"
+msgstr "Fylt"
+
+#: ../studio/widgetPresenter.py:372
+msgid "OCR"
+msgstr "OCR"
+
+#. Text Properties
+#: ../studio/widgetPresenter.py:382
+msgid "Text Properties"
+msgstr "Egenskaper for tekst"
+
+#: ../studio/widgetPresenter.py:396
+msgid "Font"
+msgstr "Skrift"
+
+#: ../studio/widgetPresenter.py:403
+msgid "Align"
+msgstr "Juster"
+
+#: ../studio/widgetPresenter.py:407
+msgid "Spacing"
+msgstr "Mellomrom"
+
+#: ../studio/widgetPresenter.py:411
+msgid "Line"
+msgstr "Linje"
+
+#: ../studio/widgetPresenter.py:413
+msgid "Letter"
+msgstr "Bokstav"
+
+#: ../studio/widgetPresenter.py:418
+msgid "Style"
+msgstr "Stil"
+
+#: ../studio/widgetPresenter.py:423 ../studio/widgetPresenter.py:436
+msgid "Angle"
+msgstr "Vinkel"
+
+#: ../studio/widgetPresenter.py:434
+msgid "Detect"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:518
+msgid "Save File"
+msgstr "Lagre fil"
+
+#: ../studio/widgetPresenter.py:521
+msgid "Open File"
+msgstr "Åpne fil"
+
+#: ../studio/widgetPresenter.py:525
+msgid "Open Folder"
+msgstr "Åpne mappe"
+
+#: ../studio/widgetPresenter.py:552
+msgid "Pages to export"
+msgstr "Sider som skal eksporteres"
+
+#: ../studio/widgetPresenter.py:554 ../studio/widgetPresenter.py:620
+msgid "All"
+msgstr "Alle"
+
+#: ../studio/widgetPresenter.py:555 ../studio/widgetPresenter.py:619
+msgid "Current"
+msgstr "Aktiv"
+
+#: ../studio/widgetPresenter.py:571
+msgid "Choose the format"
+msgstr "Velg format"
+
+#: ../studio/widgetPresenter.py:600 ../studio/widgetPresenter.py:702
+#: ../studio/widgetPresenter.py:720 ../studio/widgetPresenter.py:1026
+msgid "Custom"
+msgstr "Egendefinert"
+
+#: ../studio/widgetPresenter.py:617
+msgid "Affected pages"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:678
+msgid "Unpaper Image Processor"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:699
+msgid "Noise Filter Intensity"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:701 ../studio/widgetPresenter.py:719
+msgid "Default"
+msgstr "Forvalg"
+
+#: ../studio/widgetPresenter.py:703 ../studio/widgetPresenter.py:721
+msgid "None"
+msgstr "Ingen"
+
+#: ../studio/widgetPresenter.py:717
+msgid "Gray Filter Size"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:735
+msgid "Black Filter"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:736
+msgid "Use"
+msgstr "Bruk"
+
+#: ../studio/widgetPresenter.py:742 ../studio/widgetPresenter.py:748
+msgid "Preview"
+msgstr "Forhåndsvis"
+
+#: ../studio/widgetPresenter.py:758
+msgid "Extra Options"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:792
+msgid "Performing Unpaper"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:792
+msgid "Performing unpaper. Please wait..."
+msgstr ""
+
+#: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
+msgid "An error occured!"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
+msgid "Error"
+msgstr "Feil"
+
+#: ../studio/widgetPresenter.py:882
+msgid "Preferences"
+msgstr "Brukervalg"
+
+#: ../studio/widgetPresenter.py:931
+msgid "General"
+msgstr "Generelt"
+
+#: ../studio/widgetPresenter.py:934
+msgid "Temporary folder"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:938 ../studio/widgetPresenter.py:994
+msgid "Choose"
+msgstr "Velg"
+
+#: ../studio/widgetPresenter.py:955
+msgid "Appearance"
+msgstr "Utseende"
+
+#: ../studio/widgetPresenter.py:958
+msgid "Select boxes colors"
+msgstr "Velg farger for bokser"
+
+#: ../studio/widgetPresenter.py:965
+msgid "Text fill color"
+msgstr "Farge for tekstfyll"
+
+#: ../studio/widgetPresenter.py:968
+msgid "Text stroke color"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:971
+msgid "Image fill color"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:974
+msgid "Image stroke color"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:987
+msgid "Tools"
+msgstr "Verktøy"
+
+#: ../studio/widgetPresenter.py:990
+msgid "Path to unpaper"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1002 ../studio/widgetPresenter.py:1061
+#: ../studio/widgetPresenter.py:1078 ../studio/widgetPresenter.py:1147
+msgid "OCR Engines"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1012
+msgid "Favorite engine:"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1024
+msgid "Window size"
+msgstr "Vindustørrelse"
+
+#: ../studio/widgetPresenter.py:1025
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: ../studio/widgetPresenter.py:1082
+msgid "Engine"
+msgstr "Motor"
+
+#: ../studio/widgetPresenter.py:1086
+msgid "Add"
+msgstr "Legg til"
+
+#: ../studio/widgetPresenter.py:1088
+msgid "Edit"
+msgstr "Rediger"
+
+#: ../studio/widgetPresenter.py:1101
+msgid "Are you sure you want to delete this engine?"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1149
+#, python-format
+msgid "%s engine"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1172
+msgid "Name"
+msgstr "Navn"
+
+#: ../studio/widgetPresenter.py:1172
+msgid "Engine name"
+msgstr "Navn på motor"
+
+#: ../studio/widgetPresenter.py:1174
+msgid "Image format"
+msgstr "Bildeformat"
+
+#: ../studio/widgetPresenter.py:1174
+msgid "The required image format"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1176
+msgid "Failure string"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1176
+msgid "The failure string or character that this engine uses"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1178
+msgid "Engine Path"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1178
+msgid "The path to the engine program"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1180
+msgid "Engine arguments"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1180
+msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1196
+msgid "Error setting the new engine, please check your engine settings."
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1196
+msgid "Warning"
+msgstr "Advarsel"
+
+#: ../studio/widgetPresenter.py:1227
+msgid "translator-credits"
+msgstr "Kjartan Maraas <kmaraas@broadpark.no>"
