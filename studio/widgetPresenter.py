@@ -135,12 +135,12 @@ class MainWindow:
                                   ('Quit', gtk.STOCK_QUIT, _('_Quit'), None, _('Exit the program'), menu_items['exit']),
                                   ('OpenProject', gtk.STOCK_OPEN, _('_Open'), None, _('Open project'), menu_items['open_project']),
                                   ('SaveProject', gtk.STOCK_SAVE, _('_Save'), None, _('Save project'), menu_items['save_project']),
-                                  ('SaveProjectAs', gtk.STOCK_SAVE_AS, _('_Save As') + '...', '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
+                                  ('SaveProjectAs', gtk.STOCK_SAVE_AS, _('_Save As…'), '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
                                   ('AddImage', gtk.STOCK_ADD, _('_Add Image'), None, _('Add another image'), menu_items['add_image']),
                                   ('AddFolder', gtk.STOCK_ADD, _('Add _Folder'), None, _('Add all images in a folder'), menu_items['add_folder']),
                                   ('AppendProject', gtk.STOCK_ADD, _('Append Project'), None, _('Load a project and append it to the current one'), menu_items['append_project']),
                                   ('ImportPDF', gtk.STOCK_ADD, _('_Import PDF'), None, _('Import PDF'), menu_items['import_pdf']),
-                                  ('Export', None, _('_Export...'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
+                                  ('Export', None, _('_Export…'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
                                   ('Edit', None, _('_Edit')),
                                   ('EditPage', gtk.STOCK_EDIT, _('_Edit Page'), None, _('Edit page settings'), menu_items['edit_page']),
                                   ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences'), None, _('Configure the application'), menu_items['preferences']),
@@ -433,7 +433,7 @@ class BoxEditor(gtk.ScrolledWindow):
         self.angle_spin = gtk.SpinButton(gtk.Adjustment(0.0, -360.0, 360.0, 0.1, 100.0, 0.0), 1.0, 1)
         self.detect_angle_button = gtk.Button(_('Detect'))
         hbox = gtk.HBox()
-        hbox.add(gtk.Label(_('Angle') + ':'))
+        hbox.add(gtk.Label(_('Angle:')))
         hbox.add(self.angle_spin)
         vbox = gtk.VBox()
         vbox.pack_start(hbox, False)
@@ -597,7 +597,7 @@ class PageSizeDialog(gtk.Dialog):
         self.paper_sizes = gtk.combo_box_new_text()
         papers = PAPER_SIZES.keys()
         papers.sort()
-        self.paper_sizes.append_text(_('Custom') + '...')
+        self.paper_sizes.append_text(_('Custom…'))
         for paper in papers:
             self.paper_sizes.append_text(paper)
         active_index = self.__checkIfSizeIsStandard(page_size)
@@ -789,7 +789,7 @@ class UnpaperDialog(gtk.Dialog):
         unpapered_image = os.path.splitext(name)[0] + '_unpapered.ppm'
         unpapered_image = lib.getNonExistingFileName(unpapered_image)
         command += ' %s %s' % (name, unpapered_image)
-        progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _('Performing unpaper. Please wait...'))
+        progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _('Performing unpaper. Please wait…'))
         progress_bar.run()
         self.unpapered_image = unpapered_image
     
@@ -859,7 +859,7 @@ class CommandProgressBarDialog(gtk.Dialog):
         try:
             self.process = subprocess.Popen(self.command.split(), stdout = subprocess.PIPE, stderr = subprocess.STDOUT, bufsize=1)
         except:
-            warning = SimpleDialog(_('An error occured!'), _('Error'), 'warning')
+            warning = SimpleDialog(_('An error occurred!'), _('Error'), 'warning')
             warning.run()
             return False
         self.timer = gobject.timeout_add(100, self.__pulse)
@@ -870,7 +870,7 @@ class CommandProgressBarDialog(gtk.Dialog):
         exit_value = self.process.poll()
         if exit_value != None:
             if exit_value != 0:
-                warning = SimpleDialog(_('An error occured!'), _('Error'), 'warning')
+                warning = SimpleDialog(_('An error occurred!'), _('Error'), 'warning')
                 warning.run()
             self.destroy()
             return False
@@ -955,7 +955,7 @@ class PreferencesDialog(gtk.Dialog):
         self.notebook.append_page(general_box, gtk.Label(_('Appearance')))
     
     def __makeColors(self):
-        colors_frame = PlainFrame(_('Select boxes colors'))
+        colors_frame = PlainFrame(_('Select boxes\' colors'))
         self.text_fill_color = self.__getColorButton(self.configuration_manager.text_fill)
         self.text_stroke_color = self.__getColorButton(self.configuration_manager.text_stroke)
         self.image_fill_color = self.__getColorButton(self.configuration_manager.image_fill)
@@ -1177,7 +1177,7 @@ class OcrSettingsDialog(gtk.Dialog):
         self.engine_path_entry = gtk.Entry()
         self.__packSettingInFrame(table, 3, _('Engine Path'), self.engine_path_entry, engine_path, _('The path to the engine program'))
         self.arguments_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 4, _('Engine arguments'), self.arguments_entry, arguments, _('Arguments, use $IMAGE for image and $FILE if it writes to a file'))
+        self.__packSettingInFrame(table, 4, _('Engine arguments'), self.arguments_entry, arguments, _('Arguments: use $IMAGE for image and $FILE if it writes to a file'))
         return table
     
     def setEngine(self):
@@ -1193,7 +1193,7 @@ class OcrSettingsDialog(gtk.Dialog):
                 self.engine_manager.addNewEngine(engine)
             return True
         except:
-            SimpleDialog(_('Error setting the new engine, please check your engine settings.'), _('Warning'), 'warning').run()
+            SimpleDialog(_('Error setting the new engine; please check your engine settings.'), _('Warning'), 'warning').run()
             print sys.exc_info()
             return False
     
