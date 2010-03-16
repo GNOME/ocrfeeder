@@ -1,14 +1,15 @@
+# Slovenian translation of ocrfeeder
 # Copyright (C) 2010 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
 #
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Matej Urbančič <mateju@svn.gnome.org>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-03-10 19:48+0000\n"
-"PO-Revision-Date: 2010-03-11 10:34+0100\n"
+"POT-Creation-Date: 2010-03-15 18:27+0000\n"
+"PO-Revision-Date: 2010-03-16 21:58+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -142,8 +143,8 @@ msgid "Save project"
 msgstr "Shrani projekt"
 
 #: ../studio/widgetPresenter.py:138
-msgid "_Save As"
-msgstr "Shrani _kot"
+msgid "_Save As…"
+msgstr "Shrani _kot ..."
 
 #: ../studio/widgetPresenter.py:138
 msgid "Save project with a chosen name"
@@ -182,7 +183,7 @@ msgid "Import PDF"
 msgstr "Uvozi dokument PDF"
 
 #: ../studio/widgetPresenter.py:143
-msgid "_Export..."
+msgid "_Export…"
 msgstr "_Izvozi ..."
 
 #: ../studio/widgetPresenter.py:143
@@ -398,13 +399,16 @@ msgid "Style"
 msgstr "Slog"
 
 #: ../studio/widgetPresenter.py:423
-#: ../studio/widgetPresenter.py:436
 msgid "Angle"
 msgstr "Kot"
 
 #: ../studio/widgetPresenter.py:434
 msgid "Detect"
 msgstr "Zaznaj"
+
+#: ../studio/widgetPresenter.py:436
+msgid "Angle:"
+msgstr "Kot:"
 
 #: ../studio/widgetPresenter.py:518
 msgid "Save File"
@@ -437,11 +441,8 @@ msgid "Choose the format"
 msgstr "Izbor vrste zapisa"
 
 #: ../studio/widgetPresenter.py:600
-#: ../studio/widgetPresenter.py:702
-#: ../studio/widgetPresenter.py:720
-#: ../studio/widgetPresenter.py:1026
-msgid "Custom"
-msgstr "Po meri"
+msgid "Custom…"
+msgstr "Po meri ..."
 
 #: ../studio/widgetPresenter.py:617
 msgid "Affected pages"
@@ -459,6 +460,12 @@ msgstr "Trenutni filter hrupnosti"
 #: ../studio/widgetPresenter.py:719
 msgid "Default"
 msgstr "Privzeto"
+
+#: ../studio/widgetPresenter.py:702
+#: ../studio/widgetPresenter.py:720
+#: ../studio/widgetPresenter.py:1026
+msgid "Custom"
+msgstr "Po meri"
 
 #: ../studio/widgetPresenter.py:703
 #: ../studio/widgetPresenter.py:721
@@ -491,12 +498,12 @@ msgid "Performing Unpaper"
 msgstr "Izvajanje razstranjanja"
 
 #: ../studio/widgetPresenter.py:792
-msgid "Performing unpaper. Please wait..."
+msgid "Performing unpaper. Please wait…"
 msgstr "Izvajanje razstranjanja. Počakajte ..."
 
 #: ../studio/widgetPresenter.py:862
 #: ../studio/widgetPresenter.py:873
-msgid "An error occured!"
+msgid "An error occurred!"
 msgstr "Prišlo je do napake!"
 
 #: ../studio/widgetPresenter.py:862
@@ -526,7 +533,7 @@ msgid "Appearance"
 msgstr "Videz"
 
 #: ../studio/widgetPresenter.py:958
-msgid "Select boxes colors"
+msgid "Select boxes' colors"
 msgstr "Izbor barve okvirja"
 
 #: ../studio/widgetPresenter.py:965
@@ -630,11 +637,11 @@ msgid "Engine arguments"
 msgstr "Argumenti strojnika"
 
 #: ../studio/widgetPresenter.py:1180
-msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
-msgstr "Argumenti, uporabite $IMAGE za slike in $FILE, če bo zapisano v datoteko"
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr "Argumenti: uporabite $IMAGE za slike in $FILE, če bo zapisano v datoteko"
 
 #: ../studio/widgetPresenter.py:1196
-msgid "Error setting the new engine, please check your engine settings."
+msgid "Error setting the new engine; please check your engine settings."
 msgstr "Napaka med nastavljanjem novega strojnika. Preverite nastavitve."
 
 #: ../studio/widgetPresenter.py:1196
