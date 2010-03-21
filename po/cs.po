@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 01:26+0100\n"
-"PO-Revision-Date: 2010-03-14 21:35+0100\n"
+"POT-Creation-Date: 2010-03-21 01:14+0100\n"
+"PO-Revision-Date: 2010-03-20 08:52+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -136,8 +136,8 @@ msgid "Save project"
 msgstr "Uložit projekt"
 
 #: ../studio/widgetPresenter.py:138
-msgid "_Save As"
-msgstr "Uložit _jako"
+msgid "_Save As…"
+msgstr "Uložit _jako…"
 
 #: ../studio/widgetPresenter.py:138
 msgid "Save project with a chosen name"
@@ -176,7 +176,7 @@ msgid "Import PDF"
 msgstr "Importovat PDF"
 
 #: ../studio/widgetPresenter.py:143
-msgid "_Export..."
+msgid "_Export…"
 msgstr "_Export…"
 
 #: ../studio/widgetPresenter.py:143
@@ -388,13 +388,17 @@ msgstr "Písmeno"
 msgid "Style"
 msgstr "Styl"
 
-#: ../studio/widgetPresenter.py:423 ../studio/widgetPresenter.py:436
+#: ../studio/widgetPresenter.py:423
 msgid "Angle"
 msgstr "Úhel"
 
 #: ../studio/widgetPresenter.py:434
 msgid "Detect"
 msgstr "Detekovat"
+
+#: ../studio/widgetPresenter.py:436
+msgid "Angle:"
+msgstr "Úhel:"
 
 #: ../studio/widgetPresenter.py:518
 msgid "Save File"
@@ -424,10 +428,9 @@ msgstr "Současnou"
 msgid "Choose the format"
 msgstr "Zvolte formát"
 
-#: ../studio/widgetPresenter.py:600 ../studio/widgetPresenter.py:702
-#: ../studio/widgetPresenter.py:720 ../studio/widgetPresenter.py:1026
-msgid "Custom"
-msgstr "Vlastní"
+#: ../studio/widgetPresenter.py:600
+msgid "Custom…"
+msgstr "Vlastní…"
 
 #: ../studio/widgetPresenter.py:617
 msgid "Affected pages"
@@ -444,6 +447,11 @@ msgstr "Citlivost šumového filtru"
 #: ../studio/widgetPresenter.py:701 ../studio/widgetPresenter.py:719
 msgid "Default"
 msgstr "Výchozí"
+
+#: ../studio/widgetPresenter.py:702 ../studio/widgetPresenter.py:720
+#: ../studio/widgetPresenter.py:1026
+msgid "Custom"
+msgstr "Vlastní"
 
 #: ../studio/widgetPresenter.py:703 ../studio/widgetPresenter.py:721
 msgid "None"
@@ -474,11 +482,11 @@ msgid "Performing Unpaper"
 msgstr "Zpracování programem Unpaper"
 
 #: ../studio/widgetPresenter.py:792
-msgid "Performing unpaper. Please wait..."
+msgid "Performing unpaper. Please wait…"
 msgstr "Provádí se vylepšení programem Unpaper. Čekejte prosím…"
 
 #: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
-msgid "An error occured!"
+msgid "An error occurred!"
 msgstr "Vyskytla se chyba!"
 
 #: ../studio/widgetPresenter.py:862 ../studio/widgetPresenter.py:873
@@ -506,7 +514,7 @@ msgid "Appearance"
 msgstr "Vzhled"
 
 #: ../studio/widgetPresenter.py:958
-msgid "Select boxes colors"
+msgid "Select boxes' colors"
 msgstr "Vyberte barvy oblastí"
 
 #: ../studio/widgetPresenter.py:965
@@ -608,14 +616,14 @@ msgid "Engine arguments"
 msgstr "Argumenty výkonného programu"
 
 #: ../studio/widgetPresenter.py:1180
-msgid "Arguments, use $IMAGE for image and $FILE if it writes to a file"
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
-"Argumenty, použijte $IMAGE pro obrázek a $FILE, pokud zapisuje do souboru"
+"Argumenty: použijte $IMAGE pro obrázek a $FILE, pokud zapisuje do souboru"
 
 #: ../studio/widgetPresenter.py:1196
-msgid "Error setting the new engine, please check your engine settings."
+msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
-"Chyba při nastavování nového výkonného programu, zkontrolujte prosím jeho "
+"Chyba při nastavování nového výkonného programu, zkontrolujte prosím své "
 "nastavení."
 
 #: ../studio/widgetPresenter.py:1196
