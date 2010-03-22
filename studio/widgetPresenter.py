@@ -1111,6 +1111,7 @@ class OcrManagerDialog(gtk.Dialog):
         self.delete_engine.connect('clicked', self.__delete)
         self.new_engine.connect('clicked', self.__engine_settings)
         self.edit_engine.connect('clicked', self.__edit)
+        self.detect_engines.connect('clicked', self.__detectEnginesCb)
     
     def __makeMainArea(self):
         frame = PlainFrame(_('OCR Engines'))
@@ -1124,10 +1125,12 @@ class OcrManagerDialog(gtk.Dialog):
         self.new_engine = gtk.Button(_('Add'), gtk.STOCK_ADD)
         self.delete_engine = gtk.Button(_('Delete'), gtk.STOCK_DELETE)
         self.edit_engine = gtk.Button(_('Edit'), gtk.STOCK_EDIT)
+        self.detect_engines = gtk.Button(_('Detect'))
         buttons_box = gtk.VBox()
         buttons_box.pack_start(self.new_engine, False)
         buttons_box.pack_start(self.edit_engine, False)
         buttons_box.pack_start(self.delete_engine, False)
+        buttons_box.pack_start(self.detect_engines, False, False, 10)
         engines_box.pack_end(buttons_box, False)
         frame.add(engines_box)
         return frame
@@ -1178,6 +1181,24 @@ class OcrManagerDialog(gtk.Dialog):
         self.list_store.clear()
         for engine in self.engines_manager.getEnginesNames():
             self.list_store.append((engine,))
+
+    def __detectEnginesCb(self, button):
+        engines = self.engines_manager.configuration_manager.getEnginesInSystem()
+        if not engines:
+            info = InfoDialog(_('No OCR engines were found in the system.\n'
+                                'Please make sure you have OCR engines installed '
+                                'and available.'),
+                              _('No OCR engines available'))
+            info.run()
+            info.destroy()
+            return
+        engines_dialog = SystemEnginesDialog(engines)
+        response = engines_dialog.run()
+        if response == gtk.RESPONSE_ACCEPT:
+            for engine in engines_dialog.getChosenEngines():
+                self.engines_manager.addNewEngine(engine)
+        engines_dialog.destroy()
+        self.__getEngines()
 
 class OcrSettingsDialog(gtk.Dialog):
     
