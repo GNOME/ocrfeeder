@@ -277,6 +277,12 @@ class ConfigurationManager:
         if [file_name for file_name in os.listdir(self.user_engines_folder)\
             if file_name.endswith('.xml')]:
             return
+        for engine in self.getEnginesInSystem():
+            engine_file = os.path.join(self.user_engines_folder, engine.name)
+            engine.saveToXml('%s.xml' % engine_file)
+
+    def getEnginesInSystem(self):
+        existing_engines = []
         engines_paths = [(name, getExecPath(conf['engine_path']))\
                          for name, conf in PREDEFINED_ENGINES.items()]
         for name, path in engines_paths:
@@ -293,8 +299,8 @@ class ConfigurationManager:
                             arguments,
                             image_format = image_format,
                             failure_string = failure_string)
-            engine_file = os.path.join(self.user_engines_folder, name)
-            engine.saveToXml('%s.xml' % engine_file)
+            existing_engines.append(engine)
+        return existing_engines
     
     def setTemporaryDir(self, temp_dir):
         self.temporary_dir = temp_dir

@@ -1054,7 +1054,45 @@ class PreferencesDialog(gtk.Dialog):
         color_button.set_use_alpha(True)
         color_button.set_alpha(values[3] << 8)
         return color_button
-        
+
+class SystemEnginesDialog(gtk.Dialog):
+
+    def __init__(self, engines):
+        super(SystemEnginesDialog, self).__init__(_('OCR Engines'),
+                                                  flags = gtk.DIALOG_MODAL |
+                                                          gtk.DIALOG_DESTROY_WITH_PARENT,
+                                                  buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+                                                             gtk.STOCK_ADD, gtk.RESPONSE_ACCEPT))
+        self.set_size_request(300, -1)
+        self.set_icon_from_file(WINDOW_ICON)
+        self.list_store = gtk.ListStore(bool, str, gobject.TYPE_PYOBJECT)
+        for engine in engines:
+            self.list_store.append((True, engine.name, engine))
+        self.vbox.pack_start(self.__makeMainArea(), True, True, 0)
+        self.vbox.show_all()
+
+    def __makeMainArea(self):
+        frame = PlainFrame(_('Engines to be added'))
+        self.tree_view = gtk.TreeView(self.list_store)
+        renderer = gtk.CellRendererToggle()
+        renderer.set_property('activatable', True)
+        renderer.connect('toggled', self.__includeEngineToggledCb, 0)
+        column = gtk.TreeViewColumn(_('Include'), renderer)
+        column.add_attribute(renderer, "active", 0)
+        self.tree_view.append_column(column)
+        renderer = gtk.CellRendererText()
+        column = gtk.TreeViewColumn(_('Engine'), renderer, text = 1)
+        self.tree_view.append_column(column)
+        self.tree_view.set_search_column(1)
+        frame.add(self.tree_view)
+        return frame
+
+    def __includeEngineToggledCb(self, renderer, path, column):
+        self.list_store[path][column] = not self.list_store[path][column]
+
+    def getChosenEngines(self):
+        return [engine for include, name, engine in self.list_store if include]
+
 class OcrManagerDialog(gtk.Dialog):
     
     def __init__(self, engines_manager):

@@ -95,6 +95,17 @@ class Studio:
             self.__addImagesToReviewer(lib.getImagesFromFolder(dirs[0]))
         
         self.main_window.setHasImages(not self.source_images_selector.isEmpty())
+
+        # Show dialog to choose system-wide OCR engines when no engine was found
+        if not self.ocr_engines:
+            engines = self.configuration_manager.getEnginesInSystem()
+            if engines:
+                add_engines_dialog = widgetPresenter.SystemEnginesDialog(engines)
+                response = add_engines_dialog.run()
+                if response == gtk.RESPONSE_ACCEPT:
+                    for engine in add_engines_dialog.getChosenEngines():
+                        self.ocr_engines_manager.addNewEngine(engine)
+                add_engines_dialog.destroy()
     
     def run(self):
         gtk.main()
