@@ -69,7 +69,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.image.connect('motion_notify_event', self.updateSelectionArea)
         self.image.connect('key_press_event', self.pressedKeyOnImage)
         self.connect('scroll-event', self.scrollEventCb)
-        self.selected_area = None
+        self.selected_areas = []
         self.currently_created_area = None
     
     def __rgbaToInteger(self, rgba):
@@ -121,10 +121,10 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.set_data('current_area', area)
     
     def setSelectedArea(self, area):
-        self.selected_area = area
+        self.selected_areas = [area]
     
-    def getSelectedArea(self):
-        return self.selected_area
+    def getSelectedAreas(self):
+        return self.selected_areas
     
     def selectArea(self, area):
         area.set_property('stroke_color_rgba',self.__rgbaToInteger(self.area_selected_stroke_rgba))
@@ -132,9 +132,11 @@ class SelectableBoxesArea(goocanvas.Canvas):
         area.connect('key_press_event', self.keyPressed)
     
     def deselectAreas(self):
-        selected_area = self.selected_area
-        if selected_area != None:
-            selected_area.set_property('stroke_color_rgba',self.__rgbaToInteger(self.area_stroke_rgba))
+        for selected_area in self.selected_areas:
+            if selected_area != None:
+                selected_area.set_property('stroke_color_rgba',
+                                           self.__rgbaToInteger(self.area_stroke_rgba))
+        self.selected_areas = []
         self.grab_focus(self.image)
     
     def zoom(self, zoom_value, add_zoom = True):
@@ -187,7 +189,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             return True
     
     def endSelectionArea(self, item, target, event):
-        self.selected_area = None
+        self.deselectAreas()
         if self.currently_created_area != None:
             if self.currently_created_area.props.width < 5 or self.currently_created_area.props.height < 5:
                 self.currently_created_area.remove()
@@ -206,7 +208,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
     
     def handleOverlapedAreas(self, overlaped_areas):
         for area in overlaped_areas:
-            if isinstance(area, goocanvas.Rect) and area != self.currently_created_area and area != self.selected_area:
+            if isinstance(area, goocanvas.Rect) and \
+               area != self.currently_created_area and \
+               not area in self.selected_areas:
                 area.remove()
                 self.emit('removed_box', area)
     
@@ -229,8 +233,10 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.emit('updated_box', item)
             return True
         if key_name == 'delete':
-            item.remove()
-            self.emit('removed_box', item)
+            for area in self.selected_areas:
+                area.remove()
+                self.emit('removed_box', area)
+            self.selected_areas = []
     
     def pressedKeyOnImage(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()
@@ -243,8 +249,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 return True
     
     def pressedWithinArea(self, item, target, event):
-        self.deselectAreas()
-        self.selected_area = item
+        if event.state != gtk.gdk.SHIFT_MASK:
+            self.deselectAreas()
+        self.selected_areas.append(item)
         self.selectArea(item)
         self.emit('selected_box', item)
         item.set_data('distance', (event.x - item.props.x, event.y - item.props.y))
