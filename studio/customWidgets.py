@@ -195,7 +195,11 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 self.currently_created_area.remove()
                 self.currently_created_area = None
                 return False
-        self.handleOverlapedAreas(self.getOverlapedAreas(self.currently_created_area))
+            self.handleOverlapedAreas(self.getOverlapedAreas(self.currently_created_area))
+            self.deselectAreas()
+            self.selected_areas.append(self.currently_created_area)
+            self.selectArea(self.currently_created_area)
+            self.emit('selected_box', self.currently_created_area)
         self.currently_created_area = None
     
     def getOverlapedAreas(self, area):
