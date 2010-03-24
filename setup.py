@@ -33,5 +33,8 @@ setup(name = 'ocrfeeder',
                    ),
                    ('/usr/share/applications', ['resources/ocrfeeder.desktop']
                    ),
+                   ('/usr/share/man/man1', ['resources/ocrfeeder.1',
+                                            'resources/ocrfeeder-cli.1']
+                   ),
                    ] + get_locale_files()
      )

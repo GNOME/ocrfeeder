@@ -1,0 +1,38 @@
+.TH ocrfeeder 1 "2010\-03\-24"
+.SH NAME
+ocrfeeder \- document layout analysis and optical character recognition system.
+.SH SYNOPSIS
+.B ocrfeeder
+.I [OPTIONS]
+.SH DESCRIPTION
+This manual page documents briefly the
+.B ocrfeeder
+command.
+.PP
+.B OCRFeeder
+Given the images it will automatically outline its contents, distinguish 
+between what's graphics and text and perform OCR over the latter. It generates 
+multiple formats being its main one ODT.
+
+.SH OPTIONS
+.TP
+.BI "\-\-images IMAGE1 IMAGE2 ..."
+Add the specified images to OCRFeeder after opening it
+.TP
+.BI "\-\-dir DIR"
+Add all images under the specified directory to OCRFeeder after opening it
+
+.SH FILES
+.TP
+.I ~/.ocrfeeder/preferences.xml
+OCRFeeder's configurations file
+
+.SH FOLDERS
+.TP
+.I ~/.ocrfeeder/engines/
+Folder to hold the engines' configuration files
+.SH SEE ALSO
+.BR ocrfeeder-cli (1)
+.SH AUTHOR
+This manpage has been written by
+Joaquim Rocha <jrocha@igalia.com>
