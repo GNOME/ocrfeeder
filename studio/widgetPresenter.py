@@ -198,6 +198,14 @@ class MainWindow:
                    'AppendProject', 'ZoomFit']
         for gtkaction in [self.action_group.get_action(action) for action in actions]:
             gtkaction.set_sensitive(has_images)
+
+    def setHasSelectedBoxes(self, has_selected_boxes = True):
+        if not self.action_group:
+            return
+        actions = ['RecognizeAreas']
+        for gtkaction in [self.action_group.get_action(action) \
+                          for action in actions]:
+            gtkaction.set_sensitive(has_selected_boxes)
         
 class BoxEditor(gtk.ScrolledWindow):
     

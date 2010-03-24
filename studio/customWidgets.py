@@ -44,6 +44,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
         'updated_box' : (gobject.SIGNAL_RUN_LAST,
                      gobject.TYPE_NONE,
                      (gobject.TYPE_PYOBJECT,)),
+        'deselected_box' : (gobject.SIGNAL_RUN_LAST,
+                            gobject.TYPE_NONE,
+                            (gobject.TYPE_PYOBJECT,)),
         'dragged_box' : (gobject.SIGNAL_RUN_LAST,
                      gobject.TYPE_NONE,
                      (gobject.TYPE_PYOBJECT,)),
@@ -136,7 +139,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if selected_area != None:
                 selected_area.set_property('stroke_color_rgba',
                                            self.__rgbaToInteger(self.area_stroke_rgba))
-        self.selected_areas = []
+        while self.selected_areas:
+            selected_area = self.selected_areas.pop(0)
+            self.emit('deselected_box', selected_area)
         self.grab_focus(self.image)
     
     def zoom(self, zoom_value, add_zoom = True):
@@ -237,10 +242,10 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.emit('updated_box', item)
             return True
         if key_name == 'delete':
-            for area in self.selected_areas:
-                area.remove()
-                self.emit('removed_box', area)
-            self.selected_areas = []
+            while self.selected_areas:
+                selected_area = self.selected_areas.pop(0)
+                selected_area.remove()
+                self.emit('removed_box', selected_area)
     
     def pressedKeyOnImage(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()

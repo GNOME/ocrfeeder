@@ -73,7 +73,11 @@ class Studio:
         self.main_window.main_area_left.add_with_viewport(self.source_images_icon_view)
         self.images_selectable_area = {}
         self.images_dict = create_images_dict_from_liststore(self.source_images_selector.list_store)
-        self.source_images_controler = ImageReviewer_Controler(self.main_window.notebook, self.images_dict, self.source_images_icon_view, self.ocr_engines, self.configuration_manager, self.main_window.tripple_statusbar)
+        self.source_images_controler = ImageReviewer_Controler(self.main_window,
+                                                               self.images_dict,
+                                                               self.source_images_icon_view,
+                                                               self.ocr_engines,
+                                                               self.configuration_manager)
         self.project_name = None
         
         toolbar_callback_dict = {'detection': self.source_images_controler.performBoxDetection,
@@ -95,6 +99,7 @@ class Studio:
         if dirs:
             self.__addImagesToReviewer(lib.getImagesFromFolder(dirs[0]))
         
+        self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasImages(not self.source_images_selector.isEmpty())
 
         # Show dialog to choose system-wide OCR engines when no engine was found

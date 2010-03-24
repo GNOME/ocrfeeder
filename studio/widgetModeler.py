@@ -158,7 +158,8 @@ class SourceImagesSelectorIconView(gtk.IconView):
     
 class ImageReviewer:
     
-    def __init__(self, path_to_image, ocr_engines):
+    def __init__(self, main_window, path_to_image, ocr_engines):
+        self.main_window = main_window
         self.path_to_image = path_to_image
         self.text_box_fill_color = (94, 156, 235, 150)
         self.text_box_stroke_color = (94, 156, 235, 250)
@@ -169,6 +170,8 @@ class ImageReviewer:
         self.selectable_boxes_area.connect('removed_box', self.removedBox)
         self.selectable_boxes_area.connect('updated_box', self.updatedBox)
         self.selectable_boxes_area.connect('dragged_box', self.updatedBoxBounds)
+        self.selectable_boxes_area.connect('deselected_box',
+                                           self.deselectedBoxCb)
         self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
         self.reviewer_area = gtk.HPaned()
         self.reviewer_area.set_position(500)
@@ -220,6 +223,10 @@ class ImageReviewer:
             num_boxes = self.boxeditor_notebook.get_n_pages()
             self.addBoxEditor(box)
             self.boxeditor_notebook.set_current_page(num_boxes)
+        self.updateMainWindow()
+
+    def deselectedBoxCb(self, widget, box):
+        self.updateMainWindow()
     
     def updatedBox(self, widget, box):
         for editor in self.editor_list:
@@ -232,6 +239,7 @@ class ImageReviewer:
                 editor.updateBounds(box)
     
     def removedBox(self, widget, box):
+        self.updateMainWindow()
         for i in xrange(len(self.editor_list)):
             editor = self.editor_list[i]
             if editor.box == box:
@@ -340,22 +348,29 @@ class ImageReviewer:
             changed = True
         if changed:
             self.selectable_boxes_area.zoom(min(image_height, image_width), False)
+
+    def updateMainWindow(self):
+        has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
+        self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
     
 class ImageReviewer_Controler:
     
-    def __init__(self, notebook, images_dict, source_images_selector_widget, ocr_engines, configuration_manager, tripple_statusbar, selection_changed_signal = 'selection-changed'):
-        self.notebook = notebook
+    def __init__(self, main_window, images_dict, source_images_selector_widget,
+                 ocr_engines, configuration_manager,
+                 selection_changed_signal = 'selection-changed'):
+        self.main_window = main_window
+        self.notebook = self.main_window.notebook
         self.image_reviewer_dict = {}
         self.source_images_selector_widget = source_images_selector_widget
         self.ocr_engines = ocr_engines
         self.configuration_manager = configuration_manager
-        self.tripple_statusbar = tripple_statusbar
+        self.tripple_statusbar = self.main_window.tripple_statusbar
         for key, image in images_dict.items():
             self.addImage(key, image)
         self.source_images_selector_widget.connect(selection_changed_signal, self.selectImageReviewer)
     
     def addImage(self, pixbuf, image):
-        image_reviewer = ImageReviewer(image, self.ocr_engines)
+        image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
         image_reviewer.setTextFillColor(self.configuration_manager.getTextFill())
         image_reviewer.setTextStrokeColor(self.configuration_manager.getTextStroke())
