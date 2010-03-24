@@ -128,11 +128,18 @@ class SelectableBoxesArea(goocanvas.Canvas):
     
     def getSelectedAreas(self):
         return self.selected_areas
+
+    def selectAllAreas(self):
+        areas = self.getAllAreas()
+        for area in areas:
+            self.selectArea(area)
     
     def selectArea(self, area):
+        self.selected_areas.append(area)
         area.set_property('stroke_color_rgba',self.__rgbaToInteger(self.area_selected_stroke_rgba))
         self.grab_focus(area)
         area.connect('key_press_event', self.keyPressed)
+        self.emit('selected_box', area)
     
     def deselectAreas(self):
         for selected_area in self.selected_areas:
@@ -213,9 +220,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 return False
             self.handleOverlapedAreas(self.getOverlapedAreas(self.currently_created_area))
             self.deselectAreas()
-            self.selected_areas.append(self.currently_created_area)
             self.selectArea(self.currently_created_area)
-            self.emit('selected_box', self.currently_created_area)
         self.currently_created_area = None
     
     def getOverlapedAreas(self, area):
@@ -253,12 +258,14 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.handleOverlapedAreas(self.getOverlapedAreas(item))
             self.emit('updated_box', item)
             return True
-        if key_name == 'delete':
+        elif key_name == 'delete':
             while self.selected_areas:
                 selected_area = self.selected_areas.pop(0)
                 selected_area.remove()
                 self.emit('removed_box', selected_area)
-    
+        elif key_name == 'a' and event.state == gtk.gdk.CONTROL_MASK:
+            self.selectAllAreas()
+
     def pressedKeyOnImage(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()
         if key_name in ['up', 'down'] and event.state == gtk.gdk.CONTROL_MASK:
@@ -268,7 +275,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if key_name == 'down':
                 self.zoom(-0.2)
                 return True
-    
+        elif key_name == 'a' and event.state == gtk.gdk.CONTROL_MASK:
+            self.selectAllAreas()
+
     def pressedWithinArea(self, item, target, event):
         deselected = False
         if event.state != gtk.gdk.SHIFT_MASK:
@@ -277,9 +286,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             deselected = self.deselectArea(item)
         if deselected:
             return True
-        self.selected_areas.append(item)
         self.selectArea(item)
-        self.emit('selected_box', item)
         item.set_data('distance', (event.x - item.props.x, event.y - item.props.y))
         return True
     
