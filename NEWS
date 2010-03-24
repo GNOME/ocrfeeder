@@ -1,3 +1,43 @@
+Version 0.6.5
+==============
+
+Improvements
+-------------
+
+* Import PDF files faster
+* Add option to detect and include system-wide OCR engines on OCR engines manager dialog
+* Show option to include the detected system-wide OCR engines when the application is started with no engines
+* Better integration with intltool
+* Miscellaneous string fixes (thanks to Philip Withnall)
+* Add man pages
+* Make translators for about dialog dependent from the translation (thanks to Claudio Saavedra)
+* Improve Debian package generation (thanks to Alberto Garcia)
+* Fix Debian packages dependencies
+* Allow multiple selection of selection areas
+* Add Ctrl+a shortcut to select all areas
+* Add "recognize selected areas" action
+
+Bug Fixes
+----------
+
+* Remove PDF files' extension from the images generated from them
+* Sort images when adding them from a folder
+* Select selection area after creating it
+* Fix problem when quitting the application
+
+
+New and Updated Translations
+-----------------------------
+
+* Marek Cernocky [cs]
+* Mario Blättermann [de]
+* Philip Withnall [en_GB]
+* Jorge González [es_ES]
+* Kjartan Maraas [nb]
+* Matej Urbančič [sl]
+* Daniel Nylander [sv_SV]
+
+
 Version 0.6.1
 ==============
 
