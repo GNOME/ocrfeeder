@@ -139,11 +139,22 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if selected_area != None:
                 selected_area.set_property('stroke_color_rgba',
                                            self.__rgbaToInteger(self.area_stroke_rgba))
+        # The deselectArea is not used in here for efficiency purposes
         while self.selected_areas:
             selected_area = self.selected_areas.pop(0)
             self.emit('deselected_box', selected_area)
         self.grab_focus(self.image)
-    
+
+    def deselectArea(self, area):
+        if not area in self.selected_areas:
+            return False
+        if area != None:
+            area.set_property('stroke_color_rgba',
+                              self.__rgbaToInteger(self.area_stroke_rgba))
+        self.selected_areas.remove(area)
+        self.emit('deselected_box', area)
+        return True
+
     def zoom(self, zoom_value, add_zoom = True):
         new_zoom = zoom_value
         set_zoom = False
@@ -213,6 +224,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         end_point = (area.props.x + area.props.width - offset, area.props.y + area.props.height - offset)
         bounds = goocanvas.Bounds(*(start_point + end_point))
         overlaped_items = self.get_items_in_area(bounds, True, True, True)
+        overlaped_items.remove(area)
         return overlaped_items
     
     def handleOverlapedAreas(self, overlaped_areas):
@@ -258,8 +270,13 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 return True
     
     def pressedWithinArea(self, item, target, event):
+        deselected = False
         if event.state != gtk.gdk.SHIFT_MASK:
             self.deselectAreas()
+        else:
+            deselected = self.deselectArea(item)
+        if deselected:
+            return True
         self.selected_areas.append(item)
         self.selectArea(item)
         self.emit('selected_box', item)
