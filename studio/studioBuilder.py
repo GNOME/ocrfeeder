@@ -262,8 +262,11 @@ class Studio:
             elif response == gtk.RESPONSE_NO:
                 quit_dialog.destroy()
                 self.__main_quit()
+            else:
+                return True
         else:
             self.__main_quit()
+        return False
     
     def __main_quit(self):
         self.configuration_manager.configurationToXml()
