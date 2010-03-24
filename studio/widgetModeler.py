@@ -242,10 +242,16 @@ class ImageReviewer:
         return False
     
     def __getPageNumFromBox(self, box):
+        editor = self.__getEditorFromBox(box)
+        if editor:
+            return self.boxeditor_notebook.page_num(editor.box_editor)
+        return -1
+
+    def __getEditorFromBox(self, box):
         for editor in self.editor_list:
             if editor.box == box:
-                return self.boxeditor_notebook.page_num(editor.box_editor)
-        return -1
+                return editor
+        return None
     
     def applyTextColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.text_box_fill_color
@@ -262,12 +268,23 @@ class ImageReviewer:
             self.addBoxEditor(box)
     
     def performOcrForAllEditors(self, engine = None):
-        for editor in self.editor_list:
+        self.performOcrForEditors(self.editor_list, engine)
+
+    def performOcrForSelectedBoxes(self, engine = None):
+        selected_boxes = self.selectable_boxes_area.getSelectedAreas()
+        self.performOcrForEditors([self.__getEditorFromBox(box) \
+                                   for box in selected_boxes],
+                                  engine)
+
+    def performOcrForEditors(self, editors_list, engine = None):
+        for editor in editors_list:
+            if editor == None:
+                continue
             editor.performOcr(engine)
             editor.performClassification(engine)
             if editor.box_editor.getType() == IMAGE_TYPE:
                 editor.box_editor.setText('')
-    
+
     def __getAllDataBoxes(self):
         boxes = []
         for editor in self.editor_list:
@@ -366,7 +383,11 @@ class ImageReviewer_Controler:
     
     def __setZoomStatus(self, widget, zoom):
         self.tripple_statusbar.left_statusbar.insert(_('Zoom') + ': ' + str(int(zoom * 100)) + '%')
-    
+
+    def recognizeSelectedAreas(self, widget):
+        image_reviewer = self.__getCurrentReviewer()
+        image_reviewer.performOcrForSelectedBoxes(self.configuration_manager.favorite_engine)
+
     def performBoxDetection(self, widget):
         image_reviewer = self.__getCurrentReviewer()
         self.performBoxDetectionForReviewer(image_reviewer)

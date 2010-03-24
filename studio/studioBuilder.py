@@ -85,7 +85,8 @@ class Studio:
                                  'open_project': self.openProject, 'append_project': self.appendProject,'clear': self.clear,
                                  'unpaper': self.unpaper, 'preferences': self.preferences, 'about': self.about,
                                  'ocr_engines': self.ocrEngines, 'zoom_in': self.zoomIn, 'zoom_out': self.zoomOut,
-                                 'zoom_fit': self.zoomFit, 'reset_zoom': self.resetZoom}
+                                 'zoom_fit': self.zoomFit, 'reset_zoom': self.resetZoom,
+                                 'recognize_areas': self.source_images_controler.recognizeSelectedAreas}
         
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
         self.main_window.setDestroyEvent(self.quit)
