@@ -44,12 +44,7 @@ buildrpm: i18n
 	$(PYTHON) setup.py bdist_rpm --post-install=rpm/postinstall --pre-uninstall=rpm/preuninstall
 
 builddeb: i18n
-	# build the source package in the parent directory
-	# then rename it to project_version.orig.tar.gz
-	$(PYTHON) setup.py sdist $(COMPILE) --dist-dir=../ 
-	rename -f 's/$(PROJECT)-(.*)\.tar\.gz/$(PROJECT)_$$1\.orig\.tar\.gz/' ../*
-	# build the package
-	dpkg-buildpackage -i -I -rfakeroot
+	dpkg-buildpackage -rfakeroot -b
 
 clean:
 	$(PYTHON) setup.py clean
