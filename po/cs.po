@@ -6,10 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-03-24 11:05+0000\n"
-"PO-Revision-Date: 2010-03-23 07:48+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-29 00:38+0200\n"
+"PO-Revision-Date: 2010-03-27 14:23+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -286,11 +285,11 @@ msgstr "Automaticky detekovat a rozpoznat"
 
 #: ../studio/widgetPresenter.py:162
 msgid "Recognize Selected _Areas"
-msgstr ""
+msgstr "Rozpoznat vybranou obl_ast"
 
 #: ../studio/widgetPresenter.py:162
 msgid "Recognize Selected Areas"
-msgstr ""
+msgstr "Rozpoznat vybranou oblast"
 
 #: ../studio/widgetPresenter.py:163
 msgid "_Generate ODT"
@@ -664,4 +663,3 @@ msgstr "Varování"
 #: ../studio/widgetPresenter.py:1296
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
-
