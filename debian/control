@@ -10,6 +10,15 @@ Package: ocrfeeder
 Architecture: all
 Depends: python-gtk2 (>= 2.13), python-imaging (>= 1.1), python-pygoocanvas (>= 0.12.0), ${misc:Depends}, ${python:Depends}
 Description: Document layout analysis and optical character recognition system
- It will process the given images and automatically outline its contents,
- distinguish between what represents graphics and text and perform OCR
- over the latter. It generates multiple formats being its main one ODT.
+ OCRFeeder is a document layout analysis and optical character
+ recognition system.
+ .
+ Given the images it will automatically outline its contents,
+ distinguish between what's graphics and text and perform OCR over the
+ latter. It generates multiple formats being its main one ODT.
+ .
+ It features a complete GTK graphical user interface that allows the
+ users to correct any unrecognized characters, defined or correct
+ bounding boxes, set paragraph styles, clean the input images, import
+ PDFs, save and load the project, export everything to multiple
+ formats, etc.
