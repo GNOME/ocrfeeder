@@ -229,7 +229,8 @@ class SelectableBoxesArea(goocanvas.Canvas):
         end_point = (area.props.x + area.props.width - offset, area.props.y + area.props.height - offset)
         bounds = goocanvas.Bounds(*(start_point + end_point))
         overlaped_items = self.get_items_in_area(bounds, True, True, True)
-        overlaped_items.remove(area)
+        if area in overlaped_items:
+            overlaped_items.remove(area)
         return overlaped_items
     
     def handleOverlapedAreas(self, overlaped_areas):
