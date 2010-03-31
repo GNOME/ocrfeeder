@@ -7,9 +7,10 @@ import os
 
 def get_locale_files():
     files = glob.glob('locale/*/*/*.mo')
+    locale_dir = os.path.split(constants.LOCALE_DIR)[0]
     file_list = []
     for file in files:
-        file_list.append((os.path.dirname(os.path.join(constants.DEFAULT_SYSTEM_APP_DIR, file)), [file]))
+        file_list.append((os.path.dirname(os.path.join(locale_dir, file)), [file]))
     return file_list
 
 setup(name = 'ocrfeeder',

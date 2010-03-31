@@ -59,7 +59,7 @@ if not os.path.exists(APP_DIR):
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
-LOCALE_DIR = os.path.join(APP_DIR, 'locale')
+LOCALE_DIR = os.path.join(sys.prefix, 'share', 'locale')
 
 # CUSTOM ICONS
 DETECT_ICON = os.path.join(RESOURCES_DIR, 'icons', 'detect_icon.svg')
