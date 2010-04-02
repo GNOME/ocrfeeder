@@ -121,3 +121,33 @@ for example:
         --dir ~/Desktop
 
 For any usage, the options and parameters can be given in any order.
+
+
+Copyright
+==========
+
+OCRFeeder is (c) 2008-2010 Joaquim Rocha
+
+OCRFeeder is (c) 2009-2010 Igalia, S.L.
+
+http://live.gnome.org/OCRFeeder
+
+
+The *odf* module is (c) Søren Roug, European Environment Agency
+http://odfpy.forge.osor.eu/
+
+
+See AUTHORS file for details on authors
+
+
+OCRFeeder is free software: you can redistribute it and/or modify 
+it under the terms of the GNU General Public License as published by 
+the Free Software Foundation, either version 3 of the License, or 
+(at your option) any later version.
+
+OCRFeeder is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+GNU General Public License for more details.
+
+See the COPYING file for more details.
