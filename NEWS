@@ -1,3 +1,29 @@
+Version 0.6.6
+==============
+
+Improvements
+-------------
+
+* Remove Debian directory from MANIFEST.in so it won't get into the tarball
+* Add AUTHORS file
+* Update copyright to include ODFPy
+* Update description in Debian's control file (thanks to Alberto Garcia)
+* Install locale files under /usr/share/locale (thanks to Alberto Garcia)
+
+Bug Fixes
+----------
+
+* Fix failure when recognizing document with OCRFeeder's DAR algorithm
+
+New and Updated Translations
+-----------------------------
+
+* Marek Cernocky [cs]
+* Mario Blättermann [de]
+* Jorge González [es_ES]
+* Matej Urbančič [sl]
+
+
 Version 0.6.5
 ==============
 
