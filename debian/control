@@ -8,7 +8,7 @@ Homepage: http://live.gnome.org/OCRFeeder
 
 Package: ocrfeeder
 Architecture: all
-Depends: python-gtk2 (>= 2.13), python-imaging (>= 1.1), python-pygoocanvas (>= 0.12.0), ${misc:Depends}, ${python:Depends}
+Depends: python-gtk2 (>= 2.13), python-imaging (>= 1.1), python-pygoocanvas, ${misc:Depends}, ${python:Depends}
 Description: Document layout analysis and optical character recognition system
  OCRFeeder is a document layout analysis and optical character
  recognition system.
