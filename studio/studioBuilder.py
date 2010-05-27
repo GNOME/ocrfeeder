@@ -37,7 +37,6 @@ import pygtk
 pygtk.require('2.0')
 import gtk
 
-gtk.gdk.threads_init()
 class Studio:
     
     EXPORT_FORMATS = ['HTML', 'ODT']
