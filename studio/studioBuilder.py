@@ -23,6 +23,7 @@ from util.constants import *
 from util.cliutils import ArgsRetriever
 import sys
 import os.path
+import urllib
 from studio import widgetPresenter
 from studio.widgetModeler import SourceImagesSelector, SourceImagesSelectorIconView, ImageReviewer_Controler
 from studio.dataHolder import create_images_dict_from_liststore, DataBox, TextData
@@ -40,6 +41,7 @@ import gtk
 class Studio:
     
     EXPORT_FORMATS = ['HTML', 'ODT']
+    TARGET_TYPE_URI_LIST = 80
     
     def __init__(self):
         
@@ -68,6 +70,10 @@ class Studio:
         self.source_images_selector.connect('selection_changed', self.selectionChanged)
         self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_selector)
         self.source_images_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
+        self.source_images_icon_view.connect('drag_data_received', self.dragDataReceived)
+        self.source_images_icon_view.connect('drag_drop', self.dragDrop)
+        self.source_images_icon_view.drag_dest_set(gtk.DEST_DEFAULT_MOTION | gtk.DEST_DEFAULT_HIGHLIGHT,
+                                                   [('text/uri-list', 0, self.TARGET_TYPE_URI_LIST)], gtk.gdk.ACTION_COPY)
         self.source_images_icon_view.show()
         self.main_window.main_area_left.add_with_viewport(self.source_images_icon_view)
         self.images_selectable_area = {}
@@ -115,6 +121,38 @@ class Studio:
     def run(self):
         gtk.main()
     
+    def dragDataReceived(self, widget, context, x, y, selection, target_type, timestamp):
+        if target_type == self.TARGET_TYPE_URI_LIST:
+            uris = selection.data.strip('\r\n\x00').split()
+            paths = []
+            for uri in uris:
+                path = ""
+                if uri.startswith('file:\\\\\\'): # windows
+                    path = uri[8:]
+                elif uri.startswith('file://'): # nautilus, rox
+                    path = uri[7:]
+                elif uri.startswith('file:'): # xffm
+                    path = uri[5:]
+                path = urllib.url2pathname(path).strip('\r\n\x00')
+                if os.path.isfile(path):
+                    paths.append(path)
+            for path in paths:
+                if os.path.splitext(path)[1] == '.pdf':
+                    folder = lib.convertPdfToImages(path, self.configuration_manager.getTemporaryDir())
+                    self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
+                else:
+                    try:
+                        self.__addImagesToReviewer([path])
+                    except:
+                        pass
+
+    def dragDrop(self, widget, context, x, y, timestamp):
+        target_atom = widget.drag_dest_find_target(context, widget.drag_dest_get_target_list())
+        if target_atom != None:
+            widget.drag_get_data(context, target_atom, timestamp)
+            context.finish(True, False, timestamp)
+        return True
+
     def addImage(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
         response = file_open_dialog.run()
