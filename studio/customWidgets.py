@@ -314,13 +314,17 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.emit('dragged_box', item)
     
     def scrollEventCb(self, widget, event):
-        if event.state == gtk.gdk.CONTROL_MASK:
+        # Note: This catches all modifier combinations that use Ctrl. Add
+        #       further combinations _before_ for them to take precedence!
+        if event.state & gtk.gdk.CONTROL_MASK:
             if event.direction == gtk.gdk.SCROLL_UP or \
                event.direction == gtk.gdk.SCROLL_RIGHT:
                 self.zoom(0.05)
+                return True # we have handled the event - don't propagate to parent
             elif event.direction == gtk.gdk.SCROLL_DOWN or \
                  event.direction == gtk.gdk.SCROLL_LEFT:
                 self.zoom(-0.05)
+                return True # we have handled the event - don't propagate to parent
     
     def setAreaFillRgba(self, rgba):
         self.area_fill_rgba = rgba
