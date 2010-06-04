@@ -325,6 +325,14 @@ class SelectableBoxesArea(goocanvas.Canvas):
                  event.direction == gtk.gdk.SCROLL_LEFT:
                 self.zoom(-0.05)
                 return True # we have handled the event - don't propagate to parent
+        elif event.state & gtk.gdk.SHIFT_MASK:
+            event.state &= ~gtk.gdk.SHIFT_MASK
+            if event.direction == gtk.gdk.SCROLL_UP:
+                event.direction = gtk.gdk.SCROLL_LEFT
+                return False # we have not handled the (new) event - propagate to parent
+            elif event.direction == gtk.gdk.SCROLL_DOWN:
+                event.direction = gtk.gdk.SCROLL_RIGHT
+                return False # we have not handled the (new) event - propagate to parent
     
     def setAreaFillRgba(self, rgba):
         self.area_fill_rgba = rgba
