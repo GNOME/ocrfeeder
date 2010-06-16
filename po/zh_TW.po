@@ -1,0 +1,679 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-16 15:16+0800\n"
+"PO-Revision-Date: 2010-06-16 15:18+0800\n"
+"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+"Language-Team: Chinese (traditional)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../feeder/imageManipulation.py:36
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"嘗試開啟圖片時發生問題：\n"
+" %s\n"
+"請確定圖片存在或試著將它轉換成別的格式。"
+
+#: ../resources/ocrfeeder.desktop.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/ocrfeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "完整的 OCR 套裝軟體。"
+
+#: ../studio/studioBuilder.py:157
+msgid "Images"
+msgstr "圖片"
+
+#: ../studio/studioBuilder.py:165
+msgid "PDF"
+msgstr "PDF"
+
+#: ../studio/studioBuilder.py:188
+msgid "Export pages"
+msgstr "匯出頁面"
+
+#: ../studio/studioBuilder.py:202
+msgid "Are you sure you want to delete the current image?"
+msgstr "是否確定要刪除目前的圖片？"
+
+#: ../studio/studioBuilder.py:291
+msgid "The project hasn't been saved."
+msgstr "這個專案尚未儲存。"
+
+#: ../studio/studioBuilder.py:292
+msgid "Do you want to save it before closing?"
+msgstr "是否要在關閉前儲存？"
+
+#: ../studio/studioBuilder.py:293
+msgid "Close anyway"
+msgstr "強制關閉"
+
+#: ../studio/widgetModeler.py:136
+#: ../studio/widgetPresenter.py:1136
+msgid "Delete"
+msgstr "刪除"
+
+#: ../studio/widgetModeler.py:396
+#: ../studio/widgetPresenter.py:598
+#: ../studio/widgetPresenter.py:605
+msgid "Page size"
+msgstr "頁面大小"
+
+#: ../studio/widgetModeler.py:397
+msgid "Resolution"
+msgstr "解析度"
+
+#: ../studio/widgetModeler.py:400
+msgid "Zoom"
+msgstr "縮放"
+
+#: ../studio/widgetModeler.py:456
+msgid "Export to HTML"
+msgstr "匯出成 HTML 檔"
+
+#: ../studio/widgetModeler.py:470
+#: ../studio/widgetPresenter.py:163
+msgid "Export to ODT"
+msgstr "匯出為 ODT"
+
+#: ../studio/widgetModeler.py:491
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder 專案"
+
+#: ../studio/widgetModeler.py:547
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+"<b>名為「%(name)s」的檔案已經存在。確定要將它取代？</b>\n"
+"\n"
+"這個檔案位於「%(dir)s」。取代它會覆蓋其內容。"
+
+#: ../studio/widgetModeler.py:554
+msgid "Replace"
+msgstr "取代"
+
+#: ../studio/widgetPresenter.py:135
+msgid "_File"
+msgstr "檔案(_F)"
+
+#: ../studio/widgetPresenter.py:136
+msgid "_Quit"
+msgstr "結束(_Q)"
+
+#: ../studio/widgetPresenter.py:136
+msgid "Exit the program"
+msgstr "結束這個程式"
+
+#: ../studio/widgetPresenter.py:137
+msgid "_Open"
+msgstr "開啟(_O)"
+
+#: ../studio/widgetPresenter.py:137
+msgid "Open project"
+msgstr "開啟專案"
+
+#: ../studio/widgetPresenter.py:138
+msgid "_Save"
+msgstr "儲存(_S)"
+
+#: ../studio/widgetPresenter.py:138
+msgid "Save project"
+msgstr "儲存專案"
+
+#: ../studio/widgetPresenter.py:139
+msgid "_Save As…"
+msgstr "另存為(_S)…"
+
+#: ../studio/widgetPresenter.py:139
+msgid "Save project with a chosen name"
+msgstr "以選取的名稱儲存專案"
+
+#: ../studio/widgetPresenter.py:140
+msgid "_Add Image"
+msgstr "加入圖片(_A)"
+
+#: ../studio/widgetPresenter.py:140
+msgid "Add another image"
+msgstr "加入另一張圖片"
+
+#: ../studio/widgetPresenter.py:141
+msgid "Add _Folder"
+msgstr "加入資料夾(_F)"
+
+#: ../studio/widgetPresenter.py:141
+msgid "Add all images in a folder"
+msgstr "加入資料夾中全部的圖片"
+
+#: ../studio/widgetPresenter.py:142
+msgid "Append Project"
+msgstr "加入專案"
+
+#: ../studio/widgetPresenter.py:142
+msgid "Load a project and append it to the current one"
+msgstr "載入另一個專案並合併至目前的專案"
+
+#: ../studio/widgetPresenter.py:143
+msgid "_Import PDF"
+msgstr "匯入 PDF (_I)"
+
+#: ../studio/widgetPresenter.py:143
+msgid "Import PDF"
+msgstr "匯入 PDF"
+
+#: ../studio/widgetPresenter.py:144
+msgid "_Export…"
+msgstr "匯出(_E)…"
+
+#: ../studio/widgetPresenter.py:144
+msgid "Export to a chosen format"
+msgstr "匯出為選取的格式"
+
+#: ../studio/widgetPresenter.py:145
+msgid "_Edit"
+msgstr "編輯(_E)"
+
+#: ../studio/widgetPresenter.py:146
+msgid "_Edit Page"
+msgstr "編輯頁面(_E)"
+
+#: ../studio/widgetPresenter.py:146
+msgid "Edit page settings"
+msgstr "編輯頁面設定值"
+
+#: ../studio/widgetPresenter.py:147
+msgid "_Preferences"
+msgstr "偏好設定(_P)"
+
+#: ../studio/widgetPresenter.py:147
+msgid "Configure the application"
+msgstr "設定這個應用程式"
+
+#: ../studio/widgetPresenter.py:148
+msgid "_Delete Page"
+msgstr "刪除頁面(_D)"
+
+#: ../studio/widgetPresenter.py:148
+msgid "Delete current page"
+msgstr "刪除目前的頁面"
+
+#: ../studio/widgetPresenter.py:149
+msgid "_Clear Project"
+msgstr "清除本專案(_C)"
+
+#: ../studio/widgetPresenter.py:149
+msgid "Delete all images"
+msgstr "刪除所有圖片"
+
+#: ../studio/widgetPresenter.py:150
+msgid "_View"
+msgstr "檢視(_V)"
+
+#: ../studio/widgetPresenter.py:151
+msgid "Zoom In"
+msgstr "拉近"
+
+#: ../studio/widgetPresenter.py:152
+msgid "Zoom Out"
+msgstr "拉遠"
+
+#: ../studio/widgetPresenter.py:153
+msgid "Best Fit"
+msgstr "最適大小"
+
+#: ../studio/widgetPresenter.py:154
+msgid "Normal Size"
+msgstr "原來大小"
+
+#: ../studio/widgetPresenter.py:155
+msgid "_Document"
+msgstr "文件(_D)"
+
+#: ../studio/widgetPresenter.py:156
+msgid "_Tools"
+msgstr "工具(_T)"
+
+#: ../studio/widgetPresenter.py:157
+msgid "_OCR Engines"
+msgstr "_OCR 引擎"
+
+#: ../studio/widgetPresenter.py:157
+msgid "Manage OCR engines"
+msgstr "管理 OCR 引擎"
+
+#: ../studio/widgetPresenter.py:158
+msgid "_Unpaper"
+msgstr "_Unpaper"
+
+#: ../studio/widgetPresenter.py:158
+msgid "Process image with unpaper"
+msgstr "以 unpaper 處理圖片"
+
+#: ../studio/widgetPresenter.py:159
+msgid "_Help"
+msgstr "求助(_H)"
+
+#: ../studio/widgetPresenter.py:160
+msgid "_About"
+msgstr "關於(_A)"
+
+#: ../studio/widgetPresenter.py:160
+msgid "About this application"
+msgstr "關於本程式"
+
+#: ../studio/widgetPresenter.py:161
+msgid "_Recognize Document"
+msgstr "辨識文件(_R)"
+
+#: ../studio/widgetPresenter.py:161
+msgid "Automatic Detection and Recognition"
+msgstr "自動偵測並辨識"
+
+#: ../studio/widgetPresenter.py:162
+msgid "Recognize Selected _Areas"
+msgstr "辨識選取的區域(_A)"
+
+#: ../studio/widgetPresenter.py:162
+msgid "Recognize Selected Areas"
+msgstr "辨識選取的區域"
+
+#: ../studio/widgetPresenter.py:163
+msgid "_Generate ODT"
+msgstr "產生 ODT (_G)"
+
+#: ../studio/widgetPresenter.py:229
+#: ../studio/widgetPresenter.py:400
+msgid "Text"
+msgstr "文字"
+
+#: ../studio/widgetPresenter.py:230
+msgid "Image"
+msgstr "圖片"
+
+#: ../studio/widgetPresenter.py:231
+msgid "Type"
+msgstr "類型"
+
+#: ../studio/widgetPresenter.py:241
+msgid "Clip"
+msgstr "剪輯"
+
+#: ../studio/widgetPresenter.py:245
+msgid "Bounds"
+msgstr "鎊"
+
+#: ../studio/widgetPresenter.py:248
+msgid "X"
+msgstr "X"
+
+#: ../studio/widgetPresenter.py:250
+msgid "Y"
+msgstr "Y"
+
+#: ../studio/widgetPresenter.py:253
+#: ../studio/widgetPresenter.py:619
+msgid "Width"
+msgstr "寬度"
+
+#: ../studio/widgetPresenter.py:255
+#: ../studio/widgetPresenter.py:621
+msgid "Height"
+msgstr "高度"
+
+#: ../studio/widgetPresenter.py:351
+msgid "Left"
+msgstr "靠左"
+
+#: ../studio/widgetPresenter.py:355
+msgid "Left aligned"
+msgstr "靠左對齊"
+
+#: ../studio/widgetPresenter.py:357
+msgid "Center"
+msgstr "置中"
+
+#: ../studio/widgetPresenter.py:362
+msgid "Centered"
+msgstr "置中對齊"
+
+#: ../studio/widgetPresenter.py:364
+msgid "Right"
+msgstr "靠右"
+
+#: ../studio/widgetPresenter.py:369
+msgid "Right aligned"
+msgstr "靠右對齊"
+
+#: ../studio/widgetPresenter.py:371
+msgid "Fill"
+msgstr "填滿"
+
+#: ../studio/widgetPresenter.py:376
+msgid "Filled"
+msgstr "填滿"
+
+#: ../studio/widgetPresenter.py:382
+msgid "OCR"
+msgstr "光學辨識(OCR)"
+
+#. Text Properties
+#: ../studio/widgetPresenter.py:392
+msgid "Text Properties"
+msgstr "文字屬性"
+
+#: ../studio/widgetPresenter.py:406
+msgid "Font"
+msgstr "字型"
+
+#: ../studio/widgetPresenter.py:413
+msgid "Align"
+msgstr "Align"
+
+#: ../studio/widgetPresenter.py:417
+msgid "Spacing"
+msgstr "間距"
+
+#: ../studio/widgetPresenter.py:421
+msgid "Line"
+msgstr "行"
+
+#: ../studio/widgetPresenter.py:423
+msgid "Letter"
+msgstr "Letter"
+
+#: ../studio/widgetPresenter.py:428
+msgid "Style"
+msgstr "樣式"
+
+#: ../studio/widgetPresenter.py:433
+msgid "Angle"
+msgstr "角"
+
+#: ../studio/widgetPresenter.py:444
+#: ../studio/widgetPresenter.py:1138
+msgid "Detect"
+msgstr "偵測"
+
+#: ../studio/widgetPresenter.py:446
+msgid "Angle:"
+msgstr "角度："
+
+#: ../studio/widgetPresenter.py:528
+msgid "Save File"
+msgstr "儲存檔案"
+
+#: ../studio/widgetPresenter.py:531
+msgid "Open File"
+msgstr "開啟檔案"
+
+#: ../studio/widgetPresenter.py:535
+msgid "Open Folder"
+msgstr "開啟資料夾"
+
+#: ../studio/widgetPresenter.py:562
+msgid "Pages to export"
+msgstr "要匯出的頁面"
+
+#: ../studio/widgetPresenter.py:564
+#: ../studio/widgetPresenter.py:630
+msgid "All"
+msgstr "全部"
+
+#: ../studio/widgetPresenter.py:565
+#: ../studio/widgetPresenter.py:629
+msgid "Current"
+msgstr "目前的"
+
+#: ../studio/widgetPresenter.py:581
+msgid "Choose the format"
+msgstr "選擇格式"
+
+#: ../studio/widgetPresenter.py:610
+msgid "Custom…"
+msgstr "自訂…"
+
+#: ../studio/widgetPresenter.py:627
+msgid "Affected pages"
+msgstr "影響的頁面"
+
+#: ../studio/widgetPresenter.py:688
+msgid "Unpaper Image Processor"
+msgstr "Unpaper 圖片處理器"
+
+#: ../studio/widgetPresenter.py:709
+#, fuzzy
+msgid "Noise Filter Intensity"
+msgstr "樹狀模型過濾條件"
+
+#: ../studio/widgetPresenter.py:711
+#: ../studio/widgetPresenter.py:729
+msgid "Default"
+msgstr "預設值"
+
+#: ../studio/widgetPresenter.py:712
+#: ../studio/widgetPresenter.py:730
+#: ../studio/widgetPresenter.py:1036
+msgid "Custom"
+msgstr "自訂"
+
+#: ../studio/widgetPresenter.py:713
+#: ../studio/widgetPresenter.py:731
+msgid "None"
+msgstr "沒有"
+
+#: ../studio/widgetPresenter.py:727
+msgid "Gray Filter Size"
+msgstr "灰階過濾大小"
+
+#: ../studio/widgetPresenter.py:745
+msgid "Black Filter"
+msgstr "黑色過濾"
+
+#: ../studio/widgetPresenter.py:746
+msgid "Use"
+msgstr "使用"
+
+#: ../studio/widgetPresenter.py:752
+#: ../studio/widgetPresenter.py:758
+msgid "Preview"
+msgstr "預覽"
+
+#: ../studio/widgetPresenter.py:768
+msgid "Extra Options"
+msgstr "額外選項"
+
+#: ../studio/widgetPresenter.py:802
+msgid "Performing Unpaper"
+msgstr "執行 Unpaper"
+
+#: ../studio/widgetPresenter.py:802
+msgid "Performing unpaper. Please wait…"
+msgstr "執行 Unpaper。請稍候…"
+
+#: ../studio/widgetPresenter.py:872
+#: ../studio/widgetPresenter.py:883
+msgid "An error occurred!"
+msgstr "發生錯誤！"
+
+#: ../studio/widgetPresenter.py:872
+#: ../studio/widgetPresenter.py:883
+msgid "Error"
+msgstr "錯誤"
+
+#: ../studio/widgetPresenter.py:892
+msgid "Preferences"
+msgstr "偏好設定"
+
+#: ../studio/widgetPresenter.py:941
+msgid "General"
+msgstr "一般"
+
+#: ../studio/widgetPresenter.py:944
+msgid "Temporary folder"
+msgstr "暫存資料夾"
+
+#: ../studio/widgetPresenter.py:948
+#: ../studio/widgetPresenter.py:1004
+msgid "Choose"
+msgstr "選擇"
+
+#: ../studio/widgetPresenter.py:965
+msgid "Appearance"
+msgstr "外觀"
+
+#: ../studio/widgetPresenter.py:968
+msgid "Select boxes' colors"
+msgstr "選擇方塊的顏色"
+
+#: ../studio/widgetPresenter.py:975
+msgid "Text fill color"
+msgstr "文字填色"
+
+#: ../studio/widgetPresenter.py:978
+msgid "Text stroke color"
+msgstr "文字筆劃顏色"
+
+#: ../studio/widgetPresenter.py:981
+msgid "Image fill color"
+msgstr "圖片填色"
+
+#: ../studio/widgetPresenter.py:984
+msgid "Image stroke color"
+msgstr "圖片筆劃顏色"
+
+#: ../studio/widgetPresenter.py:997
+msgid "Tools"
+msgstr "工具"
+
+#: ../studio/widgetPresenter.py:1000
+msgid "Path to unpaper"
+msgstr "指向 unpaper 的路徑"
+
+#: ../studio/widgetPresenter.py:1012
+#: ../studio/widgetPresenter.py:1071
+#: ../studio/widgetPresenter.py:1109
+#: ../studio/widgetPresenter.py:1127
+#: ../studio/widgetPresenter.py:1216
+msgid "OCR Engines"
+msgstr "OCR 引擎"
+
+#: ../studio/widgetPresenter.py:1022
+msgid "Favorite engine:"
+msgstr "偏好的引擎："
+
+#: ../studio/widgetPresenter.py:1034
+msgid "Window size"
+msgstr "視窗尺寸"
+
+#: ../studio/widgetPresenter.py:1035
+msgid "Automatic"
+msgstr "自動"
+
+#: ../studio/widgetPresenter.py:1085
+msgid "Engines to be added"
+msgstr "要加入的引擎"
+
+#: ../studio/widgetPresenter.py:1090
+msgid "Include"
+msgstr "包括其它檔案(Include)"
+
+#: ../studio/widgetPresenter.py:1094
+#: ../studio/widgetPresenter.py:1131
+msgid "Engine"
+msgstr "引擎"
+
+#: ../studio/widgetPresenter.py:1135
+msgid "Add"
+msgstr "加入"
+
+#: ../studio/widgetPresenter.py:1137
+msgid "Edit"
+msgstr "編輯"
+
+#: ../studio/widgetPresenter.py:1152
+msgid "Are you sure you want to delete this engine?"
+msgstr "您確定要刪除這個引擎？"
+
+#: ../studio/widgetPresenter.py:1198
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"在系統上找不到 OCR 引擎。\n"
+"請確定您已安裝 OCR 引擎並且可以使用。"
+
+#: ../studio/widgetPresenter.py:1201
+msgid "No OCR engines available"
+msgstr "沒有可用的 OCR 引擎"
+
+#: ../studio/widgetPresenter.py:1218
+#, python-format
+msgid "%s engine"
+msgstr "%s 引擎"
+
+#: ../studio/widgetPresenter.py:1241
+msgid "Name"
+msgstr "名稱"
+
+#: ../studio/widgetPresenter.py:1241
+msgid "Engine name"
+msgstr "引擎名稱"
+
+#: ../studio/widgetPresenter.py:1243
+msgid "Image format"
+msgstr "圖片格式"
+
+#: ../studio/widgetPresenter.py:1243
+msgid "The required image format"
+msgstr "要求的圖片格式"
+
+#: ../studio/widgetPresenter.py:1245
+msgid "Failure string"
+msgstr "失敗字串"
+
+#: ../studio/widgetPresenter.py:1245
+msgid "The failure string or character that this engine uses"
+msgstr "這個引擎使用的錯誤字串或字元"
+
+#: ../studio/widgetPresenter.py:1247
+msgid "Engine Path"
+msgstr "引擎路徑"
+
+#: ../studio/widgetPresenter.py:1247
+msgid "The path to the engine program"
+msgstr "引擎程式的路徑"
+
+#: ../studio/widgetPresenter.py:1249
+msgid "Engine arguments"
+msgstr "引擎引數"
+
+#: ../studio/widgetPresenter.py:1249
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr "引數：在圖片上使用 $IMAGE，如果要寫入到檔案則使用 $FILE"
+
+#: ../studio/widgetPresenter.py:1265
+msgid "Error setting the new engine; please check your engine settings."
+msgstr "設定新引擎時發生錯誤；請檢查您的引擎設定值。"
+
+#: ../studio/widgetPresenter.py:1265
+msgid "Warning"
+msgstr "警告"
+
+#: ../studio/widgetPresenter.py:1296
+msgid "translator-credits"
+msgstr "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw, 2010.>"
+
