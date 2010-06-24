@@ -292,6 +292,7 @@ class ImageReviewer:
             editor.performClassification(engine)
             if editor.box_editor.getType() == IMAGE_TYPE:
                 editor.box_editor.setText('')
+        self.updateMainWindow()
 
     def __getAllDataBoxes(self):
         boxes = []
