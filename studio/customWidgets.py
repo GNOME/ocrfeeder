@@ -162,6 +162,30 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.emit('deselected_box', area)
         return True
 
+    def selectNextArea(self):
+        self.__selectSurroundingArea(-1)
+
+    def selectPreviousArea(self):
+        self.__selectSurroundingArea(1)
+
+    def __selectSurroundingArea(self, area_offset):
+        areas = self.getAllAreas()
+        if not areas:
+            return
+        area_index = self.__getCurrentSelectedAreaIndex(areas)
+        area_index += area_offset
+        if abs(area_index) >= len(areas):
+            area_index = 0
+        self.deselectAreas()
+        self.selectArea(areas[area_index])
+
+    def __getCurrentSelectedAreaIndex(self, areas):
+        current_area = areas[0]
+        if self.selected_areas:
+            current_area = self.selected_areas[-1]
+        area_index = areas.index(current_area)
+        return area_index
+
     def zoom(self, zoom_value, add_zoom = True):
         new_zoom = zoom_value
         set_zoom = False

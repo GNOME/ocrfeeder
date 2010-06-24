@@ -74,6 +74,8 @@ class MainWindow:
         <menu action="Document">
             <menuitem action="OCRFeederDetection"/>
             <menuitem action="RecognizeAreas"/>
+            <menuitem action="SelectPreviousArea"/>
+            <menuitem action="SelectNextArea"/>
         </menu>
         <menu action="Tools">
             <menuitem action="OCREngines"/>
@@ -160,6 +162,14 @@ class MainWindow:
                                   ('About', gtk.STOCK_ABOUT, _('_About'), None, _('About this application'), menu_items['about']),
                                   ('OCRFeederDetection', None, _('_Recognize Document'), None, _("Automatic Detection and Recognition"), tool_items['detection']),
                                   ('RecognizeAreas', None, _('Recognize Selected _Areas'), None, _("Recognize Selected Areas"), menu_items['recognize_areas']),
+                                  ('SelectPreviousArea', gtk.STOCK_GO_BACK,
+                                   _('Select _Previous Area'), None,
+                                   _("Select the previous area from the content areas"),
+                                   menu_items['select_previous_area']),
+                                  ('SelectNextArea', gtk.STOCK_GO_FORWARD,
+                                   _('Select _Next Area'), None,
+                                   _("Select the next area from the content areas"),
+                                   menu_items['select_next_area']),
                                   ('GenerateODT', None, _('_Generate ODT'), None, _("Export to ODT"), tool_items['export_to_odt']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)

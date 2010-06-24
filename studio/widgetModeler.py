@@ -635,6 +635,14 @@ class ImageReviewer_Controler:
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(1, False)
 
+    def selectPreviousArea(self, widget):
+        current_reviewer = self.__getCurrentReviewer()
+        current_reviewer.selectable_boxes_area.selectPreviousArea()
+
+    def selectNextArea(self, widget):
+        current_reviewer = self.__getCurrentReviewer()
+        current_reviewer.selectable_boxes_area.selectNextArea()
+
 class Editor:
     
     def __init__(self, box, pixbuf, ocr_engines, reviewer):

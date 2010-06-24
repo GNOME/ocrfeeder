@@ -95,7 +95,10 @@ class Studio:
                                  'unpaper': self.unpaper, 'preferences': self.preferences, 'about': self.about,
                                  'ocr_engines': self.ocrEngines, 'zoom_in': self.zoomIn, 'zoom_out': self.zoomOut,
                                  'zoom_fit': self.zoomFit, 'reset_zoom': self.resetZoom,
-                                 'recognize_areas': self.source_images_controler.recognizeSelectedAreas}
+                                 'recognize_areas': self.source_images_controler.recognizeSelectedAreas,
+                                 'select_next_area': self.source_images_controler.selectNextArea,
+                                 'select_previous_area': self.source_images_controler.selectPreviousArea,
+                                 }
         
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
         self.main_window.setDestroyEvent(self.quit)
