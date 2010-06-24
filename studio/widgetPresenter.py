@@ -214,6 +214,10 @@ class MainWindow:
         actions = ['RecognizeAreas']
         self.__setActionsSensitiveness(actions, has_selected_boxes)
 
+    def setHasContentBoxes(self, has_content_boxes=True):
+        actions = ['SelectNextArea', 'SelectPreviousArea']
+        self.__setActionsSensitiveness(actions, has_content_boxes)
+
     def __setActionsSensitiveness(self, actions, set_sensitive):
         for gtkaction in [self.action_group.get_action(action) \
                           for action in actions]:

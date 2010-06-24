@@ -108,6 +108,7 @@ class Studio:
             self.__addImagesToReviewer(lib.getImagesFromFolder(dirs[0]))
         
         self.main_window.setHasSelectedBoxes(False)
+        self.main_window.setHasContentBoxes(False)
         self.main_window.setHasImages(not self.source_images_selector.isEmpty())
 
         # Show dialog to choose system-wide OCR engines when no engine was found

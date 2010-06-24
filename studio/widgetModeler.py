@@ -351,8 +351,10 @@ class ImageReviewer:
 
     def updateMainWindow(self):
         has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
+        has_boxes = self.selectable_boxes_area.getAllAreas()
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
-    
+        self.main_window.setHasContentBoxes(bool(has_boxes))
+
 class ImageReviewer_Controler:
     
     def __init__(self, main_window, images_dict, source_images_selector_widget,
