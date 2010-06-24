@@ -206,17 +206,19 @@ class MainWindow:
                    'DeletePage', 'SaveProject', 'SaveProjectAs',
                    'OCRFeederDetection', 'EditPage', 'ClearProject',
                    'AppendProject', 'ZoomFit']
-        for gtkaction in [self.action_group.get_action(action) for action in actions]:
-            gtkaction.set_sensitive(has_images)
+        self.__setActionsSensitiveness(actions, has_images)
 
     def setHasSelectedBoxes(self, has_selected_boxes = True):
         if not self.action_group:
             return
         actions = ['RecognizeAreas']
+        self.__setActionsSensitiveness(actions, has_selected_boxes)
+
+    def __setActionsSensitiveness(self, actions, set_sensitive):
         for gtkaction in [self.action_group.get_action(action) \
                           for action in actions]:
-            gtkaction.set_sensitive(has_selected_boxes)
-        
+            gtkaction.set_sensitive(set_sensitive)
+
 class BoxEditor(gtk.ScrolledWindow):
     
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
