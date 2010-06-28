@@ -400,6 +400,7 @@ class ImageReviewer_Controler:
             self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
             self.tripple_statusbar.center_statusbar.insert((_('Page size') + ': %.2f x %.2f') % (reviewer.getPageData().width, reviewer.getPageData().height))
             self.tripple_statusbar.right_statusbar.insert((_('Resolution') + ': %i x %i') % (reviewer.getPageData().resolution[0], reviewer.getPageData().resolution[1]))
+            reviewer.updateMainWindow()
     
     def __setZoomStatus(self, widget, zoom):
         self.tripple_statusbar.left_statusbar.insert(_('Zoom') + ': ' + str(int(zoom * 100)) + '%')
