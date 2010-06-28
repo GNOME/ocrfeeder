@@ -207,6 +207,9 @@ class MainWindow:
                    'OCRFeederDetection', 'EditPage', 'ClearProject',
                    'AppendProject', 'ZoomFit']
         self.__setActionsSensitiveness(actions, has_images)
+        if not has_images:
+            self.setHasSelectedBoxes(False)
+            self.setHasContentBoxes(False)
 
     def setHasSelectedBoxes(self, has_selected_boxes = True):
         if not self.action_group:
