@@ -74,6 +74,7 @@ class MainWindow:
         <menu action="Document">
             <menuitem action="OCRFeederDetection"/>
             <menuitem action="RecognizeAreas"/>
+            <menuitem action="SelectAllAreas"/>
             <menuitem action="SelectPreviousArea"/>
             <menuitem action="SelectNextArea"/>
         </menu>
@@ -162,6 +163,10 @@ class MainWindow:
                                   ('About', gtk.STOCK_ABOUT, _('_About'), None, _('About this application'), menu_items['about']),
                                   ('OCRFeederDetection', None, _('_Recognize Document'), None, _("Automatic Detection and Recognition"), tool_items['detection']),
                                   ('RecognizeAreas', None, _('Recognize Selected _Areas'), None, _("Recognize Selected Areas"), menu_items['recognize_areas']),
+                                  ('SelectAllAreas', None,
+                                   _('Select All _Areas'), '<control>a',
+                                   _("Select all content areas"),
+                                   menu_items['select_all_areas']),
                                   ('SelectPreviousArea', gtk.STOCK_GO_BACK,
                                    _('Select _Previous Area'), None,
                                    _("Select the previous area from the content areas"),
@@ -218,7 +223,8 @@ class MainWindow:
         self.__setActionsSensitiveness(actions, has_selected_boxes)
 
     def setHasContentBoxes(self, has_content_boxes=True):
-        actions = ['SelectNextArea', 'SelectPreviousArea']
+        actions = ['SelectNextArea', 'SelectPreviousArea',
+                   'SelectAllAreas']
         self.__setActionsSensitiveness(actions, has_content_boxes)
 
     def __setActionsSensitiveness(self, actions, set_sensitive):

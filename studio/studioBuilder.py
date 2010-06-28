@@ -98,6 +98,7 @@ class Studio:
                                  'recognize_areas': self.source_images_controler.recognizeSelectedAreas,
                                  'select_next_area': self.source_images_controler.selectNextArea,
                                  'select_previous_area': self.source_images_controler.selectPreviousArea,
+                                 'select_all_areas': self.source_images_controler.selectAllAreas,
                                  }
         
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
