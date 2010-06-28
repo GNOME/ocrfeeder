@@ -288,8 +288,6 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 selected_area = self.selected_areas.pop(0)
                 selected_area.remove()
                 self.emit('removed_box', selected_area)
-        elif key_name == 'a' and event.state == gtk.gdk.CONTROL_MASK:
-            self.selectAllAreas()
 
     def pressedKeyOnImage(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()
