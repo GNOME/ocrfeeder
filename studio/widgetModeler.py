@@ -151,7 +151,9 @@ class SourceImagesSelectorIconView(gtk.IconView):
         if len(selected_items):
             selected_item_path = selected_items[0]
             self.source_images_selector.removeIter(selected_item_path)
-    
+            if not self.source_images_selector.isEmpty():
+                self.select_path(0)
+
     def clear(self):
         self.source_images_selector.clear()
     
