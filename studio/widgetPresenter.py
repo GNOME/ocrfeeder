@@ -257,8 +257,10 @@ class BoxEditor(gtk.ScrolledWindow):
         self.height_spin_button.set_tooltip_text(_("Sets the content area's height"))
         self.setHeight(height)
         
-        self.make_text_button = self.__makeRadioButton(_('Text'), 'gnome-mime-text')
-        self.make_image_button = self.__makeRadioButton(_('Image'), 'gnome-mime-image', self.make_text_button)
+        self.make_text_button = self.__makeRadioButton(_('_Text'), 'gnome-mime-text')
+        self.make_text_button.set_tooltip_text(_('Set this content area to be the text type'))
+        self.make_image_button = self.__makeRadioButton(_('_Image'), 'gnome-mime-image', self.make_text_button)
+        self.make_image_button.set_tooltip_text(_('Set this content area to be the image type'))
         box_type_frame = PlainFrame(_('Type'))
         box_type_table = gtk.Table(1, 2, True)
         box_type_table.attach(self.make_text_button, 0, 1, 0, 1)
@@ -402,14 +404,12 @@ class BoxEditor(gtk.ScrolledWindow):
         self.contents.pack_start(dimensions_frame, False, False)
 
     def __makeRadioButton(self, label, icon_name, group_button = None):
-        new_radio_button = gtk.RadioButton(group_button)
+        new_radio_button = gtk.RadioButton(group_button, label)
         new_radio_button.set_relief(gtk.RELIEF_NONE)
         new_radio_button.set_focus_on_click(False)
         theme = gtk.icon_theme_get_default()
         if theme.lookup_icon(icon_name, gtk.ICON_SIZE_SMALL_TOOLBAR, gtk.ICON_LOOKUP_USE_BUILTIN):
             new_radio_button.set_image(gtk.image_new_from_icon_name(icon_name, gtk.ICON_SIZE_SMALL_TOOLBAR))
-        new_radio_button.set_label(label)
-        
         return new_radio_button
     
     def __makeAlignButtons(self):
