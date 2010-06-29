@@ -243,12 +243,18 @@ class BoxEditor(gtk.ScrolledWindow):
         self.image_window.set_size_request(200, 200)
         self.image_window.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.x_spin_button = gtk.SpinButton(gtk.Adjustment(0,0,0,1), 1.0, 0)
+        self.x_spin_button.set_tooltip_text(_("Sets the content area's upper "
+                                              "left corner's X coordinate"))
         self.setX(x)
         self.y_spin_button = gtk.SpinButton(gtk.Adjustment(0,0,0,1), 1.0, 0)
+        self.y_spin_button.set_tooltip_text(_("Sets the content area's upper "
+                                              "left corner's Y coordinate"))
         self.setY(y)
         self.width_spin_button = gtk.SpinButton(gtk.Adjustment(0,0,0,1), 1.0, 0)
+        self.width_spin_button.set_tooltip_text(_("Sets the content area's width"))
         self.setWidth(width)
         self.height_spin_button = gtk.SpinButton(gtk.Adjustment(0,0,0,1), 1.0, 0)
+        self.height_spin_button.set_tooltip_text(_("Sets the content area's height"))
         self.setHeight(height)
         
         self.make_text_button = self.__makeRadioButton(_('Text'), 'gnome-mime-text')
@@ -266,24 +272,9 @@ class BoxEditor(gtk.ScrolledWindow):
         image_frame = PlainFrame(_('Clip'))
         image_frame.add(self.image_window)
         self.contents.pack_start(image_frame, False, False)
-        
-        dimensions_frame = PlainFrame(_('Bounds'))
-        
-        dimensions_table = gtk.Table(2, 4, True)
-        dimensions_table.attach(gtk.Label(_('X')), 0, 1, 0, 1)
-        dimensions_table.attach(self.x_spin_button, 1, 2, 0, 1)
-        dimensions_table.attach(gtk.Label(_('Y')), 2, 3, 0, 1)
-        dimensions_table.attach(self.y_spin_button, 3, 4, 0, 1)
-        
-        dimensions_table.attach(gtk.Label(_('Width')), 0, 1, 1, 2)
-        dimensions_table.attach(self.width_spin_button, 1, 2, 1, 2)
-        dimensions_table.attach(gtk.Label(_('Height')), 2, 3, 1, 2)
-        dimensions_table.attach(self.height_spin_button, 3, 4, 1, 2)
-        
-        dimensions_frame.add(dimensions_table)
-        
-        self.contents.pack_start(dimensions_frame, False, False)
-        
+
+        self.__makeBoundsProperties()
+
         self.setXRange()
         self.setYRange()
         self.setWidthRange()
@@ -360,7 +351,56 @@ class BoxEditor(gtk.ScrolledWindow):
                 y == self.y_spin_button.get_value() and \
                 width == self.width_spin_button.get_value() and \
                 height == self.height_spin_button.get_value()
-    
+
+    def __makeBoundsProperties(self):
+        dimensions_frame = PlainFrame(_('Bounds'))
+        box = gtk.VBox(True, 0)
+        row = gtk.HBox(False, 12)
+        size_group = gtk.SizeGroup(gtk.SIZE_GROUP_HORIZONTAL)
+
+        label = gtk.Label(_('_X:'))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.x_spin_button)
+        alignment = gtk.Alignment(0, 0.5, 0, 0)
+        alignment.add(label)
+        size_group.add_widget(alignment)
+        row.pack_start(alignment, False, False, 0)
+        row.pack_start(self.x_spin_button, True, True, 0)
+
+        label = gtk.Label(_('_Y:'))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.y_spin_button)
+        alignment = gtk.Alignment(0, 0.5, 0, 0)
+        alignment.add(label)
+        size_group.add_widget(alignment)
+        row.pack_start(alignment, False, False, 0)
+        row.pack_start(self.y_spin_button, True, True, 0)
+
+        box.add(row)
+        row = gtk.HBox(False, 12)
+
+        label = gtk.Label(_('_Width:'))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.width_spin_button)
+        alignment = gtk.Alignment(0, 0.5, 0, 0)
+        alignment.add(label)
+        size_group.add_widget(alignment)
+        row.pack_start(alignment, False, False, 0)
+        row.pack_start(self.width_spin_button, True, True, 0)
+
+        label = gtk.Label(_('Hei_ght:'))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.height_spin_button)
+        alignment = gtk.Alignment(0, 0.5, 0, 0)
+        alignment.add(label)
+        size_group.add_widget(alignment)
+        row.pack_start(alignment, False, False, 0)
+        row.pack_start(self.height_spin_button, True, True, 0)
+
+        box.add(row)
+        dimensions_frame.add(box)
+        self.contents.pack_start(dimensions_frame, False, False)
+
     def __makeRadioButton(self, label, icon_name, group_button = None):
         new_radio_button = gtk.RadioButton(group_button)
         new_radio_button.set_relief(gtk.RELIEF_NONE)
