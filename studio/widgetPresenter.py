@@ -444,10 +444,15 @@ class BoxEditor(gtk.ScrolledWindow):
     
     def __makeOcrProperties(self, engines):
         hbox = gtk.HBox()
-        self.perform_ocr_button = gtk.Button(_('OCR'))
+        self.perform_ocr_button = gtk.Button(_('OC_R'))
+        self.perform_ocr_button.set_tooltip_text(_('Perform OCR on this '
+                                                   'content area using the '
+                                                   'selected OCR engine.'))
         icon = gtk.image_new_from_stock(gtk.STOCK_OK, gtk.ICON_SIZE_BUTTON)
         self.perform_ocr_button.set_image(icon)
         self.ocr_combo_box = gtk.combo_box_new_text()
+        self.ocr_combo_box.set_tooltip_text(_('OCR engine to recognize '
+                                              'this content area'))
         self.setOcrEngines(engines)
         self.ocr_combo_box.set_active(0)
         hbox.pack_end(self.perform_ocr_button, False, False)
@@ -522,6 +527,13 @@ class BoxEditor(gtk.ScrolledWindow):
             text_properties_notebook.set_tab_reorderable(angle_box, True)
         
         vbox = gtk.VBox()
+        label = gtk.Label(_('OCR engine to recogni_ze this area:'))
+        label.set_mnemonic_widget(self.ocr_combo_box)
+        label.set_use_underline(True)
+        alignment = gtk.Alignment(0, 0.5, 0, 1)
+        alignment.add(label)
+
+        vbox.pack_start(alignment)
         vbox.pack_start(hbox, False, False)
         vbox.add(text_properties_notebook)
         text_properties_frame.add(vbox)
