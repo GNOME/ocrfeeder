@@ -467,7 +467,9 @@ class BoxEditor(gtk.ScrolledWindow):
         self.text_content = self.text_widget.get_buffer()
         scrolled_text = gtk.ScrolledWindow()
         scrolled_text.add(self.text_widget)
-        text_properties_notebook.append_page(scrolled_text, gtk.Label( _('Text')))
+        label = gtk.Label( _('_Text'))
+        label.set_use_underline(True)
+        text_properties_notebook.append_page(scrolled_text, label)
         text_properties_notebook.set_tab_reorderable(scrolled_text, True)
         
         # Style widget
