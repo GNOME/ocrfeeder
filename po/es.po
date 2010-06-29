@@ -4,13 +4,14 @@
 #
 # Andrés Gómez <agomez@igalia.com>, 2009.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: orcfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-03-24 11:05+0000\n"
-"PO-Revision-Date: 2010-03-24 21:11+0100\n"
+"POT-Creation-Date: 2010-06-28 09:53+0000\n"
+"PO-Revision-Date: 2010-06-29 05:31+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,64 +38,64 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "La aplicación completa de OCR"
 
-#: ../studio/studioBuilder.py:120
+#: ../studio/studioBuilder.py:162
 msgid "Images"
 msgstr "Imágenes"
 
-#: ../studio/studioBuilder.py:128
+#: ../studio/studioBuilder.py:170
 msgid "PDF"
 msgstr "PDF"
 
-#: ../studio/studioBuilder.py:151
+#: ../studio/studioBuilder.py:193
 msgid "Export pages"
 msgstr "Exportar páginas"
 
-#: ../studio/studioBuilder.py:165
+#: ../studio/studioBuilder.py:207
 msgid "Are you sure you want to delete the current image?"
 msgstr "¿Está seguro de que quiere eliminar esta imagen?"
 
-#: ../studio/studioBuilder.py:254
+#: ../studio/studioBuilder.py:296
 msgid "The project hasn't been saved."
 msgstr "No se ha guardado el proyecto."
 
-#: ../studio/studioBuilder.py:255
+#: ../studio/studioBuilder.py:297
 msgid "Do you want to save it before closing?"
 msgstr "¿Quiere guardar antes de cerrar?"
 
-#: ../studio/studioBuilder.py:256
+#: ../studio/studioBuilder.py:298
 msgid "Close anyway"
 msgstr "Cerrar de todas formas"
 
-#: ../studio/widgetModeler.py:136 ../studio/widgetPresenter.py:1136
+#: ../studio/widgetModeler.py:136 ../studio/widgetPresenter.py:1161
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../studio/widgetModeler.py:396 ../studio/widgetPresenter.py:598
-#: ../studio/widgetPresenter.py:605
+#: ../studio/widgetModeler.py:401 ../studio/widgetPresenter.py:623
+#: ../studio/widgetPresenter.py:630
 msgid "Page size"
 msgstr "Tamaño de página"
 
-#: ../studio/widgetModeler.py:397
+#: ../studio/widgetModeler.py:402
 msgid "Resolution"
 msgstr "Resolución"
 
-#: ../studio/widgetModeler.py:400
+#: ../studio/widgetModeler.py:406
 msgid "Zoom"
 msgstr "Ampliación"
 
-#: ../studio/widgetModeler.py:456
+#: ../studio/widgetModeler.py:462
 msgid "Export to HTML"
 msgstr "Exportar a HTML"
 
-#: ../studio/widgetModeler.py:470 ../studio/widgetPresenter.py:163
+#: ../studio/widgetModeler.py:476 ../studio/widgetPresenter.py:178
 msgid "Export to ODT"
 msgstr "Exportar a ODT"
 
-#: ../studio/widgetModeler.py:491
+#: ../studio/widgetModeler.py:497
 msgid "OCRFeeder Projects"
 msgstr "Proyectos de OCRFeeder"
 
-#: ../studio/widgetModeler.py:547
+#: ../studio/widgetModeler.py:553
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -106,495 +107,520 @@ msgstr ""
 "El archivo ya existe en «%(dir)s». Al reemplazar se sobreescribirá el "
 "contenido."
 
-#: ../studio/widgetModeler.py:554
+#: ../studio/widgetModeler.py:560
 msgid "Replace"
 msgstr "Reemplazar"
 
-#: ../studio/widgetPresenter.py:135
+#: ../studio/widgetPresenter.py:138
 msgid "_File"
 msgstr "_Archivo"
 
-#: ../studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:139
 msgid "_Quit"
 msgstr "_Salir"
 
-#: ../studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:139
 msgid "Exit the program"
 msgstr "Salir del programa"
 
-#: ../studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:140
 msgid "_Open"
 msgstr "_Abrir"
 
-#: ../studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:140
 msgid "Open project"
 msgstr "Abrir proyecto"
 
-#: ../studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:141
 msgid "_Save"
 msgstr "_Guardar"
 
-#: ../studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:141
 msgid "Save project"
 msgstr "Guardar proyecto"
 
-#: ../studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:142
 msgid "_Save As…"
 msgstr "Guardar co_mo…"
 
-#: ../studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:142
 msgid "Save project with a chosen name"
 msgstr "Guardar el proyecto como"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:143
 msgid "_Add Image"
 msgstr "_Añadir imágen"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:143
 msgid "Add another image"
 msgstr "Añadir otra imagen"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:144
 msgid "Add _Folder"
 msgstr "Añadir ca_rpeta"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:144
 msgid "Add all images in a folder"
 msgstr "Añadir todas las imágenes en una carpeta"
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:145
 msgid "Append Project"
 msgstr "Añadir proyecto"
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:145
 msgid "Load a project and append it to the current one"
 msgstr "Cargar y añadir un proyecto al actual"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:146
 msgid "_Import PDF"
 msgstr "_Importar PDF"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:146
 msgid "Import PDF"
 msgstr "Importar PDF"
 
-#: ../studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:147
 msgid "_Export…"
 msgstr "_Exportar…"
 
-#: ../studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:147
 msgid "Export to a chosen format"
 msgstr "Exportar a un formato seleccionado"
 
-#: ../studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:148
 msgid "_Edit"
 msgstr "_Editar"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:149
 msgid "_Edit Page"
 msgstr "_Editar página"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:149
 msgid "Edit page settings"
 msgstr "Editar los ajustes de paǵina"
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:150
 msgid "_Preferences"
 msgstr "Prefere_ncias"
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:150
 msgid "Configure the application"
 msgstr "Configurar la aplicación"
 
-#: ../studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:151
 msgid "_Delete Page"
 msgstr "_Eliminar página"
 
-#: ../studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:151
 msgid "Delete current page"
 msgstr "Eliminar la página actual"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:152
 msgid "_Clear Project"
 msgstr "_Limpiar proyecto"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:152
 msgid "Delete all images"
 msgstr "Eliminar todas las imágenes"
 
-#: ../studio/widgetPresenter.py:150
+#: ../studio/widgetPresenter.py:153
 msgid "_View"
 msgstr "_Ver"
 
-#: ../studio/widgetPresenter.py:151
+#: ../studio/widgetPresenter.py:154
 msgid "Zoom In"
 msgstr "Ampliar"
 
-#: ../studio/widgetPresenter.py:152
+#: ../studio/widgetPresenter.py:155
 msgid "Zoom Out"
 msgstr "Reducir"
 
-#: ../studio/widgetPresenter.py:153
+#: ../studio/widgetPresenter.py:156
 msgid "Best Fit"
 msgstr "Ajuste óptimo"
 
-#: ../studio/widgetPresenter.py:154
+#: ../studio/widgetPresenter.py:157
 msgid "Normal Size"
 msgstr "Tamaño normal"
 
-#: ../studio/widgetPresenter.py:155
+#: ../studio/widgetPresenter.py:158
 msgid "_Document"
 msgstr "_Documento"
 
-#: ../studio/widgetPresenter.py:156
+#: ../studio/widgetPresenter.py:159
 msgid "_Tools"
 msgstr "_Herramientas"
 
-#: ../studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:160
 msgid "_OCR Engines"
 msgstr "Motores _OCR"
 
-#: ../studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:160
 msgid "Manage OCR engines"
 msgstr "Gestionar los motores OCR"
 
-#: ../studio/widgetPresenter.py:158
+#: ../studio/widgetPresenter.py:161
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: ../studio/widgetPresenter.py:158
+#: ../studio/widgetPresenter.py:161
 msgid "Process image with unpaper"
 msgstr "Procesar imagen con unpaper"
 
-#: ../studio/widgetPresenter.py:159
+#: ../studio/widgetPresenter.py:162
 msgid "_Help"
 msgstr "Ay_uda"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:163
 msgid "_About"
 msgstr "Acerca _de"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:163
 msgid "About this application"
 msgstr "Acerca de esta aplicación"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:164
 msgid "_Recognize Document"
 msgstr "_Identificar documento"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:164
 msgid "Automatic Detection and Recognition"
 msgstr "Detección e identificación automática"
 
-#: ../studio/widgetPresenter.py:162
+#: ../studio/widgetPresenter.py:165
 msgid "Recognize Selected _Areas"
 msgstr "Reconocer á_reas seleccionadas"
 
-#: ../studio/widgetPresenter.py:162
+#: ../studio/widgetPresenter.py:165
 msgid "Recognize Selected Areas"
 msgstr "Reconocer las áreas seleccionadas"
 
-#: ../studio/widgetPresenter.py:163
+#: ../studio/widgetPresenter.py:167
+#| msgid "Recognize Selected _Areas"
+msgid "Select All _Areas"
+msgstr "Seleccionar todas las _áreas"
+
+#: ../studio/widgetPresenter.py:168
+msgid "Select all content areas"
+msgstr "Seleccionar todas las áreas de contenido"
+
+#: ../studio/widgetPresenter.py:171
+msgid "Select _Previous Area"
+msgstr "Seleccionar el área a_nterior"
+
+#: ../studio/widgetPresenter.py:172
+msgid "Select the previous area from the content areas"
+msgstr "Seleccionar el área anterior de las áreas de contenido"
+
+#: ../studio/widgetPresenter.py:175
+msgid "Select _Next Area"
+msgstr "Seleccionar la _siguiente área"
+
+#: ../studio/widgetPresenter.py:176
+msgid "Select the next area from the content areas"
+msgstr "Seleccionar la siguiente área de las áreas de contenido"
+
+#: ../studio/widgetPresenter.py:178
 msgid "_Generate ODT"
 msgstr "_Generar ODT"
 
-#: ../studio/widgetPresenter.py:229 ../studio/widgetPresenter.py:400
+#: ../studio/widgetPresenter.py:254 ../studio/widgetPresenter.py:425
 msgid "Text"
 msgstr "Texto"
 
-#: ../studio/widgetPresenter.py:230
+#: ../studio/widgetPresenter.py:255
 msgid "Image"
 msgstr "Imagen"
 
-#: ../studio/widgetPresenter.py:231
+#: ../studio/widgetPresenter.py:256
 msgid "Type"
 msgstr "Tipo"
 
-#: ../studio/widgetPresenter.py:241
+#: ../studio/widgetPresenter.py:266
 msgid "Clip"
 msgstr "Clip"
 
-#: ../studio/widgetPresenter.py:245
+#: ../studio/widgetPresenter.py:270
 msgid "Bounds"
 msgstr "Límites"
 
-#: ../studio/widgetPresenter.py:248
+#: ../studio/widgetPresenter.py:273
 msgid "X"
 msgstr "X"
 
-#: ../studio/widgetPresenter.py:250
+#: ../studio/widgetPresenter.py:275
 msgid "Y"
 msgstr "Y"
 
-#: ../studio/widgetPresenter.py:253 ../studio/widgetPresenter.py:619
+#: ../studio/widgetPresenter.py:278 ../studio/widgetPresenter.py:644
 msgid "Width"
 msgstr "Anchura"
 
-#: ../studio/widgetPresenter.py:255 ../studio/widgetPresenter.py:621
+#: ../studio/widgetPresenter.py:280 ../studio/widgetPresenter.py:646
 msgid "Height"
 msgstr "Altura"
 
-#: ../studio/widgetPresenter.py:351
+#: ../studio/widgetPresenter.py:376
 msgid "Left"
 msgstr "Izquierda"
 
-#: ../studio/widgetPresenter.py:355
+#: ../studio/widgetPresenter.py:380
 msgid "Left aligned"
 msgstr "Alineado a la izquierda"
 
-#: ../studio/widgetPresenter.py:357
+#: ../studio/widgetPresenter.py:382
 msgid "Center"
 msgstr "Centro"
 
-#: ../studio/widgetPresenter.py:362
+#: ../studio/widgetPresenter.py:387
 msgid "Centered"
 msgstr "Centrado"
 
-#: ../studio/widgetPresenter.py:364
+#: ../studio/widgetPresenter.py:389
 msgid "Right"
 msgstr "Derecha"
 
-#: ../studio/widgetPresenter.py:369
+#: ../studio/widgetPresenter.py:394
 msgid "Right aligned"
 msgstr "Alineado a la derecha"
 
-#: ../studio/widgetPresenter.py:371
+#: ../studio/widgetPresenter.py:396
 msgid "Fill"
 msgstr "Relleno"
 
-#: ../studio/widgetPresenter.py:376
+#: ../studio/widgetPresenter.py:401
 msgid "Filled"
 msgstr "Rellenado"
 
-#: ../studio/widgetPresenter.py:382
+#: ../studio/widgetPresenter.py:407
 msgid "OCR"
 msgstr "OCR"
 
 #. Text Properties
-#: ../studio/widgetPresenter.py:392
+#: ../studio/widgetPresenter.py:417
 msgid "Text Properties"
 msgstr "Propiedades del texto"
 
-#: ../studio/widgetPresenter.py:406
+#: ../studio/widgetPresenter.py:431
 msgid "Font"
 msgstr "Tipografía"
 
-#: ../studio/widgetPresenter.py:413
+#: ../studio/widgetPresenter.py:438
 msgid "Align"
 msgstr "Alineación"
 
-#: ../studio/widgetPresenter.py:417
+#: ../studio/widgetPresenter.py:442
 msgid "Spacing"
 msgstr "Espaciado"
 
-#: ../studio/widgetPresenter.py:421
+#: ../studio/widgetPresenter.py:446
 msgid "Line"
 msgstr "Línea"
 
-#: ../studio/widgetPresenter.py:423
+#: ../studio/widgetPresenter.py:448
 msgid "Letter"
 msgstr "Letra"
 
-#: ../studio/widgetPresenter.py:428
+#: ../studio/widgetPresenter.py:453
 msgid "Style"
 msgstr "Estilo"
 
-#: ../studio/widgetPresenter.py:433
+#: ../studio/widgetPresenter.py:458
 msgid "Angle"
 msgstr "Ángulo"
 
-#: ../studio/widgetPresenter.py:444 ../studio/widgetPresenter.py:1138
+#: ../studio/widgetPresenter.py:469 ../studio/widgetPresenter.py:1163
 msgid "Detect"
 msgstr "Detectar"
 
-#: ../studio/widgetPresenter.py:446
+#: ../studio/widgetPresenter.py:471
 msgid "Angle:"
 msgstr "Ángulo:"
 
-#: ../studio/widgetPresenter.py:528
+#: ../studio/widgetPresenter.py:553
 msgid "Save File"
 msgstr "Guardar archivo"
 
-#: ../studio/widgetPresenter.py:531
+#: ../studio/widgetPresenter.py:556
 msgid "Open File"
 msgstr "Abrir archivo"
 
-#: ../studio/widgetPresenter.py:535
+#: ../studio/widgetPresenter.py:560
 msgid "Open Folder"
 msgstr "Abrir carpeta"
 
-#: ../studio/widgetPresenter.py:562
+#: ../studio/widgetPresenter.py:587
 msgid "Pages to export"
 msgstr "Páginas para exportar"
 
-#: ../studio/widgetPresenter.py:564 ../studio/widgetPresenter.py:630
+#: ../studio/widgetPresenter.py:589 ../studio/widgetPresenter.py:655
 msgid "All"
 msgstr "Todas"
 
-#: ../studio/widgetPresenter.py:565 ../studio/widgetPresenter.py:629
+#: ../studio/widgetPresenter.py:590 ../studio/widgetPresenter.py:654
 msgid "Current"
 msgstr "Actual"
 
-#: ../studio/widgetPresenter.py:581
+#: ../studio/widgetPresenter.py:606
 msgid "Choose the format"
 msgstr "Elegir el formato"
 
-#: ../studio/widgetPresenter.py:610
+#: ../studio/widgetPresenter.py:635
 msgid "Custom…"
 msgstr "Personalizado..."
 
-#: ../studio/widgetPresenter.py:627
+#: ../studio/widgetPresenter.py:652
 msgid "Affected pages"
 msgstr "Páginas afectadas"
 
-#: ../studio/widgetPresenter.py:688
+#: ../studio/widgetPresenter.py:713
 msgid "Unpaper Image Processor"
 msgstr "Procesador de imágenes unpaper"
 
-#: ../studio/widgetPresenter.py:709
+#: ../studio/widgetPresenter.py:734
 msgid "Noise Filter Intensity"
 msgstr "Intensidad del filtro de ruido"
 
-#: ../studio/widgetPresenter.py:711 ../studio/widgetPresenter.py:729
+#: ../studio/widgetPresenter.py:736 ../studio/widgetPresenter.py:754
 msgid "Default"
 msgstr "Predeterminado"
 
-#: ../studio/widgetPresenter.py:712 ../studio/widgetPresenter.py:730
-#: ../studio/widgetPresenter.py:1036
+#: ../studio/widgetPresenter.py:737 ../studio/widgetPresenter.py:755
+#: ../studio/widgetPresenter.py:1061
 msgid "Custom"
 msgstr "Personalizado"
 
-#: ../studio/widgetPresenter.py:713 ../studio/widgetPresenter.py:731
+#: ../studio/widgetPresenter.py:738 ../studio/widgetPresenter.py:756
 msgid "None"
 msgstr "Ninguno"
 
-#: ../studio/widgetPresenter.py:727
+#: ../studio/widgetPresenter.py:752
 msgid "Gray Filter Size"
 msgstr "Tamaño del filtro de grises"
 
-#: ../studio/widgetPresenter.py:745
+#: ../studio/widgetPresenter.py:770
 msgid "Black Filter"
 msgstr "Filtro de negros"
 
-#: ../studio/widgetPresenter.py:746
+#: ../studio/widgetPresenter.py:771
 msgid "Use"
 msgstr "Usar"
 
-#: ../studio/widgetPresenter.py:752 ../studio/widgetPresenter.py:758
+#: ../studio/widgetPresenter.py:777 ../studio/widgetPresenter.py:783
 msgid "Preview"
 msgstr "Vista previa"
 
-#: ../studio/widgetPresenter.py:768
+#: ../studio/widgetPresenter.py:793
 msgid "Extra Options"
 msgstr "Opciones adicionales"
 
-#: ../studio/widgetPresenter.py:802
+#: ../studio/widgetPresenter.py:827
 msgid "Performing Unpaper"
 msgstr "Realizar unpaper"
 
-#: ../studio/widgetPresenter.py:802
+#: ../studio/widgetPresenter.py:827
 msgid "Performing unpaper. Please wait…"
 msgstr "Realizando unpaper. Espere…"
 
-#: ../studio/widgetPresenter.py:872 ../studio/widgetPresenter.py:883
+#: ../studio/widgetPresenter.py:897 ../studio/widgetPresenter.py:908
 msgid "An error occurred!"
 msgstr "Ocurrió un error"
 
-#: ../studio/widgetPresenter.py:872 ../studio/widgetPresenter.py:883
+#: ../studio/widgetPresenter.py:897 ../studio/widgetPresenter.py:908
 msgid "Error"
 msgstr "Error"
 
-#: ../studio/widgetPresenter.py:892
+#: ../studio/widgetPresenter.py:917
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: ../studio/widgetPresenter.py:941
+#: ../studio/widgetPresenter.py:966
 msgid "General"
 msgstr "General"
 
-#: ../studio/widgetPresenter.py:944
+#: ../studio/widgetPresenter.py:969
 msgid "Temporary folder"
 msgstr "Carpeta temporal"
 
-#: ../studio/widgetPresenter.py:948 ../studio/widgetPresenter.py:1004
+#: ../studio/widgetPresenter.py:973 ../studio/widgetPresenter.py:1029
 msgid "Choose"
 msgstr "Elegir"
 
-#: ../studio/widgetPresenter.py:965
+#: ../studio/widgetPresenter.py:990
 msgid "Appearance"
 msgstr "Apariencia"
 
-#: ../studio/widgetPresenter.py:968
+#: ../studio/widgetPresenter.py:993
 msgid "Select boxes' colors"
 msgstr "Seleccionar cajas de colores"
 
-#: ../studio/widgetPresenter.py:975
+#: ../studio/widgetPresenter.py:1000
 msgid "Text fill color"
 msgstr "Color del relleno del texto"
 
-#: ../studio/widgetPresenter.py:978
+#: ../studio/widgetPresenter.py:1003
 msgid "Text stroke color"
 msgstr "Color del borde del texto"
 
-#: ../studio/widgetPresenter.py:981
+#: ../studio/widgetPresenter.py:1006
 msgid "Image fill color"
 msgstr "Color del relleno de imagen"
 
-#: ../studio/widgetPresenter.py:984
+#: ../studio/widgetPresenter.py:1009
 msgid "Image stroke color"
 msgstr "Color del borde de imagen"
 
-#: ../studio/widgetPresenter.py:997
+#: ../studio/widgetPresenter.py:1022
 msgid "Tools"
 msgstr "Herramientas"
 
-#: ../studio/widgetPresenter.py:1000
+#: ../studio/widgetPresenter.py:1025
 msgid "Path to unpaper"
 msgstr "Ruta a unpaper"
 
-#: ../studio/widgetPresenter.py:1012 ../studio/widgetPresenter.py:1071
-#: ../studio/widgetPresenter.py:1109 ../studio/widgetPresenter.py:1127
-#: ../studio/widgetPresenter.py:1216
+#: ../studio/widgetPresenter.py:1037 ../studio/widgetPresenter.py:1096
+#: ../studio/widgetPresenter.py:1134 ../studio/widgetPresenter.py:1152
+#: ../studio/widgetPresenter.py:1241
 msgid "OCR Engines"
 msgstr "Motores OCR"
 
-#: ../studio/widgetPresenter.py:1022
+#: ../studio/widgetPresenter.py:1047
 msgid "Favorite engine:"
 msgstr "Motor preferido:"
 
-#: ../studio/widgetPresenter.py:1034
+#: ../studio/widgetPresenter.py:1059
 msgid "Window size"
 msgstr "Tamaño de la ventana"
 
-#: ../studio/widgetPresenter.py:1035
+#: ../studio/widgetPresenter.py:1060
 msgid "Automatic"
 msgstr "Automático"
 
-#: ../studio/widgetPresenter.py:1085
+#: ../studio/widgetPresenter.py:1110
 msgid "Engines to be added"
 msgstr "Motores para añadir"
 
-#: ../studio/widgetPresenter.py:1090
+#: ../studio/widgetPresenter.py:1115
 msgid "Include"
 msgstr "Incluir"
 
-#: ../studio/widgetPresenter.py:1094 ../studio/widgetPresenter.py:1131
+#: ../studio/widgetPresenter.py:1119 ../studio/widgetPresenter.py:1156
 msgid "Engine"
 msgstr "Motor"
 
-#: ../studio/widgetPresenter.py:1135
+#: ../studio/widgetPresenter.py:1160
 msgid "Add"
 msgstr "Añadir"
 
-#: ../studio/widgetPresenter.py:1137
+#: ../studio/widgetPresenter.py:1162
 msgid "Edit"
 msgstr "Editar"
 
-#: ../studio/widgetPresenter.py:1152
+#: ../studio/widgetPresenter.py:1177
 msgid "Are you sure you want to delete this engine?"
 msgstr "¿Está seguro de que quiere eliminar este motor?"
 
-#: ../studio/widgetPresenter.py:1198
+#: ../studio/widgetPresenter.py:1223
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -602,65 +628,65 @@ msgstr ""
 "No se encontró ningún motor OCR en el sistema.\n"
 "Asegúrese de que tiene motores OCR instalados y disponibles."
 
-#: ../studio/widgetPresenter.py:1201
+#: ../studio/widgetPresenter.py:1226
 msgid "No OCR engines available"
 msgstr "No existe ningún motor OCR disponible"
 
-#: ../studio/widgetPresenter.py:1218
+#: ../studio/widgetPresenter.py:1243
 #, python-format
 msgid "%s engine"
 msgstr "Motor %s"
 
-#: ../studio/widgetPresenter.py:1241
+#: ../studio/widgetPresenter.py:1266
 msgid "Name"
 msgstr "Nombre"
 
-#: ../studio/widgetPresenter.py:1241
+#: ../studio/widgetPresenter.py:1266
 msgid "Engine name"
 msgstr "Nombre del motor"
 
-#: ../studio/widgetPresenter.py:1243
+#: ../studio/widgetPresenter.py:1268
 msgid "Image format"
 msgstr "Formato de imagen"
 
-#: ../studio/widgetPresenter.py:1243
+#: ../studio/widgetPresenter.py:1268
 msgid "The required image format"
 msgstr "Formato de imagen requerido"
 
-#: ../studio/widgetPresenter.py:1245
+#: ../studio/widgetPresenter.py:1270
 msgid "Failure string"
 msgstr "Texto de fallo"
 
-#: ../studio/widgetPresenter.py:1245
+#: ../studio/widgetPresenter.py:1270
 msgid "The failure string or character that this engine uses"
 msgstr "Texto o carácter de fallo que usa este motor"
 
-#: ../studio/widgetPresenter.py:1247
+#: ../studio/widgetPresenter.py:1272
 msgid "Engine Path"
 msgstr "Ruta al motor"
 
-#: ../studio/widgetPresenter.py:1247
+#: ../studio/widgetPresenter.py:1272
 msgid "The path to the engine program"
 msgstr "Ruta al programa del motor"
 
-#: ../studio/widgetPresenter.py:1249
+#: ../studio/widgetPresenter.py:1274
 msgid "Engine arguments"
 msgstr "Argumentos del motor"
 
-#: ../studio/widgetPresenter.py:1249
+#: ../studio/widgetPresenter.py:1274
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 "Argumentos: use $IMAGE para imágenes y $FILE si se escribe a un archivo"
 
-#: ../studio/widgetPresenter.py:1265
+#: ../studio/widgetPresenter.py:1290
 msgid "Error setting the new engine; please check your engine settings."
 msgstr "Error al configurar el motor nuevo; compruebe los ajustes de su motor."
 
-#: ../studio/widgetPresenter.py:1265
+#: ../studio/widgetPresenter.py:1290
 msgid "Warning"
 msgstr "Advertencia"
 
-#: ../studio/widgetPresenter.py:1296
+#: ../studio/widgetPresenter.py:1321
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2010\n"
