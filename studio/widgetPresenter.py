@@ -857,7 +857,7 @@ class UnpaperDialog(gtk.Dialog):
         self.preview_area.set_shadow_type(gtk.SHADOW_IN)
         self.preview_area.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.preview_area.set_size_request(200, 250)
-        self.preview = gtk.Button(_('Preview'))
+        self.preview = gtk.Button(_('_Preview'))
         preview_box.pack_start(self.preview_area, False)
         preview_box.pack_start(self.preview, False)
         preview_frame.add(preview_box)
@@ -869,6 +869,8 @@ class UnpaperDialog(gtk.Dialog):
     def __makeExtraOptions(self):
         options_frame = PlainFrame(_('Extra Options'))
         self.extra_options = gtk.Entry()
+        self.extra_options.set_tooltip_text(_("Unpaper's command "
+                                              "line arguments"))
         options_frame.add(self.extra_options)
         self.options_box.pack_start(options_frame, False)
     
