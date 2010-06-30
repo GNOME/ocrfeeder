@@ -1357,18 +1357,30 @@ class OcrSettingsDialog(gtk.Dialog):
             failure_string = self.engine.failure_string
             engine_path = self.engine.engine_path
             arguments = self.engine.arguments
-        table = gtk.Table(5, 2)
+        box = gtk.VBox(True, 0)
+        size_group = gtk.SizeGroup(gtk.SIZE_GROUP_HORIZONTAL)
         self.name_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 0, _('Name'), self.name_entry, name, _('Engine name'))
+        self.__packSettingInFrame(box, size_group, _('_Name:'),
+                                  self.name_entry, name, _('Engine name'))
         self.image_format_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 1, _('Image format'), self.image_format_entry, image_format, _('The required image format'))
+        self.__packSettingInFrame(box, size_group, _('_Image format:'),
+                                  self.image_format_entry, image_format,
+                                  _('The required image format'))
         self.failure_string_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 2, _('Failure string'), self.failure_string_entry, failure_string, _('The failure string or character that this engine uses'))
+        self.__packSettingInFrame(box, size_group, _('_Failure string:'),
+                                  self.failure_string_entry, failure_string,
+                                  _('The failure string or character that '
+                                    'this engine uses'))
         self.engine_path_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 3, _('Engine Path'), self.engine_path_entry, engine_path, _('The path to the engine program'))
+        self.__packSettingInFrame(box, size_group, _('Engine _path:'),
+                                  self.engine_path_entry, engine_path,
+                                  _('The path to the engine program'))
         self.arguments_entry = gtk.Entry()
-        self.__packSettingInFrame(table, 4, _('Engine arguments'), self.arguments_entry, arguments, _('Arguments: use $IMAGE for image and $FILE if it writes to a file'))
-        return table
+        self.__packSettingInFrame(box, size_group, _('Engine _arguments:'),
+                                  self.arguments_entry, arguments,
+                                  _('Arguments: use $IMAGE for image '
+                                    'and $FILE if it writes to a file'))
+        return box
     
     def setEngine(self):
         try:
@@ -1387,16 +1399,21 @@ class OcrSettingsDialog(gtk.Dialog):
             print sys.exc_info()
             return False
     
-    def __packSettingInFrame(self, table, position, entry_name, entry, entry_text, aditional_info = None):
+    def __packSettingInFrame(self, box, size_group, entry_name, entry,
+                             entry_text, aditional_info = None):
         label = gtk.Label(entry_name)
-        label_alignment = gtk.Alignment()
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(entry)
+        label_alignment = gtk.Alignment(0, 0.5, 0, 1)
         label_alignment.add(label)
+        size_group.add_widget(label_alignment)
         entry.set_text(entry_text)
-        table.attach(label_alignment, 0, 1, position, position + 1)
-        table.attach(entry, 1, 2, position, position + 1)
         if aditional_info:
             entry.set_tooltip_text(aditional_info)
-            label.set_tooltip_text(aditional_info)
+        row = gtk.HBox(False, 12)
+        row.pack_start(label_alignment, False, False, 0)
+        row.add(entry)
+        box.add(row)
 
 class CustomAboutDialog(gtk.AboutDialog):
     
