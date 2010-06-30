@@ -1256,7 +1256,7 @@ class OcrManagerDialog(gtk.Dialog):
         self.new_engine = gtk.Button(_('Add'), gtk.STOCK_ADD)
         self.delete_engine = gtk.Button(_('Delete'), gtk.STOCK_DELETE)
         self.edit_engine = gtk.Button(_('Edit'), gtk.STOCK_EDIT)
-        self.detect_engines = gtk.Button(_('Detect'))
+        self.detect_engines = gtk.Button(_('De_tect'))
         buttons_box = gtk.VBox()
         buttons_box.pack_start(self.new_engine, False)
         buttons_box.pack_start(self.edit_engine, False)
