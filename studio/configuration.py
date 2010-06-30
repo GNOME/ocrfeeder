@@ -257,9 +257,8 @@ class ConfigurationManager:
     
     DEFAULTS = {'temporary_dir': '/tmp',
                 'text_fill': '94, 156, 235, 150',
-                'text_stroke': '94, 156, 235, 250',
+                'boxes_stroke': '94, 156, 235, 250',
                 'image_fill': '0, 183, 0, 150',
-                'image_stroke': '94, 156, 235, 250',
                 'window_size': 'auto',
                 'unpaper': '/usr/bin/unpaper',
                 'favorite_engine': 'ocrad'
@@ -321,26 +320,20 @@ class ConfigurationManager:
     def setTextFill(self, color):
         self.text_fill = self.__getColorString(color)
     
-    def setTextStroke(self, color):
-        self.text_stroke = self.__getColorString(color)
+    def setBoxesStroke(self, color):
+        self.boxes_stroke = self.__getColorString(color)
     
     def setImageFill(self, color):
         self.image_fill = self.__getColorString(color)
     
-    def setImageStroke(self, color):
-        self.image_stroke = self.__getColorString(color)
-    
     def getTextFill(self):
         return eval(self.text_fill)
     
-    def getTextStroke(self):
-        return eval(self.text_stroke)
+    def getBoxesStroke(self):
+        return eval(self.boxes_stroke)
     
     def getImageFill(self):
         return eval(self.image_fill)
-    
-    def getImageStroke(self):
-        return eval(self.image_stroke)
     
     def setWindowSize(self, window_size):
         self.window_size = window_size

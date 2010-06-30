@@ -164,9 +164,8 @@ class ImageReviewer:
         self.main_window = main_window
         self.path_to_image = path_to_image
         self.text_box_fill_color = (94, 156, 235, 150)
-        self.text_box_stroke_color = (94, 156, 235, 250)
+        self.box_stroke_color = (94, 156, 235, 250)
         self.image_box_fill_color = (0, 183, 0, 150)
-        self.image_box_stroke_color = (94, 156, 235, 250)
         self.selectable_boxes_area = SelectableBoxesArea(self.path_to_image)
         self.selectable_boxes_area.connect('selected_box', self.selectedBox)
         self.selectable_boxes_area.connect('removed_box', self.removedBox)
@@ -201,15 +200,12 @@ class ImageReviewer:
         self.text_box_fill_color = color
         self.selectable_boxes_area.setAreaFillRgba(self.text_box_fill_color)
     
-    def setTextStrokeColor(self, color):
-        self.text_box_stroke_color = color
-        self.selectable_boxes_area.setAreaStrokeRgba(self.text_box_stroke_color)
+    def setBoxesStrokeColor(self, color):
+        self.box_stroke_color = color
+        self.selectable_boxes_area.setAreaStrokeRgba(self.box_stroke_color)
     
     def setImageFillColor(self, color):
         self.image_box_fill_color = color
-    
-    def setImageStrokeColor(self, color):
-        self.image_box_stroke_color = color
     
     def addBoxEditor(self, box):
         editor = Editor(box, self.image_pixbuf, self.ocr_engines, self)
@@ -265,11 +261,11 @@ class ImageReviewer:
     
     def applyTextColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.text_box_fill_color
-        self.selectable_boxes_area.stroke_color_rgba = self.text_box_stroke_color
+        self.selectable_boxes_area.stroke_color_rgba = self.box_stroke_color
     
     def applyImageColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.image_box_fill_color
-        self.selectable_boxes_area.stroke_color_rgba = self.image_box_stroke_color
+        self.selectable_boxes_area.stroke_color_rgba = self.box_stroke_color
     
     def addNewEditorsToAllBoxes(self):
         self.editor_list = []
@@ -378,9 +374,8 @@ class ImageReviewer_Controler:
         image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
         image_reviewer.setTextFillColor(self.configuration_manager.getTextFill())
-        image_reviewer.setTextStrokeColor(self.configuration_manager.getTextStroke())
+        image_reviewer.setBoxesStrokeColor(self.configuration_manager.getBoxesStroke())
         image_reviewer.setImageFillColor(self.configuration_manager.getImageFill())
-        image_reviewer.setImageStrokeColor(self.configuration_manager.getImageStroke())
         self.image_reviewer_dict[pixbuf] = image_reviewer
         self.addImageReviewer(image_reviewer.reviewer_area)
         return image_reviewer
@@ -620,9 +615,8 @@ class ImageReviewer_Controler:
     def updateFromConfiguration(self):
         for reviewer in self.image_reviewer_dict.values():
             reviewer.setTextFillColor(self.configuration_manager.getTextFill())
-            reviewer.setTextStrokeColor(self.configuration_manager.getTextStroke())
+            reviewer.setBoxesStrokeColor(self.configuration_manager.getBoxesStroke())
             reviewer.setImageFillColor(self.configuration_manager.getImageFill())
-            reviewer.setImageStrokeColor(self.configuration_manager.getImageStroke())
             reviewer.updateBoxesColors()
     
     def zoomIn(self, zoom_value = 0.05):
@@ -721,11 +715,10 @@ class Editor:
     
     def updateBoxColor(self, type = None):
         type = type or self.data_box.getType()
+        stroke_color = graphics.rgbaToInteger(self.reviewer.box_stroke_color)
         fill_color = graphics.rgbaToInteger(self.reviewer.image_box_fill_color)
-        stroke_color = graphics.rgbaToInteger(self.reviewer.image_box_stroke_color)
         if type == TEXT_TYPE:
             fill_color = graphics.rgbaToInteger(self.reviewer.text_box_fill_color)
-            stroke_color = graphics.rgbaToInteger(self.reviewer.text_box_stroke_color)
         self.box.set_property('fill-color-rgba', fill_color)
         self.box.set_property('stroke-color-rgba', stroke_color)
     
