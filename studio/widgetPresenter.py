@@ -1040,7 +1040,9 @@ class PreferencesDialog(gtk.Dialog):
         general_box = gtk.VBox(spacing = 10)
         for arg in args:
             general_box.pack_start(arg, False)
-        self.notebook.append_page(general_box, gtk.Label(_('General')))
+        label = gtk.Label(_('_General'))
+        label.set_use_underline(True)
+        self.notebook.append_page(general_box, label)
     
     def __makeTemporaryFolder(self):
         temporary_dir_frame = PlainFrame(_('Temporary folder'))
@@ -1064,7 +1066,9 @@ class PreferencesDialog(gtk.Dialog):
         general_box = gtk.VBox(spacing = 10)
         for arg in args:
             general_box.pack_start(arg, False)
-        self.notebook.append_page(general_box, gtk.Label(_('Appearance')))
+        label = gtk.Label(_('_Appearance'))
+        label.set_use_underline(True)
+        self.notebook.append_page(general_box, label)
     
     def __makeColors(self):
         colors_frame = PlainFrame(_('Select boxes\' colors'))
@@ -1073,13 +1077,22 @@ class PreferencesDialog(gtk.Dialog):
         self.image_fill_color = self.__getColorButton(self.configuration_manager.image_fill)
         text_fill_color_box = gtk.HBox(spacing = 10)
         text_fill_color_box.pack_start(self.text_fill_color, False)
-        text_fill_color_box.pack_start(gtk.Label(_('Text fill color')), False)
+        label = gtk.Label(_("Te_xt areas' fill color"))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.text_fill_color)
+        text_fill_color_box.pack_start(label, False)
         boxes_stroke_color_box = gtk.HBox(spacing = 10)
         boxes_stroke_color_box.pack_start(self.boxes_stroke_color, False)
-        boxes_stroke_color_box.pack_start(gtk.Label(_('Areas stroke color')), False)
+        label = gtk.Label(_("Text areas' _stroke color"))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.boxes_stroke_color)
+        boxes_stroke_color_box.pack_start(label, False)
         image_fill_color_box = gtk.HBox(spacing = 10)
         image_fill_color_box.pack_start(self.image_fill_color, False)
-        image_fill_color_box.pack_start(gtk.Label(_('Image fill color')), False)
+        label = gtk.Label(_("_Image areas' fill color"))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.image_fill_color)
+        image_fill_color_box.pack_start(label, False)
         colors_box = gtk.VBox()
         colors_box.pack_start(text_fill_color_box, False)
         colors_box.pack_start(boxes_stroke_color_box, False)
@@ -1091,7 +1104,9 @@ class PreferencesDialog(gtk.Dialog):
         general_box = gtk.VBox(spacing = 10)
         for arg in args:
             general_box.pack_start(arg, False)
-        self.notebook.append_page(general_box, gtk.Label(_('Tools')))
+        label = gtk.Label(_('_Tools'))
+        label.set_use_underline(True)
+        self.notebook.append_page(general_box, label)
     
     def __makeUnpaper(self):
         unpaper_frame = PlainFrame(_('Path to unpaper'))
@@ -1108,6 +1123,9 @@ class PreferencesDialog(gtk.Dialog):
     def __makeEngines(self):
         engines_frame = PlainFrame(_('OCR Engines'))
         self.engines_combo = gtk.combo_box_new_text()
+        self.engines_combo.set_tooltip_text(_('The engine that should be used '
+                                              'when performing the automatic '
+                                              'recognition.'))
         for engine in self.ocr_engines:
             self.engines_combo.append_text(engine[0].name)
         try:
@@ -1116,7 +1134,10 @@ class PreferencesDialog(gtk.Dialog):
             index = 0
         self.engines_combo.set_active(index)
         engines_box = gtk.HBox(spacing = 10)
-        engines_box.pack_start(gtk.Label(_('Favorite engine:')), False)
+        label = gtk.Label(_("Favorite _engine:"))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.engines_combo)
+        engines_box.pack_start(label, False)
         engines_box.pack_start(self.engines_combo, False)
         engines_frame.add(engines_box)
         return engines_frame
@@ -1129,8 +1150,8 @@ class PreferencesDialog(gtk.Dialog):
     
     def __makeWindowSize(self):
         window_size_frame = PlainFrame(_('Window size'))
-        self.auto_window_size = gtk.RadioButton(None, _('Automatic'))
-        self.custom_window_size = gtk.RadioButton(self.auto_window_size, _('Custom'))
+        self.auto_window_size = gtk.RadioButton(None, _('A_utomatic'))
+        self.custom_window_size = gtk.RadioButton(self.auto_window_size, _('Cu_stom'))
         self.custom_window_size_entry = gtk.SpinButton(gtk.Adjustment(0, 1, 1000, 1, 100, 0), 1, 0)
         if str(self.configuration_manager.window_size).lower() != 'auto':
             self.custom_window_size.set_active(True)
@@ -1139,6 +1160,9 @@ class PreferencesDialog(gtk.Dialog):
             self.auto_window_size.set_active(True)
             self.custom_window_size_entry.set_sensitive(False)
         window_size_box = gtk.VBox()
+        label = gtk.Label(_("The window size is the detection algorithm's "
+                            "subdivision areas' size."))
+        window_size_box.pack_start(label, False)
         window_size_box.pack_start(self.auto_window_size, False)
         custom_size_box = gtk.HBox(spacing = 10)
         custom_size_box.pack_start(self.custom_window_size, False)
