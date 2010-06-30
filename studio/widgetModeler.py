@@ -120,6 +120,7 @@ class SourceImagesSelectorIconView(gtk.IconView):
     def __init__(self, source_images_selector):
         self.source_images_selector = source_images_selector
         super(SourceImagesSelectorIconView, self).__init__(self.source_images_selector.list_store)
+        self.get_accessible().set_name(_('Pages'))
         self.set_text_column(1)
         self.set_pixbuf_column(2)
         self.set_orientation(gtk.ORIENTATION_VERTICAL)
@@ -183,6 +184,8 @@ class ImageReviewer:
         self.boxeditor_notebook.show()
         
         selectable_boxes_scrolled_window = gtk.ScrolledWindow()
+        selectable_boxes_scrolled_window.get_accessible().set_name(
+                                                         _('Selectable areas'))
         selectable_boxes_scrolled_window.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         selectable_boxes_scrolled_window.add(self.selectable_boxes_area)
         self.selectable_boxes_area.show()
