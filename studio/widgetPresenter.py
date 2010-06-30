@@ -115,6 +115,7 @@ class MainWindow:
         
         self.window.add(self.main_box)
         self.main_area_left = gtk.ScrolledWindow()
+        self.main_area_left.get_accessible().set_name(_('Pages'))
         self.main_area_left.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.main_area_left.show()
         
@@ -236,6 +237,7 @@ class BoxEditor(gtk.ScrolledWindow):
     
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
+        self.get_accessible().set_name(_('Area editor'))
         self.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         self.contents = gtk.VBox()
         self.pixbuf = pixbuf
