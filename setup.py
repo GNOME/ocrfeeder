@@ -25,7 +25,7 @@ setup(name = 'ocrfeeder',
                  'util', 'odf',
                  ],
      scripts = ['ocrfeeder', 'ocrfeeder-cli'],
-     data_files = [(constants.DEFAULT_SYSTEM_APP_DIR + 
+     data_files = [(constants.DEFAULT_SYSTEM_APP_DIR +
                     '/icons', ['resources/icons/detect_icon.svg',
                                'resources/icons/ocr.svg',
                                'resources/icons/window_icon.png']
