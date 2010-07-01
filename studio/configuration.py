@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -43,14 +43,14 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                      }
 
 class ProjectSaver:
-    
+
     def __init__(self, pages_data, temp_dir = '/tmp'):
-        
+
         self.pages_data = pages_data
         self.document = minidom.Document()
         self.images = {}
         self.temp_dir = temp_dir
-    
+
     def __handleImageEmbedding(self, page_data):
         base_name = os.path.basename(page_data.image_path)
         embedded_names = []
@@ -64,7 +64,7 @@ class ProjectSaver:
             i += 1
         self.images[page_data.image_path] = base_name
         return base_name
-    
+
     def __imagesToXml(self, root_node):
         for page_data in self.pages_data:
             self.__handleImageEmbedding(page_data)
@@ -78,7 +78,7 @@ class ProjectSaver:
             new_image.appendChild(original)
             new_image.appendChild(embedded)
             images_node.appendChild(new_image)
-    
+
     def convertToXml(self, item, root_node):
         if type(item) == dict:
             for key, value in item.items():
@@ -92,14 +92,14 @@ class ProjectSaver:
             text_node = self.document.createTextNode(str(item))
             root_node.appendChild(text_node)
         return root_node
-    
+
     def serialize(self, file_name):
         root_node = self.document.createElement('ocrfeeder')
         pages_dict = {'pages': [page_data.convertToDict() for page_data in self.pages_data]}
         new_node = self.convertToXml(pages_dict, root_node)
         self.__imagesToXml(root_node)
         self.__createProjectFile(new_node.toxml(), file_name)
-    
+
     def __createProjectFile(self, xml_content, file_name):
         temp_dir = tempfile.mkstemp(dir = self.temp_dir)[1]
         try:
@@ -123,16 +123,16 @@ class ProjectSaver:
         zip.close()
         os.chdir(old_dir)
         shutil.rmtree(temp_dir, ignore_errors = True)
-    
+
 class ProjectLoader:
-    
+
     def __init__(self, project_file, temp_dir = '/tmp'):
         self.temp_dir = temp_dir
         if not (os.path.isfile(project_file) and project_file.endswith('.ocrf')):
             #raise
             pass
         self.configuration_dir = self.unzipFile(project_file)
-    
+
     def loadConfiguration(self, folder = None):
         folder = folder or self.configuration_dir
         project_xml = os.path.join(folder, 'project.xml')
@@ -150,7 +150,7 @@ class ProjectLoader:
             for data_box in page_data['data_boxes']:
                 args = []
                 # text variable is to avoid problems with
-                # escaping characters 
+                # escaping characters
                 text = ''
                 for var_name, value in data_box.items():
                     if var_name == 'text':
@@ -171,7 +171,7 @@ class ProjectLoader:
             page = PageData(image_path, data_boxes)
             pages.append(page)
         return pages
-    
+
     def __getImagesInfo(self, images_nodes_list):
         images = {}
         for image_node in images_nodes_list:
@@ -185,7 +185,7 @@ class ProjectLoader:
             if original_name and embedded_name:
                 images[original_name] = embedded_name
         return images
-    
+
     def __getPageDataInfo(self, pages_nodes_list):
         page_data_info = []
         for page in pages_nodes_list:
@@ -198,14 +198,14 @@ class ProjectLoader:
                     page_data[child.localName] = child.childNodes[0].nodeValue
             page_data_info.append(page_data)
         return page_data_info
-    
+
     def __getDataBoxesInfo(self, data_boxes_node):
         data_boxes_info = []
         for child in data_boxes_node.childNodes:
             if child.localName == 'DataBox':
                 data_boxes_info.append(self.__getDataBoxInfo(child))
         return data_boxes_info
-    
+
     def __getDataBoxInfo(self, data_box_node):
         data_box_info = {}
         for child in data_box_node.childNodes:
@@ -218,20 +218,20 @@ class ProjectLoader:
                 else:
                     data_box_info[child.localName] = ''
         return data_box_info
-    
+
     def __getTextDatasInfo(self, text_datas):
         text_datas_info = []
         for child in text_datas.childNodes:
             if child.localName == 'TextData':
                 text_datas_info.append(self.__getTextDataInfo(child))
         return text_datas_info
-    
+
     def __getTextDataInfo(self, text_data):
         text_data_info = {}
         for child in text_data.childNodes:
             text_data_info[child.localName] = child.childNodes[0].nodeValue
         return text_data_info
-    
+
     def unzipFile(self, file):
         base_name = os.path.basename(file)
         export_dir = os.path.join(self.temp_dir, os.path.splitext(base_name)[0])
@@ -254,7 +254,7 @@ class ProjectLoader:
         return export_dir
 
 class ConfigurationManager:
-    
+
     DEFAULTS = {'temporary_dir': '/tmp',
                 'text_fill': '94, 156, 235, 150',
                 'boxes_stroke': '94, 156, 235, 250',
@@ -263,13 +263,13 @@ class ConfigurationManager:
                 'unpaper': '/usr/bin/unpaper',
                 'favorite_engine': 'ocrad'
                 }
-    
+
     def __init__(self):
         self.setDefaults()
         self.user_configuration_folder = os.path.expanduser('~/.ocrfeeder')
         self.user_engines_folder = os.path.join(self.user_configuration_folder, 'engines')
         self.makeUserConfigurationFolder()
-            
+
     def makeUserConfigurationFolder(self):
         if not os.path.exists(self.user_engines_folder):
             os.makedirs(self.user_engines_folder)
@@ -300,60 +300,60 @@ class ConfigurationManager:
                             failure_string = failure_string)
             existing_engines.append(engine)
         return existing_engines
-    
+
     def setTemporaryDir(self, temp_dir):
         self.temporary_dir = temp_dir
-    
+
     def getTemporaryDir(self):
         return self.temporary_dir
-    
+
     def setFavoriteEngine(self, engine_name):
         self.favorite_engine = engine_name
-    
+
     def getFavoriteEngine(self):
         return self.favoriteEngine
-    
+
     def __getColorString(self, color):
         string_color = ', '.join([str(color_value) for color_value in list(color)])
         return string_color
-    
+
     def setTextFill(self, color):
         self.text_fill = self.__getColorString(color)
-    
+
     def setBoxesStroke(self, color):
         self.boxes_stroke = self.__getColorString(color)
-    
+
     def setImageFill(self, color):
         self.image_fill = self.__getColorString(color)
-    
+
     def getTextFill(self):
         return eval(self.text_fill)
-    
+
     def getBoxesStroke(self):
         return eval(self.boxes_stroke)
-    
+
     def getImageFill(self):
         return eval(self.image_fill)
-    
+
     def setWindowSize(self, window_size):
         self.window_size = window_size
-    
+
     def setUnpaper(self, unpaper):
         self.unpaper = unpaper
-    
+
     def getUnpaper(self):
         return self.unpaper
-    
+
     def setDefaults(self):
         for key, value in self.DEFAULTS.items():
             exec('self.%s = "%s"' % (key, value))
-    
+
     def getDefault(self, variable_name):
         if variable_name in self.DEFAULTS.keys():
             return self.DEFAULTS[variable_name]
         else:
             return ''
-    
+
     def loadConfiguration(self):
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
         if not os.path.isfile(configuration_file):
@@ -368,7 +368,7 @@ class ConfigurationManager:
                             exec('self.%s = "%s"' % (key, child.nodeValue))
                             break
         return True
-    
+
     def configurationToXml(self):
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
         doc = minidom.Document()
