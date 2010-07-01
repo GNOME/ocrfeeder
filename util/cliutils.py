@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -21,13 +21,13 @@
 import os.path
 
 class ArgsRetriever:
-    
+
     def __init__(self, args_list, command_prefix = '--', discard_first_arg = True):
         self.args_list = args_list
         self.command_prefix = command_prefix
         if discard_first_arg:
             del self.args_list[0]
-    
+
     def getParams(self, command, failure_action = None):
         args = list(self.args_list)
         command_index = self.getCommandIndex(command)
@@ -40,7 +40,7 @@ class ArgsRetriever:
         if next_command == -1:
             return args
         return args[:next_command]
-    
+
     def getNextCommand(self, args_list):
         i = 0
         for arg in args_list:
@@ -48,7 +48,7 @@ class ArgsRetriever:
                 return i
             i += 1
         return -1
-    
+
     def getCommandIndex(self, command):
         command = command.strip(self.command_prefix)
         i = 0
@@ -57,6 +57,6 @@ class ArgsRetriever:
                 return i
             i += 1
         return -1
-    
+
     def hasCommand(self, command):
         return self.getCommandIndex(command) != -1
