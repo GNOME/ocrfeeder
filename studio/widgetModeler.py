@@ -326,7 +326,13 @@ class ImageReviewer:
 
     def updateBackgroundImage(self, image_path):
         self.path_to_image = image_path
-        self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
+        if not os.path.exists(self.path_to_image):
+            return
+        try:
+            self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
+        except Exception, exception:
+            debug(exception.message)
+            return
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
 
     def updateBoxesColors(self):
