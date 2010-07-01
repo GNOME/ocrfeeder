@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -44,26 +44,26 @@ _ = gettext.gettext
 
 
 class SourceImagesSelector(gobject.GObject):
-    
+
     __gtype_name__ = 'SourceImagesSelector'
-    
+
     __gsignals__ = {
         'selection_changed' : (gobject.SIGNAL_RUN_LAST,
                      gobject.TYPE_NONE,
                      (gobject.TYPE_BOOLEAN,))
         }
-    
+
     def __init__(self, list_of_images = []):
         super(SourceImagesSelector, self).__init__()
         self.list_store = gtk.ListStore(str, str, gtk.gdk.Pixbuf)
         if len(list_of_images):
             for path in list_of_images:
                 self.__renderImage(path, self.__generateImageName(path))
-    
+
     def addImage(self, path):
         image_name = self.__generateImageName(path)
         return self.__renderImage(path, image_name)
-        
+
     def __renderImage(self, path, image_name):
         path = os.path.abspath(os.path.expanduser(path))
         try:
@@ -73,7 +73,7 @@ class SourceImagesSelector(gobject.GObject):
         iter = self.list_store.append([path, image_name, pixbuf])
         self.emit('selection_changed', self.isEmpty())
         return pixbuf, path, iter
-        
+
     def __countEqualPathsStored(self, path):
         iter = self.list_store.get_iter_root()
         counter = 0
@@ -83,18 +83,18 @@ class SourceImagesSelector(gobject.GObject):
                 counter += 1
             iter = self.list_store.iter_next(iter)
         return counter
-        
+
     def __generateImageName(self, path):
         image_name = os.path.basename(path)
         number_of_equal_paths = self.__countEqualPathsStored(path)
         if number_of_equal_paths:
             image_name += ' ('+ str(number_of_equal_paths + 1) + ')'
         return image_name
-    
+
     def getPixbufAtPath(self, path):
         iter = self.list_store.get_iter(path)
         return self.list_store.get_value(iter, 2)
-    
+
     def getPixbufsSorted(self):
         pixbufs = []
         iter = self.list_store.get_iter_root()
@@ -102,21 +102,21 @@ class SourceImagesSelector(gobject.GObject):
             pixbufs.append(self.list_store.get_value(iter, 2))
             iter = self.list_store.iter_next(iter)
         return pixbufs
-    
+
     def removeIter(self, path):
         iter = self.list_store.get_iter(path)
         self.list_store.remove(iter)
         self.emit('selection_changed', self.isEmpty())
-    
+
     def clear(self):
         self.list_store.clear()
         self.emit('selection_changed', self.isEmpty())
-    
+
     def isEmpty(self):
         return self.list_store.get_iter_first() == None
 
 class SourceImagesSelectorIconView(gtk.IconView):
-    
+
     def __init__(self, source_images_selector):
         self.source_images_selector = source_images_selector
         super(SourceImagesSelectorIconView, self).__init__(self.source_images_selector.list_store)
@@ -129,24 +129,24 @@ class SourceImagesSelectorIconView(gtk.IconView):
         self.add_events(gtk.gdk.BUTTON_PRESS_MASK)
         self.set_selection_mode(gtk.SELECTION_BROWSE)
         self.connect('button-press-event', self.pressedRightButton)
-    
+
     def pressedRightButton(self, target, event):
         if event.button == 3:
             selected_items = self.get_selected_items()
             if selected_items:
                 menu = getPopupMenu([(gtk.STOCK_DELETE, _('Delete'), self.delete_current_page_function)])
                 menu.popup(None, None, None, event.button, event.time)
-    
+
     def getSelectedPixbuf(self):
         selected_items = self.get_selected_items()
         if len(selected_items):
             selected_item_path = selected_items[0]
             return self.source_images_selector.getPixbufAtPath(selected_item_path)
         return None
-    
+
     def setDeleteCurrentPageFunction(self, function):
         self.delete_current_page_function = function
-    
+
     def deleteCurrentSelection(self):
         selected_items = self.get_selected_items()
         if len(selected_items):
@@ -157,10 +157,10 @@ class SourceImagesSelectorIconView(gtk.IconView):
 
     def clear(self):
         self.source_images_selector.clear()
-    
-    
+
+
 class ImageReviewer:
-    
+
     def __init__(self, main_window, path_to_image, ocr_engines):
         self.main_window = main_window
         self.path_to_image = path_to_image
@@ -182,7 +182,7 @@ class ImageReviewer:
         self.boxeditor_notebook.set_show_tabs(False)
         self.boxeditor_notebook.set_show_border(False)
         self.boxeditor_notebook.show()
-        
+
         selectable_boxes_scrolled_window = gtk.ScrolledWindow()
         selectable_boxes_scrolled_window.get_accessible().set_name(
                                                          _('Selectable areas'))
@@ -190,7 +190,7 @@ class ImageReviewer:
         selectable_boxes_scrolled_window.add(self.selectable_boxes_area)
         self.selectable_boxes_area.show()
         selectable_boxes_scrolled_window.show()
-        
+
         self.reviewer_area.pack1(selectable_boxes_scrolled_window, True, False)
         self.reviewer_area.pack2(self.boxeditor_notebook, True, False)
         self.ocr_engines = ocr_engines
@@ -198,24 +198,24 @@ class ImageReviewer:
         self.page = PageData(self.path_to_image)
 
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
-    
+
     def setTextFillColor(self, color):
         self.text_box_fill_color = color
         self.selectable_boxes_area.setAreaFillRgba(self.text_box_fill_color)
-    
+
     def setBoxesStrokeColor(self, color):
         self.box_stroke_color = color
         self.selectable_boxes_area.setAreaStrokeRgba(self.box_stroke_color)
-    
+
     def setImageFillColor(self, color):
         self.image_box_fill_color = color
-    
+
     def addBoxEditor(self, box):
         editor = Editor(box, self.image_pixbuf, self.ocr_engines, self)
         self.editor_list.append(editor)
         self.boxeditor_notebook.append_page(editor.box_editor)
         return editor
-    
+
     def selectedBox(self, widget, box):
         page_num = self.__getPageNumFromBox(box)
         if page_num != -1:
@@ -228,17 +228,17 @@ class ImageReviewer:
 
     def deselectedBoxCb(self, widget, box):
         self.updateMainWindow()
-    
+
     def updatedBox(self, widget, box):
         for editor in self.editor_list:
             if editor.box == box:
                 editor.update(box)
-    
+
     def updatedBoxBounds(self, widget, box):
         for editor in self.editor_list:
             if editor.box == box:
                 editor.updateBounds(box)
-    
+
     def removedBox(self, widget, box):
         self.updateMainWindow()
         for i in xrange(len(self.editor_list)):
@@ -249,7 +249,7 @@ class ImageReviewer:
                 del self.editor_list[i]
                 return True
         return False
-    
+
     def __getPageNumFromBox(self, box):
         editor = self.__getEditorFromBox(box)
         if editor:
@@ -261,21 +261,21 @@ class ImageReviewer:
             if editor.box == box:
                 return editor
         return None
-    
+
     def applyTextColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.text_box_fill_color
         self.selectable_boxes_area.stroke_color_rgba = self.box_stroke_color
-    
+
     def applyImageColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.image_box_fill_color
         self.selectable_boxes_area.stroke_color_rgba = self.box_stroke_color
-    
+
     def addNewEditorsToAllBoxes(self):
         self.editor_list = []
         boxes = self.selectable_boxes_area.getAllAreas()
         for box in boxes:
             self.addBoxEditor(box)
-    
+
     def performOcrForAllEditors(self, engine = None):
         self.performOcrForEditors(self.editor_list, engine)
 
@@ -307,28 +307,28 @@ class ImageReviewer:
             boxes_sorted.append(box)
         boxes = boxes_sorted
         return boxes
-    
+
     def getPageData(self):
         self.page.data_boxes = self.__getAllDataBoxes()
         return self.page
-    
+
     def updatePageData(self, page_data):
         self.page = page_data
         for data_box in self.page.data_boxes:
             self.addDataBox(data_box)
-    
+
     def addDataBox(self, data_box):
         dimensions = (int(data_box.x), int(data_box.y), int(data_box.width), int(data_box.height))
         box = self.selectable_boxes_area.addArea(dimensions)
         editor = self.addBoxEditor(box)
         editor.box = box
         editor.updateDataBox(data_box)
-    
+
     def updateBackgroundImage(self, image_path):
         self.path_to_image = image_path
         self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
-    
+
     def updateBoxesColors(self):
         for editor in self.editor_list:
             editor.updateBoxColor()
@@ -358,7 +358,7 @@ class ImageReviewer:
         self.main_window.setHasContentBoxes(bool(has_boxes))
 
 class ImageReviewer_Controler:
-    
+
     def __init__(self, main_window, images_dict, source_images_selector_widget,
                  ocr_engines, configuration_manager,
                  selection_changed_signal = 'selection-changed'):
@@ -372,7 +372,7 @@ class ImageReviewer_Controler:
         for key, image in images_dict.items():
             self.addImage(key, image)
         self.source_images_selector_widget.connect(selection_changed_signal, self.selectImageReviewer)
-    
+
     def addImage(self, pixbuf, image):
         image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
@@ -382,14 +382,14 @@ class ImageReviewer_Controler:
         self.image_reviewer_dict[pixbuf] = image_reviewer
         self.addImageReviewer(image_reviewer.reviewer_area)
         return image_reviewer
-    
+
     def addImageFromPath(self, image_path):
         pixbuf, image, iter = self.source_images_selector_widget.source_images_selector.addImage(image_path)
         return self.addImage(pixbuf, image)
-    
+
     def addImageReviewer(self, image_reviewer_widget):
         self.notebook.append_page(image_reviewer_widget, None)
-    
+
     def selectImageReviewer(self, widget):
         pixbuf = self.source_images_selector_widget.getSelectedPixbuf()
         if pixbuf != None:
@@ -399,7 +399,7 @@ class ImageReviewer_Controler:
             self.tripple_statusbar.center_statusbar.insert((_('Page size') + ': %.2f x %.2f') % (reviewer.getPageData().width, reviewer.getPageData().height))
             self.tripple_statusbar.right_statusbar.insert((_('Resolution') + ': %i x %i') % (reviewer.getPageData().resolution[0], reviewer.getPageData().resolution[1]))
             reviewer.updateMainWindow()
-    
+
     def __setZoomStatus(self, widget, zoom):
         self.tripple_statusbar.left_statusbar.insert(_('Zoom') + ': ' + str(int(zoom * 100)) + '%')
 
@@ -416,7 +416,7 @@ class ImageReviewer_Controler:
         image_reviewer.performOcrForAllEditors(self.configuration_manager.favorite_engine)
         while gtk.events_pending():
             gtk.main_iteration()
-    
+
     def performBoxDetectionForReviewer(self, image_reviewer):
         window_size = self.configuration_manager.window_size
         if window_size == 'auto':
@@ -448,14 +448,14 @@ class ImageReviewer_Controler:
             image_reviewer.selectable_boxes_area.addArea(dimensions)
             while gtk.events_pending():
                 gtk.main_iteration()
-    
+
     def setDataBox(self, widget):
         image_reviewer = self.__getCurrentReviewer()
         document_generator = OdtGenerator()
         page_data = image_reviewer.getPageData()
         document_generator.addPage(page_data)
         document_generator.save()
-    
+
     def exportPagesToHtml(self, pixbufs_sorted = []):
         image_reviewers = self.__askForNumberOfPages(_('Export to HTML'), pixbufs_sorted)
         if not image_reviewers:
@@ -468,8 +468,8 @@ class ImageReviewer_Controler:
             for image_reviewer in image_reviewers:
                 document_generator.addPage(image_reviewer.getPageData())
             document_generator.save()
-        
-    
+
+
     def exportPagesToOdt(self, pixbufs_sorted = []):
         image_reviewers = self.__askForNumberOfPages(_('Export to ODT'), pixbufs_sorted)
         if not image_reviewers:
@@ -480,17 +480,17 @@ class ImageReviewer_Controler:
             for image_reviewer in image_reviewers:
                 document_generator.addPage(image_reviewer.getPageData())
             document_generator.save()
-    
+
     def saveProjectAs(self):
         return self.__askForFileName(extension = '.ocrf')
-    
+
     def saveProject(self, project_name):
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
         pages_data = self.getPagesData(self.getPixbufsSorted())
         project_saver = ProjectSaver(pages_data, self.configuration_manager.getTemporaryDir())
         project_saver.serialize(project_name)
-    
+
     def openProject(self, clear_current = True):
         open_dialog = FileDialog('open', file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
         response = open_dialog.run()
@@ -506,7 +506,7 @@ class ImageReviewer_Controler:
                 image_reviewer.updatePageData(page)
         open_dialog.destroy()
         return project_file
-    
+
     def __askForNumberOfPages(self, title, pixbufs_sorted):
         export_dialog = PagesToExportDialog(title)
         image_reviewers = self.getImageReviewers(pixbufs_sorted)
@@ -523,7 +523,7 @@ class ImageReviewer_Controler:
         else:
             export_dialog.destroy()
             return None
-    
+
     def getImageReviewers(self, pixbufs_sorted):
         image_reviewers = []
         if not pixbufs_sorted:
@@ -533,11 +533,11 @@ class ImageReviewer_Controler:
             for pixbuf in pixbufs_sorted:
                 image_reviewers.append(self.image_reviewer_dict[pixbuf])
         return image_reviewers
-    
+
     def getPagesData(self, pixbufs_sorted):
         image_reviewers = self.getImageReviewers(pixbufs_sorted)
         return [reviewer.getPageData() for reviewer in image_reviewers]
-    
+
     def __askForFileName(self, extension = ''):
         save_dialog = FileDialog('save')
         response = save_dialog.run()
@@ -550,8 +550,8 @@ class ImageReviewer_Controler:
                 confirm_overwrite = gtk.MessageDialog(type = gtk.MESSAGE_QUESTION)
                 message = _('<b>A file named "%(name)s" already exists. Do you want '
                             'to replace it?</b>\n\nThe file exists in "%(dir)s". '
-                            'Replacing it will overwrite its contents.' % 
-                            {'name': os.path.basename(file_name), 
+                            'Replacing it will overwrite its contents.' %
+                            {'name': os.path.basename(file_name),
                              'dir': os.path.dirname(file_name)})
                 confirm_overwrite.set_markup(message)
                 confirm_overwrite.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
@@ -563,7 +563,7 @@ class ImageReviewer_Controler:
             return file_name
         save_dialog.destroy()
         return None
-    
+
     def choosePageSize(self):
         current_reviewer = self.__getCurrentReviewer()
         current_page = current_reviewer.page
@@ -586,7 +586,7 @@ class ImageReviewer_Controler:
             if reviewer.reviewer_area == current_reviewer_area:
                 image_reviewer = reviewer
                 return image_reviewer
-    
+
     def deleteCurrentPage(self):
         current_reviewer = self.__getCurrentReviewer()
         for pixbuf, image_reviewer in self.image_reviewer_dict.items():
@@ -594,7 +594,7 @@ class ImageReviewer_Controler:
                 del self.image_reviewer_dict[pixbuf]
                 self.notebook.remove_page(self.notebook.get_current_page())
                 return True
-    
+
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
         unpaper_dialog = UnpaperDialog(current_reviewer, self.configuration_manager.getUnpaper(), self.configuration_manager.getTemporaryDir())
@@ -604,28 +604,28 @@ class ImageReviewer_Controler:
             unpaper_dialog.destroy()
         else:
             unpaper_dialog.destroy()
-    
+
     def clear(self):
         for pixbuf in self.image_reviewer_dict.keys():
             del self.image_reviewer_dict[pixbuf]
             self.notebook.remove_page(self.notebook.get_current_page())
         self.source_images_selector_widget.clear()
         self.tripple_statusbar.clear()
-    
+
     def getPixbufsSorted(self):
         return self.source_images_selector_widget.source_images_selector.getPixbufsSorted()
-    
+
     def updateFromConfiguration(self):
         for reviewer in self.image_reviewer_dict.values():
             reviewer.setTextFillColor(self.configuration_manager.getTextFill())
             reviewer.setBoxesStrokeColor(self.configuration_manager.getBoxesStroke())
             reviewer.setImageFillColor(self.configuration_manager.getImageFill())
             reviewer.updateBoxesColors()
-    
+
     def zoomIn(self, zoom_value = 0.05):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(zoom_value)
-    
+
     def zoomOut(self, zoom_value = -0.05):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(-abs(zoom_value))
@@ -633,7 +633,7 @@ class ImageReviewer_Controler:
     def zoomFit(self):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.zoomFit()
-    
+
     def resetZoom(self):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.zoom(1, False)
@@ -651,7 +651,7 @@ class ImageReviewer_Controler:
         current_reviewer.selectable_boxes_area.selectAllAreas()
 
 class Editor:
-    
+
     def __init__(self, box, pixbuf, ocr_engines, reviewer):
         self.pixbuf = pixbuf
         self.data_box = DataBox()
@@ -676,46 +676,46 @@ class Editor:
         self.box_editor.line_spacing_spin.connect('value-changed', self.__setDataBoxLineSpacing)
         self.__connectDataBoxSignals()
         self.update(box)
-    
+
     def __updateBoxX(self, spin_button):
         self.box.set_property('x', self.box_editor.getX())
         if spin_button.is_focus():
             self.update(self.box)
-    
+
     def __updateBoxY(self, spin_button):
         self.box.set_property('y', self.box_editor.getY())
         if spin_button.is_focus():
             self.update(self.box)
-        
+
     def __updateBoxWidth(self, spin_button):
         self.box.set_property('width', self.box_editor.getWidth())
         if spin_button.is_focus():
             self.update(self.box)
-        
+
     def __updateBoxHeight(self, spin_button):
         self.box.set_property('height', self.box_editor.getHeight())
         if spin_button.is_focus():
             self.update(self.box)
-        
+
     def __updateEditorX(self, widget, new_x):
         self.box_editor.setXRange()
         self.box_editor.setX(new_x)
-    
+
     def __updateEditorY(self, widget, new_y):
         self.box_editor.setY(new_y)
-    
+
     def __updateEditorWidth(self, widget, new_width):
         self.box_editor.setWidth(new_width)
-    
+
     def __updateEditorHeight(self, widget, new_height):
         self.box_editor.setHeight(new_height)
-    
+
     def __updateEditorImage(self, widget, new_image):
         self.box_editor.displayImage(new_image)
-    
+
     def __updateBoxColor(self, widget, type):
         self.updateBoxColor(type)
-    
+
     def updateBoxColor(self, type = None):
         type = type or self.data_box.getType()
         stroke_color = graphics.rgbaToInteger(self.reviewer.box_stroke_color)
@@ -724,7 +724,7 @@ class Editor:
             fill_color = graphics.rgbaToInteger(self.reviewer.text_box_fill_color)
         self.box.set_property('fill-color-rgba', fill_color)
         self.box.set_property('stroke-color-rgba', stroke_color)
-    
+
     def __setDataBoxFont(self, font_button = None):
         font_button = font_button or self.box_editor.font_button
         font_description = FontDescription(font_button.get_font_name())
@@ -732,19 +732,19 @@ class Editor:
         self.data_box.setFontSize(font_description.get_size() / SCALE)
         self.data_box.setFontStyle(font_description.get_style())
         self.data_box.setFontWeight(font_description.get_weight())
-    
+
     def __setDataBoxAlign(self, align_button, align_option):
         if align_button.get_active():
             self.data_box.setTextAlign(align_option)
-    
+
     def __setDataBoxLetterSpacing(self, letter_spacing_button = None):
         letter_spacing_button = letter_spacing_button or self.box_editor.letter_spacing_spin
         self.data_box.setLetterSpacing(letter_spacing_button.get_value())
-    
+
     def __setDataBoxLineSpacing(self, line_spacing_button = None):
         line_spacing_button = line_spacing_button or self.box_editor.line_spacing_spin
         self.data_box.setLineSpacing(line_spacing_button.get_value())
-    
+
     def update(self, box):
         self.box = box
         x, y, width, height = self.updateBounds(box)
@@ -752,7 +752,7 @@ class Editor:
         pixbuf_height = self.pixbuf.get_height()
         sub_pixbuf = self.pixbuf.subpixbuf(x, y, min(width, pixbuf_width), min(height, pixbuf_height))
         self.data_box.setImage(sub_pixbuf)
-    
+
     def updateBounds(self, box):
         self.box = box
         x, y, width, height = int(self.box.props.x), int(self.box.props.y), \
@@ -762,22 +762,22 @@ class Editor:
         self.data_box.setWidth(width)
         self.data_box.setHeight(height)
         return (x, y, width, height)
-    
+
     def updateOcrEngines(self, engines_list):
         engines_names = [engine.name for engine, path in engines_list]
         self.box_editor.setOcrEngines(engines_names)
-    
+
     def __pressedImageContextButton(self, toggle_button):
         self.data_box.setType(IMAGE_TYPE)
         self.box_editor.setOcrPropertiesSensibility(False)
-    
+
     def __pressedTextContextButton(self, toggle_button):
         self.data_box.setType(TEXT_TYPE)
         self.box_editor.setOcrPropertiesSensibility(True)
-    
+
     def __pressedPerformOcrButton(self, button):
         self.performOcr()
-    
+
     def performOcr(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
@@ -802,7 +802,7 @@ class Editor:
             text_size /= y_resolution
             text_size *= 72.0
             self.box_editor.setFontSize(math.floor(text_size))
-    
+
     def performClassification(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
@@ -814,13 +814,13 @@ class Editor:
             engine = self.ocr_engines[selected_engine_index][0]
             type = engine.classify(self.box_editor.getText())
             self.box_editor.setType(type)
-    
+
     def __pressedAngleDetectionButton(self, widget):
         image = graphics.convertPixbufToImage(self.box_editor.getImage())
         angle = graphics.getHorizontalAngleForText(image)
         debug('ANGLE: ', angle)
         self.box_editor.setAngle(angle)
-    
+
     def setDataBox(self):
         text = self.box_editor.getText()
         self.data_box.setText(text)
@@ -829,8 +829,8 @@ class Editor:
         self.__setDataBoxFont()
         self.__setDataBoxLetterSpacing()
         self.__setDataBoxLineSpacing()
-        
-    
+
+
     def updateDataBox(self, data_box):
         self.data_box = data_box
         self.box_editor.setX(self.data_box.x)
@@ -841,7 +841,7 @@ class Editor:
         self.box_editor.setText(self.data_box.text)
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)
-    
+
     def __connectDataBoxSignals(self):
         self.data_box.connect('changed_x', self.__updateEditorX)
         self.data_box.connect('changed_y', self.__updateEditorY)
