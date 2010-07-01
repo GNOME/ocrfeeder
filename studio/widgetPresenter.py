@@ -911,7 +911,13 @@ class UnpaperDialog(gtk.Dialog):
 
     def __getPreviewImage(self, image_path):
         name = os.path.splitext(image_path)[0]
-        thumbnail_image = Image.open(image_path)
+        if not os.path.exists(image_path):
+            return
+        try:
+            thumbnail_image = Image.open(image_path)
+        except Exception, exception:
+            lib.debug(exception.message)
+            return
         thumbnail_image.thumbnail((150, 200), Image.ANTIALIAS)
         image_thumbnail_path = lib.getNonExistingFileName(name + '_thumb.png')
         thumbnail_image.save(image_thumbnail_path, format = 'PNG')
