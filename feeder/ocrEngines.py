@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -30,9 +30,9 @@ IMAGE_ARGUMENT = '$IMAGE'
 FILE_ARGUMENT = '$FILE'
 
 class Engine:
-    
+
     def __init__(self, name, engine_path, arguments, image = None, temporary_folder = '/tmp/', image_format = 'PPM', failure_string = ''):
-        
+
         self.name = name
         self.engine_path = engine_path
         self.arguments = arguments
@@ -48,7 +48,7 @@ class Engine:
         self.failure_string = failure_string
         self.temporary_folder = temporary_folder
         self.__color_information = None
-    
+
     def setImage(self, image):
         image_file = tempfile.mkstemp(suffix = '.' + self.image_format.lower())[1]
         image = image.convert('L')
@@ -57,7 +57,7 @@ class Engine:
         except KeyError:
             image.save(image_file)
         self.image_path = image_file
-    
+
     def read(self):
         parsed_arguments = self.arguments.replace(IMAGE_ARGUMENT, self.image_path)
         file_name = None
@@ -73,7 +73,7 @@ class Engine:
         finally:
             os.unlink(self.image_path)
         return text
-            
+
     def classify(self, reading_output, rules = []):
         stripped_output = reading_output.strip()
         if not stripped_output:
@@ -94,7 +94,7 @@ class Engine:
         if len(no_punctuation_output) < len(output) / 2:
             return True
         return False
-        
+
     def __is_not_greyscale(self, image):
         colors = image.get_colors()
         if colors:
@@ -102,7 +102,7 @@ class Engine:
                 if ((color[1])[0] - (color[1])[1])>10 or ((color[1])[0] - (color[1])[2])>10:
                     return False
         return True
-    
+
     def saveToXml(self, file_path):
         engine_info = {'name': self.name,
                        'engine_path': self.engine_path,
@@ -118,20 +118,20 @@ class Engine:
         return ET.ElementTree(root).write(file_path, 'UTF-8')
 
 class OcrEnginesManager:
-    
+
     def __init__(self, configuration_manager):
         self.ocr_engines = []
         self.configuration_manager = configuration_manager
-    
+
     def getEnginesNames(self):
         return [engine.name for engine, path in self.ocr_engines]
-    
+
     def getEnginePath(self, engine):
         for eng, path in self.ocr_engines:
             if eng == engine:
                 return path
         return None
-    
+
     def replaceEngine(self, engine, new_engine):
         for i in xrange(len(self.ocr_engines)):
             eng, path = self.ocr_engines[i]
@@ -140,7 +140,7 @@ class OcrEnginesManager:
                 self.ocr_engines[i] = new_engine, path
                 return True
         return False
-    
+
     def makeEnginesFromFolder(self, folder):
         self.ocr_engines = []
         for xml_file in self.getXmlFilesInFolder(folder):
@@ -150,7 +150,7 @@ class OcrEnginesManager:
                 lib.debug("Cannot load engine at %s: %s" %( xml_file, str(we)))
         if not len(self.ocr_engines):
                 lib.debug("Warning: no engines found!")
-    
+
     def getEngineFromXml(self, xml_file_name):
         document = ET.parse(xml_file_name)
         root_node = document.getroot()
@@ -160,23 +160,23 @@ class OcrEnginesManager:
             arg_value = child.text
             arguments[arg_name] = arg_value
         return Engine(**arguments)
-    
+
     def getXmlFilesInFolder(self, folder):
         return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
-    
+
     def newEngine(self, name, engine_path, arguments, image_format, failure_string):
         engine = Engine(name = name, engine_path = engine_path, arguments = arguments, image_format = image_format, failure_string = failure_string)
         return engine
-    
+
     def delete(self, index):
         path = self.ocr_engines[index][1]
         os.remove(path)
         del self.ocr_engines[index]
-    
+
     def addNewEngine(self, engine):
         path = self.engineToXml(engine)
         self.ocr_engines.append((engine,path))
-    
+
     def engineToXml(self, engine, path = None):
         if not path:
             path = os.path.join(self.configuration_manager.user_engines_folder, engine.name + '.xml')
@@ -185,6 +185,6 @@ class OcrEnginesManager:
         return path
 
 class WrongSettingsForEngine(Exception):
-    
+
     def __init__(self, message):
         super(WrongSettingsForEngine, self).__init__(message)
