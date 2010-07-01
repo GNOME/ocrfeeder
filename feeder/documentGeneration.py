@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -35,41 +35,41 @@ import shutil
 import tempfile
 
 class DocumentGenerator:
-    
+
     def __init__(self):
         self.document = self.makeDocument()
-    
+
     def makeDocument(self):
         raise NotImplementedError('Method not defined!')
-    
+
     def addBox(self, data_box):
         if data_box.getType() == TEXT_TYPE:
             self.addText(data_box)
         elif data_box.getType() == IMAGE_TYPE:
             self.addImage(data_box)
-    
+
     def addText(self, data_box):
         raise NotImplementedError('Method not defined!')
-    
+
     def addImage(self, data_box):
         raise NotImplementedError('Method not defined!')
-    
+
     def addBoxes(self, data_boxes):
         for data_box in data_boxes:
             self.addBox(data_box)
-    
+
     def save(self):
         raise NotImplementedError('Method not defined!')
-    
+
     def newPage(self):
         raise NotImplementedError('Method not defined!')
-    
+
     def convertFontStyle(self, style):
         raise NotImplementedError('Method not defined!')
-    
+
     def convertFontWeight(self, weight):
         raise NotImplementedError('Method not defined!')
-    
+
     def convertTextAlign(self, align):
         if align == ALIGN_LEFT:
             return 'left'
@@ -81,7 +81,7 @@ class DocumentGenerator:
             return 'justified'
 
 class HtmlGenerator(DocumentGenerator):
-    
+
     def __init__(self, name):
         self.name = name
         self.document = ''
@@ -89,7 +89,7 @@ class HtmlGenerator(DocumentGenerator):
         self.styles = ''
         self.style_names = []
         self.images = []
-    
+
     def addText(self, data_box):
         text_lines = data_box.getText().splitlines()
         new_div = '''
@@ -98,7 +98,7 @@ class HtmlGenerator(DocumentGenerator):
 </div>
 ''' % {'class': self.__handleStyle(data_box.text_data), 'text': '<br/>'.join(text_lines), 'x': data_box.x, 'y': data_box.y}
         self.bodies[-1] += new_div
-    
+
     def addImage(self, data_box):
         format = 'PNG'
         image_file = tempfile.mkstemp(suffix = '.' + format.lower())[1]
@@ -110,10 +110,10 @@ class HtmlGenerator(DocumentGenerator):
 </div>
 ''' % {'image': os.path.basename(image_file), 'x': data_box.x, 'y': data_box.y}
         self.bodies[-1] += new_div
-    
+
     def __handleStyle(self, text_data):
-        style_name = 'style%s%s%s%s%s%s%s' % (text_data.face, text_data.size, text_data.line_space, 
-                                        text_data.letter_space, text_data.justification, 
+        style_name = 'style%s%s%s%s%s%s%s' % (text_data.face, text_data.size, text_data.line_space,
+                                        text_data.letter_space, text_data.justification,
                                         text_data.weight, text_data.style)
         if not style_name in self.style_names:
             self.style_names.append(style_name)
@@ -132,26 +132,26 @@ class HtmlGenerator(DocumentGenerator):
        'size': text_data.size, 'weight': self.convertFontWeight(text_data.weight),
        'align': text_data.justification, 'style': self.convertFontStyle(text_data.style),
        'line_space': text_data.line_space, 'letter_space': text_data.letter_space}
-        
+
         return style_name
-    
+
     def convertFontStyle(self, style):
         if style == STYLE_OBLIQUE:
             return 'oblique'
         elif style == STYLE_ITALIC:
             return 'italic'
         return 'normal'
-    
+
     def convertFontWeight(self, weight):
         if weight == WEIGHT_BOLD:
             return 'bold'
         return 'normal'
-    
+
     def addPage(self, page_data):
         self.bodies.append('')
         self.current_page_resolution = page_data.resolution
         self.addBoxes(page_data.data_boxes)
-    
+
     def save(self):
         pages = []
         for i in xrange(len(self.bodies)):
@@ -184,7 +184,7 @@ class HtmlGenerator(DocumentGenerator):
         %(body)s
     </body>
 </html>
-''' % {'title': self.name, 'body': self.bodies[i], 'previous_page': previous_page, 'next_page': next_page} 
+''' % {'title': self.name, 'body': self.bodies[i], 'previous_page': previous_page, 'next_page': next_page}
         )
         if not os.path.isdir(self.name):
             os.mkdir(self.name)
@@ -208,7 +208,7 @@ class HtmlGenerator(DocumentGenerator):
             shutil.move(image, images_folder)
 
 class OdtGenerator(DocumentGenerator):
-    
+
     def __init__(self, name):
         self.name = name
         self.document = OpenDocumentText()
@@ -226,7 +226,7 @@ class OdtGenerator(DocumentGenerator):
         frame_style_rotated = Style(name='FrameStyleRotated', family = 'graphic')
         frame_style_rotated.addElement(GraphicProperties(fill = 'none', stroke = 'none', verticalpos = 'from-top', verticalrel = 'paragraph'))
         self.document.automaticstyles.addElement(frame_style_rotated)
-        
+
     def addText(self, data_box):
         text = data_box.getText()
         frame_style = Style(name='FrameStyle', family = 'graphic')
@@ -243,7 +243,7 @@ class OdtGenerator(DocumentGenerator):
         frame.addElement(textbox)
         for line in text.split('\n'):
             textbox.addElement(P(stylename = self.__handleFrameStyle(data_box.text_data), text = line))
-    
+
     def addImage(self, data_box):
         format = 'PNG'
         image_file = tempfile.mkstemp(suffix = '.' + format)[1]
@@ -254,7 +254,7 @@ class OdtGenerator(DocumentGenerator):
         location = self.document.addPicture(image_file)
         photo_frame.addElement(Image(href=location))
         self.temp_images.append(image_file)
-    
+
     def newPage(self, page_data):
         master_name = self.__handlePageMaster(page_data)
         page_style_name = '%sPage' % master_name
@@ -265,12 +265,12 @@ class OdtGenerator(DocumentGenerator):
         new_page = P(stylename = page_style_name)
         self.document.text.addElement(new_page)
         return new_page
-    
+
     def addPage(self, page_data):
         self.current_page = self.newPage(page_data)
         self.current_page_resolution = page_data.resolution
         self.addBoxes(page_data.data_boxes)
-    
+
     def save(self):
         name = self.name
         if not name.lower().endswith('.odt'):
@@ -281,7 +281,7 @@ class OdtGenerator(DocumentGenerator):
                 os.unlink(image)
             except:
                 debug('Error removing image: %s' % image)
-    
+
     def __handlePageMaster(self, page_data):
         layout_name = 'Page%s%s' % (page_data.width, page_data.height)
         if not layout_name in self.page_layouts:
@@ -295,9 +295,9 @@ class OdtGenerator(DocumentGenerator):
             self.document.masterstyles.addElement(master_page)
             self.page_masters.append(master_name)
         return master_name
-    
+
     def __handleFrameStyle(self, text_data):
-        style_name = 'box%s%s%s%s%s' % (text_data.face, text_data.size, text_data.line_space, 
+        style_name = 'box%s%s%s%s%s' % (text_data.face, text_data.size, text_data.line_space,
                                         text_data.letter_space, text_data.justification)
         if not style_name in self.font_styles:
             frame_style = Style(name = style_name, family = 'paragraph')
@@ -306,9 +306,9 @@ class OdtGenerator(DocumentGenerator):
             self.document.styles.addElement(frame_style)
             self.font_styles.append(style_name)
         return style_name
-    
+
     def __handleFrameStyleRotated(self, text_data):
-        style_name = 'box%s%s%s%s%sRotated' % (text_data.face, text_data.size, text_data.line_space, 
+        style_name = 'box%s%s%s%s%sRotated' % (text_data.face, text_data.size, text_data.line_space,
                                         text_data.letter_space, text_data.justification)
         if not style_name in self.font_styles:
             frame_style = Style(name = style_name, family = 'paragraph')
@@ -317,14 +317,14 @@ class OdtGenerator(DocumentGenerator):
             self.document.automaticstyles.addElement(frame_style)
             self.font_styles.append(style_name)
         return style_name
-    
+
     def convertFontStyle(self, style):
         if style == STYLE_OBLIQUE:
             return 'oblique'
         elif style == STYLE_ITALIC:
             return 'italic'
         return 'normal'
-    
+
     def convertFontWeight(self, weight):
         if weight == WEIGHT_BOLD:
             return 'bold'
