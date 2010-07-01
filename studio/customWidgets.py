@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -31,9 +31,9 @@ class SelectableBoxesArea(goocanvas.Canvas):
     MINIMUM_ZOOM_HEIGHT = 50
     IMAGE_FRAME_THICKNESS = 5
     IMAGE_FRAME_COLOR = '#717171'
-    
+
     __gtype_name__ = 'SelectableBoxesArea'
-    
+
     __gsignals__ = {
         'selected_box' : (gobject.SIGNAL_RUN_LAST,
                      gobject.TYPE_NONE,
@@ -54,7 +54,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
                      gobject.TYPE_NONE,
                      (gobject.TYPE_FLOAT,))
         }
-    
+
     def __init__(self, image_path):
         super(SelectableBoxesArea, self).__init__()
         self.image = goocanvas.Image()
@@ -74,11 +74,11 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.connect('scroll-event', self.scrollEventCb)
         self.selected_areas = []
         self.currently_created_area = None
-    
+
     def __rgbaToInteger(self, rgba):
         r, g, b, a = rgba
         return (r << 24) | (g << 16) | (b << 8) | a
-    
+
     def __getRectangleFromPoints(self, start_point, end_point):
         start_x, start_y = start_point
         start_x, start_y = self.convert_from_pixels(start_x, start_y)
@@ -92,7 +92,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             height = abs(height)
             start_y = end_y
         return start_x, start_y, width, height
-    
+
     def setBackgroundImage(self, image_path):
         pixbuf = gtk.gdk.pixbuf_new_from_file(image_path)
         self.image.set_property('pixbuf', pixbuf)
@@ -102,7 +102,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.__createFrame()
         for line in self.frame:
             self.get_root_item().add_child(line, -1)
-    
+
     def __createFrame(self):
         line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR,
                               line_width = 0)
@@ -111,7 +111,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         line.props.width = self.IMAGE_FRAME_THICKNESS
         line.props.height = self.image.props.height + self.IMAGE_FRAME_THICKNESS
         self.frame.append(line)
-        
+
         line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR,
                               line_width = 0)
         line.props.x = self.image.props.x
@@ -119,13 +119,13 @@ class SelectableBoxesArea(goocanvas.Canvas):
         line.props.width = self.image.props.width + 1
         line.props.height = self.IMAGE_FRAME_THICKNESS
         self.frame.append(line)
-    
+
     def setCurrentArea(self, area):
         self.set_data('current_area', area)
-    
+
     def setSelectedArea(self, area):
         self.selected_areas = [area]
-    
+
     def getSelectedAreas(self):
         return self.selected_areas
 
@@ -133,14 +133,14 @@ class SelectableBoxesArea(goocanvas.Canvas):
         areas = self.getAllAreas()
         for area in areas:
             self.selectArea(area)
-    
+
     def selectArea(self, area):
         self.selected_areas.append(area)
         area.set_property('stroke_color_rgba',self.__rgbaToInteger(self.area_selected_stroke_rgba))
         self.grab_focus(area)
         area.connect('key_press_event', self.keyPressed)
         self.emit('selected_box', area)
-    
+
     def deselectAreas(self):
         for selected_area in self.selected_areas:
             if selected_area != None:
@@ -203,7 +203,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
 
     def getImageSize(self):
         return self.image.props.height, self.image.props.width
-    
+
     def startSelectionArea(self, item, target, event):
         self.deselectAreas()
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
@@ -217,7 +217,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.currently_created_area.connect('motion_notify_event', self.dragArea)
         self.get_root_item().add_child(self.currently_created_area, -1)
         return False
-    
+
     def updateSelectionArea(self, item, target, event):
         if self.currently_created_area != None:
             start_point = self.currently_created_area.get_data('start_point')
@@ -234,7 +234,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.currently_created_area.props.width = width
             self.currently_created_area.props.height = height
             return True
-    
+
     def endSelectionArea(self, item, target, event):
         self.deselectAreas()
         if self.currently_created_area != None:
@@ -246,7 +246,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.deselectAreas()
             self.selectArea(self.currently_created_area)
         self.currently_created_area = None
-    
+
     def getOverlapedAreas(self, area):
         offset = 2
         start_point = (area.props.x + 5, area.props.y + offset)
@@ -256,7 +256,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
         if area in overlaped_items:
             overlaped_items.remove(area)
         return overlaped_items
-    
+
     def handleOverlapedAreas(self, overlaped_areas):
         for area in overlaped_areas:
             if isinstance(area, goocanvas.Rect) and \
@@ -264,7 +264,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
                not area in self.selected_areas:
                 area.remove()
                 self.emit('removed_box', area)
-    
+
     def keyPressed(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()
         if key_name in ['left', 'up', 'right', 'down']:
@@ -312,12 +312,12 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.selectArea(item)
         item.set_data('distance', (event.x - item.props.x, event.y - item.props.y))
         return True
-    
+
     def releasedWithinArea(self, item, target, event):
         self.handleOverlapedAreas(self.getOverlapedAreas(item))
         item.set_data('distance', None)
         self.emit('updated_box', item)
-    
+
     def dragArea(self, item, target, event):
         if item.get_data('distance'):
             distance_x, distance_y = item.get_data('distance')
@@ -334,7 +334,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if new_y + item.props.height >= self.image.props.height:
                 item.props.y = self.image.props.height - item.props.height
             self.emit('dragged_box', item)
-    
+
     def scrollEventCb(self, widget, event):
         # Note: This catches all modifier combinations that use Ctrl. Add
         #       further combinations _before_ for them to take precedence!
@@ -355,13 +355,13 @@ class SelectableBoxesArea(goocanvas.Canvas):
             elif event.direction == gtk.gdk.SCROLL_DOWN:
                 event.direction = gtk.gdk.SCROLL_RIGHT
                 return False # we have not handled the (new) event - propagate to parent
-    
+
     def setAreaFillRgba(self, rgba):
         self.area_fill_rgba = rgba
-    
+
     def setAreaStrokeRgba(self, rgba):
         self.area_stroke_rgba = rgba
-    
+
     def addArea(self, dimensions):
         x, y, width, height = dimensions
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
@@ -377,19 +377,19 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.handleOverlapedAreas(self.getOverlapedAreas(new_area))
         self.get_root_item().add_child(new_area, -1)
         return new_area
-    
+
     def clearAreas(self):
         areas = self.getAllAreas()
         for area in areas:
             area.remove()
-    
+
     def getAllAreas(self):
         bounds = goocanvas.Bounds(*self.get_bounds())
         areas = [area for area in self.get_items_in_area(bounds, True, True, True) if isinstance(area, goocanvas.Rect) and area not in self.frame]
         return areas
 
 class PlainFrame(gtk.Frame):
-    
+
     def __init__(self, label):
         super(PlainFrame, self).__init__()
         label_widget = gtk.Label()
@@ -399,24 +399,24 @@ class PlainFrame(gtk.Frame):
         self.container.set_padding(12, 0, 12, 12)
         super(PlainFrame, self).add(self.container)
         self.set_shadow_type(gtk.SHADOW_NONE)
-    
+
     def add(self, widget):
         self.container.add(widget)
 
 class SimpleStatusBar(gtk.Statusbar):
-    
+
     def __init__(self):
         super(SimpleStatusBar, self).__init__()
         self.context_id = self.get_context_id('OCR Feeder')
     def insert(self, text):
         self.clear()
         self.push(self.context_id, text)
-    
+
     def clear(self):
         self.pop(self.context_id)
 
 class TrippleStatusBar(gtk.HBox):
-    
+
     def __init__(self):
         super(TrippleStatusBar, self).__init__(spacing = 10)
         self.left_statusbar = SimpleStatusBar()
@@ -430,7 +430,7 @@ class TrippleStatusBar(gtk.HBox):
         self.pack_start(gtk.VSeparator(), False)
         self.add(self.right_statusbar)
         self.show_all()
-    
+
     def clear(self):
         self.left_statusbar.clear()
         self.center_statusbar.clear()
