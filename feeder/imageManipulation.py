@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -30,7 +30,7 @@ import sys
 _ = gettext.gettext
 
 class ImageProcessor:
-    
+
     def __init__(self, path_to_image, window_size = None):
         self.window_size = window_size
         error_message = _("A problem occurred while trying to open the image:\n %s\n"
@@ -48,14 +48,14 @@ class ImageProcessor:
         else:
             debug(sys.exc_info())
             raise ImageManipulationError(error_message)
-            
+
     def __windowContrast(self, bgcolor, x, y, constrast_tolerance = 120):
         image = self.black_n_white_image
         width, height = image.size
-        
+
         image_upper_left_corner_x = x * self.window_size
         image_upper_left_corner_y = y * self.window_size
-        
+
         i, j = 1, 1
         while j < self.window_size + 1:
             if not image_upper_left_corner_y + j < height:
@@ -69,7 +69,7 @@ class ImageProcessor:
             i = 1
             j += 3
         return 0
-    
+
     def imageToBinary(self):
         image = self.black_n_white_image
         binary_info = ['']
@@ -85,30 +85,30 @@ class ImageProcessor:
         return binary_info
 
 class Slicer:
-    
+
     def __init__(self, original_image, temp_dir = '/tmp'):
         self.original_image = original_image
         self.temp_dir = temp_dir
-    
+
     def slice(self, bounding_box):
         return self.original_image.crop(bounding_box)
-    
+
     def sliceFromPointsList(self, points_list):
         if len(points_list) < 3:
             raise InsuficientPointsForPolygon
         bounding_box = graphics.getContainerRectangle(points_list)
         return self.original_image.crop(bounding_box)
-    
+
     def sliceFromBlock(self, block, window_size):
         cropped_image = self.slice(block.translateToUnits(window_size))
         image_file = tempfile.mkstemp(dir = self.temp_dir)[1]
         cropped_image.save(image_file, format = 'PNG')
 
 class ContentAnalyser:
-    
+
     def __init__(self, image):
         self.image = image
-    
+
     def getHeight(self):
         width, height = self.image.size
         image_draw = ImageDraw.Draw(self.image)
@@ -118,7 +118,7 @@ class ContentAnalyser:
             if len(current_line_image.getcolors()) < 10:
                 image_draw.rectangle((0, i, width, i + 3), fill = (255, 255, 255))
             i += 3
-        
+
     def __getBlankSpaceFromTopToBottom(self, image):
         width, height = image.size
         i = 0
@@ -130,17 +130,17 @@ class ContentAnalyser:
         return i
 
 class ImageManipulationError(Exception):
-    
+
     def __init__(self, value):
         self.value = value
-    
+
     def __str__(self):
         return self.value
-    
+
 class InsuficientPointsForPolygon(Exception):
-    
+
     def __init__(self):
         pass
-    
+
     def __str__(self):
         return 'Insufficient number of points for polygon. Must be at least three points.'
