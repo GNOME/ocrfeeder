@@ -3,7 +3,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -50,7 +50,7 @@ DEFAULT_SYSTEM_APP_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
 APP_DIR = DEFAULT_SYSTEM_APP_DIR
 RESOURCES_DIR = APP_DIR
 
-# If the path does not exist (devel setup) set the 
+# If the path does not exist (devel setup) set the
 # APP_DIR and RESOURCES_DIR to local paths
 if not os.path.exists(APP_DIR):
     APP_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -77,6 +77,6 @@ if os.environ.get(_OCRFEEDER_TEST_MODE):
 OCRFEEDER_DEBUG = False
 if os.environ.get(_OCRFEEDER_DEBUG_MODE):
     OCRFEEDER_DEBUG = True
-    
+
 UNPAPER_COMMAND = 'unpaper'
 GHOSTSCRIPT_COMMAND = 'gs'
