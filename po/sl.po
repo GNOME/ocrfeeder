@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-06-28 20:15+0000\n"
-"PO-Revision-Date: 2010-06-28 22:20+0100\n"
+"POT-Creation-Date: 2010-07-01 09:55+0000\n"
+"PO-Revision-Date: 2010-07-02 14:05+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -67,39 +67,48 @@ msgstr "Ali jih želite shraniti pred zapiranjem?"
 msgid "Close anyway"
 msgstr "Vseeno zapri"
 
-#: ../studio/widgetModeler.py:136
-#: ../studio/widgetPresenter.py:1161
+#: ../studio/widgetModeler.py:123
+#: ../studio/widgetPresenter.py:118
+msgid "Pages"
+msgstr "Strani"
+
+#: ../studio/widgetModeler.py:137
+#: ../studio/widgetPresenter.py:1261
 msgid "Delete"
 msgstr "Izbriši"
 
-#: ../studio/widgetModeler.py:401
-#: ../studio/widgetPresenter.py:623
-#: ../studio/widgetPresenter.py:630
+#: ../studio/widgetModeler.py:188
+msgid "Selectable areas"
+msgstr "Izbirna območja"
+
+#: ../studio/widgetModeler.py:399
+#: ../studio/widgetPresenter.py:702
+#: ../studio/widgetPresenter.py:709
 msgid "Page size"
 msgstr "Velikost strani"
 
-#: ../studio/widgetModeler.py:402
+#: ../studio/widgetModeler.py:400
 msgid "Resolution"
 msgstr "Ločljivost"
 
-#: ../studio/widgetModeler.py:406
+#: ../studio/widgetModeler.py:404
 msgid "Zoom"
 msgstr "Približaj"
 
-#: ../studio/widgetModeler.py:462
+#: ../studio/widgetModeler.py:460
 msgid "Export to HTML"
 msgstr "Izvozi v HTML"
 
-#: ../studio/widgetModeler.py:476
-#: ../studio/widgetPresenter.py:178
+#: ../studio/widgetModeler.py:474
+#: ../studio/widgetPresenter.py:179
 msgid "Export to ODT"
 msgstr "Izvozi v ODT"
 
-#: ../studio/widgetModeler.py:497
+#: ../studio/widgetModeler.py:495
 msgid "OCRFeeder Projects"
 msgstr "OCRFeeder projekti"
 
-#: ../studio/widgetModeler.py:553
+#: ../studio/widgetModeler.py:551
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -110,535 +119,603 @@ msgstr ""
 "\n"
 "Datoteka obstaja v mapi \"%(dir)s\". Z zamenjavo bo prepisana vsebina datoteke."
 
-#: ../studio/widgetModeler.py:560
+#: ../studio/widgetModeler.py:558
 msgid "Replace"
 msgstr "Zamenjaj"
 
-#: ../studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:139
 msgid "_File"
 msgstr "_Datoteka"
 
-#: ../studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:140
 msgid "_Quit"
 msgstr "_Končaj"
 
-#: ../studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:140
 msgid "Exit the program"
 msgstr "Izhod iz programa"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:141
 msgid "_Open"
 msgstr "_Odpri"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:141
 msgid "Open project"
 msgstr "Odpri projekt"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:142
 msgid "_Save"
 msgstr "_Shrani"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:142
 msgid "Save project"
 msgstr "Shrani projekt"
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:143
 msgid "_Save As…"
 msgstr "Shrani _kot ..."
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:143
 msgid "Save project with a chosen name"
 msgstr "Shrani trenutni projekt z izbranim imenom"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:144
 msgid "_Add Image"
 msgstr "Dodaj _sliko"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:144
 msgid "Add another image"
 msgstr "Dodaj še eno sliko"
 
-#: ../studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:145
 msgid "Add _Folder"
 msgstr "Dodaj _mapo"
 
-#: ../studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:145
 msgid "Add all images in a folder"
 msgstr "Dodaj vse slike v mapi"
 
-#: ../studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:146
 msgid "Append Project"
 msgstr "Pripni projekt"
 
-#: ../studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:146
 msgid "Load a project and append it to the current one"
 msgstr "Naloži projekt in ga pripni k trenutnemu"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:147
 msgid "_Import PDF"
 msgstr "_Uvozi PDF"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:147
 msgid "Import PDF"
 msgstr "Uvozi dokument PDF"
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:148
 msgid "_Export…"
 msgstr "_Izvozi ..."
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:148
 msgid "Export to a chosen format"
 msgstr "Izvozi v izbran zapis dokumenta"
 
-#: ../studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:149
 msgid "_Edit"
 msgstr "_Uredi"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:150
 msgid "_Edit Page"
 msgstr "Uredi _stran"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:150
 msgid "Edit page settings"
 msgstr "Urejanje nastavitev strani"
 
-#: ../studio/widgetPresenter.py:150
+#: ../studio/widgetPresenter.py:151
 msgid "_Preferences"
 msgstr "_Možnosti"
 
-#: ../studio/widgetPresenter.py:150
+#: ../studio/widgetPresenter.py:151
 msgid "Configure the application"
 msgstr "Spremeni nastavitve programa"
 
-#: ../studio/widgetPresenter.py:151
+#: ../studio/widgetPresenter.py:152
 msgid "_Delete Page"
 msgstr "_Izbriši stran"
 
-#: ../studio/widgetPresenter.py:151
+#: ../studio/widgetPresenter.py:152
 msgid "Delete current page"
 msgstr "Izbriši trenutno stran"
 
-#: ../studio/widgetPresenter.py:152
+#: ../studio/widgetPresenter.py:153
 msgid "_Clear Project"
 msgstr "_Počisti projekt"
 
-#: ../studio/widgetPresenter.py:152
+#: ../studio/widgetPresenter.py:153
 msgid "Delete all images"
 msgstr "Odstrani vse slike"
 
-#: ../studio/widgetPresenter.py:153
+#: ../studio/widgetPresenter.py:154
 msgid "_View"
 msgstr "_Pogled"
 
-#: ../studio/widgetPresenter.py:154
+#: ../studio/widgetPresenter.py:155
 msgid "Zoom In"
 msgstr "Približaj"
 
-#: ../studio/widgetPresenter.py:155
+#: ../studio/widgetPresenter.py:156
 msgid "Zoom Out"
 msgstr "Oddalji"
 
-#: ../studio/widgetPresenter.py:156
+#: ../studio/widgetPresenter.py:157
 msgid "Best Fit"
 msgstr "Prilagojeno zaslonu"
 
-#: ../studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:158
 msgid "Normal Size"
 msgstr "Običajna velikost"
 
-#: ../studio/widgetPresenter.py:158
+#: ../studio/widgetPresenter.py:159
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../studio/widgetPresenter.py:159
+#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:1111
 msgid "_Tools"
 msgstr "_Orodja"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:161
 msgid "_OCR Engines"
 msgstr "_OCR programniki"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:161
 msgid "Manage OCR engines"
 msgstr "Upravljanje z OCR programniki"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:162
 msgid "_Unpaper"
 msgstr "_Razstrani"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:162
 msgid "Process image with unpaper"
 msgstr "Obdelava slike z razstranjanjem"
 
-#: ../studio/widgetPresenter.py:162
+#: ../studio/widgetPresenter.py:163
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../studio/widgetPresenter.py:163
+#: ../studio/widgetPresenter.py:164
 msgid "_About"
 msgstr "_O programu"
 
-#: ../studio/widgetPresenter.py:163
+#: ../studio/widgetPresenter.py:164
 msgid "About this application"
 msgstr "O programu"
 
-#: ../studio/widgetPresenter.py:164
+#: ../studio/widgetPresenter.py:165
 msgid "_Recognize Document"
 msgstr "Optično _prepoznavanje dokumenta"
 
-#: ../studio/widgetPresenter.py:164
+#: ../studio/widgetPresenter.py:165
 msgid "Automatic Detection and Recognition"
 msgstr "Samodejna zaznava in optično prepoznavanje "
 
-#: ../studio/widgetPresenter.py:165
+#: ../studio/widgetPresenter.py:166
 msgid "Recognize Selected _Areas"
 msgstr "Prepoznavanje izbranega _območja"
 
-#: ../studio/widgetPresenter.py:165
+#: ../studio/widgetPresenter.py:166
 msgid "Recognize Selected Areas"
 msgstr "Prepoznavanje izbranega območja"
 
-#: ../studio/widgetPresenter.py:167
+#: ../studio/widgetPresenter.py:168
 msgid "Select All _Areas"
 msgstr "Izbira _vseh območij"
 
-#: ../studio/widgetPresenter.py:168
+#: ../studio/widgetPresenter.py:169
 msgid "Select all content areas"
 msgstr "Izbira vseh vsebinskih območij"
 
-#: ../studio/widgetPresenter.py:171
+#: ../studio/widgetPresenter.py:172
 msgid "Select _Previous Area"
 msgstr "Izbira _predhodnega območja"
 
-#: ../studio/widgetPresenter.py:172
+#: ../studio/widgetPresenter.py:173
 msgid "Select the previous area from the content areas"
 msgstr "Izbor predhodnega območja iz vsebinskega območja"
 
-#: ../studio/widgetPresenter.py:175
+#: ../studio/widgetPresenter.py:176
 msgid "Select _Next Area"
 msgstr "Izbira _naslednjega območja"
 
-#: ../studio/widgetPresenter.py:176
+#: ../studio/widgetPresenter.py:177
 msgid "Select the next area from the content areas"
 msgstr "Izbor naslednjega območja iz vsebinskega območja"
 
-#: ../studio/widgetPresenter.py:178
+#: ../studio/widgetPresenter.py:179
 msgid "_Generate ODT"
 msgstr "_Ustvari ODT dokument"
 
-#: ../studio/widgetPresenter.py:254
-#: ../studio/widgetPresenter.py:425
-msgid "Text"
-msgstr "Besedilo"
+#: ../studio/widgetPresenter.py:240
+msgid "Area editor"
+msgstr "Urejevalnik območja"
 
-#: ../studio/widgetPresenter.py:255
-msgid "Image"
-msgstr "Slika"
+#: ../studio/widgetPresenter.py:248
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:252
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr ""
 
 #: ../studio/widgetPresenter.py:256
+msgid "Sets the content area's width"
+msgstr "Nastavi širino območja vsebine"
+
+#: ../studio/widgetPresenter.py:259
+msgid "Sets the content area's height"
+msgstr "Nastavi višino območja vsebine"
+
+#: ../studio/widgetPresenter.py:262
+#: ../studio/widgetPresenter.py:472
+msgid "_Text"
+msgstr "_Besedilo"
+
+#: ../studio/widgetPresenter.py:263
+msgid "Set this content area to be the text type"
+msgstr "Nastavi območje vsebine kot vrsta besedila"
+
+#: ../studio/widgetPresenter.py:264
+msgid "_Image"
+msgstr "_Slika"
+
+#: ../studio/widgetPresenter.py:265
+msgid "Set this content area to be the image type"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:266
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../studio/widgetPresenter.py:266
+#: ../studio/widgetPresenter.py:276
 msgid "Clip"
 msgstr "Izrezek"
 
-#: ../studio/widgetPresenter.py:270
+#: ../studio/widgetPresenter.py:360
 msgid "Bounds"
 msgstr "Vezi"
 
-#: ../studio/widgetPresenter.py:273
-msgid "X"
-msgstr "X"
+#: ../studio/widgetPresenter.py:365
+msgid "_X:"
+msgstr "_X:"
 
-#: ../studio/widgetPresenter.py:275
-msgid "Y"
-msgstr "Y"
+#: ../studio/widgetPresenter.py:374
+msgid "_Y:"
+msgstr "_Y:"
 
-#: ../studio/widgetPresenter.py:278
-#: ../studio/widgetPresenter.py:644
-msgid "Width"
-msgstr "Širina"
+#: ../studio/widgetPresenter.py:386
+msgid "_Width:"
+msgstr "_Širina:"
 
-#: ../studio/widgetPresenter.py:280
-#: ../studio/widgetPresenter.py:646
-msgid "Height"
-msgstr "Višina"
+#: ../studio/widgetPresenter.py:395
+msgid "Hei_ght:"
+msgstr "_Višina:"
 
-#: ../studio/widgetPresenter.py:376
+#: ../studio/widgetPresenter.py:418
 msgid "Left"
 msgstr "Levo"
 
-#: ../studio/widgetPresenter.py:380
-msgid "Left aligned"
-msgstr "Leva poravnava"
+#: ../studio/widgetPresenter.py:422
+msgid "Set text to be left aligned"
+msgstr "Nastavi besedilo kot poravnano na levi"
 
-#: ../studio/widgetPresenter.py:382
+#: ../studio/widgetPresenter.py:424
 msgid "Center"
 msgstr "Sredinsko"
 
-#: ../studio/widgetPresenter.py:387
-msgid "Centered"
-msgstr "Sredinjeno"
+#: ../studio/widgetPresenter.py:429
+msgid "Set text to be centered"
+msgstr "Določi besedilo za sredinsko postavitev"
 
-#: ../studio/widgetPresenter.py:389
+#: ../studio/widgetPresenter.py:431
 msgid "Right"
 msgstr "Desno"
 
-#: ../studio/widgetPresenter.py:394
-msgid "Right aligned"
-msgstr "Desna poravnava"
+#: ../studio/widgetPresenter.py:436
+msgid "Set text to be right aligned"
+msgstr "Nastavi besedilo kot poravnano na desni"
 
-#: ../studio/widgetPresenter.py:396
+#: ../studio/widgetPresenter.py:438
 msgid "Fill"
 msgstr "Zapolni"
 
-#: ../studio/widgetPresenter.py:401
-msgid "Filled"
-msgstr "Zapolnjeno"
+#: ../studio/widgetPresenter.py:443
+msgid "Set text to be fill its area"
+msgstr "Nastavi besedilo, da zapolni območje besedila"
 
-#: ../studio/widgetPresenter.py:407
-msgid "OCR"
-msgstr "OCR"
+#: ../studio/widgetPresenter.py:449
+msgid "OC_R"
+msgstr "O_CR"
+
+#: ../studio/widgetPresenter.py:450
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr ""
+
+#: ../studio/widgetPresenter.py:456
+msgid "OCR engine to recognize this content area"
+msgstr ""
 
 #. Text Properties
-#: ../studio/widgetPresenter.py:417
+#: ../studio/widgetPresenter.py:464
 msgid "Text Properties"
 msgstr "Lastnosti besedila"
 
-#: ../studio/widgetPresenter.py:431
+#: ../studio/widgetPresenter.py:480
 msgid "Font"
 msgstr "Pisava"
 
-#: ../studio/widgetPresenter.py:438
+#: ../studio/widgetPresenter.py:487
 msgid "Align"
 msgstr "Poravnaj"
 
-#: ../studio/widgetPresenter.py:442
+#: ../studio/widgetPresenter.py:491
 msgid "Spacing"
 msgstr "Razmik"
 
-#: ../studio/widgetPresenter.py:446
-msgid "Line"
-msgstr "Črta"
+#: ../studio/widgetPresenter.py:493
+msgid "Set the text's letter spacing"
+msgstr "Določi razmik črk v besedilu"
 
-#: ../studio/widgetPresenter.py:448
-msgid "Letter"
-msgstr "Pismo"
+#: ../studio/widgetPresenter.py:495
+msgid "Set the text's line spacing"
+msgstr "Določi razmik vrstic v besedilu"
 
-#: ../studio/widgetPresenter.py:453
-msgid "Style"
-msgstr "Slog"
+#: ../studio/widgetPresenter.py:500
+msgid "_Line:"
+msgstr "_Vrstica:"
 
-#: ../studio/widgetPresenter.py:458
+#: ../studio/widgetPresenter.py:511
+msgid "L_etter:"
+msgstr "Č_rka:"
+
+#: ../studio/widgetPresenter.py:523
+msgid "Sty_le"
+msgstr "Slo_g"
+
+#: ../studio/widgetPresenter.py:530
 msgid "Angle"
 msgstr "Kot"
 
-#: ../studio/widgetPresenter.py:469
-#: ../studio/widgetPresenter.py:1163
+#: ../studio/widgetPresenter.py:534
+msgid "OCR engine to recogni_ze this area:"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:548
 msgid "Detect"
 msgstr "Zaznaj"
 
-#: ../studio/widgetPresenter.py:471
+#: ../studio/widgetPresenter.py:550
 msgid "Angle:"
 msgstr "Kot:"
 
-#: ../studio/widgetPresenter.py:553
+#: ../studio/widgetPresenter.py:632
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: ../studio/widgetPresenter.py:556
+#: ../studio/widgetPresenter.py:635
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: ../studio/widgetPresenter.py:560
+#: ../studio/widgetPresenter.py:639
 msgid "Open Folder"
 msgstr "Odpri mapo"
 
-#: ../studio/widgetPresenter.py:587
+#: ../studio/widgetPresenter.py:666
 msgid "Pages to export"
 msgstr "Strani za izvoz"
 
-#: ../studio/widgetPresenter.py:589
-#: ../studio/widgetPresenter.py:655
+#: ../studio/widgetPresenter.py:668
+#: ../studio/widgetPresenter.py:734
 msgid "All"
 msgstr "Vse"
 
-#: ../studio/widgetPresenter.py:590
-#: ../studio/widgetPresenter.py:654
+#: ../studio/widgetPresenter.py:669
+#: ../studio/widgetPresenter.py:733
 msgid "Current"
 msgstr "Trenutno"
 
-#: ../studio/widgetPresenter.py:606
+#: ../studio/widgetPresenter.py:685
 msgid "Choose the format"
 msgstr "Izbor vrste zapisa"
 
-#: ../studio/widgetPresenter.py:635
+#: ../studio/widgetPresenter.py:714
 msgid "Custom…"
 msgstr "Po meri ..."
 
-#: ../studio/widgetPresenter.py:652
+#: ../studio/widgetPresenter.py:723
+msgid "Width"
+msgstr "Širina"
+
+#: ../studio/widgetPresenter.py:725
+msgid "Height"
+msgstr "Višina"
+
+#: ../studio/widgetPresenter.py:731
 msgid "Affected pages"
 msgstr "Izbrane strani"
 
-#: ../studio/widgetPresenter.py:713
+#: ../studio/widgetPresenter.py:792
 msgid "Unpaper Image Processor"
 msgstr "Razstranjanje slike"
 
-#: ../studio/widgetPresenter.py:734
+#: ../studio/widgetPresenter.py:813
 msgid "Noise Filter Intensity"
 msgstr "Trenutni filter hrupnosti"
 
-#: ../studio/widgetPresenter.py:736
-#: ../studio/widgetPresenter.py:754
+#: ../studio/widgetPresenter.py:815
+#: ../studio/widgetPresenter.py:833
 msgid "Default"
 msgstr "Privzeto"
 
-#: ../studio/widgetPresenter.py:737
-#: ../studio/widgetPresenter.py:755
-#: ../studio/widgetPresenter.py:1061
+#: ../studio/widgetPresenter.py:816
+#: ../studio/widgetPresenter.py:834
 msgid "Custom"
 msgstr "Po meri"
 
-#: ../studio/widgetPresenter.py:738
-#: ../studio/widgetPresenter.py:756
+#: ../studio/widgetPresenter.py:817
+#: ../studio/widgetPresenter.py:835
 msgid "None"
 msgstr "Brez"
 
-#: ../studio/widgetPresenter.py:752
+#: ../studio/widgetPresenter.py:831
 msgid "Gray Filter Size"
 msgstr "Velikost filtra sivin"
 
-#: ../studio/widgetPresenter.py:770
+#: ../studio/widgetPresenter.py:849
 msgid "Black Filter"
 msgstr "Filter črnine"
 
-#: ../studio/widgetPresenter.py:771
+#: ../studio/widgetPresenter.py:850
 msgid "Use"
 msgstr "Uporabi"
 
-#: ../studio/widgetPresenter.py:777
-#: ../studio/widgetPresenter.py:783
+#: ../studio/widgetPresenter.py:856
 msgid "Preview"
 msgstr "Predogled"
 
-#: ../studio/widgetPresenter.py:793
+#: ../studio/widgetPresenter.py:862
+msgid "_Preview"
+msgstr "_Predogled"
+
+#: ../studio/widgetPresenter.py:872
 msgid "Extra Options"
 msgstr "Dodatne možnosti"
 
-#: ../studio/widgetPresenter.py:827
+#: ../studio/widgetPresenter.py:874
+msgid "Unpaper's command line arguments"
+msgstr "Argumenti ukaza razstranjevanja"
+
+#: ../studio/widgetPresenter.py:908
 msgid "Performing Unpaper"
 msgstr "Izvajanje razstranjanja"
 
-#: ../studio/widgetPresenter.py:827
+#: ../studio/widgetPresenter.py:908
 msgid "Performing unpaper. Please wait…"
 msgstr "Izvajanje razstranjanja. Počakajte ..."
 
-#: ../studio/widgetPresenter.py:897
-#: ../studio/widgetPresenter.py:908
+#: ../studio/widgetPresenter.py:978
+#: ../studio/widgetPresenter.py:989
 msgid "An error occurred!"
 msgstr "Prišlo je do napake!"
 
-#: ../studio/widgetPresenter.py:897
-#: ../studio/widgetPresenter.py:908
+#: ../studio/widgetPresenter.py:978
+#: ../studio/widgetPresenter.py:989
 msgid "Error"
 msgstr "Napaka"
 
-#: ../studio/widgetPresenter.py:917
+#: ../studio/widgetPresenter.py:998
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../studio/widgetPresenter.py:966
-msgid "General"
-msgstr "Splošno"
+#: ../studio/widgetPresenter.py:1047
+msgid "_General"
+msgstr "_Splošno"
 
-#: ../studio/widgetPresenter.py:969
+#: ../studio/widgetPresenter.py:1052
 msgid "Temporary folder"
 msgstr "Začasna mapa"
 
-#: ../studio/widgetPresenter.py:973
-#: ../studio/widgetPresenter.py:1029
+#: ../studio/widgetPresenter.py:1056
+#: ../studio/widgetPresenter.py:1120
 msgid "Choose"
 msgstr "Izbor"
 
-#: ../studio/widgetPresenter.py:990
-msgid "Appearance"
-msgstr "Videz"
+#: ../studio/widgetPresenter.py:1073
+msgid "_Appearance"
+msgstr "_Videz"
 
-#: ../studio/widgetPresenter.py:993
+#: ../studio/widgetPresenter.py:1078
 msgid "Select boxes' colors"
 msgstr "Izbor barve okvirja"
 
-#: ../studio/widgetPresenter.py:1000
-msgid "Text fill color"
-msgstr "Barva polnila besedila"
+#: ../studio/widgetPresenter.py:1084
+msgid "Te_xt areas' fill color"
+msgstr "Barva _polnila območja besedila"
 
-#: ../studio/widgetPresenter.py:1003
-msgid "Text stroke color"
-msgstr "Barva obrobe besedila"
+#: ../studio/widgetPresenter.py:1090
+msgid "Text areas' _stroke color"
+msgstr "Barva _črt območja besedila"
 
-#: ../studio/widgetPresenter.py:1006
-msgid "Image fill color"
-msgstr "Barva polnila slike"
+#: ../studio/widgetPresenter.py:1096
+msgid "_Image areas' fill color"
+msgstr "Barva _polnila območja slike"
 
-#: ../studio/widgetPresenter.py:1009
-msgid "Image stroke color"
-msgstr "Barva obrobe slike"
-
-#: ../studio/widgetPresenter.py:1022
-msgid "Tools"
-msgstr "Orodja"
-
-#: ../studio/widgetPresenter.py:1025
+#: ../studio/widgetPresenter.py:1116
 msgid "Path to unpaper"
 msgstr "Pot do programa za razstranjanje"
 
-#: ../studio/widgetPresenter.py:1037
-#: ../studio/widgetPresenter.py:1096
-#: ../studio/widgetPresenter.py:1134
-#: ../studio/widgetPresenter.py:1152
-#: ../studio/widgetPresenter.py:1241
+#: ../studio/widgetPresenter.py:1128
+#: ../studio/widgetPresenter.py:1196
+#: ../studio/widgetPresenter.py:1234
+#: ../studio/widgetPresenter.py:1252
+#: ../studio/widgetPresenter.py:1341
 msgid "OCR Engines"
 msgstr "OCR programniki"
 
-#: ../studio/widgetPresenter.py:1047
-msgid "Favorite engine:"
-msgstr "Priljubljen programnik:"
+#: ../studio/widgetPresenter.py:1130
+msgid "The engine that should be used when performing the automatic recognition."
+msgstr "Programnik, ki naj bo uporabljen med izvajanjem samodejne prepoznave"
 
-#: ../studio/widgetPresenter.py:1059
+#: ../studio/widgetPresenter.py:1141
+msgid "Favorite _engine:"
+msgstr "Pri_ljubljeni programnik:"
+
+#: ../studio/widgetPresenter.py:1156
 msgid "Window size"
 msgstr "Velikost okna"
 
-#: ../studio/widgetPresenter.py:1060
-msgid "Automatic"
-msgstr "Samodejno"
+#: ../studio/widgetPresenter.py:1157
+msgid "A_utomatic"
+msgstr "_Samodejno"
 
-#: ../studio/widgetPresenter.py:1110
+#: ../studio/widgetPresenter.py:1158
+msgid "Cu_stom"
+msgstr "Po _meri"
+
+#: ../studio/widgetPresenter.py:1167
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1210
 msgid "Engines to be added"
 msgstr "Programniki za dodajanje"
 
-#: ../studio/widgetPresenter.py:1115
+#: ../studio/widgetPresenter.py:1215
 msgid "Include"
 msgstr "Vključi"
 
-#: ../studio/widgetPresenter.py:1119
-#: ../studio/widgetPresenter.py:1156
+#: ../studio/widgetPresenter.py:1219
+#: ../studio/widgetPresenter.py:1256
 msgid "Engine"
 msgstr "Programnik"
 
-#: ../studio/widgetPresenter.py:1160
+#: ../studio/widgetPresenter.py:1260
 msgid "Add"
 msgstr "Dodaj"
 
-#: ../studio/widgetPresenter.py:1162
+#: ../studio/widgetPresenter.py:1262
 msgid "Edit"
 msgstr "Uredi"
 
-#: ../studio/widgetPresenter.py:1177
+#: ../studio/widgetPresenter.py:1263
+msgid "De_tect"
+msgstr "_Zaznaj"
+
+#: ../studio/widgetPresenter.py:1277
 msgid "Are you sure you want to delete this engine?"
 msgstr "Ali ste prepričani, da želite izbrisati ta programnik?"
 
-#: ../studio/widgetPresenter.py:1223
+#: ../studio/widgetPresenter.py:1323
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -646,64 +723,81 @@ msgstr ""
 "V sistemu ni razpoložljivih OCR programnikov.\n"
 "Prepričajte se, da so nameščeni in dostopni z vašimi dovoljenji."
 
-#: ../studio/widgetPresenter.py:1226
+#: ../studio/widgetPresenter.py:1326
 msgid "No OCR engines available"
 msgstr "Na voljo ni nobenega OCR programnika"
 
-#: ../studio/widgetPresenter.py:1243
+#: ../studio/widgetPresenter.py:1343
 #, python-format
 msgid "%s engine"
 msgstr "Programnik %s"
 
-#: ../studio/widgetPresenter.py:1266
-msgid "Name"
-msgstr "Ime"
+#: ../studio/widgetPresenter.py:1367
+msgid "_Name:"
+msgstr "_Ime:"
 
-#: ../studio/widgetPresenter.py:1266
+#: ../studio/widgetPresenter.py:1368
 msgid "Engine name"
 msgstr "Ime programnika"
 
-#: ../studio/widgetPresenter.py:1268
-msgid "Image format"
-msgstr "Zapis slike"
+#: ../studio/widgetPresenter.py:1370
+msgid "_Image format:"
+msgstr "_Zapis slike:"
 
-#: ../studio/widgetPresenter.py:1268
+#: ../studio/widgetPresenter.py:1372
 msgid "The required image format"
 msgstr "Zahtevan zapis slike"
 
-#: ../studio/widgetPresenter.py:1270
-msgid "Failure string"
-msgstr "Niz napake"
+#: ../studio/widgetPresenter.py:1374
+msgid "_Failure string:"
+msgstr "Niz _napake:"
 
-#: ../studio/widgetPresenter.py:1270
+#: ../studio/widgetPresenter.py:1376
 msgid "The failure string or character that this engine uses"
 msgstr "Niz napak ali znak, ki ga programnik uporablja"
 
-#: ../studio/widgetPresenter.py:1272
-msgid "Engine Path"
-msgstr "Pot programnika"
+#: ../studio/widgetPresenter.py:1379
+msgid "Engine _path:"
+msgstr "Pot _programnika:"
 
-#: ../studio/widgetPresenter.py:1272
+#: ../studio/widgetPresenter.py:1381
 msgid "The path to the engine program"
 msgstr "Pot do programa programnika"
 
-#: ../studio/widgetPresenter.py:1274
-msgid "Engine arguments"
-msgstr "Argumenti programnika"
+#: ../studio/widgetPresenter.py:1383
+msgid "Engine _arguments:"
+msgstr "_Argumenti programnika:"
 
-#: ../studio/widgetPresenter.py:1274
+#: ../studio/widgetPresenter.py:1385
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr "Argumenti: uporabite $IMAGE za slike in $FILE, če bo zapisano v datoteko"
 
-#: ../studio/widgetPresenter.py:1290
+#: ../studio/widgetPresenter.py:1402
 msgid "Error setting the new engine; please check your engine settings."
 msgstr "Napaka med nastavljanjem novega programnika. Preverite nastavitve."
 
-#: ../studio/widgetPresenter.py:1290
+#: ../studio/widgetPresenter.py:1402
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: ../studio/widgetPresenter.py:1321
+#: ../studio/widgetPresenter.py:1438
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
+
+#~ msgid "X"
+#~ msgstr "X"
+#~ msgid "Y"
+#~ msgstr "Y"
+#~ msgid "Left aligned"
+#~ msgstr "Leva poravnava"
+#~ msgid "Centered"
+#~ msgstr "Sredinjeno"
+#~ msgid "Right aligned"
+#~ msgstr "Desna poravnava"
+#~ msgid "Filled"
+#~ msgstr "Zapolnjeno"
+#~ msgid "Image stroke color"
+#~ msgstr "Barva obrobe slike"
+#~ msgid "Tools"
+#~ msgstr "Orodja"
 
