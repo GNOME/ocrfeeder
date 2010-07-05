@@ -167,7 +167,7 @@ class MainWindow:
                                   ('OCRFeederDetection', None, _('_Recognize Document'), None, _("Automatic Detection and Recognition"), tool_items['detection']),
                                   ('RecognizeAreas', None, _('Recognize Selected _Areas'), None, _("Recognize Selected Areas"), menu_items['recognize_areas']),
                                   ('SelectAllAreas', None,
-                                   _('Select All _Areas'), '<control>a',
+                                   _('Select All _Areas'), '<control><shift>a',
                                    _("Select all content areas"),
                                    menu_items['select_all_areas']),
                                   ('SelectPreviousArea', gtk.STOCK_GO_BACK,
