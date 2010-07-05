@@ -70,8 +70,10 @@ class SourceImagesSelector(gobject.GObject):
             pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(path, 150, 100)
         except:
             return
+        gtk.gdk.threads_enter()
         iter = self.list_store.append([path, image_name, pixbuf])
         self.emit('selection_changed', self.isEmpty())
+        gtk.gdk.threads_leave()
         return pixbuf, path, iter
 
     def __countEqualPathsStored(self, path):
