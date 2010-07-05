@@ -21,6 +21,7 @@
 from customWidgets import PlainFrame, TrippleStatusBar
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from util import lib, PAPER_SIZES
+from util.asyncworker import AsyncWorker
 from util.constants import *
 from util.graphics import convertPixbufToImage
 import Image
@@ -34,6 +35,7 @@ import signal
 import subprocess
 import sys
 import threading
+import Queue
 import time
 pygtk.require('2.0')
 _ = gettext.gettext
@@ -997,6 +999,82 @@ class CommandProgressBarDialog(gtk.Dialog):
             self.destroy()
             return False
         return True
+
+class QueuedEventsProgressDialog(gtk.Dialog):
+
+    def __init__(self, parent, items_list = []):
+        super(QueuedEventsProgressDialog, self).__init__(parent = parent,
+                                                       flags = gtk.DIALOG_MODAL)
+        self.set_icon_from_file(WINDOW_ICON)
+        self.info_list = []
+        self.worker = AsyncWorker()
+        self.setItemsList(items_list)
+        self.label = gtk.Label()
+        self.__makeProgressBar()
+        self.vbox.show_all()
+        self.set_size_request(300, -1)
+        self.pulse_id = 0
+        self.item_number = self.worker.item_number
+        self.connect('delete-event', self._deleteEventCb)
+
+    def setItemsList(self, items_list):
+        for item in items_list:
+            info, async_item = item
+            self.info_list.append(info)
+            self.worker.queue.put(async_item)
+
+    def __makeProgressBar(self):
+        self.vbox.add(self.label)
+        self.progress_bar = gtk.ProgressBar()
+        progress_bar_container = gtk.Alignment(0, 0.5, 1, 0)
+        progress_bar_container.add(self.progress_bar)
+
+        hbox = gtk.HBox()
+        hbox.add(progress_bar_container)
+
+        cancel_button = gtk.Button(stock = gtk.STOCK_CANCEL)
+        cancel_button.connect('clicked', self._cancelButtonClickedCb)
+        hbox.pack_end(cancel_button, False, False, 0)
+
+        self.vbox.pack_start(hbox, False)
+
+    def run(self):
+        self.worker.start()
+        self.pulse_id = gobject.timeout_add(100, self._pulse)
+        self.show_all()
+
+    def cancel(self):
+        self.worker.stop()
+        self.message = _('Cancelled')
+        if self.pulse_id:
+            gobject.source_remove(self.pulse_id)
+        self.destroy()
+
+    def _pulse(self):
+        self.progress_bar.pulse()
+        if self.item_number != self.worker.item_number:
+            self.item_number = self.worker.item_number
+            if self.item_number != -1 and \
+               self.item_number < len(self.info_list):
+                title, message = self.info_list[self.item_number]
+                self.set_title(title)
+                self.message = message
+        return True
+
+    def _deleteEventCb(self, dialog, event):
+        self.worker.stop()
+        return True
+
+    def _cancelButtonClickedCb(self, button):
+        self.cancel()
+
+    def __getMessage(self):
+        return self.label.get_text()
+
+    def __setMessage(self, message):
+        self.label.set_text(message)
+
+    message = property(__getMessage, __setMessage)
 
 class PreferencesDialog(gtk.Dialog):
 
