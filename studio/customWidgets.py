@@ -298,8 +298,6 @@ class SelectableBoxesArea(goocanvas.Canvas):
             if key_name == 'down':
                 self.zoom(-0.2)
                 return True
-        elif key_name == 'a' and event.state == gtk.gdk.CONTROL_MASK:
-            self.selectAllAreas()
 
     def pressedWithinArea(self, item, target, event):
         deselected = False
