@@ -783,8 +783,10 @@ class QuestionDialog(gtk.MessageDialog):
 
 class WarningDialog(gtk.MessageDialog):
 
-    def __init__(self, message, buttons = gtk.BUTTONS_OK):
-        super(WarningDialog, self).__init__(type = gtk.MESSAGE_WARNING, buttons = buttons)
+    def __init__(self, message, buttons = gtk.BUTTONS_OK, parent = None):
+        super(WarningDialog, self).__init__(type = gtk.MESSAGE_WARNING,
+                                            buttons = buttons,
+                                            parent = parent)
         self.set_icon_from_file(WINDOW_ICON)
         self.set_markup(message)
 

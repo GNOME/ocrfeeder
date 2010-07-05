@@ -28,8 +28,10 @@ from studio.configuration import ProjectSaver, ProjectLoader
 from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
 from util.lib import debug
+from util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
-    PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog
+    PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
+    QueuedEventsProgressDialog
 import gettext
 import gobject
 import gtk
@@ -417,13 +419,28 @@ class ImageReviewer_Controler:
 
     def performBoxDetection(self, widget):
         image_reviewer = self.__getCurrentReviewer()
-        self.performBoxDetectionForReviewer(image_reviewer)
-        while gtk.events_pending():
-            gtk.main_iteration()
+        image_reviewer.selectable_boxes_area.clearAreas()
+        image_reviewer.applyTextColors()
+        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        item = AsyncItem(self.performBoxDetectionForReviewer,
+                         (image_reviewer,),
+                         self.__performBoxDetectionForReviewerFinishedCb,
+                         (dialog, image_reviewer,))
+        info = (_('Recognizing Document'), _('Please wait…'))
+        dialog.setItemsList([(info, item)])
+        dialog.run()
+
+    def __performBoxDetectionForReviewerFinishedCb(self, dialog, image_reviewer,
+                                                   box_dimensions, error):
+        if error:
+            dialog.cancel()
+            return
+        for dimensions in (box_dimensions or []):
+            image_reviewer.selectable_boxes_area.addArea(dimensions)
         image_reviewer.addNewEditorsToAllBoxes()
-        image_reviewer.performOcrForAllEditors(self.configuration_manager.favorite_engine)
-        while gtk.events_pending():
-            gtk.main_iteration()
+        favorite_engine = self.configuration_manager.favorite_engine
+        image_reviewer.performOcrForAllEditors(favorite_engine)
+        dialog.cancel()
 
     def performBoxDetectionForReviewer(self, image_reviewer):
         window_size = self.configuration_manager.window_size
@@ -431,31 +448,34 @@ class ImageReviewer_Controler:
             window_size = None
         else:
             window_size = float(window_size)
-        try:
-            image_processor = ImageProcessor(image_reviewer.path_to_image, window_size)
-        except:
-            warning_dialog = WarningDialog(str(sys.exc_info()[1]))
-            warning_dialog.run()
-            warning_dialog.destroy()
-            return
-        while gtk.events_pending():
-            gtk.main_iteration()
+
+        image_processor = ImageProcessor(image_reviewer.path_to_image,
+                                         window_size)
+
+        max_width = image_reviewer.image_pixbuf.get_width()
+        max_height = image_reviewer.image_pixbuf.get_height()
+        window_size = image_processor.window_size
         block_retriever = BlockRetriever(image_processor.imageToBinary())
-        while gtk.events_pending():
-            gtk.main_iteration()
+        dimensions_list = self.__getDimensionsFromBlockRetriever(block_retriever,
+                                                                 max_width,
+                                                                 max_height,
+                                                                 window_size)
+        return dimensions_list
+
+    def __getDimensionsFromBlockRetriever(self, block_retriever,
+                                          max_width, max_height, window_size):
         blocks = block_retriever.getAllBlocks()
-        while gtk.events_pending():
-            gtk.main_iteration()
-        image_reviewer.selectable_boxes_area.clearAreas()
-        image_reviewer.applyTextColors()
+        dimensions_list = []
         for block in blocks:
-            leftmost_x, highest_y, rightmost_x, lowest_y = (block.translateToUnits(image_processor.window_size))
-            rightmost_x = min(rightmost_x, image_reviewer.image_pixbuf.get_width())
-            lowest_y = min(lowest_y, image_reviewer.image_pixbuf.get_height())
-            dimensions = graphics.getBoundsFromStartEndPoints((leftmost_x, highest_y), (rightmost_x, lowest_y))
-            image_reviewer.selectable_boxes_area.addArea(dimensions)
-            while gtk.events_pending():
-                gtk.main_iteration()
+            leftmost_x, highest_y, rightmost_x, lowest_y = \
+                block.translateToUnits(window_size)
+            rightmost_x = min(rightmost_x, max_width)
+            lowest_y = min(lowest_y, max_height)
+            dimensions = graphics.getBoundsFromStartEndPoints(
+                                       (leftmost_x, highest_y),
+                                       (rightmost_x, lowest_y))
+            dimensions_list.append(dimensions)
+        return dimensions_list
 
     def setDataBox(self, widget):
         image_reviewer = self.__getCurrentReviewer()
