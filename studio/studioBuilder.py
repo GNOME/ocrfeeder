@@ -124,6 +124,7 @@ class Studio:
                 add_engines_dialog.destroy()
 
     def run(self):
+        gtk.gdk.threads_init()
         gtk.main()
 
     def dragDataReceived(self, widget, context, x, y, selection, target_type, timestamp):
