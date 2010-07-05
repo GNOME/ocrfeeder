@@ -30,6 +30,7 @@ from studio.dataHolder import create_images_dict_from_liststore, DataBox, TextDa
 from studio.customWidgets import SelectableBoxesArea
 from feeder.ocrEngines import Engine, OcrEnginesManager
 from configuration import ConfigurationManager
+from util.asyncworker import AsyncItem
 import gettext
 import locale
 _ = gettext.gettext
@@ -170,11 +171,25 @@ class Studio:
     def importPdf(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('PDF'), ['application/pdf'], [])])
         response = file_open_dialog.run()
+        files = []
         if response == gtk.RESPONSE_OK:
-            for file_name in file_open_dialog.get_filenames():
-                folder = lib.convertPdfToImages(file_name, self.configuration_manager.getTemporaryDir())
-                self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
+            files = file_open_dialog.get_filenames()
         file_open_dialog.destroy()
+        for file_name in files:
+            dialog = widgetPresenter.QueuedEventsProgressDialog(
+                                                 self.main_window.window)
+            item = AsyncItem(lib.convertPdfToImages,
+                             (file_name,
+                              self.configuration_manager.getTemporaryDir()),
+                             self.__loadPdfFinishedCb,
+                             (dialog,))
+            info = (_('Loading PDF'), _('Please wait…'))
+            dialog.setItemsList([(info, item)])
+            dialog.run()
+
+    def __loadPdfFinishedCb(self, dialog, folder, error):
+        self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
+        dialog.destroy()
 
     def addFolder(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('select-folder')
