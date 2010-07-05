@@ -1045,7 +1045,6 @@ class QueuedEventsProgressDialog(gtk.Dialog):
 
     def cancel(self):
         self.worker.stop()
-        self.message = _('Cancelled')
         if self.pulse_id:
             gobject.source_remove(self.pulse_id)
         self.destroy()
@@ -1066,6 +1065,7 @@ class QueuedEventsProgressDialog(gtk.Dialog):
         return True
 
     def _cancelButtonClickedCb(self, button):
+        self.message = _('Cancelled')
         self.cancel()
 
     def __getMessage(self):
