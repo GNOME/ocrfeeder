@@ -50,6 +50,7 @@ class ImageProcessor:
         else:
             debug(sys.exc_info())
             raise ImageManipulationError(error_message)
+        self.bg_color = 255
 
     def __windowContrast(self, bgcolor, x, y):
         image = self.black_n_white_image
@@ -83,7 +84,7 @@ class ImageProcessor:
         i, j = 0, 0
         while j < height / self.window_size:
             while i < width / self.window_size:
-                binary_info[-1] += str(self.__windowContrast(255, i, j))
+                binary_info[-1] += str(self.__windowContrast(self.bg_color, i, j))
                 i += 1
             i = 0
             binary_info += ['']
