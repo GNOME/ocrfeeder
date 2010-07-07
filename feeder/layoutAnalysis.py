@@ -19,7 +19,10 @@
 ###########################################################################
 
 from util.lib import debug
-from util.constants import OCRFEEDER_DEBUG
+from util import graphics
+from util.constants import OCRFEEDER_DEBUG, DTP
+from studio.dataHolder import DataBox
+from imageManipulation import ImageProcessor
 
 NONE = 0
 TOP = -1
@@ -370,3 +373,82 @@ class BlockRetriever:
             for block in blocks:
                 debug(block)
         return blocks
+
+class LayoutAnalysis(object):
+
+    def __init__(self,
+                 ocr_engine,
+                 window_size = None,
+                 improve_column_detection = True,
+                 column_size = None):
+        self.ocr_engine = ocr_engine
+        self.window_size = window_size
+        self.column_size = column_size
+        self.improve_column_detection = improve_column_detection
+
+    def recognize(self, path_to_image, page_resolution):
+        image_processor = ImageProcessor(path_to_image,
+                                         self.window_size)
+        block_retriever = BlockRetriever(image_processor.imageToBinary())
+
+        # Get "untouched" block bounds
+        blocks = block_retriever.getAllBlocks()
+        block_bounds = [block.translateToUnits(image_processor.window_size) \
+                        for block in blocks]
+
+        # Perform column subdivision (optimization of results)
+        if self.improve_column_detection:
+            bounds_optimized = []
+            for bounds in block_bounds:
+                bounds_divided = image_processor.divideImageClipInColumns(bounds,
+                                                               self.column_size)
+                bounds_optimized.extend(bounds_divided)
+            block_bounds = bounds_optimized
+
+        # Adjust margins (optimization of results)
+        block_bounds = [image_processor.adjustImageClipMargins(bounds, \
+                                                     self.column_size) \
+                        for bounds in block_bounds]
+
+        image = image_processor.original_image
+        data_boxes = [self.__recognizeImageFromBounds(image,
+                                                      bounds,
+                                                      page_resolution) \
+                      for bounds in block_bounds]
+        return data_boxes
+
+    def __recognizeImageFromBounds(self, image, bounds, page_resolution):
+        clip = image.crop(bounds)
+        text = clip_type = None
+        if self.ocr_engine:
+            text = self.readImage(clip)
+            clip_type = self.ocr_engine.classify(text)
+
+        x0, y0, x1, y1 = bounds
+        x, y, width, height = graphics.getBoundsFromStartEndPoints((x0, y0),
+                                                                   (x1, y1))
+
+        data_box = DataBox(x, y, width, height, clip)
+        if text:
+            data_box.setText(text)
+            data_box.setType(clip_type)
+
+        text_size = self.getTextSizeFromImage(clip, page_resolution)
+        if text_size:
+            data_box.setFontSize(text_size)
+
+        return data_box
+
+    def getTextSizeFromImage(self, image, page_resolution):
+        text_size = graphics.getTextSizeFromImage(image)
+        if not text_size:
+            return None
+        y_resolution = float(page_resolution)
+        text_size /= y_resolution
+        text_size *= DTP
+        print text_size
+        return round(text_size)
+
+    def readImage(self, image):
+        self.ocr_engine.setImage(image)
+        return self.ocr_engine.read()
