@@ -415,65 +415,42 @@ class ImageReviewer_Controler:
         image_reviewer = self.__getCurrentReviewer()
         image_reviewer.performOcrForSelectedBoxes(self.configuration_manager.favorite_engine)
 
-    def performBoxDetection(self, widget):
+    def recognizeCurrentPage(self):
         image_reviewer = self.__getCurrentReviewer()
         image_reviewer.selectable_boxes_area.clearAreas()
         image_reviewer.applyTextColors()
         dialog = QueuedEventsProgressDialog(self.main_window.window)
-        item = AsyncItem(self.performBoxDetectionForReviewer,
+        item = AsyncItem(self.__performRecognitionForReviewer,
                          (image_reviewer,),
-                         self.__performBoxDetectionForReviewerFinishedCb,
+                         self.__performRecognitionForReviewerFinishedCb,
                          (dialog, image_reviewer,))
         info = (_('Recognizing Document'), _('Please wait…'))
         dialog.setItemsList([(info, item)])
         dialog.run()
 
-    def __performBoxDetectionForReviewerFinishedCb(self, dialog, image_reviewer,
-                                                   box_dimensions, error):
-        if error:
-            dialog.cancel()
-            return
-        for dimensions in (box_dimensions or []):
-            image_reviewer.selectable_boxes_area.addArea(dimensions)
-        image_reviewer.addNewEditorsToAllBoxes()
-        favorite_engine = self.configuration_manager.favorite_engine
-        image_reviewer.performOcrForAllEditors(favorite_engine)
-        dialog.cancel()
-
-    def performBoxDetectionForReviewer(self, image_reviewer):
+    def __performRecognitionForReviewer(self, image_reviewer):
         window_size = self.configuration_manager.window_size
         if window_size == 'auto':
             window_size = None
         else:
             window_size = float(window_size)
 
-        image_processor = ImageProcessor(image_reviewer.path_to_image,
+        layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine(),
                                          window_size)
+        return layout_analysis.recognize(image_reviewer.path_to_image,
+                                         image_reviewer.page.resolution[1])
 
-        max_width = image_reviewer.image_pixbuf.get_width()
-        max_height = image_reviewer.image_pixbuf.get_height()
-        window_size = image_processor.window_size
-        block_retriever = BlockRetriever(image_processor.imageToBinary())
-        dimensions_list = self.__getDimensionsFromBlockRetriever(block_retriever,
-                                                                 max_width,
-                                                                 max_height,
-                                                                 window_size)
-        return dimensions_list
+    def __getConfiguredOcrEngine(self):
+        for engine, path in self.ocr_engines:
+            if engine.name == self.configuration_manager.favorite_engine:
+                return engine
+        return None
 
-    def __getDimensionsFromBlockRetriever(self, block_retriever,
-                                          max_width, max_height, window_size):
-        blocks = block_retriever.getAllBlocks()
-        dimensions_list = []
-        for block in blocks:
-            leftmost_x, highest_y, rightmost_x, lowest_y = \
-                block.translateToUnits(window_size)
-            rightmost_x = min(rightmost_x, max_width)
-            lowest_y = min(lowest_y, max_height)
-            dimensions = graphics.getBoundsFromStartEndPoints(
-                                       (leftmost_x, highest_y),
-                                       (rightmost_x, lowest_y))
-            dimensions_list.append(dimensions)
-        return dimensions_list
+    def __performRecognitionForReviewerFinishedCb(self, dialog, image_reviewer,
+                                                  data_boxes, error):
+        for data_box in data_boxes:
+            image_reviewer.addDataBox(data_box)
+        dialog.cancel()
 
     def setDataBox(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -869,6 +846,7 @@ class Editor:
         self.box_editor.setHeight(self.data_box.height)
         self.box_editor.setType(self.data_box.type)
         self.box_editor.setText(self.data_box.text)
+        self.box_editor.setFontSize(self.data_box.text_data.size)
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)
 
