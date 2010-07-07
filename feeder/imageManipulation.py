@@ -31,8 +31,10 @@ _ = gettext.gettext
 
 class ImageProcessor:
 
-    def __init__(self, path_to_image, window_size = None):
+    def __init__(self, path_to_image,
+                 window_size = None, contrast_tolerance = 120):
         self.window_size = window_size
+        self.contrast_tolerance = contrast_tolerance
         error_message = _("A problem occurred while trying to open the image:\n %s\n"
                           "Ensure the image exists or try converting it to another format.") % path_to_image
         if os.path.isfile(path_to_image):
@@ -49,7 +51,7 @@ class ImageProcessor:
             debug(sys.exc_info())
             raise ImageManipulationError(error_message)
 
-    def __windowContrast(self, bgcolor, x, y, constrast_tolerance = 120):
+    def __windowContrast(self, bgcolor, x, y):
         image = self.black_n_white_image
         width, height = image.size
 
@@ -63,7 +65,11 @@ class ImageProcessor:
             while i < self.window_size + 1:
                 if not image_upper_left_corner_x + i < width:
                     break
-                if graphics.colorsContrast(image.getpixel((image_upper_left_corner_x + i, image_upper_left_corner_y + j)), bgcolor, constrast_tolerance):
+                pixel_point = (image_upper_left_corner_x + i,
+                               image_upper_left_corner_y + j)
+                if graphics.colorsContrast(image.getpixel(pixel_point),
+                                           bgcolor,
+                                           self.contrast_tolerance):
                     return 1
                 i += 3
             i = 1
