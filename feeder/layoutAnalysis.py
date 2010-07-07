@@ -129,7 +129,7 @@ class Block:
         lowest_y = self.finish_line * window_size + window_size
         if self.extra_charge > 0:
             lowest_y += window_size / 2.0
-        return leftmost_x, highest_y, rightmost_x, lowest_y
+        return int(leftmost_x), int(highest_y), int(rightmost_x), int(lowest_y)
 
     def __str__(self):
         block_str = """
