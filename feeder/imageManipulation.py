@@ -140,6 +140,68 @@ class ImageProcessor:
                 break
         return has_contrast
 
+    def adjustImageClipMargins(self, clip_dimensions, margins_min_width):
+        if margins_min_width == 0:
+            return clip_dimensions
+        if margins_min_width is None:
+            margins_min_width = int(self.window_size / 2)
+        x0, y0, x1, y1 = clip_dimensions
+
+        clip = self.black_n_white_image.crop(clip_dimensions)
+        left, top, right, bottom = self.__getImageMargins(clip,
+                                                          margins_min_width)
+
+        x0, y0, x1, y1 = x0 + left, y0 + top, x1 - right, y1 - bottom
+
+        # Prevent having contents outside of the image's limits
+        width, height = self.black_n_white_image.size
+        x1 = min(x1, width)
+        y1 = min(y1, height)
+
+        return x0, y0, x1, y1
+
+    def __getImageMargins(self, image, margins_min_width):
+        width, height = image.size
+        margins = [0, 0, 0, 0]
+
+        # Left margin
+        i = 0
+        while i < width - margins_min_width:
+            clip = image.crop((i, 0, i + margins_min_width, height))
+            if self.__imageHasContrast(clip):
+                margins[0] = i
+                break
+            i += margins_min_width
+
+        # Right margin
+        i = width
+        while i > margins_min_width:
+            clip = image.crop((i - margins_min_width, 0, i, height))
+            if self.__imageHasContrast(clip):
+                margins[2] = width - i
+                break
+            i -= margins_min_width
+
+        # Top margin
+        i = 0
+        while i < height - margins_min_width:
+            clip = image.crop((0, i, width, i + margins_min_width))
+            if self.__imageHasContrast(clip):
+                margins[1] = i
+                break
+            i += margins_min_width
+
+        # Bottom margin
+        i = height
+        while i > margins_min_width:
+            clip = image.crop((0, i - margins_min_width, width, i))
+            if self.__imageHasContrast(clip):
+                margins[3] = height - i
+                break
+            i -= margins_min_width
+
+        return margins
+
 class Slicer:
 
     def __init__(self, original_image, temp_dir = '/tmp'):
