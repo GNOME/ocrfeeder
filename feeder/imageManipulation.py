@@ -91,6 +91,55 @@ class ImageProcessor:
             j += 1
         return binary_info
 
+    def divideImageClipInColumns(self, clip_dimensions, column_min_width):
+        if column_min_width == 0:
+            return [clip_dimensions]
+        if column_min_width is None:
+            column_min_width = int(self.window_size / 2)
+
+        clip = self.black_n_white_image.crop(clip_dimensions)
+        width, height = clip.size
+        content_column_bounds = self.__getImageContentColumnsBounds(clip,
+                                                               column_min_width)
+        x0, y0, x1, y1 = clip_dimensions
+        column_bounds = []
+        for i in range(0, len(content_column_bounds), 2):
+            column_bounds.append((x0 + content_column_bounds[i], y0,
+                                  x0 + content_column_bounds[i + 1], y1))
+
+        return column_bounds
+
+    def __getImageContentColumnsBounds(self, image, column_min_width):
+        width, height = image.size
+        column_bounds = []
+        i = 0
+        while i < width:
+            next_step = min(i + column_min_width, width)
+            slice_bounds = (i, 0, next_step, height)
+            slice_clip = image.crop(slice_bounds)
+            has_contrast = self.__imageHasContrast(slice_clip)
+            if has_contrast:
+                if not column_bounds:
+                    column_bounds.extend([i, next_step])
+                elif column_bounds[-1] == i:
+                    column_bounds[-1] = next_step
+                else:
+                    column_bounds.extend([i, next_step])
+            i = next_step
+        return column_bounds
+
+    def __imageHasContrast(self, image):
+        colors = image.getcolors()
+        has_contrast = True
+        for color_count in colors:
+            color = color_count[1]
+            has_contrast = graphics.colorsContrast(color,
+                                                   self.bg_color,
+                                                   self.contrast_tolerance)
+            if has_contrast:
+                break
+        return has_contrast
+
 class Slicer:
 
     def __init__(self, original_image, temp_dir = '/tmp'):
