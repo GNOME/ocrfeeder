@@ -473,6 +473,7 @@ class BoxEditor(gtk.ScrolledWindow):
         text_properties_notebook.set_tab_pos(gtk.POS_TOP)
         # Textview widget
         self.text_widget = gtk.TextView()
+        self.text_widget.set_wrap_mode(gtk.WRAP_WORD)
         self.text_content = self.text_widget.get_buffer()
         scrolled_text = gtk.ScrolledWindow()
         scrolled_text.add(self.text_widget)
