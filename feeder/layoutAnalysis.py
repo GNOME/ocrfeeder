@@ -23,6 +23,7 @@ from util import graphics
 from util.constants import OCRFEEDER_DEBUG, DTP
 from studio.dataHolder import DataBox
 from imageManipulation import ImageProcessor
+import re
 
 NONE = 0
 TOP = -1
@@ -456,4 +457,11 @@ class LayoutAnalysis(object):
 
     def readImage(self, image):
         self.ocr_engine.setImage(image)
-        return self.ocr_engine.read()
+        text = self.ocr_engine.read()
+        text = self.__cleanText(text)
+        return text
+
+    def __cleanText(self, text):
+        clean_text = re.sub(r'(?<!-)-\n(?!\n)', r'', text)
+        clean_text = re.sub(r'(?<!\n)\n', r' ', clean_text)
+        return clean_text
