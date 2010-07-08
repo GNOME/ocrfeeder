@@ -70,7 +70,7 @@ class DataBox(gobject.GObject):
                      (gobject.TYPE_INT,))
         }
 
-    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = None):
+    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = ''):
         super(DataBox, self).__init__()
         self.x = int(x)
         self.y = int(y)
