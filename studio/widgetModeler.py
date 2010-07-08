@@ -28,6 +28,7 @@ from studio.configuration import ProjectSaver, ProjectLoader
 from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
 from util.lib import debug
+from util import constants
 from util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
@@ -797,18 +798,17 @@ class Editor:
         angle = self.box_editor.getAngle()
         if angle:
             image = graphics.getImageRotated(image, angle)
+        engine = None
         if selected_engine_index != -1:
             engine = self.ocr_engines[selected_engine_index][0]
-            engine.setImage(image)
-            text = engine.read()
-            self.box_editor.setText(text)
-            debug('Finished reading')
-        text_size = graphics.getTextSizeFromImage(image)
+        layout_analysis = LayoutAnalysis(engine)
+        text = layout_analysis.readImage(image)
+        self.box_editor.setText(text)
+        debug('Finished reading')
+        text_size = layout_analysis.getTextSizeFromImage(image,
+                                               self.reviewer.page.resolution[1])
         if text_size:
-            y_resolution = float(self.reviewer.page.resolution[1])
-            text_size /= y_resolution
-            text_size *= 72.0
-            self.box_editor.setFontSize(math.floor(text_size))
+            self.box_editor.setFontSize(text_size)
 
     def performClassification(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
