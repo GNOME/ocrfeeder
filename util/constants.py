@@ -80,3 +80,6 @@ if os.environ.get(_OCRFEEDER_DEBUG_MODE):
 
 UNPAPER_COMMAND = 'unpaper'
 GHOSTSCRIPT_COMMAND = 'gs'
+
+# DeskTop Publishing Point (for calculating print measures)
+DTP = 72
