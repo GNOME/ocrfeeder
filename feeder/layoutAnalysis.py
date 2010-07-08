@@ -440,13 +440,18 @@ class LayoutAnalysis(object):
         return data_box
 
     def getTextSizeFromImage(self, image, page_resolution):
-        text_size = graphics.getTextSizeFromImage(image)
+        width, height = image.size
+        # We get the right half of the image only because this
+        # way we avoid measuring eventual "initial chars" which
+        # leads to false text sizes (obviously this will fail
+        # for right-to-left languages)
+        image_right_half = image.crop((width / 2, 0, width, height))
+        text_size = graphics.getTextSizeFromImage(image_right_half)
         if not text_size:
             return None
         y_resolution = float(page_resolution)
         text_size /= y_resolution
         text_size *= DTP
-        print text_size
         return round(text_size)
 
     def readImage(self, image):
