@@ -72,10 +72,10 @@ class DataBox(gobject.GObject):
 
     def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = None):
         super(DataBox, self).__init__()
-        self.x = x
-        self.y = y
-        self.width = width
-        self.height = height
+        self.x = int(x)
+        self.y = int(y)
+        self.width = int(width)
+        self.height = int(height)
         self.image = image
         self.setType(type)
         self.text_data = TextData()
