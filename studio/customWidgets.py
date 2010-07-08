@@ -168,6 +168,12 @@ class SelectableBoxesArea(goocanvas.Canvas):
     def selectPreviousArea(self):
         self.__selectSurroundingArea(1)
 
+    def deleteSelectedAreas(self):
+        while self.selected_areas:
+            selected_area = self.selected_areas.pop(0)
+            selected_area.remove()
+            self.emit('removed_box', selected_area)
+
     def __selectSurroundingArea(self, area_offset):
         areas = self.getAllAreas()
         if not areas:
@@ -283,11 +289,6 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.handleOverlapedAreas(self.getOverlapedAreas(item))
             self.emit('updated_box', item)
             return True
-        elif key_name == 'delete':
-            while self.selected_areas:
-                selected_area = self.selected_areas.pop(0)
-                selected_area.remove()
-                self.emit('removed_box', selected_area)
 
     def pressedKeyOnImage(self, item, rect, event):
         key_name = gtk.gdk.keyval_name(event.keyval).lower()
