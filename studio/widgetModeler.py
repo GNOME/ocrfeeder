@@ -676,6 +676,10 @@ class ImageReviewer_Controler:
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.selectAllAreas()
 
+    def deleteSelectedAreas(self, widget):
+        current_reviewer = self.__getCurrentReviewer()
+        current_reviewer.selectable_boxes_area.deleteSelectedAreas()
+
 class Editor:
 
     def __init__(self, box, pixbuf, ocr_engines, reviewer):

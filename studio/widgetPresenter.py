@@ -79,6 +79,7 @@ class MainWindow:
             <menuitem action="SelectAllAreas"/>
             <menuitem action="SelectPreviousArea"/>
             <menuitem action="SelectNextArea"/>
+            <menuitem action="DeleteSelectedAreas"/>
         </menu>
         <menu action="Tools">
             <menuitem action="OCREngines"/>
@@ -178,6 +179,10 @@ class MainWindow:
                                    _('Select _Next Area'), '<control><shift>n',
                                    _("Select the next area from the content areas"),
                                    menu_items['select_next_area']),
+                                  ('DeleteSelectedAreas', gtk.STOCK_DELETE,
+                                   _('Delete Selected Areas'), '<control><shift>Delete',
+                                   _("Deletes all the currently selected content areas"),
+                                   menu_items['delete_selected_areas']),
                                   ('GenerateODT', None, _('_Generate ODT'), None, _("Export to ODT"), tool_items['export_to_odt']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
@@ -222,7 +227,7 @@ class MainWindow:
     def setHasSelectedBoxes(self, has_selected_boxes = True):
         if not self.action_group:
             return
-        actions = ['RecognizeAreas']
+        actions = ['RecognizeAreas', 'DeleteSelectedAreas']
         self.__setActionsSensitiveness(actions, has_selected_boxes)
 
     def setHasContentBoxes(self, has_content_boxes=True):
