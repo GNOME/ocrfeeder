@@ -1281,13 +1281,12 @@ class PreferencesDialog(gtk.Dialog):
         else:
             self.custom_window_size_entry.set_sensitive(False)
 
-    def __getColorButton(self, color_string):
-        values = [int(value.strip()) for value in color_string.split(',')]
-        color_button = gtk.ColorButton(gtk.gdk.Color(values[0] << 8,
-                                                     values[1] << 8,
-                                                     values[2] << 8))
+    def __getColorButton(self, color):
+        color_button = gtk.ColorButton(gtk.gdk.Color(color[0] << 8,
+                                                     color[1] << 8,
+                                                     color[2] << 8))
         color_button.set_use_alpha(True)
-        color_button.set_alpha(values[3] << 8)
+        color_button.set_alpha(color[3] << 8)
         return color_button
 
 class SystemEnginesDialog(gtk.Dialog):
