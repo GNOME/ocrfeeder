@@ -253,19 +253,28 @@ class ProjectLoader:
                 outfile.close()
         return export_dir
 
-class ConfigurationManager:
+class ConfigurationManager(object):
 
-    DEFAULTS = {'temporary_dir': '/tmp',
-                'text_fill': '94, 156, 235, 150',
-                'boxes_stroke': '94, 156, 235, 250',
-                'image_fill': '0, 183, 0, 150',
-                'window_size': 'auto',
-                'unpaper': '/usr/bin/unpaper',
-                'favorite_engine': 'ocrad'
+    TEMPORARY_DIR = 'temporary_dir'
+    TEXT_FILL = 'text_fill'
+    IMAGE_FILL = 'image_fill'
+    BOXES_STROKE = 'boxes_stroke'
+    WINDOW_SIZE = 'window_size'
+    UNPAPER = 'unpaper'
+    FAVORITE_ENGINE = 'favorite_engine'
+
+    DEFAULTS = {TEMPORARY_DIR: '/tmp',
+                TEXT_FILL: (94, 156, 235, 150),
+                BOXES_STROKE: (94, 156, 235, 250),
+                IMAGE_FILL: (0, 183, 0, 150),
+                WINDOW_SIZE: 'auto',
+                UNPAPER: '/usr/bin/unpaper',
+                FAVORITE_ENGINE: 'ocrad'
                 }
 
+    conf = dict(DEFAULTS)
+
     def __init__(self):
-        self.setDefaults()
         self.user_configuration_folder = os.path.expanduser('~/.ocrfeeder')
         self.user_engines_folder = os.path.join(self.user_configuration_folder, 'engines')
         self.makeUserConfigurationFolder()
@@ -301,52 +310,66 @@ class ConfigurationManager:
             existing_engines.append(engine)
         return existing_engines
 
+    def setConf(self, conf_key, value):
+        ConfigurationManager.conf[conf_key] = value
+
+    def getConf(self, conf_key):
+        return ConfigurationManager.conf[conf_key]
+
     def setTemporaryDir(self, temp_dir):
-        self.temporary_dir = temp_dir
+        self.setConf(self.TEMPORARY_DIR, temp_dir)
 
     def getTemporaryDir(self):
-        return self.temporary_dir
+        return self.getConf(self.TEMPORARY_DIR)
 
     def setFavoriteEngine(self, engine_name):
-        self.favorite_engine = engine_name
+        self.setConf(self.FAVORITE_ENGINE, engine_name)
 
     def getFavoriteEngine(self):
-        return self.favoriteEngine
+        return self.getConf(self.FAVORITE_ENGINE)
 
-    def __getColorString(self, color):
-        string_color = ', '.join([str(color_value) for color_value in list(color)])
-        return string_color
+    def __getColorFromString(self, color):
+        if type(color) != str:
+            return color
+        color_list = [value.strip('()\ ') for value in color.split(',')]
+        try:
+            int_color_list = [int(value) for value in color_list]
+        except ValueError, exception:
+            return None
+        return tuple(int_color_list)
 
     def setTextFill(self, color):
-        self.text_fill = self.__getColorString(color)
+        self.setConf(self.TEXT_FILL, color)
 
     def setBoxesStroke(self, color):
-        self.boxes_stroke = self.__getColorString(color)
+        self.setConf(self.BOXES_STROKE, color)
 
     def setImageFill(self, color):
-        self.image_fill = self.__getColorString(color)
+        self.setConf(self.IMAGE_FILL, color)
 
     def getTextFill(self):
-        return eval(self.text_fill)
+        return self.__getColorFromString(self.getConf(self.TEXT_FILL))
 
     def getBoxesStroke(self):
-        return eval(self.boxes_stroke)
+        return self.__getColorFromString(self.getConf(self.BOXES_STROKE))
 
     def getImageFill(self):
-        return eval(self.image_fill)
+        return self.__getColorFromString(self.getConf(self.IMAGE_FILL))
 
     def setWindowSize(self, window_size):
-        self.window_size = window_size
+        self.setConf(self.WINDOW_SIZE, window_size)
+
+    def getWindowSize(self):
+        return self.getConf(self.WINDOW_SIZE)
 
     def setUnpaper(self, unpaper):
-        self.unpaper = unpaper
+        self.setConf(self.UNPAPER, unpaper)
 
     def getUnpaper(self):
-        return self.unpaper
+        return self.getConf(self.UNPAPER)
 
     def setDefaults(self):
-        for key, value in self.DEFAULTS.items():
-            exec('self.%s = "%s"' % (key, value))
+        ConfigurationManager.conf = dict(self.DEFAULTS)
 
     def getDefault(self, variable_name):
         if variable_name in self.DEFAULTS.keys():
@@ -365,7 +388,7 @@ class ConfigurationManager:
                 for node in nodeList:
                     for child in node.childNodes:
                         if child.nodeType == child.TEXT_NODE:
-                            exec('self.%s = "%s"' % (key, child.nodeValue))
+                            ConfigurationManager.conf[key] = str(child.nodeValue)
                             break
         return True
 
@@ -373,12 +396,27 @@ class ConfigurationManager:
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
         doc = minidom.Document()
         root_node = doc.createElement('ocrfeeder')
-        for key in self.DEFAULTS.keys():
+        for key, value in ConfigurationManager.conf.items():
             new_node = doc.createElement(key)
-            new_node.appendChild(doc.createTextNode("""%s""" % eval('self.%s' % key)))
+            new_node.appendChild(doc.createTextNode(str(value)))
             root_node.appendChild(new_node)
         configuration = doc.toxml(encoding = 'utf-8')
         configuration += '\n' + root_node.toxml(encoding = 'utf-8')
         new_configuration_file = open(configuration_file, 'w')
         new_configuration_file.write(configuration)
         new_configuration_file.close()
+
+    temporary_dir = property(getTemporaryDir,
+                             setTemporaryDir)
+    text_fill = property(getTextFill,
+                         setTextFill)
+    image_fill = property(getImageFill,
+                          setImageFill)
+    boxes_stroke = property(getBoxesStroke,
+                            setBoxesStroke)
+    favorite_engine = property(getFavoriteEngine,
+                               setFavoriteEngine)
+    window_size = property(getWindowSize,
+                           setWindowSize)
+    unpaper = property(getUnpaper,
+                       setUnpaper)
