@@ -385,9 +385,9 @@ class ImageReviewer_Controler:
     def addImage(self, pixbuf, image):
         image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
-        image_reviewer.setTextFillColor(self.configuration_manager.getTextFill())
-        image_reviewer.setBoxesStrokeColor(self.configuration_manager.getBoxesStroke())
-        image_reviewer.setImageFillColor(self.configuration_manager.getImageFill())
+        image_reviewer.setTextFillColor(self.configuration_manager.text_fill)
+        image_reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
+        image_reviewer.setImageFillColor(self.configuration_manager.image_fill)
         self.image_reviewer_dict[pixbuf] = image_reviewer
         self.addImageReviewer(image_reviewer.reviewer_area)
         return image_reviewer
@@ -492,7 +492,7 @@ class ImageReviewer_Controler:
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
         pages_data = self.getPagesData(self.getPixbufsSorted())
-        project_saver = ProjectSaver(pages_data, self.configuration_manager.getTemporaryDir())
+        project_saver = ProjectSaver(pages_data, self.configuration_manager.temporary_dir)
         project_saver.serialize(project_name)
 
     def openProject(self, clear_current = True):
@@ -601,7 +601,7 @@ class ImageReviewer_Controler:
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
-        unpaper_dialog = UnpaperDialog(current_reviewer, self.configuration_manager.getUnpaper(), self.configuration_manager.getTemporaryDir())
+        unpaper_dialog = UnpaperDialog(current_reviewer, self.configuration_manager.unpaper, self.configuration_manager.temporary_dir)
         if unpaper_dialog.run() == gtk.RESPONSE_ACCEPT:
             unpapered_image = unpaper_dialog.getUnpaperedImage()
             current_reviewer.updateBackgroundImage(unpapered_image)
@@ -621,9 +621,9 @@ class ImageReviewer_Controler:
 
     def updateFromConfiguration(self):
         for reviewer in self.image_reviewer_dict.values():
-            reviewer.setTextFillColor(self.configuration_manager.getTextFill())
-            reviewer.setBoxesStrokeColor(self.configuration_manager.getBoxesStroke())
-            reviewer.setImageFillColor(self.configuration_manager.getImageFill())
+            reviewer.setTextFillColor(self.configuration_manager.text_fill)
+            reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
+            reviewer.setImageFillColor(self.configuration_manager.image_fill)
             reviewer.updateBoxesColors()
 
     def zoomIn(self, zoom_value = 0.05):

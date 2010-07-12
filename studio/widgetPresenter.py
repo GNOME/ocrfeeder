@@ -1216,7 +1216,7 @@ class PreferencesDialog(gtk.Dialog):
         unpaper_frame = PlainFrame(_('Path to unpaper'))
         self.unpaper_entry = gtk.Entry()
         self.unpaper_entry.set_width_chars(30)
-        self.unpaper_entry.set_text(self.configuration_manager.getUnpaper())
+        self.unpaper_entry.set_text(self.configuration_manager.unpaper)
         self.unpaper_select = gtk.Button(_('Choose'), gtk.STOCK_OPEN)
         unpaper_hbox = gtk.HBox()
         unpaper_hbox.pack_start(self.unpaper_entry, False)
