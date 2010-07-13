@@ -382,12 +382,7 @@ class ConfigurationManager(object):
 
     def getImproveColumnDetection(self):
         improve = self.getConf(self.IMPROVE_COLUMN_DETECTION)
-        if type(improve) == str:
-            if improve == 'True':
-                improve = True
-            else:
-                improve = False
-        return improve
+        return self.__convertBoolSetting(improve)
 
     def setColumnMinWidth(self, column_min_width):
         self.setConf(self.COLUMN_MIN_WIDTH, column_min_width)
