@@ -1104,7 +1104,8 @@ class PreferencesDialog(gtk.Dialog):
                                       self.__makeColors())
         self.__makeToolsPreferences(self.__makeUnpaper(),
                                     self.__makeEngines())
-        self.__makeRecognitionPreferences(self.__makeWindowSize(),
+        self.__makeRecognitionPreferences(self.__makeTextPreferences(),
+                                          self.__makeWindowSize(),
                                         self.__makeColumnDetectionPreferences())
         self.temporary_folder_button.connect('clicked', self.__folderSelectDialog)
         self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
@@ -1339,6 +1340,19 @@ class PreferencesDialog(gtk.Dialog):
         frame.add(main_box)
 
         return frame
+
+    def __makeTextPreferences(self):
+        unpaper_frame = PlainFrame(_('Recognized Text'))
+        self.clean_text = gtk.CheckButton(_('_Fix line breaks and hyphenization'),
+                                          use_underline = True)
+        self.clean_text.set_tooltip_text(_('Removes single line breaks and '
+                                           'hyphenization from text generated '
+                                           'by OCR engines'))
+        self.clean_text.set_active(self.configuration_manager.clean_text)
+        box = gtk.HBox()
+        box.pack_start(self.clean_text, False)
+        unpaper_frame.add(box)
+        return unpaper_frame
 
     def __getColumnMinWidth(self):
         if self.auto_column_width.get_active():
