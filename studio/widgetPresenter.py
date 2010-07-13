@@ -1129,13 +1129,16 @@ class PreferencesDialog(gtk.Dialog):
         return (red >> 8, green >> 8, blue >> 8, alpha >> 8)
 
     def saveToManager(self):
-        self.configuration_manager.setTemporaryDir(self.__getTemporaryDir())
+        self.configuration_manager.temporary_dir =self.__getTemporaryDir()
         self.configuration_manager.setWindowSize(self.__getWindowSize())
         self.configuration_manager.setTextFill(self.__getColor(self.text_fill_color))
         self.configuration_manager.setBoxesStroke(
             self.__getColor(self.boxes_stroke_color))
         self.configuration_manager.setImageFill(self.__getColor(self.image_fill_color))
         self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
+        self.configuration_manager.improve_column_detection = \
+            self.improve_column_detection.get_active()
+        self.configuration_manager.column_min_width = self.__getColumnMinWidth()
         index = self.engines_combo.get_active()
         if index != -1:
             lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
