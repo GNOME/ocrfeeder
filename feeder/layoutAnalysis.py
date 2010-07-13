@@ -381,11 +381,13 @@ class LayoutAnalysis(object):
                  ocr_engine,
                  window_size = None,
                  improve_column_detection = True,
-                 column_size = None):
+                 column_size = None,
+                 clean_text = True):
         self.ocr_engine = ocr_engine
         self.window_size = window_size
         self.column_size = column_size
         self.improve_column_detection = improve_column_detection
+        self.clean_text = clean_text
 
     def recognize(self, path_to_image, page_resolution):
         image_processor = ImageProcessor(path_to_image,
@@ -458,7 +460,8 @@ class LayoutAnalysis(object):
     def readImage(self, image):
         self.ocr_engine.setImage(image)
         text = self.ocr_engine.read()
-        text = self.__cleanText(text)
+        if self.clean_text:
+            text = self.__cleanText(text)
         return text
 
     def __cleanText(self, text):
