@@ -264,6 +264,7 @@ class ConfigurationManager(object):
     FAVORITE_ENGINE = 'favorite_engine'
     IMPROVE_COLUMN_DETECTION = 'improve_column_detection'
     COLUMN_MIN_WIDTH = 'column_min_width'
+    CLEAN_TEXT = 'clean_text'
 
     DEFAULTS = {TEMPORARY_DIR: '/tmp',
                 TEXT_FILL: (94, 156, 235, 150),
@@ -273,7 +274,8 @@ class ConfigurationManager(object):
                 UNPAPER: '/usr/bin/unpaper',
                 FAVORITE_ENGINE: 'ocrad',
                 IMPROVE_COLUMN_DETECTION: True,
-                COLUMN_MIN_WIDTH: 'auto'
+                COLUMN_MIN_WIDTH: 'auto',
+                CLEAN_TEXT: True
                 }
 
     conf = dict(DEFAULTS)
@@ -400,6 +402,21 @@ class ConfigurationManager(object):
             return 'auto'
         return column_min_width_int
 
+    def getCleanText(self):
+        clean_text = self.getConf(self.CLEAN_TEXT)
+        return self.__convertBoolSetting(clean_text)
+
+    def setCleanText(self, clean_text):
+        self.setConf(self.CLEAN_TEXT, clean_text)
+
+    def __convertBoolSetting(self, setting):
+        if type(setting) == str:
+            if setting == 'True':
+                setting = True
+            else:
+                setting = False
+        return setting
+
     def setDefaults(self):
         ConfigurationManager.conf = dict(self.DEFAULTS)
 
@@ -457,3 +474,6 @@ class ConfigurationManager(object):
                                         setImproveColumnDetection)
     column_min_width = property(getColumnMinWidth,
                                 setColumnMinWidth)
+
+    clean_text = property(getCleanText,
+                          setCleanText)
