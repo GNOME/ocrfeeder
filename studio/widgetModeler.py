@@ -24,7 +24,7 @@ from feeder.documentGeneration import OdtGenerator, HtmlGenerator
 from feeder.imageManipulation import *
 from feeder.layoutAnalysis import *
 from pango import FontDescription, SCALE
-from studio.configuration import ProjectSaver, ProjectLoader
+from studio.configuration import ProjectSaver, ProjectLoader, ConfigurationManager
 from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
 from util.lib import debug
@@ -670,6 +670,7 @@ class ImageReviewer_Controler:
 class Editor:
 
     def __init__(self, box, pixbuf, ocr_engines, reviewer):
+        self.configuration_manager = ConfigurationManager()
         self.pixbuf = pixbuf
         self.data_box = DataBox()
         self.box_editor = BoxEditor(pixbuf.get_width(), pixbuf.get_height())
@@ -810,7 +811,10 @@ class Editor:
         engine = None
         if selected_engine_index != -1:
             engine = self.ocr_engines[selected_engine_index][0]
-        layout_analysis = LayoutAnalysis(engine)
+
+        clean_text = self.configuration_manager.clean_text
+        layout_analysis = LayoutAnalysis(engine,
+                                         clean_text = clean_text)
         text = layout_analysis.readImage(image)
         self.box_editor.setText(text)
         debug('Finished reading')
