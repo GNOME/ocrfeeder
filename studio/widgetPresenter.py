@@ -1101,10 +1101,11 @@ class PreferencesDialog(gtk.Dialog):
         self.ocr_engines = ocr_engines
         self.notebook = gtk.Notebook()
         self.__makeGeneralPreferences(self.__makeTemporaryFolder(),
-                                      self.__makeWindowSize())
-        self.__makeAppearancePreferences(self.__makeColors())
+                                      self.__makeColors())
         self.__makeToolsPreferences(self.__makeUnpaper(),
                                     self.__makeEngines())
+        self.__makeRecognitionPreferences(self.__makeWindowSize(),
+                                        self.__makeColumnDetectionPreferences())
         self.temporary_folder_button.connect('clicked', self.__folderSelectDialog)
         self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
@@ -1166,11 +1167,11 @@ class PreferencesDialog(gtk.Dialog):
             self.temporary_folder.set_text(folder_select_dialog.get_filename())
         folder_select_dialog.destroy()
 
-    def __makeAppearancePreferences(self, *args):
+    def __makeRecognitionPreferences(self, *args):
         general_box = gtk.VBox(spacing = 10)
         for arg in args:
             general_box.pack_start(arg, False)
-        label = gtk.Label(_('_Appearance'))
+        label = gtk.Label(_('_Recognition'))
         label.set_use_underline(True)
         self.notebook.append_page(general_box, label)
 
