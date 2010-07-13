@@ -262,6 +262,8 @@ class ConfigurationManager(object):
     WINDOW_SIZE = 'window_size'
     UNPAPER = 'unpaper'
     FAVORITE_ENGINE = 'favorite_engine'
+    IMPROVE_COLUMN_DETECTION = 'improve_column_detection'
+    COLUMN_MIN_WIDTH = 'column_min_width'
 
     DEFAULTS = {TEMPORARY_DIR: '/tmp',
                 TEXT_FILL: (94, 156, 235, 150),
@@ -269,7 +271,9 @@ class ConfigurationManager(object):
                 IMAGE_FILL: (0, 183, 0, 150),
                 WINDOW_SIZE: 'auto',
                 UNPAPER: '/usr/bin/unpaper',
-                FAVORITE_ENGINE: 'ocrad'
+                FAVORITE_ENGINE: 'ocrad',
+                IMPROVE_COLUMN_DETECTION: True,
+                COLUMN_MIN_WIDTH: 'auto'
                 }
 
     conf = dict(DEFAULTS)
@@ -315,6 +319,9 @@ class ConfigurationManager(object):
 
     def getConf(self, conf_key):
         return ConfigurationManager.conf[conf_key]
+
+    def setTemporaryDir(self, temp_dir):
+        self.setConf(self.TEMPORARY_DIR, temp_dir)
 
     def setTemporaryDir(self, temp_dir):
         self.setConf(self.TEMPORARY_DIR, temp_dir)
@@ -368,6 +375,31 @@ class ConfigurationManager(object):
     def getUnpaper(self):
         return self.getConf(self.UNPAPER)
 
+    def setImproveColumnDetection(self, improve_column_detection):
+        self.setConf(self.IMPROVE_COLUMN_DETECTION, improve_column_detection)
+
+    def getImproveColumnDetection(self):
+        improve = self.getConf(self.IMPROVE_COLUMN_DETECTION)
+        if type(improve) == str:
+            if improve == 'True':
+                improve = True
+            else:
+                improve = False
+        return improve
+
+    def setColumnMinWidth(self, column_min_width):
+        self.setConf(self.COLUMN_MIN_WIDTH, column_min_width)
+
+    def getColumnMinWidth(self):
+        column_min_width = self.getConf(self.COLUMN_MIN_WIDTH)
+        if column_min_width == 'auto':
+            return column_min_width
+        try:
+            column_min_width_int = int(column_min_width)
+        except ValueError:
+            return 'auto'
+        return column_min_width_int
+
     def setDefaults(self):
         ConfigurationManager.conf = dict(self.DEFAULTS)
 
@@ -420,3 +452,8 @@ class ConfigurationManager(object):
                            setWindowSize)
     unpaper = property(getUnpaper,
                        setUnpaper)
+
+    improve_column_detection = property(getImproveColumnDetection,
+                                        setImproveColumnDetection)
+    column_min_width = property(getColumnMinWidth,
+                                setColumnMinWidth)
