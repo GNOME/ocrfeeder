@@ -440,11 +440,13 @@ class ImageReviewer_Controler:
         column_min_width = self.configuration_manager.column_min_width
         if column_min_width == 'auto':
             column_min_width = None
+        clean_text = self.configuration_manager.clean_text
 
         layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine(),
                                          window_size,
                                          improve_column_detection,
-                                         column_min_width)
+                                         column_min_width,
+                                         clean_text)
         return layout_analysis.recognize(image_reviewer.path_to_image,
                                          image_reviewer.page.resolution[1])
 
