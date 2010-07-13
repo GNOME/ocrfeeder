@@ -435,9 +435,16 @@ class ImageReviewer_Controler:
             window_size = None
         else:
             window_size = float(window_size)
+        improve_column_detection = \
+            self.configuration_manager.improve_column_detection
+        column_min_width = self.configuration_manager.column_min_width
+        if column_min_width == 'auto':
+            column_min_width = None
 
         layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine(),
-                                         window_size)
+                                         window_size,
+                                         improve_column_detection,
+                                         column_min_width)
         return layout_analysis.recognize(image_reviewer.path_to_image,
                                          image_reviewer.page.resolution[1])
 
