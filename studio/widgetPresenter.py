@@ -1275,6 +1275,72 @@ class PreferencesDialog(gtk.Dialog):
         window_size_frame.add(window_size_box)
         return window_size_frame
 
+    def __makeColumnDetectionPreferences(self):
+        frame = PlainFrame(_('Columns Detection'))
+        main_box = gtk.VBox()
+        column_detection_details = gtk.VBox()
+
+        self.improve_column_detection = gtk.CheckButton(
+                                            _('_Improve columns detection'),
+                                            use_underline = True)
+        tooltip_label = _('Use a post-detection algorithm to improve '
+                          'the detection of columns')
+        self.improve_column_detection.set_tooltip_text(tooltip_label)
+        self.improve_column_detection.connect('toggled',
+                                  lambda widget, main_box:
+                                    main_box.set_sensitive(widget.get_active()),
+                                              column_detection_details)
+        self.improve_column_detection.set_active(
+            self.configuration_manager.improve_column_detection)
+        main_box.pack_start(self.improve_column_detection, False)
+
+        self.auto_column_width = gtk.RadioButton(None, _('_Automatic'))
+        self.custom_column_width = gtk.RadioButton(self.auto_column_width,
+                                                   _('Custo_m'))
+
+        adjustment = gtk.Adjustment(0, 1, 1000, 1, 100, 0)
+        self.custom_column_width_spin = gtk.SpinButton(adjustment, 1, 0)
+        tooltip_label = _("The columns' minimum width in pixels")
+        self.custom_column_width_spin.set_tooltip_text(tooltip_label)
+        self.custom_column_width.connect('toggled',
+                             lambda widget, spin_button:
+                                 spin_button.set_sensitive(widget.get_active()),
+                                         self.custom_column_width_spin)
+
+        column_min_width = self.configuration_manager.column_min_width
+        if str(column_min_width).lower() != 'auto':
+            self.custom_column_width.set_active(True)
+            self.custom_column_width_spin.set_sensitive(True)
+            self.custom_column_width_spin.set_value(column_min_width)
+        else:
+            self.auto_column_width.set_active(True)
+            self.custom_column_width_spin.set_sensitive(False)
+
+        label = gtk.Label(_("Minimum width that a column should have:"))
+        alignment = gtk.Alignment(0, 0.5, 0, 1)
+        alignment.add(label)
+        column_detection_details.pack_start(alignment, True, True)
+
+        hbox = gtk.HBox(spacing = 10)
+        column_detection_details.pack_start(self.auto_column_width, False)
+        hbox.pack_start(self.custom_column_width, False)
+        hbox.pack_start(self.custom_column_width_spin, False)
+        column_detection_details.pack_start(hbox, False)
+        column_detection_details.set_sensitive(
+                               self.improve_column_detection.get_active())
+        alignment = gtk.Alignment(0.1, 0.5, 0, 1)
+        alignment.add(column_detection_details)
+
+        main_box.pack_start(alignment, True, True, 6)
+        frame.add(main_box)
+
+        return frame
+
+    def __getColumnMinWidth(self):
+        if self.auto_column_width.get_active():
+            return 'auto'
+        return int(self.custom_column_width_spin.get_value())
+
     def __toggledCustomWindowSize(self, widget):
         if self.custom_window_size.get_active():
             self.custom_window_size_entry.set_sensitive(True)
