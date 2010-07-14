@@ -1105,8 +1105,9 @@ class PreferencesDialog(gtk.Dialog):
         self.__makeToolsPreferences(self.__makeUnpaper(),
                                     self.__makeEngines())
         self.__makeRecognitionPreferences(self.__makeTextPreferences(),
-                                          self.__makeWindowSize(),
-                                        self.__makeColumnDetectionPreferences())
+                                      self.__makeWindowSize(),
+                                      self.__makeColumnDetectionPreferences(),
+                                      self.__makeBoundsAdjustmentsPreferences())
         self.temporary_folder_button.connect('clicked', self.__folderSelectDialog)
         self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
@@ -1354,6 +1355,74 @@ class PreferencesDialog(gtk.Dialog):
         box.pack_start(self.clean_text, False)
         unpaper_frame.add(box)
         return unpaper_frame
+
+    def __makeBoundsAdjustmentsPreferences(self):
+        frame = PlainFrame(_("Content Areas"))
+        main_box = gtk.VBox()
+        column_detection_details = gtk.VBox()
+
+        self.adjust_boxes_bounds = gtk.CheckButton(
+                                            _("A_djust content areas' bounds"),
+                                            use_underline = True)
+        tooltip_label = _('Use a post-detection algorithm to shorten '
+                          "the contents areas' margins")
+        self.adjust_boxes_bounds.set_tooltip_text(tooltip_label)
+        self.adjust_boxes_bounds.connect('toggled',
+                                  lambda widget, main_box:
+                                    main_box.set_sensitive(widget.get_active()),
+                                              column_detection_details)
+        self.adjust_boxes_bounds.set_active(
+            self.configuration_manager.adjust_boxes_bounds)
+        main_box.pack_start(self.adjust_boxes_bounds, False)
+
+        self.auto_margins_size = gtk.RadioButton(None, _('_Automatic'))
+        self.custom_margins_size = gtk.RadioButton(self.auto_margins_size,
+                                                   _('Custo_m'))
+
+        adjustment = gtk.Adjustment(0, 1, 1000, 1, 100, 0)
+        self.custom_margins_size_spin = gtk.SpinButton(adjustment, 1, 0)
+        tooltip_label = _("The maximum size for the content areas' "
+                          "margins in pixels")
+        self.custom_margins_size_spin.set_tooltip_text(tooltip_label)
+        self.custom_margins_size.connect('toggled',
+                             lambda widget, spin_button:
+                                 spin_button.set_sensitive(widget.get_active()),
+                                         self.custom_margins_size_spin)
+
+        bounds_adjustment_size = self.configuration_manager.bounds_adjustment_size
+        if str(bounds_adjustment_size).lower() != 'auto':
+            self.custom_margins_size.set_active(True)
+            self.custom_margins_size_spin.set_sensitive(True)
+            self.custom_margins_size_spin.set_value(bounds_adjustment_size)
+        else:
+            self.auto_margins_size.set_active(True)
+            self.custom_margins_size_spin.set_sensitive(False)
+
+        label = gtk.Label(_("Maximum size that the content areas' "
+                            "margins should have:"))
+        alignment = gtk.Alignment(0, 0.5, 0, 1)
+        alignment.add(label)
+        column_detection_details.pack_start(alignment, True, True)
+
+        hbox = gtk.HBox(spacing = 10)
+        column_detection_details.pack_start(self.auto_margins_size, False)
+        hbox.pack_start(self.custom_margins_size, False)
+        hbox.pack_start(self.custom_margins_size_spin, False)
+        column_detection_details.pack_start(hbox, False)
+        column_detection_details.set_sensitive(
+                               self.adjust_boxes_bounds.get_active())
+        alignment = gtk.Alignment(0.1, 0.5, 0, 1)
+        alignment.add(column_detection_details)
+
+        main_box.pack_start(alignment, True, True, 6)
+        frame.add(main_box)
+
+        return frame
+
+    def __getBoundsAdjustmentSize(self):
+        if self.auto_margins_size.get_active():
+            return 'auto'
+        return int(self.custom_margins_size_spin.get_value())
 
     def __getColumnMinWidth(self):
         if self.auto_column_width.get_active():
