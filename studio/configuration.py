@@ -265,6 +265,8 @@ class ConfigurationManager(object):
     IMPROVE_COLUMN_DETECTION = 'improve_column_detection'
     COLUMN_MIN_WIDTH = 'column_min_width'
     CLEAN_TEXT = 'clean_text'
+    ADJUST_BOXES_BOUNDS = 'adjust_boxes_bounds'
+    BOUNDS_ADJUSTMENT_SIZE = 'bounds_adjustment_size'
 
     DEFAULTS = {TEMPORARY_DIR: '/tmp',
                 TEXT_FILL: (94, 156, 235, 150),
@@ -275,7 +277,9 @@ class ConfigurationManager(object):
                 FAVORITE_ENGINE: 'ocrad',
                 IMPROVE_COLUMN_DETECTION: True,
                 COLUMN_MIN_WIDTH: 'auto',
-                CLEAN_TEXT: True
+                CLEAN_TEXT: True,
+                ADJUST_BOXES_BOUNDS: True,
+                BOUNDS_ADJUSTMENT_SIZE: 'auto'
                 }
 
     conf = dict(DEFAULTS)
@@ -404,6 +408,26 @@ class ConfigurationManager(object):
     def setCleanText(self, clean_text):
         self.setConf(self.CLEAN_TEXT, clean_text)
 
+    def setAdjustBoxesBounds(self, adjust_boxes_bounds):
+        self.setConf(self.ADJUST_BOXES_BOUNDS, adjust_boxes_bounds)
+
+    def getAdjustBoxesBounds(self):
+        adjust = self.getConf(self.ADJUST_BOXES_BOUNDS)
+        return self.__convertBoolSetting(adjust)
+
+    def setBoundsAdjustmentSize(self, adjustment_size):
+        self.setConf(self.BOUNDS_ADJUSTMENT_SIZE, adjustment_size)
+
+    def getBoundsAdjustmentSize(self):
+        adjustment_size = self.getConf(self.BOUNDS_ADJUSTMENT_SIZE)
+        if adjustment_size == 'auto':
+            return adjustment_size
+        try:
+            adjustment_size_int = int(adjustment_size)
+        except ValueError:
+            return 'auto'
+        return adjustment_size_int
+
     def __convertBoolSetting(self, setting):
         if type(setting) == str:
             if setting == 'True':
@@ -472,3 +496,9 @@ class ConfigurationManager(object):
 
     clean_text = property(getCleanText,
                           setCleanText)
+
+    adjust_boxes_bounds = property(getAdjustBoxesBounds,
+                                   setAdjustBoxesBounds)
+
+    bounds_adjustment_size = property(getBoundsAdjustmentSize,
+                                      setBoundsAdjustmentSize)
