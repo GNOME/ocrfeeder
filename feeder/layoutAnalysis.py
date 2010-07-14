@@ -382,12 +382,16 @@ class LayoutAnalysis(object):
                  window_size = None,
                  improve_column_detection = True,
                  column_size = None,
-                 clean_text = True):
+                 clean_text = True,
+                 adjust_boxes_bounds = True,
+                 boxes_bounds_adjustment_size = None):
         self.ocr_engine = ocr_engine
         self.window_size = window_size
         self.column_size = column_size
         self.improve_column_detection = improve_column_detection
         self.clean_text = clean_text
+        self.adjust_boxes_bounds = adjust_boxes_bounds
+        self.boxes_bounds_adjustment_size = boxes_bounds_adjustment_size
 
     def recognize(self, path_to_image, page_resolution):
         image_processor = ImageProcessor(path_to_image,
@@ -409,9 +413,10 @@ class LayoutAnalysis(object):
             block_bounds = bounds_optimized
 
         # Adjust margins (optimization of results)
-        block_bounds = [image_processor.adjustImageClipMargins(bounds, \
-                                                     self.column_size) \
-                        for bounds in block_bounds]
+        if self.adjust_boxes_bounds:
+            block_bounds = [image_processor.adjustImageClipMargins(bounds, \
+                                        self.boxes_bounds_adjustment_size) \
+                            for bounds in block_bounds]
 
         image = image_processor.original_image
         data_boxes = [self.__recognizeImageFromBounds(image,
