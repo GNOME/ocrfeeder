@@ -1142,6 +1142,10 @@ class PreferencesDialog(gtk.Dialog):
             self.improve_column_detection.get_active()
         self.configuration_manager.column_min_width = self.__getColumnMinWidth()
         self.configuration_manager.clean_text = self.clean_text.get_active()
+        self.configuration_manager.adjust_boxes_bounds = \
+            self.adjust_boxes_bounds.get_active()
+        self.configuration_manager.bounds_adjustment_size = \
+            self.__getBoundsAdjustmentSize()
         index = self.engines_combo.get_active()
         if index != -1:
             lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
