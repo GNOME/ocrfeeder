@@ -418,8 +418,6 @@ class ImageReviewer_Controler:
 
     def recognizeCurrentPage(self):
         image_reviewer = self.__getCurrentReviewer()
-        image_reviewer.selectable_boxes_area.clearAreas()
-        image_reviewer.applyTextColors()
         dialog = QueuedEventsProgressDialog(self.main_window.window)
         item = AsyncItem(self.__performRecognitionForReviewer,
                          (image_reviewer,),
@@ -465,6 +463,8 @@ class ImageReviewer_Controler:
 
     def __performRecognitionForReviewerFinishedCb(self, dialog, image_reviewer,
                                                   data_boxes, error):
+        image_reviewer.selectable_boxes_area.clearAreas()
+        image_reviewer.applyTextColors()
         for data_box in data_boxes:
             image_reviewer.addDataBox(data_box)
         dialog.cancel()
