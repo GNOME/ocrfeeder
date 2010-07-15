@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-11 17:42+0200\n"
-"PO-Revision-Date: 2010-06-28 14:44+0200\n"
+"POT-Creation-Date: 2010-07-15 21:50+0200\n"
+"PO-Revision-Date: 2010-07-12 08:10+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -45,11 +45,11 @@ msgstr "PDF"
 
 #: ../studio/studioBuilder.py:187
 msgid "Loading PDF"
-msgstr ""
+msgstr "Načítá se PDF"
 
 #: ../studio/studioBuilder.py:187 ../studio/widgetModeler.py:427
 msgid "Please wait…"
-msgstr ""
+msgstr "Čekejte prosím…"
 
 #: ../studio/studioBuilder.py:210
 msgid "Export pages"
@@ -72,18 +72,16 @@ msgid "Close anyway"
 msgstr "Přesto zavřít"
 
 #: ../studio/widgetModeler.py:125 ../studio/widgetPresenter.py:121
-#, fuzzy
 msgid "Pages"
-msgstr "Obrázky"
+msgstr "Stránky"
 
-#: ../studio/widgetModeler.py:139 ../studio/widgetPresenter.py:1352
+#: ../studio/widgetModeler.py:139 ../studio/widgetPresenter.py:1360
 msgid "Delete"
 msgstr "Smazat"
 
 #: ../studio/widgetModeler.py:190
-#, fuzzy
 msgid "Selectable areas"
-msgstr "Vybrat všechny oblasti s obsahem"
+msgstr "Oblasti, které lze vybrat"
 
 #: ../studio/widgetModeler.py:407 ../studio/widgetPresenter.py:709
 #: ../studio/widgetPresenter.py:716
@@ -99,9 +97,8 @@ msgid "Zoom"
 msgstr "Přiblížení"
 
 #: ../studio/widgetModeler.py:427
-#, fuzzy
 msgid "Recognizing Document"
-msgstr "_Rozpoznat dokument"
+msgstr "Rozpoznává se dokument"
 
 #: ../studio/widgetModeler.py:486
 msgid "Export to HTML"
@@ -266,7 +263,7 @@ msgstr "Normální velikost"
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../studio/widgetPresenter.py:163 ../studio/widgetPresenter.py:1202
+#: ../studio/widgetPresenter.py:163 ../studio/widgetPresenter.py:1210
 msgid "_Tools"
 msgstr "Nás_troje"
 
@@ -339,14 +336,12 @@ msgid "Select the next area from the content areas"
 msgstr "Vybrat následující oblast z oblastí s obsahem"
 
 #: ../studio/widgetPresenter.py:183
-#, fuzzy
 msgid "Delete Selected Areas"
-msgstr "Rozpoznat vybranou oblast"
+msgstr "Vymazat vybrané oblasti"
 
 #: ../studio/widgetPresenter.py:184
-#, fuzzy
 msgid "Deletes all the currently selected content areas"
-msgstr "Vybrat následující oblast z oblastí s obsahem"
+msgstr "Vymazat všechny právě vybrané oblasti s obsahem"
 
 #: ../studio/widgetPresenter.py:186
 msgid "_Generate ODT"
@@ -354,44 +349,39 @@ msgstr "_Generovat ODT"
 
 #: ../studio/widgetPresenter.py:247
 msgid "Area editor"
-msgstr ""
+msgstr "Editor oblasti"
 
 #: ../studio/widgetPresenter.py:255
 msgid "Sets the content area's upper left corner's X coordinate"
-msgstr ""
+msgstr "Nastavuje souřadnici X levého horního rohu oblasti s obsahem"
 
 #: ../studio/widgetPresenter.py:259
 msgid "Sets the content area's upper left corner's Y coordinate"
-msgstr ""
+msgstr "Nastavuje souřadnici Y levého horního rohu oblasti s obsahem"
 
 #: ../studio/widgetPresenter.py:263
-#, fuzzy
 msgid "Sets the content area's width"
-msgstr "Vybrat všechny oblasti s obsahem"
+msgstr "Nastavuje šířku oblasti s obsahem"
 
 #: ../studio/widgetPresenter.py:266
-#, fuzzy
 msgid "Sets the content area's height"
-msgstr "Vybrat všechny oblasti s obsahem"
+msgstr "Nastavuje výšku oblasti s obsahem"
 
 #: ../studio/widgetPresenter.py:269 ../studio/widgetPresenter.py:479
-#, fuzzy
 msgid "_Text"
-msgstr "Text"
+msgstr "_Text"
 
 #: ../studio/widgetPresenter.py:270
-#, fuzzy
 msgid "Set this content area to be the text type"
-msgstr "Vybrat následující oblast z oblastí s obsahem"
+msgstr "Nastavit tuto oblast s obsahem, aby byla typu text"
 
 #: ../studio/widgetPresenter.py:271
-#, fuzzy
 msgid "_Image"
-msgstr "Obrázek"
+msgstr "O_brázek"
 
 #: ../studio/widgetPresenter.py:272
 msgid "Set this content area to be the image type"
-msgstr ""
+msgstr "Nastavit tuto oblast s obsahem, aby byla typu obrázek"
 
 #: ../studio/widgetPresenter.py:273
 msgid "Type"
@@ -407,21 +397,19 @@ msgstr "Meze"
 
 #: ../studio/widgetPresenter.py:372
 msgid "_X:"
-msgstr ""
+msgstr "_X:"
 
 #: ../studio/widgetPresenter.py:381
 msgid "_Y:"
-msgstr ""
+msgstr "_Y:"
 
-#: ../studio/widgetPresenter.py:393
-#, fuzzy
+#: ../studio/widgetPresenter.py:393 ../studio/widgetPresenter.py:730
 msgid "_Width:"
-msgstr "Šířka"
+msgstr "Šíř_ka:"
 
 #: ../studio/widgetPresenter.py:402
-#, fuzzy
 msgid "Hei_ght:"
-msgstr "Výška"
+msgstr "Výšk_a:"
 
 #: ../studio/widgetPresenter.py:425
 msgid "Left"
@@ -429,7 +417,7 @@ msgstr "Vlevo"
 
 #: ../studio/widgetPresenter.py:429
 msgid "Set text to be left aligned"
-msgstr ""
+msgstr "Nastavit text, aby byl zarovnán doleva"
 
 #: ../studio/widgetPresenter.py:431
 msgid "Center"
@@ -437,7 +425,7 @@ msgstr "Na střed"
 
 #: ../studio/widgetPresenter.py:436
 msgid "Set text to be centered"
-msgstr ""
+msgstr "Nastavit text, aby byl zarovnán na střed"
 
 #: ../studio/widgetPresenter.py:438
 msgid "Right"
@@ -445,7 +433,7 @@ msgstr "Vpravo"
 
 #: ../studio/widgetPresenter.py:443
 msgid "Set text to be right aligned"
-msgstr ""
+msgstr "Nastavit text, aby byl zarovnán doprava"
 
 #: ../studio/widgetPresenter.py:445
 msgid "Fill"
@@ -453,20 +441,21 @@ msgstr "Do bloku"
 
 #: ../studio/widgetPresenter.py:450
 msgid "Set text to be fill its area"
-msgstr ""
+msgstr "Nastavit text, aby byl zarovnán do bloku"
 
 #: ../studio/widgetPresenter.py:456
-#, fuzzy
 msgid "OC_R"
-msgstr "OCR"
+msgstr "OC_R"
 
 #: ../studio/widgetPresenter.py:457
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr ""
+"Provést OCR na této oblasti s obsahem pomocí vybraného výkonného programu "
+"OCR."
 
 #: ../studio/widgetPresenter.py:463
 msgid "OCR engine to recognize this content area"
-msgstr ""
+msgstr "Výkonný program OCR pro rozpoznání této oblasti s obsahem"
 
 #. Text Properties
 #: ../studio/widgetPresenter.py:471
@@ -487,26 +476,23 @@ msgstr "Rozestupy"
 
 #: ../studio/widgetPresenter.py:500
 msgid "Set the text's letter spacing"
-msgstr ""
+msgstr "Nastavit mezery mezi znaky textu"
 
 #: ../studio/widgetPresenter.py:502
 msgid "Set the text's line spacing"
-msgstr ""
+msgstr "Nastavit mezery mezi řádky textu"
 
 #: ../studio/widgetPresenter.py:507
-#, fuzzy
 msgid "_Line:"
-msgstr "Řádek"
+msgstr "Řá_dek:"
 
 #: ../studio/widgetPresenter.py:518
-#, fuzzy
 msgid "L_etter:"
-msgstr "Písmeno"
+msgstr "Písm_eno:"
 
 #: ../studio/widgetPresenter.py:530
-#, fuzzy
 msgid "Sty_le"
-msgstr "Styl"
+msgstr "Sty_l"
 
 #: ../studio/widgetPresenter.py:537
 msgid "Angle"
@@ -514,7 +500,7 @@ msgstr "Úhel"
 
 #: ../studio/widgetPresenter.py:541
 msgid "OCR engine to recogni_ze this area:"
-msgstr ""
+msgstr "Výkonný program OCR pro ro_zpoznání této oblasti:"
 
 #: ../studio/widgetPresenter.py:555
 msgid "Detect"
@@ -540,11 +526,11 @@ msgstr "Otevření složky"
 msgid "Pages to export"
 msgstr "Které stránky exportovat"
 
-#: ../studio/widgetPresenter.py:675 ../studio/widgetPresenter.py:741
+#: ../studio/widgetPresenter.py:675
 msgid "All"
 msgstr "Všechny"
 
-#: ../studio/widgetPresenter.py:676 ../studio/widgetPresenter.py:740
+#: ../studio/widgetPresenter.py:676
 msgid "Current"
 msgstr "Současnou"
 
@@ -556,196 +542,192 @@ msgstr "Zvolte formát"
 msgid "Custom…"
 msgstr "Vlastní…"
 
-#: ../studio/widgetPresenter.py:730
-msgid "Width"
-msgstr "Šířka"
+#: ../studio/widgetPresenter.py:735
+msgid "_Height:"
+msgstr "Výšk_a:"
 
-#: ../studio/widgetPresenter.py:732
-msgid "Height"
-msgstr "Výška"
-
-#: ../studio/widgetPresenter.py:738
+#: ../studio/widgetPresenter.py:744
 msgid "Affected pages"
 msgstr "Použít na stránky"
 
-#: ../studio/widgetPresenter.py:801
+#: ../studio/widgetPresenter.py:746
+msgid "C_urrent"
+msgstr "So_učasnou"
+
+#: ../studio/widgetPresenter.py:749
+msgid "_All"
+msgstr "_Všechny"
+
+#: ../studio/widgetPresenter.py:809
 msgid "Unpaper Image Processor"
 msgstr "Obrazový procesor Unpaper"
 
-#: ../studio/widgetPresenter.py:822
+#: ../studio/widgetPresenter.py:830
 msgid "Noise Filter Intensity"
 msgstr "Citlivost šumového filtru"
 
-#: ../studio/widgetPresenter.py:824 ../studio/widgetPresenter.py:842
+#: ../studio/widgetPresenter.py:832 ../studio/widgetPresenter.py:850
 msgid "Default"
 msgstr "Výchozí"
 
-#: ../studio/widgetPresenter.py:825 ../studio/widgetPresenter.py:843
+#: ../studio/widgetPresenter.py:833 ../studio/widgetPresenter.py:851
 msgid "Custom"
 msgstr "Vlastní"
 
-#: ../studio/widgetPresenter.py:826 ../studio/widgetPresenter.py:844
+#: ../studio/widgetPresenter.py:834 ../studio/widgetPresenter.py:852
 msgid "None"
 msgstr "Žádný"
 
-#: ../studio/widgetPresenter.py:840
+#: ../studio/widgetPresenter.py:848
 msgid "Gray Filter Size"
 msgstr "Filtr úrovně šedé"
 
-#: ../studio/widgetPresenter.py:858
+#: ../studio/widgetPresenter.py:866
 msgid "Black Filter"
 msgstr "Filtr černé"
 
-#: ../studio/widgetPresenter.py:859
+#: ../studio/widgetPresenter.py:867
 msgid "Use"
 msgstr "Použít"
 
-#: ../studio/widgetPresenter.py:865
+#: ../studio/widgetPresenter.py:873
 msgid "Preview"
 msgstr "Náhled"
 
-#: ../studio/widgetPresenter.py:871
-#, fuzzy
+#: ../studio/widgetPresenter.py:879
 msgid "_Preview"
-msgstr "Náhled"
+msgstr "_Náhled"
 
-#: ../studio/widgetPresenter.py:881
+#: ../studio/widgetPresenter.py:889
 msgid "Extra Options"
 msgstr "Další volby"
 
-#: ../studio/widgetPresenter.py:883
+#: ../studio/widgetPresenter.py:891
 msgid "Unpaper's command line arguments"
-msgstr ""
+msgstr "Argumenty příkazového řádku pro program Unpaper"
 
-#: ../studio/widgetPresenter.py:917
+#: ../studio/widgetPresenter.py:925
 msgid "Performing Unpaper"
 msgstr "Zpracování programem Unpaper"
 
-#: ../studio/widgetPresenter.py:917
+#: ../studio/widgetPresenter.py:925
 msgid "Performing unpaper. Please wait…"
 msgstr "Provádí se vylepšení programem Unpaper. Čekejte prosím…"
 
-#: ../studio/widgetPresenter.py:993 ../studio/widgetPresenter.py:1004
+#: ../studio/widgetPresenter.py:1001 ../studio/widgetPresenter.py:1012
 msgid "An error occurred!"
 msgstr "Vyskytla se chyba!"
 
-#: ../studio/widgetPresenter.py:993 ../studio/widgetPresenter.py:1004
+#: ../studio/widgetPresenter.py:1001 ../studio/widgetPresenter.py:1012
 msgid "Error"
 msgstr "Chyba"
 
-#: ../studio/widgetPresenter.py:1075
+#: ../studio/widgetPresenter.py:1083
 msgid "Cancelled"
-msgstr ""
+msgstr "Zrušeno"
 
-#: ../studio/widgetPresenter.py:1089
+#: ../studio/widgetPresenter.py:1097
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../studio/widgetPresenter.py:1138
-#, fuzzy
+#: ../studio/widgetPresenter.py:1146
 msgid "_General"
-msgstr "Obecné"
+msgstr "_Obecné"
 
-#: ../studio/widgetPresenter.py:1143
+#: ../studio/widgetPresenter.py:1151
 msgid "Temporary folder"
 msgstr "Složka pro dočasné soubory"
 
-#: ../studio/widgetPresenter.py:1147 ../studio/widgetPresenter.py:1211
+#: ../studio/widgetPresenter.py:1155 ../studio/widgetPresenter.py:1219
 msgid "Choose"
 msgstr "Zvolit"
 
-#: ../studio/widgetPresenter.py:1164
-#, fuzzy
+#: ../studio/widgetPresenter.py:1172
 msgid "_Appearance"
-msgstr "Vzhled"
+msgstr "V_zhled"
 
-#: ../studio/widgetPresenter.py:1169
+#: ../studio/widgetPresenter.py:1177
 msgid "Select boxes' colors"
 msgstr "Vyberte barvy oblastí"
 
-#: ../studio/widgetPresenter.py:1175
-#, fuzzy
+#: ../studio/widgetPresenter.py:1183
 msgid "Te_xt areas' fill color"
-msgstr "Barva oblasti s textem"
+msgstr "Barva oblasti s te_xtem"
 
-#: ../studio/widgetPresenter.py:1181
-#, fuzzy
+#: ../studio/widgetPresenter.py:1189
 msgid "Text areas' _stroke color"
-msgstr "Ohraničení oblasti s textem"
+msgstr "Ohraničení obla_sti s textem"
 
-#: ../studio/widgetPresenter.py:1187
-#, fuzzy
+#: ../studio/widgetPresenter.py:1195
 msgid "_Image areas' fill color"
-msgstr "Barva oblasti s obrázkem"
+msgstr "Barva oblasti s o_brázkem"
 
-#: ../studio/widgetPresenter.py:1207
+#: ../studio/widgetPresenter.py:1215
 msgid "Path to unpaper"
 msgstr "Cesta k programu Unpaper"
 
-#: ../studio/widgetPresenter.py:1219 ../studio/widgetPresenter.py:1287
-#: ../studio/widgetPresenter.py:1325 ../studio/widgetPresenter.py:1343
-#: ../studio/widgetPresenter.py:1432
+#: ../studio/widgetPresenter.py:1227 ../studio/widgetPresenter.py:1295
+#: ../studio/widgetPresenter.py:1333 ../studio/widgetPresenter.py:1351
+#: ../studio/widgetPresenter.py:1440
 msgid "OCR Engines"
 msgstr "Výkonné programy OCR"
 
-#: ../studio/widgetPresenter.py:1221
+#: ../studio/widgetPresenter.py:1229
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr ""
+"Výkonný program, který by měl být použit, když se provádí automatické "
+"rozpoznání."
 
-#: ../studio/widgetPresenter.py:1232
-#, fuzzy
+#: ../studio/widgetPresenter.py:1240
 msgid "Favorite _engine:"
-msgstr "Oblíbené výkonné programy:"
+msgstr "Oblíb_ený výkonný programy:"
 
-#: ../studio/widgetPresenter.py:1247
+#: ../studio/widgetPresenter.py:1255
 msgid "Window size"
 msgstr "Velikost okna"
 
-#: ../studio/widgetPresenter.py:1248
-#, fuzzy
+#: ../studio/widgetPresenter.py:1256
 msgid "A_utomatic"
-msgstr "Automaticky"
+msgstr "A_utomaticky"
 
-#: ../studio/widgetPresenter.py:1249
-#, fuzzy
+#: ../studio/widgetPresenter.py:1257
 msgid "Cu_stom"
-msgstr "Vlastní"
+msgstr "_Vlastní"
 
-#: ../studio/widgetPresenter.py:1258
+#: ../studio/widgetPresenter.py:1266
 msgid "The window size is the detection algorithm's subdivision areas' size."
-msgstr ""
+msgstr "Velikost okna je velikost dělící plochy detekčního algoritmu."
 
-#: ../studio/widgetPresenter.py:1301
+#: ../studio/widgetPresenter.py:1309
 msgid "Engines to be added"
-msgstr "Výkonný program, který se má přidat"
+msgstr "Výkonné programy, který se mají přidat"
 
-#: ../studio/widgetPresenter.py:1306
+#: ../studio/widgetPresenter.py:1314
 msgid "Include"
 msgstr "Zahrnout"
 
-#: ../studio/widgetPresenter.py:1310 ../studio/widgetPresenter.py:1347
+#: ../studio/widgetPresenter.py:1318 ../studio/widgetPresenter.py:1355
 msgid "Engine"
 msgstr "Výkonný program"
 
-#: ../studio/widgetPresenter.py:1351
+#: ../studio/widgetPresenter.py:1359
 msgid "Add"
 msgstr "Přidat"
 
-#: ../studio/widgetPresenter.py:1353
+#: ../studio/widgetPresenter.py:1361
 msgid "Edit"
 msgstr "Upravit"
 
-#: ../studio/widgetPresenter.py:1354
-#, fuzzy
+#: ../studio/widgetPresenter.py:1362
 msgid "De_tect"
-msgstr "Detekovat"
+msgstr "De_tekovat"
 
-#: ../studio/widgetPresenter.py:1368
+#: ../studio/widgetPresenter.py:1376
 msgid "Are you sure you want to delete this engine?"
 msgstr "Opravdu chcete odebrat tento výkonný program?"
 
-#: ../studio/widgetPresenter.py:1414
+#: ../studio/widgetPresenter.py:1422
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -754,95 +736,66 @@ msgstr ""
 "Ujistěte se prosím, že máte v systému nějaké výkonné programy OCR "
 "nainstalované a přístupné."
 
-#: ../studio/widgetPresenter.py:1417
+#: ../studio/widgetPresenter.py:1425
 msgid "No OCR engines available"
 msgstr "Není dostupný žádný výkonný program OCR"
 
-#: ../studio/widgetPresenter.py:1434
+#: ../studio/widgetPresenter.py:1442
 #, python-format
 msgid "%s engine"
 msgstr "Výkonný program %s"
 
-#: ../studio/widgetPresenter.py:1458
-#, fuzzy
+#: ../studio/widgetPresenter.py:1466
 msgid "_Name:"
-msgstr "Název"
+msgstr "_Název:"
 
-#: ../studio/widgetPresenter.py:1459
+#: ../studio/widgetPresenter.py:1467
 msgid "Engine name"
 msgstr "Název výkonného programu"
 
-#: ../studio/widgetPresenter.py:1461
-#, fuzzy
+#: ../studio/widgetPresenter.py:1469
 msgid "_Image format:"
-msgstr "Formát obrázku"
+msgstr "_Formát obrázku:"
 
-#: ../studio/widgetPresenter.py:1463
+#: ../studio/widgetPresenter.py:1471
 msgid "The required image format"
 msgstr "Požadovaný formát obrázku"
 
-#: ../studio/widgetPresenter.py:1465
-#, fuzzy
+#: ../studio/widgetPresenter.py:1473
 msgid "_Failure string:"
-msgstr "Řetězec při selhání"
+msgstr "Řetězec při sel_hání:"
 
-#: ../studio/widgetPresenter.py:1467
+#: ../studio/widgetPresenter.py:1475
 msgid "The failure string or character that this engine uses"
 msgstr "Řetězec nebo znak, který tento výkonný program používá při selhání"
 
-#: ../studio/widgetPresenter.py:1470
-#, fuzzy
+#: ../studio/widgetPresenter.py:1478
 msgid "Engine _path:"
-msgstr "Cesta k výkonnému programu"
+msgstr "Cesta k výkonnému _programu:"
 
-#: ../studio/widgetPresenter.py:1472
+#: ../studio/widgetPresenter.py:1480
 msgid "The path to the engine program"
 msgstr "Cesta k výkonnému programu"
 
-#: ../studio/widgetPresenter.py:1474
-#, fuzzy
+#: ../studio/widgetPresenter.py:1482
 msgid "Engine _arguments:"
-msgstr "Argumenty výkonného programu"
+msgstr "_Argumenty výkonného programu:"
 
-#: ../studio/widgetPresenter.py:1476
+#: ../studio/widgetPresenter.py:1484
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 "Argumenty: použijte $IMAGE pro obrázek a $FILE, pokud zapisuje do souboru"
 
-#: ../studio/widgetPresenter.py:1493
+#: ../studio/widgetPresenter.py:1501
 msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
 "Chyba při nastavování nového výkonného programu, zkontrolujte prosím své "
 "nastavení."
 
-#: ../studio/widgetPresenter.py:1493
+#: ../studio/widgetPresenter.py:1501
 msgid "Warning"
 msgstr "Varování"
 
-#: ../studio/widgetPresenter.py:1529
+#: ../studio/widgetPresenter.py:1537
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
-
-#~ msgid "X"
-#~ msgstr "X"
-
-#~ msgid "Y"
-#~ msgstr "Y"
-
-#~ msgid "Left aligned"
-#~ msgstr "Zarovnat vlevo"
-
-#~ msgid "Centered"
-#~ msgstr "Vystředit"
-
-#~ msgid "Right aligned"
-#~ msgstr "Zarovnat vpravo"
-
-#~ msgid "Filled"
-#~ msgstr "Vyplnit do bloku"
-
-#~ msgid "Image stroke color"
-#~ msgstr "Ohraničení oblasti s obrázkem"
-
-#~ msgid "Tools"
-#~ msgstr "Nástroje"
