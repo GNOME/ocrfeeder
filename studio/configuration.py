@@ -267,6 +267,7 @@ class ConfigurationManager(object):
     CLEAN_TEXT = 'clean_text'
     ADJUST_BOXES_BOUNDS = 'adjust_boxes_bounds'
     BOUNDS_ADJUSTMENT_SIZE = 'bounds_adjustment_size'
+    DESKEW_IMAGES_AFTER_ADDITION = 'deskew_images_after_addition'
 
     DEFAULTS = {TEMPORARY_DIR: '/tmp',
                 TEXT_FILL: (94, 156, 235, 150),
@@ -279,7 +280,8 @@ class ConfigurationManager(object):
                 COLUMN_MIN_WIDTH: 'auto',
                 CLEAN_TEXT: True,
                 ADJUST_BOXES_BOUNDS: True,
-                BOUNDS_ADJUSTMENT_SIZE: 'auto'
+                BOUNDS_ADJUSTMENT_SIZE: 'auto',
+                DESKEW_IMAGES_AFTER_ADDITION: True
                 }
 
     conf = dict(DEFAULTS)
@@ -415,6 +417,14 @@ class ConfigurationManager(object):
         adjust = self.getConf(self.ADJUST_BOXES_BOUNDS)
         return self.__convertBoolSetting(adjust)
 
+    def setDeskewImagesAfterAddition(self, deskew_images_after_addition):
+        self.setConf(self.DESKEW_IMAGES_AFTER_ADDITION,
+                     deskew_images_after_addition)
+
+    def getDeskewImagesAfterAddition(self):
+        deskew = self.getConf(self.DESKEW_IMAGES_AFTER_ADDITION)
+        return self.__convertBoolSetting(deskew)
+
     def setBoundsAdjustmentSize(self, adjustment_size):
         self.setConf(self.BOUNDS_ADJUSTMENT_SIZE, adjustment_size)
 
@@ -502,3 +512,6 @@ class ConfigurationManager(object):
 
     bounds_adjustment_size = property(getBoundsAdjustmentSize,
                                       setBoundsAdjustmentSize)
+
+    deskew_images_after_addition = property(getDeskewImagesAfterAddition,
+                                            setDeskewImagesAfterAddition)
