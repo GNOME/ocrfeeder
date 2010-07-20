@@ -446,6 +446,24 @@ class ImageReviewer_Controler:
             return deskewed_name
         return image_path
 
+    def deskewCurrentImage(self, widget):
+        reviewer = self.__getCurrentReviewer()
+        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        item = AsyncItem(self.__deskewImage,
+                         (reviewer.path_to_image,),
+                         self.__deskewCurrentImageFinishedCb,
+                         (dialog, reviewer))
+        item_info = (_('Deskewing image'), _('Please wait…'))
+        dialog.setItemsList([(item_info, item)])
+        dialog.run()
+
+    def __deskewCurrentImageFinishedCb(self, dialog, reviewer,
+                                       image_path, error):
+        if error:
+            return
+        reviewer.updateBackgroundImage(image_path)
+        dialog.cancel()
+
     def selectImageReviewer(self, widget):
         pixbuf = self.source_images_selector_widget.getSelectedPixbuf()
         if pixbuf != None:
