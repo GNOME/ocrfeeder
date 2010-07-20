@@ -85,6 +85,7 @@ class MainWindow:
             <menuitem action="OCREngines"/>
             <separator/>
             <menuitem action="Unpaper"/>
+            <menuitem action="ImageDeskewer"/>
         </menu>
         <menu action="Help">
             <menuitem action="About"/>
@@ -163,6 +164,9 @@ class MainWindow:
                                   ('Tools', None, _('_Tools')),
                                   ('OCREngines', None, _('_OCR Engines'), None, _('Manage OCR engines'), menu_items['ocr_engines']),
                                   ('Unpaper', gtk.STOCK_EXECUTE, _('_Unpaper'), None, _('Process image with unpaper'), menu_items['unpaper']),
+                                  ('ImageDeskewer', None, _('Image Des_kewer'),
+                                   None, _('Trie to straighten the image'),
+                                   menu_items['image_deskewer']),
                                   ('Help', None, _('_Help')),
                                   ('About', gtk.STOCK_ABOUT, _('_About'), None, _('About this application'), menu_items['about']),
                                   ('OCRFeederDetection', None, _('_Recognize Document'), None, _("Automatic Detection and Recognition"), tool_items['detection']),
@@ -218,7 +222,7 @@ class MainWindow:
                    'Export', 'GenerateODT', 'Unpaper',
                    'DeletePage', 'SaveProject', 'SaveProjectAs',
                    'OCRFeederDetection', 'EditPage', 'ClearProject',
-                   'AppendProject', 'ZoomFit']
+                   'AppendProject', 'ZoomFit', 'ImageDeskewer']
         self.__setActionsSensitiveness(actions, has_images)
         if not has_images:
             self.setHasSelectedBoxes(False)
