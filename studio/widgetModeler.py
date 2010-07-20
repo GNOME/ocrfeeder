@@ -27,7 +27,7 @@ from pango import FontDescription, SCALE
 from studio.configuration import ProjectSaver, ProjectLoader, ConfigurationManager
 from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
-from util.lib import debug
+from util.lib import debug, getNonExistingFileName
 from util import constants
 from util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
@@ -368,7 +368,7 @@ class ImageReviewer:
 
 class ImageReviewer_Controler:
 
-    def __init__(self, main_window, images_dict, source_images_selector_widget,
+    def __init__(self, main_window, source_images_selector_widget,
                  ocr_engines, configuration_manager,
                  selection_changed_signal = 'selection-changed'):
         self.main_window = main_window
@@ -378,26 +378,73 @@ class ImageReviewer_Controler:
         self.ocr_engines = ocr_engines
         self.configuration_manager = configuration_manager
         self.tripple_statusbar = self.main_window.tripple_statusbar
-        for key, image in images_dict.items():
-            self.addImage(key, image)
         self.source_images_selector_widget.connect(selection_changed_signal, self.selectImageReviewer)
 
-    def addImage(self, pixbuf, image):
+    def __createdImageReviewer(self, pixbuf, image):
         image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
         image_reviewer.setTextFillColor(self.configuration_manager.text_fill)
         image_reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
         image_reviewer.setImageFillColor(self.configuration_manager.image_fill)
         self.image_reviewer_dict[pixbuf] = image_reviewer
-        self.addImageReviewer(image_reviewer.reviewer_area)
+        self.notebook.append_page(image_reviewer.reviewer_area, None)
         return image_reviewer
 
-    def addImageFromPath(self, image_path):
-        pixbuf, image, iter = self.source_images_selector_widget.source_images_selector.addImage(image_path)
-        return self.addImage(pixbuf, image)
+    def addImages(self, image_path_list):
+        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        item_list = []
+        item_list_length = len(image_path_list)
+        if not self.configuration_manager.deskew_images_after_addition:
+            for index in range(0, len(image_path_list)):
+                self.__addImage(image_path_list[index], index == 0)
+            return
+        for index in range(0, item_list_length):
+            image_path = image_path_list[index]
+            item = AsyncItem(self.__imagePreProcessing,
+                             (image_path,),
+                             self.__imagePreProcessingFinishedCb,
+                             (dialog,
+                              index == item_list_length - 1,
+                              index == 0))
+            if item_list_length == 1:
+                item_info = (_('Preparing image'), _('Please wait…'))
+            else:
+                item_info = (_('Preparing image %(current_index)s/%(total)s') % \
+                             {'current_index': index + 1,
+                              'total': item_list_length},
+                             _('Please wait…'))
+            item_list.append((item_info,item))
+        dialog.setItemsList(item_list)
+        dialog.run()
 
-    def addImageReviewer(self, image_reviewer_widget):
-        self.notebook.append_page(image_reviewer_widget, None)
+    def __imagePreProcessing(self, image_path):
+        return self.__deskewImage(image_path)
+
+    def __imagePreProcessingFinishedCb(self, dialog, finished,
+                                       select_image, image_path, error):
+        self.__addImage(image_path, select_image)
+        if finished:
+            dialog.cancel()
+
+    def __addImage(self, image_path, select_image = True):
+        selector_widget = self.source_images_selector_widget
+        pixbuf, image, iter = \
+            selector_widget.source_images_selector.addImage(image_path)
+        reviewer = self.__createdImageReviewer(pixbuf, image)
+        if select_image:
+            path = selector_widget.source_images_selector.list_store.get_path(iter)
+            selector_widget.select_path(path)
+        return reviewer
+
+    def __deskewImage(self, image_path):
+        tmp_dir = self.configuration_manager.temporary_dir
+        deskewed_name = os.path.join(tmp_dir, image_path)
+        if os.path.exists(deskewed_name):
+            deskewed_name = getNonExistingFileName(deskewed_name)
+        image_deskewer = ImageDeskewer()
+        if image_deskewer.deskew(image_path, deskewed_name):
+            return deskewed_name
+        return image_path
 
     def selectImageReviewer(self, widget):
         pixbuf = self.source_images_selector_widget.getSelectedPixbuf()
@@ -521,8 +568,10 @@ class ImageReviewer_Controler:
             pages = project_loader.loadConfiguration()
             if pages and clear_current:
                 self.clear()
-            for page in pages:
-                image_reviewer = self.addImageFromPath(page.image_path)
+            for index in range(0, len(pages)):
+                page = pages[index]
+                image_reviewer = self.__addImage(page.image_path,
+                                                 select_image = index == 0)
                 image_reviewer.updatePageData(page)
         open_dialog.destroy()
         return project_file

@@ -26,7 +26,7 @@ import os.path
 import urllib
 from studio import widgetPresenter
 from studio.widgetModeler import SourceImagesSelector, SourceImagesSelectorIconView, ImageReviewer_Controler
-from studio.dataHolder import create_images_dict_from_liststore, DataBox, TextData
+from studio.dataHolder import DataBox, TextData
 from studio.customWidgets import SelectableBoxesArea
 from feeder.ocrEngines import Engine, OcrEnginesManager
 from configuration import ConfigurationManager
@@ -60,14 +60,12 @@ class Studio:
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()
         self.main_window.setTitle(self.title)
-        cli_command_retriever = ArgsRetriever(sys.argv)
-        imgs = cli_command_retriever.getParams('--images')
         self.configuration_manager = ConfigurationManager()
         self.ocr_engines_manager = OcrEnginesManager(self.configuration_manager)
         self.ocr_engines_manager.makeEnginesFromFolder(self.configuration_manager.user_engines_folder)
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
         self.configuration_manager.loadConfiguration()
-        self.source_images_selector = SourceImagesSelector(imgs)
+        self.source_images_selector = SourceImagesSelector()
         self.source_images_selector.connect('selection_changed', self.selectionChanged)
         self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_selector)
         self.source_images_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
@@ -78,9 +76,7 @@ class Studio:
         self.source_images_icon_view.show()
         self.main_window.main_area_left.add_with_viewport(self.source_images_icon_view)
         self.images_selectable_area = {}
-        self.images_dict = create_images_dict_from_liststore(self.source_images_selector.list_store)
         self.source_images_controler = ImageReviewer_Controler(self.main_window,
-                                                               self.images_dict,
                                                                self.source_images_icon_view,
                                                                self.ocr_engines,
                                                                self.configuration_manager)
@@ -106,6 +102,10 @@ class Studio:
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
         self.main_window.setDestroyEvent(self.quit)
 
+        cli_command_retriever = ArgsRetriever(sys.argv)
+        imgs = cli_command_retriever.getParams('--images')
+        if imgs:
+            self.__addImagesToReviewer(imgs)
         dirs = cli_command_retriever.getParams('--dir')
         if dirs:
             self.__addImagesToReviewer(lib.getImagesFromFolder(dirs[0]))
@@ -231,11 +231,7 @@ class Studio:
     def __addImagesToReviewer(self, images):
         if not images:
             return
-        for image in images:
-            pixbuf, image, iter = self.source_images_selector.addImage(image)
-            self.source_images_controler.addImage(pixbuf, image)
-        tree_path = self.source_images_selector.list_store.get_path(iter)
-        self.source_images_icon_view.select_path(tree_path)
+        self.source_images_controler.addImages(images)
 
     def __recognizeCurrentPageAction(self, widget):
         self.source_images_controler.recognizeCurrentPage()
