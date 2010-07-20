@@ -1103,7 +1103,8 @@ class PreferencesDialog(gtk.Dialog):
         self.__makeGeneralPreferences(self.__makeTemporaryFolder(),
                                       self.__makeColors())
         self.__makeToolsPreferences(self.__makeUnpaper(),
-                                    self.__makeEngines())
+                                    self.__makeEngines(),
+                                    self.__makePreProcessorPreferences())
         self.__makeRecognitionPreferences(self.__makeTextPreferences(),
                                       self.__makeWindowSize(),
                                       self.__makeColumnDetectionPreferences(),
@@ -1146,6 +1147,8 @@ class PreferencesDialog(gtk.Dialog):
             self.adjust_boxes_bounds.get_active()
         self.configuration_manager.bounds_adjustment_size = \
             self.__getBoundsAdjustmentSize()
+        self.configuration_manager.deskew_images_after_addition = \
+            self.deskew_images.get_active()
         index = self.engines_combo.get_active()
         if index != -1:
             lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
@@ -1446,6 +1449,19 @@ class PreferencesDialog(gtk.Dialog):
         color_button.set_use_alpha(True)
         color_button.set_alpha(color[3] << 8)
         return color_button
+
+    def __makePreProcessorPreferences(self):
+        preprocessing_frame = PlainFrame(_('Image Pre-processing'))
+        self.deskew_images = gtk.CheckButton(_('Des_kew images'),
+                                             use_underline = True)
+        self.deskew_images.set_tooltip_text(_('Tries to straighten the images '
+                                              'before they are added'))
+        self.deskew_images.set_active(
+            self.configuration_manager.deskew_images_after_addition)
+        box = gtk.HBox()
+        box.pack_start(self.deskew_images, False)
+        preprocessing_frame.add(box)
+        return preprocessing_frame
 
 class SystemEnginesDialog(gtk.Dialog):
 
