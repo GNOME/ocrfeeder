@@ -20,6 +20,7 @@
 
 from customWidgets import PlainFrame, TrippleStatusBar
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
+from configuration import ConfigurationManager
 from util import lib, PAPER_SIZES
 from util.asyncworker import AsyncWorker
 from util.constants import *
@@ -813,66 +814,16 @@ class UnpaperDialog(gtk.Dialog):
     def __init__(self, reviewer , unpaper, temp_dir = '/tmp'):
         super(UnpaperDialog, self).__init__(_('Unpaper Image Processor'), flags = gtk.DIALOG_MODAL, buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                       gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
-        self.options_box = gtk.VBox()
+        self.unpaper_preferences = UnpaperPreferences()
         self.reviewer = reviewer
         self.unpaper = unpaper
         self.temp_dir = temp_dir
         self.unpapered_image = None
-        self.__makeBlackFilter()
-        self.__makeNoiseFilter()
-        self.__makeGrayFilter()
-        self.__makeExtraOptions()
-        self.noise_filter_custom.connect('toggled', self.__toggleNoiseFilterIntensity)
-        self.gray_filter_custom.connect('toggled', self.__toggleGrayFilterIntensity)
         self.__makePreviewArea()
         self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
         self.preview.connect('clicked', self.__getPreview)
         self.set_size_request(500, -1)
-
-    def __makeNoiseFilter(self):
-
-        noise_filter_frame = PlainFrame(_('Noise Filter Intensity'))
-        noise_filter_box = gtk.VBox()
-        self.noise_filter_default = gtk.RadioButton(None, _('Default'))
-        self.noise_filter_custom = gtk.RadioButton(self.noise_filter_default, _('Custom'))
-        self.noise_filter_none = gtk.RadioButton(self.noise_filter_custom, _('None'))
-        self.noise_filter_intensity = gtk.SpinButton(gtk.Adjustment(0, 1, 1000, 1, 100, 0), 1, 1)
-        self.noise_filter_intensity.set_sensitive(False)
-        noise_filter_custom_box = gtk.HBox()
-        noise_filter_custom_box.add(self.noise_filter_custom)
-        noise_filter_custom_box.add(self.noise_filter_intensity)
-        noise_filter_box.pack_start(self.noise_filter_default, False)
-        noise_filter_box.pack_start(noise_filter_custom_box, False)
-        noise_filter_box.pack_start(self.noise_filter_none, False)
-        noise_filter_frame.add(noise_filter_box)
-        self.options_box.pack_start(noise_filter_frame, False)
-
-    def __makeGrayFilter(self):
-
-        gray_filter_frame = PlainFrame(_('Gray Filter Size'))
-        gray_filter_box = gtk.VBox()
-        self.gray_filter_default = gtk.RadioButton(None, _('Default'))
-        self.gray_filter_custom = gtk.RadioButton(self.gray_filter_default, _('Custom'))
-        self.gray_filter_none = gtk.RadioButton(self.gray_filter_custom, _('None'))
-        self.gray_filter_size = gtk.SpinButton(gtk.Adjustment(0, 1, 1000, 1, 100, 0), 1, 1)
-        self.gray_filter_size.set_sensitive(False)
-        gray_filter_custom_box = gtk.HBox()
-        gray_filter_custom_box.add(self.gray_filter_custom)
-        gray_filter_custom_box.add(self.gray_filter_size)
-        gray_filter_box.pack_start(self.gray_filter_default, False)
-        gray_filter_box.pack_start(gray_filter_custom_box, False)
-        gray_filter_box.pack_start(self.gray_filter_none, False)
-        gray_filter_frame.add(gray_filter_box)
-        self.options_box.pack_start(gray_filter_frame, False)
-
-    def __makeBlackFilter(self):
-
-        black_filter_frame = PlainFrame(_('Black Filter'))
-        self.black_filter_usage = gtk.CheckButton(_('Use'))
-        self.black_filter_usage.set_active(True)
-        black_filter_frame.add(self.black_filter_usage)
-        self.options_box.pack_start(black_filter_frame, False)
 
     def __makePreviewArea(self):
         preview_frame = PlainFrame(_('Preview'))
@@ -887,16 +838,8 @@ class UnpaperDialog(gtk.Dialog):
         preview_frame.add(preview_box)
         main_area = gtk.HBox()
         main_area.pack_start(preview_frame, False, padding = 10)
-        main_area.add(self.options_box)
+        main_area.add(self.unpaper_preferences)
         self.vbox.add(main_area)
-
-    def __makeExtraOptions(self):
-        options_frame = PlainFrame(_('Extra Options'))
-        self.extra_options = gtk.Entry()
-        self.extra_options.set_tooltip_text(_("Unpaper's command "
-                                              "line arguments"))
-        options_frame.add(self.extra_options)
-        self.options_box.pack_start(options_frame, False)
 
     def __getPreview(self, widget):
         self.performUnpaper()
@@ -910,22 +853,10 @@ class UnpaperDialog(gtk.Dialog):
         if os.path.exists(name):
             os.remove(name)
         image.save(name, format = 'PPM')
-        command = '%s --layout single' % self.unpaper
-        if not self.black_filter_usage.get_active():
-            command += ' --no-blackfilter'
-        if self.noise_filter_none.get_active():
-            command += ' --no-noisefilter'
-        elif self.noise_filter_custom.get_active():
-            command += ' --noisefilter-intensity %s' % self.noise_filter_intensity.get_value()
-        if self.gray_filter_none.get_active():
-            command += ' --no-grayfilter'
-        elif self.gray_filter_custom.get_active():
-            command += ' --grayfilter-size %s' % self.gray_filter_size.get_value()
-        extra_options_text = self.extra_options.get_text()
-        if extra_options_text.strip():
-            command += ' %s ' % extra_options_text
+        command = self.unpaper_preferences.getUnpaperCommand()
         unpapered_image = os.path.splitext(name)[0] + '_unpapered.ppm'
-        unpapered_image = lib.getNonExistingFileName(unpapered_image)
+        if os.path.exists(unpapered_image):
+            unpapered_image = lib.getNonExistingFileName(unpapered_image)
         command += ' %s %s' % (name, unpapered_image)
         progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _('Performing unpaper. Please wait…'))
         progress_bar.run()
@@ -949,16 +880,110 @@ class UnpaperDialog(gtk.Dialog):
             self.preview_area.remove(child)
         self.preview_area.add_with_viewport(image)
 
-    def __toggleNoiseFilterIntensity(self, widget):
-        self.noise_filter_intensity.set_sensitive(self.noise_filter_custom.get_active())
-
-    def __toggleGrayFilterIntensity(self, widget):
-        self.gray_filter_size.set_sensitive(self.gray_filter_custom.get_active())
-
     def getUnpaperedImage(self):
         if not self.unpapered_image:
             self.performUnpaper()
         return self.unpapered_image
+
+class UnpaperPreferences(gtk.VBox):
+
+    def __init__(self):
+        super(UnpaperPreferences, self).__init__()
+        self.configuration_manager = ConfigurationManager()
+        self.__makeBlackFilter()
+        self.__makeNoiseFilter()
+        self.__makeGrayFilter()
+        self.__makeExtraOptions()
+        self.noise_filter_custom.connect('toggled',
+                                         self.__toggleNoiseFilterIntensity)
+        self.gray_filter_custom.connect('toggled',
+                                        self.__toggleGrayFilterIntensity)
+        self.show_all()
+
+    def __makeNoiseFilter(self):
+
+        noise_filter_frame = PlainFrame(_('Noise Filter Intensity'))
+        noise_filter_box = gtk.VBox()
+        self.noise_filter_default = gtk.RadioButton(None, _('Default'))
+        self.noise_filter_custom = gtk.RadioButton(self.noise_filter_default,
+                                                   _('Custom'))
+        self.noise_filter_none = gtk.RadioButton(self.noise_filter_custom,
+                                                 _('None'))
+        adjustment = gtk.Adjustment(0, 1, 1000, 1, 100, 0)
+        self.noise_filter_intensity = gtk.SpinButton(adjustment, 1, 1)
+        self.noise_filter_intensity.set_sensitive(False)
+        noise_filter_custom_box = gtk.HBox()
+        noise_filter_custom_box.add(self.noise_filter_custom)
+        noise_filter_custom_box.add(self.noise_filter_intensity)
+        noise_filter_box.pack_start(self.noise_filter_default, False)
+        noise_filter_box.pack_start(noise_filter_custom_box, False)
+        noise_filter_box.pack_start(self.noise_filter_none, False)
+        noise_filter_frame.add(noise_filter_box)
+        self.pack_start(noise_filter_frame, False)
+
+    def __makeGrayFilter(self):
+
+        gray_filter_frame = PlainFrame(_('Gray Filter Size'))
+        gray_filter_box = gtk.VBox()
+        self.gray_filter_default = gtk.RadioButton(None, _('Default'))
+        self.gray_filter_custom = gtk.RadioButton(self.gray_filter_default,
+                                                  _('Custom'))
+        self.gray_filter_none = gtk.RadioButton(self.gray_filter_custom,
+                                                _('None'))
+        self.gray_filter_size = gtk.SpinButton(gtk.Adjustment(0, 1, 1000,
+                                                              1, 100, 0), 1, 1)
+        self.gray_filter_size.set_sensitive(False)
+        gray_filter_custom_box = gtk.HBox()
+        gray_filter_custom_box.add(self.gray_filter_custom)
+        gray_filter_custom_box.add(self.gray_filter_size)
+        gray_filter_box.pack_start(self.gray_filter_default, False)
+        gray_filter_box.pack_start(gray_filter_custom_box, False)
+        gray_filter_box.pack_start(self.gray_filter_none, False)
+        gray_filter_frame.add(gray_filter_box)
+        self.pack_start(gray_filter_frame, False)
+
+    def __makeBlackFilter(self):
+
+        black_filter_frame = PlainFrame(_('Black Filter'))
+        self.black_filter_usage = gtk.CheckButton(_('Use'))
+        self.black_filter_usage.set_active(True)
+        black_filter_frame.add(self.black_filter_usage)
+        self.pack_start(black_filter_frame, False)
+
+    def __makeExtraOptions(self):
+        options_frame = PlainFrame(_('Extra Options'))
+        self.extra_options = gtk.Entry()
+        self.extra_options.set_tooltip_text(_("Unpaper's command "
+                                              "line arguments"))
+        options_frame.add(self.extra_options)
+        self.pack_start(options_frame, False)
+
+    def __toggleNoiseFilterIntensity(self, widget):
+        has_noise_filter = self.noise_filter_custom.get_active()
+        self.noise_filter_intensity.set_sensitive(has_noise_filter)
+
+    def __toggleGrayFilterIntensity(self, widget):
+        has_gray_filter = self.gray_filter_custom.get_active()
+        self.gray_filter_size.set_sensitive(has_gray_filter)
+
+    def getUnpaperCommand(self):
+        command = '%s --layout single' % self.configuration_manager.unpaper
+        if not self.black_filter_usage.get_active():
+            command += ' --no-blackfilter'
+        if self.noise_filter_none.get_active():
+            command += ' --no-noisefilter'
+        elif self.noise_filter_custom.get_active():
+            command += ' --noisefilter-intensity %s' % \
+                       self.noise_filter_intensity.get_value()
+        if self.gray_filter_none.get_active():
+            command += ' --no-grayfilter'
+        elif self.gray_filter_custom.get_active():
+            command += ' --grayfilter-size %s' % \
+                       self.gray_filter_size.get_value()
+        extra_options_text = self.extra_options.get_text()
+        if extra_options_text.strip():
+            command += ' %s ' % extra_options_text
+        return command
 
 class SimpleDialog(gtk.MessageDialog):
 
