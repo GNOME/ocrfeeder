@@ -27,7 +27,7 @@ from pango import FontDescription, SCALE
 from studio.configuration import ProjectSaver, ProjectLoader, ConfigurationManager
 from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
     PAPER_SIZES
-from util.lib import debug, getNonExistingFileName
+from util.lib import debug, getNonExistingFileName, unpaperImage
 from util import constants
 from util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
@@ -391,13 +391,14 @@ class ImageReviewer_Controler:
         return image_reviewer
 
     def addImages(self, image_path_list):
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
         item_list = []
         item_list_length = len(image_path_list)
-        if not self.configuration_manager.deskew_images_after_addition:
+        if not self.configuration_manager.deskew_images_after_addition and \
+           not self.configuration_manager.unpaper_images_after_addition:
             for index in range(0, len(image_path_list)):
                 self.__addImage(image_path_list[index], index == 0)
             return
+        dialog = QueuedEventsProgressDialog(self.main_window.window)
         for index in range(0, item_list_length):
             image_path = image_path_list[index]
             item = AsyncItem(self.__imagePreProcessing,
@@ -418,7 +419,15 @@ class ImageReviewer_Controler:
         dialog.run()
 
     def __imagePreProcessing(self, image_path):
-        return self.__deskewImage(image_path)
+        processed_image = None
+        if self.configuration_manager.unpaper_images_after_addition and \
+           self.configuration_manager.has_unpaper:
+            processed_image = unpaperImage(self.configuration_manager,
+                                           image_path)
+        if self.configuration_manager.deskew_images_after_addition:
+            processed_image = self.__deskewImage(processed_image or image_path,
+                                                 processed_image)
+        return processed_image or image_path
 
     def __imagePreProcessingFinishedCb(self, dialog, finished,
                                        select_image, image_path, error):
@@ -432,18 +441,21 @@ class ImageReviewer_Controler:
             selector_widget.source_images_selector.addImage(image_path)
         reviewer = self.__createdImageReviewer(pixbuf, image)
         if select_image:
-            path = selector_widget.source_images_selector.list_store.get_path(iter)
+            path = \
+                selector_widget.source_images_selector.list_store.get_path(iter)
             selector_widget.select_path(path)
         return reviewer
 
-    def __deskewImage(self, image_path):
-        tmp_dir = self.configuration_manager.temporary_dir
-        deskewed_name = os.path.join(tmp_dir, image_path)
-        if os.path.exists(deskewed_name):
-            deskewed_name = getNonExistingFileName(deskewed_name)
+    def __deskewImage(self, image_path, target_image_path = None):
+        if not target_image_path:
+            tmp_dir = self.configuration_manager.temporary_dir
+            target_image_path = os.path.join(tmp_dir,
+                                             os.path.basename(image_path))
+            if os.path.exists(target_image_path):
+                target_image_path = getNonExistingFileName(target_image_path)
         image_deskewer = ImageDeskewer()
-        if image_deskewer.deskew(image_path, deskewed_name):
-            return deskewed_name
+        if image_deskewer.deskew(image_path, target_image_path):
+            return target_image_path
         return image_path
 
     def deskewCurrentImage(self, widget):
