@@ -300,6 +300,7 @@ class ConfigurationManager(object):
         self.user_configuration_folder = os.path.expanduser('~/.ocrfeeder')
         self.user_engines_folder = os.path.join(self.user_configuration_folder, 'engines')
         self.makeUserConfigurationFolder()
+        self.has_unpaper = self.getDefault(self.UNPAPER)
 
     def makeUserConfigurationFolder(self):
         if not os.path.exists(self.user_engines_folder):
