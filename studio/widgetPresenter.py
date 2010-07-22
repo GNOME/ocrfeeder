@@ -1178,6 +1178,8 @@ class PreferencesDialog(gtk.Dialog):
             self.__getBoundsAdjustmentSize()
         self.configuration_manager.deskew_images_after_addition = \
             self.deskew_images.get_active()
+        self.configuration_manager.unpaper_images_after_addition = \
+            self.unpaper_images.get_active()
         index = self.engines_combo.get_active()
         if index != -1:
             lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
@@ -1487,8 +1489,18 @@ class PreferencesDialog(gtk.Dialog):
                                               'before they are added'))
         self.deskew_images.set_active(
             self.configuration_manager.deskew_images_after_addition)
-        box = gtk.HBox()
+
+        box = gtk.VBox()
         box.pack_start(self.deskew_images, False)
+
+        if self.configuration_manager.has_unpaper:
+            self.unpaper_images = gtk.CheckButton(_('_Unpaper images'),
+                                                  use_underline = True)
+            self.unpaper_images.set_tooltip_text(_('Cleans the image using the '
+                                                   'Unpaper pre-processor'))
+            self.unpaper_images.set_active(
+                self.configuration_manager.unpaper_images_after_addition)
+            box.pack_start(self.unpaper_images, False)
         preprocessing_frame.add(box)
         return preprocessing_frame
 
