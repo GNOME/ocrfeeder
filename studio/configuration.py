@@ -261,6 +261,11 @@ class ConfigurationManager(object):
     BOXES_STROKE = 'boxes_stroke'
     WINDOW_SIZE = 'window_size'
     UNPAPER = 'unpaper'
+    UNPAPER_USE_BLACK_FILTER = 'unpaper_use_black_filter'
+    UNPAPER_NOISE_FILTER_INTENSITY = 'unpaper_noise_filter_intensity'
+    UNPAPER_GRAY_FILTER_SIZE = 'unpaper_gray_filter_size'
+    UNPAPER_EXTRA_OPTIONS = 'unpaper_extra_options'
+    UNPAPER_IMAGES_AFTER_ADDITION = 'unpaper_images_after_addition'
     FAVORITE_ENGINE = 'favorite_engine'
     IMPROVE_COLUMN_DETECTION = 'improve_column_detection'
     COLUMN_MIN_WIDTH = 'column_min_width'
@@ -275,13 +280,18 @@ class ConfigurationManager(object):
                 IMAGE_FILL: (0, 183, 0, 150),
                 WINDOW_SIZE: 'auto',
                 UNPAPER: '/usr/bin/unpaper',
+                UNPAPER_USE_BLACK_FILTER: True,
+                UNPAPER_NOISE_FILTER_INTENSITY: 'auto',
+                UNPAPER_GRAY_FILTER_SIZE: 'auto',
                 FAVORITE_ENGINE: 'ocrad',
                 IMPROVE_COLUMN_DETECTION: True,
                 COLUMN_MIN_WIDTH: 'auto',
                 CLEAN_TEXT: True,
                 ADJUST_BOXES_BOUNDS: True,
                 BOUNDS_ADJUSTMENT_SIZE: 'auto',
-                DESKEW_IMAGES_AFTER_ADDITION: True
+                DESKEW_IMAGES_AFTER_ADDITION: True,
+                UNPAPER_IMAGES_AFTER_ADDITION: True,
+                UNPAPER_EXTRA_OPTIONS: '',
                 }
 
     conf = dict(DEFAULTS)
@@ -382,6 +392,56 @@ class ConfigurationManager(object):
 
     def getUnpaper(self):
         return self.getConf(self.UNPAPER)
+
+    def setUseBlackFilter(self, use_black_filter):
+        self.setConf(self.UNPAPER_USE_BLACK_FILTER, use_black_filter)
+
+    def getUseBlackFilter(self):
+        use_black_filter = self.getConf(self.UNPAPER_USE_BLACK_FILTER)
+        return self.__convertBoolSetting(use_black_filter)
+
+    def setNoiseFilterIntensity(self, noise_filter_intensity):
+        self.setConf(self.UNPAPER_NOISE_FILTER_INTENSITY,
+                     noise_filter_intensity)
+
+    def getNoiseFilterIntensity(self):
+        noise_filter_intensity = \
+            self.getConf(self.UNPAPER_NOISE_FILTER_INTENSITY)
+        if noise_filter_intensity == 'auto' or noise_filter_intensity == 'none':
+            return noise_filter_intensity
+        try:
+            noise_filter_intensity_int = int(noise_filter_intensity)
+        except ValueError:
+            return 'auto'
+        return noise_filter_intensity_int
+
+    def setGrayFilterSize(self, gray_filter_size):
+        self.setConf(self.UNPAPER_GRAY_FILTER_SIZE,
+                     gray_filter_size)
+
+    def getGrayFilterSize(self):
+        gray_filter_size = self.getConf(self.UNPAPER_GRAY_FILTER_SIZE)
+        if gray_filter_size == 'auto' or gray_filter_size == 'none':
+            return gray_filter_size
+        try:
+            gray_filter_size_int = int(gray_filter_size)
+        except ValueError:
+            return 'auto'
+        return gray_filter_size_int
+
+    def setUnpaperExtraOptions(self, extra_options):
+        self.setConf(self.UNPAPER_EXTRA_OPTIONS, extra_options)
+
+    def getUnpaperExtraOptions(self):
+        return self.getConf(self.UNPAPER_EXTRA_OPTIONS)
+
+    def setUnpaperImagesAfterAddition(self, unpaper_images_after_addition):
+        self.setConf(self.UNPAPER_IMAGES_AFTER_ADDITION,
+                     unpaper_images_after_addition)
+
+    def getUnpaperImagesAfterAddition(self):
+        unpaper = self.getConf(self.UNPAPER_IMAGES_AFTER_ADDITION)
+        return self.__convertBoolSetting(unpaper)
 
     def setImproveColumnDetection(self, improve_column_detection):
         self.setConf(self.IMPROVE_COLUMN_DETECTION, improve_column_detection)
@@ -498,6 +558,21 @@ class ConfigurationManager(object):
                            setWindowSize)
     unpaper = property(getUnpaper,
                        setUnpaper)
+
+    unpaper_use_black_filter = property(getUseBlackFilter,
+                                        setUseBlackFilter)
+
+    unpaper_gray_filter_size = property(getGrayFilterSize,
+                                        setGrayFilterSize)
+
+    unpaper_noise_filter_intensity = property(getNoiseFilterIntensity,
+                                              setNoiseFilterIntensity)
+
+    unpaper_images_after_addition = property(getUnpaperImagesAfterAddition,
+                                             setUnpaperImagesAfterAddition)
+
+    unpaper_extra_options = property(getUnpaperExtraOptions,
+                                     setUnpaperExtraOptions)
 
     improve_column_detection = property(getImproveColumnDetection,
                                         setImproveColumnDetection)
