@@ -20,6 +20,7 @@
 
 import os
 import mimetypes
+import Image
 import tempfile
 import gtk
 import math
@@ -117,3 +118,38 @@ def getExecPath(exec_name):
         if os.path.isfile(exec_path) and os.access(exec_path, os.X_OK):
             real_exec_name = exec_path
     return real_exec_name
+
+def getUnpaperCommand(configuration_manager):
+    command = '%s --layout single --overwrite ' % configuration_manager.unpaper
+    if not configuration_manager.unpaper_use_black_filter:
+        command += ' --no-blackfilter'
+    if configuration_manager.unpaper_noise_filter_intensity == 'none':
+        command += ' --no-noisefilter'
+    elif configuration_manager.unpaper_noise_filter_intensity != 'auto':
+        command += ' --noisefilter-intensity %s' % \
+            configuration_manager.unpaper_noise_filter_intensity
+    if configuration_manager.unpaper_gray_filter_size == 'none':
+        command += ' --no-grayfilter'
+    elif configuration_manager.unpaper_gray_filter_size != 'auto':
+        command += ' --grayfilter-size %s' % \
+            configuration_manager.unpaper_gray_filter_size
+    command += ' %s ' % configuration_manager.unpaper_extra_options
+    return command
+
+def unpaperImage(configuration_manager, image_path):
+    tmp_dir = configuration_manager.temporary_dir
+    prefix = os.path.splitext(image_path)[0]
+    unpapered_name = os.path.join(tmp_dir, os.path.basename(prefix) + '.ppm')
+    if os.path.exists(unpapered_name):
+        unpapered_name = getNonExistingFileName(unpapered_name)
+    image_path = Image.open(image_path)
+    image_path.save(unpapered_name, format = 'PPM')
+    command = getUnpaperCommand(configuration_manager)
+    command += ' %s %s' % (unpapered_name, unpapered_name)
+    print command
+    try:
+        os.system(command)
+    except Exception, exception:
+        debug(exception)
+        return None
+    return unpapered_name
