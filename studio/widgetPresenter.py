@@ -1030,6 +1030,23 @@ class UnpaperPreferences(gtk.VBox):
         self.configuration_manager.unpaper_extra_options = \
             self.extra_options.get_text()
 
+class UnpaperPreferencesDialog(gtk.Dialog):
+
+    def __init__(self, parent):
+        super(UnpaperPreferencesDialog, self).__init__(_('Unpaper Preferences'),
+                                               parent,
+                                               gtk.DIALOG_MODAL |
+                                               gtk.DIALOG_DESTROY_WITH_PARENT,
+                                               (gtk.STOCK_CLOSE,
+                                                gtk.RESPONSE_CLOSE))
+        self.preferences = UnpaperPreferences()
+        self.vbox.add(self.preferences)
+        self.vbox.show_all()
+        self.set_size_request(300, -1)
+
+    def save(self):
+        self.preferences.save()
+
 class SimpleDialog(gtk.MessageDialog):
 
     def __init__(self, message, title = '', type = 'info'):
