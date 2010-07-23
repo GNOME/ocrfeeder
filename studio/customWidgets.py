@@ -231,8 +231,12 @@ class SelectableBoxesArea(goocanvas.Canvas):
             end_y = event.y
             if event.x > self.image.props.width:
                 end_x = self.image.props.width
+            elif event.x < 0:
+                end_x = 0
             if event.y > self.image.props.height:
                 end_y = self.image.props.height
+            elif event.y < 0:
+                end_y = 0
             end_point = (end_x, end_y)
             x, y, width, height = self.__getRectangleFromPoints(start_point, end_point)
             self.currently_created_area.props.x = x
