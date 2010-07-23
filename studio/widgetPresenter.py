@@ -1562,9 +1562,22 @@ class PreferencesDialog(gtk.Dialog):
                                                    'Unpaper pre-processor'))
             self.unpaper_images.set_active(
                 self.configuration_manager.unpaper_images_after_addition)
-            box.pack_start(self.unpaper_images, False)
+            unpaper_preferences_button = gtk.Button(_('Unpaper _Preferences'),
+                                                    use_underline = True)
+            unpaper_preferences_button.connect('clicked',
+                                       self.__unpaperPreferencesButtonClickedCb)
+            hbox = gtk.HBox()
+            hbox.pack_start(self.unpaper_images, False)
+            hbox.pack_start(unpaper_preferences_button, False, False, 6)
+            box.pack_start(hbox, False)
         preprocessing_frame.add(box)
         return preprocessing_frame
+
+    def __unpaperPreferencesButtonClickedCb(self, button):
+        unpaper_preferences = UnpaperPreferencesDialog(self)
+        unpaper_preferences.run()
+        unpaper_preferences.save()
+        unpaper_preferences.destroy()
 
 class SystemEnginesDialog(gtk.Dialog):
 
