@@ -1010,6 +1010,26 @@ class UnpaperPreferences(gtk.VBox):
             command += ' %s ' % extra_options_text
         return command
 
+    def save(self):
+        self.configuration_manager.unpaper_use_black_filter = \
+            self.black_filter_usage.get_active()
+        if self.noise_filter_none.get_active():
+            self.configuration_manager.unpaper_noise_filter_intensity = 'none'
+        elif self.noise_filter_custom.get_active():
+            self.configuration_manager.unpaper_noise_filter_intensity = \
+                self.noise_filter_intensity.get_value()
+        else:
+            self.configuration_manager.unpaper_noise_filter_intensity = 'auto'
+        if self.gray_filter_none.get_active():
+            self.configuration_manager.unpaper_gray_filter_size = 'none'
+        elif self.gray_filter_custom.get_active():
+            self.configuration_manager.unpaper_gray_filter_size = \
+                self.gray_filter_size.get_value()
+        else:
+            self.configuration_manager.unpaper_gray_filter_size = 'auto'
+        self.configuration_manager.unpaper_extra_options = \
+            self.extra_options.get_text()
+
 class SimpleDialog(gtk.MessageDialog):
 
     def __init__(self, message, title = '', type = 'info'):
