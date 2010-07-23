@@ -911,7 +911,18 @@ class UnpaperPreferences(gtk.VBox):
                                                  _('None'))
         adjustment = gtk.Adjustment(0, 1, 1000, 1, 100, 0)
         self.noise_filter_intensity = gtk.SpinButton(adjustment, 1, 1)
-        self.noise_filter_intensity.set_sensitive(False)
+        configured_noise_filter = \
+            self.configuration_manager.unpaper_noise_filter_intensity
+        if configured_noise_filter == 'auto':
+            self.noise_filter_default.set_active(True)
+        elif configured_noise_filter == 'none':
+            self.noise_filter_none.set_active(True)
+        else:
+            self.noise_filter_custom.set_active(True)
+            self.noise_filter_intensity.set_value(configured_noise_filter)
+        self.noise_filter_intensity.set_sensitive(
+            self.noise_filter_custom.get_active())
+
         noise_filter_custom_box = gtk.HBox()
         noise_filter_custom_box.add(self.noise_filter_custom)
         noise_filter_custom_box.add(self.noise_filter_intensity)
@@ -932,7 +943,18 @@ class UnpaperPreferences(gtk.VBox):
                                                 _('None'))
         self.gray_filter_size = gtk.SpinButton(gtk.Adjustment(0, 1, 1000,
                                                               1, 100, 0), 1, 1)
-        self.gray_filter_size.set_sensitive(False)
+        configured_noise_filter = \
+            self.configuration_manager.unpaper_gray_filter_size
+        if configured_noise_filter == 'auto':
+            self.gray_filter_default.set_active(True)
+        elif configured_noise_filter == 'none':
+            self.gray_filter_none.set_active(True)
+        else:
+            self.gray_filter_custom.set_active(True)
+            self.gray_filter_size.set_value(configured_noise_filter)
+        self.gray_filter_size.set_sensitive(
+            self.gray_filter_custom.get_active())
+
         gray_filter_custom_box = gtk.HBox()
         gray_filter_custom_box.add(self.gray_filter_custom)
         gray_filter_custom_box.add(self.gray_filter_size)
@@ -946,7 +968,8 @@ class UnpaperPreferences(gtk.VBox):
 
         black_filter_frame = PlainFrame(_('Black Filter'))
         self.black_filter_usage = gtk.CheckButton(_('Use'))
-        self.black_filter_usage.set_active(True)
+        self.black_filter_usage.set_active(
+            self.configuration_manager.unpaper_use_black_filter)
         black_filter_frame.add(self.black_filter_usage)
         self.pack_start(black_filter_frame, False)
 
@@ -955,6 +978,8 @@ class UnpaperPreferences(gtk.VBox):
         self.extra_options = gtk.Entry()
         self.extra_options.set_tooltip_text(_("Unpaper's command "
                                               "line arguments"))
+        self.extra_options.set_text(
+            self.configuration_manager.unpaper_extra_options)
         options_frame.add(self.extra_options)
         self.pack_start(options_frame, False)
 
