@@ -56,6 +56,8 @@ class MainWindow:
             <menuitem action="AddFolder"/>
             <separator/>
             <menuitem action="ImportPDF"/>
+            <separator/>
+            <menuitem action="ImportFromScanner"/>
             <menuitem action="Export"/>
             <separator/>
             <menuitem action="Quit"/>
@@ -189,6 +191,7 @@ class MainWindow:
                                    _("Deletes all the currently selected content areas"),
                                    menu_items['delete_selected_areas']),
                                   ('GenerateODT', None, _('_Generate ODT'), None, _("Export to ODT"), tool_items['export_to_odt']),
+                                  ('ImportFromScanner', None, _('Import Page From Scanner'),'<control><shift>c', _("Import From Scanner"), menu_items['import_from_scanner']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
         ui_manager.add_ui_from_string(self.menubar)
@@ -1839,3 +1842,47 @@ def getPopupMenu(menus_info):
         menu_item.connect("activate", callback)
         menu_item.show()
     return menu
+
+class ScannerChooserDialog(gtk.Dialog):
+
+    def __init__(self, parent, device, devices):
+        super(ScannerChooserDialog, self).__init__(parent = parent,
+                                                   title = "Devices selector",
+                                                   flags = gtk.DIALOG_MODAL,
+                                                   buttons = (gtk.STOCK_CANCEL,
+                                                           gtk.RESPONSE_REJECT,
+                                                           gtk.STOCK_OK,
+                                                           gtk.RESPONSE_ACCEPT))
+
+        self.device = device
+        self.connect("response", self.__response)
+        self.label = gtk.Label('Select one of the scanner devices found:')
+        self.vbox.pack_start(self.label, padding = 5)
+
+        self.selected_device = None
+        self.devices = [device[0] for device in devices]
+        combobox = gtk.combo_box_new_text()
+
+        for device in self.devices:
+            combobox.append_text(device)
+
+        combobox.set_active(0)
+        self.__set_active_text(combobox)
+
+        self.vbox.pack_start(combobox)
+
+        self.vbox.show_all()
+
+        combobox.connect('changed', self.__set_active_text)
+
+    def __set_active_text(self, combobox):
+        model = combobox.get_model()
+        active = combobox.get_active()
+        if active < 0:
+            return None
+        self.selected_device = model[active][0]
+
+    def __response(self, widget, response_id):
+        if response_id == gtk.RESPONSE_ACCEPT:
+            self.device.append(self.selected_device)
+        self.destroy()
