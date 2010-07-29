@@ -93,6 +93,7 @@ class Studio:
                                  'ocr_engines': self.ocrEngines, 'zoom_in': self.zoomIn, 'zoom_out': self.zoomOut,
                                  'zoom_fit': self.zoomFit, 'reset_zoom': self.resetZoom,
                                  'recognize_areas': self.source_images_controler.recognizeSelectedAreas,
+                                 'import_from_scanner': self.importFromScanner,
                                  'select_next_area': self.source_images_controler.selectNextArea,
                                  'select_previous_area': self.source_images_controler.selectPreviousArea,
                                  'select_all_areas': self.source_images_controler.selectAllAreas,
@@ -169,6 +170,58 @@ class Studio:
             for file_name in file_open_dialog.get_filenames():
                 self.__addImagesToReviewer([file_name])
         file_open_dialog.destroy()
+
+    def importFromScanner(self, widget):
+        dialog = widgetPresenter.QueuedEventsProgressDialog(\
+                                                        self.main_window.window)
+        item_obtain = AsyncItem(lib.obtainScanners,(),
+                                self.__obtainScannersFinishedCb,(dialog,))
+        info_obtain = (_('Obtaining Scanners'), _('Please wait...'))
+        dialog.setItemsList([(info_obtain, item_obtain)])
+        dialog.run()
+
+    def __obtainScannersFinishedCb(self, dialog, devices, error):
+        dialog.destroy()
+        device = []
+        if devices:
+            scanner_chooser_dialog = widgetPresenter.ScannerChooserDialog(\
+                                                    self.main_window.window,
+                                                    (device),
+                                                    devices)
+            gtk.gdk.threads_enter()
+            scanner_chooser_dialog.run()
+            gtk.gdk.threads_leave()
+            if device:
+                dialog_scan = widgetPresenter.QueuedEventsProgressDialog(\
+                    self.main_window.window)
+                item_scan = AsyncItem(lib.scan,((device.pop(),)),
+                                      self.__scanFinishedCb,(dialog_scan,))
+                info_scan = (_('Scanning'), _('Please wait...'))
+                dialog_scan.setItemsList([(info_scan, item_scan)])
+                dialog_scan.run()
+        else:
+            error = widgetPresenter.SimpleDialog(\
+                                             _("No scanner devices were found"),
+                                             _("Error"),
+                                             _("Check your sane config"))
+            gtk.gdk.threads_enter()
+            error.run()
+            gtk.gdk.threads_leave()
+
+    def __scanFinishedCb(self, dialog, image_path, error):
+        dialog.destroy()
+        if image_path:
+            gtk.gdk.threads_enter()
+            self.__addImagesToReviewer([image_path])
+            gtk.gdk.threads_leave()
+        else:
+            error = widgetPresenter.SimpleDialog(\
+                                             _("Error during scanning"),
+                                             _("Error"),
+                                             _("Check your sane config"))
+            gtk.gdk.threads_enter()
+            error.run()
+            gtk.gdk.threads_leave()
 
     def importPdf(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('PDF'), ['application/pdf'], [])])
