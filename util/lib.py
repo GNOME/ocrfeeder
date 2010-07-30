@@ -26,6 +26,8 @@ import gtk
 import math
 from util.constants import *
 from gnome import url_show
+import sane
+import tempfile
 
 def getIconOrLabel(icon_name, label_text, icon_size = gtk.ICON_SIZE_SMALL_TOOLBAR):
     icon = gtk.Image()
@@ -153,3 +155,20 @@ def unpaperImage(configuration_manager, image_path):
         debug(exception)
         return None
     return unpapered_name
+
+def obtainScanners():
+    sane.init()
+    try:
+        devices = sane.get_devices()
+        return devices
+    except (RuntimeError, sane._sane.error), msgerr:
+        return None
+
+def scan(device):
+    try:
+        result = sane.open(device).scan()
+        filename = tempfile.mktemp(suffix='.png')
+        result.save(filename, 'PNG')
+        return filename
+    except (RuntimeError, sane._sane.error), msgerr:
+        return None
