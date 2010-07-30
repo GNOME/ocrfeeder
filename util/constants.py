@@ -23,7 +23,7 @@ import os
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
-OCRFEEDER_STUDIO_VERSION = '0.6.6'
+OCRFEEDER_STUDIO_VERSION = '0.7'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2010 Joaquim Rocha\n' \

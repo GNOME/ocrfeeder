@@ -1,3 +1,43 @@
+Version 0.7
+============
+
+Improvements
+-------------
+
+* Add the deskew images action
+* Add Unpaper to optionally clean images before they are added
+* Drag-n-drop images to add them (thanks to Stefan Löffler)
+* Use the mouse-wheel to scroll the windows horizontally
+  (thanks to Stefan Löffler)
+* Add text cleaning option to remove fake newlines
+* Add action to automatically recognize only the selected content boxes
+* Add navigation through the content boxes
+* Improve the content boxes' size
+* Improve the a11y of the whole application
+* Fix mnemonic keys and shortcuts
+* Make the recognition of documents parallel (so it doesn't block the UI)
+
+Bug Fixes
+----------
+
+* Fix boxes creation (gb#24793)
+* Fix documents creation with duplicated boxes
+
+New and Updated Translations
+-----------------------------
+
+* Marek Cernocky [cs]
+
+* Mario Blättermann [de]
+* Matej Urbančič [sl]
+* Jorge González [es_ES]
+* Francisco Diéguez [gl]
+* Claude Paroz [fr]
+* Joe Hansen, Kenneth Nielsen [da]
+* Chao-Hsiung Liao [zh_HK, zh_TW]
+* Petr Kovar [cs]
+
+
 Version 0.6.6
 ==============
 
