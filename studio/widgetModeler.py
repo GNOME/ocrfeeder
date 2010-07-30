@@ -253,6 +253,12 @@ class ImageReviewer:
                 return True
         return False
 
+    def clear(self):
+        self.selectable_boxes_area.clearAreas()
+        self.editor_list = []
+        while len(self.boxeditor_notebook):
+            self.boxeditor_notebook.remove_page(0)
+
     def __getPageNumFromBox(self, box):
         editor = self.__getEditorFromBox(box)
         if editor:
@@ -540,7 +546,7 @@ class ImageReviewer_Controler:
 
     def __performRecognitionForReviewerFinishedCb(self, dialog, image_reviewer,
                                                   data_boxes, error):
-        image_reviewer.selectable_boxes_area.clearAreas()
+        image_reviewer.clear()
         image_reviewer.applyTextColors()
         for data_box in data_boxes:
             image_reviewer.addDataBox(data_box)
