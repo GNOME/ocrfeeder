@@ -209,7 +209,7 @@ class Studio:
             error = widgetPresenter.SimpleDialog(\
                                              _("No scanner devices were found"),
                                              _("Error"),
-                                             _("Check your sane config"))
+                                             'warning')
             gtk.gdk.threads_enter()
             error.run()
             gtk.gdk.threads_leave()
@@ -222,9 +222,9 @@ class Studio:
             gtk.gdk.threads_leave()
         else:
             error = widgetPresenter.SimpleDialog(\
-                                             _("Error during scanning"),
+                                             _("Error scanning page"),
                                              _("Error"),
-                                             _("Check your sane config"))
+                                             'warning')
             gtk.gdk.threads_enter()
             error.run()
             gtk.gdk.threads_leave()
