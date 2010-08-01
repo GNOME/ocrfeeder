@@ -1845,7 +1845,7 @@ def getPopupMenu(menus_info):
 
 class ScannerChooserDialog(gtk.Dialog):
 
-    def __init__(self, parent, device, devices):
+    def __init__(self, parent, devices):
         super(ScannerChooserDialog, self).__init__(parent = parent,
                                                    title = "Devices selector",
                                                    flags = gtk.DIALOG_MODAL,
@@ -1860,29 +1860,20 @@ class ScannerChooserDialog(gtk.Dialog):
         self.vbox.pack_start(self.label, padding = 5)
 
         self.selected_device = None
-        self.devices = [device[0] for device in devices]
-        combobox = gtk.combo_box_new_text()
+        self.__combo_box = gtk.combo_box_new_text()
 
         for device in self.devices:
-            combobox.append_text(device)
+            self.__combo_box.append_text(device[2])
 
-        combobox.set_active(0)
-        self.__set_active_text(combobox)
+        self.__combo_box.set_active(0)
 
-        self.vbox.pack_start(combobox)
+        self.vbox.pack_start(self.__combo_box)
 
         self.vbox.show_all()
 
-        combobox.connect('changed', self.__set_active_text)
 
-    def __set_active_text(self, combobox):
-        model = combobox.get_model()
-        active = combobox.get_active()
-        if active < 0:
+    def getSelectedDevice(self):
+        index = self.__combo_box.get_active()
+        if index < 0:
             return None
-        self.selected_device = model[active][0]
-
-    def __response(self, widget, response_id):
-        if response_id == gtk.RESPONSE_ACCEPT:
-            self.device.append(self.selected_device)
-        self.destroy()
+        return self.devices[index][0]
