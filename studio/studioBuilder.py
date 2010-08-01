@@ -176,7 +176,7 @@ class Studio:
                                                         self.main_window.window)
         item_obtain = AsyncItem(lib.obtainScanners,(),
                                 self.__obtainScannersFinishedCb,(dialog,))
-        info_obtain = (_('Obtaining Scanners'), _('Please wait...'))
+        info_obtain = (_('Obtaining scanners'), _('Please wait…'))
         dialog.setItemsList([(info_obtain, item_obtain)])
         dialog.run()
 
