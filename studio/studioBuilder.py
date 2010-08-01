@@ -182,15 +182,19 @@ class Studio:
 
     def __obtainScannersFinishedCb(self, dialog, devices, error):
         dialog.destroy()
-        device = []
+        device = None
         if devices:
             scanner_chooser_dialog = widgetPresenter.ScannerChooserDialog(\
                                                     self.main_window.window,
-                                                    (device),
                                                     devices)
             gtk.gdk.threads_enter()
-            scanner_chooser_dialog.run()
+            response = scanner_chooser_dialog.run()
             gtk.gdk.threads_leave()
+            scanner_chooser_dialog.destroy()
+            if response == gtk.RESPONSE_ACCEPT:
+                device = scanner_chooser_dialog.getSelectedDevice()
+            else:
+                return
             if device:
                 dialog_scan = widgetPresenter.QueuedEventsProgressDialog(\
                     self.main_window.window)
