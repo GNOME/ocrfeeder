@@ -183,7 +183,7 @@ class Studio:
     def __obtainScannersFinishedCb(self, dialog, devices, error):
         dialog.destroy()
         device = None
-        if devices:
+        if len(devices) > 1:
             scanner_chooser_dialog = widgetPresenter.ScannerChooserDialog(\
                                                     self.main_window.window,
                                                     devices)
@@ -195,14 +195,16 @@ class Studio:
                 device = scanner_chooser_dialog.getSelectedDevice()
             else:
                 return
-            if device:
-                dialog_scan = widgetPresenter.QueuedEventsProgressDialog(\
-                    self.main_window.window)
-                item_scan = AsyncItem(lib.scan,((device.pop(),)),
-                                      self.__scanFinishedCb,(dialog_scan,))
-                info_scan = (_('Scanning'), _('Please wait...'))
-                dialog_scan.setItemsList([(info_scan, item_scan)])
-                dialog_scan.run()
+        elif len(devices) == 1:
+            device = devices[0][0]
+        if device:
+            dialog_scan = widgetPresenter.QueuedEventsProgressDialog(\
+                self.main_window.window)
+            item_scan = AsyncItem(lib.scan,(device,),
+                                  self.__scanFinishedCb,(dialog_scan,))
+            info_scan = (_('Scanning'), _('Please wait…'))
+            dialog_scan.setItemsList([(info_scan, item_scan)])
+            dialog_scan.run()
         else:
             error = widgetPresenter.SimpleDialog(\
                                              _("No scanner devices were found"),
