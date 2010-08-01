@@ -191,7 +191,11 @@ class MainWindow:
                                    _("Deletes all the currently selected content areas"),
                                    menu_items['delete_selected_areas']),
                                   ('GenerateODT', None, _('_Generate ODT'), None, _("Export to ODT"), tool_items['export_to_odt']),
-                                  ('ImportFromScanner', None, _('Import Page From Scanner'),'<control><shift>c', _("Import From Scanner"), menu_items['import_from_scanner']),
+                                  ('ImportFromScanner', None,
+                                   _('Import Page From S_canner'),
+                                   '<control><shift>c',
+                                   _("Import From Scanner"),
+                                   menu_items['import_from_scanner']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
         ui_manager.add_ui_from_string(self.menubar)
