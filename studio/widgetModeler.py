@@ -304,6 +304,19 @@ class ImageReviewer:
                 editor.box_editor.setText('')
         self.updateMainWindow()
 
+    def copyTextToClipboard(self):
+        text = []
+        selected_boxes = self.selectable_boxes_area.getSelectedAreas()
+        if selected_boxes:
+            for box in selected_boxes:
+                text.append(self.__getEditorFromBox(box).box_editor.getText())
+        else:
+            current_box_editor = self.boxeditor_notebook.get_nth_page(\
+                                     self.boxeditor_notebook.get_current_page())
+            text.append(current_box_editor.getText())
+        text.reverse()
+        gtk.Clipboard().set_text("".join(lines for lines in text))
+
     def __getAllDataBoxes(self):
         boxes = []
         for editor in self.editor_list:
@@ -367,6 +380,10 @@ class ImageReviewer:
             self.selectable_boxes_area.zoom(min(image_height, image_width), False)
 
     def updateMainWindow(self):
+        if self.editor_list:
+            self.main_window.copy_to_clipboard_menu.set_sensitive(True)
+        else:
+            self.main_window.copy_to_clipboard_menu.set_sensitive(False)
         has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
         has_boxes = self.selectable_boxes_area.getAllAreas()
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
@@ -551,6 +568,10 @@ class ImageReviewer_Controler:
         for data_box in data_boxes:
             image_reviewer.addDataBox(data_box)
         dialog.cancel()
+
+    def copyRecognizedTextToClipboard(self, widget):
+        image_reviewer = self.__getCurrentReviewer()
+        image_reviewer.copyTextToClipboard()
 
     def setDataBox(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -909,6 +930,7 @@ class Editor:
                                          clean_text = clean_text)
         text = layout_analysis.readImage(image)
         self.box_editor.setText(text)
+        self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
         debug('Finished reading')
         text_size = layout_analysis.getTextSizeFromImage(image,
                                                self.reviewer.page.resolution[1])
