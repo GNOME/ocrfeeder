@@ -98,7 +98,8 @@ class Studio:
                                  'select_previous_area': self.source_images_controler.selectPreviousArea,
                                  'select_all_areas': self.source_images_controler.selectAllAreas,
                                  'delete_selected_areas': self.source_images_controler.deleteSelectedAreas,
-                                 'image_deskewer': self.source_images_controler.deskewCurrentImage
+                                 'image_deskewer': self.source_images_controler.deskewCurrentImage,
+                                 'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard
                                  }
 
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
