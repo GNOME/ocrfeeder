@@ -63,6 +63,8 @@ class MainWindow:
             <menuitem action="Quit"/>
         </menu>
         <menu action="Edit">
+            <menuitem action="CopyToClipboard"/>
+            <separator/>
             <menuitem action="EditPage"/>
             <menuitem action="DeletePage"/>
             <separator/>
@@ -196,6 +198,10 @@ class MainWindow:
                                    '<control><shift>c',
                                    _("Import From Scanner"),
                                    menu_items['import_from_scanner']),
+                                  ('CopyToClipboard', gtk.STOCK_COPY,
+                                   _('_Copy to Clipboard'),
+                                   None, _('Copy recognized text to clipboard'),
+                                   menu_items['copy_to_clipboard']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
         ui_manager.add_ui_from_string(self.menubar)
@@ -210,6 +216,8 @@ class MainWindow:
         detection_icon = gtk.image_new_from_file(DETECT_ICON)
         detection_icon.show()
         detection_button.set_icon_widget(detection_icon)
+        self.copy_to_clipboard_menu = ui_manager.get_widget('/MenuBar/Edit/CopyToClipboard')
+        self.copy_to_clipboard_menu.set_sensitive(False)
 
         if not lib.getExecPath(UNPAPER_COMMAND):
             unpaper_menu = ui_manager.get_widget('/MenuBar/Tools/Unpaper')
@@ -244,7 +252,7 @@ class MainWindow:
 
     def setHasContentBoxes(self, has_content_boxes=True):
         actions = ['SelectNextArea', 'SelectPreviousArea',
-                   'SelectAllAreas']
+                   'SelectAllAreas', 'CopyToClipboard']
         self.__setActionsSensitiveness(actions, has_content_boxes)
 
     def __setActionsSensitiveness(self, actions, set_sensitive):
