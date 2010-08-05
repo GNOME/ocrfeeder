@@ -260,7 +260,14 @@ class MainWindow:
                           for action in actions]:
             gtkaction.set_sensitive(set_sensitive)
 
-class BoxEditor(gtk.ScrolledWindow):
+class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
+    __gtype_name__ = 'BoxEditor'
+
+    __gsignals__ = {
+        'text_edited_by_user' : (gobject.SIGNAL_RUN_LAST,
+                     gobject.TYPE_NONE,
+                     (gobject.TYPE_BOOLEAN,))
+        }
 
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
@@ -495,6 +502,7 @@ class BoxEditor(gtk.ScrolledWindow):
         self.text_widget = gtk.TextView()
         self.text_widget.set_wrap_mode(gtk.WRAP_WORD)
         self.text_content = self.text_widget.get_buffer()
+        self.text_content.connect('changed', self.editedByUser)
         scrolled_text = gtk.ScrolledWindow()
         scrolled_text.add(self.text_widget)
         label = gtk.Label( _('_Text'))
@@ -629,6 +637,9 @@ class BoxEditor(gtk.ScrolledWindow):
 
     def getFontFace(self):
         return self.font_button.get_font_name()
+
+    def editedByUser(self, widget):
+        self.emit('text_edited_by_user', self.getText())
 
 class BoxEditor_DataBox_Controller:
 
