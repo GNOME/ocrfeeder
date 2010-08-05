@@ -381,9 +381,12 @@ class ImageReviewer:
 
     def updateMainWindow(self):
         if self.editor_list:
-            self.main_window.copy_to_clipboard_menu.set_sensitive(True)
-        else:
-            self.main_window.copy_to_clipboard_menu.set_sensitive(False)
+            current_box_editor = self.boxeditor_notebook.get_nth_page(\
+                                     self.boxeditor_notebook.get_current_page())
+            if current_box_editor.getText():
+                self.main_window.copy_to_clipboard_menu.set_sensitive(True)
+            else:
+                self.main_window.copy_to_clipboard_menu.set_sensitive(False)
         has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
         has_boxes = self.selectable_boxes_area.getAllAreas()
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
@@ -787,6 +790,7 @@ class Editor:
         self.pixbuf = pixbuf
         self.data_box = DataBox()
         self.box_editor = BoxEditor(pixbuf.get_width(), pixbuf.get_height())
+        self.box_editor.connect('text-edited-by-user', self.checkHasText)
         self.reviewer = reviewer
         self.ocr_engines = ocr_engines
         self.updateOcrEngines(self.ocr_engines)
@@ -984,3 +988,9 @@ class Editor:
         self.data_box.connect('changed_height', self.__updateEditorHeight)
         self.data_box.connect('changed_image', self.__updateEditorImage)
         self.data_box.connect('changed_type', self.__updateBoxColor)
+
+    def checkHasText(self, widget, text):
+        if not text:
+            self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(False)
+        else:
+            self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
