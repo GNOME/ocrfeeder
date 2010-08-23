@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-04 08:48+0200\n"
-"PO-Revision-Date: 2010-07-30 16:31+0200\n"
+"POT-Creation-Date: 2010-08-23 19:59+0200\n"
+"PO-Revision-Date: 2010-08-04 16:23+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,7 +42,7 @@ msgstr "Obrázky"
 
 #: ../studio/studioBuilder.py:179
 msgid "Obtaining scanners"
-msgstr ""
+msgstr "Zjišťují se skenery"
 
 #: ../studio/studioBuilder.py:179 ../studio/studioBuilder.py:205
 #: ../studio/studioBuilder.py:247 ../studio/widgetModeler.py:417
@@ -51,13 +52,12 @@ msgid "Please wait…"
 msgstr "Čekejte prosím…"
 
 #: ../studio/studioBuilder.py:205
-#, fuzzy
 msgid "Scanning"
-msgstr "Rozestupy"
+msgstr "Skenuje se"
 
 #: ../studio/studioBuilder.py:210
 msgid "No scanner devices were found"
-msgstr ""
+msgstr "Nenalezeno žádné skenovací zařízení"
 
 #: ../studio/studioBuilder.py:211 ../studio/studioBuilder.py:226
 #: ../studio/widgetPresenter.py:1100 ../studio/widgetPresenter.py:1111
@@ -66,7 +66,7 @@ msgstr "Chyba"
 
 #: ../studio/studioBuilder.py:225
 msgid "Error scanning page"
-msgstr ""
+msgstr "Chyba při skenování stránky"
 
 #: ../studio/studioBuilder.py:233
 msgid "PDF"
@@ -395,11 +395,11 @@ msgstr "_Generovat ODT"
 
 #: ../studio/widgetPresenter.py:195
 msgid "Import Page From S_canner"
-msgstr ""
+msgstr "Importovat stránku ze s_keneru"
 
 #: ../studio/widgetPresenter.py:197
 msgid "Import From Scanner"
-msgstr ""
+msgstr "Importovat ze skeneru"
 
 #: ../studio/widgetPresenter.py:259
 msgid "Area editor"
