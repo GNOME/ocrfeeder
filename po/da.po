@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-16 18:01+0200\n"
-"PO-Revision-Date: 2010-03-12 09:01I+0200\n"
+"POT-Creation-Date: 2010-08-23 21:42+0200\n"
+"PO-Revision-Date: 2010-08-01 19:48+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../feeder/imageManipulation.py:36
+#: ../feeder/imageManipulation.py:38
 #, python-format
 msgid ""
 "A problem occurred while trying to open the image:\n"
@@ -36,64 +36,123 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "Den komplette OCR-pakke."
 
-#: ../studio/studioBuilder.py:120
+#: ../studio/studioBuilder.py:167
 msgid "Images"
 msgstr "Billeder"
 
-#: ../studio/studioBuilder.py:128
+#: ../studio/studioBuilder.py:179
+msgid "Obtaining scanners"
+msgstr ""
+
+#: ../studio/studioBuilder.py:179 ../studio/studioBuilder.py:205
+#: ../studio/studioBuilder.py:247 ../studio/widgetModeler.py:417
+#: ../studio/widgetModeler.py:422 ../studio/widgetModeler.py:474
+#: ../studio/widgetModeler.py:509
+msgid "Please wait…"
+msgstr "Vent venligst…"
+
+# eller afstand?
+#: ../studio/studioBuilder.py:205
+#, fuzzy
+msgid "Scanning"
+msgstr "Mellemrum"
+
+#: ../studio/studioBuilder.py:210
+msgid "No scanner devices were found"
+msgstr ""
+
+#: ../studio/studioBuilder.py:211 ../studio/studioBuilder.py:226
+#: ../studio/widgetPresenter.py:1100 ../studio/widgetPresenter.py:1111
+msgid "Error"
+msgstr "Fejl"
+
+#: ../studio/studioBuilder.py:225
+msgid "Error scanning page"
+msgstr ""
+
+#: ../studio/studioBuilder.py:233
 msgid "PDF"
 msgstr "PDF"
 
-#: ../studio/studioBuilder.py:151
+#: ../studio/studioBuilder.py:247
+msgid "Loading PDF"
+msgstr "Indlæser PDF"
+
+#: ../studio/studioBuilder.py:270
 msgid "Export pages"
 msgstr "Eksporter sider"
 
-#: ../studio/studioBuilder.py:165
+#: ../studio/studioBuilder.py:284
 msgid "Are you sure you want to delete the current image?"
 msgstr "Er du sikker på, at du ønsker at slette det aktuelle billede?"
 
-#: ../studio/studioBuilder.py:254
+#: ../studio/studioBuilder.py:372
 msgid "The project hasn't been saved."
 msgstr "Projektet er ikke blevet gemt."
 
-#: ../studio/studioBuilder.py:255
+#: ../studio/studioBuilder.py:373
 msgid "Do you want to save it before closing?"
 msgstr "Ønsker du at gemme det før lukning?"
 
-#: ../studio/studioBuilder.py:256
+#: ../studio/studioBuilder.py:374
 msgid "Close anyway"
 msgstr "Luk alligevel"
 
-#: ../studio/widgetModeler.py:136 ../studio/widgetPresenter.py:1136
+#: ../studio/widgetModeler.py:126 ../studio/widgetPresenter.py:125
+msgid "Pages"
+msgstr "Sider"
+
+#: ../studio/widgetModeler.py:140 ../studio/widgetPresenter.py:1657
 msgid "Delete"
 msgstr "Slet"
 
-#: ../studio/widgetModeler.py:396 ../studio/widgetPresenter.py:598
-#: ../studio/widgetPresenter.py:605
+#: ../studio/widgetModeler.py:191
+msgid "Selectable areas"
+msgstr "Valgbare områder"
+
+#: ../studio/widgetModeler.py:417
+msgid "Preparing image"
+msgstr ""
+
+#: ../studio/widgetModeler.py:419
+#, python-format
+msgid "Preparing image %(current_index)s/%(total)s"
+msgstr ""
+
+#: ../studio/widgetModeler.py:474
+msgid "Deskewing image"
+msgstr ""
+
+#: ../studio/widgetModeler.py:491 ../studio/widgetPresenter.py:722
+#: ../studio/widgetPresenter.py:729
 msgid "Page size"
 msgstr "Sidestørrelse"
 
-#: ../studio/widgetModeler.py:397
+#: ../studio/widgetModeler.py:492
 msgid "Resolution"
 msgstr "Opløsning"
 
-#: ../studio/widgetModeler.py:400
+#: ../studio/widgetModeler.py:496
 msgid "Zoom"
 msgstr "Zoom"
 
-#: ../studio/widgetModeler.py:456
+#: ../studio/widgetModeler.py:509
+msgid "Recognizing Document"
+msgstr "Genkender dokument"
+
+#: ../studio/widgetModeler.py:563
 msgid "Export to HTML"
 msgstr "Eksporter til HTML"
 
-#: ../studio/widgetModeler.py:470 ../studio/widgetPresenter.py:163
+#: ../studio/widgetModeler.py:577 ../studio/widgetPresenter.py:193
 msgid "Export to ODT"
 msgstr "Eksporter til ODT"
 
-#: ../studio/widgetModeler.py:491
+#: ../studio/widgetModeler.py:598
 msgid "OCRFeeder Projects"
 msgstr "Projekter for ORCFeeder"
 
-#: ../studio/widgetModeler.py:547
+#: ../studio/widgetModeler.py:656
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -105,580 +164,807 @@ msgstr ""
 "\n"
 "Filen findes i \"%(dir)s\". Erstatning af den vil overskrive dens indhold."
 
-#: ../studio/widgetModeler.py:554
+#: ../studio/widgetModeler.py:663
 msgid "Replace"
 msgstr "Erstat"
 
-#: ../studio/widgetPresenter.py:135
+#: ../studio/widgetPresenter.py:146
 msgid "_File"
 msgstr "_Fil"
 
-#: ../studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:147
 msgid "_Quit"
 msgstr "_Afslut"
 
-#: ../studio/widgetPresenter.py:136
+#: ../studio/widgetPresenter.py:147
 msgid "Exit the program"
 msgstr "Afslut programmet"
 
-#: ../studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:148
 msgid "_Open"
 msgstr "_Åbn"
 
-#: ../studio/widgetPresenter.py:137
+#: ../studio/widgetPresenter.py:148
 msgid "Open project"
 msgstr "Åbn projekt"
 
-#: ../studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:149
 msgid "_Save"
 msgstr "_Gem"
 
-#: ../studio/widgetPresenter.py:138
+#: ../studio/widgetPresenter.py:149
 msgid "Save project"
 msgstr "Gem projekt"
 
-#: ../studio/widgetPresenter.py:139
-#, fuzzy
+#: ../studio/widgetPresenter.py:150
 msgid "_Save As…"
-msgstr "_Gem som"
+msgstr "_Gem som…"
 
-#: ../studio/widgetPresenter.py:139
+#: ../studio/widgetPresenter.py:150
 msgid "Save project with a chosen name"
 msgstr "Gem projekt med et valgt navn"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:151
 msgid "_Add Image"
 msgstr "_Tilføj billede"
 
-#: ../studio/widgetPresenter.py:140
+#: ../studio/widgetPresenter.py:151
 msgid "Add another image"
 msgstr "Tilføj endnu et billede"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:152
 msgid "Add _Folder"
 msgstr "Tilføj _mappe"
 
-#: ../studio/widgetPresenter.py:141
+#: ../studio/widgetPresenter.py:152
 msgid "Add all images in a folder"
 msgstr "Tilføj alle billeder i en mappe"
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:153
 msgid "Append Project"
 msgstr "Vedhæft projket"
 
-#: ../studio/widgetPresenter.py:142
+#: ../studio/widgetPresenter.py:153
 msgid "Load a project and append it to the current one"
 msgstr "Indlæs et projket og vedhæft det til det aktuelle"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:154
 msgid "_Import PDF"
 msgstr "_Importer PDF"
 
-#: ../studio/widgetPresenter.py:143
+#: ../studio/widgetPresenter.py:154
 msgid "Import PDF"
 msgstr "Importer PDF"
 
-#: ../studio/widgetPresenter.py:144
-#, fuzzy
+#: ../studio/widgetPresenter.py:155
 msgid "_Export…"
-msgstr "_Eksporter..."
+msgstr "_Eksporter…"
 
-#: ../studio/widgetPresenter.py:144
+#: ../studio/widgetPresenter.py:155
 msgid "Export to a chosen format"
 msgstr "Eksporter til et valgt format"
 
-#: ../studio/widgetPresenter.py:145
+#: ../studio/widgetPresenter.py:156
 msgid "_Edit"
 msgstr "_Rediger"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:157
 msgid "_Edit Page"
 msgstr "_Rediger side"
 
-#: ../studio/widgetPresenter.py:146
+#: ../studio/widgetPresenter.py:157
 msgid "Edit page settings"
 msgstr "Rediger sideopsætning"
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:158
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: ../studio/widgetPresenter.py:147
+#: ../studio/widgetPresenter.py:158
 msgid "Configure the application"
 msgstr "Konfigurer programmet"
 
-#: ../studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:159
 msgid "_Delete Page"
 msgstr "_Slet side"
 
-#: ../studio/widgetPresenter.py:148
+#: ../studio/widgetPresenter.py:159
 msgid "Delete current page"
 msgstr "Slet aktuel side"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:160
 msgid "_Clear Project"
 msgstr "_Ryd projekt"
 
-#: ../studio/widgetPresenter.py:149
+#: ../studio/widgetPresenter.py:160
 msgid "Delete all images"
 msgstr "Slet alle billeder"
 
-#: ../studio/widgetPresenter.py:150
+#: ../studio/widgetPresenter.py:161
 msgid "_View"
 msgstr "_Vis"
 
-#: ../studio/widgetPresenter.py:151
+#: ../studio/widgetPresenter.py:162
 msgid "Zoom In"
 msgstr "Zoom ind"
 
-#: ../studio/widgetPresenter.py:152
+#: ../studio/widgetPresenter.py:163
 msgid "Zoom Out"
 msgstr "Zoom ud"
 
-#: ../studio/widgetPresenter.py:153
+#: ../studio/widgetPresenter.py:164
 msgid "Best Fit"
 msgstr "Bedste tilpasning"
 
-#: ../studio/widgetPresenter.py:154
+#: ../studio/widgetPresenter.py:165
 msgid "Normal Size"
 msgstr "Normal størrelse"
 
-#: ../studio/widgetPresenter.py:155
+#: ../studio/widgetPresenter.py:166
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../studio/widgetPresenter.py:156
+#: ../studio/widgetPresenter.py:167 ../studio/widgetPresenter.py:1325
 msgid "_Tools"
 msgstr "_Værktøjer"
 
-#: ../studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:168
 msgid "_OCR Engines"
 msgstr "_OCR-motorer"
 
-#: ../studio/widgetPresenter.py:157
+#: ../studio/widgetPresenter.py:168
 msgid "Manage OCR engines"
 msgstr "Håndter OCR-motorer"
 
 # Det er et program: unpaper is a post-processing tool for scanned sheets of paper, especially for
-# book pages that have been scanned from previously created photocopies. 
-#: ../studio/widgetPresenter.py:158
+# book pages that have been scanned from previously created photocopies.
+#: ../studio/widgetPresenter.py:169
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: ../studio/widgetPresenter.py:158
+#: ../studio/widgetPresenter.py:169
 msgid "Process image with unpaper"
 msgstr "Behandl billede med unpaper"
 
-#: ../studio/widgetPresenter.py:159
+#: ../studio/widgetPresenter.py:170
+msgid "Image Des_kewer"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:171
+msgid "Trie to straighten the image"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:173
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:174
 msgid "_About"
 msgstr "_Om"
 
-#: ../studio/widgetPresenter.py:160
+#: ../studio/widgetPresenter.py:174
 msgid "About this application"
 msgstr "Om dette program"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:175
 msgid "_Recognize Document"
 msgstr "_Genkend dokument"
 
-#: ../studio/widgetPresenter.py:161
+#: ../studio/widgetPresenter.py:175
 msgid "Automatic Detection and Recognition"
 msgstr "Automatisk opdagelse og genkendelse"
 
-#: ../studio/widgetPresenter.py:162
+#: ../studio/widgetPresenter.py:176
 msgid "Recognize Selected _Areas"
-msgstr ""
+msgstr "Genkend valgte _områder"
 
-#: ../studio/widgetPresenter.py:162
+#: ../studio/widgetPresenter.py:176
 msgid "Recognize Selected Areas"
-msgstr ""
+msgstr "Genkend valgte områder"
 
-#: ../studio/widgetPresenter.py:163
+#: ../studio/widgetPresenter.py:178
+msgid "Select All _Areas"
+msgstr "Vælg alle _områder"
+
+#: ../studio/widgetPresenter.py:179
+msgid "Select all content areas"
+msgstr "Vælg alle indholdsområder"
+
+#: ../studio/widgetPresenter.py:182
+msgid "Select _Previous Area"
+msgstr "Vælg _forrige område"
+
+#: ../studio/widgetPresenter.py:183
+msgid "Select the previous area from the content areas"
+msgstr "Vælg det forrige område fra indholdsområderne"
+
+#: ../studio/widgetPresenter.py:186
+msgid "Select _Next Area"
+msgstr "Vælg _næste område"
+
+#: ../studio/widgetPresenter.py:187
+msgid "Select the next area from the content areas"
+msgstr "Vælg det næste område fra indholdsområderne"
+
+#: ../studio/widgetPresenter.py:190
+msgid "Delete Selected Areas"
+msgstr "Slet valgte områder"
+
+#: ../studio/widgetPresenter.py:191
+msgid "Deletes all the currently selected content areas"
+msgstr "Slet alle de aktuelt valgte indholdsområder"
+
+#: ../studio/widgetPresenter.py:193
 msgid "_Generate ODT"
 msgstr "_Generer ODT"
 
-#: ../studio/widgetPresenter.py:229 ../studio/widgetPresenter.py:400
-msgid "Text"
-msgstr "Tekst"
+#: ../studio/widgetPresenter.py:195
+msgid "Import Page From S_canner"
+msgstr ""
 
-#: ../studio/widgetPresenter.py:230
-msgid "Image"
-msgstr "Billede"
+#: ../studio/widgetPresenter.py:197
+msgid "Import From Scanner"
+msgstr ""
 
-#: ../studio/widgetPresenter.py:231
+#: ../studio/widgetPresenter.py:259
+msgid "Area editor"
+msgstr "Områderedigering"
+
+#: ../studio/widgetPresenter.py:267
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr "Angiver indholdsområdets øvre venstre hjørnes x-koordinat"
+
+#: ../studio/widgetPresenter.py:271
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr "Angiver indholdsområdets øvre venstre hjørnes y-koordinat"
+
+#: ../studio/widgetPresenter.py:275
+msgid "Sets the content area's width"
+msgstr "Angiver indholdsområdets bredde"
+
+#: ../studio/widgetPresenter.py:278
+msgid "Sets the content area's height"
+msgstr "Angiver indholdsområdets højde"
+
+#: ../studio/widgetPresenter.py:281 ../studio/widgetPresenter.py:492
+msgid "_Text"
+msgstr "_Tekst"
+
+# Angiver dette indholdsområde som teksttypen
+#: ../studio/widgetPresenter.py:282
+msgid "Set this content area to be the text type"
+msgstr "Angiver typen af dette indholdsområde som tekst"
+
+#: ../studio/widgetPresenter.py:283
+msgid "_Image"
+msgstr "_Billede"
+
+# ngiver dette indholdsområde som billedtypen
+#: ../studio/widgetPresenter.py:284
+msgid "Set this content area to be the image type"
+msgstr "Angiver typen af dette indholdsområde som billede"
+
+#: ../studio/widgetPresenter.py:285
 msgid "Type"
 msgstr "Type"
 
-#: ../studio/widgetPresenter.py:241
+#: ../studio/widgetPresenter.py:295
 msgid "Clip"
 msgstr "Klip"
 
-#: ../studio/widgetPresenter.py:245
+#: ../studio/widgetPresenter.py:379
 msgid "Bounds"
 msgstr "Grænser"
 
-#: ../studio/widgetPresenter.py:248
-msgid "X"
-msgstr "X"
+#: ../studio/widgetPresenter.py:384
+msgid "_X:"
+msgstr "_X:"
 
-#: ../studio/widgetPresenter.py:250
-msgid "Y"
-msgstr "Y"
+#: ../studio/widgetPresenter.py:393
+msgid "_Y:"
+msgstr "_Y:"
 
-#: ../studio/widgetPresenter.py:253 ../studio/widgetPresenter.py:619
-msgid "Width"
-msgstr "Bredde"
+#: ../studio/widgetPresenter.py:405 ../studio/widgetPresenter.py:743
+msgid "_Width:"
+msgstr "_Bredde:"
 
-#: ../studio/widgetPresenter.py:255 ../studio/widgetPresenter.py:621
-msgid "Height"
-msgstr "Højde"
+#: ../studio/widgetPresenter.py:414
+msgid "Hei_ght:"
+msgstr "_Højde:"
 
-#: ../studio/widgetPresenter.py:351
+#: ../studio/widgetPresenter.py:437
 msgid "Left"
 msgstr "Venstre"
 
-#: ../studio/widgetPresenter.py:355
-msgid "Left aligned"
-msgstr "Venstrejusteret"
+#: ../studio/widgetPresenter.py:441
+msgid "Set text to be left aligned"
+msgstr "Angiv tekst som venstrejusteret"
 
-#: ../studio/widgetPresenter.py:357
+#: ../studio/widgetPresenter.py:443
 msgid "Center"
 msgstr "Centrum"
 
-#: ../studio/widgetPresenter.py:362
-msgid "Centered"
-msgstr "Centreret"
+#: ../studio/widgetPresenter.py:448
+msgid "Set text to be centered"
+msgstr "Angiv tekst som centreret"
 
-#: ../studio/widgetPresenter.py:364
+#: ../studio/widgetPresenter.py:450
 msgid "Right"
 msgstr "Højre"
 
-#: ../studio/widgetPresenter.py:369
-msgid "Right aligned"
-msgstr "Højrejusteret"
+#: ../studio/widgetPresenter.py:455
+msgid "Set text to be right aligned"
+msgstr "Angiv tekst som højrejusteret"
 
-#: ../studio/widgetPresenter.py:371
+#: ../studio/widgetPresenter.py:457
 msgid "Fill"
 msgstr "Fyld"
 
-#: ../studio/widgetPresenter.py:376
-msgid "Filled"
-msgstr "Fyldt"
+#: ../studio/widgetPresenter.py:462
+msgid "Set text to be fill its area"
+msgstr "Få tekst til at udfylde sit område"
 
-#: ../studio/widgetPresenter.py:382
-msgid "OCR"
-msgstr "OCR"
+#: ../studio/widgetPresenter.py:468
+msgid "OC_R"
+msgstr "_OCR"
+
+#: ../studio/widgetPresenter.py:469
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr "Udfør OCR på dette indholdsområde med brug af valgt OCR-motor."
+
+#: ../studio/widgetPresenter.py:475
+msgid "OCR engine to recognize this content area"
+msgstr "OCR-motor som skal genkende dette indholdsområde"
 
 #. Text Properties
-#: ../studio/widgetPresenter.py:392
+#: ../studio/widgetPresenter.py:483
 msgid "Text Properties"
 msgstr "Tekstegenskaber"
 
-#: ../studio/widgetPresenter.py:406
+#: ../studio/widgetPresenter.py:500
 msgid "Font"
 msgstr "Skrifttype"
 
-#: ../studio/widgetPresenter.py:413
+#: ../studio/widgetPresenter.py:507
 msgid "Align"
 msgstr "Juster"
 
 # eller afstand?
-#: ../studio/widgetPresenter.py:417
+#: ../studio/widgetPresenter.py:511
 msgid "Spacing"
 msgstr "Mellemrum"
 
-#: ../studio/widgetPresenter.py:421
-msgid "Line"
-msgstr "Linje"
+#: ../studio/widgetPresenter.py:513
+msgid "Set the text's letter spacing"
+msgstr "Angiv tekstens bogstavsmellemrum"
+
+#: ../studio/widgetPresenter.py:515
+msgid "Set the text's line spacing"
+msgstr "Angiv tekstens linjemellemrum"
+
+#: ../studio/widgetPresenter.py:520
+msgid "_Line:"
+msgstr "_Linje:"
 
 # bogstav eller formatet?
-#: ../studio/widgetPresenter.py:423
-msgid "Letter"
-msgstr "Bogstav"
+#: ../studio/widgetPresenter.py:531
+msgid "L_etter:"
+msgstr "_Bogstav:"
 
-#: ../studio/widgetPresenter.py:428
-msgid "Style"
-msgstr "Stil"
+#: ../studio/widgetPresenter.py:543
+msgid "Sty_le"
+msgstr "_Stil"
 
-#: ../studio/widgetPresenter.py:433
+#: ../studio/widgetPresenter.py:550
 msgid "Angle"
 msgstr "Vinkel"
 
-#: ../studio/widgetPresenter.py:444 ../studio/widgetPresenter.py:1138
+#: ../studio/widgetPresenter.py:554
+msgid "OCR engine to recogni_ze this area:"
+msgstr "OCR-motor som skal _genkende dette område:"
+
+#: ../studio/widgetPresenter.py:568
 msgid "Detect"
 msgstr "Opdag"
 
-#: ../studio/widgetPresenter.py:446
-#, fuzzy
+#: ../studio/widgetPresenter.py:570
 msgid "Angle:"
-msgstr "Vinkel"
+msgstr "Vinkel:"
 
-#: ../studio/widgetPresenter.py:528
+#: ../studio/widgetPresenter.py:652
 msgid "Save File"
 msgstr "Gem fil"
 
-#: ../studio/widgetPresenter.py:531
+#: ../studio/widgetPresenter.py:655
 msgid "Open File"
 msgstr "Åbn fil"
 
-#: ../studio/widgetPresenter.py:535
+#: ../studio/widgetPresenter.py:659
 msgid "Open Folder"
 msgstr "Åbn mappe"
 
 # evt. at eksportere
-#: ../studio/widgetPresenter.py:562
+#: ../studio/widgetPresenter.py:686
 msgid "Pages to export"
 msgstr "Sider til eksport"
 
-#: ../studio/widgetPresenter.py:564 ../studio/widgetPresenter.py:630
+#: ../studio/widgetPresenter.py:688
 msgid "All"
 msgstr "Alle"
 
-#: ../studio/widgetPresenter.py:565 ../studio/widgetPresenter.py:629
+#: ../studio/widgetPresenter.py:689
 msgid "Current"
 msgstr "Aktuel"
 
-#: ../studio/widgetPresenter.py:581
+#: ../studio/widgetPresenter.py:705
 msgid "Choose the format"
 msgstr "Vælg formatet"
 
-#: ../studio/widgetPresenter.py:610
-#, fuzzy
+#: ../studio/widgetPresenter.py:734
 msgid "Custom…"
-msgstr "Tilpasset"
+msgstr "Tilpasset…"
 
-#: ../studio/widgetPresenter.py:627
+#: ../studio/widgetPresenter.py:748
+msgid "_Height:"
+msgstr "_Højde:"
+
+#: ../studio/widgetPresenter.py:757
 msgid "Affected pages"
 msgstr "Påvirkede sider"
 
-#: ../studio/widgetPresenter.py:688
+# måske aktuelT? ('indholdsområde' el. lign.)
+#: ../studio/widgetPresenter.py:759
+msgid "C_urrent"
+msgstr "_Aktuelt"
+
+#: ../studio/widgetPresenter.py:762
+msgid "_All"
+msgstr "_Alle"
+
+#: ../studio/widgetPresenter.py:822
 msgid "Unpaper Image Processor"
 msgstr "Unpaper - billedbehandling"
 
-#: ../studio/widgetPresenter.py:709
-msgid "Noise Filter Intensity"
-msgstr "Intensitet på støjfilter"
-
-#: ../studio/widgetPresenter.py:711 ../studio/widgetPresenter.py:729
-msgid "Default"
-msgstr "Standard"
-
-#: ../studio/widgetPresenter.py:712 ../studio/widgetPresenter.py:730
-#: ../studio/widgetPresenter.py:1036
-msgid "Custom"
-msgstr "Tilpasset"
-
-#: ../studio/widgetPresenter.py:713 ../studio/widgetPresenter.py:731
-msgid "None"
-msgstr "Ingen"
-
-#: ../studio/widgetPresenter.py:727
-msgid "Gray Filter Size"
-msgstr "Størrelse på gråfilter"
-
-#: ../studio/widgetPresenter.py:745
-msgid "Black Filter"
-msgstr "Sort filer"
-
-#: ../studio/widgetPresenter.py:746
-msgid "Use"
-msgstr "Brug"
-
-#: ../studio/widgetPresenter.py:752 ../studio/widgetPresenter.py:758
+#: ../studio/widgetPresenter.py:836
 msgid "Preview"
 msgstr "Forhåndsvisning"
 
-#: ../studio/widgetPresenter.py:768
-msgid "Extra Options"
-msgstr "Ekstra indstillinger"
+#: ../studio/widgetPresenter.py:842
+msgid "_Preview"
+msgstr "_Forhåndsvisning"
 
 # evt. Kører
-#: ../studio/widgetPresenter.py:802
+#: ../studio/widgetPresenter.py:868
 msgid "Performing Unpaper"
 msgstr "Udfører Unpaper"
 
-#: ../studio/widgetPresenter.py:802
-#, fuzzy
+#: ../studio/widgetPresenter.py:868
 msgid "Performing unpaper. Please wait…"
-msgstr "Udfører unpaper. Vent venligst..."
+msgstr "Udfører unpaper. Vent venligst…"
 
-#: ../studio/widgetPresenter.py:872 ../studio/widgetPresenter.py:883
+#: ../studio/widgetPresenter.py:912
+msgid "Noise Filter Intensity"
+msgstr "Intensitet på støjfilter"
+
+#: ../studio/widgetPresenter.py:914 ../studio/widgetPresenter.py:946
+msgid "Default"
+msgstr "Standard"
+
+#: ../studio/widgetPresenter.py:916 ../studio/widgetPresenter.py:948
+msgid "Custom"
+msgstr "Tilpasset"
+
+#: ../studio/widgetPresenter.py:918 ../studio/widgetPresenter.py:950
+msgid "None"
+msgstr "Ingen"
+
+#: ../studio/widgetPresenter.py:944
+msgid "Gray Filter Size"
+msgstr "Størrelse på gråfilter"
+
+#: ../studio/widgetPresenter.py:976
+msgid "Black Filter"
+msgstr "Sort filer"
+
+#: ../studio/widgetPresenter.py:977
+msgid "Use"
+msgstr "Brug"
+
+#: ../studio/widgetPresenter.py:984
+msgid "Extra Options"
+msgstr "Ekstra indstillinger"
+
+#: ../studio/widgetPresenter.py:986
+msgid "Unpaper's command line arguments"
+msgstr "Unpapers kommandolinjeargumenter"
+
+#: ../studio/widgetPresenter.py:1043
 #, fuzzy
+msgid "Unpaper Preferences"
+msgstr "Indstillinger"
+
+#: ../studio/widgetPresenter.py:1100 ../studio/widgetPresenter.py:1111
 msgid "An error occurred!"
 msgstr "Der opstod en fejl!"
 
-#: ../studio/widgetPresenter.py:872 ../studio/widgetPresenter.py:883
-msgid "Error"
-msgstr "Fejl"
+#: ../studio/widgetPresenter.py:1182
+msgid "Cancelled"
+msgstr "Afbrudt"
 
-#: ../studio/widgetPresenter.py:892
+#: ../studio/widgetPresenter.py:1196
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: ../studio/widgetPresenter.py:941
-msgid "General"
-msgstr "Generelt"
+#: ../studio/widgetPresenter.py:1261
+msgid "_General"
+msgstr "_Generelt"
 
-#: ../studio/widgetPresenter.py:944
+#: ../studio/widgetPresenter.py:1266
 msgid "Temporary folder"
 msgstr "Midlertidig mappe"
 
-#: ../studio/widgetPresenter.py:948 ../studio/widgetPresenter.py:1004
+#: ../studio/widgetPresenter.py:1270 ../studio/widgetPresenter.py:1334
 msgid "Choose"
 msgstr "Vælg"
 
-# evt. Udseende
-#: ../studio/widgetPresenter.py:965
-msgid "Appearance"
-msgstr "Fremtoning"
-
-#: ../studio/widgetPresenter.py:968
+#: ../studio/widgetPresenter.py:1287
 #, fuzzy
+msgid "_Recognition"
+msgstr "_Genkend dokument"
+
+#: ../studio/widgetPresenter.py:1292
 msgid "Select boxes' colors"
 msgstr "Vælg boksenes farver"
 
-#: ../studio/widgetPresenter.py:975
-msgid "Text fill color"
-msgstr "Farve til tekstfyld"
+#: ../studio/widgetPresenter.py:1298
+msgid "Te_xt areas' fill color"
+msgstr "Fyldfarve til _tekstområder"
 
-#: ../studio/widgetPresenter.py:978
-msgid "Text stroke color"
-msgstr "Stregfarve til tekst"
+#: ../studio/widgetPresenter.py:1304
+msgid "Text areas' _stroke color"
+msgstr "_Stregfarve til tekst"
 
-#: ../studio/widgetPresenter.py:981
-msgid "Image fill color"
-msgstr "Farve til billedfyld"
+#: ../studio/widgetPresenter.py:1310
+msgid "_Image areas' fill color"
+msgstr "Fyldfarve til _billedområder"
 
-#: ../studio/widgetPresenter.py:984
-msgid "Image stroke color"
-msgstr "Stregfarve på billeder"
-
-#: ../studio/widgetPresenter.py:997
-msgid "Tools"
-msgstr "Værktøjer"
-
-#: ../studio/widgetPresenter.py:1000
+#: ../studio/widgetPresenter.py:1330
 msgid "Path to unpaper"
 msgstr "Sti til unpaper"
 
-#: ../studio/widgetPresenter.py:1012 ../studio/widgetPresenter.py:1071
-#: ../studio/widgetPresenter.py:1109 ../studio/widgetPresenter.py:1127
-#: ../studio/widgetPresenter.py:1216
+#: ../studio/widgetPresenter.py:1342 ../studio/widgetPresenter.py:1592
+#: ../studio/widgetPresenter.py:1630 ../studio/widgetPresenter.py:1648
+#: ../studio/widgetPresenter.py:1737
 msgid "OCR Engines"
 msgstr "OCR-motorer"
 
-#: ../studio/widgetPresenter.py:1022
-msgid "Favorite engine:"
-msgstr "Favoritmotor:"
+#: ../studio/widgetPresenter.py:1344
+msgid ""
+"The engine that should be used when performing the automatic recognition."
+msgstr "Motoren som skal bruges, når der udføres automatisk genkendelse."
 
-#: ../studio/widgetPresenter.py:1034
+#: ../studio/widgetPresenter.py:1355
+msgid "Favorite _engine:"
+msgstr "Favorit_motor:"
+
+#: ../studio/widgetPresenter.py:1370
 msgid "Window size"
 msgstr "Vinduesstørrelse"
 
-#: ../studio/widgetPresenter.py:1035
-msgid "Automatic"
-msgstr "Automatisk"
+#: ../studio/widgetPresenter.py:1371
+msgid "A_utomatic"
+msgstr "_Automatisk"
 
-#: ../studio/widgetPresenter.py:1085
-#, fuzzy
-msgid "Engines to be added"
-msgstr "Motornavn"
+#: ../studio/widgetPresenter.py:1372
+msgid "Cu_stom"
+msgstr "_Tilpasset"
 
-#: ../studio/widgetPresenter.py:1090
-msgid "Include"
+#: ../studio/widgetPresenter.py:1381
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr ""
+"Vinduesstørrelsen er opdagelsesalgoritmens underafdelings områdestørrelse."
+
+#: ../studio/widgetPresenter.py:1393
+msgid "Columns Detection"
 msgstr ""
 
-#: ../studio/widgetPresenter.py:1094 ../studio/widgetPresenter.py:1131
+#: ../studio/widgetPresenter.py:1398
+msgid "_Improve columns detection"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1400
+msgid "Use a post-detection algorithm to improve the detection of columns"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1411 ../studio/widgetPresenter.py:1485
+#, fuzzy
+msgid "_Automatic"
+msgstr "_Automatisk"
+
+#: ../studio/widgetPresenter.py:1413 ../studio/widgetPresenter.py:1487
+#, fuzzy
+msgid "Custo_m"
+msgstr "Tilpasset"
+
+#: ../studio/widgetPresenter.py:1417
+msgid "The columns' minimum width in pixels"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1433
+msgid "Minimum width that a column should have:"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1454
+#, fuzzy
+msgid "Recognized Text"
+msgstr "_Genkend dokument"
+
+#: ../studio/widgetPresenter.py:1455
+msgid "_Fix line breaks and hyphenization"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1457
+msgid ""
+"Removes single line breaks and hyphenization from text generated by OCR "
+"engines"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1467
+msgid "Content Areas"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1472
+#, fuzzy
+msgid "A_djust content areas' bounds"
+msgstr "Angiver indholdsområdets bredde"
+
+#: ../studio/widgetPresenter.py:1474
+msgid "Use a post-detection algorithm to shorten the contents areas' margins"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1491
+msgid "The maximum size for the content areas' margins in pixels"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1508
+msgid "Maximum size that the content areas' margins should have:"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1554
+#, fuzzy
+msgid "Image Pre-processing"
+msgstr "Unpaper - billedbehandling"
+
+#: ../studio/widgetPresenter.py:1555
+#, fuzzy
+msgid "Des_kew images"
+msgstr "Slet alle billeder"
+
+#: ../studio/widgetPresenter.py:1557
+msgid "Tries to straighten the images before they are added"
+msgstr ""
+
+# Det er et program: unpaper is a post-processing tool for scanned sheets of paper, especially for
+# book pages that have been scanned from previously created photocopies.
+#: ../studio/widgetPresenter.py:1566
+#, fuzzy
+msgid "_Unpaper images"
+msgstr "_Unpaper"
+
+#: ../studio/widgetPresenter.py:1568
+msgid "Cleans the image using the Unpaper pre-processor"
+msgstr ""
+
+#: ../studio/widgetPresenter.py:1572
+#, fuzzy
+msgid "Unpaper _Preferences"
+msgstr "_Indstillinger"
+
+#: ../studio/widgetPresenter.py:1606
+msgid "Engines to be added"
+msgstr "Motorer der skal tilføjes"
+
+#: ../studio/widgetPresenter.py:1611
+msgid "Include"
+msgstr "Inkluder"
+
+#: ../studio/widgetPresenter.py:1615 ../studio/widgetPresenter.py:1652
 msgid "Engine"
 msgstr "Motor"
 
-#: ../studio/widgetPresenter.py:1135
+#: ../studio/widgetPresenter.py:1656
 msgid "Add"
 msgstr "Tilføj"
 
-#: ../studio/widgetPresenter.py:1137
+#: ../studio/widgetPresenter.py:1658
 msgid "Edit"
 msgstr "Rediger"
 
-#: ../studio/widgetPresenter.py:1152
+# opdag, find
+# synes 'opdag' virker lidt sjov kan 'Find' bruges?
+#: ../studio/widgetPresenter.py:1659
+msgid "De_tect"
+msgstr "_Find"
+
+#: ../studio/widgetPresenter.py:1673
 msgid "Are you sure you want to delete this engine?"
 msgstr "Er du sikker på, at du ønsker at slette denne mtor?"
 
-#: ../studio/widgetPresenter.py:1198
+#: ../studio/widgetPresenter.py:1719
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
 msgstr ""
+"Ingen OCR-motorer blev fundet på systemet.\n"
+"Vær sikker på at du har OCR-motorer installeret, og de er tilgængelige."
 
-#: ../studio/widgetPresenter.py:1201
+#: ../studio/widgetPresenter.py:1722
 msgid "No OCR engines available"
-msgstr ""
+msgstr "Ingen tilgængelige OCR-motorer"
 
 # hvad er %s. Bindestregen kan være forkert.
-#: ../studio/widgetPresenter.py:1218
+#: ../studio/widgetPresenter.py:1739
 #, python-format
 msgid "%s engine"
 msgstr "%s-motor"
 
-#: ../studio/widgetPresenter.py:1241
-msgid "Name"
-msgstr "Navn"
+#: ../studio/widgetPresenter.py:1763
+msgid "_Name:"
+msgstr "_Navn:"
 
-#: ../studio/widgetPresenter.py:1241
+#: ../studio/widgetPresenter.py:1764
 msgid "Engine name"
 msgstr "Motornavn"
 
-#: ../studio/widgetPresenter.py:1243
-msgid "Image format"
-msgstr "Billedformat"
+#: ../studio/widgetPresenter.py:1766
+msgid "_Image format:"
+msgstr "_Billedformat:"
 
-#: ../studio/widgetPresenter.py:1243
+#: ../studio/widgetPresenter.py:1768
 msgid "The required image format"
 msgstr "Det krævede billedformat"
 
-#: ../studio/widgetPresenter.py:1245
-msgid "Failure string"
-msgstr "Fejlstreng"
+#: ../studio/widgetPresenter.py:1770
+msgid "_Failure string:"
+msgstr "_Fejlstreng:"
 
-#: ../studio/widgetPresenter.py:1245
+#: ../studio/widgetPresenter.py:1772
 msgid "The failure string or character that this engine uses"
 msgstr "Fejlstrengen eller tegnet som denne motor bruger"
 
-#: ../studio/widgetPresenter.py:1247
-msgid "Engine Path"
-msgstr "Motorsti"
+#: ../studio/widgetPresenter.py:1775
+msgid "Engine _path:"
+msgstr "Motor_sti:"
 
-#: ../studio/widgetPresenter.py:1247
+#: ../studio/widgetPresenter.py:1777
 msgid "The path to the engine program"
 msgstr "Stien til motorprogrammet"
 
-#: ../studio/widgetPresenter.py:1249
-msgid "Engine arguments"
-msgstr "Motorargumenter"
+#: ../studio/widgetPresenter.py:1779
+msgid "Engine _arguments:"
+msgstr "Motor_argumenter:"
 
-#: ../studio/widgetPresenter.py:1249
-#, fuzzy
+#: ../studio/widgetPresenter.py:1781
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
-"Argumenter, brug $IMAGE for billede og $FILE hvis den skriver til en fil"
+"Argumenter: Brug $IMAGE for billede og $FILE hvis den skriver til en fil"
 
-#: ../studio/widgetPresenter.py:1265
-#, fuzzy
+#: ../studio/widgetPresenter.py:1798
 msgid "Error setting the new engine; please check your engine settings."
-msgstr "Fejl i opsætning af ny motor, tjek venligst din motoropsætning."
+msgstr "Fejl i opsætning af ny motor; tjek venligst din motoropsætning."
 
-#: ../studio/widgetPresenter.py:1265
+#: ../studio/widgetPresenter.py:1798
 msgid "Warning"
 msgstr "Advarsel"
 
-#: ../studio/widgetPresenter.py:1296
+#: ../studio/widgetPresenter.py:1834
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2010.\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
+
+# evt. fremtoning
+#~ msgid "_Appearance"
+#~ msgstr "_Udseende"
