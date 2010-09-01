@@ -25,6 +25,7 @@ from util import lib, PAPER_SIZES
 from util.asyncworker import AsyncWorker
 from util.constants import *
 from util.graphics import convertPixbufToImage
+from enchant.checker import SpellChecker
 import Image
 import gettext
 import gobject
@@ -38,6 +39,7 @@ import sys
 import threading
 import Queue
 import time
+import gtkspell
 pygtk.require('2.0')
 _ = gettext.gettext
 
@@ -91,6 +93,8 @@ class MainWindow:
             <separator/>
             <menuitem action="Unpaper"/>
             <menuitem action="ImageDeskewer"/>
+            <separator/>
+            <menuitem action="SpellChecker"/>
         </menu>
         <menu action="Help">
             <menuitem action="About"/>
@@ -203,6 +207,11 @@ class MainWindow:
                                    '<control><shift>c',
                                    _('Copy recognized text to clipboard'),
                                    menu_items['copy_to_clipboard']),
+                                  ('SpellChecker', None,
+                                   _('Spell_checker'),
+                                   '<control><shift>r',
+                                   _("Spell Check Recognized Text"),
+                                   menu_items['spell_checker']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
         ui_manager.add_ui_from_string(self.menubar)
@@ -228,6 +237,8 @@ class MainWindow:
             import_pdf_menu.hide()
 
         self.action_group = action_group
+        self.spellchecker_menu = ui_manager.get_widget('/MenuBar/Tools/SpellChecker')
+        self.spellchecker_menu.set_sensitive(False)
 
     def setDestroyEvent(self, function):
         self.window.connect('delete-event', function)
@@ -501,6 +512,7 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
         text_properties_notebook.set_tab_pos(gtk.POS_TOP)
         # Textview widget
         self.text_widget = gtk.TextView()
+        gtkspell.Spell(self.text_widget, OCRFEEDER_DEFAULT_LOCALE)
         self.text_widget.set_wrap_mode(gtk.WRAP_WORD)
         self.text_content = self.text_widget.get_buffer()
         self.text_content.connect('changed', self.editedByUser)
@@ -1902,3 +1914,129 @@ class ScannerChooserDialog(gtk.Dialog):
         if index < 0:
             return None
         return self.devices[index][0]
+
+class SpellCheckerDialog():
+
+    def __init__(self, parent, current_reviewer, language):
+        self.builder = gtk.Builder()
+        self.builder.add_from_file(OCRFEEDER_SPELLCHECKER_UI)
+        self.window = self.builder.get_object('check_spelling_window')
+        self.window.set_transient_for(parent)
+        self.builder.connect_signals(self)
+        self.window.present()
+        self.reviewer = current_reviewer
+        self.text = self.reviewer.boxeditor_notebook.get_nth_page(self.reviewer.boxeditor_notebook.get_current_page()).getText()
+        self.dictButtons = {'change_button':self.builder.get_object('change_button'),
+               'change_all_button':self.builder.get_object('change_all_button'),
+               'ignore_button':self.builder.get_object('ignore_button'),
+               'ignore_all_button':self.builder.get_object('ignore_all_button')
+               }
+        self.label_language = self.builder.get_object('language_label')
+        self.label_language.set_label(language)
+        self.text_view = self.builder.get_object('textview_context')
+        self.text_view.set_wrap_mode(gtk.WRAP_WORD)
+        self.text_view.set_editable(False)
+        self.text_view.set_cursor_visible(False)
+        self.misspelled_word = self.text_view.get_buffer()
+        text_buffer = self.text_view.get_buffer()
+        text_buffer.create_tag("fg_black", foreground="black")
+        text_buffer.create_tag("fg_red", foreground="red")
+        self.word_entry = self.builder.get_object('word_entry')
+        self.suggestions_list = self.builder.get_object('liststore1')
+        self.renderer_text = gtk.CellRendererText()
+        self.column = gtk.TreeViewColumn(None,self.renderer_text, text=0)
+        self.treeview = self.builder.get_object('suggestions_list')
+        self.treeview.append_column(self.column)
+        self._checker = SpellChecker(language)
+        self._numchars = 40
+
+        if self.text:
+            self._checker.set_text(self.text.decode('utf-8'))
+            try:
+                self.__next()
+            except AttributeError:
+                self.__set_no_more()
+        else:
+            self.__set_no_more()
+
+    def word_entry_changed_cb(self, widget):
+        self.__checkHasAlternative()
+
+    def __checkHasAlternative(self):
+        if not self.word_entry.get_text():
+            [self.dictButtons[button].set_sensitive(False) for button in self.dictButtons.keys() if not button.find('change')]
+        else:
+            [self.dictButtons[button].set_sensitive(True) for button in self.dictButtons.keys() if not button.find('change')]
+
+    def suggestions_list_row_activated_cb(self, widget, x, y):
+        self.word_entry.set_text(widget.get_model().get_value(widget.get_model().get_iter(x), 0))
+
+    def suggestions_list_cursor_changed_cb(self, widget):
+        model, iter = widget.get_selection().get_selected()
+        self.word_entry.set_text(model[iter][0])
+
+
+    def ignore_button_clicked_cb(self, widget):
+        self.__next()
+
+    def ignore_all_button_clicked_cb(self, widget):
+        self._checker.ignore_always()
+        self.__next()
+
+    def change_button_clicked_cb(self, widget):
+        self.__replaceText(self.word_entry.get_text())
+        self.__next()
+
+    def change_all_button_clicked_cb(self, widget):
+        self.__replaceAllText(self.word_entry.get_text())
+        self.__next()
+
+    def close_button_clicked_cb(self, widget):
+        self.window.destroy()
+
+    def check_spelling_window_delete_event_cb(self, widget, data):
+        self.window.destroy()
+
+    def __set_no_more(self):
+        self.misspelled_word.set_text('')
+        iter = self.misspelled_word.get_iter_at_offset(0)
+        append = self.misspelled_word.insert_with_tags_by_name
+        append(iter, "No misspelled words", 'fg_red')
+        self.word_entry.set_sensitive(False)
+        [self.dictButtons[button].set_sensitive(False) for button in self.dictButtons.keys()]
+
+    def __next(self):
+        self.word_entry.set_text('')
+        self.__checkHasAlternative()
+        self.suggestions_list.clear()
+
+        try:
+            self._checker.next()
+        except StopIteration:
+            self.__set_no_more()
+            return False
+
+        self.misspelled_word.set_text('')
+        iter = self.misspelled_word.get_iter_at_offset(0)
+        append = self.misspelled_word.insert_with_tags_by_name
+        lContext = self._checker.leading_context(self._numchars)
+        tContext = self._checker.trailing_context(self._numchars)
+        append(iter, lContext, 'fg_black')
+        append(iter, self._checker.word, 'fg_red')
+        append(iter, tContext, 'fg_black')
+
+        self.__fillSuggest(self._checker.suggest())
+
+    def __replaceText(self, replace_text):
+        self._checker.replace(replace_text)
+        newtext = self._checker.get_text()
+        self.reviewer.boxeditor_notebook.get_nth_page(self.reviewer.boxeditor_notebook.get_current_page()).setText(newtext)
+
+    def __replaceAllText(self, replace_text):
+        self._checker.replace_always(replace_text)
+        newtext = self._checker.get_text().replace(self._checker.word, replace_text)
+        self.reviewer.boxeditor_notebook.get_nth_page(self.reviewer.boxeditor_notebook.get_current_page()).setText(newtext)
+
+    def __fillSuggest(self, suggests):
+        for suggest in suggests:
+            self.suggestions_list.append([suggest])
