@@ -99,7 +99,8 @@ class Studio:
                                  'select_all_areas': self.source_images_controler.selectAllAreas,
                                  'delete_selected_areas': self.source_images_controler.deleteSelectedAreas,
                                  'image_deskewer': self.source_images_controler.deskewCurrentImage,
-                                 'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard
+                                 'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard,
+                                 'spell_checker': self.spellChecker
                                  }
 
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
@@ -330,6 +331,9 @@ class Studio:
 
     def unpaper(self, widget = None):
         self.source_images_controler.unpaperTool()
+
+    def spellChecker(self, widget = None):
+        self.source_images_controler.spellCheck(locale.getdefaultlocale()[0])
 
     def preferences(self, widget = None):
         preferences_dialog = widgetPresenter.PreferencesDialog(self.configuration_manager, self.ocr_engines_manager.ocr_engines)
