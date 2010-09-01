@@ -32,7 +32,7 @@ from util import constants
 from util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
-    QueuedEventsProgressDialog
+    QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
 import gobject
 import gtk
@@ -389,8 +389,10 @@ class ImageReviewer:
                                      self.boxeditor_notebook.get_current_page())
             if current_box_editor.getText():
                 self.main_window.copy_to_clipboard_menu.set_sensitive(True)
+                self.main_window.spellchecker_menu.set_sensitive(True)
             else:
                 self.main_window.copy_to_clipboard_menu.set_sensitive(False)
+                self.main_window.spellchecker_menu.set_sensitive(False)
         has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
         has_boxes = self.selectable_boxes_area.getAllAreas()
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
@@ -787,6 +789,11 @@ class ImageReviewer_Controler:
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.deleteSelectedAreas()
 
+    def spellCheck(self, locale):
+        current_reviewer = self.__getCurrentReviewer()
+        SpellCheckerDialog(self.main_window.window, current_reviewer, locale)
+
+
 class Editor:
 
     def __init__(self, box, pixbuf, ocr_engines, reviewer):
@@ -939,6 +946,7 @@ class Editor:
         text = layout_analysis.readImage(image)
         self.box_editor.setText(text)
         self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
+        self.reviewer.main_window.spellchecker_menu.set_sensitive(True)
         debug('Finished reading')
         text_size = layout_analysis.getTextSizeFromImage(image,
                                                self.reviewer.page.resolution[1])
@@ -996,5 +1004,7 @@ class Editor:
     def checkHasText(self, widget, text):
         if not text:
             self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(False)
+            self.reviewer.main_window.spellchecker_menu.set_sensitive(False)
         else:
             self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
+            self.reviewer.main_window.spellchecker_menu.set_sensitive(True)
