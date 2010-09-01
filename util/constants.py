@@ -20,6 +20,7 @@
 
 import sys
 import os
+import locale
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
@@ -60,6 +61,7 @@ if not os.path.exists(APP_DIR):
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
 LOCALE_DIR = os.path.join(sys.prefix, 'share', 'locale')
+OCRFEEDER_DEFAULT_LOCALE = locale.getdefaultlocale()[0]
 
 # CUSTOM ICONS
 DETECT_ICON = os.path.join(RESOURCES_DIR, 'icons', 'detect_icon.svg')
@@ -83,3 +85,6 @@ GHOSTSCRIPT_COMMAND = 'gs'
 
 # DeskTop Publishing Point (for calculating print measures)
 DTP = 72
+# location of glade spellchecker UI file
+
+OCRFEEDER_SPELLCHECKER_UI = os.path.join(RESOURCES_DIR, 'spell-checker.ui')
