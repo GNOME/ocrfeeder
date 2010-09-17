@@ -264,7 +264,8 @@ class MainWindow:
 
     def setHasContentBoxes(self, has_content_boxes=True):
         actions = ['SelectNextArea', 'SelectPreviousArea',
-                   'SelectAllAreas', 'CopyToClipboard']
+                   'SelectAllAreas', 'CopyToClipboard',
+                   'SpellChecker']
         self.__setActionsSensitiveness(actions, has_content_boxes)
 
     def __setActionsSensitiveness(self, actions, set_sensitive):
