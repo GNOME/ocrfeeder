@@ -305,17 +305,21 @@ class ImageReviewer:
         self.updateMainWindow()
 
     def copyTextToClipboard(self):
-        text = []
+        text = ''
         selected_boxes = self.selectable_boxes_area.getSelectedAreas()
+        selected_boxes.reverse()
         if selected_boxes:
-            for box in selected_boxes:
-                text.append(self.__getEditorFromBox(box).box_editor.getText())
+            number_of_boxes = len(selected_boxes)
+            for i in range(number_of_boxes):
+                box = selected_boxes[i]
+                text += self.__getEditorFromBox(box).box_editor.getText()
+                if number_of_boxes > 1 and i < number_of_boxes - 1:
+                    text += '\n\n'
         else:
             current_box_editor = self.boxeditor_notebook.get_nth_page(\
                                      self.boxeditor_notebook.get_current_page())
-            text.append(current_box_editor.getText())
-        text.reverse()
-        gtk.Clipboard().set_text("".join(lines for lines in text))
+            text = current_box_editor.getText()
+        gtk.Clipboard().set_text(text)
 
     def __getAllDataBoxes(self):
         boxes = []
