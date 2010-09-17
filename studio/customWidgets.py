@@ -212,6 +212,8 @@ class SelectableBoxesArea(goocanvas.Canvas):
         return self.image.props.height, self.image.props.width
 
     def startSelectionArea(self, item, target, event):
+        if event.type != gtk.gdk.BUTTON_PRESS:
+            return False
         self.deselectAreas()
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
         stroke_color = self.__rgbaToInteger(self.area_stroke_rgba)
