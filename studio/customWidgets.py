@@ -135,7 +135,8 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.selectArea(area)
 
     def selectArea(self, area):
-        self.selected_areas.append(area)
+        if area not in self.selected_areas:
+            self.selected_areas.append(area)
         area.set_property('stroke_color_rgba',self.__rgbaToInteger(self.area_selected_stroke_rgba))
         self.grab_focus(area)
         area.connect('key_press_event', self.keyPressed)
