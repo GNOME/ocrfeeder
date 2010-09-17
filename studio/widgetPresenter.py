@@ -195,12 +195,13 @@ class MainWindow:
                                   ('GenerateODT', None, _('_Generate ODT'), None, _("Export to ODT"), tool_items['export_to_odt']),
                                   ('ImportFromScanner', None,
                                    _('Import Page From S_canner'),
-                                   '<control><shift>c',
+                                   '<control><shift>i',
                                    _("Import From Scanner"),
                                    menu_items['import_from_scanner']),
                                   ('CopyToClipboard', gtk.STOCK_COPY,
                                    _('_Copy to Clipboard'),
-                                   None, _('Copy recognized text to clipboard'),
+                                   '<control><shift>c',
+                                   _('Copy recognized text to clipboard'),
                                    menu_items['copy_to_clipboard']),
                                   ])
         ui_manager.insert_action_group(action_group, 0)
