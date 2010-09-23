@@ -40,6 +40,11 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                'image_format': 'PPM',
                                'engine_path': 'gocr',
                                'arguments': '-f UTF8 $IMAGE'},
+                      'cuneiform': {'name': 'Cuneiform',
+                               'image_format': 'BMP',
+                               'engine_path': 'cuneiform',
+                               'arguments': '-f text -o $FILE $IMAGE >'
+                               ' /dev/null 2> /dev/null; cat $FILE'},
                      }
 
 class ProjectSaver:
