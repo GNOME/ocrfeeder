@@ -31,7 +31,8 @@ import zipfile
 PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                     'image_format': 'TIF',
                                     'engine_path': 'tesseract',
-                                    'arguments': '$IMAGE $FILE; cat $FILE.txt'},
+                                    'arguments': '$IMAGE $FILE; cat '
+                                    '$FILE.txt; rm $FILE'},
                       'ocrad': {'name': 'Ocrad',
                                 'image_format': 'PPM',
                                 'engine_path': 'ocrad',
@@ -44,7 +45,8 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                'image_format': 'BMP',
                                'engine_path': 'cuneiform',
                                'arguments': '-f text -o $FILE $IMAGE >'
-                               ' /dev/null 2> /dev/null; cat $FILE'},
+                               ' /dev/null 2> /dev/null && cat $FILE'
+                               ' && rm $FILE'},
                      }
 
 class ProjectSaver:
