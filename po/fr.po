@@ -1,962 +1,1313 @@
-# French translation of ocrfeeder.
+# French translation of longomatch.
 # Copyright (C) 2010 Listed translators
-# This file is distributed under the same license as the ocrfeeder package.
+# This file is distributed under the same license as the longomatch package.
 #
-# Philippe Normand <phil@base-art.net>, 2010
+# Laurent Coudeur <laurentc@iol.ie>, 2010.
+# G. Baylard <gerard.b@bbox.fr>, 2010.
 # Bruno Brouard <annoa.b@gmail.com>, 2010.
-# Claude Paroz <claude@2xlibre.net>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OCRFeeder\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2010-08-23 19:43+0000\n"
-"PO-Revision-Date: 2010-07-20 20:49+0200\n"
-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"product=longomatch&component=general\n"
+"POT-Creation-Date: 2010-09-29 20:45+0000\n"
+"PO-Revision-Date: 2010-04-25 22:40+0100\n"
+"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../feeder/imageManipulation.py:38
-#, python-format
+#: ../LongoMatch/longomatch.desktop.in.in.h:1
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:205
+msgid "LongoMatch"
+msgstr "LongoMatch"
+
+#: ../LongoMatch/longomatch.desktop.in.in.h:2
+msgid "LongoMatch: The Digital Coach"
+msgstr "LongoMatch : l'entraîneur numérique"
+
+#: ../LongoMatch/longomatch.desktop.in.in.h:3
+msgid "Sports video analysis tool for coaches"
+msgstr "Outil d'analyse de vidéos sportives pour entraîneurs"
+
+#: ../LongoMatch/Playlist/PlayList.cs:96
+msgid "The file you are trying to load is not a valid playlist"
+msgstr ""
+"Le fichier que vous essayez de charger n'est pas une liste de lecture valide"
+
+#: ../LongoMatch/Time/HotKey.cs:127
+msgid "Not defined"
+msgstr "Non défini"
+
+#: ../LongoMatch/Time/SectionsTimeNode.cs:71
+msgid "name"
+msgstr "nom"
+
+#: ../LongoMatch/Time/SectionsTimeNode.cs:131
+#: ../LongoMatch/Time/SectionsTimeNode.cs:139
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:68
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:161
+#: ../LongoMatch/IO/SectionsWriter.cs:56
+msgid "Sort by name"
+msgstr "Trier par nom"
+
+#: ../LongoMatch/Time/SectionsTimeNode.cs:133
+#: ../LongoMatch/Time/SectionsTimeNode.cs:143
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:69
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:162
+msgid "Sort by start time"
+msgstr "Trier par heure de début"
+
+#: ../LongoMatch/Time/SectionsTimeNode.cs:135
+#: ../LongoMatch/Time/SectionsTimeNode.cs:145
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:70
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:163
+msgid "Sort by stop time"
+msgstr "Trier par heure de fin"
+
+#: ../LongoMatch/Time/SectionsTimeNode.cs:137
+#: ../LongoMatch/Time/SectionsTimeNode.cs:147
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:71
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:164
+msgid "Sort by duration"
+msgstr "Trier par durée"
+
+#: ../LongoMatch/Time/MediaTimeNode.cs:354
+#: ../LongoMatch/Gui/TreeView/PlayerPropertiesTreeView.cs:50
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:47
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:71
+#: ../LongoMatch/IO/CSVExport.cs:81 ../LongoMatch/IO/CSVExport.cs:136
+#: ../LongoMatch/IO/CSVExport.cs:162
+msgid "Name"
+msgstr "Nom"
+
+#: ../LongoMatch/Time/MediaTimeNode.cs:355 ../LongoMatch/IO/CSVExport.cs:82
+#: ../LongoMatch/IO/CSVExport.cs:137 ../LongoMatch/IO/CSVExport.cs:163
+msgid "Team"
+msgstr "Équipe"
+
+#: ../LongoMatch/Time/MediaTimeNode.cs:356
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:139
+msgid "Start"
+msgstr "Début"
+
+#: ../LongoMatch/Time/MediaTimeNode.cs:357
+msgid "Stop"
+msgstr "Fin"
+
+#: ../LongoMatch/Time/MediaTimeNode.cs:358
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:293
+msgid "Tags"
+msgstr "Étiquettes"
+
+#: ../LongoMatch/Main.cs:164
 msgid ""
-"A problem occurred while trying to open the image:\n"
-" %s\n"
-"Ensure the image exists or try converting it to another format."
+"Some elements from the previous version (database, templates and/or "
+"playlists) have been found."
 msgstr ""
-"Un problème est survenu au cours de l'ouverture de l'image :\n"
-" %s\n"
-"Vérifiez que l'image existe ou essayez de la convertir dans un autre format."
+"Certains éléments de la version précédente (base de données, modèles et/ou "
+"listes de lecture) ont été trouvés."
 
-#: ../resources/ocrfeeder.desktop.in.h:1
-msgid "OCRFeeder"
-msgstr "OCRFeeder"
+#: ../LongoMatch/Main.cs:165
+msgid "Do you want to import them?"
+msgstr "Voulez-vous les importer ?"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
-msgid "The complete OCR suite."
-msgstr "La suite ROC complète."
+#: ../LongoMatch/Main.cs:230
+msgid "The application has finished with an unexpected error."
+msgstr "Le programme s'est terminé sur une erreur inattendue."
 
-#: ../studio/studioBuilder.py:167
-msgid "Images"
-msgstr "Images"
+#: ../LongoMatch/Main.cs:231
+msgid "A log has been saved at: "
+msgstr "Un journal a été enregistré sous : "
 
-#: ../studio/studioBuilder.py:179
-msgid "Obtaining scanners"
-msgstr "Recherche des scanners"
+#: ../LongoMatch/Main.cs:232
+msgid "Please, fill a bug report "
+msgstr "Veuillez remplir un rapport d'anomalie "
 
-#: ../studio/studioBuilder.py:179 ../studio/studioBuilder.py:205
-#: ../studio/studioBuilder.py:247 ../studio/widgetModeler.py:417
-#: ../studio/widgetModeler.py:422 ../studio/widgetModeler.py:474
-#: ../studio/widgetModeler.py:509
-msgid "Please wait…"
-msgstr "Veuillez patienter…"
+#: ../LongoMatch/Gui/MainWindow.cs:128
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:280
+msgid "Visitor Team"
+msgstr "Équipe visiteurs"
 
-#: ../studio/studioBuilder.py:205
-msgid "Scanning"
-msgstr "Numérisation"
+#: ../LongoMatch/Gui/MainWindow.cs:132
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:267
+msgid "Local Team"
+msgstr "Équipe locale"
 
-#: ../studio/studioBuilder.py:210
-msgid "No scanner devices were found"
-msgstr "Aucun scanner trouvé"
+#: ../LongoMatch/Gui/MainWindow.cs:140
+msgid "The file associated to this project doesn't exist."
+msgstr "Le fichier associé à ce projet n'existe pas."
 
-#: ../studio/studioBuilder.py:211 ../studio/studioBuilder.py:226
-#: ../studio/widgetPresenter.py:1100 ../studio/widgetPresenter.py:1111
-msgid "Error"
-msgstr "Erreur"
-
-#: ../studio/studioBuilder.py:225
-msgid "Error scanning page"
-msgstr "Erreur de numérisation de la page"
-
-#: ../studio/studioBuilder.py:233
-msgid "PDF"
-msgstr "PDF"
-
-#: ../studio/studioBuilder.py:247
-msgid "Loading PDF"
-msgstr "Chargement du PDF"
-
-#: ../studio/studioBuilder.py:270
-msgid "Export pages"
-msgstr "Exporter les pages"
-
-#: ../studio/studioBuilder.py:284
-msgid "Are you sure you want to delete the current image?"
-msgstr "Voulez-vous vraiment supprimer l'image actuelle ?"
-
-#: ../studio/studioBuilder.py:372
-msgid "The project hasn't been saved."
-msgstr "Ce projet n'a pas été enregistré."
-
-#: ../studio/studioBuilder.py:373
-msgid "Do you want to save it before closing?"
-msgstr "Voulez-vous l'enregistrer avant de fermer l'application ?"
-
-#: ../studio/studioBuilder.py:374
-msgid "Close anyway"
-msgstr "Fermer sans enregistrer"
-
-#: ../studio/widgetModeler.py:126 ../studio/widgetPresenter.py:125
-msgid "Pages"
-msgstr "Pages"
-
-#: ../studio/widgetModeler.py:140 ../studio/widgetPresenter.py:1657
-msgid "Delete"
-msgstr "Supprimer"
-
-#: ../studio/widgetModeler.py:191
-msgid "Selectable areas"
-msgstr "Zones sélectionnables"
-
-#: ../studio/widgetModeler.py:417
-msgid "Preparing image"
-msgstr "Préparation de l'image"
-
-#: ../studio/widgetModeler.py:419
-#, python-format
-msgid "Preparing image %(current_index)s/%(total)s"
-msgstr "Préparation de l'image %(current_index)s/%(total)s"
-
-#: ../studio/widgetModeler.py:474
-msgid "Deskewing image"
-msgstr "Redressement de l'image"
-
-#: ../studio/widgetModeler.py:491 ../studio/widgetPresenter.py:722
-#: ../studio/widgetPresenter.py:729
-msgid "Page size"
-msgstr "Taille de page"
-
-#: ../studio/widgetModeler.py:492
-msgid "Resolution"
-msgstr "Résolution"
-
-#: ../studio/widgetModeler.py:496
-msgid "Zoom"
-msgstr "Zoom"
-
-#: ../studio/widgetModeler.py:509
-msgid "Recognizing Document"
-msgstr "Reconnaissance du document"
-
-#: ../studio/widgetModeler.py:563
-msgid "Export to HTML"
-msgstr "Exporter en HTML"
-
-#: ../studio/widgetModeler.py:577 ../studio/widgetPresenter.py:193
-msgid "Export to ODT"
-msgstr "Exporter en ODT"
-
-#: ../studio/widgetModeler.py:598
-msgid "OCRFeeder Projects"
-msgstr "Projets OCRFeeder"
-
-#: ../studio/widgetModeler.py:656
-#, python-format
+#: ../LongoMatch/Gui/MainWindow.cs:141
 msgid ""
-"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
-"\n"
-"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+"If the location of the file has changed try to edit it with the database "
+"manager."
 msgstr ""
-"<b>Un fichier nommé « %(name)s » existe déjà. Voulez-vous le remplacer ?</b>\n"
-"\n"
-"Le fichier se trouve dans « %(dir)s ». Le remplacer va supprimer son contenu "
-"actuel."
+"Si le fichier a changé d'emplacement, essayez de le modifier avec le "
+"gestionnaire de projets."
 
-#: ../studio/widgetModeler.py:663
-msgid "Replace"
-msgstr "Remplacer"
+#: ../LongoMatch/Gui/MainWindow.cs:152
+msgid "An error occurred opening this project:"
+msgstr "Une erreur est survenue à l'ouverture de ce projet :"
 
-#: ../studio/widgetPresenter.py:146
-msgid "_File"
-msgstr "_Fichier"
+#: ../LongoMatch/Gui/MainWindow.cs:201
+msgid "Loading newly created project..."
+msgstr "Chargement du nouveau projet créé..."
 
-#: ../studio/widgetPresenter.py:147
-msgid "_Quit"
-msgstr "_Quitter"
+#: ../LongoMatch/Gui/MainWindow.cs:213
+msgid "An error occured saving the project:\n"
+msgstr "Une erreur est survenue à l'enregistrement du projet :\n"
 
-#: ../studio/widgetPresenter.py:147
-msgid "Exit the program"
-msgstr "Terminer le programme"
-
-#: ../studio/widgetPresenter.py:148
-msgid "_Open"
-msgstr "_Ouvrir"
-
-#: ../studio/widgetPresenter.py:148
-msgid "Open project"
-msgstr "Ouvrir le projet"
-
-#: ../studio/widgetPresenter.py:149
-msgid "_Save"
-msgstr "_Enregistrer"
-
-#: ../studio/widgetPresenter.py:149
-msgid "Save project"
-msgstr "Enregistre le projet"
-
-#: ../studio/widgetPresenter.py:150
-msgid "_Save As…"
-msgstr "Enregistrer _sous…"
-
-#: ../studio/widgetPresenter.py:150
-msgid "Save project with a chosen name"
-msgstr "Enregistre le projet sous un nom différent"
-
-#: ../studio/widgetPresenter.py:151
-msgid "_Add Image"
-msgstr "_Ajouter une image"
-
-#: ../studio/widgetPresenter.py:151
-msgid "Add another image"
-msgstr "Ajoute une autre image"
-
-#: ../studio/widgetPresenter.py:152
-msgid "Add _Folder"
-msgstr "Ajouter un _dossier"
-
-#: ../studio/widgetPresenter.py:152
-msgid "Add all images in a folder"
-msgstr "Ajoute toutes les images d'un dossier"
-
-#: ../studio/widgetPresenter.py:153
-msgid "Append Project"
-msgstr "Ajouter un projet"
-
-#: ../studio/widgetPresenter.py:153
-msgid "Load a project and append it to the current one"
-msgstr "Charge un projet et le rajoute au projet actuel"
-
-#: ../studio/widgetPresenter.py:154
-msgid "_Import PDF"
-msgstr "_Importer un PDF"
-
-#: ../studio/widgetPresenter.py:154
-msgid "Import PDF"
-msgstr "Importe un PDF"
-
-#: ../studio/widgetPresenter.py:155
-msgid "_Export…"
-msgstr "_Exporter…"
-
-#: ../studio/widgetPresenter.py:155
-msgid "Export to a chosen format"
-msgstr "Exporte vers le format choisi"
-
-#: ../studio/widgetPresenter.py:156
-msgid "_Edit"
-msgstr "É_dition"
-
-#: ../studio/widgetPresenter.py:157
-msgid "_Edit Page"
-msgstr "_Modifier la page"
-
-#: ../studio/widgetPresenter.py:157
-msgid "Edit page settings"
-msgstr "Modifie les réglages de la page"
-
-#: ../studio/widgetPresenter.py:158
-msgid "_Preferences"
-msgstr "_Préférences"
-
-#: ../studio/widgetPresenter.py:158
-msgid "Configure the application"
-msgstr "Configure l'application"
-
-#: ../studio/widgetPresenter.py:159
-msgid "_Delete Page"
-msgstr "_Supprimer la page"
-
-#: ../studio/widgetPresenter.py:159
-msgid "Delete current page"
-msgstr "Supprime la page actuelle"
-
-#: ../studio/widgetPresenter.py:160
-msgid "_Clear Project"
-msgstr "_Effacer le projet"
-
-#: ../studio/widgetPresenter.py:160
-msgid "Delete all images"
-msgstr "Supprime toutes les images"
-
-#: ../studio/widgetPresenter.py:161
-msgid "_View"
-msgstr "_Affichage"
-
-#: ../studio/widgetPresenter.py:162
-msgid "Zoom In"
-msgstr "Zoom avant"
-
-#: ../studio/widgetPresenter.py:163
-msgid "Zoom Out"
-msgstr "Zoom arrière"
-
-#: ../studio/widgetPresenter.py:164
-msgid "Best Fit"
-msgstr "Taille idéale"
-
-#: ../studio/widgetPresenter.py:165
-msgid "Normal Size"
-msgstr "Taille normale"
-
-#: ../studio/widgetPresenter.py:166
-msgid "_Document"
-msgstr "_Document"
-
-#: ../studio/widgetPresenter.py:167 ../studio/widgetPresenter.py:1325
-msgid "_Tools"
-msgstr "_Outils"
-
-#: ../studio/widgetPresenter.py:168
-msgid "_OCR Engines"
-msgstr "Moteurs _ROC"
-
-#: ../studio/widgetPresenter.py:168
-msgid "Manage OCR engines"
-msgstr "Gérer les moteurs ROC"
-
-#: ../studio/widgetPresenter.py:169
-msgid "_Unpaper"
-msgstr "_Unpaper"
-
-#: ../studio/widgetPresenter.py:169
-msgid "Process image with unpaper"
-msgstr "Traiter l'image avec unpaper"
-
-#: ../studio/widgetPresenter.py:170
-msgid "Image Des_kewer"
-msgstr "Re_dresseur d'image"
-
-#: ../studio/widgetPresenter.py:171
-msgid "Trie to straighten the image"
-msgstr "Essaye de redresser l'image"
-
-#: ../studio/widgetPresenter.py:173
-msgid "_Help"
-msgstr "Aid_e"
-
-#: ../studio/widgetPresenter.py:174
-msgid "_About"
-msgstr "À _propos"
-
-#: ../studio/widgetPresenter.py:174
-msgid "About this application"
-msgstr "À propos de cette application"
-
-#: ../studio/widgetPresenter.py:175
-msgid "_Recognize Document"
-msgstr "_Reconnaître le document"
-
-#: ../studio/widgetPresenter.py:175
-msgid "Automatic Detection and Recognition"
-msgstr "Détection et reconnaissance automatiques"
-
-#: ../studio/widgetPresenter.py:176
-msgid "Recognize Selected _Areas"
-msgstr "Reconnaître des _zones sélectionnées"
-
-#: ../studio/widgetPresenter.py:176
-msgid "Recognize Selected Areas"
-msgstr "Reconnaît des zones sélectionnées"
-
-#: ../studio/widgetPresenter.py:178
-msgid "Select All _Areas"
-msgstr "Sélectionner toutes les _zones"
-
-#: ../studio/widgetPresenter.py:179
-msgid "Select all content areas"
-msgstr "Sélectionne toutes les zones de contenu"
-
-#: ../studio/widgetPresenter.py:182
-msgid "Select _Previous Area"
-msgstr "Sélectionner la zone _précédente"
-
-#: ../studio/widgetPresenter.py:183
-msgid "Select the previous area from the content areas"
-msgstr "Sélectionne la zone précédente parmi les zones de contenu"
-
-#: ../studio/widgetPresenter.py:186
-msgid "Select _Next Area"
-msgstr "Sélectionner la zone _suivante"
-
-#: ../studio/widgetPresenter.py:187
-msgid "Select the next area from the content areas"
-msgstr "Sélectionne la zone suivante parmi les zones de contenu"
-
-#: ../studio/widgetPresenter.py:190
-msgid "Delete Selected Areas"
-msgstr "Supprimer les zones sélectionnées"
-
-#: ../studio/widgetPresenter.py:191
-msgid "Deletes all the currently selected content areas"
-msgstr "Supprime toutes les zones de contenu actuellement sélectionnées"
-
-#: ../studio/widgetPresenter.py:193
-msgid "_Generate ODT"
-msgstr "_Générer ODT"
-
-#: ../studio/widgetPresenter.py:195
-msgid "Import Page From S_canner"
-msgstr "Importer la page à partir du s_canner"
-
-#: ../studio/widgetPresenter.py:197
-msgid "Import From Scanner"
-msgstr "Importe à partir du scanner"
-
-#: ../studio/widgetPresenter.py:259
-msgid "Area editor"
-msgstr "Éditeur de zone"
-
-#: ../studio/widgetPresenter.py:267
-msgid "Sets the content area's upper left corner's X coordinate"
+#: ../LongoMatch/Gui/MainWindow.cs:214
+msgid ""
+"The video file and a backup of the project has been saved. Try to import it "
+"later:\n"
 msgstr ""
-"Définit la coordonnée horizontale du coin supérieur gauche de la zone de "
-"contenu"
+"Le fichier vidéo et une sauvegarde du projet ont été enregistrés. Essayez de "
+"l'importer plus tard :\n"
 
-#: ../studio/widgetPresenter.py:271
-msgid "Sets the content area's upper left corner's Y coordinate"
+#: ../LongoMatch/Gui/MainWindow.cs:328
+msgid "Do you want to close the current project?"
+msgstr "Voulez-vous fermer le projet actuel ?"
+
+#: ../LongoMatch/Gui/MainWindow.cs:535
+msgid "The actual project will be closed due to an error in the media player:"
 msgstr ""
-"Définit la coordonnée verticale du coin supérieur gauche de la zone de "
-"contenu"
+"Le projet actuel va être fermé à cause d'une erreur dans le lecteur de "
+"média :"
 
-#: ../studio/widgetPresenter.py:275
-msgid "Sets the content area's width"
-msgstr "Définit la largeur de la zone de contenu"
-
-#: ../studio/widgetPresenter.py:278
-msgid "Sets the content area's height"
-msgstr "Définit la hauteur de la zone de contenu"
-
-#: ../studio/widgetPresenter.py:281 ../studio/widgetPresenter.py:492
-msgid "_Text"
-msgstr "_Texte"
-
-#: ../studio/widgetPresenter.py:282
-msgid "Set this content area to be the text type"
-msgstr "Attribue le type texte à cette zone de contenu"
-
-#: ../studio/widgetPresenter.py:283
-msgid "_Image"
-msgstr "_Image"
-
-#: ../studio/widgetPresenter.py:284
-msgid "Set this content area to be the image type"
-msgstr "Attribue le type image à cette zone de contenu"
-
-#: ../studio/widgetPresenter.py:285
-msgid "Type"
-msgstr "Type"
-
-#: ../studio/widgetPresenter.py:295
-msgid "Clip"
-msgstr "Séquence"
-
-#: ../studio/widgetPresenter.py:379
-msgid "Bounds"
-msgstr "Limites"
-
-#: ../studio/widgetPresenter.py:384
-msgid "_X:"
-msgstr "_X :"
-
-#: ../studio/widgetPresenter.py:393
-msgid "_Y:"
-msgstr "_Y :"
-
-#: ../studio/widgetPresenter.py:405 ../studio/widgetPresenter.py:743
-msgid "_Width:"
-msgstr "_Largeur :"
-
-#: ../studio/widgetPresenter.py:414
-msgid "Hei_ght:"
-msgstr "_Hauteur :"
-
-#: ../studio/widgetPresenter.py:437
-msgid "Left"
-msgstr "Gauche"
-
-#: ../studio/widgetPresenter.py:441
-msgid "Set text to be left aligned"
-msgstr "Aligne le texte à gauche"
-
-#: ../studio/widgetPresenter.py:443
-msgid "Center"
-msgstr "Centre"
-
-#: ../studio/widgetPresenter.py:448
-msgid "Set text to be centered"
-msgstr "Centre le texte"
-
-#: ../studio/widgetPresenter.py:450
-msgid "Right"
-msgstr "Droite"
-
-#: ../studio/widgetPresenter.py:455
-msgid "Set text to be right aligned"
-msgstr "Aligne le texte à droite"
-
-#: ../studio/widgetPresenter.py:457
-msgid "Fill"
-msgstr "Remplir"
-
-#: ../studio/widgetPresenter.py:462
-msgid "Set text to be fill its area"
-msgstr "Justifie le texte dans sa zone"
-
-#: ../studio/widgetPresenter.py:468
-msgid "OC_R"
-msgstr "_ROC"
-
-#: ../studio/widgetPresenter.py:469
-msgid "Perform OCR on this content area using the selected OCR engine."
+#: ../LongoMatch/Gui/MainWindow.cs:618
+msgid ""
+"An error occured in the video capturer and the current project will be "
+"closed:"
 msgstr ""
-"Effectue la reconnaissance de caractères de cette zone en utilisant le "
-"moteur ROC sélectionné."
+"Une erreur est survenue pendant la capture de la vidéo et le projet actuel "
+"va être fermé :"
 
-#: ../studio/widgetPresenter.py:475
-msgid "OCR engine to recognize this content area"
-msgstr "Moteur ROC pour effectuer la reconnaissance de cette zone de contenu"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:55
+msgid "Templates Files"
+msgstr "Fichiers modèles"
 
-#. Text Properties
-#: ../studio/widgetPresenter.py:483
-msgid "Text Properties"
-msgstr "Propriétés du texte"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:162
+msgid "The template has been modified. Do you want to save it? "
+msgstr "Le modèle a été modifié. Voulez-vous l'enregistrer ?"
 
-#: ../studio/widgetPresenter.py:500
-msgid "Font"
-msgstr "Police"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:184
+msgid "Template name"
+msgstr "Nom du modèle"
 
-#: ../studio/widgetPresenter.py:507
-msgid "Align"
-msgstr "Alignement"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:204
+msgid "You cannot create a template with a void name"
+msgstr "Impossible de créer un modèle avec un nom vide"
 
-#: ../studio/widgetPresenter.py:511
-msgid "Spacing"
-msgstr "Espacement"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:210
+msgid "A template with this name already exists"
+msgstr "Un modèle portant ce nom existe déjà"
 
-#: ../studio/widgetPresenter.py:513
-msgid "Set the text's letter spacing"
-msgstr "Définit l'interlettrage"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:236
+msgid "You can't delete the 'default' template"
+msgstr "Impossible de supprimer le modèle « par défaut »"
 
-#: ../studio/widgetPresenter.py:515
-msgid "Set the text's line spacing"
-msgstr "Définit l'interligne"
+#: ../LongoMatch/Gui/Dialog/TemplatesEditor.cs:241
+msgid "Do you really want to delete the template: "
+msgstr "Voulez-vous vraiment supprimer le modèle : "
 
-#: ../studio/widgetPresenter.py:520
-msgid "_Line:"
-msgstr "_Ligne :"
+#: ../LongoMatch/Gui/Dialog/EditCategoryDialog.cs:57
+msgid "This hotkey is already in use."
+msgstr "Ce raccourci clavier est déjà utilisé."
 
-#: ../studio/widgetPresenter.py:531
-msgid "L_etter:"
-msgstr "L_ettre :"
+#: ../LongoMatch/Gui/Dialog/FramesCaptureProgressDialog.cs:48
+msgid "Capturing frame: "
+msgstr "Cadre de capture : "
 
-#: ../studio/widgetPresenter.py:543
-msgid "Sty_le"
-msgstr "Sty_le"
+#: ../LongoMatch/Gui/Dialog/FramesCaptureProgressDialog.cs:57
+msgid "Done"
+msgstr "Terminée"
 
-#: ../studio/widgetPresenter.py:550
-msgid "Angle"
-msgstr "Angle"
+#: ../LongoMatch/Gui/Dialog/VideoEditionProperties.cs:127
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:90
+msgid "Low"
+msgstr "Basse"
 
-#: ../studio/widgetPresenter.py:554
-msgid "OCR engine to recogni_ze this area:"
-msgstr "Moteur ROC pour la re_connaissance de cette zone :"
+#: ../LongoMatch/Gui/Dialog/VideoEditionProperties.cs:130
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:91
+msgid "Normal"
+msgstr "Normale"
 
-#: ../studio/widgetPresenter.py:568
-msgid "Detect"
-msgstr "Détecter"
+#: ../LongoMatch/Gui/Dialog/VideoEditionProperties.cs:133
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:92
+msgid "Good"
+msgstr "Bonne"
 
-#: ../studio/widgetPresenter.py:570
-msgid "Angle:"
-msgstr "Angle :"
+#: ../LongoMatch/Gui/Dialog/VideoEditionProperties.cs:136
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:93
+msgid "Extra"
+msgstr "Supérieure"
 
-#: ../studio/widgetPresenter.py:652
-msgid "Save File"
-msgstr "Enregistrer le fichier"
+#: ../LongoMatch/Gui/Dialog/VideoEditionProperties.cs:172
+msgid "Save Video As ..."
+msgstr "Enregistrer la vidéo sous ..."
 
-#: ../studio/widgetPresenter.py:655
-msgid "Open File"
-msgstr "Ouvrir un fichier"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:70
+msgid "The Project has been edited, do you want to save the changes?"
+msgstr "Le projet a été modifié, voulez-vous enregistrer les modifications ?"
 
-#: ../studio/widgetPresenter.py:659
-msgid "Open Folder"
-msgstr "Ouvrir un dossier"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:95
+msgid "A Project is already using this file."
+msgstr "Un projet utilise déjà ce fichier."
 
-#: ../studio/widgetPresenter.py:686
-msgid "Pages to export"
-msgstr "Pages à exporter"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:112
+msgid "This Project is actually in use."
+msgstr "Ce projet est actuellement ouvert."
 
-# Contexte: pages
-#: ../studio/widgetPresenter.py:688
-msgid "All"
-msgstr "Toutes"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:113
+msgid "Close it first to allow its removal from the database"
+msgstr "Fermez-le pour autoriser sa suppression de la base de données"
 
-#: ../studio/widgetPresenter.py:689
-msgid "Current"
-msgstr "Actuelle"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:119
+msgid "Do you really want to delete:"
+msgstr "Voulez-vous vraiment supprimer :"
 
-#: ../studio/widgetPresenter.py:705
-msgid "Choose the format"
-msgstr "Choisir le format"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:176
+msgid "The Project you are trying to load is actually in use."
+msgstr "Le projet que vous essayez de charger est actuellement ouvert."
 
-#: ../studio/widgetPresenter.py:734
-msgid "Custom…"
-msgstr "Personnalisé…"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:176
+msgid "Close it first to edit it"
+msgstr "Fermez-le pour pouvoir le modifier"
 
-#: ../studio/widgetPresenter.py:748
-msgid "_Height:"
-msgstr "_Hauteur :"
+#: ../LongoMatch/Gui/Dialog/ProjectsManager.cs:196
+#: ../LongoMatch/Utils/ProjectUtils.cs:50
+msgid "Save Project"
+msgstr "Enregistrer le projet"
 
-#: ../studio/widgetPresenter.py:757
-msgid "Affected pages"
-msgstr "Pages affectées"
+#: ../LongoMatch/Gui/Dialog/DrawingTool.cs:98
+msgid "Save File as..."
+msgstr "Enregistrer le fichier sous..."
 
-#: ../studio/widgetPresenter.py:759
-msgid "C_urrent"
-msgstr "_Actuelle"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:389
+msgid "DirectShow Source"
+msgstr "Source DirectShow"
 
-# Contexte: pages
-#: ../studio/widgetPresenter.py:762
-msgid "_All"
-msgstr "_Toutes"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:390
+msgid "Unknown"
+msgstr "Inconnu"
 
-#: ../studio/widgetPresenter.py:822
-msgid "Unpaper Image Processor"
-msgstr "Processeur d'images Unpaper"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:438
+msgid "Keep original size"
+msgstr "Conserver la taille d'origine"
 
-#: ../studio/widgetPresenter.py:836
-msgid "Preview"
-msgstr "Aperçu"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:461
+msgid "Output file"
+msgstr "Fichier de sortie"
 
-#: ../studio/widgetPresenter.py:842
-msgid "_Preview"
-msgstr "A_perçu"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:473
+msgid "Open file..."
+msgstr "Ouvrir le fichier..."
 
-#: ../studio/widgetPresenter.py:868
-msgid "Performing Unpaper"
-msgstr "Utilisation de Unpaper"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:490
+msgid "Analyzing video file:"
+msgstr "Analyse du fichier vidéo :"
 
-#: ../studio/widgetPresenter.py:868
-msgid "Performing unpaper. Please wait…"
-msgstr "Exécution de unpaper. Veuillez patienter…"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:495
+msgid "This file doesn't contain a video stream."
+msgstr "Ce fichier ne contient pas de flux vidéo."
 
-#: ../studio/widgetPresenter.py:912
-msgid "Noise Filter Intensity"
-msgstr "Intensité du filtre de bruit"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:497
+msgid "This file contains a video stream but its length is 0."
+msgstr ""
+"Ce fichier contient un flux vidéo, mais celui-ci est de longueur nulle."
 
-#: ../studio/widgetPresenter.py:914 ../studio/widgetPresenter.py:946
-msgid "Default"
-msgstr "Par défaut"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:564
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:476
+msgid "Local Team Template"
+msgstr "Modèle d'équipe locale"
 
-#: ../studio/widgetPresenter.py:916 ../studio/widgetPresenter.py:948
-msgid "Custom"
-msgstr "Personnalisé"
+#: ../LongoMatch/Gui/Component/ProjectDetailsWidget.cs:577
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:414
+msgid "Visitor Team Template"
+msgstr "Modèle d'équipe visiteurs"
 
-#: ../studio/widgetPresenter.py:918 ../studio/widgetPresenter.py:950
+#: ../LongoMatch/Gui/Component/CategoryProperties.cs:68
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:125
+msgid "none"
+msgstr "aucun"
+
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:119
+msgid ""
+"You are about to delete a category and all the plays added to this category. "
+"Do you want to proceed?"
+msgstr ""
+"Vous allez supprimer une catégorie et toutes les actions jointes à celle‑ci. "
+"Voulez-vous continuer ?"
+
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:126
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:135
+msgid "A template needs at least one category"
+msgstr "Un modèle doit comporter au moins une catégorie"
+
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:217
+msgid "New template"
+msgstr "Nouveau modèle"
+
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:221
+msgid "The template name is void."
+msgstr "Le nom du modèle est vide."
+
+# missing space in english text after full stop
+#: ../LongoMatch/Gui/Component/ProjectTemplateWidget.cs:227
+msgid "The template already exists.Do you want to overwrite it ?"
+msgstr "Le modèle existe déjà. Voulez-vous l'écraser ?"
+
+#: ../LongoMatch/Gui/Component/PlayListWidget.cs:86
+msgid ""
+"The file you are trying to load is not a playlist or it's not compatible "
+"with the current version"
+msgstr ""
+"Le fichier que vous essayez de charger n'est pas une liste de lecture ou "
+"n'est pas compatible avec la version actuelle"
+
+#: ../LongoMatch/Gui/Component/PlayListWidget.cs:216
+msgid "Open playlist"
+msgstr "Ouvrir une liste de lecture"
+
+#: ../LongoMatch/Gui/Component/PlayListWidget.cs:231
+msgid "New playlist"
+msgstr "Nouvelle liste de lecture"
+
+#: ../LongoMatch/Gui/Component/PlayListWidget.cs:256
+msgid "The playlist is empty!"
+msgstr "La liste de lecture est vide !"
+
+#: ../LongoMatch/Gui/Component/PlayListWidget.cs:265
+#: ../LongoMatch/Utils/ProjectUtils.cs:127
+#: ../LongoMatch/Utils/ProjectUtils.cs:215
+msgid "Please, select a video file."
+msgstr "Sélectionnez un fichier vidéo."
+
+#: ../LongoMatch/Gui/Component/PlayerProperties.cs:74
+msgid "Choose an image"
+msgstr "Choisir une image"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:55
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:119
+msgid "File length"
+msgstr "Longueur du fichier"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:120
+msgid "Video codec"
+msgstr "Codec vidéo"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:121
+msgid "Audio codec"
+msgstr "Codec audio"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:122
+msgid "Format"
+msgstr "Formater"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:132
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:138
+msgid "Title"
+msgstr "Titre"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:133
+msgid "Local team"
+msgstr "Équipe locale"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:134
+msgid "Visitor team"
+msgstr "Équipe visiteurs"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:135
+msgid "Season"
+msgstr "Saison"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:136
+msgid "Competition"
+msgstr "Compétition"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:137
+msgid "Result"
+msgstr "Résultat"
+
+#: ../LongoMatch/Gui/Component/ProjectListWidget.cs:138
+msgid "Date"
+msgstr "Date"
+
+#: ../LongoMatch/Gui/Component/TimeScale.cs:160
+msgid "Delete Play"
+msgstr "Supprimer l'action"
+
+#: ../LongoMatch/Gui/Component/TimeScale.cs:161
+msgid "Add New Play"
+msgstr "Ajouter une nouvelle action"
+
+#: ../LongoMatch/Gui/Component/TimeScale.cs:268
+msgid "Delete "
+msgstr "Supprimer "
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:81
 msgid "None"
 msgstr "Aucun"
 
-#: ../studio/widgetPresenter.py:944
-msgid "Gray Filter Size"
-msgstr "Taille du filtre de gris"
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:157
+msgid "No Team"
+msgstr "Pas d'équipe"
 
-#: ../studio/widgetPresenter.py:976
-msgid "Black Filter"
-msgstr "Filtre de noir"
-
-#: ../studio/widgetPresenter.py:977
-msgid "Use"
-msgstr "Utiliser"
-
-#: ../studio/widgetPresenter.py:984
-msgid "Extra Options"
-msgstr "Options supplémentaires"
-
-#: ../studio/widgetPresenter.py:986
-msgid "Unpaper's command line arguments"
-msgstr "Paramètres de ligne de commande pour unpaper"
-
-#: ../studio/widgetPresenter.py:1043
-msgid "Unpaper Preferences"
-msgstr "Préférences Unpaper"
-
-#: ../studio/widgetPresenter.py:1100 ../studio/widgetPresenter.py:1111
-msgid "An error occurred!"
-msgstr "Une erreur est survenue !"
-
-#: ../studio/widgetPresenter.py:1182
-msgid "Cancelled"
-msgstr "Annulé"
-
-#: ../studio/widgetPresenter.py:1196
-msgid "Preferences"
-msgstr "Préférences"
-
-#: ../studio/widgetPresenter.py:1261
-msgid "_General"
-msgstr "_Général"
-
-#: ../studio/widgetPresenter.py:1266
-msgid "Temporary folder"
-msgstr "Dossier temporaire"
-
-#: ../studio/widgetPresenter.py:1270 ../studio/widgetPresenter.py:1334
-msgid "Choose"
-msgstr "Choisir"
-
-#: ../studio/widgetPresenter.py:1287
-msgid "_Recognition"
-msgstr "_Reconnaissance"
-
-#: ../studio/widgetPresenter.py:1292
-msgid "Select boxes' colors"
-msgstr "Sélectionner les couleurs des boîtes"
-
-#: ../studio/widgetPresenter.py:1298
-msgid "Te_xt areas' fill color"
-msgstr "Couleur de remplissage des zones de te_xte"
-
-#: ../studio/widgetPresenter.py:1304
-msgid "Text areas' _stroke color"
-msgstr "Couleur du _texte des zones de texte"
-
-#: ../studio/widgetPresenter.py:1310
-msgid "_Image areas' fill color"
-msgstr "Couleur de remplissage des zones d'_image"
-
-#: ../studio/widgetPresenter.py:1330
-msgid "Path to unpaper"
-msgstr "Chemin vers unpaper"
-
-#: ../studio/widgetPresenter.py:1342 ../studio/widgetPresenter.py:1592
-#: ../studio/widgetPresenter.py:1630 ../studio/widgetPresenter.py:1648
-#: ../studio/widgetPresenter.py:1737
-msgid "OCR Engines"
-msgstr "Moteurs ROC"
-
-#: ../studio/widgetPresenter.py:1344
-msgid ""
-"The engine that should be used when performing the automatic recognition."
-msgstr "Le moteur devant être utilisé lors des reconnaissances automatiques."
-
-#: ../studio/widgetPresenter.py:1355
-msgid "Favorite _engine:"
-msgstr "Moteur _favori :"
-
-#: ../studio/widgetPresenter.py:1370
-msgid "Window size"
-msgstr "Taille de la fenêtre"
-
-#: ../studio/widgetPresenter.py:1371
-msgid "A_utomatic"
-msgstr "A_utomatique"
-
-#: ../studio/widgetPresenter.py:1372
-msgid "Cu_stom"
-msgstr "Pe_rsonnalisé"
-
-#: ../studio/widgetPresenter.py:1381
-msgid "The window size is the detection algorithm's subdivision areas' size."
-msgstr ""
-"La taille de fenêtre est la taille des subdivisions de l'algorithme de "
-"détection."
-
-#: ../studio/widgetPresenter.py:1393
-msgid "Columns Detection"
-msgstr "Détection des colonnes"
-
-#: ../studio/widgetPresenter.py:1398
-msgid "_Improve columns detection"
-msgstr "_Améliorer la détection des colonnes"
-
-#: ../studio/widgetPresenter.py:1400
-msgid "Use a post-detection algorithm to improve the detection of columns"
-msgstr ""
-"Utilise un algorithme de post-détection pour améliorer la détection des "
-"colonnes"
-
-#: ../studio/widgetPresenter.py:1411 ../studio/widgetPresenter.py:1485
-msgid "_Automatic"
-msgstr "_Automatique"
-
-#: ../studio/widgetPresenter.py:1413 ../studio/widgetPresenter.py:1487
-msgid "Custo_m"
-msgstr "Perso_nnalisé"
-
-#: ../studio/widgetPresenter.py:1417
-msgid "The columns' minimum width in pixels"
-msgstr "La largeur minimale des colonnes en pixels"
-
-#: ../studio/widgetPresenter.py:1433
-msgid "Minimum width that a column should have:"
-msgstr "Largeur minimale qu'une colonne peut avoir :"
-
-#: ../studio/widgetPresenter.py:1454
-msgid "Recognized Text"
-msgstr "Texte reconnu"
-
-#: ../studio/widgetPresenter.py:1455
-msgid "_Fix line breaks and hyphenization"
-msgstr "_Réparer les sauts de ligne et les césures"
-
-#: ../studio/widgetPresenter.py:1457
-msgid ""
-"Removes single line breaks and hyphenization from text generated by OCR "
-"engines"
-msgstr ""
-"Supprime les sauts de ligne unique et les césures du texte générés par les "
-"moteurs ROC"
-
-#: ../studio/widgetPresenter.py:1467
-msgid "Content Areas"
-msgstr "Zone de contenu"
-
-#: ../studio/widgetPresenter.py:1472
-msgid "A_djust content areas' bounds"
-msgstr "Ajuste les limites _de la zone de contenu"
-
-#: ../studio/widgetPresenter.py:1474
-msgid "Use a post-detection algorithm to shorten the contents areas' margins"
-msgstr ""
-"Utiliser un algorithme de post-détection pour diminuer les marges de la zone "
-"de contenu"
-
-#: ../studio/widgetPresenter.py:1491
-msgid "The maximum size for the content areas' margins in pixels"
-msgstr "La taille maximale des marges de la zone de contenu en pixels"
-
-#: ../studio/widgetPresenter.py:1508
-msgid "Maximum size that the content areas' margins should have:"
-msgstr "Taille maximale des marges de la zone de contenu :"
-
-#: ../studio/widgetPresenter.py:1554
-msgid "Image Pre-processing"
-msgstr "Pré-traitement de l'image"
-
-#: ../studio/widgetPresenter.py:1555
-msgid "Des_kew images"
-msgstr "Re_dresser les images"
-
-#: ../studio/widgetPresenter.py:1557
-msgid "Tries to straighten the images before they are added"
-msgstr "Essaie de redresser les images avant de les ajouter"
-
-#: ../studio/widgetPresenter.py:1566
-msgid "_Unpaper images"
-msgstr "Images via _Unpaper"
-
-#: ../studio/widgetPresenter.py:1568
-msgid "Cleans the image using the Unpaper pre-processor"
-msgstr "Nettoie l'image en utilisant le pré-traitement Unpaper"
-
-#: ../studio/widgetPresenter.py:1572
-msgid "Unpaper _Preferences"
-msgstr "_Préférences Unpaper"
-
-#: ../studio/widgetPresenter.py:1606
-msgid "Engines to be added"
-msgstr "Moteurs à ajouter"
-
-#: ../studio/widgetPresenter.py:1611
-msgid "Include"
-msgstr "Inclure"
-
-#: ../studio/widgetPresenter.py:1615 ../studio/widgetPresenter.py:1652
-msgid "Engine"
-msgstr "Moteur"
-
-#: ../studio/widgetPresenter.py:1656
-msgid "Add"
-msgstr "Ajouter"
-
-#: ../studio/widgetPresenter.py:1658
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:170
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectTemplateWidget.cs:164
 msgid "Edit"
 msgstr "Modifier"
 
-#: ../studio/widgetPresenter.py:1659
-msgid "De_tect"
-msgstr "Dé_tecter"
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:171
+msgid "Team Selection"
+msgstr "Sélection de l'équipe"
 
-#: ../studio/widgetPresenter.py:1673
-msgid "Are you sure you want to delete this engine?"
-msgstr "Voulez-vous vraiment supprimer ce moteur ?"
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:173
+msgid "Add tag"
+msgstr "Ajouter une étiquette"
 
-#: ../studio/widgetPresenter.py:1719
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:174
+msgid "Tag player"
+msgstr "Étiqueter un joueur"
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:176
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:59
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:177
+msgid "Delete key frame"
+msgstr "Supprimer l'image clé"
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:178
+msgid "Add to playlist"
+msgstr "Ajouter à la liste de lecture"
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:180
+msgid "Export to PGN images"
+msgstr "Exporter en images PGN"
+
+#: ../LongoMatch/Gui/TreeView/ListTreeViewBase.cs:338
+msgid "Do you want to delete the key frame for this play?"
+msgstr "Voulez-vous supprimer l'image clé pour cette action ?"
+
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:66
+#: ../LongoMatch/Gui/TreeView/PlayersTreeView.cs:71
+msgid "Edit name"
+msgstr "Modifier le nom"
+
+#: ../LongoMatch/Gui/TreeView/PlaysTreeView.cs:67
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:72
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:153
+msgid "Sort Method"
+msgstr "Méthode de tri"
+
+#: ../LongoMatch/Gui/TreeView/PlayerPropertiesTreeView.cs:45
+msgid "Photo"
+msgstr "Photo"
+
+#: ../LongoMatch/Gui/TreeView/PlayerPropertiesTreeView.cs:56
+msgid "Position"
+msgstr "Position"
+
+#: ../LongoMatch/Gui/TreeView/PlayerPropertiesTreeView.cs:61
+msgid "Number"
+msgstr "Numéro"
+
+# other option is délai de mise en œuvre
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:52
+msgid "Lead Time"
+msgstr "Délai avant"
+
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:57
+msgid "Lag Time"
+msgstr "Délai après"
+
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:62
+msgid "Color"
+msgstr "Couleur"
+
+#: ../LongoMatch/Gui/TreeView/CategoriesTreeView.cs:67
+msgid "Hotkey"
+msgstr "Raccourci clavier"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:56
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:115
+msgid "Edit Title"
+msgstr "Modifier le titre"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:62
+msgid "Apply current play rate"
+msgstr "Appliquer la vitesse de lecture actuelle"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:139
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:140
+msgid " sec"
+msgstr " s"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:140
+#: ../LongoMatch/IO/CSVExport.cs:85 ../LongoMatch/IO/CSVExport.cs:140
+#: ../LongoMatch/IO/CSVExport.cs:166
+msgid "Duration"
+msgstr "Durée"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:141
+msgid "Play Rate"
+msgstr "Vitesse de lecture"
+
+#: ../LongoMatch/Gui/TreeView/PlayListTreeView.cs:144
+msgid "File not found"
+msgstr "Fichier introuvable"
+
+#: ../LongoMatch/DB/Project.cs:543
+msgid "The file you are trying to load is not a valid project"
+msgstr "Le fichier que vous essayez de charger n'est pas un projet valide"
+
+#: ../LongoMatch/DB/DataBase.cs:137
+msgid "Error retrieving the file info for project:"
+msgstr "Erreur lors de la récupération du fichier d'information du projet :"
+
+#: ../LongoMatch/DB/DataBase.cs:138
 msgid ""
-"No OCR engines were found in the system.\n"
-"Please make sure you have OCR engines installed and available."
+"This value will be reset. Remember to change it later with the projects "
+"manager"
 msgstr ""
-"Aucun moteur ROC n'a été trouvé sur cet ordinateur.\n"
-"Veuillez vous assurer que des moteurs ROC soient installés et disponibles."
+"Cette valeur va être réinitialisée. Rappelez-vous de la changer plus tard à "
+"l'aide du gestionnaire de projets."
 
-#: ../studio/widgetPresenter.py:1722
-msgid "No OCR engines available"
-msgstr "Aucun moteur ROC disponible"
+#: ../LongoMatch/DB/DataBase.cs:139
+msgid "Change Me"
+msgstr "À modifier"
 
-#: ../studio/widgetPresenter.py:1739
-#, python-format
-msgid "%s engine"
-msgstr "moteur %s"
+#: ../LongoMatch/DB/DataBase.cs:216
+msgid "The Project for this video file already exists."
+msgstr "Le projet pour ce fichier vidéo existe déjà."
 
-#: ../studio/widgetPresenter.py:1763
-msgid "_Name:"
-msgstr "_Nom :"
+# typo in source
+#: ../LongoMatch/DB/DataBase.cs:216
+msgid "Try to edit it with the Database Manager"
+msgstr "Essayez de le modifier avec le gestionnaire de base de données"
 
-#: ../studio/widgetPresenter.py:1764
-msgid "Engine name"
-msgstr "Nom du moteur"
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectSelectionDialog.cs:44
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.NewProjectDialog.cs:26
+msgid "New Project"
+msgstr "Nouveau projet"
 
-#: ../studio/widgetPresenter.py:1766
-msgid "_Image format:"
-msgstr "Format d'_image :"
+#. Container child hbox1.Gtk.Box+BoxChild
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectSelectionDialog.cs:64
+msgid "New project using a video file"
+msgstr "Nouveau projet avec fichier vidéo"
 
-#: ../studio/widgetPresenter.py:1768
-msgid "The required image format"
-msgstr "Le format d'image requis"
+#. Container child hbox2.Gtk.Box+BoxChild
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectSelectionDialog.cs:94
+msgid "Live project using a capture device"
+msgstr "Projet en direct utilisant un périphérique de capture"
 
-#: ../studio/widgetPresenter.py:1770
-msgid "_Failure string:"
-msgstr "_Message d'erreur :"
+#. Container child hbox3.Gtk.Box+BoxChild
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectSelectionDialog.cs:122
+msgid "Live project using a fake capture device"
+msgstr "Projet en direct utilisant un périphérique de capture fictif"
 
-#: ../studio/widgetPresenter.py:1772
-msgid "The failure string or character that this engine uses"
-msgstr "Le message ou caractère d'erreur que ce moteur utilise"
-
-#: ../studio/widgetPresenter.py:1775
-msgid "Engine _path:"
-msgstr "C_hemin du moteur :"
-
-#: ../studio/widgetPresenter.py:1777
-msgid "The path to the engine program"
-msgstr "L'emplacement du programme du moteur"
-
-#: ../studio/widgetPresenter.py:1779
-msgid "Engine _arguments:"
-msgstr "P_aramètres du moteur :"
-
-#: ../studio/widgetPresenter.py:1781
-msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EndCaptureDialog.cs:66
+msgid ""
+"A capture project is actually running.\n"
+"You can continue with the current capture, cancel it or save your project. \n"
+"\n"
+"<b>Warning: If you cancel the current project all your changes will be lost."
+"</b>"
 msgstr ""
-"Paramètres : utilisez $IMAGE pour l'image et $FILE en cas d'enregistrement "
-"dans un fichier"
+"Un projet de capture est en cours.\n"
+"Vous pouvez poursuivre la capture actuelle, l'annuler ou enregistrer votre "
+"projet.\n"
+"\n"
+"<b>Avertissement : si vous annulez la capture en cours, toutes les "
+"modifications seront perdues.</b>"
 
-#: ../studio/widgetPresenter.py:1798
-msgid "Error setting the new engine; please check your engine settings."
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EndCaptureDialog.cs:95
+msgid "Return"
+msgstr "Poursuivre"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EndCaptureDialog.cs:120
+msgid "Cancel capture"
+msgstr "Annuler la capture"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EndCaptureDialog.cs:145
+msgid "Stop capture and save project"
+msgstr "Arrêter la capture et enregistrer le projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectTemplateEditorDialog.cs:24
+msgid "Categories Template"
+msgstr "Modèle de catégories"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:75
+msgid "<b>Tools</b>"
+msgstr "<b>Outils</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:212
+msgid "<b>Color</b>"
+msgstr "<b>Couleur</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:233
+msgid "<b>Width</b>"
+msgstr "<b>Largeur</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:242
+msgid "2 px"
+msgstr "2 px"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:243
+msgid "4 px"
+msgstr "4 px"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:244
+msgid "6 px"
+msgstr "6 px"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:245
+msgid "8 px"
+msgstr "8 px"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:246
+msgid "10 px"
+msgstr "10 px"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:259
+msgid "<b>Transparency</b>"
+msgstr "<b>Transparence</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.DrawingToolBox.cs:308
+msgid ""
+"Draw-><b> D</b>\n"
+"Clear-><b> C</b>\n"
+"Hide-><b> S</b>\n"
+"Show-><b> S</b>\n"
 msgstr ""
-"Impossible de configurer le nouveau moteur ; veuillez vérifier vos réglages."
+"Dessiner-><b> D</b>\n"
+"Effacer-><b> C</b>\n"
+"Cacher-><b> S</b>\n"
+"Afficher-><b> S</b>\n"
 
-#: ../studio/widgetPresenter.py:1798
-msgid "Warning"
-msgstr "Avertissement"
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectsManager.cs:48
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:142
+msgid "Projects Manager"
+msgstr "Gestionnaire de projets"
 
-#: ../studio/widgetPresenter.py:1834
-msgid "translator-credits"
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectsManager.cs:104
+msgid "<b>Project Details</b>"
+msgstr "<b>Détails du projet</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.ProjectsManager.cs:156
+msgid "_Export"
+msgstr "_Exporter"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.HotKeySelectorDialog.cs:24
+msgid "Select a HotKey"
+msgstr "Sélectionner un raccourci clavier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.HotKeySelectorDialog.cs:37
+msgid ""
+"Press a key combination using  Shift+key or Alt+key.\n"
+"Hotkeys with a single key are also allowed with Ctrl+key."
 msgstr ""
-"Philippe Normand <phil@base-art.net>\n"
-"Bruno Brouard <annoa.b@gmail.com>\n"
-"Claude Paroz <claude@2xlibre.net>"
+"Pressez une combinaison de touches avec Maj+touche ou Alt+touche.\n"
+"Une touche unique peut aussi servir de raccourci en l'activant avec Ctrl"
+"+touche."
 
-#~ msgid "_Appearance"
-#~ msgstr "_Apparence"
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.PlayListWidget.cs:63
+msgid ""
+"Load a playlist\n"
+"or create a \n"
+"new one."
+msgstr ""
+"Charger une liste\n"
+"de lecture ou en\n"
+"créer une nouvelle."
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.TaggerDialog.cs:24
+msgid "Tag play"
+msgstr "Étiqueter une action"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectListWidget.cs:51
+msgid "Projects Search:"
+msgstr "Recherche de projets :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.SnapshotsDialog.cs:66
+msgid "Play:"
+msgstr "Action :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.SnapshotsDialog.cs:74
+msgid "Interval (frames/s):"
+msgstr "Intervalle (images/s) :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.SnapshotsDialog.cs:82
+msgid "Series Name:"
+msgstr "Nom des séries :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.SnapshotsDialog.cs:136
+msgid "Export to PNG images"
+msgstr "Exporter en images PNG"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.DrawingTool.cs:34
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:192
+msgid "Drawing Tool"
+msgstr "Outil de dessin"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.DrawingTool.cs:78
+msgid "Save to Project"
+msgstr "Enregistrer dans le projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.DrawingTool.cs:105
+msgid "Save to File"
+msgstr "Enregistrer dans un fichier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.TagsTreeWidget.cs:90
+msgid "Add Filter"
+msgstr "Ajouter un filtre"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:123
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:124
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:126
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:127
+msgid "_New Project"
+msgstr "_Nouveau projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:129
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:130
+msgid "_Open Project"
+msgstr "_Ouvrir un projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:132
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:133
+msgid "_Quit"
+msgstr "_Quitter"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:135
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:137
+msgid "_Close Project"
+msgstr "_Fermer le projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:139
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:140
+msgid "_Tools"
+msgstr "Ou_tils"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:143
+msgid "Database Manager"
+msgstr "Gestionnaire de base de données"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:145
+msgid "Categories Templates Manager"
+msgstr "Gestionnaire de modèles de catégories"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:146
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.TemplatesManager.cs:42
+msgid "Templates Manager"
+msgstr "Gestionnaire de modèles"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:148
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:149
+msgid "_View"
+msgstr "_Affichage"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:151
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:152
+msgid "Full Screen"
+msgstr "Plein écran"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:154
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:155
+msgid "Playlist"
+msgstr "Liste de lecture"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:157
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:160
+msgid "Capture Mode"
+msgstr "Mode capture"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:162
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:165
+msgid "Analyze Mode"
+msgstr "Mode analyse"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:167
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:169
+msgid "_Save Project"
+msgstr "Enregi_strer le projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:171
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:172
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:188
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:189
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:174
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:175
+msgid "_About"
+msgstr "À _propos"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:177
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:179
+msgid "Export Project To CSV File"
+msgstr "Exporter le projet dans un fichier CSV"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:181
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:182
+msgid "Teams Templates Manager"
+msgstr "Gestionnaire de modèles d'équipes"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:184
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:186
+msgid "Hide All Widgets"
+msgstr "Masquer tous les éléments graphiques"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:191
+msgid "_Drawing Tool"
+msgstr "Outil de _dessin"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:194
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:195
+msgid "_Import Project"
+msgstr "_Importer un projet"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:197
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:200
+msgid "Free Capture Mode"
+msgstr "Mode capture libre"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:254
+msgid "Plays"
+msgstr "Actions"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.MainWindow.cs:403
+msgid "Creating video..."
+msgstr "Création de la vidéo..."
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EditPlayerDialog.cs:24
+msgid "Player Details"
+msgstr "Détails du joueur"
+
+# translated as separate words
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Popup.TransparentDrawingArea.cs:22
+msgid "TransparentDrawingArea"
+msgstr "TransparentDrawingArea"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.PlayerProperties.cs:81
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EntryDialog.cs:94
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:60
+msgid "Name:"
+msgstr "Nom :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.PlayerProperties.cs:89
+msgid "Position:"
+msgstr "Position :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.PlayerProperties.cs:99
+msgid "Number:"
+msgstr "Numéro :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.PlayerProperties.cs:109
+msgid "Photo:"
+msgstr "Photo :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.FramesCaptureProgressDialog.cs:30
+msgid "Capture Progress"
+msgstr "Progression de la capture"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EditCategoryDialog.cs:24
+msgid "Category Details"
+msgstr "Détails de la catégorie"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EntryDialog.cs:40
+msgid "Select template name"
+msgstr "Sélectionner le nom du modèle"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EntryDialog.cs:84
+msgid "Copy existent template:"
+msgstr "Copier un modèle existant :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.EntryDialog.cs:102
+msgid "Players:"
+msgstr "Joueurs :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.UpdateDialog.cs:45
+msgid ""
+"\n"
+"A new version of LongoMatch has been released at www.ylatuya.es!\n"
+msgstr ""
+"\n"
+"Une nouvelle version de LongoMatch est disponible à www.ylatuya.es !\n"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.UpdateDialog.cs:55
+msgid "The new version is "
+msgstr "La nouvelle version est"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.UpdateDialog.cs:65
+msgid ""
+"\n"
+"You can download it using this direct link:"
+msgstr ""
+"\n"
+"Vous pouvez la télécharger directement avec ce lien :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.UpdateDialog.cs:75
+msgid "label7"
+msgstr "Étiquette7"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.PlayersSelectionDialog.cs:26
+msgid "Tag players"
+msgstr "Étiqueter des joueurs"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectTemplateWidget.cs:80
+msgid "New Before"
+msgstr "Nouveau avant"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectTemplateWidget.cs:108
+msgid "New After"
+msgstr "Nouveau après"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectTemplateWidget.cs:136
+msgid "Remove"
+msgstr "Supprimer"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectTemplateWidget.cs:199
+msgid "Export"
+msgstr "Exporter"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.Win32CalendarDialog.cs:24
+msgid "Calendar"
+msgstr "Calendrier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.TaggerWidget.cs:42
+msgid ""
+"<b>You haven't tagged any play yet.</b>\n"
+"You can add new tags using the text entry and clicking \"Add Tag\""
+msgstr ""
+"<b>Vous n'avez pas encore étiqueté d'action.</b>\n"
+"Vous pouvez ajouter une nouvelle étiquette en saisissant son intitulé et en "
+"cliquant sur « Ajouter une étiquette »"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.TaggerWidget.cs:95
+msgid "Add Tag"
+msgstr "Ajouter une étiquette"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:60
+msgid "Video Properties"
+msgstr "Propriétés de la vidéo"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:84
+msgid "Video Quality:"
+msgstr "Qualité de la vidéo :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:113
+msgid "Size: "
+msgstr "Taille : "
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:119
+msgid "Portable (4:3 - 320x240)"
+msgstr "Portable (4:3 - 320x240)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:120
+msgid "VGA (4:3 - 640x480)"
+msgstr "VGA (4:3 - 640x480)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:121
+msgid "TV (4:3 - 720x576)"
+msgstr "TV (4:3 - 720x576)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:122
+msgid "HD 720p (16:9 - 1280x720)"
+msgstr "HD 720p (16:9 - 1280x720)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:123
+msgid "Full HD 1080p (16:9 - 1920x1080)"
+msgstr "Full HD 1080p (16:9 - 1920x1080)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:143
+msgid "Ouput Format:"
+msgstr "Format de sortie :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:166
+msgid "Enable Title Overlay"
+msgstr "Permettre l'affichage en surimpression du titre"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:177
+msgid "Enable Audio (Experimental)"
+msgstr "Activer le son (expérimental)"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.VideoEditionProperties.cs:195
+msgid "File name: "
+msgstr "Nom du fichier : "
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ButtonsWidget.cs:37
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ButtonsWidget.cs:47
+msgid "Tag new play"
+msgstr "Étiqueter la nouvelle action"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.Migrator.cs:88
+msgid "<b>Data Base Migration</b>"
+msgstr "<b>Migration de base de données</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.Migrator.cs:116
+msgid "<b>Playlists Migration</b>"
+msgstr "<b>Migration de listes de lecture</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.Migrator.cs:144
+msgid "<b>Templates Migration</b>"
+msgstr "<b>Migration de modèles</b>"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:94
+msgid "Color:        "
+msgstr "Couleur :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:115
+msgid "Change"
+msgstr "Modifier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.CategoryProperties.cs:135
+msgid "HotKey:"
+msgstr "Raccourci clavier :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:141
+msgid "Competition:"
+msgstr "Compétition :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:183
+msgid "File:"
+msgstr "Fichier :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:311
+msgid "_Calendar"
+msgstr "_Calendrier"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:331
+msgid "Visitor Team:"
+msgstr "Équipe visiteurs :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:341
+msgid "Local Goals:"
+msgstr "Buts locaux :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:351
+msgid "Visitor Goals:"
+msgstr "Buts visiteurs :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:361
+msgid "Date:"
+msgstr "Date :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:371
+msgid "Local Team:"
+msgstr "Équipe locale :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:379
+msgid "Categories Template:"
+msgstr "Modèle de catégories :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:438
+msgid "Season:"
+msgstr "Saison :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:498
+msgid "Audio Bitrate (kbps):"
+msgstr "Débit audio (kops) :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:524
+msgid "Device:"
+msgstr "Périphérique :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:552
+msgid "Video Size:"
+msgstr "Taille de la vidéo :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:562
+msgid "Video Bitrate (kbps):"
+msgstr "Débit de la vidéo (kops) :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:599
+msgid "Video Format:"
+msgstr "Format de la vidéo :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.ProjectDetailsWidget.cs:609
+msgid "Video encoding  properties"
+msgstr "Propriétés de codage de la vidéo"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.TimeAdjustWidget.cs:41
+msgid "Lead time:"
+msgstr "Délai avant :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Component.TimeAdjustWidget.cs:49
+msgid "Lag time:"
+msgstr "Délai après :"
+
+#: ../LongoMatch/gtk-gui/LongoMatch.Gui.Dialog.OpenProjectDialog.cs:26
+msgid "Open Project"
+msgstr "Ouvrir le projet"
+
+#: ../LongoMatch/Handlers/EventsManager.cs:191
+msgid "You can't create a new play if the capturer is not recording."
+msgstr ""
+"Impossible de créer une nouvelle action si la capture n'est pas en cours."
+
+#: ../LongoMatch/Handlers/EventsManager.cs:224
+msgid "The video edition has finished successfully."
+msgstr "La modification de la vidéo s'est terminée avec succès."
+
+#: ../LongoMatch/Handlers/EventsManager.cs:230
+msgid "An error has occurred in the video editor."
+msgstr "Une erreur est survenue dans l'éditeur vidéo."
+
+#: ../LongoMatch/Handlers/EventsManager.cs:231
+msgid "Please, try again."
+msgstr "Veuillez réessayer."
+
+#: ../LongoMatch/Handlers/EventsManager.cs:266
+msgid ""
+"The stop time is smaller than the start time.The play will not be added."
+msgstr ""
+"L'heure de fin est antérieure à l'heure de début. L'action ne sera pas "
+"ajoutée."
+
+#: ../LongoMatch/Handlers/EventsManager.cs:341
+msgid "Please, close the opened project to play the playlist."
+msgstr "Fermez le projet ouvert pour lire la liste de lecture."
+
+#: ../LongoMatch/IO/CSVExport.cs:80
+msgid "Section"
+msgstr "Section"
+
+# Not sure this should be translated
+#: ../LongoMatch/IO/CSVExport.cs:83 ../LongoMatch/IO/CSVExport.cs:138
+#: ../LongoMatch/IO/CSVExport.cs:164
+msgid "StartTime"
+msgstr "Début"
+
+# not sure translation is necessary
+#: ../LongoMatch/IO/CSVExport.cs:84 ../LongoMatch/IO/CSVExport.cs:139
+#: ../LongoMatch/IO/CSVExport.cs:165
+msgid "StopTime"
+msgstr "Fin"
+
+#: ../LongoMatch/IO/CSVExport.cs:126
+msgid "CSV exported successfully."
+msgstr "Fichier CSV exporté avec succès."
+
+#: ../LongoMatch/IO/CSVExport.cs:135
+msgid "Tag"
+msgstr "Étiquette"
+
+#: ../LongoMatch/IO/CSVExport.cs:160
+msgid "Player"
+msgstr "Joueur"
+
+#: ../LongoMatch/IO/CSVExport.cs:161
+msgid "Category"
+msgstr "Catégorie"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:43
+msgid ""
+"The project will be saved to a file. You can insert it later into the "
+"database using the \"Import project\" function once you copied the video "
+"file to your computer"
+msgstr ""
+"Le projet va être enregistré dans un fichier. Vous pourrez l'incorporer plus "
+"tard dans la base de données en utilisant la fonction « Importer un projet » "
+"une fois que vous aurez copié le fichier vidéo sur l'ordinateur"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:64
+msgid "Project saved successfully."
+msgstr "Projet enregistré avec succès."
+
+#. Show a file chooser dialog to select the file to import
+#: ../LongoMatch/Utils/ProjectUtils.cs:79
+msgid "Import Project"
+msgstr "Importer un projet"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:105
+msgid "Error importing project:"
+msgstr "Erreur lors de l'importation du projet :"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:143
+msgid "A project already exists for the file:"
+msgstr "Un projet existe déjà pour le fichier :"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:144
+msgid "Do you want to overwrite it?"
+msgstr "Voulez-vous l'écraser ?"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:163
+msgid "Project successfully imported."
+msgstr "Projet importé avec succès."
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:193
+msgid "No capture devices were found."
+msgstr "Aucun périphérique de capture trouvé."
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:219
+msgid "This file is already used in another Project."
+msgstr "Ce fichier est déjà utilisé dans un autre projet."
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:220
+msgid "Select a different one to continue."
+msgstr "Sélectionnez un autre fichier pour poursuivre."
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:244
+msgid "Select Export File"
+msgstr "Sélectionnez un fichier d'exportation"
+
+#: ../LongoMatch/Utils/ProjectUtils.cs:273
+msgid "Creating video thumbnails. This can take a while."
+msgstr "Création des vignettes vidéo. Cela peut prendre un moment."
+
+#: ../CesarPlayer/Gui/CapturerBin.cs:259
+msgid ""
+"You are going to stop and finish the current capture.\n"
+"Do you want to proceed?"
+msgstr ""
+"Vous êtes sur le point d'arrêter et de mettre fin à la capture actuelle.\n"
+"Voulez-vous continuer ?"
+
+#: ../CesarPlayer/Gui/CapturerBin.cs:265
+msgid "Finalizing file. This can take a while"
+msgstr "Finalisation du fichier. Cela peut prendre un moment."
+
+#: ../CesarPlayer/Gui/CapturerBin.cs:300
+msgid "Device disconnected. The capture will be paused"
+msgstr "Périphérique déconnecté. La capture est en attente"
+
+#: ../CesarPlayer/Gui/CapturerBin.cs:309
+msgid "Device reconnected.Do you want to restart the capture?"
+msgstr "Le périphérique connecté à nouveau. Voulez-vous reprendre la capture ?"
+
+#: ../CesarPlayer/gtk-gui/LongoMatch.Gui.PlayerBin.cs:229
+msgid "Time:"
+msgstr "Heure :"
+
+#: ../CesarPlayer/Utils/Device.cs:83
+msgid "Default device"
+msgstr "Périphérique par défaut"
+
+#: ../CesarPlayer/Utils/PreviewMediaFile.cs:116
+#: ../CesarPlayer/Utils/MediaFile.cs:158
+msgid "Invalid video file:"
+msgstr "Fichier vidéo non valide :"
+
+#: ../CesarPlayer/Capturer/FakeCapturer.cs:81
+msgid "Fake live source"
+msgstr "Source en direct fictif"
+
+
