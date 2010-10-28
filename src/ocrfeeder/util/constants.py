@@ -55,7 +55,8 @@ RESOURCES_DIR = APP_DIR
 # APP_DIR and RESOURCES_DIR to local paths
 if not os.path.exists(APP_DIR):
     APP_DIR = os.path.dirname(os.path.dirname(__file__))
-    RESOURCES_DIR = os.path.join(APP_DIR, 'resources')
+    RESOURCES_DIR = os.path.join(APP_DIR, '../../resources')
+RESOURCES_DIR = os.path.abspath(RESOURCES_DIR)
 
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')

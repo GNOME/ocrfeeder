@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
-from util import constants
-import glob
 import os
+from distutils.core import setup
+from ocrfeeder.util import constants
+import glob
 
 def get_locale_files():
     files = glob.glob('locale/*/*/*.mo')
@@ -21,9 +21,10 @@ setup(name = 'ocrfeeder',
      author_email = 'joaquimrocha1@gmail.com',
      url = constants.OCRFEEDER_WEBSITE,
      license = 'GPL v3',
-     packages = ['feeder', 'studio',
-                 'util', 'odf',
+     packages = ['ocrfeeder', 'ocrfeeder.feeder', 'ocrfeeder.studio',
+                 'ocrfeeder.util', 'ocrfeeder.odf',
                  ],
+     package_dir = {'': 'src'},
      scripts = ['ocrfeeder', 'ocrfeeder-cli'],
      data_files = [(constants.DEFAULT_SYSTEM_APP_DIR +
                     '/icons', ['resources/icons/detect_icon.svg',

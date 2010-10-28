@@ -19,12 +19,12 @@
 ###########################################################################
 
 import tempfile
-from util.lib import debug
+from ocrfeeder.util.lib import debug
 
 import gettext
 import Image, ImageDraw
 import os.path
-from util import graphics
+from ocrfeeder.util import graphics
 import sys
 
 _ = gettext.gettext

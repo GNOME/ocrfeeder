@@ -23,14 +23,14 @@ import sys
 import os
 import gtk
 import math
-from util.cliutils import ArgsRetriever
-from util.graphics import getBoundsFromStartEndPoints, convertPixbufToImage, getTextSizeFromImage
-from feeder.ocrEngines import Engine, OcrEnginesManager
-from studio.configuration import ConfigurationManager
-from studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
-from feeder.imageManipulation import *
-from feeder.layoutAnalysis import *
-from feeder.documentGeneration import OdtGenerator, HtmlGenerator
+from ocrfeeder.util.cliutils import ArgsRetriever
+from ocrfeeder.util.graphics import getBoundsFromStartEndPoints, convertPixbufToImage, getTextSizeFromImage
+from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
+from ocrfeeder.studio.configuration import ConfigurationManager
+from ocrfeeder.studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
+from ocrfeeder.feeder.imageManipulation import *
+from ocrfeeder.feeder.layoutAnalysis import *
+from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator
 
 def printError(message):
 	print message

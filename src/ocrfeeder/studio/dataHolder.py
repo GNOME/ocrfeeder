@@ -19,11 +19,11 @@
 ###########################################################################
 
 import os.path
-from util import graphics
+from ocrfeeder.util import graphics
 import Image
 import gobject
-from util.graphics import getImagePrintSize, getImageResolution
-from util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, lib
+from ocrfeeder.util.graphics import getImagePrintSize, getImageResolution
+from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, lib
 from pango import WEIGHT_NORMAL, STYLE_NORMAL
 
 class TextData:

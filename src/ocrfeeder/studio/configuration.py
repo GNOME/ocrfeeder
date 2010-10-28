@@ -18,9 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from studio.dataHolder import PageData, DataBox, TextData
-from feeder.ocrEngines import Engine
-from util.lib import debug, getExecPath
+from dataHolder import PageData, DataBox, TextData
+from ocrfeeder.feeder.ocrEngines import Engine
+from ocrfeeder.util.lib import debug, getExecPath
 from xml.dom import minidom
 import os.path
 import re

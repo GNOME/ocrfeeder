@@ -19,7 +19,7 @@
 ###########################################################################
 
 from lib import getStandardDeviation
-from util.lib import debug
+from lib import debug
 import Image
 import gtk
 import math

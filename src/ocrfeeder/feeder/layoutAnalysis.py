@@ -18,10 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from util.lib import debug
-from util import graphics
-from util.constants import OCRFEEDER_DEBUG, DTP
-from studio.dataHolder import DataBox
+from ocrfeeder.util.lib import debug
+from ocrfeeder.util import graphics
+from ocrfeeder.util.constants import OCRFEEDER_DEBUG, DTP
+from ocrfeeder.studio.dataHolder import DataBox
 from imageManipulation import ImageProcessor
 import Image
 import re

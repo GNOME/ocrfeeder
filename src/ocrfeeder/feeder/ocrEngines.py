@@ -24,8 +24,8 @@ import tempfile
 import os
 import xml.etree.ElementTree as ET
 from xml.parsers.expat import ExpatError
-from studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
-from util import lib
+from ocrfeeder.studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
+from ocrfeeder.util import lib
 IMAGE_ARGUMENT = '$IMAGE'
 FILE_ARGUMENT = '$FILE'
 

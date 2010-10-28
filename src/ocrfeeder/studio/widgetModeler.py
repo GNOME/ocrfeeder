@@ -20,16 +20,16 @@
 
 from customWidgets import SelectableBoxesArea
 from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
-from feeder.documentGeneration import OdtGenerator, HtmlGenerator
-from feeder.imageManipulation import *
-from feeder.layoutAnalysis import *
+from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator
+from ocrfeeder.feeder.imageManipulation import *
+from ocrfeeder.feeder.layoutAnalysis import *
 from pango import FontDescription, SCALE
-from studio.configuration import ProjectSaver, ProjectLoader, ConfigurationManager
-from util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, ALIGN_FILL, \
-    PAPER_SIZES
-from util.lib import debug, getNonExistingFileName, unpaperImage
-from util import constants
-from util.asyncworker import AsyncItem
+from configuration import ProjectSaver, ProjectLoader, ConfigurationManager
+from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
+     ALIGN_FILL, PAPER_SIZES
+from ocrfeeder.util.lib import debug, getNonExistingFileName, unpaperImage
+from ocrfeeder.util import constants
+from ocrfeeder.util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog

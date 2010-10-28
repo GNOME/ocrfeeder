@@ -18,8 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from studio.studioBuilder import Studio
 import sys
+
+from ocrfeeder.studio.studioBuilder import Studio
+
 sys.path.append('resources/')
 
 if __name__ == '__main__':

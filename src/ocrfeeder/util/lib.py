@@ -24,7 +24,7 @@ import Image
 import tempfile
 import gtk
 import math
-from util.constants import *
+from constants import *
 from gnome import url_show
 import sane
 import tempfile

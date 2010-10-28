@@ -21,10 +21,10 @@
 from customWidgets import PlainFrame, TrippleStatusBar
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from configuration import ConfigurationManager
-from util import lib, PAPER_SIZES
-from util.asyncworker import AsyncWorker
-from util.constants import *
-from util.graphics import convertPixbufToImage
+from ocrfeeder.util import lib, PAPER_SIZES
+from ocrfeeder.util.asyncworker import AsyncWorker
+from ocrfeeder.util.constants import *
+from ocrfeeder.util.graphics import convertPixbufToImage
 from enchant.checker import SpellChecker
 import Image
 import gettext

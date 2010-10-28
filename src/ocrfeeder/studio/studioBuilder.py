@@ -18,17 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from util import lib
-from util.constants import *
-from util.cliutils import ArgsRetriever
+from ocrfeeder.util import lib
+from ocrfeeder.util.constants import *
+from ocrfeeder.util.cliutils import ArgsRetriever
 import sys
 import os.path
 import urllib
-from studio import widgetPresenter
-from studio.widgetModeler import SourceImagesSelector, SourceImagesSelectorIconView, ImageReviewer_Controler
-from studio.dataHolder import DataBox, TextData
-from studio.customWidgets import SelectableBoxesArea
-from feeder.ocrEngines import Engine, OcrEnginesManager
+import widgetPresenter
+from widgetModeler import SourceImagesSelector, \
+     SourceImagesSelectorIconView, ImageReviewer_Controler
+from dataHolder import DataBox, TextData
+from customWidgets import SelectableBoxesArea
+from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from configuration import ConfigurationManager
 from util.asyncworker import AsyncItem
 import gettext

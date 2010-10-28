@@ -18,17 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from odf.draw import Frame, TextBox, Image
-from odf.opendocument import OpenDocumentText
-from odf.style import Style, MasterPage, GraphicProperties, ParagraphProperties, \
+from ocrfeeder.odf.draw import Frame, TextBox, Image
+from ocrfeeder.odf.opendocument import OpenDocumentText
+from ocrfeeder.odf.style import Style, MasterPage, GraphicProperties, ParagraphProperties, \
     TextProperties, PageLayout, PageLayoutProperties
-from odf.text import P, Page, PageSequence
+from ocrfeeder.odf.text import P, Page, PageSequence
 from pango import WEIGHT_BOLD, WEIGHT_NORMAL, STYLE_ITALIC, STYLE_NORMAL, \
     STYLE_OBLIQUE
-from util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
+from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
     ALIGN_FILL
-from util.graphics import getImagePrintSize
-from util.lib import debug
+from ocrfeeder.util.graphics import getImagePrintSize
+from ocrfeeder.util.lib import debug
 import math
 import os.path
 import shutil
