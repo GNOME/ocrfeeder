@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 
+import sys
 import os
+local_src = os.path.dirname(os.path.abspath(__file__)) + '/src'
+if os.path.exists(local_src):
+    sys.path = [local_src] + sys.path
+
 from distutils.core import setup
 from ocrfeeder.util import constants
 import glob

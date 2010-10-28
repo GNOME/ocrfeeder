@@ -19,6 +19,10 @@
 ###########################################################################
 
 import sys
+import os
+local_src = os.path.dirname(os.path.abspath(__file__)) + '/src'
+if os.path.exists(local_src):
+    sys.path = [local_src] + sys.path
 
 from ocrfeeder.studio.studioBuilder import Studio
 
