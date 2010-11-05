@@ -296,8 +296,8 @@ class ConfigurationManager(object):
                 CLEAN_TEXT: True,
                 ADJUST_BOXES_BOUNDS: True,
                 BOUNDS_ADJUSTMENT_SIZE: 'auto',
-                DESKEW_IMAGES_AFTER_ADDITION: True,
-                UNPAPER_IMAGES_AFTER_ADDITION: True,
+                DESKEW_IMAGES_AFTER_ADDITION: False,
+                UNPAPER_IMAGES_AFTER_ADDITION: False,
                 UNPAPER_EXTRA_OPTIONS: '',
                 }
 
