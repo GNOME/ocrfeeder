@@ -31,7 +31,7 @@ from dataHolder import DataBox, TextData
 from customWidgets import SelectableBoxesArea
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from configuration import ConfigurationManager
-from util.asyncworker import AsyncItem
+from ocrfeeder.util.asyncworker import AsyncItem
 import gettext
 import locale
 _ = gettext.gettext
