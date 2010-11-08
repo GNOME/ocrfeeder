@@ -12,7 +12,6 @@ src/ocrfeeder/studio/dataHolder.py
 src/ocrfeeder/studio/studioBuilder.py
 src/ocrfeeder/studio/widgetModeler.py
 src/ocrfeeder/studio/widgetPresenter.py
-src/ocrfeeder/util/cliutils.py
 src/ocrfeeder/util/constants.py
 src/ocrfeeder/util/graphics.py
 src/ocrfeeder/util/lib.py

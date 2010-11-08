@@ -20,7 +20,6 @@
 
 from ocrfeeder.util import lib
 from ocrfeeder.util.constants import *
-from ocrfeeder.util.cliutils import ArgsRetriever
 import sys
 import os.path
 import urllib
@@ -32,6 +31,7 @@ from customWidgets import SelectableBoxesArea
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncItem
+from optparse import OptionParser
 import gettext
 import locale
 _ = gettext.gettext
@@ -107,13 +107,22 @@ class Studio:
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
         self.main_window.setDestroyEvent(self.quit)
 
-        cli_command_retriever = ArgsRetriever(sys.argv)
-        imgs = cli_command_retriever.getParams('--images')
+        parser = OptionParser(version = '%prog ' + OCRFEEDER_STUDIO_VERSION)
+        parser.add_option('-i', '--images', dest = 'images',
+                          action = 'append', type = 'string',
+                          metavar = 'IMAGE1 [IMAGE2, ...]', default = [],
+                          help = 'images to be automatically added on start-up')
+        parser.add_option('-d', '--dir', dest = 'directory',
+                          action = 'store', type = 'string',
+                          help = 'directory with images to be added'
+                          ' automatically on start-up')
+        options, args = parser.parse_args()
+        imgs = options.images
         if imgs:
             self.__addImagesToReviewer(imgs)
-        dirs = cli_command_retriever.getParams('--dir')
-        if dirs:
-            self.__addImagesToReviewer(lib.getImagesFromFolder(dirs[0]))
+        if options.directory:
+            self.__addImagesToReviewer(
+                lib.getImagesFromFolder(options.directory))
 
         self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasContentBoxes(False)
