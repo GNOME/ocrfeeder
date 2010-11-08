@@ -18,7 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import getStandardDeviation
 from lib import debug
 import Image
 import gtk
@@ -60,8 +59,6 @@ def convertPixbufToImage(pixbuf):
     mode = pixbuf.get_has_alpha() and "RGBA" or "RGB"
     return Image.frombuffer(mode, dimensions, pixels,
                             "raw", mode, stride, 1)
-    width, height = pixbuf.get_width(), pixbuf.get_height()
-    return Image.fromstring("RGBA", (width, height), pixbuf.get_pixels())
 
 def rgbaToInteger(rgba):
     r, g, b, a = rgba
@@ -71,7 +68,6 @@ def colorsContrast(color1, color2, tolerance = 120):
     return abs(color1 - color2) > tolerance
 
 def getImageResolution(image_object):
-    image_object
     resolution = (300, 300)
     if 'dpi' in image_object.info.keys():
         resolution = image_object.info['dpi']
