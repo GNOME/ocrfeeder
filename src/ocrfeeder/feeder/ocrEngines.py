@@ -149,7 +149,7 @@ class OcrEnginesManager:
             except WrongSettingsForEngine, we:
                 lib.debug("Cannot load engine at %s: %s" %( xml_file, str(we)))
         if not len(self.ocr_engines):
-                lib.debug("Warning: no engines found!")
+            lib.debug("Warning: no engines found!")
 
     def getEngineFromXml(self, xml_file_name):
         document = ET.parse(xml_file_name)

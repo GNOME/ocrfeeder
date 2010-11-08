@@ -104,7 +104,7 @@ class Block:
         if self.extra_charge == TOP or self.extra_charge == BOTH:
             begin -= 1
         elif self.extra_charge == BOTTOM or self.extra_charge == BOTH:
-                end +=1
+            end +=1
         return (begin in verticalRange[:-1]) or (end in verticalRange[1])
 
     def __inHorizontalRange(self, horizontalRange):
@@ -117,7 +117,7 @@ class Block:
         vertical_range = self.__getVerticalRange()
         if block.__inHorizontalRange(self.__getHorizontalRange()):
             if (block.start_line in vertical_range) or (block.finish_line in vertical_range):
-                    return True
+                return True
             if self.extra_charge >= 1:
                 if self.finish_line + 1 == block.start_line:
                     return True
