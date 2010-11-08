@@ -25,80 +25,88 @@ local_src = os.path.dirname(os.path.abspath(__file__)) + '/src'
 if os.path.exists(local_src):
     sys.path = [local_src] + sys.path
 
-import gtk
-import math
-from ocrfeeder.util.cliutils import ArgsRetriever
-from ocrfeeder.util.graphics import getBoundsFromStartEndPoints, convertPixbufToImage, getTextSizeFromImage
-from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
+import Image
+from ocrfeeder.util.constants import OCRFEEDER_STUDIO_VERSION
+from ocrfeeder.util.graphics import getImageResolution
+from ocrfeeder.feeder.ocrEngines import OcrEnginesManager
 from ocrfeeder.studio.configuration import ConfigurationManager
-from ocrfeeder.studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
-from ocrfeeder.feeder.imageManipulation import *
-from ocrfeeder.feeder.layoutAnalysis import *
+from ocrfeeder.studio.dataHolder import PageData
+from ocrfeeder.feeder.layoutAnalysis import LayoutAnalysis
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator
+from optparse import OptionParser
 
-def printError(message):
-	print message
-	sys.exit(1)
+parser = OptionParser(usage = 'Usage: %prog -i IMAGE1 [IMAGE2, ...] -o FILE',
+                      version = '%prog ' + OCRFEEDER_STUDIO_VERSION)
+parser.add_option('-i', '--images', dest = 'images',
+                  action = 'append', type = 'string', metavar = 'IMAGE1 [IMAGE2, ...]',
+                  help = 'images to be recognized', default = [])
+parser.add_option('-f', '--format', dest = 'format',
+                  action = 'store', type = 'choice', default = 'odt',
+                  help = 'format of the generated document', metavar = 'odt or html',
+                  choices = ['odt', 'html'])
+parser.add_option('-o', '--output', dest = 'output',
+                  action = 'store', type = 'string',
+                  help = 'the document to be generated')
+parser.add_option('--window-size', dest = 'window_size', default = 'auto',
+                  action = 'store', type = 'string', metavar= 'auto or an integer value',
+                  help = 'the segmentation algorithm window size')
+options, args = parser.parse_args()
 
-cli_command_retriever = ArgsRetriever(sys.argv)
-images = cli_command_retriever.getParams('--images')
-window_size = cli_command_retriever.getParams('--window-size') or None
-export_format = cli_command_retriever.getParams('--format')
-file_name = cli_command_retriever.getParams('--o')
+if len(options.images) < 1:
+    parser.error('Please specify the images to be recognized.')
+    parser.print_help()
+    exit(0)
+if options.output is None:
+    parser.error('Please specify the output file.')
+    parser.print_help()
+    exit(0)
+
+images = options.images
+window_size = options.window_size
+if window_size == 'auto':
+    window_size = None
+else:
+    try:
+        window_size = int(window_size)
+    except ValueError:
+        parser.error('Please use either "auto" or an integer value '
+                     'for the window size.')
+        exit(0)
+export_format = options.format
+file_name = options.output
 if not file_name:
-	printError('Error: Output name. Please choose the output name.')
-
-file_name = file_name.pop()
+    parser.error('Please choose the output name.')
 
 configuration_manager = ConfigurationManager()
 ocr_engines_manager = OcrEnginesManager(configuration_manager)
 ocr_engines_manager.makeEnginesFromFolder(configuration_manager.user_engines_folder)
 ocr_engines = ocr_engines_manager.ocr_engines
 
-engine = ocr_engines[1]
-
-def createDataBoxFromBlock(block, image, window_size):
-	leftmost_x, highest_y, rightmost_x, lowest_y = (block.translateToUnits(window_size))
-	rightmost_x = min(rightmost_x, image.size[0])
-	lowest_y = min(lowest_y, image.size[1])
-	dimensions = getBoundsFromStartEndPoints((leftmost_x, highest_y), (rightmost_x, lowest_y))
-	x, y, width, height = dimensions
-	image_clip = image.crop((int(leftmost_x), int(highest_y), int(rightmost_x), int(lowest_y)))
-	return DataBox(x, y, width, height, image_clip)
-
+if len(ocr_engines):
+    engine = ocr_engines[0]
+else:
+    parser.error('No OCR engines configured.')
+    exit(0)
 
 pages = []
 for image in images:
-	if not os.path.isfile(image):
-		printError("Error: The image '%s' is not a file or does not exist." % image)
-	page_data = PageData(image)
-	data_boxes = []
-	image_obj = Image.open(image)
-	image_processor = ImageProcessor(image, window_size)
-	block_retriever = BlockRetriever(image_processor.imageToBinary())
-	blocks = block_retriever.getAllBlocks()
-	engine, engine_file = engine
-	for block in blocks:
-		data_box = createDataBoxFromBlock(block, image_obj, image_processor.window_size)
-		engine.setImage(data_box.image)
-		text = engine.read()
-		type = engine.classify(text)
-		if type == TEXT_TYPE:
-			text_size = getTextSizeFromImage(Image.open(image))
-			if text_size:
-				y_resolution = float(page_data.resolution[1])
-				text_size /= y_resolution
-				text_size *= 72.0
-				data_box.setFontSize(math.floor(text_size))
-			data_box.setText(text)
-		data_box.setType(type)
-		data_boxes.append(data_box)
-	page_data.data_boxes = data_boxes
-	pages.append(page_data)
+    if not os.path.isfile(image):
+        parser.error('The image "%s" is not a file or does not exist.' %\
+                     image)
+        exit(0)
+    page_data = PageData(image)
+    data_boxes = []
+    image_obj = Image.open(image)
+    layout_analysis = LayoutAnalysis(engine[0],
+                                     window_size)
+    resolution = getImageResolution(image_obj)[1]
+    page_data.data_boxes = layout_analysis.recognize(image,
+                                                     resolution)
+    pages.append(page_data)
 
 document_generator = OdtGenerator(file_name)
-if 'HTML' in export_format:
-	document_generator = HtmlGenerator(file_name)
+if 'html' in export_format:
+    document_generator = HtmlGenerator(file_name)
 for page in pages:
-	document_generator.addPage(page)
+    document_generator.addPage(page)
 document_generator.save()
