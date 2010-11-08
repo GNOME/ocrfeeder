@@ -1,3 +1,43 @@
+Version 0.7.1
+==============
+
+Improvements
+-------------
+
+* Add importation of images from a scanner device
+* Add the spellchecker functionality
+* Add the copy text to clipboard functionality
+* Improve the a11y of the "import page from scanner" menu
+* Add the Cuneiform OCR engine automatic detection
+* Replace the current freeware OpenOffice.org icon
+  with a GPLed one (thanks to Alberto Garcia)
+* Move the OCRFeeder modules to its own folder
+* Change configuration default values for actions done
+  after adding images
+* Improve code
+* Rewrite ocrfeeder-cli
+
+Bug Fixes
+----------
+
+* Add the help option to ocrfeeder-cli (gb#630829)
+* Fix selecting all areas
+* Fix ellipsis and title in the queued events dialog
+* Prevent "invisible" boxes creation
+* Remove temporary images for the Tesseract OCR engine
+
+New and Updated Translations
+-----------------------------
+
+* Marek Cernocky, Petr Kovar [cs]
+* Mario Blättermann [de]
+* Joe Hansen, Kenneth Nielsen [da]
+* Jorge González [es_ES]
+* Bruno Brouard [fr]
+* Kjartan Maraas [nb]
+* Matej Urbančič [sl]
+
+
 Version 0.7
 ============
 
