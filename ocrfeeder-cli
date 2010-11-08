@@ -4,7 +4,7 @@
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
-# 
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
 #    the Free Software Foundation, either version 3 of the License, or
@@ -47,7 +47,7 @@ export_format = cli_command_retriever.getParams('--format')
 file_name = cli_command_retriever.getParams('--o')
 if not file_name:
 	printError('Error: Output name. Please choose the output name.')
-	
+
 file_name = file_name.pop()
 
 configuration_manager = ConfigurationManager()
