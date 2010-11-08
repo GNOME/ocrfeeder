@@ -48,7 +48,6 @@ builddeb: i18n
 
 clean:
 	$(PYTHON) setup.py clean
-	$(MAKE) -f $(CURDIR)/debian/rules clean
 	rm -rf build/ MANIFEST
 	rm -rf locale po/$(PROJECT).pot $(RESOURCES_DIR)/$(PROJECT).desktop
 	find . -name '*.pyc' -delete
