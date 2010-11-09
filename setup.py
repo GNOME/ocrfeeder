@@ -43,5 +43,6 @@ setup(name = 'ocrfeeder',
                    ('/usr/share/man/man1', ['resources/ocrfeeder.1',
                                             'resources/ocrfeeder-cli.1']
                    ),
+                   ('/usr/share/ocrfeeder', ['resources/spell-checker.ui']),
                    ] + get_locale_files()
      )
