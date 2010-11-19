@@ -1,4 +1,4 @@
-.TH ocrfeeder-cli 1 "2010\-03\-24"
+.TH ocrfeeder-cli 1 "2010\-11\-19"
 .SH NAME
 ocrfeeder-cli \- command line interface for OCRFeeder, a document layout analysis and optical character recognition system.
 .SH SYNOPSIS
@@ -15,17 +15,26 @@ between what's graphics and text and perform OCR over the latter. It generates
 multiple formats being its main one ODT.
 
 .SH OPTIONS
+.SS "Generic program information"
 .TP
-.BI "\-\-images IMAGE1 IMAGE2 ..."
+.BI \-\^\-version
+Show program version number and exit
+.TP
+.BI \-h "\fR, " \-\^\-help
+Show help message and exit
+.SS "Required options"
+.TP
+.BI \-o " OUTPUT_FILE\fR, " \-\^\-output= "OUTPUT_FILE"
+Name for the generated file
+.SS "Other options"
+.TP
+.BI \-i " IMAGE1 [IMAGE2 ...]\fR, " \-\^\-images= "IMAGE1 [IMAGE2 ...]"
 Images to be recognized
 .TP
-.BI "\-\-format FORMAT"
-Format for the generated document (ODT or HTML)
+.BI \-f " FORMAT\fR, " \-\^\-format= "FORMAT"
+Format for the generated document (odt or html)
 .TP
-.BI "\-\-o FILE_NAME"
-Name for the generated file
-.TP
-.BI "\-\-window-size WINDOW_SIZE"
+.BI \-\^\-window-size= "WINDOW_SIZE"
 Desired window size of OCRFeeder's segmentation algorithm. If 
 this option is not used, the window size will be calculated automatically
 
@@ -38,3 +47,4 @@ Folder to hold the engines' configuration files
 .SH AUTHOR
 This manpage has been written by
 Joaquim Rocha <jrocha@igalia.com>
+and Alberto Garcia <agarcia@igalia.com>
