@@ -1,0 +1,87 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="ocrconfigutation">
+
+<info>
+    <link type="guide" xref="index#configuration"/>
+    <link type="seealso" xref="automaticrecognition"/>
+    <link type="seealso" xref="manualeditionandcorrection"/>
+    <desc>Configure the OCR engines to recognize the text</desc>
+</info>
+
+<title>OCR Engines Configuration</title>
+
+<p><app>OCRFeeder</app> uses system-wide OCR engines to extract
+the text from images. This means any OCR engine that can be
+used from the command line should also be used in <app>OCRFeeder</app>.</p>
+
+<section>
+
+<title>Automatic Detection of OCR Engines</title>
+
+<p>The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em>
+and <em>Cuneiform</em>) are already automatically detected and configured
+in most systems, the first time <app>OCRFeeder</app> is run.</p>
+
+<p>If an OCR engine is installed after <app>OCRFeeder</app> had configured
+already an engine, it will not be automatically configured but, depending on
+the engine, users might easily go to the <gui>OCR Engines</gui> dialog and
+choose it from the list of detected engines after pressing <gui>Detect</gui>.</p>
+
+<note style="tip"><p>Already configured OCR engines might be detected again and it is
+up to the user to uncheck these engines if they shouldn't be added again.</p></note>
+
+</section>
+
+<section>
+
+<title>Manual Configuration</title>
+
+<p>The currently configured OCR engines are shown in the
+<gui>OCR Engines</gui> dialog which can be opened from
+<guiseq><gui>Tools</gui><gui>OCR Engines</gui></guiseq>.</p>
+
+<p>Besides seeing the configured OCR engines, the <gui>OCR Engines</gui>
+dialog allows to add new engines, edit or delete the current ones and
+detect engines installed in the system.</p>
+
+<p>When adding or editing an OCR engine (by pressing the <gui>Add</gui>
+or <gui>Edit</gui> buttons, respectively), a dialog is shown with the
+following fields:</p>
+
+<list>
+    <item><p><gui>Name</gui>: The engine's name. This name will be used
+    in throughout the UI when referring to the engine;</p></item>
+    <item><p><gui>Image format</gui>: The image format that the engine
+    recognizes (for example, <em>TIF</em> in the case of
+    <em>Tesseract</em>);</p></item>
+    <item><p><gui>Failure string</gui>: Some engines replace unrecognized
+    characters by another, pre-defined character (for example,
+    <em>_</em> in the case of <em>GOCR</em>).</p></item>
+    <item><p><gui>Engine path</gui>: The path in the system to the
+    engine's executable (for example, <em>/usr/bin/tesseract</em>).</p></item>
+    <item><p><gui>Engine arguments</gui>: The arguments that feed an image
+    to the engine and make it output the recognized text to the standard
+    output. <app>OCRFeeder</app> runs the engine with these arguments
+    as if it was in the command line and looks for the recognized text
+    in the standard output. Some engines already do this, like
+    <em>Ocrad</em> and <em>GOCR</em> while other, like <em>Tesseract</em>,
+    write the text into a file.</p>
+    <p>Since the image's path to be read is always needed, a special argument
+    <em>$IMAGE</em> is provided for this and will be replaced by the image path
+    when the engine is run. For the cases
+    where a file name is needed, like the one mentioned previously, a special
+    argument <em>$FILE</em> is provided and will be replaced by a temporary
+    file name.</p>
+    <p>So, in case of <em>Tesseract</em> (which writes the recognized text
+    into a file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt;
+    rm $FILE</em>.</p></item>
+
+</list>
+
+<note style="advanced"><p>The engines' configuration is stored in their own XML file
+in the user's home under <em>.ocrfeeder/engines/</em>.</p></note>
+
+</section>
+
+</page>

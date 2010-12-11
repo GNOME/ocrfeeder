@@ -1,0 +1,17 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="addingfolder">
+
+<info>
+    <link type="guide" xref="index#images"/>
+    <link type="seealso" xref="addingimage"/>
+    <desc>Adding all the images from a folder</desc>
+</info>
+
+<title>Adding Folder</title>
+
+<p>Sometimes it is useful to add all the images from a given
+folder. <app>OCRFeeder</app> provides this functionality
+by choosing <guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>.</p>
+
+</page>

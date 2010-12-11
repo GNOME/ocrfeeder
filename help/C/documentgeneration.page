@@ -1,0 +1,27 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="documentgeneration">
+
+<info>
+    <link type="guide" xref="index#recognition"/>
+    <link type="seealso" xref="automaticrecognition"/>
+    <link type="seealso" xref="manualeditionandcorrection"/>
+    <desc>Creating an editable document</desc>
+</info>
+
+<title>Document Generation</title>
+
+<p><app>OCRFeeder</app> currently generates two document formats:
+<em>ODT</em> and <em>HTML</em>.</p>
+
+<p>After the recognition and eventual manual edition has been
+performed, it is possible to generate a document by clicking
+<guiseq><gui>File</gui><gui>Export…</gui></guiseq> and choosing
+the desired document format.</p>
+
+<note style="tip"><p>The HTML exportation generates a folder
+with the document pages represented by one HTML file. In each page
+there are links to go to the previous and next pages. Image content
+areas are stored in a subfolder called <em>images</em>.</p></note>
+
+</page>

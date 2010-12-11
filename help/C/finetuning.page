@@ -1,0 +1,54 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="finetuning">
+
+<info>
+    <link type="guide" xref="index#configuration"/>
+    <link type="seealso" xref="manualeditionandcorrection"/>
+    <desc>Advanced options for a better recognition</desc>
+</info>
+
+<title>Fine-tuning</title>
+
+<p><app>OCRFeeder</app> has some advanced options that can be
+used to perform a better recognition. These options can be
+chosen from the <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq>
+dialog, under its <gui>Recognition</gui> tab.</p>
+
+<p>The following list describes the mentioned options:</p>
+<list>
+    <item><p><gui>Fix line breaks and hyphenization</gui>: OCR engines
+    usually read the text line by line and seperate each line with a
+    line break. Sometimes, this is not what the user wants because the
+    text might be broken in the middle of a sentence.</p>
+    <p>Checking this option will make <app>OCRFeeder</app> remove single
+    newline characters after the text is recognized by the engines.</p>
+    <p>Since just removing newlines in an hyphenized text would result
+    in wrongly separated words, hyphenization is also detected and removed
+    in this process.</p></item>
+    <item><p><gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to
+    detect the contents in an image uses the concept of <em>window size</em>
+    which is the division of the image in small windows. A smaller window
+    size means it is likely to detect more content areas but size that is
+    too small may result in contents that should be part of a bigger area
+    instead. On the other hand, a bigger window size means less divisions
+    of contents but may end up in contents which should be subdivided.</p>
+    <p>A good window size should be slightly bigger than the text line spacing
+    in an image.</p><p>Users may want to manually set this value if automatic
+    one doesn't produce any valid content areas but normally it is easier to
+    use the automatic one and perform any needed corrections directly in
+    the content areas.</p></item>
+    <item><p><gui>Improve columns detection</gui>: Check this option if
+    <app>OCRFeeder</app> should try to divide the detected content areas
+    horizontally (originating more columns). The value that is used to
+    check the existance of blank space within the contents may be set to
+    automatic or manual when the columns aren't detected correctly.</p></item>
+    <item><p><gui>Adjust content areas' bounds</gui>: The detected content
+    areas sometimes have a considerable margin between their contents and
+    the areas' edges. By checking this option, <app>OCRFeeder</app> will
+    minimize those margins, adjusting the areas to its contents better.
+    Optionally, a manual value can be check to indicate the minimum value
+    of the adjusted margins.</p></item>
+</list>
+
+</page>

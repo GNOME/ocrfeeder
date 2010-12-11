@@ -1,0 +1,65 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="projects">
+
+<info>
+    <link type="guide" xref="index#projects"/>
+    <link type="seealso" xref=""/>
+    <desc>Loading and saving projects</desc>
+</info>
+
+<title>Projects</title>
+
+<p>Sometimes a user may want to save the progress of the work
+done so far in an image and continue with it later. For this case
+<app>OCRFeeder</app> offers the possibility to save and load
+projects.</p>
+
+<p>Projects are compressed files with the <em>ocrf</em> extension
+which hold information about pages (images) and content areas.</p>
+
+<section>
+<title>Saving A Project</title>
+
+<p>After having done some work in an image, a project can be created
+by clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or
+<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the
+<keyseq><key>Control</key><key>S</key></keyseq> or
+<keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq> keyboard
+shortcuts can be used. A file saving dialog will then be shown so the
+project's name and location is entered.</p>
+
+</section>
+
+<section>
+<title>Loading A Project</title>
+
+<p>An existing project can be loaded simply by clicking
+<guiseq><gui>File</gui><gui>Open</gui></guiseq> or
+<keyseq><key>Control</key><key>O</key></keyseq>.</p>
+
+</section>
+
+<section>
+<title>Appending A Project</title>
+
+<p>Sometimes it is useful to merge two or more projects in order to create
+only one document with the pages of several <app>OCRFeeder</app> projects.
+This can be accomplished by appending a project, which simply loads the pages
+from a chosen project into the current one. To do this, click in
+<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the
+wanted project.</p>
+
+</section>
+
+<section>
+<title>Clearing A Project</title>
+
+<p>If all the information is a project should be deleted (for example,
+to start over again), it can be done by choosing
+<guiseq><gui>Edit</gui><gui>Clear Project</gui></guiseq>.</p>
+
+</section>
+
+
+</page>

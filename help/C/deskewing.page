@@ -1,0 +1,29 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="deskewing">
+
+<info>
+    <link type="guide" xref="index#configuration"/>
+    <link type="seealso" xref="manualeditionandcorrection"/>
+    <desc>Correcting the skew in the images</desc>
+</info>
+
+<title>Deskewing</title>
+
+<p>Some images, especially if they were added from a scanner device,
+may be skewed and this makes it harder to recognize the image.</p>
+
+<p><app>OCRFeeder</app> offers a way to automatically deskew an
+image. To deskew a loaded image, click
+<guiseq><gui>Tools</gui><gui>Image Deskewer</gui></guiseq>.</p>
+
+<p>This operation can also be set to be performed automatically
+every time an image is added. To set it, simply open the
+<gui>Preferences</gui> dialog from
+<guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check
+<gui>Deskew images</gui> under the <gui>Tools</gui> tab.</p>
+
+<note type="warning"><p>Depending on the size and characteristics
+of the image, deskewing an image may take some time.</p></note>
+
+</page>

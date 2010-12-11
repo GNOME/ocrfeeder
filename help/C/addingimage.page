@@ -1,0 +1,41 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="addingimage">
+
+<info>
+    <link type="guide" xref="index#images"/>
+    <desc>Adding an image to be recognized</desc>
+</info>
+
+<title>Adding An Image</title>
+
+<p>Adding an image to OCRFeeder is usually the first step when
+converting a document.</p>
+
+<p>Each added image represents a page in the final document.
+A thumbnail of the image will be shown in the pages area (left
+area of <app>OCRFeeder</app>).</p>
+
+<p>The order of the pages in the final document will be the
+same as the images' order in the pages' area. This way, pages
+can be reordered by dragging them in the images' thumbnails
+in the pages' area.</p>
+
+<p>You can add an image by clicking
+<guiseq><gui>File</gui><gui>Add Image</gui></guiseq>.</p>
+
+<p>To delete a page, click in
+<guiseq><gui>Edit</gui><gui>Delete Page</gui></guiseq> or
+right-click over the page's thumbnail and choose <gui>Delete</gui>.</p>
+
+<section>
+<title>Page Configuration</title>
+
+<p>To configre the pages' size click in
+<guiseq><gui>Edit</gui><gui>Edit Page</gui></guiseq>
+and choose either a custom size, providing the respective
+values or a standard paper size from a list.</p>
+
+</section>
+
+</page>

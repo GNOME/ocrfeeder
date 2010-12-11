@@ -1,0 +1,81 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="manualeditionandcorrection">
+
+<info>
+    <link type="guide" xref="index#recognition"/>
+    <link type="seealso" xref="addingimage"/>
+    <link type="seealso" xref="automaticrecognition"/>
+    <desc>Manual edition and correction of results</desc>
+</info>
+
+<title>Manual Edition</title>
+
+<p>One may want to manually select just a portion of an image to
+be recognized or correct the results of the automatic recognition.
+<app>OCRFeeder</app> lets its users manually edit every aspect of
+a document's contents in an easy way.</p>
+
+<section>
+
+<title>Content Areas</title>
+
+<p>The mentioned document's contents are represented by areas like
+shown in the following image:
+<media type="image" mime="image/png" src="figures/content-areas.png">
+A picture of two content areas with one of them selected.
+</media>
+</p>
+
+<p>The attributes of a selected are shown and can be changed from
+the right part of the main window, like shown in the following image:
+<media type="image" mime="image/png" src="figures/areas-edition.png" width="100px">A
+picture showing the areas' edition UI</media>
+</p>
+
+<p>The following list describes the content areas' attributes:</p>
+<list>
+    <item><p><em>Type</em>: sets the area to be either the type image or text.
+             The image type will clip the area from the original page and
+             place it in the generated document. The text type will use the
+             text assigned to the area and represent it as text in the generated
+             document. (Generated ODT documents will have text boxes when an
+             area was marked as being of the type text)</p></item>
+    <item><p><em>Clip</em>: Shows the current clip from the original area. This makes
+             it easier for users to check exactly what's within the area.</p></item>
+    <item><p><em>Bounds</em>: Shows the point (X and Y) in the original image where the
+             top left corner of the area is placed as well as the areas' width
+             and height.</p></item>
+    <item><p><em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the
+             area's text with by (by pressing the <gui>OCR</gui> button)</p>.
+             <note type="warning"><p>Using the OCR engine to recognize the text
+             will directly assign that text to the area and replace the one
+             assigned before.</p></note></item>
+    <item><p><em>Text Area</em>: Represents the text assigned to that area and lets the
+             user edit it. This area is disabled when the area is of the type
+             image</p></item>
+    <item><p><em>Style Tab</em>: Lets the user choose the font type and size, as well as
+             the text alignment, line and letter spacing.</p></item>
+</list>
+
+<p>The content areas can be selected by clicking on them or by using the menus
+<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and
+<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are
+also keyboard shortcuts for these actions:
+<keyseq><key>Ctrl</key><key>Shift</key><key>P</key></keyseq> and
+<keyseq><key>Ctrl</key><key>Shift</key><key>N</key></keyseq>, respectively.</p>
+
+<p>Selecting all areas is also possible using
+<guiseq><gui>Document</gui><gui>Select All Areas</gui></guiseq> or
+<keyseq><key>Ctrl</key><key>Shift</key><key>A</key></keyseq>.</p>
+
+<p>When at least one content area is selected, it is possible to recognize
+their contents automatically or delete them. These actions can be accomplished
+by clicking <guiseq><gui>Document</gui><gui>Recognized Selected Areas</gui></guiseq>
+and <guiseq><gui>Document</gui><gui>Delete Selected Areas</gui></guiseq> (or
+<keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>), respectively.
+</p>
+
+</section>
+
+</page>

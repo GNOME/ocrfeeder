@@ -1,0 +1,34 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="automaticrecognition">
+
+<info>
+    <link type="guide" xref="index#recognition"/>
+    <link type="seealso" xref="addingimage"/>
+    <desc>Automatically recognizing an image</desc>
+</info>
+
+<title>Automatic Recognition</title>
+
+<p><app>OCRFeeder</app> tries to detect the contents in a
+document image and perform OCR over them, also distinguishing
+between what is graphics and what is text. To simplify this
+concept, we call it recognition.</p>
+
+<p>After an image is added it can be automatically recognized
+by clicking
+<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>.</p>
+
+<note style="important"><p>Since there are many different document
+layouts out there, the automatic recognition, mainly the page
+segmentation, may turn out not to be accurate for you document. In this
+case, some manual editing of the recognition results might be needed.
+</p></note>
+
+<note style="warning"><p>The automatic recognition performs some complex
+operations and may take some time depending on the size of the image
+and the complexity of the layout.</p>
+<p>The automatic recognition will replace all the content areas
+in the currently selected page.</p></note>
+
+</page>

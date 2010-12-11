@@ -1,0 +1,26 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="importingfromscanner">
+
+<info>
+    <link type="guide" xref="index#images"/>
+    <link type="seealso" xref="addingimage"/>
+    <desc>Importing from a scanner device</desc>
+</info>
+
+<title>Importing From Scanner</title>
+
+<p>In order to help convert a printed document into
+an editable document, <app>OCRFeeder</app> offers a
+way to import images directly from a scanner device.</p>
+
+<p>To import an image from a scanner device, use the menu
+<guiseq><gui>File</gui><gui>Import Page From Scanner</gui></guiseq>
+or the keyboard shortcut
+<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>.</p>
+
+<p>The currently detected scanner device will be used to
+scan the page. If more than one scanner if found, then a dialog
+will be shown with the options to choose from.</p>
+
+</page>

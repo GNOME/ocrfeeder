@@ -1,0 +1,45 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="unpaper">
+
+<info>
+    <link type="guide" xref="index#configuration"/>
+    <link type="seealso" xref="manualeditionandcorrection"/>
+    <desc>Cleaning images before performing OCR</desc>
+</info>
+
+<title>Unpaper</title>
+
+<p><em>Unpaper</em> is a tool to clean images in order to make
+them easier to read on screen. It is aimed mainly at images
+obtained from scanned documents which usually show dust, black
+margins or other flaws.</p>
+
+<p><app>OCRFeeder</app> can use <em>Unpaper</em> to clean its
+images before processing them, which usually results in a better
+recognition.</p>
+
+<p><em>Unpaper</em> needs to be installed in order to be used.
+If it is not installed, <app>OCRFeeder</app> won't show it's action
+in the interface.</p>
+
+<p>To use <em>Unpaper</em> on a loaded image, click
+<guiseq><gui>Tools</gui><gui>Unpaper</gui></guiseq>. The
+<gui>Unpaper Image Processor</gui> dialog will be shown with
+<em>Unpaper</em>'s options and an area to preview the changes before
+applying them to the loaded image. Depending on the size and
+characteristics of the image, using this tool might take some time.</p>
+
+<p><em>Unpaper</em> can be configured opening
+<guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and accessing
+the <gui>Tools</gui> tab. In this area one can enter the path to
+<em>Unpaper</em>'s executable (normally this is already configured if
+<em>Unpaper</em> was installed the first time <app>OCRFeeder</app> was
+run). In the same area, under <gui>Image Pre-Processing</gui>, one can
+check <gui>Unpaper images</gui> to make images being processed automatically
+by <em>Unpaper</em> after they are loaded into <app>OCRFeeder</app>.
+The options taken by <em>Unpaper</em> when it's automatically
+called after adding an image can be configured by clicking the
+<gui>Unpaper Preferences</gui> button.</p>
+
+</page>
