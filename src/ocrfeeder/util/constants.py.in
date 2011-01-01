@@ -24,7 +24,7 @@ import locale
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
-OCRFEEDER_STUDIO_VERSION = '0.7.1a'
+OCRFEEDER_STUDIO_VERSION = '@VERSION@'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2010 Joaquim Rocha\n' \
@@ -47,21 +47,22 @@ GPL_STATEMENT = """
 OCRFEEDER_STUDIO_COMMENTS = 'The complete OCR suite.'
 
 # DIRECTORIES
-DEFAULT_SYSTEM_APP_DIR = os.path.join(sys.prefix, 'share', 'ocrfeeder')
+DEFAULT_SYSTEM_APP_DIR = os.path.join('@prefix@', 'share', 'ocrfeeder')
 APP_DIR = DEFAULT_SYSTEM_APP_DIR
 RESOURCES_DIR = APP_DIR
 
 # If the path does not exist (devel setup) set the
 # APP_DIR and RESOURCES_DIR to local paths
-if not os.path.exists(APP_DIR):
-    APP_DIR = os.path.dirname(os.path.dirname(__file__))
+_dirname = os.path.abspath(os.path.dirname(__file__))
+if not os.path.exists(APP_DIR) or not _dirname.startswith('@prefix@'):
+    APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     RESOURCES_DIR = os.path.join(APP_DIR, '../../resources')
 RESOURCES_DIR = os.path.abspath(RESOURCES_DIR)
 
 # I18N
 DEFAULT_LANGUAGES = os.environ.get('LANGUAGE', '').split(':')
 DEFAULT_LANGUAGES += ['en_US', 'pt_PT']
-LOCALE_DIR = os.path.join(sys.prefix, 'share', 'locale')
+LOCALE_DIR = os.path.join('@prefix@', '@DATADIRNAME@', 'locale')
 OCRFEEDER_DEFAULT_LOCALE = locale.getdefaultlocale()[0]
 
 # CUSTOM ICONS
