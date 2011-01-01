@@ -1,6 +1,0 @@
-include ocrfeeder ocrfeeder-cli README COPYING NEWS TRANSLATORS Makefile AUTHORS
-recursive-include resources *
-recursive-include locale *
-recursive-include po *
-
-
