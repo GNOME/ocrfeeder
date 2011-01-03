@@ -577,6 +577,7 @@ class ImageReviewer_Controler:
         for data_box in data_boxes:
             image_reviewer.addDataBox(data_box)
         dialog.cancel()
+        image_reviewer.updateMainWindow()
 
     def copyRecognizedTextToClipboard(self, widget):
         image_reviewer = self.__getCurrentReviewer()
