@@ -3,7 +3,7 @@ include $(top_srcdir)/gnome-doc-utils.make
 DOC_ID = ocrfeeder
 
 DOC_FIGURES = \
-	figures/areas-edition.png
+	figures/areas-edition.png \
 	figures/content-areas.png
 
 DOC_PAGES = \

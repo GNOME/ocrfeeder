@@ -21,17 +21,17 @@ a document's contents in an easy way.</p>
 <title>Content Areas</title>
 
 <p>The mentioned document's contents are represented by areas like
-shown in the following image:
-<media type="image" mime="image/png" src="figures/content-areas.png">
+shown in the following image:</p>
+<media type="image" mime="image/png" src="figures/content-areas.png"
+width="300px">
 A picture of two content areas with one of them selected.
 </media>
-</p>
 
 <p>The attributes of a selected are shown and can be changed from
 the right part of the main window, like shown in the following image:
-<media type="image" mime="image/png" src="figures/areas-edition.png" width="100px">A
-picture showing the areas' edition UI</media>
 </p>
+<media type="image" mime="image/png" src="figures/areas-edition.png" width="200px">A
+picture showing the areas' edition UI</media>
 
 <p>The following list describes the content areas' attributes:</p>
 <list>
