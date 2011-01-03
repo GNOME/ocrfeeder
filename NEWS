@@ -1,3 +1,31 @@
+Version 0.7.2
+==============
+
+Bug fixes
+----------
+
+* Fix the document menu items' sensitiveness after
+  recognizing a document
+
+New Features
+-------------
+
+* Add help contents (user documentation)
+
+Improvements
+-------------
+
+* Update manpages to reflect all available command-line
+  options (thanks to Alberto Garcia)
+* Replace distutils with autotools
+
+New and Updated Translations
+-----------------------------
+
+* Joe Hansen [da]
+* Lucian Adrian Grijincu [ro]
+
+
 Version 0.7.1a
 ================
 
