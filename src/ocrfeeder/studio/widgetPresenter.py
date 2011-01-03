@@ -97,6 +97,7 @@ class MainWindow:
             <menuitem action="SpellChecker"/>
         </menu>
         <menu action="Help">
+            <menuitem action="HelpContents"/>
             <menuitem action="About"/>
         </menu>
     </menubar>
@@ -177,6 +178,7 @@ class MainWindow:
                                    None, _('Trie to straighten the image'),
                                    menu_items['image_deskewer']),
                                   ('Help', None, _('_Help')),
+                                  ('HelpContents', gtk.STOCK_HELP, _('_Help'), 'F1', _('Help contents'), menu_items['help_contents']),
                                   ('About', gtk.STOCK_ABOUT, _('_About'), None, _('About this application'), menu_items['about']),
                                   ('OCRFeederDetection', None, _('_Recognize Document'), None, _("Automatic Detection and Recognition"), tool_items['detection']),
                                   ('RecognizeAreas', None, _('Recognize Selected _Areas'), None, _("Recognize Selected Areas"), menu_items['recognize_areas']),

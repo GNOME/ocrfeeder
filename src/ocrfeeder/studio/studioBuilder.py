@@ -101,7 +101,8 @@ class Studio:
                                  'delete_selected_areas': self.source_images_controler.deleteSelectedAreas,
                                  'image_deskewer': self.source_images_controler.deskewCurrentImage,
                                  'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard,
-                                 'spell_checker': self.spellChecker
+                                 'spell_checker': self.spellChecker,
+                                 'help_contents': self.showHelpContents,
                                  }
 
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
@@ -369,6 +370,11 @@ class Studio:
         about_dialog = widgetPresenter.CustomAboutDialog()
         if about_dialog.run():
             about_dialog.destroy()
+
+    def showHelpContents(self, widget = None):
+        gtk.show_uri(self.main_window.window.get_screen(),
+                     'ghelp:ocrfeeder',
+                     gtk.get_current_event_time())
 
     def zoomIn(self, widget = None):
         self.source_images_controler.zoomIn()
