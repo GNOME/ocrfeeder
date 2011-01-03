@@ -10,6 +10,6 @@ spellchecker_ui_DATA = spell-checker.ui
 
 man_MANS = ocrfeeder.1 ocrfeeder-cli.1
 
-EXTRA_DIST = $(desktop_in_files)
+EXTRA_DIST = $(desktop_in_files) $(man_MANS) $(spellchecker_ui_DATA)
 
 CLEANFILES = $(desktop_DATA)
