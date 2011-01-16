@@ -21,6 +21,6 @@ DOC_PAGES = \
 	projects.page \
 	unpaper.page
 
-DOC_LINGUAS = de
+DOC_LINGUAS = de es
 
 dist-hook: doc-dist-hook
