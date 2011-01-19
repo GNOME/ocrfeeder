@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-01-13 14:21+0000\n"
-"PO-Revision-Date: 2011-01-16 18:29+0100\n"
+"POT-Creation-Date: 2011-01-16 20:26+0000\n"
+"PO-Revision-Date: 2011-01-18 16:42+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: C/unpaper.page:8(desc)
 msgid "Cleaning images before performing OCR"
-msgstr ""
+msgstr "Limpiar las imágenes antes de realizar un OCR"
 
 #: C/unpaper.page:11(title)
 msgid "Unpaper"
@@ -85,6 +85,8 @@ msgid ""
 "Projects are compressed files with the <em>ocrf</em> extension which hold "
 "information about pages (images) and content areas."
 msgstr ""
+"Los proyectos son archivos comprimidos con la extensión <em>ocrf</em>, que "
+"almacena información osbre las páginas (imágenes) y las áreas de contenido."
 
 #: C/projects.page:22(title)
 msgid "Saving A Project"
@@ -276,7 +278,7 @@ msgstr ""
 
 #: C/manualeditionandcorrection.page:9(desc)
 msgid "Manual edition and correction of results"
-msgstr ""
+msgstr "Edición manual y corrección de los resultados"
 
 #: C/manualeditionandcorrection.page:12(title)
 msgid "Manual Edition"
@@ -292,7 +294,7 @@ msgstr ""
 
 #: C/manualeditionandcorrection.page:21(title)
 msgid "Content Areas"
-msgstr ""
+msgstr "Áreas de contenido"
 
 #: C/manualeditionandcorrection.page:23(p)
 msgid ""
@@ -400,7 +402,7 @@ msgstr ""
 
 #: C/index.page:7(title) C/index.page:8(title) C/index.page:17(title)
 msgid "OCRFeeder Document Conversion System"
-msgstr ""
+msgstr "Sistema de conversión de documentos de OCRFeeder"
 
 #: C/index.page:10(name)
 msgid "Joaquim Rocha"
@@ -525,7 +527,7 @@ msgstr ""
 
 #: C/finetuning.page:18(p)
 msgid "The following list describes the mentioned options:"
-msgstr ""
+msgstr "La siguiente lista describe las opciones mencionadas:"
 
 #: C/finetuning.page:20(p)
 msgid ""
@@ -591,7 +593,7 @@ msgstr ""
 
 #: C/documentgeneration.page:9(desc)
 msgid "Creating an editable document"
-msgstr ""
+msgstr "Crear un documento editable"
 
 #: C/documentgeneration.page:12(title)
 msgid "Document Generation"
@@ -655,7 +657,7 @@ msgstr ""
 
 #: C/automaticrecognition.page:8(desc)
 msgid "Automatically recognizing an image"
-msgstr ""
+msgstr "Reconocer automáticamente una imagen"
 
 #: C/automaticrecognition.page:11(title)
 msgid "Automatic Recognition"
@@ -707,6 +709,8 @@ msgid ""
 "Adding an image to OCRFeeder is usually the first step when converting a "
 "document."
 msgstr ""
+"Añadir una imagen a OCRFeeder es habitualmente el primer paso cuando se "
+"convierte un documento."
 
 #: C/addingimage.page:15(p)
 msgid ""
@@ -759,6 +763,9 @@ msgid ""
 "<app>OCRFeeder</app> provides this functionality by choosing "
 "<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
 msgstr ""
+"A veces es útil añadir todas las imágenes de una carpeta. <app>OCRFeeder</"
+"app> proporciona esta funcionalidad eligiendo <guiseq><gui>Archivo</"
+"gui><gui>Añadir carpeta</gui></guiseq>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/index.page:0(None)
