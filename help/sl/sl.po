@@ -1,0 +1,527 @@
+# Slovenian translation for ocrfeeder.
+# Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"POT-Creation-Date: 2011-01-16 20:26+0000\n"
+"PO-Revision-Date: 2011-01-19 14:28+0100\n"
+"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"Language-Team: Slovenian <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 or n%100==4 ? 3 : 0) ;\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: C/unpaper.page:8(desc)
+msgid "Cleaning images before performing OCR"
+msgstr "Čiščenje slik pred izvajanjem prepoznave znakov"
+
+#: C/unpaper.page:11(title)
+msgid "Unpaper"
+msgstr "Razstranjevanje"
+
+#: C/unpaper.page:13(p)
+msgid "<em>Unpaper</em> is a tool to clean images in order to make them easier to read on screen. It is aimed mainly at images obtained from scanned documents which usually show dust, black margins or other flaws."
+msgstr "<em>Razstrani</em> je orodje za čiščenje slik, kar jih naredi lažje berljive na zaslonu. Namenjeno je predvsem za slike iz optično branih dokumentov, ki običajno pokažejo prah, črne robove ali druge napake."
+
+#: C/unpaper.page:18(p)
+msgid "<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before processing them, which usually results in a better recognition."
+msgstr "<app>OCRFeeder</app> lahko uporabi <em>Razstrani</em> za čiščenje svojih slik pred njihovo obdelavo, kar običajno povzroči boljšo prepoznavo."
+
+#: C/unpaper.page:22(p)
+msgid "<em>Unpaper</em> needs to be installed in order to be used. If it is not installed, <app>OCRFeeder</app> won't show it's action in the interface."
+msgstr "<em>Razstrani</em> mora biti za uporabo nameščen. V primeru da ni nameščen, <app>OCRFeeder</app> v vmesniku ne bo prikazal njegovega dejanja."
+
+#: C/unpaper.page:26(p)
+msgid "To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> dialog will be shown with <em>Unpaper</em>'s options and an area to preview the changes before applying them to the loaded image. Depending on the size and characteristics of the image, using this tool might take some time."
+msgstr "Za uporabo orodja <em>Razstrani</em> na naloženi sliki kliknite <guiseq><gui>Orodja</gui><gui>Razstrani</gui></guiseq>. Pogovorno okno <gui>Obdelovalnik slik razstrani</gui> bo bilo prikazano z možnostmi <em>Razstrani</em> in področjem za predogled sprememb pred njihovim uveljavljanjem na naloženi sliki. Glede na velikost in značilnosti te slike, lahko uporaba tega orodja traja nekaj časa."
+
+#: C/unpaper.page:33(p)
+msgid "<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. In this area one can enter the path to <em>Unpaper</em>'s executable (normally this is already configured if <em>Unpaper</em> was installed the first time <app>OCRFeeder</app> was run). In the same area, under <gui>Image Pre-Processing</gui>, one can check <gui>Unpaper images</gui> to make images being processed automatically by <em>Unpaper</em> after they are loaded into <app>OCRFeeder</app>. The options taken by <em>Unpaper</em> when it's automatically called after adding an image can be configured by clicking the <gui>Unpaper Preferences</gui> button."
+msgstr "<em>Razstranjanje</em> je mogoče nastaviti z <guiseq><gui>Uredi</gui><gui>Možnosti</gui></guiseq> in dostopanjem do zavihka <gui>Orodja</gui>. V tem področju lahko vnesete pot do izvedljive datoteke <em>Razstrani</em> (običajno je pot nastavljena, če je bil programnik  <em>Razstrani</em> nameščen ob prvem zagonu programa <app>OCRFeeder</app>). V istem področju pod <gui>Pred obdelava slike</gui> lahko izberete  <gui>Razstrani slike</gui>. Izbrana možnost določi, da <em>Razstrani</em> slike po nalaganju v <app>OCRFeeder</app> samodejno obdela. Možnosti, ki jih <em>Razstrani</em> uporabi ob samodejnem priklicu po dodajanju slike, lahko spremenite s klikom na gumb <gui>Možnosti razstranjanja</gui>."
+
+#: C/projects.page:8(desc)
+msgid "Loading and saving projects"
+msgstr "Nalaganje in shranjevanje projektov"
+
+#: C/projects.page:11(title)
+#: C/index.page:43(title)
+msgid "Projects"
+msgstr "Projekti"
+
+#: C/projects.page:13(p)
+msgid "Sometimes a user may want to save the progress of the work done so far in an image and continue with it later. For this case <app>OCRFeeder</app> offers the possibility to save and load projects."
+msgstr "Včasih si uporabniki želijo shraniti napredek storjenega dela na sliki in z njim nadaljevati kasneje. Za ta primer <app>OCRFeeder</app> zagotavlja možnost shranjevanja in nalaganja projektov."
+
+#: C/projects.page:18(p)
+msgid "Projects are compressed files with the <em>ocrf</em> extension which hold information about pages (images) and content areas."
+msgstr "Projekti so stisnjene datoteke z razširitvijo <em>ocrf</em>, ki vsebujejo podrobnosti o straneh (slikah) in področja vsebine."
+
+#: C/projects.page:22(title)
+msgid "Saving A Project"
+msgstr "Shranjevanje projekta"
+
+#: C/projects.page:24(p)
+msgid "After having done some work in an image, a project can be created by clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or <guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the <keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A file saving dialog will then be shown so the project's name and location is entered."
+msgstr "Po delu na sliki lahko projekt ustvarite s klikom na <guiseq><gui>Datoteka</gui><gui>Shrani</gui></guiseq> ali <guiseq><gui>Datoteka</gui><gui>Shrani kot …</gui></guiseq>. Izbirno lahko uporabite bližnjici  <keyseq><key>Control</key><key>S</key></keyseq> ali <keyseq><key>Control</key><key>Dvigalka</key><key>S</key></keyseq>. Pojavilo se bo pogovorno okno shranjevanja datotek kamor lahko vnesete ime projekta in njegovo mesto."
+
+#: C/projects.page:35(title)
+msgid "Loading A Project"
+msgstr "Nalaganje projekta"
+
+#: C/projects.page:37(p)
+msgid "An existing project can be loaded simply by clicking <guiseq><gui>File</gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></keyseq>."
+msgstr "Obstoječi projekt lahko enostavno naložite s klikom <guiseq><gui>Datoteka</gui><gui>Odpri</gui></guiseq> ali <keyseq><key>Control</key><key>O</key></keyseq>."
+
+#: C/projects.page:44(title)
+msgid "Appending A Project"
+msgstr "Pripenjanje projekta"
+
+#: C/projects.page:46(p)
+msgid "Sometimes it is useful to merge two or more projects in order to create only one document with the pages of several <app>OCRFeeder</app> projects. This can be accomplished by appending a project, which simply loads the pages from a chosen project into the current one. To do this, click in <guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the wanted project."
+msgstr "Včasih je uporabno združiti dva ali več projektov za ustvarjanje enega dokumenta s strani več projektov <app>OCRFeeder</app>. To lahko dosežete s pripenjanjem projekta, ki naloži strani iz izbranega projekta v trenutnega. Za to izberite <guiseq><gui>Datoteka</gui><gui>Pripni projekt</gui></guiseq> in izberite želeni projekt."
+
+#: C/projects.page:56(title)
+msgid "Clearing A Project"
+msgstr "Čiščenje projekta"
+
+#: C/projects.page:58(p)
+msgid "If all the information is a project should be deleted (for example, to start over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear Project</gui></guiseq>."
+msgstr "V primeru da želite vse podatke projekta izbrisati (za ponoven začetek), lahko to storite z izbiro <guiseq><gui>Uredi</gui><gui>Počisti projekt</gui></guiseq>."
+
+#: C/ocrconfiguration.page:9(desc)
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Nastavite programnike OCR za prepoznavo besedila"
+
+#: C/ocrconfiguration.page:12(title)
+msgid "OCR Engines Configuration"
+msgstr "Nastavljanje programnikov OCR"
+
+#: C/ocrconfiguration.page:14(p)
+msgid "<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from images. This means any OCR engine that can be used from the command line should also be used in <app>OCRFeeder</app>."
+msgstr "<app>OCRFeeder</app> uporablja sistemske programnike OCR za izvleko besedila iz slik. To pomeni, da lahko katerikoli programnik OCR, ki ga lahko uporabite iz ukazne vrstice, uporabite tudi v <app>OCRFeeder</app>."
+
+#: C/ocrconfiguration.page:20(title)
+msgid "Automatic Detection of OCR Engines"
+msgstr "Samodejno zaznavanje programnikov OCR"
+
+#: C/ocrconfiguration.page:22(p)
+msgid "The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and <em>Cuneiform</em>) are already automatically detected and configured in most systems, the first time <app>OCRFeeder</app> is run."
+msgstr "Porgramniki OCR (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> in <em>Cuneiform</em>) so na večini sistemov samodejno zaznani in nastavljeni ob prvem zagonu programa <app>OCRFeeder</app>."
+
+#: C/ocrconfiguration.page:26(p)
+msgid "If an OCR engine is installed after <app>OCRFeeder</app> had configured already an engine, it will not be automatically configured but, depending on the engine, users might easily go to the <gui>OCR Engines</gui> dialog and choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr "V primeru da je programnik OCR nameščen po tem ko je <app>OCRFeeder</app> že nastavil programnik, ne bo samodejno nastavljen. Vendar pa lahko uporabniki za nekatere programnike v pogovornem oknu <gui>Programniki OCR</gui> izberejo <gui>Zaznaj</gui> in jih izberejo s seznama zaznanih programnikov. "
+
+#: C/ocrconfiguration.page:31(p)
+msgid "Already configured OCR engines might be detected again and it is up to the user to uncheck these engines if they shouldn't be added again."
+msgstr "Že nastavljene programnike OCR lahko znova zaznate in jih v primeru da jih ne želite odstranite oznako pred njimi in jih ne dodate."
+
+#: C/ocrconfiguration.page:38(title)
+msgid "Manual Configuration"
+msgstr "Ročna nastavitev"
+
+#: C/ocrconfiguration.page:40(p)
+msgid "The currently configured OCR engines are shown in the <gui>OCR Engines</gui> dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</gui></guiseq>."
+msgstr "Trenutno nastavljeni programniki OCR so prikazani v pogovornem oknu <gui>Programniki OCR</gui>, ki ga lahko odprete iz  <guiseq><gui>Orodja</gui><gui>Programniki OCR</gui></guiseq>."
+
+#: C/ocrconfiguration.page:44(p)
+msgid "Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog allows to add new engines, edit or delete the current ones and detect engines installed in the system."
+msgstr "Poleg ogleda nastavljenih programnikov OCR pogovorno okno <gui>Programniki OCR</gui> omogoča dodajanje novih programnikov, urejanje ali izbris trenutnih in zaznavanje programnikov, ki so nameščeni na sistemu."
+
+#: C/ocrconfiguration.page:48(p)
+msgid "When adding or editing an OCR engine (by pressing the <gui>Add</gui> or <gui>Edit</gui> buttons, respectively), a dialog is shown with the following fields:"
+msgstr "Pri dodajanju ali urejanju programnika OCR  (s pritiskom na gumb <gui>Dodaj</gui> ali <gui>Uredi</gui>) je prikazano pogovorno okno z naslednjimi polji:"
+
+#: C/ocrconfiguration.page:53(p)
+msgid "<gui>Name</gui>: The engine's name. This name will be used in throughout the UI when referring to the engine;"
+msgstr "<gui>Ime</gui>: Ime programnika. To ime bo uporabljeno v uporabniškem vmesniku pri sklicevanju na programnik"
+
+#: C/ocrconfiguration.page:55(p)
+msgid "<gui>Image format</gui>: The image format that the engine recognizes (for example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr "<gui>Vrsta slike</gui>: Vrsta slike, ki jo prepozna programnik (na primer <em>TIF</em> v primeru <em>Tesseract</em>);"
+
+#: C/ocrconfiguration.page:58(p)
+msgid "<gui>Failure string</gui>: Some engines replace unrecognized characters by another, pre-defined character (for example, <em>_</em> in the case of <em>GOCR</em>)."
+msgstr "<gui>Niz napak</gui>: Nekateri programniki neprepoznane znake zamenjajo z drugim, preddoločenim znakom (na primer, <em>_</em> v primeru <em>GOCR</em>)."
+
+#: C/ocrconfiguration.page:61(p)
+msgid "<gui>Engine path</gui>: The path in the system to the engine's executable (for example, <em>/usr/bin/tesseract</em>)."
+msgstr "<gui>Pot programnika</gui>: Pot v sistemu do izvedljive datoteke programnika (na primer <em>/usr/bin/tesseract</em>)."
+
+#: C/ocrconfiguration.page:63(p)
+msgid "<gui>Engine arguments</gui>: The arguments that feed an image to the engine and make it output the recognized text to the standard output. <app>OCRFeeder</app> runs the engine with these arguments as if it was in the command line and looks for the recognized text in the standard output. Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while other, like <em>Tesseract</em>, write the text into a file."
+msgstr "<gui>Argumenti programnika</gui>: Argumenti, ki pošljejo sliko programniku in prepoznano besedilo pošljejo na standardni izhod. <app>OCRFeeder</app> požene programnik s temi argumenti kot da bi bil v ukazni vrstici in išče prepoznano besedilo v standardnem izhodu. Nekateri programniki kot sta na primer <em>Ocrad</em> in <em>GOCR</em>, medtem ko drugi kot je <em>Tesseract</em> zapišejo besedilo v datoteko."
+
+#: C/ocrconfiguration.page:70(p)
+msgid "Since the image's path to be read is always needed, a special argument <em>$IMAGE</em> is provided for this and will be replaced by the image path when the engine is run. For the cases where a file name is needed, like the one mentioned previously, a special argument <em>$FILE</em> is provided and will be replaced by a temporary file name."
+msgstr "Ker je pot slike za branje vedno zahtevana, je za to zagotovljen poseben argument  <em>$SLIKA</em>, ki bo bil ob zagonu programnika zamenjan s potjo slike. Za razrede, kjer je zahtevano ime datoteke, kot v predhodno omenjenem imenu, je zagotovljen poseben argument <em>$FILE</em>, ki bo bil zamenjan z začasnim imenom datoteke."
+
+#: C/ocrconfiguration.page:76(p)
+msgid "So, in case of <em>Tesseract</em> (which writes the recognized text into a file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr "V primeru <em>Tesseract</em>  (ki prepoznano besedilo zapiše v datoteko), bi argumenti bili <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+
+#: C/ocrconfiguration.page:82(p)
+msgid "The engines' configuration is stored in their own XML file in the user's home under <em>.ocrfeeder/engines/</em>."
+msgstr "Programnikova nastavitev je shranjena v lastno datoteko XML v uporabnikovi domači mapi v <em>.ocrfeeder/engines/</em>."
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:26(None)
+msgid "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:33(None)
+msgid "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
+msgstr ""
+
+#: C/manualeditionandcorrection.page:9(desc)
+msgid "Manual edition and correction of results"
+msgstr "Ročno urejanje in popravilo rezultatov"
+
+#: C/manualeditionandcorrection.page:12(title)
+msgid "Manual Edition"
+msgstr "Ročno urejanje"
+
+#: C/manualeditionandcorrection.page:14(p)
+msgid "One may want to manually select just a portion of an image to be recognized or correct the results of the automatic recognition. <app>OCRFeeder</app> lets its users manually edit every aspect of a document's contents in an easy way."
+msgstr "Morda želite za prepoznavo ročno izbrati samo del slike ali ročno popraviti samodejno prepoznavo. <app>OCRFeeder</app> vam omogoča ročno urejanje vseh vidikov vsebine dokumenta na enostaven način."
+
+#: C/manualeditionandcorrection.page:21(title)
+msgid "Content Areas"
+msgstr "Vsebinska območja"
+
+#: C/manualeditionandcorrection.page:23(p)
+msgid "The mentioned document's contents are represented by areas like shown in the following image:"
+msgstr "Vsebino omenjenega dokumenta predstavljajo področja kot je tisto prikazano na naslednji sliki:"
+
+#: C/manualeditionandcorrection.page:26(media)
+msgid "A picture of two content areas with one of them selected."
+msgstr "Slika dveh področij vsebine, kjer je eno od njih izbrano."
+
+#: C/manualeditionandcorrection.page:30(p)
+msgid "The attributes of a selected are shown and can be changed from the right part of the main window, like shown in the following image:"
+msgstr "Prikazani so atributi izbranega področja, ki jih je mogoče spremeniti iz desnega dela glavnega okna kot je prikazano na naslednji sliki:"
+
+#: C/manualeditionandcorrection.page:33(media)
+msgid "A picture showing the areas' edition UI"
+msgstr "Slika prikazuje uporabniški vmesnik urejanja področij"
+
+#: C/manualeditionandcorrection.page:36(p)
+msgid "The following list describes the content areas' attributes:"
+msgstr "Naslednji seznam opiše atribute področij besedila:"
+
+#: C/manualeditionandcorrection.page:38(p)
+msgid "<em>Type</em>: sets the area to be either the type image or text. The image type will clip the area from the original page and place it in the generated document. The text type will use the text assigned to the area and represent it as text in the generated document. (Generated ODT documents will have text boxes when an area was marked as being of the type text)"
+msgstr "<em>Vrsta</em>: nastavi vrsto površine kot besedilo ali sliko. Vrsta slika bo področje iz izvirne strani obrezala in ga postavila v ustvarjen dokument. Vrsta besedilo bo uporabila dodeljeno besedilo v področju in ga v ustvarjenem dokumentu predstavila kot besedilo. (Ustvarjeni dokumenti ODT bodo imeli besedilna področja, ko je bilo področje označeno kot vrsta besedilo)"
+
+#: C/manualeditionandcorrection.page:44(p)
+msgid "<em>Clip</em>: Shows the current clip from the original area. This makes it easier for users to check exactly what's within the area."
+msgstr "<em>Izrezek</em>: Pokaže trenuten izrezek iz izvirnega področja. To uporabnikom olajša preveriti kaj natanko je v področju."
+
+#: C/manualeditionandcorrection.page:46(p)
+msgid "<em>Bounds</em>: Shows the point (X and Y) in the original image where the top left corner of the area is placed as well as the areas' width and height."
+msgstr "<em>Obroba</em>: Pokaže točko (X in Y) v izvirni sliki, kjer je zgornji levi rob področja ter njegovo širino in dolžino."
+
+#: C/manualeditionandcorrection.page:49(p)
+msgid "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the area's text with by (by pressing the <gui>OCR</gui> button)"
+msgstr "<em>Programnik OCR</em>: Uporabniku omogoča izbiro programnika OCR in prepoznavanja besedila področja z (s pritiskom gumba <gui>OCR</gui>)"
+
+#: C/manualeditionandcorrection.page:51(p)
+msgid "Using the OCR engine to recognize the text will directly assign that text to the area and replace the one assigned before."
+msgstr "Programnik OCR za prepoznavanje besedila bo to besedilo neposredno dodelil področju in zamenjal predhodno določeno besedilo."
+
+#: C/manualeditionandcorrection.page:49(item)
+msgid "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+msgstr "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+
+#: C/manualeditionandcorrection.page:54(p)
+msgid "<em>Text Area</em>: Represents the text assigned to that area and lets the user edit it. This area is disabled when the area is of the type image"
+msgstr "<em>Besedilno področje</em>: Predstavlja besedilo dodeljeno temu področju in uporabniku omogoči njegovo urejanje. To področje je onemogočeno, ko je področje vrste slika"
+
+#: C/manualeditionandcorrection.page:57(p)
+msgid "<em>Style Tab</em>: Lets the user choose the font type and size, as well as the text alignment, line and letter spacing."
+msgstr "<em>Zavihek slog</em>: Uporabniku omogoča nastavitev vrste pisave in velikosti kot tudi poravnavo besedila ter razmik med vrsticami in črkami."
+
+#: C/manualeditionandcorrection.page:61(p)
+msgid "The content areas can be selected by clicking on them or by using the menus <guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and <guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are also keyboard shortcuts for these actions: <keyseq><key>Ctrl</key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr "Področja vsebine lahko izberete s klikom na njih ali z uporabo menijev <guiseq><gui>Dokument</gui><gui>Izberi predhodno področje</gui></guiseq> in <guiseq><gui>Dokument</gui><gui>Izberi naslednje področje</gui></guiseq>. Za ti dejanji sta na voljo tudi tipkovni bližnjici <keyseq><key>Ctrl</key><key>Dvigalka</key><key>P</key></keyseq> in <keyseq><key>Ctrl</key><key>Dvigalka</key><key>N</key></keyseq>."
+
+#: C/manualeditionandcorrection.page:68(p)
+msgid "Selecting all areas is also possible using <guiseq><gui>Document</gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</key><key>Shift</key><key>A</key></keyseq>."
+msgstr "Vsa področja lahko izberete z <guiseq><gui>Dokument</gui><gui>Izberi vsa področja</gui></guiseq> ali <keyseq><key>Ctrl</key><key>Dvigalka</key><key>A</key></keyseq>."
+
+#: C/manualeditionandcorrection.page:72(p)
+msgid "When at least one content area is selected, it is possible to recognize their contents automatically or delete them. These actions can be accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>), respectively."
+msgstr "Ko je izbrano vsaj eno področje vsebine, je mogoče njegovo vsebino samodejno prepoznati ali izbrisati. To lahko dosežete s klikom na <guiseq><gui>Dokument</gui><gui>Prepoznana izbrana področja</gui></guiseq> in <guiseq><gui>Dokument</gui><gui>Izbriši izbrana področja</gui></guiseq> (ali <keyseq><key>Ctrl</key><key>Dvigalka</key><key>Izbriši</key></keyseq>)"
+
+#: C/index.page:6(desc)
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Pomoč za <app>Sistem pretvarjanja dokumentov OCRFeeder</app>."
+
+#: C/index.page:7(title)
+#: C/index.page:8(title)
+#: C/index.page:17(title)
+msgid "OCRFeeder Document Conversion System"
+msgstr "OCRFeeder sistem za pretvarjanje dokumentov"
+
+#: C/index.page:10(name)
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#: C/index.page:11(email)
+msgid "jrocha@igalia.com"
+msgstr "jrocha@igalia.com"
+
+#: C/index.page:18(p)
+msgid "OCRFeeder is a document layout analysis and optical character recognition system."
+msgstr "OCRFeeder je sistem za preučevanje razporeditve in optično prepoznavo znakov."
+
+#: C/index.page:20(p)
+msgid "OCRFeeder was created to allow users to easily convert document images (for example, a PNG image with text) into editable documents (for example, an ODT version with that text)."
+msgstr "OCRFeeder je bil ustvarjen, da bi uporabnikom omogočil enostavno pretvarjanje slik dokumentov (na primer slika PNG z besedilom) v uredljive dokumente (na primer različico ODT z besedilom)."
+
+#: C/index.page:24(p)
+msgid "Given the images it will automatically outline its contents, perform OCR and distinguish between what's graphics and text. It generates multiple formats being its main one ODT."
+msgstr "OCRFeeder bo samodejno orisal vsebino slik, izvedel prepoznavanje znakov in ločil med tem kaj je grafika in kaj je besedilo. Ustvari več vrst datotek, pri čemer je glavna ODT."
+
+#: C/index.page:28(p)
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr "Ta vodič vam bo razložil kako nastaviti in uporabiti ORCFeeder."
+
+#: C/index.page:31(title)
+msgid "Adding Images"
+msgstr "Dodajanje slik"
+
+#: C/index.page:35(title)
+msgid "Recognition"
+msgstr "Prepoznava"
+
+#: C/index.page:39(title)
+msgid "Configuration"
+msgstr "Nastavljanje"
+
+#: C/importingpdf.page:8(desc)
+msgid "Importing PDF documents"
+msgstr "Uvažanje dokumentov PDF"
+
+#: C/importingpdf.page:11(title)
+msgid "Importing PDF"
+msgstr "Uvažanje PDF"
+
+#: C/importingpdf.page:13(p)
+msgid "Some documents are nothing more than images placed in a PDF document. For cases like this, <app>OCRFeeder</app> can still import a PDF document so it can then be converted into an editable document."
+msgstr "Nekateri dokumenti so slike postavljene v dokument PDF. Za takšne primere lahko <app>OCRFeeder</app> še vedno uvozi dokument PDF, tako da ga je mogoče pretvoriti v uredljiv dokument."
+
+#: C/importingpdf.page:18(p)
+msgid "To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</gui></guiseq>."
+msgstr "Za uvoz dokumenta PDF kliknite <guiseq><gui>Datoteka</gui><gui>Uvozi PDF</gui></guiseq>."
+
+#: C/importingpdf.page:21(p)
+msgid "Each PDF page will be converted to an image and placed in the pages' area."
+msgstr "Vsaka stran PDF bo bila pretvorjena v sliko in postavljena na področje strani."
+
+#: C/importingpdf.page:24(p)
+msgid "The PDF conversion can be a demanding process and take some time for large PDF files."
+msgstr "Pretvarjanje PDF je lahko zahtevno opravilo in za velike datoteke PDF traja nekaj časa."
+
+#: C/importingfromscanner.page:8(desc)
+msgid "Importing from a scanner device"
+msgstr "Uvažanje z naprave optičnega bralnika"
+
+#: C/importingfromscanner.page:11(title)
+msgid "Importing From Scanner"
+msgstr "Uvažanje iz optičnega bralnika"
+
+#: C/importingfromscanner.page:13(p)
+msgid "In order to help convert a printed document into an editable document, <app>OCRFeeder</app> offers a way to import images directly from a scanner device."
+msgstr "Za pomoč pri pretvorbi natisnjenega dokumenta v uredljiv dokument <app>OCRFeeder</app> ponuja uvoz slik neposredno iz optičnega bralnika."
+
+#: C/importingfromscanner.page:17(p)
+msgid "To import an image from a scanner device, use the menu <guiseq><gui>File</gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr "Za uvoz slike z optičnega bralnika uporabite meni <guiseq><gui>Datoteka</gui><gui>Uvozi stran iz optičnega bralnika</gui></guiseq> ali tipkovno bližnjico <keyseq><key>Ctrl</key><key>Dvigalka</key><key>I</key></keyseq>."
+
+#: C/importingfromscanner.page:22(p)
+msgid "The currently detected scanner device will be used to scan the page. If more than one scanner if found, then a dialog will be shown with the options to choose from."
+msgstr "Trenutno izbrani optični bralnik bo bil uporabljen za preiskovanje strani. V primeru da je najden več kot en optični bralnik, bo prikazano pogovorno okno z možnostmi izbire."
+
+#: C/finetuning.page:8(desc)
+msgid "Advanced options for a better recognition"
+msgstr "Napredne možnosti za boljše prepoznavanje"
+
+#: C/finetuning.page:11(title)
+msgid "Fine-tuning"
+msgstr "Fino nastavljanje"
+
+#: C/finetuning.page:13(p)
+msgid "<app>OCRFeeder</app> has some advanced options that can be used to perform a better recognition. These options can be chosen from the <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> tab."
+msgstr "<app>OCRFeeder</app> ima nekaj naprednih možnosti, ki jih je mogoče uporabiti za izvajanje boljšega prepoznavanja. Te možnosti lahko izberete v pogovornem oknu  <guiseq><gui>Uredi</gui><gui>Možnosti</gui></guiseq>  v zavihku <gui>Prepoznava</gui>."
+
+#: C/finetuning.page:18(p)
+msgid "The following list describes the mentioned options:"
+msgstr "Naslednji seznam opiše omenjene možnosti:"
+
+#: C/finetuning.page:20(p)
+msgid "<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the text line by line and seperate each line with a line break. Sometimes, this is not what the user wants because the text might be broken in the middle of a sentence."
+msgstr "<gui>Popravi prelome vrstic in deljenje besed</gui>: Programniki optičnega prepoznavanja črk običajno besedilo preberejo vrstico za vrstico in jih med sabo ločijo s prelomom vrstice. Včasih uporabnik tega ne želi, ker je lahko besedilo pokvarjeno v sredini stavka."
+
+#: C/finetuning.page:24(p)
+msgid "Checking this option will make <app>OCRFeeder</app> remove single newline characters after the text is recognized by the engines."
+msgstr "Izbrana možnost določi, da <app>OCRFeeder</app> odstrani posamezne črke nove vrstice po tem, ko besedilo prepoznajo programniki."
+
+#: C/finetuning.page:26(p)
+msgid "Since just removing newlines in an hyphenized text would result in wrongly separated words, hyphenization is also detected and removed in this process."
+msgstr "Ker bi samo odstranjevanje novih vrstic v deljenemu besedilu povzročilo napačno ločeno besede, je v tem opravilu deljenje besed zaznano in odstranjeno."
+
+#: C/finetuning.page:29(p)
+msgid "<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the contents in an image uses the concept of <em>window size</em> which is the division of the image in small windows. A smaller window size means it is likely to detect more content areas but size that is too small may result in contents that should be part of a bigger area instead. On the other hand, a bigger window size means less divisions of contents but may end up in contents which should be subdivided."
+msgstr "<gui>Velikost okna</gui>: <app>OCRFeeder-jev</app> algoritem za zaznavanje vsebine v sliki uporablja koncepte <em>velikosti okna</em>, ki je odsek slike v majhnih oknih. Majhna velikost okna pomeni, da bo program verjetno zaznal več področij vsebine. Premajhna velikost lahko pomeni, da je zaznana vsebina, ki je del večjega področja. Na drugi strani večja velikost okna pomeni manj razdelitev vsebine, vendar lahko dobite vsebino, ki bi morala biti razdeljena."
+
+#: C/finetuning.page:36(p)
+msgid "A good window size should be slightly bigger than the text line spacing in an image."
+msgstr "Dobra velikost okna bi morala biti rahlo večja kot razmik med vrsticami besedila na sliki."
+
+#: C/finetuning.page:37(p)
+msgid "Users may want to manually set this value if automatic one doesn't produce any valid content areas but normally it is easier to use the automatic one and perform any needed corrections directly in the content areas."
+msgstr "Morda boste to vrednost želeli ročno nastaviti, če samodejna ne proizvede veljavnih področij vsebine. Običajno je lažje uporabiti samodejno vrednost in morebitne popravke izvesti neposredno v področjih vsebine."
+
+#: C/finetuning.page:41(p)
+msgid "<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</app> should try to divide the detected content areas horizontally (originating more columns). The value that is used to check the existance of blank space within the contents may be set to automatic or manual when the columns aren't detected correctly."
+msgstr "<gui>Izboljšaj zaznavo stolpcev</gui>: Izberite to možnost, če želite da naj <app>OCRFeeder</app> poskusi razdeliti zaznana področja vsebine vodoravno (to pomeni več stolpcev). Vrednost za preverjanje ali v vsebini obstaja prazen prostor lahko nastavite na samodejno ali ročno, ko stolpci niso pravilno zaznani."
+
+#: C/finetuning.page:46(p)
+msgid "<gui>Adjust content areas' bounds</gui>: The detected content areas sometimes have a considerable margin between their contents and the areas' edges. By checking this option, <app>OCRFeeder</app> will minimize those margins, adjusting the areas to its contents better. Optionally, a manual value can be check to indicate the minimum value of the adjusted margins."
+msgstr "<gui>Prilagodi robove vsebinskih področij</gui>: Zaznana področja vsebine imajo včasih med vsebino in robom področja občutne robove. Izbrana možnost določi, da <app>OCRFeeder</app> bo te robove zmanjšal in področja boljše prilagodil njegovi vsebini. Izbirno lahko vnesete najmanjšo vrednost prilagojenih robov."
+
+#: C/documentgeneration.page:9(desc)
+msgid "Creating an editable document"
+msgstr "Ustvarjanje uredljivega dokumenta"
+
+#: C/documentgeneration.page:12(title)
+msgid "Document Generation"
+msgstr "Ustvarjanje dokumenta"
+
+#: C/documentgeneration.page:14(p)
+msgid "<app>OCRFeeder</app> currently generates two document formats: <em>ODT</em> and <em>HTML</em>."
+msgstr "<app>OCRFeeder</app> trenutno ustvari dve vrsti dokumentov: <em>ODT</em> in <em>HTML</em>."
+
+#: C/documentgeneration.page:17(p)
+msgid "After the recognition and eventual manual edition has been performed, it is possible to generate a document by clicking <guiseq><gui>File</gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr "Po opravljeni prepoznavi in morebitnem ročnem urejanju lahko ustvarite dokument s klikom na <guiseq><gui>Datoteka</gui><gui>Izvozi …</gui></guiseq> in izbiro želene vrste dokumenta."
+
+#: C/documentgeneration.page:22(p)
+msgid "The HTML exportation generates a folder with the document pages represented by one HTML file. In each page there are links to go to the previous and next pages. Image content areas are stored in a subfolder called <em>images</em>."
+msgstr "Izvoz HTML ustvari mapo s strani dokumenta, predstavljeno z eno datoteko HTML. Na vsaki strani so povezave do predhodne in naslednje strani. Področja vsebine slike so shranjena v podmapi  <em>slike</em>."
+
+#: C/deskewing.page:8(desc)
+msgid "Correcting the skew in the images"
+msgstr "Popravljanje nagiba v slikah"
+
+#: C/deskewing.page:11(title)
+msgid "Deskewing"
+msgstr "Odstranjevanje nagiba"
+
+#: C/deskewing.page:13(p)
+msgid "Some images, especially if they were added from a scanner device, may be skewed and this makes it harder to recognize the image."
+msgstr "Nekatere slike, še posebno če so bile dodane iz optičnega bralnika, so lahko nagnjene. To lahko oteži prepoznavo slike."
+
+#: C/deskewing.page:16(p)
+msgid "<app>OCRFeeder</app> offers a way to automatically deskew an image. To deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</gui></guiseq>."
+msgstr "<app>OCRFeeder</app> ponuja način za samodejno odstranitev nagiba slika. Za odstranitev nagiba naložene slike kliknite na <guiseq><gui>Orodja</gui><gui>Odstranjevalnik nagiba slik</gui></guiseq>."
+
+#: C/deskewing.page:20(p)
+msgid "This operation can also be set to be performed automatically every time an image is added. To set it, simply open the <gui>Preferences</gui> dialog from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check <gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr "To opravilo se lahko izvede samodejno vsakič, ko je dodana slika. Za njeno nastavitev odprite pogovorno okno <gui>Možnosti</gui> v  <guiseq><gui>Uredi</gui><gui>Možnosti</gui></guiseq> in v zavihku <gui>Orodja</gui> izberite <gui>Odstrani nagib slike</gui>."
+
+#: C/deskewing.page:26(p)
+msgid "Depending on the size and characteristics of the image, deskewing an image may take some time."
+msgstr "Glede na velikost in značilnosti slike lahko odstranjevanje nagiba slika traja nekaj časa."
+
+#: C/automaticrecognition.page:8(desc)
+msgid "Automatically recognizing an image"
+msgstr "Samodejno prepoznavanje slike"
+
+#: C/automaticrecognition.page:11(title)
+msgid "Automatic Recognition"
+msgstr "Samodejna prepoznava"
+
+#: C/automaticrecognition.page:13(p)
+msgid "<app>OCRFeeder</app> tries to detect the contents in a document image and perform OCR over them, also distinguishing between what is graphics and what is text. To simplify this concept, we call it recognition."
+msgstr "<app>OCRFeeder</app> poskuša zaznavi vsebino v sliki dokumenta in izvesti optično prepoznavanje črk, ter poskuša ločiti kaj je grafika in kaj je besedilo. Za poenostavljenje tega koncepta ga imenujemo prepoznava."
+
+#: C/automaticrecognition.page:18(p)
+msgid "After an image is added it can be automatically recognized by clicking <guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr "Ko je slika dodana, jo lahko samodejno prepoznate s klikom na <guiseq><gui>Dokument</gui><gui>Prepoznaj dokument</gui></guiseq>."
+
+#: C/automaticrecognition.page:22(p)
+msgid "Since there are many different document layouts out there, the automatic recognition, mainly the page segmentation, may turn out not to be accurate for you document. In this case, some manual editing of the recognition results might be needed."
+msgstr "Ker obstaja veliko različnih vrst dokumenta, lahko samodejna prepoznava, predvsem razdeljevanje strani, ni natančna za vaš dokument. V tem primeru bo za dobre rezultate prepoznavanja zahtevanega nekaj ročnega urejanja."
+
+#: C/automaticrecognition.page:28(p)
+msgid "The automatic recognition performs some complex operations and may take some time depending on the size of the image and the complexity of the layout."
+msgstr "Samodejna prepoznava izvede nekaj zapletenih opravil in lahko traja nekaj časa glede na velikost slike in zapletenost razporeditve."
+
+#: C/automaticrecognition.page:31(p)
+msgid "The automatic recognition will replace all the content areas in the currently selected page."
+msgstr "Samodejna prepoznava bo zamenjala vsa področja vsebine v trenutno izbrani strani."
+
+#: C/addingimage.page:7(desc)
+msgid "Adding an image to be recognized"
+msgstr "Dodajanje slike za prepoznavo"
+
+#: C/addingimage.page:10(title)
+msgid "Adding An Image"
+msgstr "Dodajanje slike"
+
+#: C/addingimage.page:12(p)
+msgid "Adding an image to OCRFeeder is usually the first step when converting a document."
+msgstr "Dodajanje slike programu OCRFeeder je običajno pri korak pri pretvarjanju dokumenta."
+
+#: C/addingimage.page:15(p)
+msgid "Each added image represents a page in the final document. A thumbnail of the image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr "Vsaka dodana slika predstavlja stran v končnem dokumentu. Sličica slike bo bila prikazana v področju strani (levo področje <app>OCRFeeder</app>)."
+
+#: C/addingimage.page:19(p)
+msgid "The order of the pages in the final document will be the same as the images' order in the pages' area. This way, pages can be reordered by dragging them in the images' thumbnails in the pages' area."
+msgstr "Vrstni red strani v končnem dokumentu bo enak kot vrstni red slik v področju strani. Tako lahko strani preurediti z vlečenjem sličic slik v področju strani."
+
+#: C/addingimage.page:24(p)
+msgid "You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</gui></guiseq>."
+msgstr "Slike lahko dodat s klikom <guiseq><gui>Datoteka</gui><gui>Dodaj sliko</gui></guiseq>."
+
+#: C/addingimage.page:27(p)
+msgid "To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></guiseq> or right-click over the page's thumbnail and choose <gui>Delete</gui>."
+msgstr "Za izbris strani kliknite na <guiseq><gui>Uredi</gui><gui>Izbriši stran</gui></guiseq> ali desno kliknite na sličico strani in izberite <gui>Izbriši</gui>."
+
+#: C/addingimage.page:32(title)
+msgid "Page Configuration"
+msgstr "Nastavitev strani"
+
+#: C/addingimage.page:34(p)
+msgid "To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit Page</gui></guiseq> and choose either a custom size, providing the respective values or a standard paper size from a list."
+msgstr "Za nastavitev velikosti strani kliknite na <guiseq><gui>Uredi</gui><gui>Uredi stran</gui></guiseq> in izberite velikost po meri ali pa s seznama izberite eno od vrednosti standardnih velikosti papirja."
+
+#: C/addingfolder.page:8(desc)
+msgid "Adding all the images from a folder"
+msgstr "Dodajanje vseh slike v mapi"
+
+#: C/addingfolder.page:11(title)
+msgid "Adding Folder"
+msgstr "Dodajanje mape"
+
+#: C/addingfolder.page:13(p)
+msgid "Sometimes it is useful to add all the images from a given folder. <app>OCRFeeder</app> provides this functionality by choosing <guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr "Včasih je uporabno dodati vse slike iz dane mape. <app>OCRFeeder</app> zagotavlja to zmožnost v  <guiseq><gui>Datoteka</gui><gui>Dodaj mapo</gui></guiseq>."
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/index.page:0(None)
+msgid "translator-credits"
+msgstr "Andrej Žnidaršič"
+
