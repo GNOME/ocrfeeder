@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "POT-Creation-Date: 2011-01-16 20:26+0000\n"
-"PO-Revision-Date: 2011-01-19 14:28+0100\n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"PO-Revision-Date: 2011-01-20 15:44+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME translation team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,13 +174,13 @@ msgstr "Programnikova nastavitev je shranjena v lastno datoteko XML v uporabniko
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/manualeditionandcorrection.page:26(None)
 msgid "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
-msgstr ""
+msgstr "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/manualeditionandcorrection.page:33(None)
 msgid "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
-msgstr ""
+msgstr "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
 
 #: C/manualeditionandcorrection.page:9(desc)
 msgid "Manual edition and correction of results"
