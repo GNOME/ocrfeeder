@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-01-16 20:26+0000\n"
-"PO-Revision-Date: 2011-01-18 16:42+0100\n"
+"POT-Creation-Date: 2011-01-19 18:44+0000\n"
+"PO-Revision-Date: 2011-01-21 13:01+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,6 +35,8 @@ msgid ""
 "<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before "
 "processing them, which usually results in a better recognition."
 msgstr ""
+"<app>OCRFeeder</app> puede usar <em>Unpaper</em> para limpiar las imágenes "
+"antes de procesarlas, lo que generalmente produce un mejor reconocimiento."
 
 #: C/unpaper.page:22(p)
 msgid ""
@@ -113,6 +115,9 @@ msgid ""
 "gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
 "keyseq>."
 msgstr ""
+"Se puede cargar un proyecto existente simplemente pulsando "
+"<guiseq><gui>Archivo</gui><gui>Abrir</gui></guiseq> o <keyseq><key>Ctrl</"
+"key><key>O</key></keyseq>."
 
 #: C/projects.page:44(title)
 msgid "Appending A Project"
@@ -141,11 +146,11 @@ msgstr ""
 
 #: C/ocrconfiguration.page:9(desc)
 msgid "Configure the OCR engines to recognize the text"
-msgstr ""
+msgstr "Configurar los motores OCR para reconocer el texto"
 
 #: C/ocrconfiguration.page:12(title)
 msgid "OCR Engines Configuration"
-msgstr ""
+msgstr "Configuración de los motores OCR"
 
 #: C/ocrconfiguration.page:14(p)
 msgid ""
@@ -156,7 +161,7 @@ msgstr ""
 
 #: C/ocrconfiguration.page:20(title)
 msgid "Automatic Detection of OCR Engines"
-msgstr ""
+msgstr "Detección automática de motores OCR"
 
 #: C/ocrconfiguration.page:22(p)
 msgid ""
@@ -164,6 +169,9 @@ msgid ""
 "<em>Cuneiform</em>) are already automatically detected and configured in "
 "most systems, the first time <app>OCRFeeder</app> is run."
 msgstr ""
+"Los motores OCR (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> y "
+"<em>Cuneiform</em>) se detectan y configuran automáticamente en la mayoría "
+"de los sistemas la primera vez que se ejecuta <app>OCRFeeder</app>."
 
 #: C/ocrconfiguration.page:26(p)
 msgid ""
@@ -209,6 +217,8 @@ msgid ""
 "<gui>Name</gui>: The engine's name. This name will be used in throughout the "
 "UI when referring to the engine;"
 msgstr ""
+"<gui>Nombre</gui>: el nombre del motor. Este nombre se usará en toda la IU "
+"cuando se refiera al motor;"
 
 #: C/ocrconfiguration.page:55(p)
 msgid ""
@@ -228,6 +238,8 @@ msgid ""
 "<gui>Engine path</gui>: The path in the system to the engine's executable "
 "(for example, <em>/usr/bin/tesseract</em>)."
 msgstr ""
+"<gui>Ruta al motor</gui>: la ruta del sistema al ejecutable del motor (por "
+"ejemplo, <em>/usr/bin/tesseract</em>)."
 
 #: C/ocrconfiguration.page:63(p)
 msgid ""
@@ -259,6 +271,8 @@ msgid ""
 "The engines' configuration is stored in their own XML file in the user's "
 "home under <em>.ocrfeeder/engines/</em>."
 msgstr ""
+"La configuración de los motores se almacena en su propio archivo XML en la "
+"carpeta personal del usuario, en <em>.ocrfeeder/engines/</em>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -301,6 +315,8 @@ msgid ""
 "The mentioned document's contents are represented by areas like shown in the "
 "following image:"
 msgstr ""
+"Los contenidos del documento mencionado se representan con áreas tal y como "
+"se muestra en la siguiente imagen:"
 
 #: C/manualeditionandcorrection.page:26(media)
 msgid "A picture of two content areas with one of them selected."
@@ -482,7 +498,7 @@ msgstr ""
 
 #: C/importingfromscanner.page:8(desc)
 msgid "Importing from a scanner device"
-msgstr ""
+msgstr "Importar desde un escáner"
 
 #: C/importingfromscanner.page:11(title)
 msgid "Importing From Scanner"
@@ -524,6 +540,10 @@ msgid ""
 "gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
 "tab."
 msgstr ""
+"<app>OCRFeeder</app> tiene algunas opciones avanzadas que se pueden usar "
+"para realizar un reconocimiento mejor. Estas opciones se pueden elegir en el "
+"diálogo <guiseq><gui>Editar</gui><gui>Preferencias</gui></guiseq>, en la "
+"solapa <gui>Reconocimiento</gui>."
 
 #: C/finetuning.page:18(p)
 msgid "The following list describes the mentioned options:"
@@ -622,11 +642,11 @@ msgstr ""
 
 #: C/deskewing.page:8(desc)
 msgid "Correcting the skew in the images"
-msgstr ""
+msgstr "Corregir la inclinación en las imágenes"
 
 #: C/deskewing.page:11(title)
 msgid "Deskewing"
-msgstr ""
+msgstr "Corregir la inclinación"
 
 #: C/deskewing.page:13(p)
 msgid ""
@@ -737,6 +757,9 @@ msgid ""
 "guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
 "gui>."
 msgstr ""
+"Para eliminar una página, pulse en <guiseq><gui>Editar</gui><gui>Eliminar "
+"página</gui></guiseq> o pulse con el botón derecho sobre la miniatura de la "
+"imagen y elija <gui>Eliminar</gui>."
 
 #: C/addingimage.page:32(title)
 msgid "Page Configuration"
