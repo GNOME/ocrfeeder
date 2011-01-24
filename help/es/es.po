@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-01-19 18:44+0000\n"
-"PO-Revision-Date: 2011-01-21 13:01+0100\n"
+"POT-Creation-Date: 2011-01-22 09:36+0000\n"
+"PO-Revision-Date: 2011-01-24 17:55+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,8 @@ msgid ""
 "<em>Unpaper</em> needs to be installed in order to be used. If it is not "
 "installed, <app>OCRFeeder</app> won't show it's action in the interface."
 msgstr ""
+"<em>Unpaper</em> debe estar instalado para poder usarse. Si no está "
+"instalado, <app>OCRFeeder</app> no mostrará sus acciones en la interfaz."
 
 #: C/unpaper.page:26(p)
 msgid ""
@@ -121,7 +123,7 @@ msgstr ""
 
 #: C/projects.page:44(title)
 msgid "Appending A Project"
-msgstr ""
+msgstr "Añadir un proyecto"
 
 #: C/projects.page:46(p)
 msgid ""
@@ -135,7 +137,7 @@ msgstr ""
 
 #: C/projects.page:56(title)
 msgid "Clearing A Project"
-msgstr ""
+msgstr "Limpiar un proyecto"
 
 #: C/projects.page:58(p)
 msgid ""
@@ -197,6 +199,9 @@ msgid ""
 "dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
 "gui></guiseq>."
 msgstr ""
+"Los motores OCR configurados actualmente se muestran en el diálogo "
+"<gui>Motores OCR</gui>, que se puede abrir desde <guiseq><gui>Herramientas</"
+"gui><gui>Motores OCR</gui></guiseq>."
 
 #: C/ocrconfiguration.page:44(p)
 msgid ""
@@ -225,6 +230,8 @@ msgid ""
 "<gui>Image format</gui>: The image format that the engine recognizes (for "
 "example, <em>TIF</em> in the case of <em>Tesseract</em>);"
 msgstr ""
+"<gui>Formato de imagen</gui>: el formato de imagen que el motor reconoce "
+"(por ejemplo, <em>TIF</em> en el caso de <em>Tesseract</em>);"
 
 #: C/ocrconfiguration.page:58(p)
 msgid ""
@@ -232,6 +239,9 @@ msgid ""
 "another, pre-defined character (for example, <em>_</em> in the case of "
 "<em>GOCR</em>)."
 msgstr ""
+"<gui>Texto de fallo</gui>: algunos motores reemplazan los caracteres no "
+"reconocidos por otros caracteres predefinidos (por ejemplo, <em>_</em> en el "
+"caso de <em>GOCR</em>)."
 
 #: C/ocrconfiguration.page:61(p)
 msgid ""
@@ -265,6 +275,9 @@ msgid ""
 "So, in case of <em>Tesseract</em> (which writes the recognized text into a "
 "file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
 msgstr ""
+"Por lo que, en el caso de <em>Tesseract</em> (que escribe el texto "
+"reconocido en un archivo), los argumentos deberían ser <em>$IMAGE $FILE; cat "
+"$FILE.txt; rm $FILE</em>."
 
 #: C/ocrconfiguration.page:82(p)
 msgid ""
@@ -350,12 +363,18 @@ msgid ""
 "<em>Clip</em>: Shows the current clip from the original area. This makes it "
 "easier for users to check exactly what's within the area."
 msgstr ""
+"<em>Clip</em>: muestra el clip actual del área original. Esto hace que sea "
+"más fácil para los usuarios el comprobar exactamente lo que está dentro del "
+"área."
 
 #: C/manualeditionandcorrection.page:46(p)
 msgid ""
 "<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
 "top left corner of the area is placed as well as the areas' width and height."
 msgstr ""
+"<em>Límites</em>: muestra el punto (X e Y) en la imagen original donde se "
+"sitúa la esquina superior izquierda del área , así como su anchura y su "
+"altura."
 
 #: C/manualeditionandcorrection.page:49(p)
 msgid ""
@@ -414,7 +433,7 @@ msgstr ""
 
 #: C/index.page:6(desc)
 msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
-msgstr ""
+msgstr "Ayuda del <app>Sistema de conversión de documentos de OCRFeeder</app>."
 
 #: C/index.page:7(title) C/index.page:8(title) C/index.page:17(title)
 msgid "OCRFeeder Document Conversion System"
@@ -478,6 +497,9 @@ msgid ""
 "cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
 "can then be converted into an editable document."
 msgstr ""
+"Algunos documentos no son más que imágenes situadas en un documento PDF. En "
+"estos casos, <app>OCRFeeder</app> todavía puede importar un documento PDF, "
+"por lo que se convertirán en un documento editable."
 
 #: C/importingpdf.page:18(p)
 msgid ""
@@ -489,12 +511,16 @@ msgstr ""
 msgid ""
 "Each PDF page will be converted to an image and placed in the pages' area."
 msgstr ""
+"Cada página en PDF se convertirá en una imagen y se situará en el área de "
+"páginas."
 
 #: C/importingpdf.page:24(p)
 msgid ""
 "The PDF conversion can be a demanding process and take some time for large "
 "PDF files."
 msgstr ""
+"La conversión de PDF puede ser un proceso exigente yllevar algún tiempo para "
+"archivos PDF grandes."
 
 #: C/importingfromscanner.page:8(desc)
 msgid "Importing from a scanner device"
@@ -527,7 +553,7 @@ msgstr ""
 
 #: C/finetuning.page:8(desc)
 msgid "Advanced options for a better recognition"
-msgstr ""
+msgstr "Opciones avanzadas para un reconocimiento mejor"
 
 #: C/finetuning.page:11(title)
 msgid "Fine-tuning"
@@ -750,6 +776,8 @@ msgid ""
 "You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
 "gui></guiseq>."
 msgstr ""
+"Puede añadir una imagen pulsando <guiseq><gui>Archivo</gui><gui>Añadir "
+"imagen</gui></guiseq>."
 
 #: C/addingimage.page:27(p)
 msgid ""
