@@ -12,7 +12,7 @@
   <maintainer>
     <foaf:Person>
       <foaf:name>Joaquim Rocha</foaf:name>
-      <foaf:mbox rdf:resource="mailto:jrocha )AT( igalia )DOT( com" />
+      <foaf:mbox rdf:resource="mailto:jrocha AT igalia DOT com" />
       <gnome:userid>jrocha</gnome:userid>
     </foaf:Person>
   </maintainer>
