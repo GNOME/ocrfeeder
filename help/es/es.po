@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-01-24 20:19+0000\n"
-"PO-Revision-Date: 2011-01-29 18:20+0100\n"
+"POT-Creation-Date: 2011-01-29 17:21+0000\n"
+"PO-Revision-Date: 2011-01-31 13:53+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -165,6 +165,12 @@ msgid ""
 "<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
 "wanted project."
 msgstr ""
+"Algunas veces es útil combinar dos o más proyectos para crear un sólo "
+"documento con las páginas de varios proyectos de <app>OCRFeeder</app>. Esto "
+"se puede hacer añadiendo un proyecto, que simplemente carga las páginas de "
+"un proyecto elegido en el actual. Para hacer esto, pulse en "
+"<guiseq><gui>Archivo</gui><gui>Añadir proyecto</gui></guiseq> y elija el "
+"proyecto que quiere."
 
 #: C/projects.page:56(title)
 msgid "Clearing A Project"
@@ -226,6 +232,8 @@ msgid ""
 "Already configured OCR engines might be detected again and it is up to the "
 "user to uncheck these engines if they shouldn't be added again."
 msgstr ""
+"Los motores OCR ya configurados se deben detectar otra vez y es labor del "
+"usuario desmarcar estos motores. Si no se hace se añadirán otra vez."
 
 #: C/ocrconfiguration.page:38(title)
 msgid "Manual Configuration"
@@ -254,6 +262,9 @@ msgid ""
 "<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
 "fields:"
 msgstr ""
+"Cuando se añade o se editar un motor OCR (pulsando los botones <gui>Añadir</"
+"gui> o <gui>Editar</gui>, respectivamente), se muestra un diálogo con los "
+"siguientes campos:"
 
 #: C/ocrconfiguration.page:53(p)
 msgid ""
@@ -356,6 +367,10 @@ msgid ""
 "lets its users manually edit every aspect of a document's contents in an "
 "easy way."
 msgstr ""
+"Puede querer seleccionar manualmente sólo una parte de una imagen para "
+"reconocerla o para corregir el resultado del reconocimiento automático. "
+"<app>OCRFeeder</app> permite a los usuarios editar cada aspecto del "
+"contenido de un documento de manera sencilla."
 
 #: C/manualeditionandcorrection.page:21(title)
 msgid "Content Areas"
@@ -386,7 +401,7 @@ msgstr "Una imagen que muestra la IU de edición de áreas"
 
 #: C/manualeditionandcorrection.page:36(p)
 msgid "The following list describes the content areas' attributes:"
-msgstr ""
+msgstr "La siguiente lista describe los atributos del área de contenido:"
 
 #: C/manualeditionandcorrection.page:38(p)
 msgid ""
@@ -440,12 +455,17 @@ msgid ""
 "<em>Text Area</em>: Represents the text assigned to that area and lets the "
 "user edit it. This area is disabled when the area is of the type image"
 msgstr ""
+"<em>Área de texto</em>: representa el texto asignado a esa área y permite al "
+"usuario editarlo. Esta área esta desactivada cuando el área es del tipo de "
+"la imagen"
 
 #: C/manualeditionandcorrection.page:57(p)
 msgid ""
 "<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
 "the text alignment, line and letter spacing."
 msgstr ""
+"<em>Solapa «Estilo»</em>: permite al usuario seleccionar la tipografía y su "
+"tamaño, así como la alineación del texto y el espaciado de líneas y letras."
 
 #: C/manualeditionandcorrection.page:61(p)
 msgid ""
@@ -456,6 +476,13 @@ msgid ""
 "key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
 "key><key>Shift</key><key>N</key></keyseq>, respectively."
 msgstr ""
+"Las áreas de contenido se puede seleccionar pulsando sobre ellas o usando "
+"los menús <guiseq><gui>Documento</gui><gui>Seleccionar el área anterior</"
+"gui></guiseq> y <guiseq><gui>Documento</gui><gui>Seleccionar la siguiente "
+"área</gui></guiseq>. También hay atajos de teclado para estas acciones: "
+"<keyseq><key>Ctrl</key><key>Mayús</key><key>P</key></keyseq> y "
+"<keyseq><key>Ctrl</key><key>Mayús</key><key>N</key></keyseq>, "
+"respectivamente."
 
 #: C/manualeditionandcorrection.page:68(p)
 msgid ""
@@ -463,6 +490,9 @@ msgid ""
 "gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
 "key><key>Shift</key><key>A</key></keyseq>."
 msgstr ""
+"También es posible seleccionar todas las áreas usando "
+"<guiseq><gui>Documento</gui><gui>Seleccionar todas las áreas</gui></guiseq> "
+"o <keyseq><key>Ctrl</key><key>Mayús</key><key>A</key></keyseq>."
 
 #: C/manualeditionandcorrection.page:72(p)
 msgid ""
@@ -502,6 +532,9 @@ msgid ""
 "example, a PNG image with text) into editable documents (for example, an ODT "
 "version with that text)."
 msgstr ""
+"OCRFeeder se creó para permitir a los usuarios convertir documentos de "
+"imágenes fácilmente (por ejemplo, una imagen PNG con texto) en documentos "
+"editables (por ejemplo, una versión en ODT con ese texto)."
 
 #: C/index.page:24(p)
 msgid ""
@@ -581,6 +614,9 @@ msgid ""
 "<app>OCRFeeder</app> offers a way to import images directly from a scanner "
 "device."
 msgstr ""
+"Para ayudarle a convertir un documento impreso en un documento editable, "
+"<app>OCRFeeder</app> ofrece una manera de importar imágenes directamente "
+"desde un escáner."
 
 #: C/importingfromscanner.page:17(p)
 msgid ""
@@ -598,6 +634,9 @@ msgid ""
 "than one scanner if found, then a dialog will be shown with the options to "
 "choose from."
 msgstr ""
+"Se usará el escáner actualmente detectado para escanear la página. Si se "
+"encuentra más de un escáner, se mostrará un diálogo con las opciones "
+"disponibles."
 
 #: C/finetuning.page:8(desc)
 msgid "Advanced options for a better recognition"
@@ -661,6 +700,8 @@ msgid ""
 "A good window size should be slightly bigger than the text line spacing in "
 "an image."
 msgstr ""
+"Un tamaño de ventana correcto debe ser ligeramente mayor que el espaciado de "
+"las líneas de texto en una imagen."
 
 #: C/finetuning.page:37(p)
 msgid ""
@@ -677,6 +718,11 @@ msgid ""
 "blank space within the contents may be set to automatic or manual when the "
 "columns aren't detected correctly."
 msgstr ""
+"<gui>Mejorar la detección de columnas</gui>: marque esta opción si "
+"<app>OCRFeeder</app> debería intentar dividir horizontalmente las áreas de "
+"contenido detectadas (originando más columnas). El valor usado para "
+"comprobar la existencia de espacios en blanco en el contenido puede ser "
+"automático o manual cuando las columnas no se detectan correctamente."
 
 #: C/finetuning.page:46(p)
 msgid ""
@@ -748,6 +794,10 @@ msgid ""
 "deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
 "gui></guiseq>."
 msgstr ""
+"<app>OCRFeeder</app> ofrece una manera de corregir automáticamente la "
+"inclinación de una imagen. Para corregir la inclinación de una imagen "
+"cargada, pulse en <guiseq><gui>Herramientas</gui><gui>Corrección de "
+"inclinación de imagen</gui></guiseq>."
 
 #: C/deskewing.page:20(p)
 msgid ""
