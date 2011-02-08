@@ -515,7 +515,10 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
         text_properties_notebook.set_tab_pos(gtk.POS_TOP)
         # Textview widget
         self.text_widget = gtk.TextView()
-        gtkspell.Spell(self.text_widget, OCRFEEDER_DEFAULT_LOCALE)
+        try:
+            gtkspell.Spell(self.text_widget, OCRFEEDER_DEFAULT_LOCALE)
+        except:
+            pass # The locale was not found by GTKSpell, ignoring...
         self.text_widget.set_wrap_mode(gtk.WRAP_WORD)
         self.text_content = self.text_widget.get_buffer()
         self.text_content.connect('changed', self.editedByUser)
