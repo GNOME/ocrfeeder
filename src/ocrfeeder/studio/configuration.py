@@ -286,7 +286,7 @@ class ConfigurationManager(object):
                 BOXES_STROKE: (94, 156, 235, 250),
                 IMAGE_FILL: (0, 183, 0, 150),
                 WINDOW_SIZE: 'auto',
-                UNPAPER: getExecPath('unpaper'),
+                UNPAPER: getExecPath('unpaper') or '',
                 UNPAPER_USE_BLACK_FILTER: True,
                 UNPAPER_NOISE_FILTER_INTENSITY: 'auto',
                 UNPAPER_GRAY_FILTER_SIZE: 'auto',
