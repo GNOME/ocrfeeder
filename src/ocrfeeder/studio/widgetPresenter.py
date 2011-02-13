@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from customWidgets import PlainFrame, TrippleStatusBar
+from customWidgets import PlainFrame
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from configuration import ConfigurationManager
 from ocrfeeder.util import lib, PAPER_SIZES
@@ -119,8 +119,9 @@ class MainWindow:
         self.main_box = gtk.VBox()
         self.main_box.show()
 
-        self.tripple_statusbar = TrippleStatusBar()
-        self.main_box.pack_end(self.tripple_statusbar, False)
+        self.statusbar = gtk.Statusbar()
+        self.statusbar.show()
+        self.main_box.pack_end(self.statusbar, False)
 
         self.main_area = gtk.HPaned()
         self.main_area.set_position(150)

@@ -409,8 +409,10 @@ class ImageReviewer_Controler:
         self.source_images_selector_widget = source_images_selector_widget
         self.ocr_engines = ocr_engines
         self.configuration_manager = configuration_manager
-        self.tripple_statusbar = self.main_window.tripple_statusbar
+        self.statusbar = self.main_window.statusbar
+        self._page_info_message_id = self.statusbar.get_context_id('page_info_message')
         self.source_images_selector_widget.connect(selection_changed_signal, self.selectImageReviewer)
+        self.__updateStatusBar()
 
     def __createdImageReviewer(self, pixbuf, image):
         image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
@@ -514,12 +516,28 @@ class ImageReviewer_Controler:
             reviewer = self.image_reviewer_dict[pixbuf]
             self.notebook.set_current_page(self.notebook.page_num(reviewer.reviewer_area))
             self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
-            self.tripple_statusbar.center_statusbar.insert((_('Page size') + ': %.2f x %.2f') % (reviewer.getPageData().width, reviewer.getPageData().height))
-            self.tripple_statusbar.right_statusbar.insert((_('Resolution') + ': %i x %i') % (reviewer.getPageData().resolution[0], reviewer.getPageData().resolution[1]))
+            self.__updateStatusBar(reviewer)
             reviewer.updateMainWindow()
 
     def __setZoomStatus(self, widget, zoom):
-        self.tripple_statusbar.left_statusbar.insert(_('Zoom') + ': ' + str(int(zoom * 100)) + '%')
+        self.__updateStatusBar()
+
+    def __updateStatusBar(self, reviewer = None):
+        reviewer = reviewer or self.__getCurrentReviewer()
+
+        if not reviewer:
+            status_message = _('No images added')
+        else:
+            zoom = int(reviewer.selectable_boxes_area.get_scale() * 100)
+            status_message = _('Zoom: %s %%') % zoom
+            page_data = reviewer.getPageData()
+            status_message += ' ' + _('Resolution: %.2f x %.2f') % (page_data.resolution[0],
+                                                                    page_data.resolution[1])
+            status_message += ' ' + _('Page size: %i x %i') % (page_data.width,
+                                                               page_data.height)
+
+        self.statusbar.pop(self._page_info_message_id)
+        self.statusbar.push(self._page_info_message_id, status_message)
 
     def recognizeSelectedAreas(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -729,7 +747,8 @@ class ImageReviewer_Controler:
             if image_reviewer == current_reviewer:
                 del self.image_reviewer_dict[pixbuf]
                 self.notebook.remove_page(self.notebook.get_current_page())
-                return True
+                break
+        self.__updateStatusBar()
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
@@ -746,7 +765,7 @@ class ImageReviewer_Controler:
             del self.image_reviewer_dict[pixbuf]
             self.notebook.remove_page(self.notebook.get_current_page())
         self.source_images_selector_widget.clear()
-        self.tripple_statusbar.clear()
+        self.__updateStatusBar()
 
     def getPixbufsSorted(self):
         return self.source_images_selector_widget.source_images_selector.getPixbufsSorted()

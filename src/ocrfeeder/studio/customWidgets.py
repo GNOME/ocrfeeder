@@ -408,36 +408,3 @@ class PlainFrame(gtk.Frame):
 
     def add(self, widget):
         self.container.add(widget)
-
-class SimpleStatusBar(gtk.Statusbar):
-
-    def __init__(self):
-        super(SimpleStatusBar, self).__init__()
-        self.context_id = self.get_context_id('OCR Feeder')
-    def insert(self, text):
-        self.clear()
-        self.push(self.context_id, text)
-
-    def clear(self):
-        self.pop(self.context_id)
-
-class TrippleStatusBar(gtk.HBox):
-
-    def __init__(self):
-        super(TrippleStatusBar, self).__init__(spacing = 10)
-        self.left_statusbar = SimpleStatusBar()
-        self.left_statusbar.set_has_resize_grip(False)
-        self.center_statusbar = SimpleStatusBar()
-        self.center_statusbar.set_has_resize_grip(False)
-        self.right_statusbar = SimpleStatusBar()
-        self.add(self.left_statusbar)
-        self.pack_start(gtk.VSeparator(), False)
-        self.add(self.center_statusbar)
-        self.pack_start(gtk.VSeparator(), False)
-        self.add(self.right_statusbar)
-        self.show_all()
-
-    def clear(self):
-        self.left_statusbar.clear()
-        self.center_statusbar.clear()
-        self.right_statusbar.clear()
