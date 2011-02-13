@@ -338,7 +338,12 @@ class Studio:
             self.setProjectName(project_title)
 
     def clear(self, widget = None):
-        self.source_images_controler.clear()
+        dialog = widgetPresenter.QuestionDialog(_('Are you sure you want '
+                                                  'to clear the project?'))
+        response = dialog.run()
+        if response == gtk.RESPONSE_YES:
+            self.source_images_controler.clear()
+        dialog.destroy()
 
     def unpaper(self, widget = None):
         self.source_images_controler.unpaperTool()
