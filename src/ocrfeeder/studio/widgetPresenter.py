@@ -1285,8 +1285,9 @@ class PreferencesDialog(gtk.Dialog):
             self.__getBoundsAdjustmentSize()
         self.configuration_manager.deskew_images_after_addition = \
             self.deskew_images.get_active()
-        self.configuration_manager.unpaper_images_after_addition = \
-            self.unpaper_images.get_active()
+        if self.configuration_manager.has_unpaper:
+            self.configuration_manager.unpaper_images_after_addition = \
+                self.unpaper_images.get_active()
         index = self.engines_combo.get_active()
         if index != -1:
             lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
