@@ -42,7 +42,7 @@ import gtk
 
 class Studio:
 
-    EXPORT_FORMATS = ['HTML', 'ODT']
+    EXPORT_FORMATS = ['HTML', 'ODT', 'PlainText']
     TARGET_TYPE_URI_LIST = 80
 
     def __init__(self):
@@ -278,6 +278,9 @@ class Studio:
 
     def exportToOdt(self, widget = None):
         self.source_images_controler.exportPagesToOdt(self.source_images_selector.getPixbufsSorted())
+
+    def exportToPlaintext(self, widget = None):
+        self.source_images_controler.exportPagesToPlaintext(self.source_images_selector.getPixbufsSorted())
 
     def exportDialog(self, widget):
         export_dialog = widgetPresenter.ExportDialog(_('Export pages'), self.EXPORT_FORMATS)

@@ -20,7 +20,7 @@
 
 from customWidgets import SelectableBoxesArea
 from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
-from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator
+from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
 from pango import FontDescription, SCALE
@@ -304,14 +304,13 @@ class ImageReviewer:
                 editor.box_editor.setText('')
         self.updateMainWindow()
 
-    def copyTextToClipboard(self):
+    def getTextFromBoxes(self, boxes):
         text = ''
-        selected_boxes = self.selectable_boxes_area.getSelectedAreas()
-        selected_boxes.reverse()
-        if selected_boxes:
-            number_of_boxes = len(selected_boxes)
+        boxes.reverse()
+        if boxes:
+            number_of_boxes = len(boxes)
             for i in range(number_of_boxes):
-                box = selected_boxes[i]
+                box = boxes[i]
                 text += self.__getEditorFromBox(box).box_editor.getText()
                 if number_of_boxes > 1 and i < number_of_boxes - 1:
                     text += '\n\n'
@@ -319,7 +318,16 @@ class ImageReviewer:
             current_box_editor = self.boxeditor_notebook.get_nth_page(\
                                      self.boxeditor_notebook.get_current_page())
             text = current_box_editor.getText()
+        return text
+
+    def copyTextToClipboard(self):
+        selected_boxes = self.selectable_boxes_area.getSelectedAreas()
+        text = self.getTextFromBoxes(selected_boxes)
         gtk.Clipboard().set_text(text)
+
+    def getAllText(self):
+        boxes = self.selectable_boxes_area.getAllAreas()
+        return self.getTextFromBoxes(boxes)
 
     def __getAllDataBoxes(self):
         boxes = []
@@ -631,6 +639,17 @@ class ImageReviewer_Controler:
             document_generator = OdtGenerator(file_name)
             for image_reviewer in image_reviewers:
                 document_generator.addPage(image_reviewer.getPageData())
+            document_generator.save()
+
+    def exportPagesToPlaintext(self, pixbufs_sorted = []):
+        image_reviewers = self.__askForNumberOfPages(_('Export to Plain Text'), pixbufs_sorted)
+        if not image_reviewers:
+            return
+        file_name = self.__askForFileName()
+        if file_name:
+            document_generator = PlaintextGenerator(file_name)
+            for image_reviewer in image_reviewers:
+                document_generator.addText(image_reviewer.getAllText())
             document_generator.save()
 
     def saveProjectAs(self):

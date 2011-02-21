@@ -329,3 +329,23 @@ class OdtGenerator(DocumentGenerator):
         if weight == WEIGHT_BOLD:
             return 'bold'
         return 'normal'
+
+# Generates a .txt file
+class PlaintextGenerator(DocumentGenerator):
+    def __init__(self, name):
+        self.name = name
+        self.text = ''
+        
+    def addText(self, newText):
+        self.text += newText
+
+    def save(self):
+        try:
+            # This will create a new file or **overwrite an existing file
+            f = open(self.name, "w")
+            try:
+                f.write(self.text) # Write text to file
+            finally:
+                f.close() # Close the file
+        except IOError:
+            pass
