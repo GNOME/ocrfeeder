@@ -15,13 +15,12 @@ AM_SILENT_RULES([yes])
 dnl == check for python ==
 AM_PATH_PYTHON(2.5)
 
-dnl == Library dependencies ==
-PYGTK_REQUIRED=2.16
-
-PKG_CHECK_MODULES(OCRFEEDER, [
-  pygtk-2.0     >= $PYGTK_REQUIRED])
-AC_SUBST(OCRFEEDER_CFLAGS)
-AC_SUBST(OCRFEEDER_LIBS)
+dnl == Python dependencies ==
+AX_PYTHON_MODULE([gtk],[needed])
+AX_PYTHON_MODULE([pygtk],[needed])
+AX_PYTHON_MODULE([gtkspell],[needed])
+AX_PYTHON_MODULE([goocanvas],[needed])
+AX_PYTHON_MODULE([enchant],[needed])
 
 dnl == i18n ==
 GETTEXT_PACKAGE=ocrfeeder
