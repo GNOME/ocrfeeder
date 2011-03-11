@@ -1756,10 +1756,12 @@ class OcrManagerDialog(gtk.Dialog):
     def __detectEnginesCb(self, button):
         engines = self.engines_manager.configuration_manager.getEnginesInSystem()
         if not engines:
-            info = InfoDialog(_('No OCR engines were found in the system.\n'
-                                'Please make sure you have OCR engines installed '
-                                'and available.'),
-                              _('No OCR engines available'))
+            info = gtk.MessageDialog(self, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO,
+                                     gtk.BUTTONS_OK)
+            info.set_title(_('No OCR engines available'))
+            info.set_markup(_('No OCR engines were found in the system.\n'
+                              'Please make sure you have OCR engines installed '
+                              'and available.'))
             info.run()
             info.destroy()
             return
