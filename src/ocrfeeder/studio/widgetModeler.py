@@ -454,12 +454,12 @@ class ImageReviewer_Controler:
                               index == item_list_length - 1,
                               index == 0))
             if item_list_length == 1:
-                item_info = (_('Preparing image'), _('Please wait…'))
+                item_info = (_('Preparing image'), _(u'Please wait…'))
             else:
                 item_info = (_('Preparing image %(current_index)s/%(total)s') % \
                              {'current_index': index + 1,
                               'total': item_list_length},
-                             _('Please wait…'))
+                             _(u'Please wait…'))
             item_list.append((item_info,item))
         dialog.setItemsList(item_list)
         dialog.run()
@@ -511,7 +511,7 @@ class ImageReviewer_Controler:
                          (reviewer.path_to_image,),
                          self.__deskewCurrentImageFinishedCb,
                          (dialog, reviewer))
-        item_info = (_('Deskewing image'), _('Please wait…'))
+        item_info = (_('Deskewing image'), _(u'Please wait…'))
         dialog.setItemsList([(item_info, item)])
         dialog.run()
 
@@ -562,7 +562,7 @@ class ImageReviewer_Controler:
                          (image_reviewer,),
                          self.__performRecognitionForReviewerFinishedCb,
                          (dialog, image_reviewer,))
-        info = (_('Recognizing Document'), _('Please wait…'))
+        info = (_('Recognizing Document'), _(u'Please wait…'))
         dialog.setItemsList([(info, item)])
         dialog.run()
 

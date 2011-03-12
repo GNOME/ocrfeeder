@@ -193,7 +193,7 @@ class Studio:
                                                         self.main_window.window)
         item_obtain = AsyncItem(lib.obtainScanners,(),
                                 self.__obtainScannersFinishedCb,(dialog,))
-        info_obtain = (_('Obtaining scanners'), _('Please wait…'))
+        info_obtain = (_('Obtaining scanners'), _(u'Please wait…'))
         dialog.setItemsList([(info_obtain, item_obtain)])
         dialog.run()
 
@@ -219,7 +219,7 @@ class Studio:
                 self.main_window.window)
             item_scan = AsyncItem(lib.scan,(device,),
                                   self.__scanFinishedCb,(dialog_scan,))
-            info_scan = (_('Scanning'), _('Please wait…'))
+            info_scan = (_('Scanning'), _(u'Please wait…'))
             dialog_scan.setItemsList([(info_scan, item_scan)])
             dialog_scan.run()
         else:
@@ -261,7 +261,7 @@ class Studio:
                               self.configuration_manager.temporary_dir),
                              self.__loadPdfFinishedCb,
                              (dialog,))
-            info = (_('Loading PDF'), _('Please wait…'))
+            info = (_('Loading PDF'), _(u'Please wait…'))
             dialog.setItemsList([(info, item)])
             dialog.run()
 

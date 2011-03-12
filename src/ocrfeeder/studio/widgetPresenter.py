@@ -155,12 +155,12 @@ class MainWindow:
                                   ('Quit', gtk.STOCK_QUIT, _('_Quit'), None, _('Exit the program'), menu_items['exit']),
                                   ('OpenProject', gtk.STOCK_OPEN, _('_Open'), None, _('Open project'), menu_items['open_project']),
                                   ('SaveProject', gtk.STOCK_SAVE, _('_Save'), None, _('Save project'), menu_items['save_project']),
-                                  ('SaveProjectAs', gtk.STOCK_SAVE_AS, _('_Save As…'), '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
+                                  ('SaveProjectAs', gtk.STOCK_SAVE_AS, _(u'_Save As…'), '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
                                   ('AddImage', gtk.STOCK_ADD, _('_Add Image'), None, _('Add another image'), menu_items['add_image']),
                                   ('AddFolder', gtk.STOCK_ADD, _('Add _Folder'), None, _('Add all images in a folder'), menu_items['add_folder']),
                                   ('AppendProject', gtk.STOCK_ADD, _('Append Project'), None, _('Load a project and append it to the current one'), menu_items['append_project']),
                                   ('ImportPDF', gtk.STOCK_ADD, _('_Import PDF'), None, _('Import PDF'), menu_items['import_pdf']),
-                                  ('Export', None, _('_Export…'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
+                                  ('Export', None, _(u'_Export…'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
                                   ('Edit', None, _('_Edit')),
                                   ('EditPage', gtk.STOCK_EDIT, _('_Edit Page'), None, _('Edit page settings'), menu_items['edit_page']),
                                   ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences'), None, _('Configure the application'), menu_items['preferences']),
@@ -770,7 +770,7 @@ class PageSizeDialog(gtk.Dialog):
         self.paper_sizes = gtk.combo_box_new_text()
         papers = PAPER_SIZES.keys()
         papers.sort()
-        self.paper_sizes.append_text(_('Custom…'))
+        self.paper_sizes.append_text(_(u'Custom…'))
         for paper in papers:
             self.paper_sizes.append_text(paper)
         active_index = self.__checkIfSizeIsStandard(page_size)
@@ -904,7 +904,7 @@ class UnpaperDialog(gtk.Dialog):
         if os.path.exists(unpapered_image):
             unpapered_image = lib.getNonExistingFileName(unpapered_image)
         command += ' %s %s' % (name, unpapered_image)
-        progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _('Performing unpaper. Please wait…'))
+        progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _(u'Performing unpaper. Please wait…'))
         progress_bar.run()
         self.unpapered_image = unpapered_image
 
