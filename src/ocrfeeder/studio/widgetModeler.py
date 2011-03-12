@@ -311,13 +311,17 @@ class ImageReviewer:
             number_of_boxes = len(boxes)
             for i in range(number_of_boxes):
                 box = boxes[i]
-                text += self.__getEditorFromBox(box).box_editor.getText()
+                box_editor = self.__getEditorFromBox(box).box_editor
+                if box_editor.getType() != TEXT_TYPE:
+                    continue
+                text += box_editor.getText()
                 if number_of_boxes > 1 and i < number_of_boxes - 1:
                     text += '\n\n'
         else:
             current_box_editor = self.boxeditor_notebook.get_nth_page(\
                                      self.boxeditor_notebook.get_current_page())
-            text = current_box_editor.getText()
+            if current_box_editor.getType() == TEXT_TYPE:
+                text = current_box_editor.getText()
         return text
 
     def copyTextToClipboard(self):
