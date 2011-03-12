@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2011-02-13 15:15+0000\n"
-"PO-Revision-Date: 2011-02-15 11:14+0100\n"
+"product=ocrfeeder&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-12 12:19+0000\n"
+"PO-Revision-Date: 2011-03-12 16:11+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,73 +39,84 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "Kompletní aplikace pro OCR."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:180
+#: ../src/ocrfeeder/studio/studioBuilder.py:61
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:63
+msgid "Plain Text"
+msgstr "Prostý text"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:184
 msgid "Images"
 msgstr "Obrázky"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:192
+#: ../src/ocrfeeder/studio/studioBuilder.py:196
 msgid "Obtaining scanners"
 msgstr "Zjišťují se skenery"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:192
-#: ../src/ocrfeeder/studio/studioBuilder.py:218
-#: ../src/ocrfeeder/studio/studioBuilder.py:260
-#: ../src/ocrfeeder/studio/widgetModeler.py:445
-#: ../src/ocrfeeder/studio/widgetModeler.py:450
-#: ../src/ocrfeeder/studio/widgetModeler.py:502
-#: ../src/ocrfeeder/studio/widgetModeler.py:553
+#: ../src/ocrfeeder/studio/studioBuilder.py:196
+#: ../src/ocrfeeder/studio/studioBuilder.py:222
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
+#: ../src/ocrfeeder/studio/widgetModeler.py:457
+#: ../src/ocrfeeder/studio/widgetModeler.py:462
+#: ../src/ocrfeeder/studio/widgetModeler.py:514
+#: ../src/ocrfeeder/studio/widgetModeler.py:565
 msgid "Please wait…"
 msgstr "Čekejte prosím…"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:218
+#: ../src/ocrfeeder/studio/studioBuilder.py:222
 msgid "Scanning"
 msgstr "Skenuje se"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:223
+#: ../src/ocrfeeder/studio/studioBuilder.py:227
 msgid "No scanner devices were found"
 msgstr "Nenalezeno žádné skenovací zařízení"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:224
-#: ../src/ocrfeeder/studio/studioBuilder.py:239
+#: ../src/ocrfeeder/studio/studioBuilder.py:228
+#: ../src/ocrfeeder/studio/studioBuilder.py:243
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1139
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1150
 msgid "Error"
 msgstr "Chyba"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:238
+#: ../src/ocrfeeder/studio/studioBuilder.py:242
 msgid "Error scanning page"
 msgstr "Chyba při skenování stránky"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:246
+#: ../src/ocrfeeder/studio/studioBuilder.py:250
 msgid "PDF"
 msgstr "PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:260
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
 msgid "Loading PDF"
 msgstr "Načítá se PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
+#: ../src/ocrfeeder/studio/studioBuilder.py:291
 msgid "Export pages"
 msgstr "Export stránek"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:297
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
 msgid "Are you sure you want to delete the current image?"
 msgstr "Opravdu chcete smazat současný obrázek?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:341
-#| msgid "Are you sure you want to delete the current image?"
+#: ../src/ocrfeeder/studio/studioBuilder.py:352
 msgid "Are you sure you want to clear the project?"
 msgstr "Opravdu chcete smazat současný projekt?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:398
+#: ../src/ocrfeeder/studio/studioBuilder.py:409
 msgid "The project hasn't been saved."
 msgstr "Projekt nebyl uložen."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:399
+#: ../src/ocrfeeder/studio/studioBuilder.py:410
 msgid "Do you want to save it before closing?"
 msgstr "Chcete jej před zavřením uložit?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:400
+#: ../src/ocrfeeder/studio/studioBuilder.py:411
 msgid "Close anyway"
 msgstr "Přesto zavřít"
 
@@ -123,58 +134,61 @@ msgstr "Smazat"
 msgid "Selectable areas"
 msgstr "Oblasti, které lze vybrat"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:445
+#: ../src/ocrfeeder/studio/widgetModeler.py:457
 msgid "Preparing image"
 msgstr "Připravuje se obraz"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:447
+#: ../src/ocrfeeder/studio/widgetModeler.py:459
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr "Připravuje se obraz %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:502
+#: ../src/ocrfeeder/studio/widgetModeler.py:514
 msgid "Deskewing image"
 msgstr "Odstraňují se deformace obrazu"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:529
+#: ../src/ocrfeeder/studio/widgetModeler.py:541
 msgid "No images added"
 msgstr "Nebyl přidán žádný obrázek"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:532
+#: ../src/ocrfeeder/studio/widgetModeler.py:544
 #, python-format
 msgid "Zoom: %s %%"
 msgstr "Přiblížení: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:534
+#: ../src/ocrfeeder/studio/widgetModeler.py:546
 #, python-format
-#| msgid "Resolution"
 msgid "Resolution: %.2f x %.2f"
 msgstr "Rozlišení: %.2f × %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:536
+#: ../src/ocrfeeder/studio/widgetModeler.py:548
 #, python-format
-#| msgid "Page size"
 msgid "Page size: %i x %i"
 msgstr "Velikost stránky: %i × %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:553
+#: ../src/ocrfeeder/studio/widgetModeler.py:565
 msgid "Recognizing Document"
 msgstr "Rozpoznává se dokument"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:612
+#: ../src/ocrfeeder/studio/widgetModeler.py:624
 msgid "Export to HTML"
 msgstr "Export do HTML"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:626
+#: ../src/ocrfeeder/studio/widgetModeler.py:638
 #: ../src/ocrfeeder/studio/widgetPresenter.py:202
 msgid "Export to ODT"
 msgstr "Export do ODT"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:647
+#: ../src/ocrfeeder/studio/widgetModeler.py:649
+#| msgid "Export to ODT"
+msgid "Export to Plain Text"
+msgstr "Export do prostého textu"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:670
 msgid "OCRFeeder Projects"
 msgstr "Projekty OCRFeeder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:705
+#: ../src/ocrfeeder/studio/widgetModeler.py:728
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -185,7 +199,7 @@ msgstr ""
 "\n"
 "Soubor existuje v „%(dir)s“. Pokud jej nahradíte, přepíšete jeho obsah."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:712
+#: ../src/ocrfeeder/studio/widgetModeler.py:735
 msgid "Replace"
 msgstr "Nahradit"
 
