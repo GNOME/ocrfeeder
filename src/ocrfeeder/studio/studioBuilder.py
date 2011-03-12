@@ -42,7 +42,6 @@ import gtk
 
 class Studio:
 
-    EXPORT_FORMATS = ['HTML', 'ODT', 'PlainText']
     TARGET_TYPE_URI_LIST = 80
 
     def __init__(self):
@@ -58,6 +57,11 @@ class Studio:
         language = gettext.translation(OCRFEEDER_COMPACT_NAME, LOCALE_DIR,
                                        languages = languages, fallback = True)
         _ = language.gettext
+
+        self.EXPORT_FORMATS = {0: (self.exportToHtml, _('HTML')),
+                               1: (self.exportToOdt, _('ODT')),
+                               2: (self.exportToPlaintext, _('Plain Text'))}
+
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()
         self.main_window.setTitle(self.title)
@@ -283,12 +287,16 @@ class Studio:
         self.source_images_controler.exportPagesToPlaintext(self.source_images_selector.getPixbufsSorted())
 
     def exportDialog(self, widget):
-        export_dialog = widgetPresenter.ExportDialog(_('Export pages'), self.EXPORT_FORMATS)
+        format_names = [format[1] for format in self.EXPORT_FORMATS.values()]
+        export_dialog = widgetPresenter.ExportDialog(_('Export pages'), format_names)
         response = export_dialog.run()
         if response == gtk.RESPONSE_ACCEPT:
-            format = export_dialog.getSelectedFormat().capitalize()
+            format = export_dialog.getSelectedFormat()
             export_dialog.destroy()
-            exec('self.exportTo%s()' % format)
+            if format != -1:
+                # Retrieve and run the exportation function
+                exportation_function = self.EXPORT_FORMATS[format][0]
+                exportation_function()
             return None
         export_dialog.destroy()
         return None

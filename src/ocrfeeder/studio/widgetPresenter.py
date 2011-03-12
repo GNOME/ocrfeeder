@@ -753,7 +753,7 @@ class ExportDialog(gtk.Dialog):
         self.vbox.add(page_selection_frame)
 
     def getSelectedFormat(self):
-        return self.format_combo.get_active_text()
+        return self.format_combo.get_active()
 
 class PageSizeDialog(gtk.Dialog):
 
