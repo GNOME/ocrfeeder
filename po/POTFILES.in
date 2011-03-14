@@ -6,7 +6,7 @@ src/ocrfeeder/feeder/ocrEngines.py
 bin/ocrfeeder.in
 bin/ocrfeeder-cli.in
 resources/ocrfeeder.desktop.in
-resources/spell-checker.ui
+[type: gettext/glade]resources/spell-checker.ui
 src/ocrfeeder/studio/configuration.py
 src/ocrfeeder/studio/customWidgets.py
 src/ocrfeeder/studio/dataHolder.py
