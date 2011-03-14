@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from customWidgets import PlainFrame
+from customWidgets import PlainFrame, PlainExpander
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from configuration import ConfigurationManager
 from ocrfeeder.util import lib, PAPER_SIZES
@@ -413,7 +413,7 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
                 height == self.height_spin_button.get_value()
 
     def __makeBoundsProperties(self):
-        dimensions_frame = PlainFrame(_('Bounds'))
+        dimensions_frame = PlainExpander(_('Bounds'))
         box = gtk.VBox(True, 0)
         row = gtk.HBox(False, 12)
         size_group = gtk.SizeGroup(gtk.SIZE_GROUP_HORIZONTAL)
