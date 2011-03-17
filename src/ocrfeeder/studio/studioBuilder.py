@@ -87,8 +87,9 @@ class Studio:
                                                                self.configuration_manager)
         self.project_name = None
 
-        toolbar_callback_dict = {'detection': self.__recognizeCurrentPageAction,
-                         'export_to_odt': self.exportToOdt}
+        toolbar_callback_dict = {'recognizePage': self.__recognizePageAction,
+                                 'recognizeDocument': self.__recognizeDocumentAction,
+                                 'export_to_odt': self.exportToOdt}
 
         menubar_callback_dict = {'exit': self.quit, 'add_image': self.addImage, 'export_to_odt': self.exportToOdt, 'edit_page': self.choosePageSize,
                                  'delete_page': self.deleteCurrentPage, 'export_dialog': self.exportDialog, 'add_folder': self.addFolder,
@@ -317,8 +318,11 @@ class Studio:
             return
         self.source_images_controler.addImages(images)
 
-    def __recognizeCurrentPageAction(self, widget):
+    def __recognizePageAction(self, widget):
         self.source_images_controler.recognizeCurrentPage()
+
+    def __recognizeDocumentAction(self, widget):
+        self.source_images_controler.recognizeDocument()
 
     def setProjectName(self, project_name):
         self.project_name = project_name

@@ -81,7 +81,8 @@ class MainWindow:
             <menuitem action="ZoomFit"/>
         </menu>
         <menu action="Document">
-            <menuitem action="OCRFeederDetection"/>
+            <menuitem action="OCRFeederReconDocument"/>
+            <menuitem action="OCRFeederReconPage"/>
             <menuitem action="RecognizeAreas"/>
             <menuitem action="SelectAllAreas"/>
             <menuitem action="SelectPreviousArea"/>
@@ -104,7 +105,7 @@ class MainWindow:
     <toolbar name="ToolBar">
         <toolitem action="AddImage"/>
         <separator/>
-        <toolitem action="OCRFeederDetection"/>
+        <toolitem action="OCRFeederReconDocument"/>
         <toolitem action="GenerateODT"/>
         <separator/>
         <toolitem action="ZoomOut"/>
@@ -181,10 +182,14 @@ class MainWindow:
                                   ('Help', None, _('_Help')),
                                   ('HelpContents', gtk.STOCK_HELP, _('_Help'), 'F1', _('Help contents'), menu_items['help_contents']),
                                   ('About', gtk.STOCK_ABOUT, _('_About'), None, _('About this application'), menu_items['about']),
-                                  ('OCRFeederDetection', None,
+                                  ('OCRFeederReconDocument', None,
                                    _('_Recognize Document'), '<control><shift>d',
-                                   _("Automatic Detection and Recognition"),
-                                   tool_items['detection']),
+                                   _("Automatically detect and recognize all pages"),
+                                   tool_items['recognizeDocument']),
+                                  ('OCRFeederReconPage', None,
+                                   _('_Recognize Page'), '<control><shift>g',
+                                   _("Automatically detect and recognize the current page"),
+                                   tool_items['recognizePage']),
                                   ('RecognizeAreas', None,
                                    _('Recognize Selected _Areas'), '<control><shift>r',
                                    _("Recognize Selected Areas"),
@@ -231,7 +236,7 @@ class MainWindow:
         self.main_box.pack_start(tool_bar, False, False)
         odt_export_button = ui_manager.get_widget('/ToolBar/GenerateODT')
         odt_export_button.set_icon_name('ooo-writer')
-        detection_button = ui_manager.get_widget('/ToolBar/OCRFeederDetection')
+        detection_button = ui_manager.get_widget('/ToolBar/OCRFeederReconDocument')
         detection_icon = gtk.image_new_from_file(DETECT_ICON)
         detection_icon.show()
         detection_button.set_icon_widget(detection_icon)
@@ -256,9 +261,9 @@ class MainWindow:
         if not self.action_group:
             return
         actions = ['ZoomIn', 'ZoomOut', 'ResetZoom',
-                   'Export', 'GenerateODT', 'Unpaper',
+                   'Export', 'GenerateODT', 'Unpaper', 'OCRFeederReconPage',
                    'DeletePage', 'SaveProject', 'SaveProjectAs',
-                   'OCRFeederDetection', 'EditPage', 'ClearProject',
+                   'OCRFeederReconDocument', 'EditPage', 'ClearProject',
                    'AppendProject', 'ZoomFit', 'ImageDeskewer']
         self.__setActionsSensitiveness(actions, has_images)
         if not has_images:

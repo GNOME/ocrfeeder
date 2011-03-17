@@ -561,9 +561,28 @@ class ImageReviewer_Controler:
         item = AsyncItem(self.__performRecognitionForReviewer,
                          (image_reviewer,),
                          self.__performRecognitionForReviewerFinishedCb,
-                         (dialog, image_reviewer,))
-        info = (_('Recognizing Document'), _(u'Please wait…'))
+                         (dialog, image_reviewer, [image_reviewer]))
+        info = (_('Recognizing Page'), _(u'Please wait…'))
         dialog.setItemsList([(info, item)])
+        dialog.run()
+
+    def recognizeDocument(self):
+        reviewers = self.image_reviewer_dict.values()
+        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        items = []
+        i = 1
+        total = len(reviewers)
+        for reviewer in reviewers:
+            item = AsyncItem(self.__performRecognitionForReviewer,
+                             (reviewer,),
+                             self.__performRecognitionForReviewerFinishedCb,
+                             (dialog, reviewer, reviewers))
+            info = (_('Recognizing Document'),
+                    _(u'Recognizing page %(page_number)s/%(total_pages)s. Please wait…') % {'page_number': i,
+                                                                                            'total_pages': total})
+            items.append((info, item))
+            i += 1
+        dialog.setItemsList(items)
         dialog.run()
 
     def __performRecognitionForReviewer(self, image_reviewer):
@@ -601,13 +620,16 @@ class ImageReviewer_Controler:
         return None
 
     def __performRecognitionForReviewerFinishedCb(self, dialog, image_reviewer,
+                                                  reviewers_to_process,
                                                   data_boxes, error):
         image_reviewer.clear()
         image_reviewer.applyTextColors()
         for data_box in data_boxes:
             image_reviewer.addDataBox(data_box)
-        dialog.cancel()
-        image_reviewer.updateMainWindow()
+        if image_reviewer == reviewers_to_process[-1]:
+            dialog.cancel()
+            for reviewer in reviewers_to_process:
+                reviewer.updateMainWindow()
 
     def copyRecognizedTextToClipboard(self, widget):
         image_reviewer = self.__getCurrentReviewer()
