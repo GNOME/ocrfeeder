@@ -555,8 +555,23 @@ class ImageReviewer_Controler:
         image_reviewer = self.__getCurrentReviewer()
         image_reviewer.performOcrForSelectedBoxes(self.configuration_manager.favorite_engine)
 
+    def __confirmOveritePossibilityByRecognition(self):
+        confirm_recognition = gtk.MessageDialog(parent = self.main_window.window,
+                                                type = gtk.MESSAGE_QUESTION,
+                                                buttons = gtk.BUTTONS_YES_NO)
+        message = _('There are changes that may be overwritten '
+                    'by the new recognition.\n\n'
+                    'Do you want to continue?')
+        confirm_recognition.set_markup(message)
+        response = confirm_recognition.run()
+        confirm_recognition.destroy()
+        return response
+
     def recognizeCurrentPage(self):
         image_reviewer = self.__getCurrentReviewer()
+        if image_reviewer.selectable_boxes_area.getAllAreas() and \
+           self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
+                return
         dialog = QueuedEventsProgressDialog(self.main_window.window)
         item = AsyncItem(self.__performRecognitionForReviewer,
                          (image_reviewer,),
@@ -572,7 +587,9 @@ class ImageReviewer_Controler:
         items = []
         i = 1
         total = len(reviewers)
+        has_changes = False
         for reviewer in reviewers:
+            has_changes = has_changes or bool(reviewer.selectable_boxes_area.getAllAreas())
             item = AsyncItem(self.__performRecognitionForReviewer,
                              (reviewer,),
                              self.__performRecognitionForReviewerFinishedCb,
@@ -582,6 +599,9 @@ class ImageReviewer_Controler:
                                                                                             'total_pages': total})
             items.append((info, item))
             i += 1
+        if has_changes and \
+           self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
+                return
         dialog.setItemsList(items)
         dialog.run()
 
