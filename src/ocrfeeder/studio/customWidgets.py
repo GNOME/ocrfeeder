@@ -309,7 +309,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
 
     def pressedWithinArea(self, item, target, event):
         deselected = False
-        if event.state != gtk.gdk.SHIFT_MASK:
+        if event.state & gtk.gdk.SHIFT_MASK == 0:
             self.deselectAreas()
         else:
             deselected = self.deselectArea(item)
