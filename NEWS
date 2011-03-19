@@ -1,3 +1,54 @@
+Version 0.7.4
+==============
+
+New Features
+-------------
+
+* Add plain text exportation (thanks to Andrew McGrath)
+* Add option to recognize current page or the whole document (gb#635306)
+
+Bug fixes
+----------
+
+* Fix preferences dialog when Unpaper was not installed
+* Fix failure when the check-speller could not find the given locale
+* Replace unimplemented dialog by a message dialog (fixes gb#643919)
+* Fix unicode strings translation (gb#644009) (thanks to Krzysztof Chojnowski)
+* Annotate .ui file to ensure strings are extracted (thanks to Kjartan Maraas)
+* Fix selection of multiple areas
+
+Improvements
+-------------
+
+* Ask for confirmation when recognizing the document or the current page
+  and there are changes
+* Use one status bar instead of three (gb#635219)
+* Fix local source usage when run from the development directory
+* Add missing dependencies to README
+* Add support for translatable exportation format names
+* Add missed Python dependencies to configure.ac (thanks to Juanje Ojeda)
+* Add missing keystrokes for the "Recognize Document" and
+  "Recognize Selected Areas" (gb#644381) (thanks to Juanje Ojeda)
+* Move of content areas' bounds into a gtk.Expander for cleaning up the UI
+  (thanks to Juanje Ojeda)
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cs]
+* Mario Blättermann [de]
+* Joe Hansen [da]
+* Daniel Mustieles [es]
+* Bruno Brouard, Claude Paroz [fr]
+* Kjartan Maraas [nb]
+* Matej Urbančič, Andrej Žnidaršič [sl]
+* Daniel Nylander [sd]
+* Aron Xu [zh_CN]
+* Daniel Korostil [uk]
+* Kjartan Maraas [no]
+* Gabor Kelemen [hu]
+
+
 Version 0.7.3
 ==============
 
