@@ -5,19 +5,21 @@
 # 刘洪德 (Hongde Liu) <enginespot@gmail.com>, 2009.
 # Yinghua Wang <wantinghard@gmail.com>, 2011.
 # Aron Xu <aronxu@gnome.org>, 2011.
+# Ray Wang <raywang@gnome.org>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=ocrfeeder&component=general\n"
-"POT-Creation-Date: 2011-01-03 09:00+0000\n"
-"PO-Revision-Date: 2011-01-13 22:20+0800\n"
+"product=ocrfeeder&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-26 19:09+0000\n"
+"PO-Revision-Date: 2011-03-30 01:00+0800\n"
 "Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 
 #: ../src/ocrfeeder/feeder/imageManipulation.py:38
 #, python-format
@@ -38,78 +40,134 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "完整的 OCR 解决方案。"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:180
+#: ../resources/spell-checker.ui.h:1
+msgid "<b>Language</b>"
+msgstr "<b>语言</b>"
+
+#: ../resources/spell-checker.ui.h:2
+msgid "Cha_nge"
+msgstr "更改(_N)"
+
+#: ../resources/spell-checker.ui.h:3
+msgid "Change A_ll"
+msgstr "全部更改(_L)"
+
+#: ../resources/spell-checker.ui.h:4
+msgid "Change _to:"
+msgstr "更改成(_T)"
+
+#: ../resources/spell-checker.ui.h:5
+msgid "Check spelling"
+msgstr "拼写检查"
+
+#: ../resources/spell-checker.ui.h:6
+msgid "Ignore _All"
+msgstr "忽略所有(_A)"
+
+#: ../resources/spell-checker.ui.h:7
+msgid "Language:"
+msgstr "语言："
+
+#: ../resources/spell-checker.ui.h:8
+msgid "Misspelled word:"
+msgstr "拼错的单词："
+
+#: ../resources/spell-checker.ui.h:9
+msgid "_Ignore"
+msgstr "忽略(_I)"
+
+#: ../resources/spell-checker.ui.h:10
+msgid "_Suggestions:"
+msgstr "建议：(_S)"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:61
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:63
+msgid "Plain Text"
+msgstr "普通文本"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:185
 msgid "Images"
 msgstr "图像"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:192
+#: ../src/ocrfeeder/studio/studioBuilder.py:197
 msgid "Obtaining scanners"
 msgstr "正在获取扫描仪"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:192
-#: ../src/ocrfeeder/studio/studioBuilder.py:218
-#: ../src/ocrfeeder/studio/studioBuilder.py:260
-#: ../src/ocrfeeder/studio/widgetModeler.py:443
-#: ../src/ocrfeeder/studio/widgetModeler.py:448
-#: ../src/ocrfeeder/studio/widgetModeler.py:500
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/studioBuilder.py:197
+#: ../src/ocrfeeder/studio/studioBuilder.py:223
+#: ../src/ocrfeeder/studio/studioBuilder.py:265
+#: ../src/ocrfeeder/studio/widgetModeler.py:457
+#: ../src/ocrfeeder/studio/widgetModeler.py:462
+#: ../src/ocrfeeder/studio/widgetModeler.py:514
+#: ../src/ocrfeeder/studio/widgetModeler.py:580
 msgid "Please wait…"
 msgstr "请稍候..."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:218
+#: ../src/ocrfeeder/studio/studioBuilder.py:223
 msgid "Scanning"
 msgstr "正在扫描"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:223
+#: ../src/ocrfeeder/studio/studioBuilder.py:228
 msgid "No scanner devices were found"
 msgstr "没有找到扫描设备"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:224
-#: ../src/ocrfeeder/studio/studioBuilder.py:239
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1135
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1146
+#: ../src/ocrfeeder/studio/studioBuilder.py:229
+#: ../src/ocrfeeder/studio/studioBuilder.py:244
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1150
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1161
 msgid "Error"
 msgstr "错误"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:238
+#: ../src/ocrfeeder/studio/studioBuilder.py:243
 msgid "Error scanning page"
 msgstr "扫描页面出错"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:246
+#: ../src/ocrfeeder/studio/studioBuilder.py:251
 msgid "PDF"
 msgstr "PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:260
+#: ../src/ocrfeeder/studio/studioBuilder.py:265
 msgid "Loading PDF"
 msgstr "正在加载 PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
+#: ../src/ocrfeeder/studio/studioBuilder.py:292
 msgid "Export pages"
 msgstr "输出页面"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:297
+#: ../src/ocrfeeder/studio/studioBuilder.py:309
 msgid "Are you sure you want to delete the current image?"
 msgstr "确定删除当前图像？"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:393
+#: ../src/ocrfeeder/studio/studioBuilder.py:356
+msgid "Are you sure you want to clear the project?"
+msgstr "您确定要清空该项目吗？"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:413
 msgid "The project hasn't been saved."
-msgstr "工程尚未保存。"
+msgstr "项目尚未保存。"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:394
+#: ../src/ocrfeeder/studio/studioBuilder.py:414
 msgid "Do you want to save it before closing?"
-msgstr "是否在关闭工程前保存？"
+msgstr "是否在关闭项目前保存？"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:395
+#: ../src/ocrfeeder/studio/studioBuilder.py:415
 msgid "Close anyway"
 msgstr "仍然关闭"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:126
-#: ../src/ocrfeeder/studio/widgetPresenter.py:132
+#: ../src/ocrfeeder/studio/widgetPresenter.py:134
 msgid "Pages"
 msgstr "页面"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:140
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1692
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1708
 msgid "Delete"
 msgstr "删除"
 
@@ -117,51 +175,76 @@ msgstr "删除"
 msgid "Selectable areas"
 msgstr "可选择区域"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:443
+#: ../src/ocrfeeder/studio/widgetModeler.py:457
 msgid "Preparing image"
 msgstr "正在准备图像"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:445
+#: ../src/ocrfeeder/studio/widgetModeler.py:459
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr "正在准备图像 %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:500
+#: ../src/ocrfeeder/studio/widgetModeler.py:514
 msgid "Deskewing image"
 msgstr "正在修正图像歪斜"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:517
-#: ../src/ocrfeeder/studio/widgetPresenter.py:757
-#: ../src/ocrfeeder/studio/widgetPresenter.py:764
-msgid "Page size"
-msgstr "页面大小"
+#: ../src/ocrfeeder/studio/widgetModeler.py:541
+msgid "No images added"
+msgstr "没有添加图像"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:518
-msgid "Resolution"
-msgstr "分辨率"
+#: ../src/ocrfeeder/studio/widgetModeler.py:544
+#, python-format
+msgid "Zoom: %s %%"
+msgstr "缩放：%s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:522
-msgid "Zoom"
-msgstr "缩放"
+#: ../src/ocrfeeder/studio/widgetModeler.py:546
+#, python-format
+msgid "Resolution: %.2f x %.2f"
+msgstr "分辨率：%.2f x %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/widgetModeler.py:548
+#, python-format
+msgid "Page size: %i x %i"
+msgstr "页面尺寸：%i x %i"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:562
+msgid ""
+"There are changes that may be overwritten by the new recognition.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:580
+msgid "Recognizing Page"
+msgstr "页识别"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:597
 msgid "Recognizing Document"
 msgstr "文档识别"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:594
+#: ../src/ocrfeeder/studio/widgetModeler.py:598
+#, python-format
+msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:666
 msgid "Export to HTML"
 msgstr "输出为HTML格式"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:608
-#: ../src/ocrfeeder/studio/widgetPresenter.py:201
+#: ../src/ocrfeeder/studio/widgetModeler.py:680
+#: ../src/ocrfeeder/studio/widgetPresenter.py:213
 msgid "Export to ODT"
 msgstr "输出为ODT格式"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:629
-msgid "OCRFeeder Projects"
-msgstr "OCRFeeder工程"
+#: ../src/ocrfeeder/studio/widgetModeler.py:691
+msgid "Export to Plain Text"
+msgstr "输出为普通文本"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:687
+#: ../src/ocrfeeder/studio/widgetModeler.py:712
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder 项目"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:770
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -172,744 +255,762 @@ msgstr ""
 "\n"
 "文件存在于 \"%(dir)s\". 替换将会覆盖现有文件。"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:694
+#: ../src/ocrfeeder/studio/widgetModeler.py:777
 msgid "Replace"
 msgstr "替换"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:153
+#: ../src/ocrfeeder/studio/widgetPresenter.py:155
 msgid "_File"
-msgstr "文件"
+msgstr "文件(_F)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:154
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
 msgid "_Quit"
-msgstr "退出"
+msgstr "退出(_Q)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:154
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
 msgid "Exit the program"
 msgstr "退出当前程序"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:155
+#: ../src/ocrfeeder/studio/widgetPresenter.py:157
 msgid "_Open"
-msgstr "打开"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:155
-msgid "Open project"
-msgstr "打开工程"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:156
-msgid "_Save"
-msgstr "保存"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:156
-msgid "Save project"
-msgstr "保存工程"
+msgstr "打开(_O)"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:157
+msgid "Open project"
+msgstr "打开项目"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+msgid "_Save"
+msgstr "保存(_S)"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+msgid "Save project"
+msgstr "保存项目"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:159
 msgid "_Save As…"
 msgstr "另存为(_S)..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:157
+#: ../src/ocrfeeder/studio/widgetPresenter.py:159
 msgid "Save project with a chosen name"
-msgstr "用已有选定名称保存工程"
+msgstr "用已有选定名称保存项目"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+#: ../src/ocrfeeder/studio/widgetPresenter.py:160
 msgid "_Add Image"
-msgstr "添加图像"
+msgstr "添加图像(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+#: ../src/ocrfeeder/studio/widgetPresenter.py:160
 msgid "Add another image"
 msgstr "添加另一张图像"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:159
+#: ../src/ocrfeeder/studio/widgetPresenter.py:161
 msgid "Add _Folder"
-msgstr "添加文件夹"
+msgstr "添加文件夹(_F)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:159
+#: ../src/ocrfeeder/studio/widgetPresenter.py:161
 msgid "Add all images in a folder"
 msgstr "添加所有图像到一个文件夹中"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:160
+#: ../src/ocrfeeder/studio/widgetPresenter.py:162
 msgid "Append Project"
-msgstr "添加工程"
+msgstr "添加项目"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:160
+#: ../src/ocrfeeder/studio/widgetPresenter.py:162
 msgid "Load a project and append it to the current one"
-msgstr "加载并添加工程到当前工程中"
+msgstr "加载并添加项目到当前项目中"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:163
 msgid "_Import PDF"
-msgstr "导出PDF格式"
+msgstr "导出PDF格式(_I)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:163
 msgid "Import PDF"
 msgstr "导出PDF格式"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:162
+#: ../src/ocrfeeder/studio/widgetPresenter.py:164
 msgid "_Export…"
 msgstr "导出(_E)..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:162
+#: ../src/ocrfeeder/studio/widgetPresenter.py:164
 msgid "Export to a chosen format"
 msgstr "导出为指定格式"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:163
+#: ../src/ocrfeeder/studio/widgetPresenter.py:165
 msgid "_Edit"
-msgstr "编辑"
+msgstr "编辑(_E)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:164
+#: ../src/ocrfeeder/studio/widgetPresenter.py:166
 msgid "_Edit Page"
-msgstr "编辑页面"
+msgstr "编辑页面(_E)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:164
+#: ../src/ocrfeeder/studio/widgetPresenter.py:166
 msgid "Edit page settings"
 msgstr "页面设置"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:165
+#: ../src/ocrfeeder/studio/widgetPresenter.py:167
 msgid "_Preferences"
-msgstr "属性"
+msgstr "属性(_P)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:165
+#: ../src/ocrfeeder/studio/widgetPresenter.py:167
 msgid "Configure the application"
 msgstr "程序配置"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:166
+#: ../src/ocrfeeder/studio/widgetPresenter.py:168
 msgid "_Delete Page"
-msgstr "删除页面"
+msgstr "删除页面(_D)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:166
+#: ../src/ocrfeeder/studio/widgetPresenter.py:168
 msgid "Delete current page"
 msgstr "删除当前页面"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:167
+#: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "_Clear Project"
-msgstr "清空工程"
+msgstr "清空项目(_C)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:167
+#: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "Delete all images"
 msgstr "删除所有图像"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:168
+#: ../src/ocrfeeder/studio/widgetPresenter.py:170
 msgid "_View"
-msgstr "视图"
+msgstr "视图(_V)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:169
+#: ../src/ocrfeeder/studio/widgetPresenter.py:171
 msgid "Zoom In"
 msgstr "放大"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:170
+#: ../src/ocrfeeder/studio/widgetPresenter.py:172
 msgid "Zoom Out"
 msgstr "缩小"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:171
+#: ../src/ocrfeeder/studio/widgetPresenter.py:173
 msgid "Best Fit"
 msgstr "适中"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:172
+#: ../src/ocrfeeder/studio/widgetPresenter.py:174
 msgid "Normal Size"
 msgstr "正常大小"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:173
+#: ../src/ocrfeeder/studio/widgetPresenter.py:175
 msgid "_Document"
-msgstr "文档"
+msgstr "文档(_D)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:174
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
+#: ../src/ocrfeeder/studio/widgetPresenter.py:176
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1376
 msgid "_Tools"
-msgstr "工具"
+msgstr "工具(_T)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:175
+#: ../src/ocrfeeder/studio/widgetPresenter.py:177
 msgid "_OCR Engines"
-msgstr "OCR引擎"
+msgstr "OCR引擎(_O)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:175
+#: ../src/ocrfeeder/studio/widgetPresenter.py:177
 msgid "Manage OCR engines"
 msgstr "管理OCR引擎"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:176
+#: ../src/ocrfeeder/studio/widgetPresenter.py:178
+#, fuzzy
 msgid "_Unpaper"
-msgstr "修整"
+msgstr "修整(_U)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:176
+#: ../src/ocrfeeder/studio/widgetPresenter.py:178
 msgid "Process image with unpaper"
 msgstr "处理图片"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:177
+#: ../src/ocrfeeder/studio/widgetPresenter.py:179
 msgid "Image Des_kewer"
 msgstr "图像歪斜修正程序(_K)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:178
+#: ../src/ocrfeeder/studio/widgetPresenter.py:180
 msgid "Trie to straighten the image"
 msgstr "尝试端正图像"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:180
-#: ../src/ocrfeeder/studio/widgetPresenter.py:181
+#: ../src/ocrfeeder/studio/widgetPresenter.py:182
+#: ../src/ocrfeeder/studio/widgetPresenter.py:183
 msgid "_Help"
-msgstr "帮助"
+msgstr "帮助(_H)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:181
+#: ../src/ocrfeeder/studio/widgetPresenter.py:183
 msgid "Help contents"
-msgstr ""
+msgstr "帮助内容"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:182
+#: ../src/ocrfeeder/studio/widgetPresenter.py:184
 msgid "_About"
-msgstr "关于"
+msgstr "关于(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:182
+#: ../src/ocrfeeder/studio/widgetPresenter.py:184
 msgid "About this application"
 msgstr "关于本程序"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:183
+#: ../src/ocrfeeder/studio/widgetPresenter.py:186
 msgid "_Recognize Document"
-msgstr "文件识别"
+msgstr "文件识别(_R)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:183
-msgid "Automatic Detection and Recognition"
-msgstr "自动检测并识别"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:187
+msgid "Automatically detect and recognize all pages"
+msgstr "自动检测并识别所有页"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:184
+#: ../src/ocrfeeder/studio/widgetPresenter.py:190
+msgid "_Recognize Page"
+msgstr "识别页(_R)"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:191
+msgid "Automatically detect and recognize the current page"
+msgstr "自动检测并识别当前页"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:194
 msgid "Recognize Selected _Areas"
 msgstr "识别选区(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:184
+#: ../src/ocrfeeder/studio/widgetPresenter.py:195
 msgid "Recognize Selected Areas"
 msgstr "识别选择区域"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:186
+#: ../src/ocrfeeder/studio/widgetPresenter.py:198
 msgid "Select All _Areas"
 msgstr "选择所有区域(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:187
+#: ../src/ocrfeeder/studio/widgetPresenter.py:199
 msgid "Select all content areas"
 msgstr "选择所有内容区"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:190
+#: ../src/ocrfeeder/studio/widgetPresenter.py:202
 msgid "Select _Previous Area"
 msgstr "选择上个区域(_P)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:191
+#: ../src/ocrfeeder/studio/widgetPresenter.py:203
 msgid "Select the previous area from the content areas"
 msgstr "从内容区中选择上个区域"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:194
+#: ../src/ocrfeeder/studio/widgetPresenter.py:206
 msgid "Select _Next Area"
 msgstr "选择下个区域(_N)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:195
+#: ../src/ocrfeeder/studio/widgetPresenter.py:207
 msgid "Select the next area from the content areas"
 msgstr "从内容区中选择下个区域"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:198
+#: ../src/ocrfeeder/studio/widgetPresenter.py:210
 msgid "Delete Selected Areas"
 msgstr "删除选择区域"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:199
+#: ../src/ocrfeeder/studio/widgetPresenter.py:211
 msgid "Deletes all the currently selected content areas"
 msgstr "删除所有当前选择的内容区"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:201
+#: ../src/ocrfeeder/studio/widgetPresenter.py:213
 msgid "_Generate ODT"
-msgstr "生成 ODT"
+msgstr "生成 ODT(_G)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:203
+#: ../src/ocrfeeder/studio/widgetPresenter.py:215
 msgid "Import Page From S_canner"
 msgstr "从扫描仪导入页面(_C)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:205
+#: ../src/ocrfeeder/studio/widgetPresenter.py:217
 msgid "Import From Scanner"
 msgstr "从扫描仪导入"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:208
+#: ../src/ocrfeeder/studio/widgetPresenter.py:220
 msgid "_Copy to Clipboard"
 msgstr "复制到剪贴板(_C)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:210
+#: ../src/ocrfeeder/studio/widgetPresenter.py:222
 msgid "Copy recognized text to clipboard"
 msgstr "将识别的文本复制到剪贴板"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:225
 msgid "Spell_checker"
 msgstr "拼写检查程序(_C)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:215
+#: ../src/ocrfeeder/studio/widgetPresenter.py:227
 msgid "Spell Check Recognized Text"
 msgstr "对识别的文本进行拼写检查"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:289
+#: ../src/ocrfeeder/studio/widgetPresenter.py:301
 msgid "Area editor"
 msgstr "区域编辑器"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:297
+#: ../src/ocrfeeder/studio/widgetPresenter.py:309
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr "设置内容区左上角的水平(X)坐标"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:301
+#: ../src/ocrfeeder/studio/widgetPresenter.py:313
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr "设置内容区左上角的竖直(Y)坐标"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:305
+#: ../src/ocrfeeder/studio/widgetPresenter.py:317
 msgid "Sets the content area's width"
 msgstr "设置内容区的宽度"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:308
+#: ../src/ocrfeeder/studio/widgetPresenter.py:320
 msgid "Sets the content area's height"
 msgstr "设置内容区的高度"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:311
-#: ../src/ocrfeeder/studio/widgetPresenter.py:524
+#: ../src/ocrfeeder/studio/widgetPresenter.py:323
+#: ../src/ocrfeeder/studio/widgetPresenter.py:539
 msgid "_Text"
 msgstr "文本(_T)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:312
+#: ../src/ocrfeeder/studio/widgetPresenter.py:324
 msgid "Set this content area to be the text type"
 msgstr "将此内容区设置为文本类型"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:313
+#: ../src/ocrfeeder/studio/widgetPresenter.py:325
 msgid "_Image"
 msgstr "图像(_I)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:314
+#: ../src/ocrfeeder/studio/widgetPresenter.py:326
 msgid "Set this content area to be the image type"
 msgstr "将此内容区设置为图像类型"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:315
+#: ../src/ocrfeeder/studio/widgetPresenter.py:327
 msgid "Type"
 msgstr "类型"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:325
+#: ../src/ocrfeeder/studio/widgetPresenter.py:337
 msgid "Clip"
 msgstr "剪切"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:409
+#: ../src/ocrfeeder/studio/widgetPresenter.py:421
 msgid "Bounds"
 msgstr "边界"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:414
+#: ../src/ocrfeeder/studio/widgetPresenter.py:426
 msgid "_X:"
 msgstr "_X："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:435
 msgid "_Y:"
 msgstr "_Y："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:435
-#: ../src/ocrfeeder/studio/widgetPresenter.py:778
+#: ../src/ocrfeeder/studio/widgetPresenter.py:447
+#: ../src/ocrfeeder/studio/widgetPresenter.py:793
 msgid "_Width:"
 msgstr "宽度(_W)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
 msgid "Hei_ght:"
 msgstr "高度(_G)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:467
+#: ../src/ocrfeeder/studio/widgetPresenter.py:479
 msgid "Left"
 msgstr "左"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:471
+#: ../src/ocrfeeder/studio/widgetPresenter.py:483
 msgid "Set text to be left aligned"
 msgstr "将文本设为左对齐"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:473
+#: ../src/ocrfeeder/studio/widgetPresenter.py:485
 msgid "Center"
 msgstr "居中"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:478
+#: ../src/ocrfeeder/studio/widgetPresenter.py:490
 msgid "Set text to be centered"
 msgstr "将文本设为居中对齐"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:480
+#: ../src/ocrfeeder/studio/widgetPresenter.py:492
 msgid "Right"
 msgstr "右"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:485
+#: ../src/ocrfeeder/studio/widgetPresenter.py:497
 msgid "Set text to be right aligned"
 msgstr "将"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:487
+#: ../src/ocrfeeder/studio/widgetPresenter.py:499
 msgid "Fill"
 msgstr "填充"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:492
+#: ../src/ocrfeeder/studio/widgetPresenter.py:504
 msgid "Set text to be fill its area"
 msgstr "将文本设为右对齐"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:498
+#: ../src/ocrfeeder/studio/widgetPresenter.py:510
 msgid "OC_R"
 msgstr "OC_R"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:499
+#: ../src/ocrfeeder/studio/widgetPresenter.py:511
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr "用选定的 OCR 引擎对此内容区进行光学字符识别。"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:505
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
 msgid "OCR engine to recognize this content area"
 msgstr "用于识别此内容区的 OCR 引擎"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:513
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
 msgid "Text Properties"
 msgstr "文本属性"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:532
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "Font"
 msgstr "字体"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:539
+#: ../src/ocrfeeder/studio/widgetPresenter.py:554
 msgid "Align"
 msgstr "对齐"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:543
+#: ../src/ocrfeeder/studio/widgetPresenter.py:558
 msgid "Spacing"
 msgstr "间距"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:545
+#: ../src/ocrfeeder/studio/widgetPresenter.py:560
 msgid "Set the text's letter spacing"
 msgstr "设置此文本的字符间距"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
 msgid "Set the text's line spacing"
 msgstr "设置此文本的行距"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:552
+#: ../src/ocrfeeder/studio/widgetPresenter.py:567
 msgid "_Line:"
 msgstr "线条(_L)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:563
+#: ../src/ocrfeeder/studio/widgetPresenter.py:578
 msgid "L_etter:"
 msgstr "字母(_E)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:575
+#: ../src/ocrfeeder/studio/widgetPresenter.py:590
 msgid "Sty_le"
 msgstr "样式(_L)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:582
+#: ../src/ocrfeeder/studio/widgetPresenter.py:597
 msgid "Angle"
 msgstr "角度"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:586
+#: ../src/ocrfeeder/studio/widgetPresenter.py:601
 msgid "OCR engine to recogni_ze this area:"
 msgstr "用于识别此区域的 OCR 引擎(_Z)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:600
+#: ../src/ocrfeeder/studio/widgetPresenter.py:615
 msgid "Detect"
 msgstr "检测"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:602
+#: ../src/ocrfeeder/studio/widgetPresenter.py:617
 msgid "Angle:"
 msgstr "角度："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:687
+#: ../src/ocrfeeder/studio/widgetPresenter.py:702
 msgid "Save File"
 msgstr "保存文件"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:690
+#: ../src/ocrfeeder/studio/widgetPresenter.py:705
 msgid "Open File"
 msgstr "打开文件"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:694
+#: ../src/ocrfeeder/studio/widgetPresenter.py:709
 msgid "Open Folder"
 msgstr "打开文件夹"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:721
+#: ../src/ocrfeeder/studio/widgetPresenter.py:736
 msgid "Pages to export"
 msgstr "导出页面"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:738
 msgid "All"
 msgstr "所有"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:724
+#: ../src/ocrfeeder/studio/widgetPresenter.py:739
 msgid "Current"
 msgstr "当前"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:740
+#: ../src/ocrfeeder/studio/widgetPresenter.py:755
 msgid "Choose the format"
 msgstr "选择格式"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:769
+#: ../src/ocrfeeder/studio/widgetPresenter.py:772
+#: ../src/ocrfeeder/studio/widgetPresenter.py:779
+msgid "Page size"
+msgstr "页面大小"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:784
 msgid "Custom…"
 msgstr "定制..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:798
 msgid "_Height:"
 msgstr "高度(_H)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:792
+#: ../src/ocrfeeder/studio/widgetPresenter.py:807
 msgid "Affected pages"
 msgstr "受影响的页面"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:794
+#: ../src/ocrfeeder/studio/widgetPresenter.py:809
 msgid "C_urrent"
 msgstr "当前(_U)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:797
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
 msgid "_All"
 msgstr "所有(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:857
+#: ../src/ocrfeeder/studio/widgetPresenter.py:872
 msgid "Unpaper Image Processor"
 msgstr "Unpaper 图像修整进程"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:871
+#: ../src/ocrfeeder/studio/widgetPresenter.py:886
 msgid "Preview"
 msgstr "预览"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:877
+#: ../src/ocrfeeder/studio/widgetPresenter.py:892
 msgid "_Preview"
 msgstr "预览(_P)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:903
+#: ../src/ocrfeeder/studio/widgetPresenter.py:918
 msgid "Performing Unpaper"
 msgstr "图像修整处理"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:903
+#: ../src/ocrfeeder/studio/widgetPresenter.py:918
 msgid "Performing unpaper. Please wait…"
 msgstr "图像正在修整，请等待..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:947
+#: ../src/ocrfeeder/studio/widgetPresenter.py:962
 msgid "Noise Filter Intensity"
 msgstr "信噪比强度"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:949
-#: ../src/ocrfeeder/studio/widgetPresenter.py:981
+#: ../src/ocrfeeder/studio/widgetPresenter.py:964
+#: ../src/ocrfeeder/studio/widgetPresenter.py:996
 msgid "Default"
 msgstr "默认"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:951
-#: ../src/ocrfeeder/studio/widgetPresenter.py:983
+#: ../src/ocrfeeder/studio/widgetPresenter.py:966
+#: ../src/ocrfeeder/studio/widgetPresenter.py:998
 msgid "Custom"
 msgstr "定制"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:953
-#: ../src/ocrfeeder/studio/widgetPresenter.py:985
+#: ../src/ocrfeeder/studio/widgetPresenter.py:968
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1000
 msgid "None"
 msgstr "空"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:979
+#: ../src/ocrfeeder/studio/widgetPresenter.py:994
 msgid "Gray Filter Size"
 msgstr "灰度值大小"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1011
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
 msgid "Black Filter"
 msgstr "黑色过滤"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1012
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1027
 msgid "Use"
 msgstr "使用"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1019
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1034
 msgid "Extra Options"
 msgstr "额外选项"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
 msgid "Unpaper's command line arguments"
 msgstr "图像修整的命令行选项"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1078
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
 msgid "Unpaper Preferences"
 msgstr "图像修整偏好设置"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1135
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1146
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1150
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1161
 msgid "An error occurred!"
 msgstr "出现了一个错误！"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1217
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1232
 msgid "Cancelled"
 msgstr "已取消"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1231
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1246
 msgid "Preferences"
 msgstr "偏好设置"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1296
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1312
 msgid "_General"
 msgstr "常规(_G)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1301
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1317
 msgid "Temporary folder"
 msgstr "临时文件"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1305
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1369
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1321
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1385
 msgid "Choose"
 msgstr "选择"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1322
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1338
 msgid "_Recognition"
 msgstr "识别(_R)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1327
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1343
 msgid "Select boxes' colors"
 msgstr "窗体色彩选择"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1333
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1349
 msgid "Te_xt areas' fill color"
 msgstr "文本填充颜色(_X)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1339
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1355
 msgid "Text areas' _stroke color"
 msgstr "文本笔触颜色(_S)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1345
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1361
 msgid "_Image areas' fill color"
 msgstr "图像填充颜色(_I)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1381
 msgid "Path to unpaper"
 msgstr "路径修整"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1627
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1665
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1683
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1772
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1393
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1643
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1681
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1699
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1790
 msgid "OCR Engines"
 msgstr "OCR 引擎"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1395
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr "进行自动识别时应使用的引擎。"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1390
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1406
 msgid "Favorite _engine:"
 msgstr "最佳引擎(_E)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1405
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1421
 msgid "Window size"
 msgstr "窗口大小"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1406
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1422
 msgid "A_utomatic"
 msgstr "自动(_U)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1407
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1423
 msgid "Cu_stom"
 msgstr "定制(_S)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1416
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1432
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr "窗口大小是检测算法的细分区域的尺寸。"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
 msgid "Columns Detection"
 msgstr "列检测"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1433
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1449
 msgid "_Improve columns detection"
 msgstr "改进列检测(_I)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1435
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1451
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "使用后检测算法改进列检测的质量"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1520
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1462
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1536
 msgid "_Automatic"
 msgstr "自动(_A)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1464
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
 msgid "Custo_m"
 msgstr "定制(_M)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1452
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1468
 msgid "The columns' minimum width in pixels"
 msgstr "最小列宽，单位为像素"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1468
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
 msgid "Minimum width that a column should have:"
 msgstr "一个列应具有的最小宽度："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1489
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1505
 msgid "Recognized Text"
 msgstr "识别的文字"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1490
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
 msgid "_Fix line breaks and hyphenization"
 msgstr "修正断行和断字(_F)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1492
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1508
 #, fuzzy
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
 "engines"
 msgstr "移除 OCR 引擎生成的文本中的单个断行和连字符"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1502
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
 msgid "Content Areas"
 msgstr "内容区"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1507
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1523
 msgid "A_djust content areas' bounds"
 msgstr "调整内容区的边界(_D)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1509
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1525
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr "使用后检测算法缩小内容区的边界"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1526
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1542
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr "内容区的最大尺寸，单位为像素"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1543
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1559
 msgid "Maximum size that the content areas' margins should have:"
 msgstr "内容区的最大尺寸："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1589
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1605
 msgid "Image Pre-processing"
 msgstr "图像预处理"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1590
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1606
 msgid "Des_kew images"
 msgstr "对图像进行歪斜修正(_K)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1592
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1608
 msgid "Tries to straighten the images before they are added"
 msgstr "在添加图像前尝试对其进行歪斜修正"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1601
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1617
 msgid "_Unpaper images"
 msgstr "修整图像(_U)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1603
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1619
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr "使用 Unpaper 预处理器清理图像"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1607
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1623
 msgid "Unpaper _Preferences"
 msgstr "Unpaper 偏好设置(_P)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1657
 msgid "Engines to be added"
 msgstr "要添加的引擎"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1646
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1662
 msgid "Include"
 msgstr "包括"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1650
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1687
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1666
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1703
 msgid "Engine"
 msgstr "引擎"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1691
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
 msgid "Add"
 msgstr "添加"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1693
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
 msgid "Edit"
 msgstr "编辑"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1694
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1710
 msgid "De_tect"
 msgstr "检测(_T)"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1708
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1724
 msgid "Are you sure you want to delete this engine?"
 msgstr "您确认要删除此引擎？"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1754
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1772
+msgid "No OCR engines available"
+msgstr "没有可用的 OCR 引擎"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1773
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -917,65 +1018,64 @@ msgstr ""
 "系统中找不到 OCR 引擎。\n"
 "请确认安装了 OCR 引擎并且可以使用。"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1757
-msgid "No OCR engines available"
-msgstr "没有可用的 OCR 引擎"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1774
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1792
 #, python-format
 msgid "%s engine"
-msgstr "%s引擎"
+msgstr "%s 引擎"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1798
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1816
 msgid "_Name:"
 msgstr "名称(_N)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1799
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
 msgid "Engine name"
 msgstr "引擎名称"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1801
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1819
 msgid "_Image format:"
 msgstr "图像格式(_I)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1803
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1821
 msgid "The required image format"
 msgstr "需要的图像格式"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1805
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1823
 msgid "_Failure string:"
 msgstr "错误的字符串(_F)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1807
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1825
 msgid "The failure string or character that this engine uses"
 msgstr "这个引擎使用了错误的字符或者字符串"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1810
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1828
 msgid "Engine _path:"
 msgstr "引擎路径(_P)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1812
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1830
 msgid "The path to the engine program"
 msgstr "引擎所在路径"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1814
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1832
 msgid "Engine _arguments:"
 msgstr "引擎参数(_A)："
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1816
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1834
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr "参数：使用 $IMAGE 代表图像，$FILE 代表要写入的文件"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1833
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1851
 msgid "Error setting the new engine; please check your engine settings."
 msgstr "引擎设置出错，请检查您的引擎设置。"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1833
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1851
 msgid "Warning"
 msgstr "警告"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1869
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1887
 msgid "translator-credits"
 msgstr ""
 "刘洪德 (Hongde Liu) <enginespot@gmail.com>, 2009\n"
 "Yinghua Wang <wantinghard@gmail.com>, 2011"
+
+#~ msgid "Zoom"
+#~ msgstr "缩放"
