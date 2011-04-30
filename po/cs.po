@@ -168,7 +168,7 @@ msgstr "Stránky"
 #: ../src/ocrfeeder/studio/widgetModeler.py:140
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1708
 msgid "Delete"
-msgstr "Smazat"
+msgstr "Odstranit"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:191
 msgid "Selectable areas"
