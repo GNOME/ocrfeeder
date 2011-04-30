@@ -324,7 +324,7 @@ msgstr "Načíst projekt a přidat jej k současnému projektu"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:163
 msgid "_Import PDF"
-msgstr "_Import PDF"
+msgstr "_Importovat PDF"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:163
 msgid "Import PDF"
