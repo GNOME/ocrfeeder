@@ -360,7 +360,7 @@ msgstr "Nastavit aplikaci"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:168
 msgid "_Delete Page"
-msgstr "_Smazat stránku"
+msgstr "O_dstranit stránku"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:168
 msgid "Delete current page"
