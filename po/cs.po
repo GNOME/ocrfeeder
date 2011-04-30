@@ -1045,11 +1045,11 @@ msgstr "Název výkonného programu"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1819
 msgid "_Image format:"
-msgstr "_Formát obrázku:"
+msgstr "_Formát obrazu:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1821
 msgid "The required image format"
-msgstr "Požadovaný formát obrázku"
+msgstr "Požadovaný formát obrazu"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1823
 msgid "_Failure string:"
