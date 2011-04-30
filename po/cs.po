@@ -368,7 +368,7 @@ msgstr "Smazat současnou stránku"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "_Clear Project"
-msgstr "_Vyčistit projekt"
+msgstr "_Vymazat projekt"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "Delete all images"
