@@ -451,7 +451,7 @@ msgstr "_Rozpoznat dokument"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:187
 #| msgid "Automatic Detection and Recognition"
 msgid "Automatically detect and recognize all pages"
-msgstr "Automaticky detekovat a rozpoznat všechny stránky"
+msgstr "Automaticky zjistit a rozpoznat všechny stránky"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:190
 #| msgid "Recognized Text"
@@ -461,7 +461,7 @@ msgstr "_Rozpoznat stránku"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:191
 #| msgid "Automatic Detection and Recognition"
 msgid "Automatically detect and recognize the current page"
-msgstr "Automaticky detekovat a rozpoznat aktuální stránku"
+msgstr "Automaticky zjistit a rozpoznat aktuální stránku"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:194
 msgid "Recognize Selected _Areas"
@@ -690,7 +690,7 @@ msgstr "Výkonný program OCR pro ro_zpoznání této oblasti:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:615
 msgid "Detect"
-msgstr "Detekovat"
+msgstr "Vyhledat"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:617
 msgid "Angle:"
