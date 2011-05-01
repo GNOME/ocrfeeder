@@ -465,11 +465,11 @@ msgstr "Automaticky zjistit a rozpoznat aktuální stránku"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:194
 msgid "Recognize Selected _Areas"
-msgstr "Rozpoznat vybranou obl_ast"
+msgstr "Rozpoznat vybrané obl_asti"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:195
 msgid "Recognize Selected Areas"
-msgstr "Rozpoznat vybranou oblast"
+msgstr "Rozpoznat vybrané oblasti"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:198
 msgid "Select All _Areas"
@@ -840,7 +840,7 @@ msgstr "Zvolit"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1338
 msgid "_Recognition"
-msgstr "_Rozpoznání"
+msgstr "_Rozpoznávání"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1343
 msgid "Select boxes' colors"
