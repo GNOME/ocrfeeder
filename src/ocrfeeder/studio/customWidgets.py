@@ -104,8 +104,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.get_root_item().add_child(line, -1)
 
     def __createFrame(self):
-        line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR,
-                              line_width = 0)
+        line = Box(fill_color = self.IMAGE_FRAME_COLOR, line_width = 0)
         line.props.x = self.image.props.x + self.image.props.width
         line.props.y = self.image.props.y
         line.props.width = self.IMAGE_FRAME_THICKNESS
@@ -217,11 +216,10 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.deselectAreas()
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
         stroke_color = self.__rgbaToInteger(self.area_stroke_rgba)
-        self.currently_created_area = goocanvas.Rect(fill_color_rgba = fill_color, stroke_color_rgba = stroke_color)
+        self.currently_created_area = Box(fill_color_rgba = fill_color, stroke_color_rgba = stroke_color)
         self.currently_created_area.props.x = event.x * self.get_scale()
         self.currently_created_area.props.y = event.y * self.get_scale()
         self.currently_created_area.set_data('start_point', (self.currently_created_area.props.x, self.currently_created_area.props.y))
-        self.currently_created_area.connect('button_press_event', self.pressedWithinArea)
         self.currently_created_area.connect('button_release_event', self.releasedWithinArea)
         self.currently_created_area.connect('motion_notify_event', self.dragArea)
         self.get_root_item().add_child(self.currently_created_area, -1)
@@ -272,7 +270,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
 
     def handleOverlapedAreas(self, overlaped_areas):
         for area in overlaped_areas:
-            if isinstance(area, goocanvas.Rect) and \
+            if isinstance(area, Box) and \
                area != self.currently_created_area and \
                not area in self.selected_areas:
                 area.remove()
@@ -307,39 +305,12 @@ class SelectableBoxesArea(goocanvas.Canvas):
                 self.zoom(-0.2)
                 return True
 
-    def pressedWithinArea(self, item, target, event):
-        deselected = False
-        if event.state & gtk.gdk.SHIFT_MASK == 0:
-            self.deselectAreas()
-        else:
-            deselected = self.deselectArea(item)
-        if deselected:
-            return True
-        self.selectArea(item)
-        item.set_data('distance', (event.x - item.props.x, event.y - item.props.y))
-        return True
-
     def releasedWithinArea(self, item, target, event):
         self.handleOverlapedAreas(self.getOverlapedAreas(item))
-        item.set_data('distance', None)
         self.emit('updated_box', item)
 
     def dragArea(self, item, target, event):
-        if item.get_data('distance'):
-            distance_x, distance_y = item.get_data('distance')
-            new_x, new_y = event.x - distance_x, event.y - distance_y
-            dimensions = (new_x, new_y, item.props.width, item.props.height)
-            item.props.x = new_x
-            item.props.y = new_y
-            if new_x <= self.image.props.x:
-                item.props.x = self.image.props.x
-            if new_x + item.props.width >= self.image.props.width:
-                item.props.x = self.image.props.width - item.props.width
-            if new_y <= self.image.props.y:
-                item.props.y = self.image.props.y
-            if new_y + item.props.height >= self.image.props.height:
-                item.props.y = self.image.props.height - item.props.height
-            self.emit('dragged_box', item)
+        self.emit('dragged_box', item)
 
     def scrollEventCb(self, widget, event):
         # Note: This catches all modifier combinations that use Ctrl. Add
@@ -372,12 +343,11 @@ class SelectableBoxesArea(goocanvas.Canvas):
         x, y, width, height = dimensions
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
         stroke_color = self.__rgbaToInteger(self.area_stroke_rgba)
-        new_area = goocanvas.Rect(fill_color_rgba = fill_color, stroke_color_rgba = stroke_color)
+        new_area = Box(fill_color_rgba = fill_color, stroke_color_rgba = stroke_color)
         new_area.props.x = x
         new_area.props.y = y
         new_area.props.width = width
         new_area.props.height = height
-        new_area.connect('button_press_event', self.pressedWithinArea)
         new_area.connect('button_release_event', self.releasedWithinArea)
         new_area.connect('motion_notify_event', self.dragArea)
         self.handleOverlapedAreas(self.getOverlapedAreas(new_area))
@@ -391,8 +361,201 @@ class SelectableBoxesArea(goocanvas.Canvas):
 
     def getAllAreas(self):
         bounds = goocanvas.Bounds(*self.get_bounds())
-        areas = [area for area in self.get_items_in_area(bounds, True, True, True) if isinstance(area, goocanvas.Rect) and area not in self.frame]
+        areas = [area for area in self.get_items_in_area(bounds, True, True, True) if isinstance(area, Box) and area not in self.frame]
         return areas
+
+class Box(goocanvas.Rect):
+
+    MOUSE_STATE_NORMAL = 0
+    MOUSE_STATE_TOP_DRAG = 1 << 0
+    MOUSE_STATE_BOTTOM_DRAG = 1 << 1
+    MOUSE_STATE_LEFT_DRAG = 1 << 2
+    MOUSE_STATE_RIGHT_DRAG = 1 << 3
+
+    CURSOR_CHANGE_MAX_DISTANCE = 5
+    __bottom_side_cursor = gtk.gdk.Cursor(gtk.gdk.BOTTOM_SIDE)
+    __top_side_cursor = gtk.gdk.Cursor(gtk.gdk.TOP_SIDE)
+    __left_side_cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_SIDE)
+    __right_side_cursor = gtk.gdk.Cursor(gtk.gdk.RIGHT_SIDE)
+    __top_left_cursor = gtk.gdk.Cursor(gtk.gdk.TOP_LEFT_CORNER)
+    __top_right_cursor = gtk.gdk.Cursor(gtk.gdk.TOP_RIGHT_CORNER)
+    __bottom_left_cursor = gtk.gdk.Cursor(gtk.gdk.BOTTOM_LEFT_CORNER)
+    __bottom_right_cursor = gtk.gdk.Cursor(gtk.gdk.BOTTOM_RIGHT_CORNER)
+    __drag_cursor = gtk.gdk.Cursor(gtk.gdk.FLEUR)
+
+    def __init__(self, *args, **kwargs):
+        super(Box, self).__init__(*args, **kwargs)
+        self._state = self.MOUSE_STATE_NORMAL
+        self.connect('motion-notify-event', self.__motionNotifyEventCb)
+        self.connect('button-release-event', self.__buttonReleaseEventCb)
+        self.connect('button-press-event', self.__buttonPressEventCb)
+        # Reset the cursor
+        self.connect('leave-notify-event', self.__leaveNotifyEventCb)
+
+    def __leaveNotifyEventCb(self, item, target, event):
+        if event.state & gtk.gdk.BUTTON1_MASK:
+            return True
+        self.__setNormalState()
+
+    def __buttonPressEventCb(self, item, target, event):
+        deselected = False
+        if event.state & gtk.gdk.SHIFT_MASK == 0:
+            self.get_canvas().deselectAreas()
+        else:
+            deselected = self.get_canvas().deselectArea(self)
+        if deselected:
+            return True
+        self.get_canvas().selectArea(self)
+        if self._state == self.MOUSE_STATE_NORMAL:
+            self.get_canvas().get_window().set_cursor(self.__drag_cursor)
+            self.set_data('distance', (event.x - self.props.x, event.y - self.props.y))
+        return True
+
+    def __buttonReleaseEventCb(self, item, target, event):
+        self.set_data('distance', None)
+        self.get_canvas().get_window().set_cursor(None)
+
+    def __motionNotifyEventCb(self, item, target, event):
+        if self.get_data('distance'):
+            distance_x, distance_y = self.get_data('distance')
+            new_x, new_y = event.x - distance_x, event.y - distance_y
+        else:
+            new_x, new_y = self.props.x, self.props.y
+        if event.state & gtk.gdk.BUTTON1_MASK:
+            old_y = int(self.props.y)
+            old_x = int(self.props.x)
+            if self._state & self.MOUSE_STATE_TOP_DRAG:
+                new_x = -1
+                new_y = self.props.y = max(0, int(event.y))
+                new_height = self.props.height + old_y - new_y
+                if new_height < 5:
+                    self.props.y = old_y + self.props.height - 5
+                    self._state &= ~self.MOUSE_STATE_TOP_DRAG
+                    self._state |= self.MOUSE_STATE_BOTTOM_DRAG
+                    self.__updateMouseCursor()
+                else:
+                    self.props.height = new_height
+            if self._state & self.MOUSE_STATE_BOTTOM_DRAG:
+                new_x = -1
+                new_y = -1
+                new_height = min(self.get_canvas().image.props.height, int(event.y)) \
+                             - old_y
+                if new_height < 5:
+                    self.props.height = 5
+                    self._state &= ~self.MOUSE_STATE_BOTTOM_DRAG
+                    self._state |= self.MOUSE_STATE_TOP_DRAG
+                    self.__updateMouseCursor()
+                else:
+                    self.props.height = new_height
+            if self._state & self.MOUSE_STATE_LEFT_DRAG:
+                new_x = max(0, int(event.x))
+                new_y = -1
+                self.props.x = new_x
+                new_width = self.props.width + old_x - new_x
+                if new_width < 5:
+                    self.props.x = old_x + self.props.width - 5
+                    self._state &= ~self.MOUSE_STATE_LEFT_DRAG
+                    self._state |= self.MOUSE_STATE_RIGHT_DRAG
+                    self.__updateMouseCursor()
+                else:
+                    self.props.width = new_width
+            if self._state & self.MOUSE_STATE_RIGHT_DRAG:
+                new_x = -1
+                new_y = -1
+                new_width = min(self.get_canvas().image.props.width, int(event.x)) \
+                            - old_x
+                if new_width < 5:
+                    self.props.width = 5
+                    self._state &= ~self.MOUSE_STATE_RIGHT_DRAG
+                    self._state |= self.MOUSE_STATE_LEFT_DRAG
+                    self.__updateMouseCursor()
+                else:
+                    self.props.width = new_width
+            if self._state == self.MOUSE_STATE_NORMAL:
+                self.props.x = new_x
+                self.props.y = new_y
+                self.__sanitizeBounds(new_x, new_y)
+            return False
+
+        self.__setMouseStateFromEvent(event)
+        return True
+
+    def __sanitizeBounds(self, new_x, new_y):
+        if new_x != -1 and new_x <= self.get_canvas().image.props.x:
+            self.props.x = self.get_canvas().image.props.x
+        if new_x != -1 and new_x + self.props.width >= self.get_canvas().image.props.width:
+            self.props.x = self.get_canvas().image.props.width - self.props.width
+        if new_y != -1 and new_y <= self.get_canvas().image.props.y:
+            self.props.y = self.get_canvas().image.props.y
+        if new_y != -1 and new_y + self.props.height >= self.get_canvas().image.props.height:
+            self.props.y = self.get_canvas().image.props.height - self.props.height
+
+    def __setMouseStateFromEvent(self, event):
+        cursor_max_distance = self.__getCursorMaxDistance()
+        if abs(event.y - self.props.y) < cursor_max_distance:
+            self.__setMouseState(self.MOUSE_STATE_TOP_DRAG, self.__top_side_cursor)
+            if abs(event.x - self.props.x) < cursor_max_distance:
+                self.__setMouseState(self.MOUSE_STATE_LEFT_DRAG | self.MOUSE_STATE_TOP_DRAG,
+                                     self.__top_left_cursor)
+
+            elif abs(event.x - (self.props.x + self.props.width)) < cursor_max_distance:
+                self.__setMouseState(self.MOUSE_STATE_RIGHT_DRAG | self.MOUSE_STATE_TOP_DRAG,
+                                     self.__top_right_cursor)
+
+        elif abs(event.y - (self.props.y + self.props.height)) < cursor_max_distance:
+            self.__setMouseState(self.MOUSE_STATE_BOTTOM_DRAG, self.__bottom_side_cursor)
+            if abs(event.x - (self.props.x + self.props.width)) < cursor_max_distance:
+                self.__setMouseState(self.MOUSE_STATE_RIGHT_DRAG | self.MOUSE_STATE_BOTTOM_DRAG,
+                                     self.__bottom_right_cursor)
+
+            elif abs(event.x - self.props.x) < cursor_max_distance:
+                self.__setMouseState(self.MOUSE_STATE_LEFT_DRAG | self.MOUSE_STATE_BOTTOM_DRAG,
+                                     self.__bottom_left_cursor)
+
+        elif abs(event.x - self.props.x) < cursor_max_distance:
+            self.__setMouseState(self.MOUSE_STATE_LEFT_DRAG, self.__left_side_cursor)
+        elif abs(event.x - (self.props.x + self.props.width)) < cursor_max_distance:
+            self.__setMouseState(self.MOUSE_STATE_RIGHT_DRAG, self.__right_side_cursor)
+
+        else:
+            self.__setNormalState()
+
+    def __getCursorMaxDistance(self):
+        return self.CURSOR_CHANGE_MAX_DISTANCE * (1 / self.get_canvas().get_scale())
+
+    def __updateMouseCursor(self):
+        window = self.get_canvas().get_window()
+        if self._state & self.MOUSE_STATE_TOP_DRAG:
+            if self._state & self.MOUSE_STATE_RIGHT_DRAG:
+                window.set_cursor(self.__top_right_cursor)
+                return
+            if self._state & self.MOUSE_STATE_LEFT_DRAG:
+                window.set_cursor(self.__top_left_cursor)
+                return
+            window.set_cursor(self.__top_side_cursor)
+        elif self._state & self.MOUSE_STATE_BOTTOM_DRAG:
+            if self._state & self.MOUSE_STATE_RIGHT_DRAG:
+                window.set_cursor(self.__bottom_right_cursor)
+                return
+            if self._state & self.MOUSE_STATE_LEFT_DRAG:
+                window.set_cursor(self.__bottom_left_cursor)
+                return
+            window.set_cursor(self.__bottom_side_cursor)
+        elif self._state & self.MOUSE_STATE_RIGHT_DRAG:
+            window.set_cursor(self.__right_side_cursor)
+            return
+        elif self._state & self.MOUSE_STATE_LEFT_DRAG:
+            window.set_cursor(self.__left_side_cursor)
+            return
+        else:
+            window.set_cursor(None)
+
+    def __setMouseState(self, mouse_state, cursor):
+        self._state = mouse_state
+        self.get_canvas().get_window().set_cursor(cursor)
+
+    def __setNormalState(self):
+        self.__setMouseState(self.MOUSE_STATE_NORMAL, None)
 
 class PlainFrame(gtk.Frame):
 

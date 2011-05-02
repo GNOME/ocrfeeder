@@ -274,7 +274,9 @@ class Studio:
         file_open_dialog = widgetPresenter.FileDialog('select-folder')
         response = file_open_dialog.run()
         if response == gtk.RESPONSE_OK:
-            for folder in file_open_dialog.get_filenames():
+            filenames = file_open_dialog.get_filenames()
+            file_open_dialog.destroy()
+            for folder in filenames:
                 self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
         file_open_dialog.destroy()
 
