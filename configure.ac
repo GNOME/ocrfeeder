@@ -21,6 +21,7 @@ AX_PYTHON_MODULE([pygtk],[needed])
 AX_PYTHON_MODULE([gtkspell],[needed])
 AX_PYTHON_MODULE([goocanvas],[needed])
 AX_PYTHON_MODULE([enchant],[needed])
+AX_PYTHON_MODULE([sane],[needed])
 
 dnl == i18n ==
 GETTEXT_PACKAGE=ocrfeeder
