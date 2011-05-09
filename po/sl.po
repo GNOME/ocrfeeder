@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-18 09:36+0000\n"
-"PO-Revision-Date: 2011-03-18 14:17+0100\n"
+"POT-Creation-Date: 2011-05-08 20:48+0000\n"
+"PO-Revision-Date: 2011-05-09 11:45+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -137,27 +137,27 @@ msgstr "PDF"
 msgid "Loading PDF"
 msgstr "Nalaganje dokumenta PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:292
+#: ../src/ocrfeeder/studio/studioBuilder.py:294
 msgid "Export pages"
 msgstr "Izvozi strani"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:309
+#: ../src/ocrfeeder/studio/studioBuilder.py:311
 msgid "Are you sure you want to delete the current image?"
 msgstr "Ali ste prepričani, da želite izbrisati trenutno sliko?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:356
+#: ../src/ocrfeeder/studio/studioBuilder.py:358
 msgid "Are you sure you want to clear the project?"
 msgstr "Ali ste prepričani, da želite počistiti projekt?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:413
+#: ../src/ocrfeeder/studio/studioBuilder.py:415
 msgid "The project hasn't been saved."
 msgstr "Projekt je shranjen"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:414
+#: ../src/ocrfeeder/studio/studioBuilder.py:416
 msgid "Do you want to save it before closing?"
 msgstr "Ali jih želite shraniti pred zapiranjem?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:415
+#: ../src/ocrfeeder/studio/studioBuilder.py:417
 msgid "Close anyway"
 msgstr "Vseeno zapri"
 
@@ -453,7 +453,7 @@ msgid "Automatically detect and recognize all pages"
 msgstr "Samodejna zaznava in optično prepoznavanje vseh strani"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:190
-msgid "_Recognize Page"
+msgid "R_ecognize Page"
 msgstr "_Optično prepoznavanje strani"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:191
@@ -461,16 +461,16 @@ msgid "Automatically detect and recognize the current page"
 msgstr "Samodejna zaznava in optično prepoznavanje trenutne strani"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:194
-msgid "Recognize Selected _Areas"
-msgstr "Prepoznavanje izbranega _območja"
+msgid "Recognize _Selected Areas"
+msgstr "Optično prepoznavanje _izbranega območja"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:195
 msgid "Recognize Selected Areas"
 msgstr "Prepoznavanje izbranega območja"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:198
-msgid "Select All _Areas"
-msgstr "Izbira _vseh območij"
+msgid "Select _All Areas"
+msgstr "Izbor _vseh območij"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:199
 msgid "Select all content areas"
@@ -1072,6 +1072,9 @@ msgstr "Opozorilo"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1887
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
+
+#~ msgid "Recognize Selected _Areas"
+#~ msgstr "Prepoznavanje izbranega _območja"
 
 #~ msgid "Zoom"
 #~ msgstr "Približaj"
