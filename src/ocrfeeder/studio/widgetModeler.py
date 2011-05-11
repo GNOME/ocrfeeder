@@ -410,6 +410,13 @@ class ImageReviewer:
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
         self.main_window.setHasContentBoxes(bool(has_boxes))
 
+    def focusCurrentEditorTextArea(self):
+        current_page = self.boxeditor_notebook.get_current_page()
+        if current_page == -1:
+            return
+        box_editor = self.boxeditor_notebook.get_nth_page(current_page)
+        box_editor.text_widget.grab_focus()
+
 class ImageReviewer_Controler:
 
     def __init__(self, main_window, source_images_selector_widget,
@@ -861,10 +868,12 @@ class ImageReviewer_Controler:
     def selectPreviousArea(self, widget):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.selectPreviousArea()
+        current_reviewer.focusCurrentEditorTextArea()
 
     def selectNextArea(self, widget):
         current_reviewer = self.__getCurrentReviewer()
         current_reviewer.selectable_boxes_area.selectNextArea()
+        current_reviewer.focusCurrentEditorTextArea()
 
     def selectAllAreas(self, widget):
         current_reviewer = self.__getCurrentReviewer()
