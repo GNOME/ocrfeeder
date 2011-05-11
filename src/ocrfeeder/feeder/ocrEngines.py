@@ -143,13 +143,20 @@ class OcrEnginesManager:
 
     def makeEnginesFromFolder(self, folder):
         self.ocr_engines = []
+        favorite_engine_exists = False
         for xml_file in self.getXmlFilesInFolder(folder):
             try:
-                self.ocr_engines.append((self.getEngineFromXml(xml_file), xml_file))
+                engine = self.getEngineFromXml(xml_file)
+                self.ocr_engines.append((engine, xml_file))
             except WrongSettingsForEngine, we:
                 lib.debug("Cannot load engine at %s: %s" %( xml_file, str(we)))
+            else:
+                favorite_engine_exists = favorite_engine_exists or \
+                    self.configuration_manager.favorite_engine == engine.name
         if not len(self.ocr_engines):
             lib.debug("Warning: no engines found!")
+        elif not favorite_engine_exists:
+            self.configuration_manager.favorite_engine = self.ocr_engines[0][0].name
 
     def getEngineFromXml(self, xml_file_name):
         document = ET.parse(xml_file_name)

@@ -67,9 +67,9 @@ class Studio:
         self.main_window.setTitle(self.title)
         self.configuration_manager = ConfigurationManager()
         self.ocr_engines_manager = OcrEnginesManager(self.configuration_manager)
+        self.configuration_manager.loadConfiguration()
         self.ocr_engines_manager.makeEnginesFromFolder(self.configuration_manager.user_engines_folder)
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
-        self.configuration_manager.loadConfiguration()
         self.source_images_selector = SourceImagesSelector()
         self.source_images_selector.connect('selection_changed', self.selectionChanged)
         self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_selector)
