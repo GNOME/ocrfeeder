@@ -68,14 +68,13 @@ class SourceImagesSelector(gobject.GObject):
         return self.__renderImage(path, image_name)
 
     def __renderImage(self, path, image_name):
-        path = os.path.abspath(os.path.expanduser(path))
         try:
             pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(path, 150, 100)
         except:
-            return
+            return None, None
         iter = self.list_store.append([path, image_name, pixbuf])
         self.emit('selection_changed', self.isEmpty())
-        return pixbuf, path, iter
+        return pixbuf, iter
 
     def __countEqualPathsStored(self, path):
         iter = self.list_store.get_iter_root()
@@ -449,7 +448,8 @@ class ImageReviewer_Controler:
         if not self.configuration_manager.deskew_images_after_addition and \
            not self.configuration_manager.unpaper_images_after_addition:
             for index in range(0, len(image_path_list)):
-                self.__addImage(image_path_list[index], index == 0)
+                if not self.__addImage(image_path_list[index], index == 0):
+                    debug('Failed to load image "%s"' % image_path_list[index])
             return
         dialog = QueuedEventsProgressDialog(self.main_window.window)
         for index in range(0, item_list_length):
@@ -489,10 +489,14 @@ class ImageReviewer_Controler:
             dialog.cancel()
 
     def __addImage(self, image_path, select_image = True):
+        image_path = os.path.abspath(os.path.expanduser(image_path))
+        if not os.path.isfile(image_path):
+            return None
         selector_widget = self.source_images_selector_widget
-        pixbuf, image, iter = \
-            selector_widget.source_images_selector.addImage(image_path)
-        reviewer = self.__createdImageReviewer(pixbuf, image)
+        pixbuf, iter = selector_widget.source_images_selector.addImage(image_path)
+        if not pixbuf:
+            return none
+        reviewer = self.__createdImageReviewer(pixbuf, image_path)
         if select_image:
             path = \
                 selector_widget.source_images_selector.list_store.get_path(iter)
