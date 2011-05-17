@@ -1,3 +1,43 @@
+Version 0.7.5
+==============
+
+New Features
+-------------
+
+* Now the content boxes can be dragged by
+  their limits to extend their bounds
+
+Bug fixes
+----------
+
+* Add "sane" missing dependency
+* Change some mnemonics in the menu to avoid
+  clashes (fixes gb#645983)
+  (thanks to Łukasz Jernaś)
+* Resets the favorite engine when it does not exist
+* Prevent errors when adding unexisting images
+
+Improvements
+-------------
+
+* Focus box's editor text area automatically (gb#635308)
+* Clarify the help output about the --images option
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cs]
+* Joe Hansen [da]
+* Mario Blättermann [de]
+* Daniel Mustieles [es]
+* Claude Paroz [fr]
+* Gianvito Cavasoli [it]
+* Łukasz Jernaś [pl]
+* Djavan Fagundes [pt_BR]
+* Matej Urbančič [sl]
+* Aron Xu [zh_CN]
+
+
 Version 0.7.4
 ==============
 
