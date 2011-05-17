@@ -117,7 +117,8 @@ class Studio:
         parser.add_option('-i', '--images', dest = 'images',
                           action = 'append', type = 'string',
                           metavar = 'IMAGE1 [IMAGE2, ...]', default = [],
-                          help = 'images to be automatically added on start-up')
+                          help = 'images to be automatically added on start-up. '
+                                 'Use the option before every image path.')
         parser.add_option('-d', '--dir', dest = 'directory',
                           action = 'store', type = 'string',
                           help = 'directory with images to be added'
