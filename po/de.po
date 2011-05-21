@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: OCRfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-18 07:36+0000\n"
-"PO-Revision-Date: 2011-03-31 18:14+0100\n"
+"POT-Creation-Date: 2011-05-08 18:38+0000\n"
+"PO-Revision-Date: 2011-05-21 18:45+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -136,27 +136,27 @@ msgstr "PDF"
 msgid "Loading PDF"
 msgstr "PDF wird geladen"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:292
+#: ../src/ocrfeeder/studio/studioBuilder.py:294
 msgid "Export pages"
 msgstr "Seiten exportieren"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:309
+#: ../src/ocrfeeder/studio/studioBuilder.py:311
 msgid "Are you sure you want to delete the current image?"
 msgstr "Sind Sie sicher, das aktuelle Bild löschen zu wollen?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:356
+#: ../src/ocrfeeder/studio/studioBuilder.py:358
 msgid "Are you sure you want to clear the project?"
 msgstr "Sind Sie sicher, das Projekt löschen zu wollen?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:413
+#: ../src/ocrfeeder/studio/studioBuilder.py:415
 msgid "The project hasn't been saved."
 msgstr "Das Projekt wurde nicht gespeichert."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:414
+#: ../src/ocrfeeder/studio/studioBuilder.py:416
 msgid "Do you want to save it before closing?"
 msgstr "Möchten Sie es vor dem Schließen speichern?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:415
+#: ../src/ocrfeeder/studio/studioBuilder.py:417
 msgid "Close anyway"
 msgstr "Dennoch schließen"
 
@@ -455,7 +455,7 @@ msgid "Automatically detect and recognize all pages"
 msgstr "Automatische Detektion und Erkennung aller Seiten"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:190
-msgid "_Recognize Page"
+msgid "R_ecognize Page"
 msgstr "Seite e_rkennen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:191
@@ -463,15 +463,15 @@ msgid "Automatically detect and recognize the current page"
 msgstr "Automatische Detektion und Erkennung der aktuellen Seite"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:194
-msgid "Recognize Selected _Areas"
-msgstr "_Ausgewählte Bereiche berücksichtigen"
+msgid "Recognize _Selected Areas"
+msgstr "Au_sgewählte Bereiche erkennen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:195
 msgid "Recognize Selected Areas"
 msgstr "Ausgewählte Bereiche berücksichtigen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:198
-msgid "Select All _Areas"
+msgid "Select _All Areas"
 msgstr "_Alle Bereiche auswählen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:199
@@ -1092,3 +1092,6 @@ msgid "translator-credits"
 msgstr ""
 "Renard Voß <renardvoss@gmx.de>\n"
 "Mario Blättermann <mariobl@freenet.de>"
+
+#~ msgid "Recognize Selected _Areas"
+#~ msgstr "_Ausgewählte Bereiche berücksichtigen"
