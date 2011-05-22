@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2011-05-08 18:38+0000\n"
-"PO-Revision-Date: 2011-05-21 18:45+0100\n"
+"PO-Revision-Date: 2011-05-22 15:18+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@freenet.de>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -407,7 +407,7 @@ msgstr "_Werkzeuge"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:177
 msgid "_OCR Engines"
-msgstr "_OCR-Anwendung"
+msgstr "_OCR-Anwendungen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:177
 msgid "Manage OCR engines"
@@ -873,7 +873,7 @@ msgstr "OCR-Anwendungen"
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr ""
-"Die Anwenung, die bei einer automatischen Erkennung verwendet werden soll."
+"Die Anwendung, die bei einer automatischen Erkennung verwendet werden soll."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1406
 msgid "Favorite _engine:"
@@ -950,7 +950,7 @@ msgstr "Inhaltsbereiche"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1523
 msgid "A_djust content areas' bounds"
-msgstr "Genzen des Inhaltsbereichs anpassen"
+msgstr "Grenzen des Inhaltsbereichs anpassen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1525
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
