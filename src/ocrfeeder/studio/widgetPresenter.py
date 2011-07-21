@@ -84,9 +84,11 @@ class MainWindow:
             <menuitem action="OCRFeederReconDocument"/>
             <menuitem action="OCRFeederReconPage"/>
             <menuitem action="RecognizeAreas"/>
+            <separator/>
             <menuitem action="SelectAllAreas"/>
             <menuitem action="SelectPreviousArea"/>
             <menuitem action="SelectNextArea"/>
+            <separator/>
             <menuitem action="DeleteSelectedAreas"/>
         </menu>
         <menu action="Tools">
