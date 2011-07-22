@@ -511,7 +511,12 @@ class LayoutAnalysis(object):
             data_box.setText(text)
             data_box.setType(clip_type)
 
-        text_size = self.getTextSizeFromImage(clip, page_resolution)
+        if clip.mode == 'L':
+            grayscale_clip = clip
+        else:
+            grayscale_clip = clip.convert('L')
+        text_size = self.getTextSizeFromImage(grayscale_clip, page_resolution)
+
         if text_size:
             data_box.setFontSize(text_size)
 

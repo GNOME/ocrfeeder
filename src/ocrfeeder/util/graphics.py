@@ -93,22 +93,23 @@ def getTextSizeFromImage(image):
     background_color = 255
     if colors:
         colors.sort()
-        background_color = (list(colors[-1][1])).pop()
-    text_sizes = [0]
-    for i in xrange(getTextBeginHeight(image), height):
-        current_line = image.crop((0, i - 1, width, i))
-        current_line.convert('L')
+        background_color = colors[-1][1]
+    text_sizes = []
+    for i in xrange(1, height):
         blank_line = True
-        for i in range(0, current_line.size[0], 3):
-            color = current_line.getpixel((i, 0))
-            if colorsContrast(list(color).pop(), background_color):
+        for j in range(0, width, 3):
+            color = image.getpixel((j, i - 1))
+            if colorsContrast(color, background_color):
                 blank_line = False
                 break
         if blank_line:
-            if text_sizes[-1]:
+            if text_sizes and text_sizes[-1]:
                 text_sizes.append(0)
         else:
-            text_sizes[-1] += 1
+            if text_sizes and text_sizes[-1]:
+                text_sizes[-1] += 1
+            else:
+                text_sizes.append(1)
     text_sizes.sort()
     text_sizes = [i for i in text_sizes if i != 0]
     text_size = 0
@@ -127,13 +128,9 @@ def getTextBeginHeight(image):
     for i in range(1, height, 1):
         current_line = image.crop((0, i - 1, width, i))
         colors = current_line.getcolors()
-        foreground_color = [0, 0, 0]
-        if colors:
-            foreground_color = [0 for value in list((colors[0][1])[:-1])]
-        if colors:
-            for color in colors:
-                if list(color[1])[:-1] == foreground_color:
-                    return i
+        for color in colors:
+            if colorsContrast(color, 0) == 0:
+                return i
     return -1
 
 def getHorizontalAngleForText(image):
