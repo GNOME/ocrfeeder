@@ -335,7 +335,7 @@ class PlaintextGenerator(DocumentGenerator):
     def __init__(self, name):
         self.name = name
         self.text = ''
-        
+
     def addText(self, newText):
         self.text += newText
 
