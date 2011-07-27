@@ -29,6 +29,9 @@ from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN
     ALIGN_FILL
 from ocrfeeder.util.graphics import getImagePrintSize
 from ocrfeeder.util.lib import debug
+from reportlab.pdfgen import canvas
+from reportlab.lib import units
+from reportlab.lib.utils import ImageReader
 import math
 import os.path
 import shutil
@@ -349,3 +352,47 @@ class PlaintextGenerator(DocumentGenerator):
                 f.close() # Close the file
         except IOError:
             pass
+
+class PdfGenerator(DocumentGenerator):
+
+    def __init__(self, name):
+        self.name = name
+        self.canvas = canvas.Canvas(self.name)
+        self.page_data = None
+
+    def addText(self, box):
+        x, y, width, height = box.getBoundsPrintSize(self.page_data.resolution)
+        text = self.canvas.beginText()
+        text.setTextOrigin(x * units.inch,
+                           (self.page_data.height - y) * units.inch)
+        text.setCharSpace(box.text_data.letter_space)
+        text.setLeading(box.text_data.line_space + box.text_data.size)
+        text.moveCursor(0, box.text_data.size)
+        try:
+            self.setFont(box.text_data.face,
+                         box.text_data.size)
+        except:
+            debug('Error setting font %s' % box.text_data.face)
+            self.canvas.setFontSize(box.text_data.size)
+        for line in box.text.split('\n'):
+            text.textLine(line)
+        self.canvas.drawText(text)
+
+    def addImage(self, box):
+        x, y, width, height = box.getBoundsPrintSize(self.page_data.resolution)
+        self.canvas.drawInlineImage(box.image,
+                                    x * units.inch,
+                                    (self.page_data.height - (y + height)) * \
+                                        units.inch,
+                                    width * units.inch,
+                                    height * units.inch)
+
+    def addPage(self, page_data):
+        self.canvas.setPageSize((page_data.width * units.inch,
+                                 page_data.height * units.inch))
+        self.page_data = page_data
+        self.addBoxes(page_data.data_boxes)
+        self.canvas.showPage()
+
+    def save(self):
+        self.canvas.save()

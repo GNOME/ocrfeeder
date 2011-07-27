@@ -60,7 +60,8 @@ class Studio:
 
         self.EXPORT_FORMATS = {0: (self.exportToHtml, _('HTML')),
                                1: (self.exportToOdt, _('ODT')),
-                               2: (self.exportToPlaintext, _('Plain Text'))}
+                               2: (self.exportToPdf, _('PDF')),
+                               3: (self.exportToPlaintext, _('Plain Text'))}
 
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()
@@ -289,6 +290,9 @@ class Studio:
 
     def exportToPlaintext(self, widget = None):
         self.source_images_controler.exportPagesToPlaintext(self.source_images_selector.getPixbufsSorted())
+
+    def exportToPdf(self, widget = None):
+        self.source_images_controler.exportPagesToPdf(self.source_images_selector.getPixbufsSorted())
 
     def exportDialog(self, widget):
         format_names = [format[1] for format in self.EXPORT_FORMATS.values()]
