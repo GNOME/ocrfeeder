@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: OCRFeeder\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-18 07:36+0000\n"
+"POT-Creation-Date: 2011-05-08 18:38+0000\n"
 "PO-Revision-Date: 2011-04-21 17:01+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -136,27 +136,27 @@ msgstr "PDF"
 msgid "Loading PDF"
 msgstr "Chargement du PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:292
+#: ../src/ocrfeeder/studio/studioBuilder.py:294
 msgid "Export pages"
 msgstr "Exporter les pages"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:309
+#: ../src/ocrfeeder/studio/studioBuilder.py:311
 msgid "Are you sure you want to delete the current image?"
 msgstr "Voulez-vous vraiment supprimer l'image actuelle ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:356
+#: ../src/ocrfeeder/studio/studioBuilder.py:358
 msgid "Are you sure you want to clear the project?"
 msgstr "Voulez-vous vraiment effacer le projet ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:413
+#: ../src/ocrfeeder/studio/studioBuilder.py:415
 msgid "The project hasn't been saved."
 msgstr "Ce projet n'a pas été enregistré."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:414
+#: ../src/ocrfeeder/studio/studioBuilder.py:416
 msgid "Do you want to save it before closing?"
 msgstr "Voulez-vous l'enregistrer avant de fermer l'application ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:415
+#: ../src/ocrfeeder/studio/studioBuilder.py:417
 msgid "Close anyway"
 msgstr "Fermer sans enregistrer"
 
@@ -229,7 +229,8 @@ msgstr "Reconnaissance du document"
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
 msgstr ""
-"Reconnaissance de la page %(page_number)s/%(total_pages)s. Veuillez patienter…"
+"Reconnaissance de la page %(page_number)s/%(total_pages)s. Veuillez "
+"patienter…"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:666
 msgid "Export to HTML"
@@ -455,7 +456,7 @@ msgid "Automatically detect and recognize all pages"
 msgstr "Détecte et reconnaît automatiquement toutes les pages"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:190
-msgid "_Recognize Page"
+msgid "R_ecognize Page"
 msgstr "_Reconnaître la page"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:191
@@ -463,15 +464,15 @@ msgid "Automatically detect and recognize the current page"
 msgstr "Détecte et reconnaît automatiquement la page actuelle"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:194
-msgid "Recognize Selected _Areas"
-msgstr "Reconnaître des _zones sélectionnées"
+msgid "Recognize _Selected Areas"
+msgstr "Reconnaître des zones _sélectionnées"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:195
 msgid "Recognize Selected Areas"
 msgstr "Reconnaît des zones sélectionnées"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:198
-msgid "Select All _Areas"
+msgid "Select _All Areas"
 msgstr "Sélectionner toutes les _zones"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:199
@@ -1099,3 +1100,4 @@ msgstr ""
 "Philippe Normand <phil@base-art.net>\n"
 "Bruno Brouard <annoa.b@gmail.com>\n"
 "Claude Paroz <claude@2xlibre.net>"
+
