@@ -355,14 +355,19 @@ class PlaintextGenerator(DocumentGenerator):
 
 class PdfGenerator(DocumentGenerator):
 
-    def __init__(self, name):
+    def __init__(self, name, from_scratch = False):
         self.name = name
+        self._from_scratch = from_scratch
         self.canvas = canvas.Canvas(self.name)
         self.page_data = None
 
     def addText(self, box):
         x, y, width, height = box.getBoundsPrintSize(self.page_data.resolution)
         text = self.canvas.beginText()
+        # Make the text transparent if we are not
+        # creating a PDF from scratch
+        if not self._from_scratch:
+            text.setTextRenderMode(3)
         text.setTextOrigin(x * units.inch,
                            (self.page_data.height - y) * units.inch)
         text.setCharSpace(box.text_data.letter_space)
@@ -374,11 +379,14 @@ class PdfGenerator(DocumentGenerator):
         except:
             debug('Error setting font %s' % box.text_data.face)
             self.canvas.setFontSize(box.text_data.size)
-        for line in box.text.split('\n'):
-            text.textLine(line)
+        text.textLines(box.text)
         self.canvas.drawText(text)
 
     def addImage(self, box):
+        # Do nothing as the images will be already
+        # seen in the PDF
+        if not self._from_scratch:
+            return
         x, y, width, height = box.getBoundsPrintSize(self.page_data.resolution)
         self.canvas.drawInlineImage(box.image,
                                     x * units.inch,
@@ -391,6 +399,13 @@ class PdfGenerator(DocumentGenerator):
         self.canvas.setPageSize((page_data.width * units.inch,
                                  page_data.height * units.inch))
         self.page_data = page_data
+        # Paste the source image that users will read
+        # in the PDF
+        if not self._from_scratch:
+            image = ImageReader(page_data.image_path)
+            self.canvas.drawImage(image, 0, 0,
+                                  page_data.width * units.inch,
+                                  page_data.height * units.inch)
         self.addBoxes(page_data.data_boxes)
         self.canvas.showPage()
 

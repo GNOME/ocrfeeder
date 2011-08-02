@@ -292,7 +292,37 @@ class Studio:
         self.source_images_controler.exportPagesToPlaintext(self.source_images_selector.getPixbufsSorted())
 
     def exportToPdf(self, widget = None):
-        self.source_images_controler.exportPagesToPdf(self.source_images_selector.getPixbufsSorted())
+        ask_pdf_type_dialog = gtk.MessageDialog(self.main_window.window,
+                      gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
+                      buttons = gtk.BUTTONS_OK_CANCEL)
+        ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
+                                         'wish?'))
+        pdf_from_scratch_radio = gtk.RadioButton(label= _('From scratch'))
+        pdf_from_scratch_radio.set_tooltip_text(
+                                    _('Creates a new PDF from scratch.'))
+        searchable_pdf_radio = gtk.RadioButton(pdf_from_scratch_radio,
+                                               _('Searchable PDF'))
+        searchable_pdf_radio.set_tooltip_text(_('Creates a PDF based on '
+                                                'the images but with searchable '
+                                                'text.'))
+        vbox = gtk.VBox(True)
+        vbox.add(pdf_from_scratch_radio)
+        vbox.add(searchable_pdf_radio)
+        content_area = ask_pdf_type_dialog.get_content_area()
+        content_area.add(vbox)
+        content_area.show_all()
+
+        response = ask_pdf_type_dialog.run()
+        ask_pdf_type_dialog.destroy()
+        if response == gtk.RESPONSE_CANCEL:
+            return
+
+        pdf_from_scratch = True
+        if searchable_pdf_radio.get_active():
+            pdf_from_scratch = False
+        self.source_images_controler.exportPagesToPdf(
+             self.source_images_selector.getPixbufsSorted(),
+             pdf_from_scratch)
 
     def exportDialog(self, widget):
         format_names = [format[1] for format in self.EXPORT_FORMATS.values()]

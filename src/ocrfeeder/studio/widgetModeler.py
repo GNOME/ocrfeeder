@@ -709,14 +709,14 @@ class ImageReviewer_Controler:
                 document_generator.addText(image_reviewer.getAllText())
             document_generator.save()
 
-    def exportPagesToPdf(self, pixbufs_sorted = []):
+    def exportPagesToPdf(self, pixbufs_sorted = [], pdf_from_scratch = True):
         image_reviewers = self.__askForNumberOfPages(_('Export to PDF'),
                                                      pixbufs_sorted)
         if not image_reviewers:
             return
         file_name = self.__askForFileName()
         if file_name:
-            document_generator = PdfGenerator(file_name)
+            document_generator = PdfGenerator(file_name, pdf_from_scratch)
             for image_reviewer in image_reviewers:
                 document_generator.addPage(image_reviewer.getPageData())
             document_generator.save()
