@@ -104,7 +104,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             self.get_root_item().add_child(line, -1)
 
     def __createFrame(self):
-        line = Box(fill_color = self.IMAGE_FRAME_COLOR, line_width = 0)
+        line = goocanvas.Rect(fill_color = self.IMAGE_FRAME_COLOR, line_width = 0)
         line.props.x = self.image.props.x + self.image.props.width
         line.props.y = self.image.props.y
         line.props.width = self.IMAGE_FRAME_THICKNESS
