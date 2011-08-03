@@ -58,8 +58,8 @@ class Studio:
                                        languages = languages, fallback = True)
         _ = language.gettext
 
-        self.EXPORT_FORMATS = {0: (self.exportToHtml, _('HTML')),
-                               1: (self.exportToOdt, _('ODT')),
+        self.EXPORT_FORMATS = {0: (self.exportToOdt, _('ODT')),
+                               1: (self.exportToHtml, _('HTML')),
                                2: (self.exportToPdf, _('PDF')),
                                3: (self.exportToPlaintext, _('Plain Text'))}
 
