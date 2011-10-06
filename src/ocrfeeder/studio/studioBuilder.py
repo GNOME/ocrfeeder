@@ -422,8 +422,6 @@ class Studio:
         self.main_window.setHasImages(not is_empty)
 
     def about(self, widget = None):
-        from gnome import url_show
-        gtk.about_dialog_set_url_hook(lambda x,y,z: url_show(y), "")
         about_dialog = widgetPresenter.CustomAboutDialog()
         if about_dialog.run():
             about_dialog.destroy()

@@ -25,7 +25,6 @@ import tempfile
 import gtk
 import math
 from constants import *
-from gnome import url_show
 import sane
 import tempfile
 
@@ -91,9 +90,6 @@ def getNonExistingFileName(file_name):
     while os.path.exists(name + str(i) + ext) and i < 500:
         i += 1
     return name + str(i) + ext
-
-def openUrl(widget, url, data):
-    url_show(url)
 
 def getStandardDeviation(list_of_values):
     if not list_of_values:
