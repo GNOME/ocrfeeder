@@ -18,7 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-import tempfile
 from ocrfeeder.util.lib import debug
 
 import gettext
@@ -201,26 +200,6 @@ class ImageProcessor:
             i -= margins_min_width
 
         return margins
-
-class Slicer:
-
-    def __init__(self, original_image, temp_dir = '/tmp'):
-        self.original_image = original_image
-        self.temp_dir = temp_dir
-
-    def slice(self, bounding_box):
-        return self.original_image.crop(bounding_box)
-
-    def sliceFromPointsList(self, points_list):
-        if len(points_list) < 3:
-            raise InsuficientPointsForPolygon
-        bounding_box = graphics.getContainerRectangle(points_list)
-        return self.original_image.crop(bounding_box)
-
-    def sliceFromBlock(self, block, window_size):
-        cropped_image = self.slice(block.translateToUnits(window_size))
-        image_file = tempfile.mkstemp(dir = self.temp_dir)[1]
-        cropped_image.save(image_file, format = 'PNG')
 
 class ContentAnalyser:
 
