@@ -20,8 +20,8 @@
 
 from customWidgets import PlainFrame, PlainExpander
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
-from configuration import ConfigurationManager
 from ocrfeeder.util import lib, PAPER_SIZES
+from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncWorker
 from ocrfeeder.util.constants import *
 from ocrfeeder.util.graphics import convertPixbufToImage

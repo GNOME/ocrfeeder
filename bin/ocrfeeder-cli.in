@@ -32,8 +32,8 @@ if os.path.exists(installed_src):
 import Image
 from ocrfeeder.util.constants import OCRFEEDER_STUDIO_VERSION
 from ocrfeeder.util.graphics import getImageResolution
+from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.feeder.ocrEngines import OcrEnginesManager
-from ocrfeeder.studio.configuration import ConfigurationManager
 from ocrfeeder.studio.dataHolder import PageData
 from ocrfeeder.feeder.layoutAnalysis import LayoutAnalysis
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator

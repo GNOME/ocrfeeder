@@ -24,10 +24,11 @@ from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, Pla
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
 from pango import FontDescription, SCALE
-from configuration import ProjectSaver, ProjectLoader, ConfigurationManager
+from project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
 from ocrfeeder.util.lib import debug, getNonExistingFileName, unpaperImage
+from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util import constants
 from ocrfeeder.util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
@@ -728,7 +729,7 @@ class ImageReviewer_Controler:
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
         pages_data = self.getPagesData(self.getPixbufsSorted())
-        project_saver = ProjectSaver(pages_data, self.configuration_manager.temporary_dir)
+        project_saver = ProjectSaver(pages_data)
         project_saver.serialize(project_name)
 
     def openProject(self, clear_current = True):
