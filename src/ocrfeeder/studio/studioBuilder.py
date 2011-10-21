@@ -168,7 +168,8 @@ class Studio:
                     paths.append(path)
             for path in paths:
                 if os.path.splitext(path)[1] == '.pdf':
-                    folder = lib.convertPdfToImages(path, self.configuration_manager.temporary_dir)
+                    folder = lib.convertPdfToImages(path,
+                                       self.configuration_manager.TEMPORARY_FOLDER)
                     self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
                 else:
                     try:
@@ -261,7 +262,7 @@ class Studio:
                                                  self.main_window.window)
             item = AsyncItem(lib.convertPdfToImages,
                              (file_name,
-                              self.configuration_manager.temporary_dir),
+                              self.configuration_manager.TEMPORARY_FOLDER),
                              self.__loadPdfFinishedCb,
                              (dialog,))
             info = (_('Loading PDF'), _(u'Please wait…'))
@@ -464,4 +465,5 @@ class Studio:
 
     def __main_quit(self):
         self.configuration_manager.configurationToXml()
+        self.configuration_manager.removeTemporaryFolder()
         gtk.main_quit()

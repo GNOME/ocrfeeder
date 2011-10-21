@@ -35,7 +35,7 @@ class ProjectSaver:
         self.pages_data = pages_data
         self.document = minidom.Document()
         self.images = {}
-        self.temp_dir = ConfigurationManager().temporary_dir
+        self.temp_dir = ConfigurationManager.TEMPORARY_FOLDER
 
     def __handleImageEmbedding(self, page_data):
         base_name = os.path.basename(page_data.image_path)
@@ -113,7 +113,7 @@ class ProjectSaver:
 class ProjectLoader:
 
     def __init__(self, project_file):
-        self.temp_dir = ConfigurationManager().temporary_dir
+        self.temp_dir = ConfigurationManager.TEMPORARY_FOLDER
         if not (os.path.isfile(project_file) and project_file.endswith('.ocrf')):
             #raise
             pass

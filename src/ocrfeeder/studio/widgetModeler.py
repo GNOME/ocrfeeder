@@ -506,7 +506,7 @@ class ImageReviewer_Controler:
 
     def __deskewImage(self, image_path, target_image_path = None):
         if not target_image_path:
-            tmp_dir = self.configuration_manager.temporary_dir
+            tmp_dir = self.configuration_manager.TEMPORARY_FOLDER
             target_image_path = os.path.join(tmp_dir,
                                              os.path.basename(image_path))
             if os.path.exists(target_image_path):
@@ -841,7 +841,9 @@ class ImageReviewer_Controler:
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
-        unpaper_dialog = UnpaperDialog(current_reviewer, self.configuration_manager.unpaper, self.configuration_manager.temporary_dir)
+        unpaper_dialog = UnpaperDialog(current_reviewer,
+                                    self.configuration_manager.unpaper,
+                                    self.configuration_manager.TEMPORARY_FOLDER)
         if unpaper_dialog.run() == gtk.RESPONSE_ACCEPT:
             unpapered_image = unpaper_dialog.getUnpaperedImage()
             current_reviewer.updateBackgroundImage(unpapered_image)

@@ -50,7 +50,8 @@ class Engine:
         self.__color_information = None
 
     def setImage(self, image):
-        image_file = tempfile.mkstemp(suffix = '.' + self.image_format.lower())[1]
+        image_file = tempfile.mkstemp(dir = self.temporary_folder,
+                                      suffix = '.' + self.image_format.lower())[1]
         image = image.convert('L')
         try:
             image.save(image_file, format = self.image_format)
@@ -166,13 +167,18 @@ class OcrEnginesManager:
             arg_name = child.tag
             arg_value = child.text
             arguments[arg_name] = arg_value
-        return Engine(**arguments)
+        engine = Engine(**arguments)
+        engine.temporary_folder = self.configuration_manager.TEMPORARY_FOLDER
+        return engine
 
     def getXmlFilesInFolder(self, folder):
         return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
 
     def newEngine(self, name, engine_path, arguments, image_format, failure_string):
-        engine = Engine(name = name, engine_path = engine_path, arguments = arguments, image_format = image_format, failure_string = failure_string)
+        engine = Engine(name = name, engine_path = engine_path,
+                        arguments = arguments, image_format = image_format,
+                        temporary_folder = self.configuration_manager.TEMPORARY_FOLDER,
+                        failure_string = failure_string)
         return engine
 
     def delete(self, index):

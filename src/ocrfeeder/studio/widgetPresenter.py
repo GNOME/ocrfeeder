@@ -1282,7 +1282,7 @@ class PreferencesDialog(gtk.Dialog):
         return (red >> 8, green >> 8, blue >> 8, alpha >> 8)
 
     def saveToManager(self):
-        self.configuration_manager.temporary_dir =self.__getTemporaryDir()
+        self.configuration_manager.TEMPORARY_FOLDER = self.__getTemporaryDir()
         self.configuration_manager.setWindowSize(self.__getWindowSize())
         self.configuration_manager.setTextFill(self.__getColor(self.text_fill_color))
         self.configuration_manager.setBoxesStroke(
@@ -1318,7 +1318,7 @@ class PreferencesDialog(gtk.Dialog):
     def __makeTemporaryFolder(self):
         temporary_dir_frame = PlainFrame(_('Temporary folder'))
         self.temporary_folder = gtk.Entry()
-        self.temporary_folder.set_text(self.configuration_manager.temporary_dir)
+        self.temporary_folder.set_text(self.configuration_manager.TEMPORARY_FOLDER)
         self.temporary_folder.set_width_chars(30)
         self.temporary_folder_button = gtk.Button(_('Choose'), gtk.STOCK_OPEN)
         temporary_folder_hbox = gtk.HBox()

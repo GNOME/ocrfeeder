@@ -114,3 +114,5 @@ if 'html' in export_format:
 for page in pages:
     document_generator.addPage(page)
 document_generator.save()
+
+configuration_manager.removeTemporaryFolder()

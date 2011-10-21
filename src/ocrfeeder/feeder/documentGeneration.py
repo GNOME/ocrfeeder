@@ -27,6 +27,7 @@ from pango import WEIGHT_BOLD, WEIGHT_NORMAL, STYLE_ITALIC, STYLE_NORMAL, \
     STYLE_OBLIQUE
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
     ALIGN_FILL
+from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.graphics import getImagePrintSize
 from ocrfeeder.util.lib import debug
 from reportlab.pdfgen import canvas
@@ -104,7 +105,8 @@ class HtmlGenerator(DocumentGenerator):
 
     def addImage(self, data_box):
         format = 'PNG'
-        image_file = tempfile.mkstemp(suffix = '.' + format.lower())[1]
+        image_file = tempfile.mkstemp(dir = ConfigurationManager.TEMPORARY_FOLDER,
+                                      suffix = '.' + format.lower())[1]
         data_box.image.save(image_file, format = format)
         self.images.append(image_file)
         new_div = '''
@@ -249,7 +251,8 @@ class OdtGenerator(DocumentGenerator):
 
     def addImage(self, data_box):
         format = 'PNG'
-        image_file = tempfile.mkstemp(suffix = '.' + format)[1]
+        image_file = tempfile.mkstemp(dir = ConfigurationManager.TEMPORARY_FOLDER,
+                                      suffix = '.' + format)[1]
         data_box.image.save(image_file, format = format)
         x, y, width, height = data_box.getBoundsPrintSize(self.current_page_resolution)
         photo_frame = Frame(stylename=self.photo_style, x = '%sin' % x, y = '%sin' % y, width = '%sin' % width, height = '%sin' % height, anchortype='paragraph')
