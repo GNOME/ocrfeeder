@@ -523,6 +523,8 @@ class LayoutAnalysis(object):
         return data_box
 
     def getTextSizeFromImage(self, image, page_resolution):
+        if image.mode != 'L':
+            image = image.convert('L')
         width, height = image.size
         # We get the right half of the image only because this
         # way we avoid measuring eventual "initial chars" which
