@@ -41,12 +41,7 @@ def getIconOrLabel(icon_name, label_text, icon_size = gtk.ICON_SIZE_SMALL_TOOLBA
     return icon, label
 
 def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
-    dir_name = tempfile.mkstemp(dir = temp_dir)[1]
-    try:
-        os.remove(dir_name)
-        os.mkdir(dir_name)
-    except:
-        pass
+    dir_name = tempfile.mkdtemp(dir = temp_dir)
     debug('Converting PDF: ', pdf_file, ' to image')
     resolution = 300
     file_name = os.path.splitext(os.path.basename(pdf_file))[0]
