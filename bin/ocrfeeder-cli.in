@@ -29,7 +29,7 @@ installed_src = os.path.join('@prefix@', 'lib', 'python@PYTHON_VERSION@',
 if os.path.exists(installed_src):
     sys.path.insert(1, installed_src)
 
-import Image
+from PIL import Image
 from ocrfeeder.util.constants import OCRFEEDER_STUDIO_VERSION
 from ocrfeeder.util.graphics import getImageResolution
 from ocrfeeder.util.configuration import ConfigurationManager
