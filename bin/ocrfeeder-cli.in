@@ -21,7 +21,7 @@
 
 import sys
 import os
-local_src = os.path.dirname(os.path.abspath(__file__)) + '../src'
+local_src = os.path.dirname(os.path.abspath(__file__)) + '/../src'
 if os.path.exists(local_src):
     sys.path = [local_src] + sys.path
 installed_src = os.path.join('@prefix@', 'lib', 'python@PYTHON_VERSION@',
