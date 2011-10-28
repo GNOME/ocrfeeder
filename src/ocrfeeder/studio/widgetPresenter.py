@@ -1250,8 +1250,7 @@ class PreferencesDialog(gtk.Dialog):
         self.configuration_manager = configuration_manager
         self.ocr_engines = ocr_engines
         self.notebook = gtk.Notebook()
-        self.__makeGeneralPreferences(self.__makeTemporaryFolder(),
-                                      self.__makeColors())
+        self.__makeGeneralPreferences(self.__makeColors())
         self.__makeToolsPreferences(self.__makeUnpaper(),
                                     self.__makeEngines(),
                                     self.__makePreProcessorPreferences())
@@ -1259,18 +1258,11 @@ class PreferencesDialog(gtk.Dialog):
                                       self.__makeWindowSize(),
                                       self.__makeColumnDetectionPreferences(),
                                       self.__makeBoundsAdjustmentsPreferences())
-        self.temporary_folder_button.connect('clicked', self.__folderSelectDialog)
         self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
         self.vbox.add(self.notebook)
         self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
-
-    def __getTemporaryDir(self):
-        temp_dir = self.temporary_folder.get_text()
-        if not os.path.isdir(temp_dir):
-            return self.configuration_manager.getDefault('temporary_dir')
-        return temp_dir
 
     def __getWindowSize(self):
         if self.custom_window_size.get_active():
@@ -1282,7 +1274,6 @@ class PreferencesDialog(gtk.Dialog):
         return (red >> 8, green >> 8, blue >> 8, alpha >> 8)
 
     def saveToManager(self):
-        self.configuration_manager.TEMPORARY_FOLDER = self.__getTemporaryDir()
         self.configuration_manager.setWindowSize(self.__getWindowSize())
         self.configuration_manager.setTextFill(self.__getColor(self.text_fill_color))
         self.configuration_manager.setBoxesStroke(
@@ -1314,24 +1305,6 @@ class PreferencesDialog(gtk.Dialog):
         label = gtk.Label(_('_General'))
         label.set_use_underline(True)
         self.notebook.append_page(general_box, label)
-
-    def __makeTemporaryFolder(self):
-        temporary_dir_frame = PlainFrame(_('Temporary folder'))
-        self.temporary_folder = gtk.Entry()
-        self.temporary_folder.set_text(self.configuration_manager.TEMPORARY_FOLDER)
-        self.temporary_folder.set_width_chars(30)
-        self.temporary_folder_button = gtk.Button(_('Choose'), gtk.STOCK_OPEN)
-        temporary_folder_hbox = gtk.HBox()
-        temporary_folder_hbox.pack_start(self.temporary_folder, False)
-        temporary_folder_hbox.pack_start(self.temporary_folder_button, False)
-        temporary_dir_frame.add(temporary_folder_hbox)
-        return temporary_dir_frame
-
-    def __folderSelectDialog(self, widget):
-        folder_select_dialog = FileDialog('select-folder')
-        if folder_select_dialog.run() == gtk.RESPONSE_OK:
-            self.temporary_folder.set_text(folder_select_dialog.get_filename())
-        folder_select_dialog.destroy()
 
     def __makeRecognitionPreferences(self, *args):
         general_box = gtk.VBox(spacing = 10)
