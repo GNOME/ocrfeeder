@@ -360,7 +360,6 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
         self.pixbuf = pixbuf
         image = gtk.image_new_from_pixbuf(self.pixbuf)
         image.show()
-        self.image_window
         self.image_window.add_with_viewport(image)
 
     def setX(self, x_value):
