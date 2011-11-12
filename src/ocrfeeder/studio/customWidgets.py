@@ -169,10 +169,13 @@ class SelectableBoxesArea(goocanvas.Canvas):
         self.__selectSurroundingArea(1)
 
     def deleteSelectedAreas(self):
+        areas_to_remove = []
         while self.selected_areas:
             selected_area = self.selected_areas.pop(0)
             selected_area.remove()
-            self.emit('removed_box', selected_area)
+            areas_to_remove.append(selected_area)
+        for area in areas_to_remove:
+            self.emit('removed_box', area)
 
     def __selectSurroundingArea(self, area_offset):
         areas = self.getAllAreas()
