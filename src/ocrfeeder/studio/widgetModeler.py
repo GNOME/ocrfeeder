@@ -181,10 +181,9 @@ class ImageReviewer:
         self.reviewer_area = gtk.HPaned()
         self.reviewer_area.set_position(500)
         self.reviewer_area.show()
-        self.boxeditor_notebook = gtk.Notebook()
-        self.boxeditor_notebook.set_show_tabs(False)
-        self.boxeditor_notebook.set_show_border(False)
-        self.boxeditor_notebook.show()
+        self.ocr_engines = ocr_engines
+        self.editor = Editor(self.image_pixbuf, self.ocr_engines, self)
+        self.boxes_dict = {}
 
         selectable_boxes_scrolled_window = gtk.ScrolledWindow()
         selectable_boxes_scrolled_window.get_accessible().set_name(
@@ -195,9 +194,7 @@ class ImageReviewer:
         selectable_boxes_scrolled_window.show()
 
         self.reviewer_area.pack1(selectable_boxes_scrolled_window, True, False)
-        self.reviewer_area.pack2(self.boxeditor_notebook, True, False)
-        self.ocr_engines = ocr_engines
-        self.editor_list = []
+        self.reviewer_area.pack2(self.editor.box_editor, True, False)
         self.page = PageData(self.path_to_image)
 
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
@@ -213,63 +210,48 @@ class ImageReviewer:
     def setImageFillColor(self, color):
         self.image_box_fill_color = color
 
-    def addBoxEditor(self, box):
-        editor = Editor(box, self.image_pixbuf, self.ocr_engines, self)
-        self.editor_list.append(editor)
-        self.boxeditor_notebook.append_page(editor.box_editor)
-        return editor
+    def addBoxEditor(self, box, data_box = None):
+        if not data_box:
+            data_box = DataBox()
+            data_box.updateBoundsFromBox(box)
+        self.boxes_dict[box] = data_box
+        self.editor.setBoxes(box, data_box)
 
     def selectedBox(self, widget, box):
-        page_num = self.__getPageNumFromBox(box)
-        if page_num != -1:
-            self.boxeditor_notebook.set_current_page(page_num)
+        data_box = self.boxes_dict.get(box)
+        if data_box:
+            self.editor.setBoxes(box, data_box)
         else:
-            num_boxes = self.boxeditor_notebook.get_n_pages()
             self.addBoxEditor(box)
-            self.boxeditor_notebook.set_current_page(num_boxes)
         self.updateMainWindow()
 
     def deselectedBoxCb(self, widget, box):
         self.updateMainWindow()
 
     def updatedBox(self, widget, box):
-        for editor in self.editor_list:
-            if editor.box == box:
-                editor.update(box)
+        if self.editor.box == box:
+            self.editor.update(box)
 
     def updatedBoxBounds(self, widget, box):
-        for editor in self.editor_list:
-            if editor.box == box:
-                editor.updateBounds(box)
+        if self.editor.box == box:
+            self.editor.data_box.updateBoundsFromBox(box)
 
     def removedBox(self, widget, box):
         self.updateMainWindow()
-        for i in xrange(len(self.editor_list)):
-            editor = self.editor_list[i]
-            if editor.box == box:
-                page_num = self.boxeditor_notebook.page_num(editor.box_editor)
-                self.boxeditor_notebook.remove_page(page_num)
-                del self.editor_list[i]
-                return True
+        if not self.boxes_dict.has_key(box):
+            return False
+        del self.boxes_dict[box]
+        if self.editor.box == box:
+            self.editor.updateDataBox(None)
+            self.editor.box = None
+        self.selectable_boxes_area.selectNextArea()
         return False
 
     def clear(self):
         self.selectable_boxes_area.clearAreas()
-        self.editor_list = []
-        while len(self.boxeditor_notebook):
-            self.boxeditor_notebook.remove_page(0)
-
-    def __getPageNumFromBox(self, box):
-        editor = self.__getEditorFromBox(box)
-        if editor:
-            return self.boxeditor_notebook.page_num(editor.box_editor)
-        return -1
-
-    def __getEditorFromBox(self, box):
-        for editor in self.editor_list:
-            if editor.box == box:
-                return editor
-        return None
+        self.editor.updateDataBox(None)
+        self.editor.box = None
+        self.boxes_dict.clear()
 
     def applyTextColors(self):
         self.selectable_boxes_area.fill_color_rgba = self.text_box_fill_color
@@ -307,21 +289,20 @@ class ImageReviewer:
     def getTextFromBoxes(self, boxes):
         text = ''
         boxes.reverse()
+        self.editor.saveDataBox()
         if boxes:
             number_of_boxes = len(boxes)
             for i in range(number_of_boxes):
                 box = boxes[i]
-                box_editor = self.__getEditorFromBox(box).box_editor
-                if box_editor.getType() != TEXT_TYPE:
+                data_box = self.boxes_dict.get(box)
+                if data_box and data_box.getType() != TEXT_TYPE:
                     continue
-                text += box_editor.getText()
+                text += data_box.getText()
                 if number_of_boxes > 1 and i < number_of_boxes - 1:
                     text += '\n\n'
         else:
-            current_box_editor = self.boxeditor_notebook.get_nth_page(\
-                                     self.boxeditor_notebook.get_current_page())
-            if current_box_editor.getType() == TEXT_TYPE:
-                text = current_box_editor.getText()
+            if self.editor.box_editor.getType() == TEXT_TYPE:
+                text = self.box_editor.getText()
         return text
 
     def copyTextToClipboard(self):
@@ -335,9 +316,7 @@ class ImageReviewer:
 
     def __getAllDataBoxes(self):
         boxes = []
-        for editor in self.editor_list:
-            editor.setDataBox()
-            data_box = editor.data_box
+        for data_box in self.boxes_dict.values():
             boxes.append((data_box.y, data_box))
             boxes.sort()
         boxes_sorted = []
@@ -358,9 +337,7 @@ class ImageReviewer:
     def addDataBox(self, data_box):
         dimensions = (int(data_box.x), int(data_box.y), int(data_box.width), int(data_box.height))
         box = self.selectable_boxes_area.addArea(dimensions)
-        editor = self.addBoxEditor(box)
-        editor.box = box
-        editor.updateDataBox(data_box)
+        self.addBoxEditor(box, data_box)
 
     def updateBackgroundImage(self, image_path):
         self.path_to_image = image_path
@@ -374,8 +351,7 @@ class ImageReviewer:
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
 
     def updateBoxesColors(self):
-        for editor in self.editor_list:
-            editor.updateBoxColor()
+        self.editor.updateBoxColor()
 
     def zoomFitCb(self, widget, data):
         self.zoomFit()
@@ -396,26 +372,19 @@ class ImageReviewer:
             self.selectable_boxes_area.zoom(min(image_height, image_width), False)
 
     def updateMainWindow(self):
-        if self.editor_list:
-            current_box_editor = self.boxeditor_notebook.get_nth_page(\
-                                     self.boxeditor_notebook.get_current_page())
-            if current_box_editor.getText():
-                self.main_window.copy_to_clipboard_menu.set_sensitive(True)
-                self.main_window.spellchecker_menu.set_sensitive(True)
-            else:
-                self.main_window.copy_to_clipboard_menu.set_sensitive(False)
-                self.main_window.spellchecker_menu.set_sensitive(False)
+        if self.editor.box_editor.getText():
+            self.main_window.copy_to_clipboard_menu.set_sensitive(True)
+            self.main_window.spellchecker_menu.set_sensitive(True)
+        else:
+            self.main_window.copy_to_clipboard_menu.set_sensitive(False)
+            self.main_window.spellchecker_menu.set_sensitive(False)
         has_selected_areas = self.selectable_boxes_area.getSelectedAreas()
         has_boxes = self.selectable_boxes_area.getAllAreas()
         self.main_window.setHasSelectedBoxes(bool(has_selected_areas))
         self.main_window.setHasContentBoxes(bool(has_boxes))
 
     def focusCurrentEditorTextArea(self):
-        current_page = self.boxeditor_notebook.get_current_page()
-        if current_page == -1:
-            return
-        box_editor = self.boxeditor_notebook.get_nth_page(current_page)
-        box_editor.text_widget.grab_focus()
+        self.editor.box_editor.text_widget.grab_focus()
 
 class ImageReviewer_Controler:
 
@@ -767,16 +736,6 @@ class ImageReviewer_Controler:
             export_dialog.destroy()
             return None
 
-    def getImageReviewers(self, pixbufs_sorted):
-        image_reviewers = []
-        if not pixbufs_sorted:
-            for key, image_reviewer in self.image_reviewer_dict.items():
-                image_reviewers.append(image_reviewer)
-        else:
-            for pixbuf in pixbufs_sorted:
-                image_reviewers.append(self.image_reviewer_dict[pixbuf])
-        return image_reviewers
-
     def getPagesData(self, pixbufs_sorted):
         image_reviewers = self.getImageReviewers(pixbufs_sorted)
         return [reviewer.getPageData() for reviewer in image_reviewers]
@@ -909,10 +868,12 @@ class ImageReviewer_Controler:
 
 class Editor:
 
-    def __init__(self, box, pixbuf, ocr_engines, reviewer):
+    def __init__(self, pixbuf, ocr_engines, reviewer):
         self.configuration_manager = ConfigurationManager()
         self.pixbuf = pixbuf
-        self.data_box = DataBox()
+        self.data_box = None
+        self.box = None
+        self.__connected_signal_handles_list = []
         self.box_editor = BoxEditor(pixbuf.get_width(), pixbuf.get_height())
         self.box_editor.connect('text-edited-by-user', self.checkHasText)
         self.reviewer = reviewer
@@ -933,25 +894,32 @@ class Editor:
         self.box_editor.align_fill_button.connect('toggled', self.__setDataBoxAlign, ALIGN_FILL)
         self.box_editor.letter_spacing_spin.connect('value-changed', self.__setDataBoxLetterSpacing)
         self.box_editor.line_spacing_spin.connect('value-changed', self.__setDataBoxLineSpacing)
-        self.__connectDataBoxSignals()
-        self.update(box)
+        self.box_editor.hide()
 
     def __updateBoxX(self, spin_button):
+        if self.__updating_data_box:
+            return
         self.box.set_property('x', self.box_editor.getX())
         if spin_button.is_focus():
             self.update(self.box)
 
     def __updateBoxY(self, spin_button):
+        if self.__updating_data_box:
+            return
         self.box.set_property('y', self.box_editor.getY())
         if spin_button.is_focus():
             self.update(self.box)
 
     def __updateBoxWidth(self, spin_button):
+        if self.__updating_data_box:
+            return
         self.box.set_property('width', self.box_editor.getWidth())
         if spin_button.is_focus():
             self.update(self.box)
 
     def __updateBoxHeight(self, spin_button):
+        if self.__updating_data_box:
+            return
         self.box.set_property('height', self.box_editor.getHeight())
         if spin_button.is_focus():
             self.update(self.box)
@@ -976,6 +944,8 @@ class Editor:
         self.updateBoxColor(type)
 
     def updateBoxColor(self, type = None):
+        if not self.box:
+            return
         type = type or self.data_box.getType()
         stroke_color = graphics.rgbaToInteger(self.reviewer.box_stroke_color)
         fill_color = graphics.rgbaToInteger(self.reviewer.image_box_fill_color)
@@ -1006,21 +976,11 @@ class Editor:
 
     def update(self, box):
         self.box = box
-        x, y, width, height = self.updateBounds(box)
+        x, y, width, height = self.data_box.updateBoundsFromBox(self.box)
         pixbuf_width = self.pixbuf.get_width()
         pixbuf_height = self.pixbuf.get_height()
         sub_pixbuf = self.pixbuf.subpixbuf(x, y, min(width, pixbuf_width), min(height, pixbuf_height))
         self.data_box.setImage(sub_pixbuf)
-
-    def updateBounds(self, box):
-        self.box = box
-        x, y, width, height = int(self.box.props.x), int(self.box.props.y), \
-                            int(self.box.props.width), int(self.box.props.height)
-        self.data_box.setX(x)
-        self.data_box.setY(y)
-        self.data_box.setWidth(width)
-        self.data_box.setHeight(height)
-        return (x, y, width, height)
 
     def updateOcrEngines(self, engines_list):
         engines_names = [engine.name for engine, path in engines_list]
@@ -1084,7 +1044,9 @@ class Editor:
         debug('ANGLE: ', angle)
         self.box_editor.setAngle(angle)
 
-    def setDataBox(self):
+    def saveDataBox(self):
+        if not self.data_box:
+            return
         text = self.box_editor.getText()
         self.data_box.setText(text)
         angle = self.box_editor.getAngle()
@@ -1095,7 +1057,12 @@ class Editor:
 
 
     def updateDataBox(self, data_box):
+        self.__updating_data_box = True
+        self.__disconnectDataBoxSignals()
         self.data_box = data_box
+        if data_box is None:
+            self.box_editor.hide()
+            return
         self.box_editor.setX(self.data_box.x)
         self.box_editor.setY(self.data_box.y)
         self.box_editor.setWidth(self.data_box.width)
@@ -1103,16 +1070,40 @@ class Editor:
         self.box_editor.setType(self.data_box.type)
         self.box_editor.setText(self.data_box.text)
         self.box_editor.setFontSize(self.data_box.text_data.size)
+        self.__updating_data_box = False
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)
 
     def __connectDataBoxSignals(self):
-        self.data_box.connect('changed_x', self.__updateEditorX)
-        self.data_box.connect('changed_y', self.__updateEditorY)
-        self.data_box.connect('changed_width', self.__updateEditorWidth)
-        self.data_box.connect('changed_height', self.__updateEditorHeight)
-        self.data_box.connect('changed_image', self.__updateEditorImage)
-        self.data_box.connect('changed_type', self.__updateBoxColor)
+        handler_id = self.data_box.connect('changed_x', self.__updateEditorX)
+        self.__connected_signal_handles_list.append(handler_id)
+        handler_id = self.data_box.connect('changed_y', self.__updateEditorY)
+        self.__connected_signal_handles_list.append(handler_id)
+        handler_id = self.data_box.connect('changed_width',
+                                           self.__updateEditorWidth)
+        self.__connected_signal_handles_list.append(handler_id)
+        handler_id = self.data_box.connect('changed_height',
+                                           self.__updateEditorHeight)
+        self.__connected_signal_handles_list.append(handler_id)
+        handler_id = self.data_box.connect('changed_image',
+                                           self.__updateEditorImage)
+        self.__connected_signal_handles_list.append(handler_id)
+        handler_id = self.data_box.connect('changed_type',
+                                           self.__updateBoxColor)
+
+    def setBoxes(self, box, data_box):
+        self.saveDataBox()
+        self.box = box
+        self.updateDataBox(data_box)
+        self.update(box)
+        self.box_editor.show()
+
+    def __disconnectDataBoxSignals(self):
+        if not self.data_box:
+            return
+        for handle_id in self.__connected_signal_handles_list:
+            self.data_box.disconnect(handle_id)
+        self.__connected_signal_handles_list = []
 
     def checkHasText(self, widget, text):
         if not text:

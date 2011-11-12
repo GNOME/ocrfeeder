@@ -174,6 +174,15 @@ class DataBox(gobject.GObject):
         dictionary['text_data'] = self.text_data.convertToDict()
         return {'DataBox': dictionary}
 
+    def updateBoundsFromBox(self, box):
+        x, y, width, height = int(box.props.x), int(box.props.y), \
+                              int(box.props.width), int(box.props.height)
+        self.setX(x)
+        self.setY(y)
+        self.setWidth(width)
+        self.setHeight(height)
+        return (x, y, width, height)
+
 
 
 class PageData:
