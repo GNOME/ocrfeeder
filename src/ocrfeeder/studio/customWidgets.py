@@ -174,6 +174,7 @@ class SelectableBoxesArea(goocanvas.Canvas):
             selected_area = self.selected_areas.pop(0)
             selected_area.remove()
             areas_to_remove.append(selected_area)
+        self.get_window().set_cursor(None)
         for area in areas_to_remove:
             self.emit('removed_box', area)
 
