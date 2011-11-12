@@ -947,12 +947,10 @@ class Editor:
         if not self.box:
             return
         type = type or self.data_box.getType()
-        stroke_color = graphics.rgbaToInteger(self.reviewer.box_stroke_color)
         fill_color = graphics.rgbaToInteger(self.reviewer.image_box_fill_color)
         if type == TEXT_TYPE:
             fill_color = graphics.rgbaToInteger(self.reviewer.text_box_fill_color)
         self.box.set_property('fill-color-rgba', fill_color)
-        self.box.set_property('stroke-color-rgba', stroke_color)
 
     def __setDataBoxFont(self, font_button = None):
         font_button = font_button or self.box_editor.font_button
