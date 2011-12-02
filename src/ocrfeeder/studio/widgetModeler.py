@@ -146,9 +146,10 @@ class SourceImagesSelectorIconView(gtk.IconView):
         self.get_model().clear()
 
 
-class ImageReviewer:
+class ImageReviewer(gtk.HPaned):
 
     def __init__(self, main_window, path_to_image, ocr_engines):
+        super(ImageReviewer, self).__init__()
         self.main_window = main_window
         self.path_to_image = path_to_image
         self.text_box_fill_color = (94, 156, 235, 150)
@@ -162,9 +163,8 @@ class ImageReviewer:
         self.selectable_boxes_area.connect('deselected_box',
                                            self.deselectedBoxCb)
         self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
-        self.reviewer_area = gtk.HPaned()
-        self.reviewer_area.set_position(500)
-        self.reviewer_area.show()
+        self.set_position(500)
+        self.show()
         self.ocr_engines = ocr_engines
         self.editor = Editor(self.image_pixbuf, self.ocr_engines, self)
         self.boxes_dict = {}
@@ -177,8 +177,8 @@ class ImageReviewer:
         self.selectable_boxes_area.show()
         selectable_boxes_scrolled_window.show()
 
-        self.reviewer_area.pack1(selectable_boxes_scrolled_window, True, False)
-        self.reviewer_area.pack2(self.editor.box_editor, True, False)
+        self.pack1(selectable_boxes_scrolled_window, True, False)
+        self.pack2(self.editor.box_editor, True, False)
         self.page = PageData(self.path_to_image)
 
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
@@ -392,7 +392,7 @@ class ImageReviewer_Controler:
         image_reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
         image_reviewer.setImageFillColor(self.configuration_manager.image_fill)
         self.image_reviewer_dict[pixbuf] = image_reviewer
-        self.notebook.append_page(image_reviewer.reviewer_area, None)
+        self.notebook.append_page(image_reviewer, None)
         return image_reviewer
 
     def addImages(self, image_path_list):
@@ -490,7 +490,7 @@ class ImageReviewer_Controler:
         pixbuf = self.source_images_selector_widget.getSelectedPixbuf()
         if pixbuf != None:
             reviewer = self.image_reviewer_dict[pixbuf]
-            self.notebook.set_current_page(self.notebook.page_num(reviewer.reviewer_area))
+            self.notebook.set_current_page(self.notebook.page_num(reviewer))
             self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
             self.__updateStatusBar(reviewer)
             reviewer.updateMainWindow()
@@ -766,12 +766,11 @@ class ImageReviewer_Controler:
         page_size_dialog.destroy()
 
     def __getCurrentReviewer(self):
-        current_reviewer_area = self.notebook.get_nth_page(self.notebook.get_current_page())
+        current_reviewer = self.notebook.get_nth_page(self.notebook.get_current_page())
         image_reviewer = None
         for key, reviewer in self.image_reviewer_dict.items():
-            if reviewer.reviewer_area == current_reviewer_area:
-                image_reviewer = reviewer
-                return image_reviewer
+            if reviewer == current_reviewer:
+                return reviewer
 
     def deleteCurrentPage(self):
         current_reviewer = self.__getCurrentReviewer()
