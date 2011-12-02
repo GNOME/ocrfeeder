@@ -24,7 +24,7 @@ import sys
 import os.path
 import urllib
 import widgetPresenter
-from widgetModeler import SourceImagesSelector, \
+from widgetModeler import SourceImagesListStore, \
      SourceImagesSelectorIconView, ImageReviewer_Controler
 from dataHolder import DataBox, TextData
 from customWidgets import SelectableBoxesArea
@@ -71,9 +71,8 @@ class Studio:
         self.configuration_manager.loadConfiguration()
         self.ocr_engines_manager.makeEnginesFromFolder(self.configuration_manager.user_engines_folder)
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
-        self.source_images_selector = SourceImagesSelector()
-        self.source_images_selector.connect('selection_changed', self.selectionChanged)
-        self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_selector)
+        self.source_images_list_store = SourceImagesListStore()
+        self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_list_store)
         self.source_images_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
         self.source_images_icon_view.connect('drag_data_received', self.dragDataReceived)
         self.source_images_icon_view.connect('drag_drop', self.dragDrop)
@@ -134,7 +133,7 @@ class Studio:
 
         self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasContentBoxes(False)
-        self.main_window.setHasImages(not self.source_images_selector.isEmpty())
+        self.main_window.setHasImages(not self.source_images_list_store.isEmpty())
 
         # Show dialog to choose system-wide OCR engines when no engine was found
         if not self.ocr_engines:
@@ -284,13 +283,13 @@ class Studio:
         file_open_dialog.destroy()
 
     def exportToHtml(self, widget = None):
-        self.source_images_controler.exportPagesToHtml(self.source_images_selector.getPixbufsSorted())
+        self.source_images_controler.exportPagesToHtml(self.source_images_list_store.getPixbufsSorted())
 
     def exportToOdt(self, widget = None):
-        self.source_images_controler.exportPagesToOdt(self.source_images_selector.getPixbufsSorted())
+        self.source_images_controler.exportPagesToOdt(self.source_images_list_store.getPixbufsSorted())
 
     def exportToPlaintext(self, widget = None):
-        self.source_images_controler.exportPagesToPlaintext(self.source_images_selector.getPixbufsSorted())
+        self.source_images_controler.exportPagesToPlaintext(self.source_images_list_store.getPixbufsSorted())
 
     def exportToPdf(self, widget = None):
         ask_pdf_type_dialog = gtk.MessageDialog(self.main_window.window,
@@ -322,7 +321,7 @@ class Studio:
         if searchable_pdf_radio.get_active():
             pdf_from_scratch = False
         self.source_images_controler.exportPagesToPdf(
-             self.source_images_selector.getPixbufsSorted(),
+             self.source_images_list_store.getPixbufsSorted(),
              pdf_from_scratch)
 
     def exportDialog(self, widget):
@@ -419,9 +418,6 @@ class Studio:
     def enginesTool(self, widget = None):
         pass
 
-    def selectionChanged(self, selector, is_empty):
-        self.main_window.setHasImages(not is_empty)
-
     def about(self, widget = None):
         about_dialog = widgetPresenter.CustomAboutDialog()
         if about_dialog.run():
@@ -445,7 +441,7 @@ class Studio:
         self.source_images_controler.zoomFit()
 
     def quit(self, widget = None, data = None):
-        if not self.project_name and not self.source_images_selector.isEmpty():
+        if not self.project_name and not self.source_images_list_store.isEmpty():
             quit_dialog = widgetPresenter.QuestionDialog('<b>' + _("The project hasn't been saved.") + '</b>', gtk.BUTTONS_NONE)
             quit_dialog.format_secondary_text(_('Do you want to save it before closing?'))
             quit_dialog.add_buttons(_('Close anyway'), gtk.RESPONSE_NO, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE_AS, gtk.RESPONSE_YES)

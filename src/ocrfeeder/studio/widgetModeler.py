@@ -47,19 +47,10 @@ _ = gettext.gettext
 
 
 
-class SourceImagesSelector(gobject.GObject):
-
-    __gtype_name__ = 'SourceImagesSelector'
-
-    __gsignals__ = {
-        'selection_changed' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_BOOLEAN,))
-        }
+class SourceImagesListStore(gtk.ListStore):
 
     def __init__(self, list_of_images = []):
-        super(SourceImagesSelector, self).__init__()
-        self.list_store = gtk.ListStore(str, str, gtk.gdk.Pixbuf)
+        super(SourceImagesListStore, self).__init__(str, str, gtk.gdk.Pixbuf)
         if len(list_of_images):
             for path in list_of_images:
                 self.__renderImage(path, self.__generateImageName(path))
@@ -73,18 +64,17 @@ class SourceImagesSelector(gobject.GObject):
             pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(path, 150, 100)
         except:
             return None, None
-        iter = self.list_store.append([path, image_name, pixbuf])
-        self.emit('selection_changed', self.isEmpty())
+        iter = self.append([path, image_name, pixbuf])
         return pixbuf, iter
 
     def __countEqualPathsStored(self, path):
-        iter = self.list_store.get_iter_root()
+        iter = self.get_iter_root()
         counter = 0
         while iter != None:
-            image_path = self.list_store.get_value(iter, 0)
+            image_path = self.get_value(iter, 0)
             if image_path == path:
                 counter += 1
-            iter = self.list_store.iter_next(iter)
+            iter = self.iter_next(iter)
         return counter
 
     def __generateImageName(self, path):
@@ -95,34 +85,28 @@ class SourceImagesSelector(gobject.GObject):
         return image_name
 
     def getPixbufAtPath(self, path):
-        iter = self.list_store.get_iter(path)
-        return self.list_store.get_value(iter, 2)
+        iter = self.get_iter(path)
+        return self.get_value(iter, 2)
 
     def getPixbufsSorted(self):
         pixbufs = []
-        iter = self.list_store.get_iter_root()
+        iter = self.get_iter_root()
         while iter != None:
-            pixbufs.append(self.list_store.get_value(iter, 2))
-            iter = self.list_store.iter_next(iter)
+            pixbufs.append(self.get_value(iter, 2))
+            iter = self.iter_next(iter)
         return pixbufs
 
     def removeIter(self, path):
-        iter = self.list_store.get_iter(path)
-        self.list_store.remove(iter)
-        self.emit('selection_changed', self.isEmpty())
-
-    def clear(self):
-        self.list_store.clear()
-        self.emit('selection_changed', self.isEmpty())
+        iter = self.get_iter(path)
+        self.remove(iter)
 
     def isEmpty(self):
-        return self.list_store.get_iter_first() == None
+        return self.get_iter_first() == None
 
 class SourceImagesSelectorIconView(gtk.IconView):
 
-    def __init__(self, source_images_selector):
-        self.source_images_selector = source_images_selector
-        super(SourceImagesSelectorIconView, self).__init__(self.source_images_selector.list_store)
+    def __init__(self, source_images_list_store):
+        super(SourceImagesSelectorIconView, self).__init__(source_images_list_store)
         self.get_accessible().set_name(_('Pages'))
         self.set_text_column(1)
         self.set_pixbuf_column(2)
@@ -144,7 +128,7 @@ class SourceImagesSelectorIconView(gtk.IconView):
         selected_items = self.get_selected_items()
         if len(selected_items):
             selected_item_path = selected_items[0]
-            return self.source_images_selector.getPixbufAtPath(selected_item_path)
+            return self.get_model().getPixbufAtPath(selected_item_path)
         return None
 
     def setDeleteCurrentPageFunction(self, function):
@@ -154,12 +138,12 @@ class SourceImagesSelectorIconView(gtk.IconView):
         selected_items = self.get_selected_items()
         if len(selected_items):
             selected_item_path = selected_items[0]
-            self.source_images_selector.removeIter(selected_item_path)
-            if not self.source_images_selector.isEmpty():
+            self.get_model().removeIter(selected_item_path)
+            if not self.get_model().isEmpty():
                 self.select_path(0)
 
     def clear(self):
-        self.source_images_selector.clear()
+        self.get_model().clear()
 
 
 class ImageReviewer:
@@ -389,8 +373,7 @@ class ImageReviewer:
 class ImageReviewer_Controler:
 
     def __init__(self, main_window, source_images_selector_widget,
-                 ocr_engines, configuration_manager,
-                 selection_changed_signal = 'selection-changed'):
+                 ocr_engines, configuration_manager):
         self.main_window = main_window
         self.notebook = self.main_window.notebook
         self.image_reviewer_dict = {}
@@ -399,7 +382,7 @@ class ImageReviewer_Controler:
         self.configuration_manager = configuration_manager
         self.statusbar = self.main_window.statusbar
         self._page_info_message_id = self.statusbar.get_context_id('page_info_message')
-        self.source_images_selector_widget.connect(selection_changed_signal, self.selectImageReviewer)
+        self.source_images_selector_widget.connect('selection-changed', self.selectImageReviewer)
         self.__updateStatusBar()
 
     def __createdImageReviewer(self, pixbuf, image):
@@ -463,13 +446,13 @@ class ImageReviewer_Controler:
         if not os.path.isfile(image_path):
             return None
         selector_widget = self.source_images_selector_widget
-        pixbuf, iter = selector_widget.source_images_selector.addImage(image_path)
+        pixbuf, iter = selector_widget.get_model().addImage(image_path)
         if not pixbuf:
             return none
         reviewer = self.__createdImageReviewer(pixbuf, image_path)
         if select_image:
             path = \
-                selector_widget.source_images_selector.list_store.get_path(iter)
+                selector_widget.get_model().get_path(iter)
             selector_widget.select_path(path)
         return reviewer
 
@@ -511,6 +494,7 @@ class ImageReviewer_Controler:
             self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
             self.__updateStatusBar(reviewer)
             reviewer.updateMainWindow()
+        self.main_window.setHasImages(bool(pixbuf))
 
     def __setZoomStatus(self, widget, zoom):
         self.__updateStatusBar()
