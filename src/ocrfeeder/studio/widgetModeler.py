@@ -126,6 +126,15 @@ class SourceImagesSelectorIconView(gtk.IconView):
             return self.get_model().get_value(iter, 2)
         return None
 
+    def getAllPages(self):
+        model = self.get_model()
+        pages = []
+        iter = model.get_iter_root()
+        while iter:
+            pages.append(model.get_value(iter, 2))
+            iter = model.iter_next(iter)
+        return pages
+
     def setDeleteCurrentPageFunction(self, function):
         self.delete_current_page_function = function
 
@@ -270,15 +279,7 @@ class ImageReviewer(gtk.HPaned):
         boxes.reverse()
         self.editor.saveDataBox()
         if boxes:
-            number_of_boxes = len(boxes)
-            for i in range(number_of_boxes):
-                box = boxes[i]
-                data_box = self.boxes_dict.get(box)
-                if data_box and data_box.getType() != TEXT_TYPE:
-                    continue
-                text += data_box.getText()
-                if number_of_boxes > 1 and i < number_of_boxes - 1:
-                    text += '\n\n'
+            text = getTextFromBoxes([self.boxes_dict.get(box) for box in boxes])
         else:
             if self.editor.box_editor.getType() == TEXT_TYPE:
                 text = self.box_editor.getText()
@@ -304,7 +305,8 @@ class ImageReviewer(gtk.HPaned):
         boxes = boxes_sorted
         return boxes
 
-    def getPageData(self):
+    def savePageData(self):
+        self.editor.saveDataBox()
         self.page.data_boxes = self.__getAllDataBoxes()
         return self.page
 
@@ -373,7 +375,6 @@ class ImageReviewer_Controler:
                  ocr_engines, configuration_manager):
         self.main_window = main_window
         self.notebook = self.main_window.notebook
-        self.image_reviewer_dict = {}
         self.source_images_selector_widget = source_images_selector_widget
         self.ocr_engines = ocr_engines
         self.configuration_manager = configuration_manager
@@ -499,7 +500,7 @@ class ImageReviewer_Controler:
         else:
             zoom = int(reviewer.selectable_boxes_area.get_scale() * 100)
             status_message = _('Zoom: %s %%') % zoom
-            page_data = reviewer.getPageData()
+            page_data = reviewer.savePageData()
             status_message += ' ' + _('Resolution: %.2f x %.2f') % (page_data.resolution[0],
                                                                     page_data.resolution[1])
             status_message += ' ' + _('Page size: %i x %i') % (page_data.width,
@@ -513,7 +514,7 @@ class ImageReviewer_Controler:
         index = 0
         while index < n_pages:
             reviewer = self.notebook.get_nth_page(index)
-            if reviewer.getPageData() == page_data:
+            if reviewer.savePageData() == page_data:
                 self.notebook.set_current_page(index)
                 return reviewer
             index += 1
@@ -523,6 +524,15 @@ class ImageReviewer_Controler:
         index = self.notebook.append_page(reviewer)
         self.notebook.set_current_page(index)
         return reviewer
+
+    def __updateImageReviewers(self):
+        n_pages = self.notebook.get_n_pages()
+        index = 0
+        while index < n_pages:
+            reviewer = self.notebook.get_nth_page(index)
+            reviewer.clear()
+            reviewer.updatePageData(reviewer.page)
+            index += 1
 
     def recognizeSelectedAreas(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -545,28 +555,29 @@ class ImageReviewer_Controler:
         if image_reviewer.selectable_boxes_area.getAllAreas() and \
            self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
                 return
+        page = image_reviewer.page
         dialog = QueuedEventsProgressDialog(self.main_window.window)
-        item = AsyncItem(self.__performRecognitionForReviewer,
-                         (image_reviewer,),
-                         self.__performRecognitionForReviewerFinishedCb,
-                         (dialog, image_reviewer, [image_reviewer]))
+        item = AsyncItem(self.__performRecognitionForPage,
+                         (page,),
+                         self.__performRecognitionForPageFinishedCb,
+                         (dialog, page, [page]))
         info = (_('Recognizing Page'), _(u'Please wait…'))
         dialog.setItemsList([(info, item)])
         dialog.run()
 
     def recognizeDocument(self):
-        reviewers = self.image_reviewer_dict.values()
+        pages = self.source_images_selector_widget.getAllPages()
         dialog = QueuedEventsProgressDialog(self.main_window.window)
         items = []
         i = 1
-        total = len(reviewers)
+        total = len(pages)
         has_changes = False
-        for reviewer in reviewers:
-            has_changes = has_changes or bool(reviewer.selectable_boxes_area.getAllAreas())
-            item = AsyncItem(self.__performRecognitionForReviewer,
-                             (reviewer,),
-                             self.__performRecognitionForReviewerFinishedCb,
-                             (dialog, reviewer, reviewers))
+        for page in pages:
+            has_changes = has_changes or bool(page.data_boxes)
+            item = AsyncItem(self.__performRecognitionForPage,
+                             (page,),
+                             self.__performRecognitionForPageFinishedCb,
+                             (dialog, page, pages))
             info = (_('Recognizing Document'),
                     _(u'Recognizing page %(page_number)s/%(total_pages)s. Please wait…') % {'page_number': i,
                                                                                             'total_pages': total})
@@ -578,7 +589,7 @@ class ImageReviewer_Controler:
         dialog.setItemsList(items)
         dialog.run()
 
-    def __performRecognitionForReviewer(self, image_reviewer):
+    def __performRecognitionForPage(self, page):
         window_size = self.configuration_manager.window_size
         if window_size == 'auto':
             window_size = None
@@ -603,8 +614,8 @@ class ImageReviewer_Controler:
                                          clean_text,
                                          adjust_boxes_bounds,
                                          adjustment_size)
-        return layout_analysis.recognize(image_reviewer.path_to_image,
-                                         image_reviewer.page.resolution[1])
+        return layout_analysis.recognize(page.image_path,
+                                         page.resolution[1])
 
     def __getConfiguredOcrEngine(self):
         for engine, path in self.ocr_engines:
@@ -612,17 +623,13 @@ class ImageReviewer_Controler:
                 return engine
         return None
 
-    def __performRecognitionForReviewerFinishedCb(self, dialog, image_reviewer,
-                                                  reviewers_to_process,
-                                                  data_boxes, error):
-        image_reviewer.clear()
-        image_reviewer.applyTextColors()
-        for data_box in data_boxes:
-            image_reviewer.addDataBox(data_box)
-        if image_reviewer == reviewers_to_process[-1]:
+    def __performRecognitionForPageFinishedCb(self, dialog, page,
+                                              pages_to_process,
+                                              data_boxes, error):
+        page.data_boxes = data_boxes
+        if page == pages_to_process[-1]:
             dialog.cancel()
-            for reviewer in reviewers_to_process:
-                reviewer.updateMainWindow()
+            self.__updateImageReviewers()
 
     def copyRecognizedTextToClipboard(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -631,56 +638,55 @@ class ImageReviewer_Controler:
     def setDataBox(self, widget):
         image_reviewer = self.__getCurrentReviewer()
         document_generator = OdtGenerator()
-        page_data = image_reviewer.getPageData()
+        page_data = image_reviewer.savePageData()
         document_generator.addPage(page_data)
         document_generator.save()
 
     def exportPagesToHtml(self, pixbufs_sorted = []):
-        image_reviewers = self.__askForNumberOfPages(_('Export to HTML'), pixbufs_sorted)
-        if not image_reviewers:
+        pages = self.__askForNumberOfPages(_('Export to HTML'), pixbufs_sorted)
+        if not pages:
             return
         file_name = self.__askForFileName()
         if file_name:
             if os.path.exists(file_name):
                 os.remove(file_name)
             document_generator = HtmlGenerator(file_name)
-            for image_reviewer in image_reviewers:
-                document_generator.addPage(image_reviewer.getPageData())
+            for page in pages:
+                document_generator.addPage(page)
             document_generator.save()
 
 
     def exportPagesToOdt(self, pixbufs_sorted = []):
-        image_reviewers = self.__askForNumberOfPages(_('Export to ODT'), pixbufs_sorted)
-        if not image_reviewers:
+        pages = self.__askForNumberOfPages(_('Export to ODT'), pixbufs_sorted)
+        if not pages:
             return
         file_name = self.__askForFileName()
         if file_name:
             document_generator = OdtGenerator(file_name)
-            for image_reviewer in image_reviewers:
-                document_generator.addPage(image_reviewer.getPageData())
+            for page in pages:
+                document_generator.addPage(page)
             document_generator.save()
 
     def exportPagesToPlaintext(self, pixbufs_sorted = []):
-        image_reviewers = self.__askForNumberOfPages(_('Export to Plain Text'), pixbufs_sorted)
-        if not image_reviewers:
+        pages = self.__askForNumberOfPages(_('Export to Plain Text'), pixbufs_sorted)
+        if not pages:
             return
         file_name = self.__askForFileName()
         if file_name:
             document_generator = PlaintextGenerator(file_name)
-            for image_reviewer in image_reviewers:
-                document_generator.addText(image_reviewer.getAllText())
+            for page in pages:
+                document_generator.addText(getTextFromBoxes(page.data_boxes))
             document_generator.save()
 
     def exportPagesToPdf(self, pixbufs_sorted = [], pdf_from_scratch = True):
-        image_reviewers = self.__askForNumberOfPages(_('Export to PDF'),
-                                                     pixbufs_sorted)
-        if not image_reviewers:
+        pages = self.__askForNumberOfPages(_('Export to PDF'), pixbufs_sorted)
+        if not pages:
             return
         file_name = self.__askForFileName()
         if file_name:
             document_generator = PdfGenerator(file_name, pdf_from_scratch)
-            for image_reviewer in image_reviewers:
-                document_generator.addPage(image_reviewer.getPageData())
+            for page in pages:
+                document_generator.addPage(page)
             document_generator.save()
 
     def saveProjectAs(self):
@@ -689,7 +695,7 @@ class ImageReviewer_Controler:
     def saveProject(self, project_name):
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
-        pages_data = self.getPagesData(self.getPixbufsSorted())
+        pages_data = self.source_images_selector_widget.getAllPages()
         project_saver = ProjectSaver(pages_data)
         project_saver.serialize(project_name)
 
@@ -712,25 +718,23 @@ class ImageReviewer_Controler:
         return project_file
 
     def __askForNumberOfPages(self, title, pixbufs_sorted):
+        # Sync the current reviewer's page with its data
+        self.__getCurrentReviewer().savePageData()
         export_dialog = PagesToExportDialog(title)
-        image_reviewers = self.getImageReviewers(pixbufs_sorted)
+        pages = self.source_images_selector_widget.getAllPages()
         # When there's only one document loaded or none,
         # we don't ask for the number of pages to export
-        if len(image_reviewers) < 2:
-            return image_reviewers
+        if len(pages) < 2:
+            return pages
         response = export_dialog.run()
         if response == gtk.RESPONSE_ACCEPT:
             if export_dialog.current_page_button.get_active():
-                image_reviewers = [self.__getCurrentReviewer()]
+                pages = [self.__getCurrentReviewer().page]
             export_dialog.destroy()
-            return image_reviewers
+            return pages
         else:
             export_dialog.destroy()
             return None
-
-    def getPagesData(self, pixbufs_sorted):
-        image_reviewers = self.getImageReviewers(pixbufs_sorted)
-        return [reviewer.getPageData() for reviewer in image_reviewers]
 
     def __askForFileName(self, extension = ''):
         save_dialog = FileDialog('save')
@@ -766,24 +770,23 @@ class ImageReviewer_Controler:
         if response == gtk.RESPONSE_ACCEPT:
             size = page_size_dialog.getSize()
             if page_size_dialog.all_pages_radio.get_active():
-                for key, reviewer in self.image_reviewer_dict.items():
-                    reviewer.page.setSize(size)
+                for page in self.source_images_selector_widget.getAllPages():
+                    page.setSize(size)
             else:
                 current_reviewer.page.setSize(size)
             debug('Page size: ', size)
         page_size_dialog.destroy()
+        self.__updateStatusBar(current_reviewer)
 
     def __getCurrentReviewer(self):
         return self.notebook.get_nth_page(self.notebook.get_current_page())
 
     def deleteCurrentPage(self):
         current_reviewer = self.__getCurrentReviewer()
-        for pixbuf, image_reviewer in self.image_reviewer_dict.items():
-            if image_reviewer == current_reviewer:
-                del self.image_reviewer_dict[pixbuf]
-                self.notebook.remove_page(self.notebook.get_current_page())
-                break
-        self.__updateStatusBar()
+        if not current_reviewer:
+            return
+        index = self.notebook.page_num(current_reviewer)
+        self.notebook.remove_page(index)
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
@@ -798,9 +801,9 @@ class ImageReviewer_Controler:
             unpaper_dialog.destroy()
 
     def clear(self):
-        for pixbuf in self.image_reviewer_dict.keys():
-            del self.image_reviewer_dict[pixbuf]
-            self.notebook.remove_page(self.notebook.get_current_page())
+        # remove all pages from notebook
+        for index in range(self.notebook.get_n_pages()):
+            self.notebook.remove_page(0)
         self.source_images_selector_widget.clear()
         self.__updateStatusBar()
 
@@ -808,7 +811,8 @@ class ImageReviewer_Controler:
         return self.source_images_selector_widget.source_images_selector.getPixbufsSorted()
 
     def updateFromConfiguration(self):
-        for reviewer in self.image_reviewer_dict.values():
+        for index in range(self.notebook.get_n_pages()):
+            reviewer = self.notebook.get_nth_page(index)
             reviewer.setTextFillColor(self.configuration_manager.text_fill)
             reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
             reviewer.setImageFillColor(self.configuration_manager.image_fill)
@@ -1097,3 +1101,17 @@ class Editor:
         else:
             self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
             self.reviewer.main_window.spellchecker_menu.set_sensitive(True)
+
+
+# Helper function to get text from data boxes
+def getTextFromBoxes(data_boxes):
+    text = ''
+    number_of_boxes = len(data_boxes)
+    for i in range(number_of_boxes):
+        data_box = data_boxes[i]
+        if data_box and data_box.getType() != TEXT_TYPE:
+            continue
+        text += data_box.getText()
+        if number_of_boxes > 1 and i < number_of_boxes - 1:
+            text += '\n\n'
+    return text
