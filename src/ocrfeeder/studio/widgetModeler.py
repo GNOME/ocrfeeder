@@ -154,6 +154,7 @@ class ImageReviewer(gtk.HPaned):
 
     def __init__(self, main_window, page_data, ocr_engines):
         super(ImageReviewer, self).__init__()
+        self.configuration_manager = ConfigurationManager()
         self.main_window = main_window
         self.path_to_image = page_data.image_path
         self.text_box_fill_color = (94, 156, 235, 150)
@@ -255,24 +256,40 @@ class ImageReviewer(gtk.HPaned):
         for box in boxes:
             self.addBoxEditor(box)
 
-    def performOcrForAllEditors(self, engine = None):
-        self.performOcrForEditors(self.editor_list, engine)
-
-    def performOcrForSelectedBoxes(self, engine = None):
+    def performOcrForSelectedBoxes(self):
         selected_boxes = self.selectable_boxes_area.getSelectedAreas()
-        self.performOcrForEditors([self.__getEditorFromBox(box) \
-                                   for box in selected_boxes],
-                                  engine)
-
-    def performOcrForEditors(self, editors_list, engine = None):
-        for editor in editors_list:
-            if editor == None:
-                continue
-            editor.performOcr(engine)
-            editor.performClassification(engine)
-            if editor.box_editor.getType() == IMAGE_TYPE:
-                editor.box_editor.setText('')
+        configured_engine = None
+        for engine, path in self.ocr_engines:
+            if engine.name == self.configuration_manager.favorite_engine:
+                configured_engine = engine
+                break
+        if not configured_engine:
+            return
+        for box in selected_boxes:
+            data_box = self.boxes_dict[box]
+            self.performOcrForDataBox(data_box, engine)
+        self.editor.updateDataBox(self.editor.data_box)
         self.updateMainWindow()
+
+    def performOcrForDataBox(self, data_box, engine):
+        pixbuf_width = self.image_pixbuf.get_width()
+        pixbuf_height = self.image_pixbuf.get_height()
+        subpixbuf = self.image_pixbuf.subpixbuf(data_box.getX(),
+                                                data_box.getY(),
+                                                min(data_box.getWidth(), pixbuf_width),
+                                                min(data_box.getHeight(), pixbuf_height))
+        image = graphics.convertPixbufToImage(subpixbuf)
+        layout_analysis = LayoutAnalysis(engine,
+                                         clean_text = self.configuration_manager.clean_text)
+        text = layout_analysis.readImage(image)
+        data_box.setText(text)
+        self.main_window.copy_to_clipboard_menu.set_sensitive(True)
+        self.main_window.spellchecker_menu.set_sensitive(True)
+        debug('Finished reading')
+        text_size = layout_analysis.getTextSizeFromImage(image,
+                                                         self.page.resolution[1])
+        if text_size:
+            data_box.setFontSize(text_size)
 
     def getTextFromBoxes(self, boxes):
         text = ''
@@ -536,7 +553,7 @@ class ImageReviewer_Controler:
 
     def recognizeSelectedAreas(self, widget):
         image_reviewer = self.__getCurrentReviewer()
-        image_reviewer.performOcrForSelectedBoxes(self.configuration_manager.favorite_engine)
+        image_reviewer.performOcrForSelectedBoxes()
 
     def __confirmOveritePossibilityByRecognition(self):
         confirm_recognition = gtk.MessageDialog(parent = self.main_window.window,
@@ -1001,19 +1018,8 @@ class Editor:
         engine = None
         if selected_engine_index != -1:
             engine = self.ocr_engines[selected_engine_index][0]
-
-        clean_text = self.configuration_manager.clean_text
-        layout_analysis = LayoutAnalysis(engine,
-                                         clean_text = clean_text)
-        text = layout_analysis.readImage(image)
-        self.box_editor.setText(text)
-        self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
-        self.reviewer.main_window.spellchecker_menu.set_sensitive(True)
-        debug('Finished reading')
-        text_size = layout_analysis.getTextSizeFromImage(image,
-                                               self.reviewer.page.resolution[1])
-        if text_size:
-            self.box_editor.setFontSize(text_size)
+        self.reviewer.performOcrForDataBox(self.data_box, engine)
+        self.updateDataBox(self.data_box)
 
     def performClassification(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
