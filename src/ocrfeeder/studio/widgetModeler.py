@@ -68,7 +68,8 @@ class SourceImagesListStore(gtk.ListStore):
         iter = self.get_iter_root()
         counter = 0
         while iter != None:
-            image_path = self.get_value(iter, 0)
+            page_data = self.get_value(iter, 2)
+            image_path = page_data.image_path
             if image_path == path:
                 counter += 1
             iter = self.iter_next(iter)
