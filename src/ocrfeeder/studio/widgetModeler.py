@@ -1066,6 +1066,8 @@ class Editor:
         self.box_editor.setType(self.data_box.type)
         self.box_editor.setText(self.data_box.text)
         self.box_editor.setFontSize(self.data_box.text_data.size)
+        self.box_editor.setLineSpacing(self.data_box.getLineSpacing())
+        self.box_editor.setLetterSpacing(self.data_box.getLetterSpacing())
         self.__updating_data_box = False
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)

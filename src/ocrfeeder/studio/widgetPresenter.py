@@ -631,6 +631,9 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
     def setLineSpacing(self, spacing):
         self.line_spacing_spin.set_value(spacing)
 
+    def setLetterSpacing(self, spacing):
+        self.letter_spacing_spin.set_value(spacing)
+
     def setOcrEngines(self, engines_list):
         self.ocr_combo_box.get_model().clear()
         for engine in engines_list:

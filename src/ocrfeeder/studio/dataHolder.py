@@ -150,6 +150,12 @@ class DataBox(gobject.GObject):
     def setLineSpacing(self, spacing):
         self.text_data.line_space = spacing
 
+    def getLetterSpacing(self):
+        return self.text_data.letter_space
+
+    def getLineSpacing(self):
+        return self.text_data.line_space
+
     def getX(self):
         return self.x
 
