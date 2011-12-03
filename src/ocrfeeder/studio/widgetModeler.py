@@ -50,22 +50,19 @@ _ = gettext.gettext
 class SourceImagesListStore(gtk.ListStore):
 
     def __init__(self, list_of_images = []):
-        super(SourceImagesListStore, self).__init__(str, str, gtk.gdk.Pixbuf)
+        super(SourceImagesListStore, self).__init__(str, gtk.gdk.Pixbuf, object)
         if len(list_of_images):
             for path in list_of_images:
                 self.__renderImage(path, self.__generateImageName(path))
 
-    def addImage(self, path):
-        image_name = self.__generateImageName(path)
-        return self.__renderImage(path, image_name)
+    def addImage(self, page_data):
+        image_name = self.__generateImageName(page_data.image_path)
+        return self.__renderImage(image_name, page_data)
 
-    def __renderImage(self, path, image_name):
-        try:
-            pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(path, 150, 100)
-        except:
-            return None, None
-        iter = self.append([path, image_name, pixbuf])
-        return pixbuf, iter
+    def __renderImage(self, image_name, page_data):
+        pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(page_data.image_path,
+                                                      150, 100)
+        return self.append([image_name, pixbuf, page_data])
 
     def __countEqualPathsStored(self, path):
         iter = self.get_iter_root()
@@ -83,10 +80,6 @@ class SourceImagesListStore(gtk.ListStore):
         if number_of_equal_paths:
             image_name += ' ('+ str(number_of_equal_paths + 1) + ')'
         return image_name
-
-    def getPixbufAtPath(self, path):
-        iter = self.get_iter(path)
-        return self.get_value(iter, 2)
 
     def getPixbufsSorted(self):
         pixbufs = []
@@ -108,8 +101,8 @@ class SourceImagesSelectorIconView(gtk.IconView):
     def __init__(self, source_images_list_store):
         super(SourceImagesSelectorIconView, self).__init__(source_images_list_store)
         self.get_accessible().set_name(_('Pages'))
-        self.set_text_column(1)
-        self.set_pixbuf_column(2)
+        self.set_text_column(0)
+        self.set_pixbuf_column(1)
         self.set_orientation(gtk.ORIENTATION_VERTICAL)
         self.set_columns(1)
         self.set_reorderable(True)
@@ -124,11 +117,13 @@ class SourceImagesSelectorIconView(gtk.IconView):
                 menu = getPopupMenu([(gtk.STOCK_DELETE, _('Delete'), self.delete_current_page_function)])
                 menu.popup(None, None, None, event.button, event.time)
 
-    def getSelectedPixbuf(self):
+    def getSelectedPageData(self):
         selected_items = self.get_selected_items()
         if len(selected_items):
             selected_item_path = selected_items[0]
-            return self.get_model().getPixbufAtPath(selected_item_path)
+            model = self.get_model()
+            iter = model.get_iter(selected_item_path)
+            return self.get_model().get_value(iter, 2)
         return None
 
     def setDeleteCurrentPageFunction(self, function):
@@ -148,10 +143,10 @@ class SourceImagesSelectorIconView(gtk.IconView):
 
 class ImageReviewer(gtk.HPaned):
 
-    def __init__(self, main_window, path_to_image, ocr_engines):
+    def __init__(self, main_window, page_data, ocr_engines):
         super(ImageReviewer, self).__init__()
         self.main_window = main_window
-        self.path_to_image = path_to_image
+        self.path_to_image = page_data.image_path
         self.text_box_fill_color = (94, 156, 235, 150)
         self.box_stroke_color = (94, 156, 235, 250)
         self.image_box_fill_color = (0, 183, 0, 150)
@@ -179,8 +174,8 @@ class ImageReviewer(gtk.HPaned):
 
         self.pack1(selectable_boxes_scrolled_window, True, False)
         self.pack2(self.editor.box_editor, True, False)
-        self.page = PageData(self.path_to_image)
-
+        self.page = page_data
+        self.updatePageData(self.page)
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
 
     def setTextFillColor(self, color):
@@ -372,6 +367,8 @@ class ImageReviewer(gtk.HPaned):
 
 class ImageReviewer_Controler:
 
+    REVIEWER_CACHE_LENGTH = 5
+
     def __init__(self, main_window, source_images_selector_widget,
                  ocr_engines, configuration_manager):
         self.main_window = main_window
@@ -385,14 +382,12 @@ class ImageReviewer_Controler:
         self.source_images_selector_widget.connect('selection-changed', self.selectImageReviewer)
         self.__updateStatusBar()
 
-    def __createdImageReviewer(self, pixbuf, image):
-        image_reviewer = ImageReviewer(self.main_window, image, self.ocr_engines)
+    def __createdImageReviewer(self, page_data):
+        image_reviewer = ImageReviewer(self.main_window, page_data, self.ocr_engines)
         image_reviewer.selectable_boxes_area.connect('changed_zoom', self.__setZoomStatus)
         image_reviewer.setTextFillColor(self.configuration_manager.text_fill)
         image_reviewer.setBoxesStrokeColor(self.configuration_manager.boxes_stroke)
         image_reviewer.setImageFillColor(self.configuration_manager.image_fill)
-        self.image_reviewer_dict[pixbuf] = image_reviewer
-        self.notebook.append_page(image_reviewer, None)
         return image_reviewer
 
     def addImages(self, image_path_list):
@@ -445,16 +440,13 @@ class ImageReviewer_Controler:
         image_path = os.path.abspath(os.path.expanduser(image_path))
         if not os.path.isfile(image_path):
             return None
-        selector_widget = self.source_images_selector_widget
-        pixbuf, iter = selector_widget.get_model().addImage(image_path)
-        if not pixbuf:
-            return none
-        reviewer = self.__createdImageReviewer(pixbuf, image_path)
+        page_data = PageData(image_path)
+        iter = self.source_images_selector_widget.get_model().addImage(page_data)
         if select_image:
             path = \
-                selector_widget.get_model().get_path(iter)
-            selector_widget.select_path(path)
-        return reviewer
+                self.source_images_selector_widget.get_model().get_path(iter)
+            self.source_images_selector_widget.select_path(path)
+        return page_data
 
     def __deskewImage(self, image_path, target_image_path = None):
         if not target_image_path:
@@ -487,14 +479,14 @@ class ImageReviewer_Controler:
         dialog.cancel()
 
     def selectImageReviewer(self, widget):
-        pixbuf = self.source_images_selector_widget.getSelectedPixbuf()
-        if pixbuf != None:
-            reviewer = self.image_reviewer_dict[pixbuf]
-            self.notebook.set_current_page(self.notebook.page_num(reviewer))
-            self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
-            self.__updateStatusBar(reviewer)
-            reviewer.updateMainWindow()
-        self.main_window.setHasImages(bool(pixbuf))
+        page_data = self.source_images_selector_widget.getSelectedPageData()
+        if not page_data:
+            return
+        reviewer = self.__setImageReviewerFromPageData(page_data)
+        self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
+        self.__updateStatusBar(reviewer)
+        reviewer.updateMainWindow()
+        self.main_window.setHasImages(bool(reviewer))
 
     def __setZoomStatus(self, widget, zoom):
         self.__updateStatusBar()
@@ -515,6 +507,22 @@ class ImageReviewer_Controler:
 
         self.statusbar.pop(self._page_info_message_id)
         self.statusbar.push(self._page_info_message_id, status_message)
+
+    def __setImageReviewerFromPageData(self, page_data):
+        n_pages = self.notebook.get_n_pages()
+        index = 0
+        while index < n_pages:
+            reviewer = self.notebook.get_nth_page(index)
+            if reviewer.getPageData() == page_data:
+                self.notebook.set_current_page(index)
+                return reviewer
+            index += 1
+        if n_pages == self.REVIEWER_CACHE_LENGTH:
+            self.notebook.remove_page(0)
+        reviewer = self.__createdImageReviewer(page_data)
+        index = self.notebook.append_page(reviewer)
+        self.notebook.set_current_page(index)
+        return reviewer
 
     def recognizeSelectedAreas(self, widget):
         image_reviewer = self.__getCurrentReviewer()
@@ -766,11 +774,7 @@ class ImageReviewer_Controler:
         page_size_dialog.destroy()
 
     def __getCurrentReviewer(self):
-        current_reviewer = self.notebook.get_nth_page(self.notebook.get_current_page())
-        image_reviewer = None
-        for key, reviewer in self.image_reviewer_dict.items():
-            if reviewer == current_reviewer:
-                return reviewer
+        return self.notebook.get_nth_page(self.notebook.get_current_page())
 
     def deleteCurrentPage(self):
         current_reviewer = self.__getCurrentReviewer()
