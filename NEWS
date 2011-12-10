@@ -1,3 +1,42 @@
+Version 0.7.7
+=============
+
+Bug Fixes
+----------
+
+* Fix memory usage (use a limited number of ImageReviewer instances,
+  among other changes that save memory)
+* Fix single recognition of a content area
+* Import the Image module from PIL to avoid issues
+* Fix the sys path for the CLI
+* Reset the mouse cursor (to be the normal one) when deleting areas
+* Fix missing dependency check for reportlab (gb#656574)
+* Remove libgnome dependency (thanks to György Balló)
+
+Improvements
+-------------
+
+* Generate a ChangeLog file from git when running make dist
+  (thanks to Alberto Garcia)
+* Miscellaneous code improvements (remove unused code;
+  reorganize some classes; use subclasses of GTK+ objects instead
+  of generic Python objects)
+* Use a dedicated temporary folder and delete it afterwards
+* Remove the temporary folder setting from the preferences dialog
+* Create a temporary directory correctly for the PDF conversion
+* Change the way the areas are removed to make it more secure
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cz]
+* Joe Hansen [da]
+* Mario Blättermann [de]
+* Kristjan SCHMIDT [eo]
+* Daniel Korostil [uk]
+* Matej Urbančič [sl]
+
+
 Version 0.7.6
 =============
 
