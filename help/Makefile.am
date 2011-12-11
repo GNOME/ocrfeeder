@@ -16,6 +16,7 @@ DOC_PAGES = \
 	importingfromscanner.page \
 	importingpdf.page \
 	index.page \
+	legal.xml \
 	manualeditionandcorrection.page \
 	ocrconfiguration.page \
 	projects.page \
