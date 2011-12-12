@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-03-13 10:42+0000\n"
-"PO-Revision-Date: 2011-04-03 14:12+0200\n"
+"POT-Creation-Date: 2011-12-11 16:48+0000\n"
+"PO-Revision-Date: 2011-12-12 14:39+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -535,6 +535,26 @@ msgstr ""
 "gui></guiseq> y <guiseq><gui>Documento</gui><gui>Eliminar las áreas "
 "seleccionadas</gui></guiseq> (o <keyseq><key>Ctrl</key><key>Mayús</"
 "key><key>Supr</key></keyseq>), respectivamente."
+
+#: C/legal.xml:3(p)
+msgid ""
+"This work is licensed under a <link href=\"http://creativecommons.org/"
+"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
+"States License</link>."
+msgstr ""
+"Este trabajo tiene una licencia <link href=\"http://creativecommons.org/"
+"licenses/by-sa/3.0/us/\">Creative Commons Compartir Igual de Atribución 3.0 "
+"Estados Unidos</link>."
+
+#: C/legal.xml:6(p)
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Como excepción especial, los poseedores del copyright le dan permiso para "
+"copiar, modificar y distribuir el código de ejemplo contenido en este "
+"documento bajo los términos que elija, sin restricción."
 
 #: C/index.page:6(desc)
 msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
