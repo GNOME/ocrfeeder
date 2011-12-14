@@ -1,12 +1,14 @@
 # Czech translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
+#
 # Marek Černocký <marek@manet.cz>, 2011.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-05-01 06:19+0000\n"
-"PO-Revision-Date: 2011-05-01 09:05+0200\n"
+"POT-Creation-Date: 2011-12-11 16:48+0000\n"
+"PO-Revision-Date: 2011-12-14 11:15+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -532,6 +534,26 @@ msgstr ""
 "<guiseq><gui>Dokument</gui><gui>Vymazat vybrané oblasti</gui></guiseq> (nebo "
 "<keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>)."
 
+#: C/legal.xml:3(p)
+msgid ""
+"This work is licensed under a <link href=\"http://creativecommons.org/"
+"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
+"States License</link>."
+msgstr ""
+"Tato práce je licencována pod <link href=\"http://creativecommons.org/"
+"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
+"States License</link>."
+
+#: C/legal.xml:6(p)
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Jako speciální výjimku, vám držitel autorských práv dává oprávnění "
+"kopírovat, upravovat a šířit ukázkový kód obsažený v tomto dokumentu za "
+"podmínek, které si zvolíte a bez omezení."
+
 #: C/index.page:6(desc)
 msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
 msgstr "Nápověda k <app>Systému OCRFeeder pro konverzi dokumentů</app>."
@@ -607,8 +629,8 @@ msgid ""
 "cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
 "can then be converted into an editable document."
 msgstr ""
-"Některé dokumenty nejsou ničím víc než obrázky vloženými do dokumentu PDF. "
-"V takovýchto případech může aplikace <app>OCRFeeder</app> dokument PDF "
+"Některé dokumenty nejsou ničím víc než obrázky vloženými do dokumentu PDF. V "
+"takovýchto případech může aplikace <app>OCRFeeder</app> dokument PDF "
 "naimportovat, aby jej převedla na editovatelný dokument."
 
 #: C/importingpdf.page:18(p)
