@@ -376,7 +376,7 @@ msgstr "Змінити налаштування сторінки"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "_Preferences"
-msgstr "_Налаштування"
+msgstr "_Параметри"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:169
 msgid "Configure the application"
@@ -490,7 +490,7 @@ msgstr "Розпізнати _вибрану ділянку"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:197
 msgid "Recognize Selected Areas"
-msgstr "Розпізнати виділену ділянку"
+msgstr "Розпізнати вибрану ділянку"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:200
 msgid "Select _All Areas"
@@ -498,15 +498,15 @@ msgstr "Вибрати _усі ділянки"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:201
 msgid "Select all content areas"
-msgstr "Виділити всі ділянки вмісту"
+msgstr "Вибрати всі ділянки вмісту"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:204
 msgid "Select _Previous Area"
-msgstr "Виділити _попередню ділянку"
+msgstr "Вибрати _попередню ділянку"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:205
 msgid "Select the previous area from the content areas"
-msgstr "Виділити попередню ділянку з ділянок вмісту"
+msgstr "Вибрати попередню ділянку з ділянок вмісту"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:208
 msgid "Select _Next Area"
@@ -514,11 +514,11 @@ msgstr "Вибрати _наступну ділянку"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:209
 msgid "Select the next area from the content areas"
-msgstr "Виділити наступну ділянку з вмісту ділянок"
+msgstr "Вибрати наступну ділянку з вмісту ділянок"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:212
 msgid "Delete Selected Areas"
-msgstr "Вилучити виділену ділянку"
+msgstr "Вилучити вибрану ділянку"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:213
 msgid "Deletes all the currently selected content areas"
@@ -842,7 +842,7 @@ msgstr "Скасовано"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1250
 msgid "Preferences"
-msgstr "Налаштування"
+msgstr "Параметри"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1307
 msgid "_General"
@@ -1101,7 +1101,7 @@ msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
 #~ msgid "Recognize Selected _Areas"
-#~ msgstr "Розпізнати виділену _ділянку"
+#~ msgstr "Розпізнати вибрану _ділянку"
 
 #~ msgid "Temporary folder"
 #~ msgstr "Тимчасова тека"

@@ -1,0 +1,551 @@
+# Ukrainian translation for ocrfeeder.
+# Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# lxlalexlxl <pilipchukap@rambler.ru>, 2011.
+# Korostil Daniel <ted.korostiled@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"POT-Creation-Date: 2011-11-17 15:52+0000\n"
+"PO-Revision-Date: 2011-12-12 00:16+0300\n"
+"Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
+"Language-Team: translation@linux.org.ua\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: C/unpaper.page:8(desc)
+msgid "Cleaning images before performing OCR"
+msgstr "Очищення зображень перед розпізнаванням"
+
+#: C/unpaper.page:11(title)
+msgid "Unpaper"
+msgstr "Unpaper"
+
+#: C/unpaper.page:13(p)
+msgid "<em>Unpaper</em> is a tool to clean images in order to make them easier to read on screen. It is aimed mainly at images obtained from scanned documents which usually show dust, black margins or other flaws."
+msgstr ""
+"<em>Unpaper</em> — засіб очищення зображень з метою спростити їхнє читання "
+"на екрані. Він вилучає недоліки сканованого зображення: пил, чорні межі та "
+"інші дефекти."
+
+#: C/unpaper.page:18(p)
+msgid "<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before processing them, which usually results in a better recognition."
+msgstr ""
+"<app>OCRFeeder</app> може використовувати <em>Unpaper</em> для обчищення "
+"малюнків перед обробленням, що, зазвичай, покращує якість розпізнавання."
+
+#: C/unpaper.page:22(p)
+msgid "<em>Unpaper</em> needs to be installed in order to be used. If it is not installed, <app>OCRFeeder</app> won't show it's action in the interface."
+msgstr ""
+"Щоб використовувати <em>Unpaper</em>, його потрібно встановити. В іншому "
+"випадку <app>OCRFeeder</app> не показуватиме його в інтерфейсі."
+
+#: C/unpaper.page:26(p)
+msgid "To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> dialog will be shown with <em>Unpaper</em>'s options and an area to preview the changes before applying them to the loaded image. Depending on the size and characteristics of the image, using this tool might take some time."
+msgstr ""
+"Для використання <em>Unpaper</em> на завантаженому зображенні, клацніть "
+"<guiseq><gui>Засоби</gui><gui>Unpaper</gui></guiseq>. З'явиться вікно "
+"<gui>Оброблення зображень Unpaper</gui> з параметрами <em>Unpaper</em> та "
+"ділянкою для перегляду змін перед застосуванням їх до завантаженого "
+"зображення. Залежно від розмірів та властивостей зображення, використання "
+"цього засобу може тривати певний час."
+
+#: C/unpaper.page:33(p)
+msgid "<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. In this area one can enter the path to <em>Unpaper</em>'s executable (normally this is already configured if <em>Unpaper</em> was installed the first time <app>OCRFeeder</app> was run). In the same area, under <gui>Image Pre-Processing</gui>, one can check <gui>Unpaper images</gui> to make images being processed automatically by <em>Unpaper</em> after they are loaded into <app>OCRFeeder</app>. The options taken by <em>Unpaper</em> when it's automatically called after adding an image can be configured by clicking the <gui>Unpaper Preferences</gui> button."
+msgstr ""
+"<em>Unpaper</em> можна налаштувати, відкривши "
+"<guiseq><gui>Зміни</gui><gui>Параметри</gui></guiseq> та перейшовши на "
+"вкладку <gui>Засоби</gui>. Тут вводять шлях до виконуваного файла "
+"<em>Unpaper</em> (зазвичай він вже вказаний, якщо <em>Unpaper</em> "
+"встановлено на першому запуску <app>OCRFeeder</app>). Там само, під "
+"<gui>Попереднє оброблення зображення</gui>, позначають <gui>Обробити "
+"Unpaper</gui>, зображення, після завантаження до <app>OCRFeeder</app> "
+"автоматично оброблялось <em>Unpaper</em>. Параметри автоматичного виклику "
+"<em>Unpaper</em> після завантаження зображення встановлюють, клацнувши "
+"кнопку <gui>Параметри Unpaper</gui>."
+
+#: C/projects.page:8(desc)
+msgid "Loading and saving projects"
+msgstr "Завантаження і збереження проектів"
+
+#: C/projects.page:11(title)
+#: C/index.page:43(title)
+msgid "Projects"
+msgstr "Проекти"
+
+#: C/projects.page:13(p)
+msgid "Sometimes a user may want to save the progress of the work done so far in an image and continue with it later. For this case <app>OCRFeeder</app> offers the possibility to save and load projects."
+msgstr "Іноді користувач може захотіти записати зроблену частину роботи, щоб продовжити її пізніше. На цей випадок <app>OCRFeeder</app> надає можливість зберігати та відкривати проекти."
+
+#: C/projects.page:18(p)
+msgid "Projects are compressed files with the <em>ocrf</em> extension which hold information about pages (images) and content areas."
+msgstr "Проекти — це стиснуті файли з розширенням <em>ocrf</em>, які містять інформацію про сторінки (зображення) і ділянки."
+
+#: C/projects.page:22(title)
+msgid "Saving A Project"
+msgstr "Збереження проекту"
+
+#: C/projects.page:24(p)
+msgid "After having done some work in an image, a project can be created by clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or <guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the <keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A file saving dialog will then be shown so the project's name and location is entered."
+msgstr "Після початку роботи проект можна створити, клацнувши <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq> або <guiseq><gui>Файл</gui><gui>Зберегти як…</gui></guiseq>. Також можна скористатись сполученнями клавіш <keyseq><key>Control</key><key>S</key></keyseq> або <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq>. З'явиться вікно збереження файла, в якому вказують назву проекту та його адресу."
+
+#: C/projects.page:35(title)
+msgid "Loading A Project"
+msgstr "Завантаження проекту"
+
+#: C/projects.page:37(p)
+msgid "An existing project can be loaded simply by clicking <guiseq><gui>File</gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></keyseq>."
+msgstr "Наявний проект можна завантажити клацнувши <guiseq><gui>Файл</gui><gui>Відкрити</gui></guiseq> або <keyseq><key>Ctrl</key><key>O</key></keyseq>."
+
+#: C/projects.page:44(title)
+msgid "Appending A Project"
+msgstr "Додавання проекту"
+
+#: C/projects.page:46(p)
+msgid "Sometimes it is useful to merge two or more projects in order to create only one document with the pages of several <app>OCRFeeder</app> projects. This can be accomplished by appending a project, which simply loads the pages from a chosen project into the current one. To do this, click in <guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the wanted project."
+msgstr "Іноді буває потрібно об'єднати два або більше проектів, щоб отримати єдиний документ зі сторінок, що належать різним проектам <app>OCRFeeder</app>. Цього досягають, додавши проект: при цьому сторінки довантажуються до поточного проекту. Щоб зробити це, клацають <guiseq><gui>Файл</gui><gui>Додати проект</gui></guiseq> і вибирають бажаний проект."
+
+#: C/projects.page:56(title)
+msgid "Clearing A Project"
+msgstr "Очищення проекту"
+
+#: C/projects.page:58(p)
+msgid "If all the information is a project should be deleted (for example, to start over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear Project</gui></guiseq>."
+msgstr "Якщо всю інформацію, наявну в проекті, потрібно вилучити (наприклад, щоб почати спочатку), це можна зробити вибравши <guiseq><gui>Зміни</gui><gui>Очистити проект</gui></guiseq>."
+
+#: C/ocrconfiguration.page:9(desc)
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Налаштування розпізнавального рушія для розпізнавання тексту"
+
+#: C/ocrconfiguration.page:12(title)
+msgid "OCR Engines Configuration"
+msgstr "Налаштування розпізнавального рушія"
+
+#: C/ocrconfiguration.page:14(p)
+msgid "<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from images. This means any OCR engine that can be used from the command line should also be used in <app>OCRFeeder</app>."
+msgstr "<app>OCRFeeder</app> використовує вбудований в систему рушій OCR, щоб видобувати текст із зображення. Це означає, що будь-який рушій OCR, який можна викликати з командного рядка, може бути використаний в <app>OCRFeeder</app>."
+
+#: C/ocrconfiguration.page:20(title)
+msgid "Automatic Detection of OCR Engines"
+msgstr "Автоматичне виявлення розпізнавальних рушіїв"
+
+#: C/ocrconfiguration.page:22(p)
+msgid "The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and <em>Cuneiform</em>) are already automatically detected and configured in most systems, the first time <app>OCRFeeder</app> is run."
+msgstr "Рушії OCR (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> та <em>Cuneiform</em>) вже автоматично визначено й налаштовано в більшості систем, протягом першого запуску <app>OCRFeeder</app>"
+
+#: C/ocrconfiguration.page:26(p)
+msgid "If an OCR engine is installed after <app>OCRFeeder</app> had configured already an engine, it will not be automatically configured but, depending on the engine, users might easily go to the <gui>OCR Engines</gui> dialog and choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr "Якщо розпізнавальний рушій встановлено після того, як <app>OCRFeeder</app> вже налаштував рушій, він не буде автоматично налаштований, але залежно від рушія, користувач може відкрити вікно <gui>Рушії OCR</gui> і вибрати його зі списку знайдених рушіїв після натискання <gui>Виявити</gui>."
+
+#: C/ocrconfiguration.page:31(p)
+msgid "Already configured OCR engines might be detected again and it is up to the user to uncheck these engines if they shouldn't be added again."
+msgstr "Вже налаштовані рушії OCR можна визначити знов і користувач має познімати позначки на непотрібних йому рушіїв"
+
+#: C/ocrconfiguration.page:38(title)
+msgid "Manual Configuration"
+msgstr "Підручник з налаштування"
+
+#: C/ocrconfiguration.page:40(p)
+msgid "The currently configured OCR engines are shown in the <gui>OCR Engines</gui> dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</gui></guiseq>."
+msgstr "Налаштовані рушії OCR показуються у вікні <gui>Рушії OCR</gui>, який можна відкрити командою <guiseq><gui>Засоби</gui><gui>Рушії OCR</gui></guiseq>."
+
+#: C/ocrconfiguration.page:44(p)
+msgid "Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog allows to add new engines, edit or delete the current ones and detect engines installed in the system."
+msgstr "Крім показаних налаштованих рушіїв OCR, вікно <gui>Рушії OCR</gui> дозволяє додавати нові рушії, редагувати чи вилучати їх і відшуковувати наявні в системі."
+
+#: C/ocrconfiguration.page:48(p)
+msgid "When adding or editing an OCR engine (by pressing the <gui>Add</gui> or <gui>Edit</gui> buttons, respectively), a dialog is shown with the following fields:"
+msgstr "Протягом додавання чи редагування рушіїв OCR (натискаючи відповідно <gui>Додати</gui> або <gui>Змінити</gui>), вікно показується з такими полями:"
+
+#: C/ocrconfiguration.page:53(p)
+msgid "<gui>Name</gui>: The engine's name. This name will be used in throughout the UI when referring to the engine;"
+msgstr "<gui>Назва</gui>: Назва рушія. Ця назва буде використовуватись скрізь, де в інтерфейсі користувача згадуватиметься рушій;"
+
+#: C/ocrconfiguration.page:55(p)
+msgid "<gui>Image format</gui>: The image format that the engine recognizes (for example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr "<gui>Формат зображення</gui>: формат зображення, який розпізнається рушієм (наприклад, <em>TIF</em> у випадку <em>Tesseract</em>);"
+
+#: C/ocrconfiguration.page:58(p)
+msgid "<gui>Failure string</gui>: Some engines replace unrecognized characters by another, pre-defined character (for example, <em>_</em> in the case of <em>GOCR</em>)."
+msgstr "<gui>Невдалий рядок</gui>: деякі рушії замінюють нерозпізнаний символ іншим, попередньо визначеним символом (наприклад, <em>_</em> у випадку <em>GOCR</em>)."
+
+#: C/ocrconfiguration.page:61(p)
+msgid "<gui>Engine path</gui>: The path in the system to the engine's executable (for example, <em>/usr/bin/tesseract</em>)."
+msgstr "<gui>Шлях до рушія</gui>: системний шлях до виконуваного файла рушія (наприклад, <em>/usr/bin/tesseract</em>)."
+
+#: C/ocrconfiguration.page:63(p)
+msgid "<gui>Engine arguments</gui>: The arguments that feed an image to the engine and make it output the recognized text to the standard output. <app>OCRFeeder</app> runs the engine with these arguments as if it was in the command line and looks for the recognized text in the standard output. Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while other, like <em>Tesseract</em>, write the text into a file."
+msgstr "<gui>Аргументи рушія</gui>: аргументи, що вказують рушію на зображення і скеровують розпізнаний текст до стандартного вихідного потоку. <app>OCRFeeder</app> запускає рушій з цими аргументами так, ніби вони введені з командного рядка, і шукає розпізнаний текст у стандартному вихідному потоці. Деякі рушії, наприклад, <em>Ocrad</em> та <em>GOCR</em>, роблять це, тоді як інші, наприклад, <em>Tesseract</em>, записують текст до файла."
+
+#: C/ocrconfiguration.page:70(p)
+msgid "Since the image's path to be read is always needed, a special argument <em>$IMAGE</em> is provided for this and will be replaced by the image path when the engine is run. For the cases where a file name is needed, like the one mentioned previously, a special argument <em>$FILE</em> is provided and will be replaced by a temporary file name."
+msgstr "Оскільки шлях до зображення потрібно вказувати завжди, для нього є окремий аргумент <em>$IMAGE</em>, який замінюється шляхом до зображення протягом запуску рушія. Для випадків, коли потрібна назва файла, як було вказано вище, підтримується окремий аргумент <em>$FILE</em>, що замінюється назвою тимчасового файла."
+
+#: C/ocrconfiguration.page:76(p)
+msgid "So, in case of <em>Tesseract</em> (which writes the recognized text into a file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr "Отже, у випадку <em>Tesseract</em> (котрий записує розпізнаний текст до файла), аргументи будуть такими: <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+
+#: C/ocrconfiguration.page:82(p)
+msgid "The engines' configuration is stored in their own XML file in the user's home under <em>.ocrfeeder/engines/</em>."
+msgstr "Налаштування рушія зберігаються в окремих файлах XML у домашній теці користувача <em>.ocrfeeder/engines/</em>."
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:26(None)
+msgid "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
+msgstr "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:33(None)
+msgid "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
+msgstr "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
+
+#: C/manualeditionandcorrection.page:9(desc)
+msgid "Manual edition and correction of results"
+msgstr "Ручне редагування і виправлення результатів"
+
+#: C/manualeditionandcorrection.page:12(title)
+msgid "Manual Edition"
+msgstr "Ручне редагування"
+
+#: C/manualeditionandcorrection.page:14(p)
+msgid "One may want to manually select just a portion of an image to be recognized or correct the results of the automatic recognition. <app>OCRFeeder</app> lets its users manually edit every aspect of a document's contents in an easy way."
+msgstr "Користувач може захотіти вибрати лише частину зображення для розпізнавання або відредагувати результати автоматичного розпізнавання. <app>OCRFeeder</app> дозволяє легко редагувати вміст документу на всіх етапах."
+
+#: C/manualeditionandcorrection.page:21(title)
+msgid "Content Areas"
+msgstr "Ділянки"
+
+#: C/manualeditionandcorrection.page:23(p)
+msgid "The mentioned document's contents are represented by areas like shown in the following image:"
+msgstr "Згаданий вміст документа подається у вигляді ділянок, як показано на малюнку:"
+
+#: C/manualeditionandcorrection.page:26(media)
+msgid "A picture of two content areas with one of them selected."
+msgstr "Зображення двох ділянок, одна з яких вибрана."
+
+#: C/manualeditionandcorrection.page:30(p)
+msgid "The attributes of a selected are shown and can be changed from the right part of the main window, like shown in the following image:"
+msgstr "Атрибути вибраного показуються і можна змінити у правій частині головного вікна, як показано на малюнку:"
+
+#: C/manualeditionandcorrection.page:33(media)
+msgid "A picture showing the areas' edition UI"
+msgstr "Картинка зображає інтерфейс редагування вибраних ділянок"
+
+#: C/manualeditionandcorrection.page:36(p)
+msgid "The following list describes the content areas' attributes:"
+msgstr "Цей список містить атрибути ділянок:"
+
+#: C/manualeditionandcorrection.page:38(p)
+msgid "<em>Type</em>: sets the area to be either the type image or text. The image type will clip the area from the original page and place it in the generated document. The text type will use the text assigned to the area and represent it as text in the generated document. (Generated ODT documents will have text boxes when an area was marked as being of the type text)"
+msgstr "<em>Тип</em>: вказує, що містить ділянка: зображення чи текст. Тип «зображення» копіює ділянку з оригінальної сторінки і вміщує її у кінцевий документ. Тип «текст» виявляє текст у ділянці і вставляє його в кінцевий документ, як текст. (Отриманий документ ODT міститиме напис, якщо вказано тип ділянки «текст»)"
+
+#: C/manualeditionandcorrection.page:44(p)
+msgid "<em>Clip</em>: Shows the current clip from the original area. This makes it easier for users to check exactly what's within the area."
+msgstr "<em>Обрізок</em>: показує поточний фрагмент оригінальної ділянки. Завдяки цьому легше зорієнтуватись, що містить ділянка."
+
+#: C/manualeditionandcorrection.page:46(p)
+msgid "<em>Bounds</em>: Shows the point (X and Y) in the original image where the top left corner of the area is placed as well as the areas' width and height."
+msgstr "<em>Межі</em>: показує точку (X та Y) в оригінальному зображенні, де перебуває у верхній лівий кут ділянки та ширину і висоту ділянки."
+
+#: C/manualeditionandcorrection.page:49(p)
+msgid "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the area's text with by (by pressing the <gui>OCR</gui> button)"
+msgstr "<em>Рушій OCR</em>: дозволяє користувачеві вибрати розпізнавальний рушій та розпізнати ним текст в ділянці (натиснувши кнопку <gui>OCR</gui>)"
+
+#: C/manualeditionandcorrection.page:51(p)
+msgid "Using the OCR engine to recognize the text will directly assign that text to the area and replace the one assigned before."
+msgstr "Використання рушія OCR для розпізнавання тексту, безпосередньо пов'язує текст з ділянкою і замінює пов'язаний раніше."
+
+#: C/manualeditionandcorrection.page:49(item)
+msgid "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+msgstr "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+
+#: C/manualeditionandcorrection.page:54(p)
+msgid "<em>Text Area</em>: Represents the text assigned to that area and lets the user edit it. This area is disabled when the area is of the type image"
+msgstr "<em>Текстова ділянка</em>: показує текст, пов'язаний з ділянкою, і дозволяє користувачеві редагувати його. Ця ділянка недоступна, якщо ділянка має тип «зображення»."
+
+#: C/manualeditionandcorrection.page:57(p)
+msgid "<em>Style Tab</em>: Lets the user choose the font type and size, as well as the text alignment, line and letter spacing."
+msgstr "<em>Вкладка стилю</em>: дозволяє вибрати вид та розмір шрифту, а також вирівнювання тексту, міжрядковий та міжсимвольний інтервал."
+
+#: C/manualeditionandcorrection.page:61(p)
+msgid "The content areas can be selected by clicking on them or by using the menus <guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and <guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are also keyboard shortcuts for these actions: <keyseq><key>Ctrl</key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr "Ділянку вибирають, клацнувши її, або користуючись меню <guiseq><gui>Документ</gui><gui>Вибрати попередню ділянку</gui></guiseq> та <guiseq><gui>Документ</gui><gui>Вибрати наступну ділянку</gui></guiseq>. Для цих дій є також клавіатурні скорочення: <keyseq><key>Ctrl</key><key>Shift</key><key>P</key></keyseq> та <keyseq><key>Ctrl</key><key>Shift</key><key>N</key></keyseq>, відповідно."
+
+#: C/manualeditionandcorrection.page:68(p)
+msgid "Selecting all areas is also possible using <guiseq><gui>Document</gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</key><key>Shift</key><key>A</key></keyseq>."
+msgstr "Вибрати всі ділянки також можна, скориставшись <guiseq><gui>Документ</gui><gui>Вибрати всі ділянки</gui></guiseq> або <keyseq><key>Ctrl</key><key>Shift</key><key>A</key></keyseq>."
+
+#: C/manualeditionandcorrection.page:72(p)
+msgid "When at least one content area is selected, it is possible to recognize their contents automatically or delete them. These actions can be accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>), respectively."
+msgstr "Якщо принаймні одна ділянка виділена, можна автоматично розпізнати її вміст або вилучити її. Для цього клацають <guiseq><gui>Документ</gui><gui>Розпізнати вибрану ділянку</gui></guiseq> та <guiseq><gui>Документ</gui><gui>Вилучити вибрану ділянку</gui></guiseq> (або <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>), відповідно."
+
+#: C/index.page:6(desc)
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Довідка для <app>Системи перетворення документів OCRFeeder</app>"
+
+#: C/index.page:7(title)
+#: C/index.page:8(title)
+#: C/index.page:17(title)
+msgid "OCRFeeder Document Conversion System"
+msgstr "Система перетворення документів OCRFeeder"
+
+#: C/index.page:10(name)
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#: C/index.page:11(email)
+msgid "jrocha@igalia.com"
+msgstr "jrocha@igalia.com"
+
+#: C/index.page:18(p)
+msgid "OCRFeeder is a document layout analysis and optical character recognition system."
+msgstr "OCRFeeder — система аналізування структури документа та оптичного розпізнавання символів."
+
+#: C/index.page:20(p)
+msgid "OCRFeeder was created to allow users to easily convert document images (for example, a PNG image with text) into editable documents (for example, an ODT version with that text)."
+msgstr "OCRFeeder створено, щоб допомогти користувачам легко перетворювати зображення документів (наприклад, малюнок формату PNG з текстом) у документи з можливістю редагування (наприклад, файл ODT з цим текстом)."
+
+# Порядок слів змінено відповідно до http://live.gnome.org/OCRFeeder
+#: C/index.page:24(p)
+msgid "Given the images it will automatically outline its contents, perform OCR and distinguish between what's graphics and text. It generates multiple formats being its main one ODT."
+msgstr "Отримавши зображення він автоматично розмічає його вміст, розрізняє графіку і текст та виконує оптичне розпізнавання тексту. Програма породжує файли різних форматів, основним з яких є ODT."
+
+#: C/index.page:28(p)
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr "У цьому посібнику пояснюється, як налаштувати та використовувати OCRFeeder."
+
+#: C/index.page:31(title)
+msgid "Adding Images"
+msgstr "Додавання зображень"
+
+#: C/index.page:35(title)
+msgid "Recognition"
+msgstr "Розпізнавання"
+
+#: C/index.page:39(title)
+msgid "Configuration"
+msgstr "Налаштування"
+
+#: C/importingpdf.page:8(desc)
+msgid "Importing PDF documents"
+msgstr "Імпортування документів PDF"
+
+#: C/importingpdf.page:11(title)
+msgid "Importing PDF"
+msgstr "Імпортування PDF"
+
+#: C/importingpdf.page:13(p)
+msgid "Some documents are nothing more than images placed in a PDF document. For cases like this, <app>OCRFeeder</app> can still import a PDF document so it can then be converted into an editable document."
+msgstr "Деякі документи є зображеннями, вміщені у документ PDF. На цей випадок <app>OCRFeeder</app> дозволяє імпортувати документ PDF, після чого його можна перетворити з можливістю подальшого редагування."
+
+#: C/importingpdf.page:18(p)
+msgid "To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</gui></guiseq>."
+msgstr "Для імпортування документа PDF клацніть <guiseq><gui>Файл</gui><gui>Імпортувати PDF</gui></guiseq>."
+
+#: C/importingpdf.page:21(p)
+msgid "Each PDF page will be converted to an image and placed in the pages' area."
+msgstr "Кожну сторінку PDF буде перетворено в зображення і вміщено в ділянку сторінок."
+
+#: C/importingpdf.page:24(p)
+msgid "The PDF conversion can be a demanding process and take some time for large PDF files."
+msgstr "Перетворення PDF може бути вибагливим процесом і досить тривалим для великих файлів PDF."
+
+#: C/importingfromscanner.page:8(desc)
+msgid "Importing from a scanner device"
+msgstr "Імпортування зі сканувального пристрою"
+
+#: C/importingfromscanner.page:11(title)
+msgid "Importing From Scanner"
+msgstr "Імпортування зі сканера"
+
+#: C/importingfromscanner.page:13(p)
+msgid "In order to help convert a printed document into an editable document, <app>OCRFeeder</app> offers a way to import images directly from a scanner device."
+msgstr "Щоб спростити перетворення друкованих документів у придатний для редагування вигляд, <app>OCRFeeder</app> надає можливість отримувати зображення безпосередньо зі сканера."
+
+#: C/importingfromscanner.page:17(p)
+msgid "To import an image from a scanner device, use the menu <guiseq><gui>File</gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr "Щоб отримати зображення зі сканера, скористайтесь меню <gui>Файл</gui><gui>Імпортувати сторінку зі сканера</gui></guiseq> або клавішами <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+
+#: C/importingfromscanner.page:22(p)
+msgid "The currently detected scanner device will be used to scan the page. If more than one scanner if found, then a dialog will be shown with the options to choose from."
+msgstr "Для сканування буде використано виявлений сканер. Якщо знайдено понад один сканер, то з'явиться вікно з можливістю вибрати один з них."
+
+#: C/finetuning.page:8(desc)
+msgid "Advanced options for a better recognition"
+msgstr "Додаткові параметри для кращого розпізнавання"
+
+#: C/finetuning.page:11(title)
+msgid "Fine-tuning"
+msgstr "Точні налаштування"
+
+#: C/finetuning.page:13(p)
+msgid "<app>OCRFeeder</app> has some advanced options that can be used to perform a better recognition. These options can be chosen from the <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> tab."
+msgstr "<app>OCRFeeder</app> має деякі додаткові параметри для покращення якості розпізнавання. Вони доступні у вікні <guiseq><gui>Зміни</gui><gui>Параметри</gui></guiseq>, у вкладці <gui>Розпізнавання</gui>."
+
+#: C/finetuning.page:18(p)
+msgid "The following list describes the mentioned options:"
+msgstr "У списку наведено згадані параметри:"
+
+#: C/finetuning.page:20(p)
+msgid "<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the text line by line and seperate each line with a line break. Sometimes, this is not what the user wants because the text might be broken in the middle of a sentence."
+msgstr "<gui>Виправити розриви рядків та переноси</gui>: рушії OCR зазвичай читають текст порядково, відокремлюючи кожен рядок розривом рядка. Це не завжди потрібно користувачеві, оскільки текст може бути розірваний посередині речення."
+
+#: C/finetuning.page:24(p)
+msgid "Checking this option will make <app>OCRFeeder</app> remove single newline characters after the text is recognized by the engines."
+msgstr "Вибір цього параметра змушує <app>OCRFeeder</app> вилучити одиничний порожній рядок після тексту, розпізнаний рушієм."
+
+#: C/finetuning.page:26(p)
+msgid "Since just removing newlines in an hyphenized text would result in wrongly separated words, hyphenization is also detected and removed in this process."
+msgstr "Після простого вилучення із тексту з переносами розривів рядків, можуть з'явитися неправильно розділені слова. Крім того вилучаються також переноси."
+
+#: C/finetuning.page:29(p)
+msgid "<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the contents in an image uses the concept of <em>window size</em> which is the division of the image in small windows. A smaller window size means it is likely to detect more content areas but size that is too small may result in contents that should be part of a bigger area instead. On the other hand, a bigger window size means less divisions of contents but may end up in contents which should be subdivided."
+msgstr "<gui>Розмір вікна</gui>: алгоритм <app>OCRFeeder</app> для визначення вмісту зображення застосовує концепцію <em>розміру вікна</em>, за якою зображення поділяється на маленькі вікна. Менший розмір вікна означає, що буде знайдено більше ділянок, але занадто малий розмір може спричинити виокремлення частин більших ділянок. Натомість, завеликий розмір вікна спричинить менше поділів вмісту, але може зупинитись тоді, коли ще можливий поділ."
+
+#: C/finetuning.page:36(p)
+msgid "A good window size should be slightly bigger than the text line spacing in an image."
+msgstr "Хороший розмір вікна трохи більшій, ніж міжрядковий інтервал на зображенні. "
+
+#: C/finetuning.page:37(p)
+msgid "Users may want to manually set this value if automatic one doesn't produce any valid content areas but normally it is easier to use the automatic one and perform any needed corrections directly in the content areas."
+msgstr "Користувач може захотіти встановити це значення вручну, якщо автоматичне не дозволяє отримати правильний поділ на ділянки, але простіше скористатись автоматичним і внести потрібні зміни у форму ділянок."
+
+#: C/finetuning.page:41(p)
+msgid "<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</app> should try to divide the detected content areas horizontally (originating more columns). The value that is used to check the existance of blank space within the contents may be set to automatic or manual when the columns aren't detected correctly."
+msgstr "<gui>Покращити виявлення стовпців</gui>: встановіть цей прапорець, щоб <app>OCRFeeder</app> спробував поділити виявлені ділянки горизонтально (щоб виявити більше стовпців). Значення, використовуване для виявлення проміжків може бути встановлене автоматично або вручну, якщо стовпці виявлено неправильно."
+
+#: C/finetuning.page:46(p)
+msgid "<gui>Adjust content areas' bounds</gui>: The detected content areas sometimes have a considerable margin between their contents and the areas' edges. By checking this option, <app>OCRFeeder</app> will minimize those margins, adjusting the areas to its contents better. Optionally, a manual value can be check to indicate the minimum value of the adjusted margins."
+msgstr "<gui>Скоригувати межі ділянок</gui>: іноді виявлені ділянки мають широкі проміжки між вмістом та межами ділянки. Якщо позначити цей параметр, <app>OCRFeeder</app> зменшить ці проміжки, краще підігнавши ділянки до їхнього вмісту. Ввівши необов'язкове значення, можна вказати найменшу ширину проміжку, що коригується."
+
+#: C/documentgeneration.page:9(desc)
+msgid "Creating an editable document"
+msgstr "Створення документа, придатного для редагування"
+
+#: C/documentgeneration.page:12(title)
+msgid "Document Generation"
+msgstr "Породження документа"
+
+#: C/documentgeneration.page:14(p)
+msgid "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</em><em>HTML</em> and <em>Plain Text</em>."
+msgstr "Зараз <app>OCRFeeder</app> породжує документи трьох форматів: <em>ODT</em><em>HTML</em> та <em>Звичайний текст</em>."
+
+#: C/documentgeneration.page:17(p)
+msgid "After the recognition and eventual manual edition has been performed, it is possible to generate a document by clicking <guiseq><gui>File</gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr "Після розпізнавання і, можливо, ручного редагування, можна створити документ, клацнувши <guiseq><gui>Файл</gui><gui>Експортувати…</gui></guiseq> та вибравши бажаний формат документа."
+
+#: C/documentgeneration.page:22(p)
+msgid "The HTML exportation generates a folder with the document pages represented by one HTML file. In each page there are links to go to the previous and next pages. Image content areas are stored in a subfolder called <em>images</em>."
+msgstr "Експортування в HTML породжує теку зі сторінками документа, поданими окремими файлами HTML. На кожній сторінці є посилання для переходу до попередньої і наступної сторінок. Ділянки, що містять зображення, зберігаються в підтеку з назвою <em>images</em>."
+
+#: C/deskewing.page:8(desc)
+msgid "Correcting the skew in the images"
+msgstr "Коректування нахилу зображення"
+
+#: C/deskewing.page:11(title)
+msgid "Deskewing"
+msgstr "Усунення нахилу"
+
+#: C/deskewing.page:13(p)
+msgid "Some images, especially if they were added from a scanner device, may be skewed and this makes it harder to recognize the image."
+msgstr "Деякі зображення, особливо отримані зі сканувального пристрою, можуть бути нахиленими, що ускладнює їхнє розпізнавання"
+
+#: C/deskewing.page:16(p)
+msgid "<app>OCRFeeder</app> offers a way to automatically deskew an image. To deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</gui></guiseq>."
+msgstr "<app>OCRFeeder</app> надає можливість автоматично усувати нахил зображення. Щоб усунути нахил завантаженого зображення, клацніть <guiseq><gui>Засоби</gui><gui>Усунення нахилу</gui></guiseq>."
+
+#: C/deskewing.page:20(p)
+msgid "This operation can also be set to be performed automatically every time an image is added. To set it, simply open the <gui>Preferences</gui> dialog from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check <gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr "Можна передбачити автоматичне виконання цієї операції протягом додання кожного зображення. Щоб зробити це просто відкрийте вікно <gui>Параметри</gui> з меню <guiseq><gui>Зміни</gui><gui>Параметри</gui></guiseq> та встановити <gui>Усунення нахилу</gui> під вкладкою <gui>Засоби</gui>."
+
+#: C/deskewing.page:26(p)
+msgid "Depending on the size and characteristics of the image, deskewing an image may take some time."
+msgstr "Залежно від розміру та характеристики зображення, усунення нахилу може зайняти деякий час."
+
+#: C/automaticrecognition.page:8(desc)
+msgid "Automatically recognizing an image"
+msgstr "Автоматичне розпізнавання зображення"
+
+#: C/automaticrecognition.page:11(title)
+msgid "Automatic Recognition"
+msgstr "Автоматичне розпізнавання"
+
+#: C/automaticrecognition.page:13(p)
+msgid "<app>OCRFeeder</app> tries to detect the contents in a document image and perform OCR over them, also distinguishing between what is graphics and what is text. To simplify this concept, we call it recognition."
+msgstr "<app>OCRFeeder</app> намагається визначити вміст зображення документа і виконати оптичне розпізнавання символів, розрізняючи графіку та текст. Простішими словами ми це називаємо розпізнаванням."
+
+#: C/automaticrecognition.page:18(p)
+msgid "After an image is added it can be automatically recognized by clicking <guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr "Після додавання зображення воно може бути автоматично розпізнане, якщо клацнути <guiseq><gui>Документ</gui><gui>Розпізнати документ</gui></guiseq>."
+
+#: C/automaticrecognition.page:22(p)
+msgid "Since there are many different document layouts out there, the automatic recognition, mainly the page segmentation, may turn out not to be accurate for you document. In this case, some manual editing of the recognition results might be needed."
+msgstr "Оскільки є багато різних документів, то автоматичне розпізнавання, а особливо виявлення структури сторінки, буває не завжди якісним. В такому випадку може знадобитися ручне редагування результатів розпізнавання."
+
+#: C/automaticrecognition.page:28(p)
+msgid "The automatic recognition performs some complex operations and may take some time depending on the size of the image and the complexity of the layout."
+msgstr "Автоматичне розпізнавання є досить складною операцією і може зайняти деякий час, залежно від розміру зображення та складності розмітки."
+
+#: C/automaticrecognition.page:31(p)
+msgid "The automatic recognition will replace all the content areas in the currently selected page."
+msgstr "Автоматичне розпізнавання замінить всі ділянки на вибраній сторінці."
+
+#: C/addingimage.page:7(desc)
+msgid "Adding an image to be recognized"
+msgstr "Додавання зображення для розпізнавання"
+
+#: C/addingimage.page:10(title)
+msgid "Adding An Image"
+msgstr "Додавання зображення"
+
+#: C/addingimage.page:12(p)
+msgid "Adding an image to OCRFeeder is usually the first step when converting a document."
+msgstr "Додавання зображення до OCRFeeder це, як правило, перший крок перетворення документа"
+
+#: C/addingimage.page:15(p)
+msgid "Each added image represents a page in the final document. A thumbnail of the image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr "Кожне додане зображення є сторінкою кінцевого документа. Зменшене зображення сторінки зображається в ділянці сторінок (ліва частина вікна <app>OCRFeeder</app>)."
+
+#: C/addingimage.page:19(p)
+msgid "The order of the pages in the final document will be the same as the images' order in the pages' area. This way, pages can be reordered by dragging them in the images' thumbnails in the pages' area."
+msgstr "Порядок сторінок у кінцевому документі буде такий самий, як і порядок зображень в ділянці сторінок. Таким чином порядок сторінок можна змінити, перетягуючи їхнє зображення в ділянці сторінок."
+
+#: C/addingimage.page:24(p)
+msgid "You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</gui></guiseq>."
+msgstr "Ви можете додати зображення, клацнувши <guiseq><gui>Файл</gui><gui>Додати зображення</gui></guiseq>."
+
+#: C/addingimage.page:27(p)
+msgid "To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></guiseq> or right-click over the page's thumbnail and choose <gui>Delete</gui>."
+msgstr "Для вилучення сторінки, клацніть <guiseq><gui>Зміни</gui><gui>Вилучити сторінку</gui></guiseq> або клацнувши правою кнопкою на зображені сторінки і вибравши <gui>Вилучити</gui>."
+
+#: C/addingimage.page:32(title)
+msgid "Page Configuration"
+msgstr "Налаштування сторінки"
+
+#: C/addingimage.page:34(p)
+msgid "To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit Page</gui></guiseq> and choose either a custom size, providing the respective values or a standard paper size from a list."
+msgstr "Щоб встановити розмір сторінок, клацніть <guiseq><gui>Зміни</gui><gui>Редагувати сторінку</gui></guiseq> та виберіть розмір, ввівши бажані значення, або вказавши у списку стандартний розмір паперу."
+
+#: C/addingfolder.page:8(desc)
+msgid "Adding all the images from a folder"
+msgstr "Додавання всіх зображень з теки"
+
+#: C/addingfolder.page:11(title)
+msgid "Adding Folder"
+msgstr "Додавання теки"
+
+#: C/addingfolder.page:13(p)
+msgid "Sometimes it is useful to add all the images from a given folder. <app>OCRFeeder</app> provides this functionality by choosing <guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr "Іноді буває зручно додати всі зображення з деякої теки. <app>OCRFeeder</app> підтримує таку операцію вибором <guiseq><gui>Файл</gui><gui>Додати теку</gui></guiseq>."
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/index.page:0(None)
+msgid "translator-credits"
+msgstr "Pilipchuk Marija <djka95 at gmail dot com>, 2011"
