@@ -12,7 +12,7 @@
 <title>Document Generation</title>
 
 <p><app>OCRFeeder</app> currently generates three document formats:
-<em>ODT</em> <em>HTML</em> and <em>Plain Text</em>.</p>
+<em>ODT</em>, <em>HTML</em> and <em>Plain Text</em>.</p>
 
 <p>After the recognition and eventual manual edition has been
 performed, it is possible to generate a document by clicking

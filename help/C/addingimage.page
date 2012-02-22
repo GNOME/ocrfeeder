@@ -31,7 +31,7 @@ right-click over the page's thumbnail and choose <gui>Delete</gui>.</p>
 <section>
 <title>Page Configuration</title>
 
-<p>To configre the pages' size click in
+<p>To configure the page's size click in
 <guiseq><gui>Edit</gui><gui>Edit Page</gui></guiseq>
 and choose either a custom size, providing the respective
 values or a standard paper size from a list.</p>

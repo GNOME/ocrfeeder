@@ -47,7 +47,7 @@ dialog, under its <gui>Recognition</gui> tab.</p>
     areas sometimes have a considerable margin between their contents and
     the areas' edges. By checking this option, <app>OCRFeeder</app> will
     minimize those margins, adjusting the areas to its contents better.
-    Optionally, a manual value can be check to indicate the minimum value
+    Optionally, a manual value can be check to indicate the maximum value
     of the adjusted margins.</p></item>
 </list>
 
