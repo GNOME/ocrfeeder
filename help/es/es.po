@@ -1,13 +1,13 @@
 # Spanish translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-12-11 16:48+0000\n"
-"PO-Revision-Date: 2011-12-12 14:39+0100\n"
+"POT-Creation-Date: 2012-02-22 18:59+0000\n"
+"PO-Revision-Date: 2012-02-23 12:23+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -801,12 +801,19 @@ msgstr ""
 "automático o manual cuando las columnas no se detectan correctamente."
 
 #: C/finetuning.page:46(p)
+#| msgid ""
+#| "<gui>Adjust content areas' bounds</gui>: The detected content areas "
+#| "sometimes have a considerable margin between their contents and the "
+#| "areas' edges. By checking this option, <app>OCRFeeder</app> will minimize "
+#| "those margins, adjusting the areas to its contents better. Optionally, a "
+#| "manual value can be check to indicate the minimum value of the adjusted "
+#| "margins."
 msgid ""
 "<gui>Adjust content areas' bounds</gui>: The detected content areas "
 "sometimes have a considerable margin between their contents and the areas' "
 "edges. By checking this option, <app>OCRFeeder</app> will minimize those "
 "margins, adjusting the areas to its contents better. Optionally, a manual "
-"value can be check to indicate the minimum value of the adjusted margins."
+"value can be check to indicate the maximum value of the adjusted margins."
 msgstr ""
 "<gui>Ajustar los límites de las áreas de contenido</gui>: las áreas de "
 "contenido detectadas tienen a veces un margen considerable entre sus "
@@ -824,11 +831,14 @@ msgid "Document Generation"
 msgstr "Generación de un documento"
 
 #: C/documentgeneration.page:14(p)
+#| msgid ""
+#| "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
+#| "em><em>HTML</em> and <em>Plain Text</em>."
 msgid ""
 "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-"em><em>HTML</em> and <em>Plain Text</em>."
+"em>, <em>HTML</em> and <em>Plain Text</em>."
 msgstr ""
-"<app>OCRFeeder</app> actualmente genera tres formatos de documentos: "
+"Actualmente, <app>OCRFeeder</app> genera tres formatos de documentos: "
 "<em>ODT</em> y <em>HTML</em> y <em>texto plano</em>."
 
 #: C/documentgeneration.page:17(p)
@@ -1016,8 +1026,12 @@ msgid "Page Configuration"
 msgstr "Configuración de página"
 
 #: C/addingimage.page:34(p)
+#| msgid ""
+#| "To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit "
+#| "Page</gui></guiseq> and choose either a custom size, providing the "
+#| "respective values or a standard paper size from a list."
 msgid ""
-"To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
 "gui></guiseq> and choose either a custom size, providing the respective "
 "values or a standard paper size from a list."
 msgstr ""
