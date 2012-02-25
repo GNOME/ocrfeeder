@@ -1,0 +1,1054 @@
+# French translation of ocrfeeder documentation.
+# Copyright (C) 2010-2012 Listed translators
+# This file is distributed under the same license as the ocrfeeder package.
+#
+# MARIO GERVAIS <mgervais.qc@gmail.com>, 2011
+# GENEVYEVE TURCOT <genevyeve.turcot@gmail.com>, 2011
+# Alain Lojewski <allomervan@gmail.com>, 2011
+# Bruno Brouard <annoa.b@gmail.com>, 2012
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder doc\n"
+"POT-Creation-Date: 2012-02-22 18:59+0000\n"
+"PO-Revision-Date: 2012-02-20 21:42+0100\n"
+"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: C/unpaper.page:8(desc)
+msgid "Cleaning images before performing OCR"
+msgstr "Nettoyer les images avant de faire une ROC"
+
+#: C/unpaper.page:11(title)
+msgid "Unpaper"
+msgstr "Unpaper"
+
+#: C/unpaper.page:13(p)
+msgid ""
+"<em>Unpaper</em> is a tool to clean images in order to make them easier to "
+"read on screen. It is aimed mainly at images obtained from scanned documents "
+"which usually show dust, black margins or other flaws."
+msgstr ""
+"<em>Unpaper</em> est un outil pour nettoyer des images afin de les rendre "
+"plus facilement lisibles à l'écran. Il est surtout destiné à des images "
+"obtenues par numérisation qui présentent habituellement des traces de "
+"poussière, des marges noires ou d'autres défauts."
+
+#: C/unpaper.page:18(p)
+msgid ""
+"<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before "
+"processing them, which usually results in a better recognition."
+msgstr ""
+"<app>OCRFeeder</app> peut utiliser <em>Unpaper</em> pour nettoyer ses images "
+"avant de les traiter, ce qui donne habituellement une meilleure "
+"reconnaissance."
+
+#: C/unpaper.page:22(p)
+msgid ""
+"<em>Unpaper</em> needs to be installed in order to be used. If it is not "
+"installed, <app>OCRFeeder</app> won't show it's action in the interface."
+msgstr ""
+"Vous devez installer <em>Unpaper</em> pour l'utiliser. S'il ne l'est pas, "
+"<app>OCRFeeder</app> n'affiche pas ses options dans l'interface."
+
+#: C/unpaper.page:26(p)
+msgid ""
+"To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</"
+"gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> "
+"dialog will be shown with <em>Unpaper</em>'s options and an area to preview "
+"the changes before applying them to the loaded image. Depending on the size "
+"and characteristics of the image, using this tool might take some time."
+msgstr ""
+"Pour utiliser <em>Unpaper</em> sur une image chargée, cliquez sur "
+"<guiseq><gui>Outils</gui><gui>Unpaper</gui></guiseq>. Une boîte de dialogue "
+"<gui>Processeur d'images Unpaper</gui> affiche les options d'<em>Unpaper</"
+"em> ainsi qu'une zone d'aperçu pour voir les modifications avant de les "
+"appliquer à l'image chargée. L'utilisation de cet outil peut prendre un "
+"certain temps en fonction de la taille et des caractéristiques de l'image."
+
+#: C/unpaper.page:33(p)
+msgid ""
+"<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. "
+"In this area one can enter the path to <em>Unpaper</em>'s executable "
+"(normally this is already configured if <em>Unpaper</em> was installed the "
+"first time <app>OCRFeeder</app> was run). In the same area, under <gui>Image "
+"Pre-Processing</gui>, one can check <gui>Unpaper images</gui> to make images "
+"being processed automatically by <em>Unpaper</em> after they are loaded into "
+"<app>OCRFeeder</app>. The options taken by <em>Unpaper</em> when it's "
+"automatically called after adding an image can be configured by clicking the "
+"<gui>Unpaper Preferences</gui> button."
+msgstr ""
+"Pour configurer <em>Unpaper</em>, ouvrez le menu <guiseq><gui>Édition</"
+"gui><gui>Préférences</gui></guiseq> et allez à l'onglet <gui>Outils</gui>. "
+"Dans cette zone, vous pouvez saisir le chemin d'accès vers l'exécutable de "
+"<em>Unpaper</em> (normalement, si <em>Unpaper</em> est déjà installé à la "
+"première exécution de <app>OCRFeeder</app>, cela devrait être déjà "
+"configuré). Dans la même section, sous <gui>Pré-traitement de l'image</gui>, "
+"vous pouvez cocher <gui>Images via Unpaper</gui> pour que les images soient "
+"analysées automatiquement par <em>Unpaper</em> après leur chargement dans "
+"<app>OCRFeeder</app>. Les options utilisées par <em>Unpaper</em> lorsqu'il "
+"est appelé automatiquement après l'ajout d'une image, peuvent être "
+"configurées en cliquant sur le bouton <gui>Préférences Unpaper</gui>."
+
+#: C/projects.page:8(desc)
+msgid "Loading and saving projects"
+msgstr "Charger et enregistrer des projets"
+
+#: C/projects.page:11(title) C/index.page:43(title)
+msgid "Projects"
+msgstr "Projets"
+
+#: C/projects.page:13(p)
+msgid ""
+"Sometimes a user may want to save the progress of the work done so far in an "
+"image and continue with it later. For this case <app>OCRFeeder</app> offers "
+"the possibility to save and load projects."
+msgstr ""
+"Parfois un utilisateur peut souhaiter enregistrer la progression d'un "
+"travail en cours sur une image pour continuer son traitement plus tard. Avec "
+"<app>OCRFeeder</app>, vous pouvez enregistrer et charger des projets."
+
+#: C/projects.page:18(p)
+msgid ""
+"Projects are compressed files with the <em>ocrf</em> extension which hold "
+"information about pages (images) and content areas."
+msgstr ""
+"Des projets sont des fichiers compressés possédant l'extension <em>ocrf</em> "
+"contenant les informations sur les pages (images) et leurs zones de contenu."
+
+#: C/projects.page:22(title)
+msgid "Saving A Project"
+msgstr "Enregistrement d'un projet"
+
+#: C/projects.page:24(p)
+msgid ""
+"After having done some work in an image, a project can be created by "
+"clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
+"<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the "
+"<keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</"
+"key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A "
+"file saving dialog will then be shown so the project's name and location is "
+"entered."
+msgstr ""
+"Après avoir travaillé sur une image, vous pouvez créer un projet en cliquant "
+"sur <guiseq><gui>Fichier</gui><gui>Enregistrer</gui></guiseq> ou "
+"<guiseq><gui>Fichier</gui><gui>Enregistrer sous…</gui></guiseq>. Vous pouvez "
+"aussi utiliser les raccourcis <keyseq><key>Ctrl</key><key>S</key></keyseq> "
+"ou <keyseq><key>Ctrl</key><key>Maj</key><key>S</key></keyseq>. Une boîte de "
+"dialogue s'affiche alors pour vous permettre de saisir le nom du projet et "
+"sa destination."
+
+#: C/projects.page:35(title)
+msgid "Loading A Project"
+msgstr "Chargement d'un projet"
+
+#: C/projects.page:37(p)
+msgid ""
+"An existing project can be loaded simply by clicking <guiseq><gui>File</"
+"gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
+"keyseq>."
+msgstr ""
+"Pour ouvrir un projet existant, cliquez sur <guiseq><gui>Fichier</"
+"gui><gui>Ouvrir</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>O</"
+"key></keyseq>."
+
+#: C/projects.page:44(title)
+msgid "Appending A Project"
+msgstr "Ajout à un projet"
+
+#: C/projects.page:46(p)
+msgid ""
+"Sometimes it is useful to merge two or more projects in order to create only "
+"one document with the pages of several <app>OCRFeeder</app> projects. This "
+"can be accomplished by appending a project, which simply loads the pages "
+"from a chosen project into the current one. To do this, click in "
+"<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
+"wanted project."
+msgstr ""
+"Il est parfois utile de fusionner des projets afin de ne créer qu'un seul "
+"document contenant les pages de plusieurs projets <app>OCRFeeder</app>. "
+"Cliquez sur <guiseq><gui>Fichier</gui><gui>Ajouter un projet</gui></guiseq> "
+"et faites votre choix."
+
+#: C/projects.page:56(title)
+msgid "Clearing A Project"
+msgstr "Effacement d'un projet"
+
+#: C/projects.page:58(p)
+msgid ""
+"If all the information is a project should be deleted (for example, to start "
+"over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
+"Project</gui></guiseq>."
+msgstr ""
+"Si vous souhaitez effacer toutes les informations d'un projet (par exemple "
+"pour recommencer depuis le début), utilisez le menu <guiseq><gui>Édition</"
+"gui><gui>Effacer le projet</gui></guiseq>."
+
+#: C/ocrconfiguration.page:9(desc)
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Configurer le moteur ROC pour reconnaître le texte"
+
+#: C/ocrconfiguration.page:12(title)
+msgid "OCR Engines Configuration"
+msgstr "Configuration du moteur ROC"
+
+#: C/ocrconfiguration.page:14(p)
+msgid ""
+"<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from "
+"images. This means any OCR engine that can be used from the command line "
+"should also be used in <app>OCRFeeder</app>."
+msgstr ""
+"<app>OCRFeeder</app> utilise les moteurs ROC du système pour extraire le "
+"texte des images. Ce qui veut dire que tout moteur ROC utilisable en ligne "
+"de commande peut aussi être utilisé avec <app>OCRFeeder</app>."
+
+#: C/ocrconfiguration.page:20(title)
+msgid "Automatic Detection of OCR Engines"
+msgstr "Détection automatique des moteurs ROC"
+
+#: C/ocrconfiguration.page:22(p)
+msgid ""
+"The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and "
+"<em>Cuneiform</em>) are already automatically detected and configured in "
+"most systems, the first time <app>OCRFeeder</app> is run."
+msgstr ""
+"Avec la plupart des systèmes, les moteurs ROC (<em>Tesseract</em>, <em>GOCR</"
+"em>, <em>Ocrad</em> et <em>Cuneiform</em>) sont déjà automatiquement "
+"détectés et configurés à la première exécution de <app>OCRFeeder</app>."
+
+#: C/ocrconfiguration.page:26(p)
+msgid ""
+"If an OCR engine is installed after <app>OCRFeeder</app> had configured "
+"already an engine, it will not be automatically configured but, depending on "
+"the engine, users might easily go to the <gui>OCR Engines</gui> dialog and "
+"choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr ""
+"Si vous installez un moteur ROC après que <app>OCRFeeder</app> ait déjà "
+"configuré un moteur, il ne sera pas automatiquement configuré. Mais, en "
+"fonction du moteur, vous pouvez facilement vous rendre dans la boîte de "
+"dialogue <gui>Moteurs ROC</gui> (voir menu <gui>Outils</gui>) et le choisir "
+"dans la liste des moteurs détectés après avoir appuyé sur le bouton "
+"<gui>Détecter</gui>."
+
+#: C/ocrconfiguration.page:31(p)
+msgid ""
+"Already configured OCR engines might be detected again and it is up to the "
+"user to uncheck these engines if they shouldn't be added again."
+msgstr ""
+"Il se peut que des moteurs ROC déjà configurés soient détectés à nouveau et "
+"il vous appartient alors de les décocher si vous ne souhaitez pas qu'ils "
+"soient ajoutés."
+
+#: C/ocrconfiguration.page:38(title)
+msgid "Manual Configuration"
+msgstr "Configuration manuelle"
+
+#: C/ocrconfiguration.page:40(p)
+msgid ""
+"The currently configured OCR engines are shown in the <gui>OCR Engines</gui> "
+"dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
+"gui></guiseq>."
+msgstr ""
+"Ouvrez la boîte de dialogue <gui>Moteurs ROC</gui> dans le menu "
+"<guiseq><gui>Outils</gui><gui>Moteurs ROC</gui></guiseq> pour afficher les "
+"moteurs ROC actuellement configurés."
+
+#: C/ocrconfiguration.page:44(p)
+msgid ""
+"Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog "
+"allows to add new engines, edit or delete the current ones and detect "
+"engines installed in the system."
+msgstr ""
+"À droite de la liste des moteurs ROC déjà configurés, des boutons vous "
+"permettent d'en ajouter de nouveaux, de modifier ou supprimer les moteurs "
+"actuels et de détecter ceux installés sur le système."
+
+#: C/ocrconfiguration.page:48(p)
+msgid ""
+"When adding or editing an OCR engine (by pressing the <gui>Add</gui> or "
+"<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
+"fields:"
+msgstr ""
+"Si vous ajoutez ou modifiez un moteur ROC (en cliquant sur les boutons "
+"<gui>Ajouter</gui> ou <gui>Modifier</gui>), une boîte de dialogue affiche "
+"les champs suivants :"
+
+#: C/ocrconfiguration.page:53(p)
+msgid ""
+"<gui>Name</gui>: The engine's name. This name will be used in throughout the "
+"UI when referring to the engine;"
+msgstr ""
+"<gui>Nom</gui> : le nom du moteur. Ce nom est utilisé partout dans "
+"l'interface utilisateur lorsque vous vous référez à ce moteur."
+
+#: C/ocrconfiguration.page:55(p)
+msgid ""
+"<gui>Image format</gui>: The image format that the engine recognizes (for "
+"example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr ""
+"<gui>Format d'image</gui> : le format d'image que le moteur reconnaît (par "
+"exemple <em>TIF</em> dans le cas du moteur <em>Tesseract</em>)."
+
+#: C/ocrconfiguration.page:58(p)
+msgid ""
+"<gui>Failure string</gui>: Some engines replace unrecognized characters by "
+"another, pre-defined character (for example, <em>_</em> in the case of "
+"<em>GOCR</em>)."
+msgstr ""
+"<gui>Message d'erreur</gui> : certains moteurs remplacent les caractères "
+"inconnus par un autre pré-défini (par exemple, <em>_</em> dans le cas du "
+"moteur <em>GOCR</em>)."
+
+#: C/ocrconfiguration.page:61(p)
+msgid ""
+"<gui>Engine path</gui>: The path in the system to the engine's executable "
+"(for example, <em>/usr/bin/tesseract</em>)."
+msgstr ""
+"<gui>Chemin du moteur</gui> : le chemin dans le système vers l'exécutable du "
+"moteur (par exemple <em>/usr/bin/tesseract</em>)."
+
+#: C/ocrconfiguration.page:63(p)
+msgid ""
+"<gui>Engine arguments</gui>: The arguments that feed an image to the engine "
+"and make it output the recognized text to the standard output. "
+"<app>OCRFeeder</app> runs the engine with these arguments as if it was in "
+"the command line and looks for the recognized text in the standard output. "
+"Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while "
+"other, like <em>Tesseract</em>, write the text into a file."
+msgstr ""
+"<gui>Paramètres du moteur</gui> : les paramètres qui permettent de fournir "
+"une image vers le moteur et de faire que le texte reconnu sorte vers la "
+"sortie standard. <app>OCRFeeder</app> lance le moteur avec ces paramètres "
+"comme si c'était en ligne de commande et recherche le texte reconnu dans la "
+"sortie standard. Certains moteurs le font déjà, comme <em>Ocrad</em> et "
+"<em>GOCR</em> mais d'autres, comme <em>Tesseract</em>, écrivent le texte "
+"dans un fichier."
+
+#: C/ocrconfiguration.page:70(p)
+msgid ""
+"Since the image's path to be read is always needed, a special argument <em>"
+"$IMAGE</em> is provided for this and will be replaced by the image path when "
+"the engine is run. For the cases where a file name is needed, like the one "
+"mentioned previously, a special argument <em>$FILE</em> is provided and will "
+"be replaced by a temporary file name."
+msgstr ""
+"Puisque le chemin vers l'image à lire est toujours nécessaire, un paramètre "
+"spécial <em>$IMAGE</em> est prévu à cet effet et sera remplacé par le chemin "
+"de l'image lorsque que le moteur est lancé. Dans le cas où un nom de fichier "
+"est nécessaire, comme celui mentionné auparavant, un paramètre spécial <em>"
+"$FILE</em> est prévu et remplacé par un nom de fichier temporaire."
+
+#: C/ocrconfiguration.page:76(p)
+msgid ""
+"So, in case of <em>Tesseract</em> (which writes the recognized text into a "
+"file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr ""
+"Dans le cas de <em>Tesseract</em> (qui écrit le texte reconnu dans un "
+"fichier), les paramètres sont <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+
+#: C/ocrconfiguration.page:82(p)
+msgid ""
+"The engines' configuration is stored in their own XML file in the user's "
+"home under <em>.ocrfeeder/engines/</em>."
+msgstr ""
+"La configuration des moteurs est enregistrée dans leur propre fichier XML, "
+"dans le dossier <em>.ocrfeeder/engines/</em> du dossier personnel de "
+"l'utilisateur."
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:26(None)
+msgid ""
+"@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
+msgstr ""
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/manualeditionandcorrection.page:33(None)
+msgid ""
+"@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
+msgstr ""
+
+#: C/manualeditionandcorrection.page:9(desc)
+msgid "Manual edition and correction of results"
+msgstr "Modifier et corriger manuellement les résultats"
+
+#: C/manualeditionandcorrection.page:12(title)
+msgid "Manual Edition"
+msgstr "Modification manuelle"
+
+#: C/manualeditionandcorrection.page:14(p)
+msgid ""
+"One may want to manually select just a portion of an image to be recognized "
+"or correct the results of the automatic recognition. <app>OCRFeeder</app> "
+"lets its users manually edit every aspect of a document's contents in an "
+"easy way."
+msgstr ""
+"Vous pouvez sélectionner manuellement une portion d'image à traiter ou "
+"corriger le résultat d'une reconnaissance automatique. <app>OCRFeeder</app> "
+"vous laisse modifier manuellement et facilement chaque aspect du contenu "
+"d'un document."
+
+#: C/manualeditionandcorrection.page:21(title)
+msgid "Content Areas"
+msgstr "Zones de contenu"
+
+#: C/manualeditionandcorrection.page:23(p)
+msgid ""
+"The mentioned document's contents are represented by areas like shown in the "
+"following image:"
+msgstr ""
+"Le contenu du document sélectionné est représenté par des zones comme celles "
+"apparaissant sur l'image suivante :"
+
+#: C/manualeditionandcorrection.page:26(media)
+msgid "A picture of two content areas with one of them selected."
+msgstr ""
+"Une image montrant deux zones de contenu avec l'une d'elles sélectionnée."
+
+#: C/manualeditionandcorrection.page:30(p)
+msgid ""
+"The attributes of a selected are shown and can be changed from the right "
+"part of the main window, like shown in the following image:"
+msgstr ""
+"Les attributs d'une sélection sont affichées et peuvent être modifiés à "
+"partir de la partie droite de la fenêtre principale, comme montré dans "
+"l'image suivante :"
+
+#: C/manualeditionandcorrection.page:33(media)
+msgid "A picture showing the areas' edition UI"
+msgstr ""
+"Une image montrant l'interface utilisateur utilisée pour la modification des "
+"zones"
+
+#: C/manualeditionandcorrection.page:36(p)
+msgid "The following list describes the content areas' attributes:"
+msgstr "La liste suivante décrit les attributs des zones de contenu :"
+
+#: C/manualeditionandcorrection.page:38(p)
+msgid ""
+"<em>Type</em>: sets the area to be either the type image or text. The image "
+"type will clip the area from the original page and place it in the generated "
+"document. The text type will use the text assigned to the area and represent "
+"it as text in the generated document. (Generated ODT documents will have "
+"text boxes when an area was marked as being of the type text)"
+msgstr ""
+"<em>Type</em> : définit la zone comme étant soit du texte, soit une image. "
+"Le type image découpe la zone de la page source et la place dans le document "
+"généré. Le type texte utilise le texte attribué à la zone et le représente "
+"comme du texte dans le document généré (les documents ODT générés possèdent "
+"des boîtes de texte lorsqu'une zone a été marquée comme étant de type texte)."
+
+#: C/manualeditionandcorrection.page:44(p)
+msgid ""
+"<em>Clip</em>: Shows the current clip from the original area. This makes it "
+"easier for users to check exactly what's within the area."
+msgstr ""
+"<em>Extrait</em> : affiche un extrait de l'original en cours qui vous permet "
+"de voir ce qu'il y a exactement dans cette zone."
+
+#: C/manualeditionandcorrection.page:46(p)
+msgid ""
+"<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
+"top left corner of the area is placed as well as the areas' width and height."
+msgstr ""
+"<em>Limites</em> : affiche les coordonnées (X et Y) du coin supérieur gauche "
+"de la zone dans l'image originale, ainsi que la largeur et la hauteur de la "
+"zone."
+
+#: C/manualeditionandcorrection.page:49(p)
+msgid ""
+"<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
+"area's text with by (by pressing the <gui>OCR</gui> button)"
+msgstr ""
+"<em>Moteur ROC</em> : laisse l'utilisateur choisir un moteur ROC pour "
+"reconnaître la zone (en cliquant sur le bouton <gui>ROC</gui>)."
+
+#: C/manualeditionandcorrection.page:51(p)
+msgid ""
+"Using the OCR engine to recognize the text will directly assign that text to "
+"the area and replace the one assigned before."
+msgstr ""
+"L'utilisation du moteur ROC pour reconnaître le texte, attribut directement "
+"ce texte à la zone en remplaçant l'ancien texte attribué auparavant."
+
+#: C/manualeditionandcorrection.page:49(item)
+msgid "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+msgstr "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
+
+#: C/manualeditionandcorrection.page:54(p)
+msgid ""
+"<em>Text Area</em>: Represents the text assigned to that area and lets the "
+"user edit it. This area is disabled when the area is of the type image"
+msgstr ""
+"<em>Texte</em> : affiche le texte attribué à cette zone et vous permet de le "
+"modifier. Cette zone est désactivée si la zone sélectionnée est du type "
+"image."
+
+#: C/manualeditionandcorrection.page:57(p)
+msgid ""
+"<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
+"the text alignment, line and letter spacing."
+msgstr ""
+"<em>Style</em> : laisse le choix de la police et de sa taille, ainsi que le "
+"type d'alignement et l'espacement des caractères."
+
+#: C/manualeditionandcorrection.page:61(p)
+msgid ""
+"The content areas can be selected by clicking on them or by using the menus "
+"<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and "
+"<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are "
+"also keyboard shortcuts for these actions: <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr ""
+"Pour sélectionner les zones de contenu, cliquez dessus ou utilisez les menus "
+"<guiseq><gui>Document</gui><gui>Sélectionner la zone précédente</gui></"
+"guiseq> et <guiseq><gui>Document</gui><gui>Sélectionner la zone suivante</"
+"gui></guiseq>. Vous pouvez aussi utiliser des raccourcis clavier pour ces "
+"actions : respectivement, <keyseq><key>Ctrl</key><key>Maj</key><key>P</key></"
+"keyseq> et <keyseq><key>Ctrl</key><key>Maj</key><key>N</key></keyseq>."
+
+#: C/manualeditionandcorrection.page:68(p)
+msgid ""
+"Selecting all areas is also possible using <guiseq><gui>Document</"
+"gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>A</key></keyseq>."
+msgstr ""
+"Vous pouvez aussi sélectionner toutes les zones en utilisant le menu "
+"<guiseq><gui>Document</gui><gui>Sélectionner toutes les zones</gui></guiseq> "
+"ou <keyseq><key>Ctrl</key><key>Maj</key><key>A</key></keyseq>."
+
+#: C/manualeditionandcorrection.page:72(p)
+msgid ""
+"When at least one content area is selected, it is possible to recognize "
+"their contents automatically or delete them. These actions can be "
+"accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected "
+"Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected "
+"Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</"
+"key></keyseq>), respectively."
+msgstr ""
+"Lorsqu'au moins une zone de contenu est sélectionnée, vous pouvez "
+"reconnaître son contenu automatiquement ou le supprimer. Cliquez "
+"respectivement sur <guiseq><gui>Document</gui><gui>Reconnaître les zones "
+"sélectionnées</gui></guiseq> et <guiseq><gui>Document</gui><gui>Supprimer "
+"les zones sélectionnées</gui></guiseq> (ou <keyseq><key>Ctrl</key><key>Maj</"
+"key><key>Suppr</key></keyseq>)."
+
+#: C/legal.xml:3(p)
+msgid ""
+"This work is licensed under a <link href=\"http://creativecommons.org/"
+"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
+"States License</link>."
+msgstr ""
+"Ce travail est sous licence <link href=\"http://creativecommons.org/licenses/"
+"by-sa/3.0/us/\">Creative Commons Paternité-Partage des Conditions Initiales "
+"à l'Identique 3.0</link>."
+
+#: C/legal.xml:6(p)
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Exceptionnellement, les propriétaires du copyright vous donnent la "
+"permission de copier, modifier et distribuer le code exemple contenu dans ce "
+"document sous les termes de votre choix, sans restriction."
+
+#: C/index.page:6(desc)
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Aide pour le <app>Système de conversion de document OCRFeeder</app>."
+
+#: C/index.page:7(title) C/index.page:8(title) C/index.page:17(title)
+msgid "OCRFeeder Document Conversion System"
+msgstr "Système de conversion de document OCRFeeder"
+
+#: C/index.page:10(name)
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#: C/index.page:11(email)
+msgid "jrocha@igalia.com"
+msgstr "jrocha@igalia.com"
+
+#: C/index.page:18(p)
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+"OCRFeeder est un système de reconnaissance optique de caractères (ROC) et "
+"d'analyse de la présentation de documents."
+
+#: C/index.page:20(p)
+msgid ""
+"OCRFeeder was created to allow users to easily convert document images (for "
+"example, a PNG image with text) into editable documents (for example, an ODT "
+"version with that text)."
+msgstr ""
+"OCRFeeder a été créé pour permettre aux utilisateurs de convertir facilement "
+"des documents images (par exemple, une image PNG avec du texte) en documents "
+"modifiables (comme par exemple, une version ODT avec ce même texte)."
+
+#: C/index.page:24(p)
+msgid ""
+"Given the images it will automatically outline its contents, perform OCR and "
+"distinguish between what's graphics and text. It generates multiple formats "
+"being its main one ODT."
+msgstr ""
+"En partant d'images, il analyse automatiquement leur contenu, démarre un "
+"moteur ROC et fait la distinction entre le texte et les images. Il génère de "
+"nombreux formats dont le principal est ODT."
+
+#: C/index.page:28(p)
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr "Ce guide vous explique comment configurer et utiliser OCRFeeder."
+
+#: C/index.page:31(title)
+msgid "Adding Images"
+msgstr "Ajout d'images"
+
+#: C/index.page:35(title)
+msgid "Recognition"
+msgstr "Reconnaissance"
+
+#: C/index.page:39(title)
+msgid "Configuration"
+msgstr "Configuration"
+
+#: C/importingpdf.page:8(desc)
+msgid "Importing PDF documents"
+msgstr "Importer des documents PDF"
+
+#: C/importingpdf.page:11(title)
+msgid "Importing PDF"
+msgstr "Importation de PDF"
+
+#: C/importingpdf.page:13(p)
+msgid ""
+"Some documents are nothing more than images placed in a PDF document. For "
+"cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
+"can then be converted into an editable document."
+msgstr ""
+"Parfois un document n'est rien d'autre qu'une image intégrée dans un PDF. "
+"Dans ce cas, <app>OCRFeeder</app> peut toujours importer le document PDF "
+"pour le convertir en un document modifiable."
+
+#: C/importingpdf.page:18(p)
+msgid ""
+"To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</"
+"gui></guiseq>."
+msgstr ""
+"Pour importer un document PDF, cliquez sur <guiseq><gui>Fichier</"
+"gui><gui>Importer un PDF</gui></guiseq>."
+
+#: C/importingpdf.page:21(p)
+msgid ""
+"Each PDF page will be converted to an image and placed in the pages' area."
+msgstr ""
+"Chaque page PDF est convertie en une image et placée dans la zone des pages."
+
+#: C/importingpdf.page:24(p)
+msgid ""
+"The PDF conversion can be a demanding process and take some time for large "
+"PDF files."
+msgstr ""
+"La conversion d'un PDF peut être un processus exigeant et peut demander "
+"beaucoup de temps pour convertir des fichiers volumineux."
+
+#: C/importingfromscanner.page:8(desc)
+msgid "Importing from a scanner device"
+msgstr "Importer à partir d'un scanner"
+
+#: C/importingfromscanner.page:11(title)
+msgid "Importing From Scanner"
+msgstr "Importation à partir d'un scanner"
+
+#: C/importingfromscanner.page:13(p)
+msgid ""
+"In order to help convert a printed document into an editable document, "
+"<app>OCRFeeder</app> offers a way to import images directly from a scanner "
+"device."
+msgstr ""
+"Afin de pouvoir convertir un document imprimé en un document modifiable, "
+"<app>OCRFeeder</app> sait importer des images directement d'un scanner."
+
+#: C/importingfromscanner.page:17(p)
+msgid ""
+"To import an image from a scanner device, use the menu <guiseq><gui>File</"
+"gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut "
+"<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr ""
+"Pour importer une image à partir d'un scanner, utilisez le menu "
+"<guiseq><gui>Fichier</gui><gui>Importer la page à partir du scanner</gui></"
+"guiseq> ou le raccourci clavier <keyseq><key>Ctrl</key><key>Maj</key><key>I</"
+"key></keyseq>."
+
+#: C/importingfromscanner.page:22(p)
+msgid ""
+"The currently detected scanner device will be used to scan the page. If more "
+"than one scanner if found, then a dialog will be shown with the options to "
+"choose from."
+msgstr ""
+"Le scanner actuellement détecté est utilisé pour numériser la page. Si plus "
+"d'un scanner est trouvé, alors une boîte de dialogue s'affiche pour choisir "
+"celui que vous souhaitez utiliser."
+
+#: C/finetuning.page:8(desc)
+msgid "Advanced options for a better recognition"
+msgstr "Options avancées pour une meilleure reconnaissance"
+
+#: C/finetuning.page:11(title)
+msgid "Fine-tuning"
+msgstr "Ajustements"
+
+#: C/finetuning.page:13(p)
+msgid ""
+"<app>OCRFeeder</app> has some advanced options that can be used to perform a "
+"better recognition. These options can be chosen from the <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
+"tab."
+msgstr ""
+"Vous pouvez utiliser les options avancées d'<app>OCRFeeder</app> pour "
+"améliorer la reconnaissance du document. Ces options sont disponibles dans "
+"la boîte de dialogue <guiseq><gui>Édition</gui><gui>Préférences</gui></"
+"guiseq> et dans l'onglet <gui>Reconnaissance</gui>."
+
+#: C/finetuning.page:18(p)
+msgid "The following list describes the mentioned options:"
+msgstr "La liste suivante décrit les options disponibles :"
+
+# typo BBB seperate
+#: C/finetuning.page:20(p)
+msgid ""
+"<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the "
+"text line by line and seperate each line with a line break. Sometimes, this "
+"is not what the user wants because the text might be broken in the middle of "
+"a sentence."
+msgstr ""
+"<gui>Réparer les sauts de ligne et les césures</gui> : les moteurs ROC "
+"lisent habituellement le texte ligne par ligne et séparent celles-ci par un "
+"saut de ligne. Parfois, ce n'est pas ce que vous souhaitez car le texte se "
+"retrouve coupé au milieu d'une phrase."
+
+#: C/finetuning.page:24(p)
+msgid ""
+"Checking this option will make <app>OCRFeeder</app> remove single newline "
+"characters after the text is recognized by the engines."
+msgstr ""
+"Si vous cochez cette option, <app>OCRFeeder</app> supprime les sauts de "
+"lignes uniques après la reconnaissance du texte par les moteurs."
+
+#: C/finetuning.page:26(p)
+msgid ""
+"Since just removing newlines in an hyphenized text would result in wrongly "
+"separated words, hyphenization is also detected and removed in this process."
+msgstr ""
+"Étant donné que supprimer seulement les sauts de ligne d'un texte à césures "
+"conduit à avoir des mots coupés de manière incorrecte, la césure est aussi "
+"détectée et supprimée dans ce processus."
+
+#: C/finetuning.page:29(p)
+msgid ""
+"<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the "
+"contents in an image uses the concept of <em>window size</em> which is the "
+"division of the image in small windows. A smaller window size means it is "
+"likely to detect more content areas but size that is too small may result in "
+"contents that should be part of a bigger area instead. On the other hand, a "
+"bigger window size means less divisions of contents but may end up in "
+"contents which should be subdivided."
+msgstr ""
+"<gui>Taille de fenêtre</gui> : pour détecter le contenu d'une image, "
+"l’algorithme d'<app>OCRFeeder</app> utilise le concept de <em>taille de "
+"fenêtre</em> qui divise l'image en petites fenêtres. Une petite taille de "
+"fenêtre signifie qu'il est possible de détecter plus de zones de contenu "
+"mais des fenêtres trop petites peuvent résulter en un contenu qui devrait "
+"faire partie d'une zone plus grande. D'autre part, une taille de fenêtre "
+"plus grande veut dire moins de divisions de contenu mais peut résulter en "
+"contenu qui devrait être subdivisé."
+
+#: C/finetuning.page:36(p)
+msgid ""
+"A good window size should be slightly bigger than the text line spacing in "
+"an image."
+msgstr ""
+"Une bonne taille de fenêtre devrait être légèrement plus grande que "
+"l'espacement des lignes de texte d'une image."
+
+#: C/finetuning.page:37(p)
+msgid ""
+"Users may want to manually set this value if automatic one doesn't produce "
+"any valid content areas but normally it is easier to use the automatic one "
+"and perform any needed corrections directly in the content areas."
+msgstr ""
+"Vous pouvez définir manuellement cette valeur si elle ne produit pas de "
+"zones de contenu correctes automatiquement. Mais il est normalement plus "
+"facile d'utiliser le mode automatique et d'appliquer les corrections voulues "
+"directement dans les zones de contenu."
+
+#: C/finetuning.page:41(p)
+msgid ""
+"<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</"
+"app> should try to divide the detected content areas horizontally "
+"(originating more columns). The value that is used to check the existance of "
+"blank space within the contents may be set to automatic or manual when the "
+"columns aren't detected correctly."
+msgstr ""
+"<gui>Améliorer la détection des colonnes</gui> : cochez cette option si vous "
+"voulez qu'<app>OCRFeeder</app> divise les zones de contenu détectées "
+"horizontalement (en générant davantage de colonnes). La valeur à utiliser "
+"pour détecter des espaces vides peut être définie automatiquement ou "
+"manuellement si les colonnes ne sont pas détectées correctement."
+
+#: C/finetuning.page:46(p)
+msgid ""
+"<gui>Adjust content areas' bounds</gui>: The detected content areas "
+"sometimes have a considerable margin between their contents and the areas' "
+"edges. By checking this option, <app>OCRFeeder</app> will minimize those "
+"margins, adjusting the areas to its contents better. Optionally, a manual "
+"value can be check to indicate the maximum value of the adjusted margins."
+msgstr ""
+"<gui>Ajuster les limites des zones de contenu</gui> : parfois les zones de "
+"contenu détectées ont une marge considérable entre leur contenu et le bord "
+"de la zone. Cochez cette option si vous souhaitez qu'<app>OCRFeeder</app> "
+"diminue ces marges en ajustant les zones à leur contenu. Vous pouvez aussi "
+"saisir manuellement une taille maximale pour cet ajustement."
+
+#: C/documentgeneration.page:9(desc)
+msgid "Creating an editable document"
+msgstr "Créer un document modifiable"
+
+#: C/documentgeneration.page:12(title)
+msgid "Document Generation"
+msgstr "Création du document"
+
+#: C/documentgeneration.page:14(p)
+msgid ""
+"<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
+"em>, <em>HTML</em> and <em>Plain Text</em>."
+msgstr ""
+"<app>OCRFeeder</app> génère actuellement trois formats de documents : "
+"<em>ODT</em>, <em>HTML</em> et <em>Texte brut</em>."
+
+#: C/documentgeneration.page:17(p)
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr ""
+"Après une reconnaissance et une éventuelle modification manuelle, vous "
+"pouvez générer un document en cliquant sur <guiseq><gui>Fichier</"
+"gui><gui>Exporter…</gui></guiseq> et en choisissant le format de document "
+"désiré."
+
+#: C/documentgeneration.page:22(p)
+msgid ""
+"The HTML exportation generates a folder with the document pages represented "
+"by one HTML file. In each page there are links to go to the previous and "
+"next pages. Image content areas are stored in a subfolder called <em>images</"
+"em>."
+msgstr ""
+"L'exportation en HTML génère un dossier contenant les pages du document sous "
+"forme d'un fichier HTML par page. Sur chaque page, un lien vous permet de "
+"naviguer vers la page précédente ou la suivante. Les zones de contenu image "
+"sont placées dans un sous-dossier appelé <em>images</em>."
+
+#: C/deskewing.page:8(desc)
+msgid "Correcting the skew in the images"
+msgstr "Corriger l'inclinaison dans les images"
+
+#: C/deskewing.page:11(title)
+msgid "Deskewing"
+msgstr "Redressement"
+
+#: C/deskewing.page:13(p)
+msgid ""
+"Some images, especially if they were added from a scanner device, may be "
+"skewed and this makes it harder to recognize the image."
+msgstr ""
+"Certaines images, surtout si elles ont été ajoutées à partir d'un scanner, "
+"peuvent être inclinées ce qui rend la reconnaissance plus difficile."
+
+#: C/deskewing.page:16(p)
+msgid ""
+"<app>OCRFeeder</app> offers a way to automatically deskew an image. To "
+"deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
+"gui></guiseq>."
+msgstr ""
+"<app>OCRFeeder</app> intègre un outil pour automatiser le redressement d'une "
+"image. Pour redresser une image chargée, cliquez sur <guiseq><gui>Outils</"
+"gui><gui>Redresseur d'image</gui></guiseq>."
+
+#: C/deskewing.page:20(p)
+msgid ""
+"This operation can also be set to be performed automatically every time an "
+"image is added. To set it, simply open the <gui>Preferences</gui> dialog "
+"from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check "
+"<gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr ""
+"Vous pouvez aussi automatiser ce redressement chaque fois qu'une image est "
+"ajoutée. Pour le configurer, ouvrez la boîte de dialogue <gui>Préférences</"
+"gui> du menu <guiseq><gui>Édition</gui><gui>Préférences</gui></guiseq> et "
+"cochez <gui>Redresser les images</gui> dans l'onglet <gui>Outils</gui>."
+
+#: C/deskewing.page:26(p)
+msgid ""
+"Depending on the size and characteristics of the image, deskewing an image "
+"may take some time."
+msgstr ""
+"Redresser une image peut prendre un certain temps en fonction de la taille "
+"et des caractéristiques de celle-ci."
+
+#: C/automaticrecognition.page:8(desc)
+msgid "Automatically recognizing an image"
+msgstr "Reconnaître une image automatiquement"
+
+#: C/automaticrecognition.page:11(title)
+msgid "Automatic Recognition"
+msgstr "Reconnaissance automatique"
+
+#: C/automaticrecognition.page:13(p)
+msgid ""
+"<app>OCRFeeder</app> tries to detect the contents in a document image and "
+"perform OCR over them, also distinguishing between what is graphics and what "
+"is text. To simplify this concept, we call it recognition."
+msgstr ""
+"<app>OCRFeeder</app> essaye de détecter le contenu d'une image de document "
+"et y applique les moteurs ROC. Il distingue donc ce qui est graphique de ce "
+"qui est texte. Pour simplifier ce concept, nous l'appelons reconnaissance."
+
+#: C/automaticrecognition.page:18(p)
+msgid ""
+"After an image is added it can be automatically recognized by clicking "
+"<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr ""
+"Pour reconnaître automatiquement une image après ajout, cliquez sur "
+"<guiseq><gui>Document</gui><gui>Reconnaître le document</gui></guiseq>."
+
+#: C/automaticrecognition.page:22(p)
+msgid ""
+"Since there are many different document layouts out there, the automatic "
+"recognition, mainly the page segmentation, may turn out not to be accurate "
+"for you document. In this case, some manual editing of the recognition "
+"results might be needed."
+msgstr ""
+"Sachant qu'il existe plusieurs types de mise en page de documents, la "
+"reconnaissance automatique, principalement la segmentation des pages peut "
+"parfois être approximative. Dans ce cas, des modifications manuelles du "
+"résultat de la reconnaissance peut être nécessaire."
+
+#: C/automaticrecognition.page:28(p)
+msgid ""
+"The automatic recognition performs some complex operations and may take some "
+"time depending on the size of the image and the complexity of the layout."
+msgstr ""
+"La reconnaissance automatique utilise des opérations complexes et peut "
+"prendre un certain temps en fonction de la taille de l'image et de la "
+"complexité de la mise en page."
+
+#: C/automaticrecognition.page:31(p)
+msgid ""
+"The automatic recognition will replace all the content areas in the "
+"currently selected page."
+msgstr ""
+"La reconnaissance automatique remplace toutes les zones de contenu dans la "
+"page actuellement sélectionnée."
+
+#: C/addingimage.page:7(desc)
+msgid "Adding an image to be recognized"
+msgstr "Ajouter une image pour la reconnaissance"
+
+#: C/addingimage.page:10(title)
+msgid "Adding An Image"
+msgstr "Ajout d'une image"
+
+#: C/addingimage.page:12(p)
+msgid ""
+"Adding an image to OCRFeeder is usually the first step when converting a "
+"document."
+msgstr ""
+"Ajouter une image à OCRFeeder est normalement la première action réalisée "
+"pour convertir un document."
+
+#: C/addingimage.page:15(p)
+msgid ""
+"Each added image represents a page in the final document. A thumbnail of the "
+"image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr ""
+"Chaque image ajoutée représente une page du document final. Une miniature de "
+"l'image est affichée dans la zone des pages (zone gauche de <app>OCRFeeder</"
+"app>)."
+
+#: C/addingimage.page:19(p)
+msgid ""
+"The order of the pages in the final document will be the same as the images' "
+"order in the pages' area. This way, pages can be reordered by dragging them "
+"in the images' thumbnails in the pages' area."
+msgstr ""
+"L'ordre des pages du document final est le même que celui des images "
+"apparaissant dans la zone des pages. Vous pouvez donc réorganiser les pages "
+"en faisant glisser les miniatures dans la zone des pages."
+
+#: C/addingimage.page:24(p)
+msgid ""
+"You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
+"gui></guiseq>."
+msgstr ""
+"Pour ajouter une image, cliquez sur <guiseq><gui>Fichier</gui><gui>Ajouter "
+"une image</gui></guiseq>."
+
+#: C/addingimage.page:27(p)
+msgid ""
+"To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></"
+"guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
+"gui>."
+msgstr ""
+"Pour supprimer une page, cliquez sur <guiseq><gui>Édition</"
+"gui><gui>Supprimer la page</gui></guiseq> ou faites un clic-droit sur la "
+"miniature de la page et choisissez <gui>Supprimer</gui>."
+
+#: C/addingimage.page:32(title)
+msgid "Page Configuration"
+msgstr "Configuration d'une page"
+
+#: C/addingimage.page:34(p)
+msgid ""
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"gui></guiseq> and choose either a custom size, providing the respective "
+"values or a standard paper size from a list."
+msgstr ""
+"Pour configurer la taille des pages, cliquez sur <guiseq><gui>Édition</"
+"gui><gui>Modifier la page</gui></guiseq> et choisissez une taille "
+"personnalisée en spécifiant les valeurs respectives ou une taille standard "
+"de papier à partir d'une liste."
+
+#: C/addingfolder.page:8(desc)
+msgid "Adding all the images from a folder"
+msgstr "Ajouter toutes les images à partir d'un dossier"
+
+#: C/addingfolder.page:11(title)
+msgid "Adding Folder"
+msgstr "Ajout d'un dossier"
+
+#: C/addingfolder.page:13(p)
+msgid ""
+"Sometimes it is useful to add all the images from a given folder. "
+"<app>OCRFeeder</app> provides this functionality by choosing "
+"<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr ""
+"Vous pouvez ajouter toutes les images d'un dossier avec <app>OCRFeeder</app> "
+"en choisissant le menu <guiseq><gui>Fichier</gui><gui>Ajouter un dossier</"
+"gui></guiseq>."
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/index.page:0(None)
+msgid "translator-credits"
+msgstr ""
+"MARIO GERVAIS <mgervais.qc@gmail.com>, 2011\n"
+"GENEVYEVE TURCOT <genevyeve.turcot@gmail.com>, 2011\n"
+"Alain Lojewski <allomervan@gmail.com>, 2011\n"
+"Bruno Brouard <annoa.b@gmail.com>, 2012"
