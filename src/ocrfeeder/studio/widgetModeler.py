@@ -339,7 +339,7 @@ class ImageReviewer(gtk.HPaned):
         self.addBoxEditor(box, data_box)
 
     def updateBackgroundImage(self, image_path):
-        self.path_to_image = image_path
+        self.path_to_image = self.page.image_path = image_path
         if not os.path.exists(self.path_to_image):
             return
         try:
