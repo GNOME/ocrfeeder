@@ -130,7 +130,7 @@ def getUnpaperCommand(configuration_manager):
     return command
 
 def unpaperImage(configuration_manager, image_path):
-    tmp_dir = configuration_manager.temporary_dir
+    tmp_dir = configuration_manager.TEMPORARY_FOLDER
     prefix = os.path.splitext(image_path)[0]
     unpapered_name = os.path.join(tmp_dir, os.path.basename(prefix) + '.ppm')
     if os.path.exists(unpapered_name):
