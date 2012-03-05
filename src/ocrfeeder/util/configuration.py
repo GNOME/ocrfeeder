@@ -29,7 +29,8 @@ import os.path
 PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                     'image_format': 'TIF',
                                     'engine_path': 'tesseract',
-                                    'arguments': '$IMAGE $FILE; cat '
+                                    'arguments': '$IMAGE $FILE >'
+                                    ' /dev/null 2> /dev/null; cat '
                                     '$FILE.txt; rm $FILE $FILE.txt'},
                       'ocrad': {'name': 'Ocrad',
                                 'image_format': 'PPM',
