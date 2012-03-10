@@ -192,7 +192,7 @@ msgid ""
 "  <b>%(engines)s</b> "
 msgstr ""
 "Navedene argumente programnikov je treba najverjetneje posodobiti, vendar pa je videti, da so spremenjene privzete nastavitve. Te argumente je treba posodobiti ročno:\n"
-"  <b>%(engines)s</b> \n"
+"  <b>%(engines)s</b>"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:499
 msgid "The project hasn't been saved."
