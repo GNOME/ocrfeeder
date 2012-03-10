@@ -27,7 +27,7 @@ msgstr "OCRFeeder"
 
 #: ../resources/ocrfeeder.desktop.in.h:2
 msgid "The complete OCR suite."
-msgstr "Popolni paket za optično prepoznavanje."
+msgstr "Celosten paket za optično prepoznavanje."
 
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"
@@ -182,6 +182,7 @@ msgstr ""
 "Ali jih želite posodobiti samodejno?"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:480
+#| msgid "No OCR engines available"
 msgid "_Open OCR Engines Manager Dialog"
 msgstr "_Odpri pogovorno okno upravljalnika programnikov OCR"
 
@@ -454,7 +455,7 @@ msgstr "_Orodja"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:179
 msgid "_OCR Engines"
-msgstr "_OCR programniki"
+msgstr "Programniki _OCR"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:179
 msgid "Manage OCR engines"
@@ -907,7 +908,7 @@ msgstr "Izbor"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1676
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1767
 msgid "OCR Engines"
-msgstr "OCR programniki"
+msgstr "Programniki OCR"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1372
 msgid "The engine that should be used when performing the automatic recognition."
@@ -1050,7 +1051,7 @@ msgstr "Ali ste prepričani, da želite izbrisati ta programnik?"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1749
 msgid "No OCR engines available"
-msgstr "Na voljo ni nobenega OCR programnika"
+msgstr "Na voljo ni nobenega programnika OCR"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1750
 msgid ""
@@ -1116,42 +1117,3 @@ msgstr "Opozorilo"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1879
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
-
-#~ msgid "Temporary folder"
-#~ msgstr "Začasna mapa"
-
-#~ msgid "Recognize Selected _Areas"
-#~ msgstr "Prepoznavanje izbranega _območja"
-
-#~ msgid "Zoom"
-#~ msgstr "Približaj"
-
-#~ msgid "_Appearance"
-#~ msgstr "_Videz"
-
-#~ msgid "Width"
-#~ msgstr "Širina"
-
-#~ msgid "Height"
-#~ msgstr "Višina"
-
-#~ msgid "X"
-#~ msgstr "X"
-
-#~ msgid "Y"
-#~ msgstr "Y"
-
-#~ msgid "Left aligned"
-#~ msgstr "Leva poravnava"
-
-#~ msgid "Centered"
-#~ msgstr "Sredinjeno"
-
-#~ msgid "Right aligned"
-#~ msgstr "Desna poravnava"
-
-#~ msgid "Filled"
-#~ msgstr "Zapolnjeno"
-
-#~ msgid "Tools"
-#~ msgstr "Orodja"
