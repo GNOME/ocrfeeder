@@ -69,7 +69,9 @@ class Studio:
         self.configuration_manager = ConfigurationManager()
         self.ocr_engines_manager = OcrEnginesManager(self.configuration_manager)
         self.configuration_manager.loadConfiguration()
-        self.ocr_engines_manager.makeEnginesFromFolder(self.configuration_manager.user_engines_folder)
+        user_engines_folder = self.configuration_manager.user_engines_folder
+        self.engines_needing_update = \
+            self.ocr_engines_manager.makeEnginesFromFolder(user_engines_folder)
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
         self.source_images_list_store = SourceImagesListStore()
         self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_list_store)
@@ -145,6 +147,9 @@ class Studio:
                     for engine in add_engines_dialog.getChosenEngines():
                         self.ocr_engines_manager.addNewEngine(engine)
                 add_engines_dialog.destroy()
+
+        else:
+            self.__askForEnginesMigration()
 
     def run(self):
         gtk.gdk.threads_init()
@@ -439,6 +444,55 @@ class Studio:
 
     def zoomFit(self, widget = None):
         self.source_images_controler.zoomFit()
+
+    def __askForEnginesMigration(self):
+        auto_update = self.engines_needing_update['auto']
+        if auto_update:
+            names = []
+            for migration in auto_update:
+                names.append(migration['engine'].name)
+            dialog = gtk.MessageDialog(self.main_window.window,
+                                       gtk.DIALOG_MODAL |
+                                       gtk.DIALOG_DESTROY_WITH_PARENT,
+                                       gtk.MESSAGE_WARNING,
+                                       buttons = gtk.BUTTONS_YES_NO)
+            message = _('The following engines\' arguments '
+                        'might need to be updated:\n  <b>%(engines)s</b> '
+                        '\nDo you want to update them automatically?') % \
+                        {'engines': '\n'.join(names)}
+            dialog.set_markup(message)
+            if dialog.run() == gtk.RESPONSE_YES:
+                for migration in auto_update:
+                    self.ocr_engines_manager.migrateEngine(migration['engine'],
+                                                    migration['configuration'])
+            dialog.destroy()
+
+        manual_update = self.engines_needing_update['manual']
+        if manual_update:
+            names = []
+            for migration in manual_update:
+                names.append(migration['engine'].name)
+            dialog = gtk.MessageDialog(self.main_window.window,
+                                       gtk.DIALOG_MODAL |
+                                       gtk.DIALOG_DESTROY_WITH_PARENT,
+                                       gtk.MESSAGE_WARNING)
+            dialog.add_buttons(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+                               _('_Open OCR Engines Manager Dialog'),
+                               gtk.RESPONSE_OK)
+            message = _('The following engines\' arguments '
+                        'might need to be updated but it appears '
+                        'you have changed their default configuration so '
+                        'they need to be updated manually:\n  '
+                        '<b>%(engines)s</b> ') % \
+                        {'engines': '\n'.join(names)}
+            dialog.set_markup(message)
+            response = dialog.run()
+            dialog.destroy()
+            for migration in manual_update:
+                self.ocr_engines_manager.migrateEngine(migration['engine'],
+                                                migration['configuration'])
+            if response == gtk.RESPONSE_OK:
+                self.ocrEngines()
 
     def quit(self, widget = None, data = None):
         if not self.project_name and not self.source_images_list_store.isEmpty():

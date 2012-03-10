@@ -1814,10 +1814,25 @@ class OcrSettingsDialog(gtk.Dialog):
 
     def setEngine(self):
         try:
-            engine = self.engine_manager.newEngine(self.name_entry.get_text(), self.engine_path_entry.get_text(),
-                                             self.arguments_entry.get_text(), self.image_format_entry.get_text(),
-                                             self.failure_string_entry.get_text()
-                                             )
+            path = self.engine_path_entry.get_text()
+            if self.engine:
+                version = self.engine.version
+            else:
+                configuration = \
+                  self.configuration_manager.getEngineDefaultConfiguration(path)
+                if configuration:
+                    version = configuration['version']
+                else:
+                    version = 0.0
+            arguments = self.arguments_entry.get_text()
+            image_format = self.image_format_entry.get_text()
+            failure_string = self.failure_string_entry.get_text()
+            engine = self.engine_manager.newEngine(self.name_entry.get_text(),
+                                                   path,
+                                                   arguments,
+                                                   image_format,
+                                                   failure_string,
+                                                   version)
             if self.engine:
                 self.engine_manager.replaceEngine(self.engine, engine)
                 self.engine = engine

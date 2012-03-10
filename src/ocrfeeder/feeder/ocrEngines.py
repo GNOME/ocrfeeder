@@ -31,11 +31,15 @@ FILE_ARGUMENT = '$FILE'
 
 class Engine:
 
-    def __init__(self, name, engine_path, arguments, image = None, temporary_folder = '/tmp/', image_format = 'PPM', failure_string = ''):
+    def __init__(self, name, engine_path, arguments,
+                 image = None, temporary_folder = '/tmp/',
+                 image_format = 'PPM', failure_string = '',
+                 version = 0.0):
 
         self.name = name
         self.engine_path = engine_path
         self.arguments = arguments
+        self.version = version
         if not self.name:
             raise WrongSettingsForEngine("The engine's name cannot be empty!")
         if not self.engine_path or not os.path.isfile(self.engine_path):
@@ -109,7 +113,8 @@ class Engine:
                        'engine_path': self.engine_path,
                        'arguments': self.arguments,
                        'image_format': self.image_format,
-                       'failure_string': self.failure_string}
+                       'failure_string': self.failure_string,
+                       'version': self.version}
         root = ET.Element('engine')
         for key, value in engine_info.items():
             if not key or not value:
@@ -158,6 +163,29 @@ class OcrEnginesManager:
             lib.debug("Warning: no engines found!")
         elif not favorite_engine_exists:
             self.configuration_manager.favorite_engine = self.ocr_engines[0][0].name
+        engines_needing_update = {'auto': [],
+                                  'manual': []}
+        for engine, path in self.ocr_engines:
+            path = engine.engine_path
+            default_conf = \
+                self.configuration_manager.getEngineDefaultConfiguration(path)
+            if default_conf is None:
+                continue
+            if float(engine.version) < float(default_conf['version']):
+                update_type = 'manual'
+                for arguments in default_conf['old_arguments']:
+                    if engine.arguments == arguments:
+                        update_type = 'auto'
+                        break
+                engines_needing_update[update_type].append({'engine': engine,
+                                               'configuration': default_conf})
+        return engines_needing_update
+
+    def migrateEngine(self, engine, configuration, only_version = False):
+        if not only_version:
+            engine.arguments = configuration['arguments']
+        engine.version = configuration['version']
+        self.replaceEngine(engine, engine)
 
     def getEngineFromXml(self, xml_file_name):
         document = ET.parse(xml_file_name)
@@ -174,11 +202,13 @@ class OcrEnginesManager:
     def getXmlFilesInFolder(self, folder):
         return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
 
-    def newEngine(self, name, engine_path, arguments, image_format, failure_string):
+    def newEngine(self, name, engine_path, arguments,
+                  image_format, failure_string, version):
         engine = Engine(name = name, engine_path = engine_path,
                         arguments = arguments, image_format = image_format,
                         temporary_folder = self.configuration_manager.TEMPORARY_FOLDER,
-                        failure_string = failure_string)
+                        failure_string = failure_string,
+                        version = version)
         return engine
 
     def delete(self, index):

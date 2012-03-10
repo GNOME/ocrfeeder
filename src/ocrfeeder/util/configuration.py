@@ -31,21 +31,32 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                     'engine_path': 'tesseract',
                                     'arguments': '$IMAGE $FILE >'
                                     ' /dev/null 2> /dev/null; cat '
-                                    '$FILE.txt; rm $FILE $FILE.txt'},
+                                    '$FILE.txt; rm $FILE $FILE.txt',
+                                    'old_arguments': ['$IMAGE $FILE; cat '
+                                       '$FILE.txt; rm $FILE $FILE.txt'],
+                                    'version': 0.1},
                       'ocrad': {'name': 'Ocrad',
                                 'image_format': 'PPM',
                                 'engine_path': 'ocrad',
-                                'arguments': '-F utf8 $IMAGE'},
+                                'arguments': '-F utf8 $IMAGE',
+                                'old_arguments': ['-F utf8 $IMAGE'],
+                                'version': 0.1},
                       'gocr': {'name': 'GOCR',
                                'image_format': 'PPM',
                                'engine_path': 'gocr',
-                               'arguments': '-f UTF8 $IMAGE'},
+                               'arguments': '-f UTF8 $IMAGE',
+                               'old_arguments': ['-f UTF8 $IMAGE'],
+                               'version': 0.1},
                       'cuneiform': {'name': 'Cuneiform',
                                'image_format': 'BMP',
                                'engine_path': 'cuneiform',
                                'arguments': '-f text -o $FILE $IMAGE >'
                                ' /dev/null 2> /dev/null && cat $FILE'
-                               ' && rm $FILE'},
+                               ' && rm $FILE',
+                               'old_arguments': ['-f text -o $FILE $IMAGE >'
+                                      ' /dev/null 2> /dev/null && cat $FILE'
+                                      ' && rm $FILE'],
+                               'version': 0.1},
                      }
 
 class ConfigurationManager(object):
@@ -303,6 +314,13 @@ class ConfigurationManager(object):
             return self.DEFAULTS[variable_name]
         else:
             return ''
+
+    def getEngineDefaultConfiguration(self, engine_path):
+        path = os.path.basename(engine_path)
+        for name, conf in PREDEFINED_ENGINES.items():
+            if conf['engine_path'] == path:
+                return conf
+        return None
 
     def loadConfiguration(self):
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
