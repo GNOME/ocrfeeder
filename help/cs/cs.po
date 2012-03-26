@@ -2,13 +2,13 @@
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
 #
-# Marek Černocký <marek@manet.cz>, 2011.
+# Marek Černocký <marek@manet.cz>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2011-12-11 16:48+0000\n"
-"PO-Revision-Date: 2011-12-14 11:15+0100\n"
+"POT-Creation-Date: 2012-02-22 18:59+0000\n"
+"PO-Revision-Date: 2012-03-26 10:33+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -801,7 +801,7 @@ msgid ""
 "sometimes have a considerable margin between their contents and the areas' "
 "edges. By checking this option, <app>OCRFeeder</app> will minimize those "
 "margins, adjusting the areas to its contents better. Optionally, a manual "
-"value can be check to indicate the minimum value of the adjusted margins."
+"value can be check to indicate the maximum value of the adjusted margins."
 msgstr ""
 "<gui>Přizpůsobit hranice oblastí s obsahem</gui>: Detekovaná oblast má někdy "
 "značně velký okraj mezi vlastním obsahem a hranami. Po zaškrtnutím této voly "
@@ -821,10 +821,10 @@ msgstr "Generování dokumentu"
 #: C/documentgeneration.page:14(p)
 msgid ""
 "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-"em><em>HTML</em> and <em>Plain Text</em>."
+"em>, <em>HTML</em> and <em>Plain Text</em>."
 msgstr ""
 "Aplikace <app>OCRFeeder</app> v současnosti generuje tři formáty dokumentů: "
-"<em>ODT</em>,<em>HTML</em> a <em>prostý text</em>."
+"<em>ODT</em>, <em>HTML</em> a <em>prostý text</em>."
 
 #: C/documentgeneration.page:17(p)
 msgid ""
@@ -1006,7 +1006,7 @@ msgstr "Nastavení stránky"
 
 #: C/addingimage.page:34(p)
 msgid ""
-"To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
 "gui></guiseq> and choose either a custom size, providing the respective "
 "values or a standard paper size from a list."
 msgstr ""
