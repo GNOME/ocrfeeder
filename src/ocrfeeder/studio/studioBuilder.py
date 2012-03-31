@@ -448,24 +448,9 @@ class Studio:
     def __askForEnginesMigration(self):
         auto_update = self.engines_needing_update['auto']
         if auto_update:
-            names = []
             for migration in auto_update:
-                names.append(migration['engine'].name)
-            dialog = gtk.MessageDialog(self.main_window.window,
-                                       gtk.DIALOG_MODAL |
-                                       gtk.DIALOG_DESTROY_WITH_PARENT,
-                                       gtk.MESSAGE_WARNING,
-                                       buttons = gtk.BUTTONS_YES_NO)
-            message = _('The following engines\' arguments '
-                        'might need to be updated:\n  <b>%(engines)s</b> '
-                        '\nDo you want to update them automatically?') % \
-                        {'engines': '\n'.join(names)}
-            dialog.set_markup(message)
-            if dialog.run() == gtk.RESPONSE_YES:
-                for migration in auto_update:
-                    self.ocr_engines_manager.migrateEngine(migration['engine'],
-                                                    migration['configuration'])
-            dialog.destroy()
+                self.ocr_engines_manager.migrateEngine(migration['engine'],
+                                                       migration['configuration'])
 
         manual_update = self.engines_needing_update['manual']
         if manual_update:
