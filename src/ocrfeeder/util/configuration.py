@@ -39,24 +39,22 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                 'image_format': 'PPM',
                                 'engine_path': 'ocrad',
                                 'arguments': '-F utf8 $IMAGE',
-                                'old_arguments': ['-F utf8 $IMAGE'],
-                                'version': 0.1},
+                                'old_arguments': [],
+                                'version': 0.0},
                       'gocr': {'name': 'GOCR',
                                'image_format': 'PPM',
                                'engine_path': 'gocr',
                                'arguments': '-f UTF8 $IMAGE',
-                               'old_arguments': ['-f UTF8 $IMAGE'],
-                               'version': 0.1},
+                               'old_arguments': [],
+                               'version': 0.0},
                       'cuneiform': {'name': 'Cuneiform',
                                'image_format': 'BMP',
                                'engine_path': 'cuneiform',
                                'arguments': '-f text -o $FILE $IMAGE >'
                                ' /dev/null 2> /dev/null && cat $FILE'
                                ' && rm $FILE',
-                               'old_arguments': ['-f text -o $FILE $IMAGE >'
-                                      ' /dev/null 2> /dev/null && cat $FILE'
-                                      ' && rm $FILE'],
-                               'version': 0.1},
+                               'old_arguments': [],
+                               'version': 0.0},
                      }
 
 class ConfigurationManager(object):
