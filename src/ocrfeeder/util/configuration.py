@@ -130,12 +130,14 @@ class ConfigurationManager(object):
                 continue
             image_format = PREDEFINED_ENGINES[name].get('image_format', 'PPM')
             failure_string = PREDEFINED_ENGINES[name].get('failure_string', '')
+            version = PREDEFINED_ENGINES[name].get('version', 0.0)
             engine = Engine(engine_name,
                             path,
                             arguments,
                             temporary_folder = self.TEMPORARY_FOLDER,
                             image_format = image_format,
-                            failure_string = failure_string)
+                            failure_string = failure_string,
+                            version = version)
             existing_engines.append(engine)
         return existing_engines
 
