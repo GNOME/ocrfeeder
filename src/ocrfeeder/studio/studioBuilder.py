@@ -461,14 +461,18 @@ class Studio:
                                        gtk.DIALOG_MODAL |
                                        gtk.DIALOG_DESTROY_WITH_PARENT,
                                        gtk.MESSAGE_WARNING)
-            dialog.add_buttons(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
+            dialog.add_buttons(_('_Keep Current Configuration') ,
+                               gtk.RESPONSE_CANCEL,
                                _('_Open OCR Engines Manager Dialog'),
                                gtk.RESPONSE_OK)
-            message = _('The following engines\' arguments '
+            message = _('The following OCR engines\' arguments '
                         'might need to be updated but it appears '
                         'you have changed their default configuration so '
                         'they need to be updated manually:\n  '
-                        '<b>%(engines)s</b> ') % \
+                        '<b>%(engines)s</b>\n\n'
+                        'If you do not want to keep your changes '
+                        'you can just remove the current configuration '
+                        'and have your OCR engines detected again.') % \
                         {'engines': '\n'.join(names)}
             dialog.set_markup(message)
             response = dialog.run()
