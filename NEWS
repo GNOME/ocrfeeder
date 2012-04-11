@@ -1,3 +1,26 @@
+Version 0.7.9
+=============
+
+Bug Fixes
+----------
+
+* Fix issue with the engines migration when there is no configuration folder
+* Remove the migration information for engines that do not need so
+
+Improvements
+-------------
+
+* Remove the warning dialog about the engines' arguments auto update
+* Make the OCR engines' configuration warning more understandable
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cz]
+* Joe Hansen [da]
+* Fran Diéguez [gl]
+
+
 Version 0.7.8
 =============
 
