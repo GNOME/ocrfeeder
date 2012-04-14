@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-03-10 19:03+0000\n"
-"PO-Revision-Date: 2012-03-10 21:00+0100\n"
+"POT-Creation-Date: 2012-04-12 14:44+0000\n"
+"PO-Revision-Date: 2012-04-14 09:54+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -170,40 +170,36 @@ msgstr "Ali ste prepričani, da želite izbrisati trenutno sliko?"
 msgid "Are you sure you want to clear the project?"
 msgstr "Ali ste prepričani, da želite počistiti projekt?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:459
-#, python-format
-msgid ""
-"The following engines' arguments might need to be updated:\n"
-"  <b>%(engines)s</b> \n"
-"Do you want to update them automatically?"
-msgstr ""
-"Navedene argumente programnikov je treba najverjetneje posodobiti:\n"
-"  <b>%(engines)s</b> \n"
-"Ali jih želite posodobiti samodejno?"
+#: ../src/ocrfeeder/studio/studioBuilder.py:464
+msgid "_Keep Current Configuration"
+msgstr "_Ohrani trenutne nastavitve"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:480
-#| msgid "No OCR engines available"
+#: ../src/ocrfeeder/studio/studioBuilder.py:466
 msgid "_Open OCR Engines Manager Dialog"
 msgstr "_Odpri pogovorno okno upravljalnika programnikov OCR"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:482
+#: ../src/ocrfeeder/studio/studioBuilder.py:468
 #, python-format
 msgid ""
-"The following engines' arguments might need to be updated but it appears you have changed their default configuration so they need to be updated manually:\n"
-"  <b>%(engines)s</b> "
+"The following OCR engines' arguments might need to be updated but it appears you have changed their default configuration so they need to be updated manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current configuration and have your OCR engines detected again."
 msgstr ""
 "Navedene argumente programnikov je treba najverjetneje posodobiti, vendar pa je videti, da so spremenjene privzete nastavitve. Te argumente je treba posodobiti ročno:\n"
-"  <b>%(engines)s</b>"
+"  <b>%(engines)s</b>\n"
+"\n"
+"V kolikor obstoječih sprememb ne želite ohraniti, je mogoče enostavno odstraniti trenutne nastavitve in jih ponovno zaznati s programniki OCR."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:499
+#: ../src/ocrfeeder/studio/studioBuilder.py:488
 msgid "The project hasn't been saved."
 msgstr "Projekt je shranjen"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:500
+#: ../src/ocrfeeder/studio/studioBuilder.py:489
 msgid "Do you want to save it before closing?"
 msgstr "Ali jih želite shraniti pred zapiranjem?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:501
+#: ../src/ocrfeeder/studio/studioBuilder.py:490
 msgid "Close anyway"
 msgstr "Vseeno zapri"
 
@@ -1117,3 +1113,12 @@ msgstr "Opozorilo"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1879
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
+
+#~ msgid ""
+#~ "The following engines' arguments might need to be updated:\n"
+#~ "  <b>%(engines)s</b> \n"
+#~ "Do you want to update them automatically?"
+#~ msgstr ""
+#~ "Navedene argumente programnikov je treba najverjetneje posodobiti:\n"
+#~ "  <b>%(engines)s</b> \n"
+#~ "Ali jih želite posodobiti samodejno?"
