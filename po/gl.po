@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 00:32+0100\n"
-"PO-Revision-Date: 2012-03-24 00:34+0100\n"
+"POT-Creation-Date: 2012-04-19 20:18+0200\n"
+"PO-Revision-Date: 2012-04-19 20:19+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl_ES\n"
@@ -170,43 +170,42 @@ msgstr "Está seguro de que quere eliminar a imaxe actual?"
 msgid "Are you sure you want to clear the project?"
 msgstr "Está seguro de que quere borrar o proxecto?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:459
-#, python-format
-msgid ""
-"The following engines' arguments might need to be updated:\n"
-"  <b>%(engines)s</b> \n"
-"Do you want to update them automatically?"
-msgstr ""
-"Débense actualizar os seguintes argumentos dos motores:\n"
-"  <b>%(engines)s</b> \n"
-"Desexa actualizalos automaticamente?"
+#: ../src/ocrfeeder/studio/studioBuilder.py:464
+msgid "_Keep Current Configuration"
+msgstr "_Manter configuración actual"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:480
+#: ../src/ocrfeeder/studio/studioBuilder.py:466
 msgid "_Open OCR Engines Manager Dialog"
 msgstr "Diálogo do xestor de motores _Open OCR"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:482
+#: ../src/ocrfeeder/studio/studioBuilder.py:468
 #, python-format
 msgid ""
-"The following engines' arguments might need to be updated but it appears you "
-"have changed their default configuration so they need to be updated "
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
 "manually:\n"
-"  <b>%(engines)s</b> "
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
 msgstr ""
-"Débense actualizar os seguintes argumentos dos motores pero, ao parecer, "
+"Débense actualizar os seguintes argumentos dos motores OCR pero, ao parecer, "
 "cambiou a súa configuración predeterminada, polo que débense actualizar "
 "manualmente:\n"
-"  <b>%(engines)s</b> "
+"  <b>%(engines)s</b> \n"
+"\n"
+"Se non quere manter os seus cambios pode quitar a configuración actual e "
+"engadir os seus motores OCR detectados de novo."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:499
+#: ../src/ocrfeeder/studio/studioBuilder.py:488
 msgid "The project hasn't been saved."
 msgstr "O proxecto aínda non foi gardado."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:500
+#: ../src/ocrfeeder/studio/studioBuilder.py:489
 msgid "Do you want to save it before closing?"
 msgstr "Desexa gardalo antes de pechar?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:501
+#: ../src/ocrfeeder/studio/studioBuilder.py:490
 msgid "Close anyway"
 msgstr "Pechar de tódolos xeitos"
 
@@ -1135,6 +1134,15 @@ msgstr "Aviso"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1879
 msgid "translator-credits"
 msgstr "Fran Dieguez <frandieguez@gnome.org>, 2011."
+
+#~ msgid ""
+#~ "The following engines' arguments might need to be updated:\n"
+#~ "  <b>%(engines)s</b> \n"
+#~ "Do you want to update them automatically?"
+#~ msgstr ""
+#~ "Débense actualizar os seguintes argumentos dos motores:\n"
+#~ "  <b>%(engines)s</b> \n"
+#~ "Desexa actualizalos automaticamente?"
 
 #~ msgid "Recognize Selected _Areas"
 #~ msgstr "Recoñecer áre_as seleccionadas"
