@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: OCRFeeder\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-02-21 11:42+0000\n"
-"PO-Revision-Date: 2012-02-20 21:49+0100\n"
+"POT-Creation-Date: 2012-04-11 16:28+0000\n"
+"PO-Revision-Date: 2012-04-22 16:38+0200\n"
 "Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -88,7 +88,7 @@ msgid "HTML"
 msgstr "HTML"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:63
-#: ../src/ocrfeeder/studio/studioBuilder.py:253
+#: ../src/ocrfeeder/studio/studioBuilder.py:258
 msgid "PDF"
 msgstr "PDF"
 
@@ -96,17 +96,17 @@ msgstr "PDF"
 msgid "Plain Text"
 msgstr "Texte brut"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:187
+#: ../src/ocrfeeder/studio/studioBuilder.py:192
 msgid "Images"
 msgstr "Images"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:199
+#: ../src/ocrfeeder/studio/studioBuilder.py:204
 msgid "Obtaining scanners"
 msgstr "Recherche des scanners"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:199
-#: ../src/ocrfeeder/studio/studioBuilder.py:225
-#: ../src/ocrfeeder/studio/studioBuilder.py:267
+#: ../src/ocrfeeder/studio/studioBuilder.py:204
+#: ../src/ocrfeeder/studio/studioBuilder.py:230
+#: ../src/ocrfeeder/studio/studioBuilder.py:272
 #: ../src/ocrfeeder/studio/widgetModeler.py:431
 #: ../src/ocrfeeder/studio/widgetModeler.py:436
 #: ../src/ocrfeeder/studio/widgetModeler.py:489
@@ -114,70 +114,97 @@ msgstr "Recherche des scanners"
 msgid "Please wait…"
 msgstr "Veuillez patienter…"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:225
+#: ../src/ocrfeeder/studio/studioBuilder.py:230
 msgid "Scanning"
 msgstr "Numérisation"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:230
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
 msgid "No scanner devices were found"
 msgstr "Aucun scanner trouvé"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:231
-#: ../src/ocrfeeder/studio/studioBuilder.py:246
+#: ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/studioBuilder.py:251
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1154
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1165
 msgid "Error"
 msgstr "Erreur"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:245
+#: ../src/ocrfeeder/studio/studioBuilder.py:250
 msgid "Error scanning page"
 msgstr "Erreur de numérisation de la page"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:267
+#: ../src/ocrfeeder/studio/studioBuilder.py:272
 msgid "Loading PDF"
 msgstr "Chargement du PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:298
+#: ../src/ocrfeeder/studio/studioBuilder.py:303
 msgid "What kind of PDF document do you wish?"
 msgstr "Quel type de document PDF souhaitez-vous ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:300
+#: ../src/ocrfeeder/studio/studioBuilder.py:305
 msgid "From scratch"
 msgstr "À partir de rien"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:302
+#: ../src/ocrfeeder/studio/studioBuilder.py:307
 msgid "Creates a new PDF from scratch."
 msgstr "Crée un nouveau PDF à partir de rien."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:304
+#: ../src/ocrfeeder/studio/studioBuilder.py:309
 msgid "Searchable PDF"
 msgstr "PDF indexé"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:305
+#: ../src/ocrfeeder/studio/studioBuilder.py:310
 msgid "Creates a PDF based on the images but with searchable text."
 msgstr "Crée un PDF basé sur les images mais avec du texte indexé."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:329
+#: ../src/ocrfeeder/studio/studioBuilder.py:334
 msgid "Export pages"
 msgstr "Exporter les pages"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:346
+#: ../src/ocrfeeder/studio/studioBuilder.py:351
 msgid "Are you sure you want to delete the current image?"
 msgstr "Voulez-vous vraiment supprimer l'image actuelle ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:393
+#: ../src/ocrfeeder/studio/studioBuilder.py:398
 msgid "Are you sure you want to clear the project?"
 msgstr "Voulez-vous vraiment effacer le projet ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:445
+#: ../src/ocrfeeder/studio/studioBuilder.py:464
+msgid "_Keep Current Configuration"
+msgstr "_Conserver la configuration actuellement"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:466
+msgid "_Open OCR Engines Manager Dialog"
+msgstr "_Ouvrir la boîte de dialogue de gestion des moteurs ROC"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:468
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
+"manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
+msgstr ""
+"Il se peut que les paramètres suivants des moteurs ROC aient besoin d'être mis à jour "
+"mais il semblerait que vous avez modifié leur configuration par défaut ; ils doivent "
+"donc être mis à jour manuellement :\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"Si vous ne voulez pas conserver vos modifications, vous pouvez simplement supprimer la "
+"configuration actuelle et utiliser la détection de vos moteurs ROC à nouveau."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:488
 msgid "The project hasn't been saved."
 msgstr "Ce projet n'a pas été enregistré."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:446
+#: ../src/ocrfeeder/studio/studioBuilder.py:489
 msgid "Do you want to save it before closing?"
 msgstr "Voulez-vous l'enregistrer avant de fermer l'application ?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:447
+#: ../src/ocrfeeder/studio/studioBuilder.py:490
 msgid "Close anyway"
 msgstr "Fermer sans enregistrer"
 
@@ -1105,16 +1132,16 @@ msgstr ""
 "Paramètres : utilisez $IMAGE pour l'image et $FILE en cas d'enregistrement "
 "dans un fichier"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1828
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1843
 msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
 "Impossible de configurer le nouveau moteur ; veuillez vérifier vos réglages."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1828
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1843
 msgid "Warning"
 msgstr "Avertissement"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1864
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1879
 msgid "translator-credits"
 msgstr ""
 "Philippe Normand <phil@base-art.net>, 2010\n"
