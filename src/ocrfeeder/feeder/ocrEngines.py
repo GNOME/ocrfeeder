@@ -22,6 +22,7 @@ import string
 
 import tempfile
 import os
+import copy
 import xml.etree.ElementTree as ET
 from xml.parsers.expat import ExpatError
 from ocrfeeder.studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
@@ -52,6 +53,9 @@ class Engine:
         self.failure_string = failure_string
         self.temporary_folder = temporary_folder
         self.__color_information = None
+
+    def clone(self):
+        return copy.deepcopy(self)
 
     def setImage(self, image):
         image_file = tempfile.mkstemp(dir = self.temporary_folder,

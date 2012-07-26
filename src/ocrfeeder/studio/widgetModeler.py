@@ -625,7 +625,7 @@ class ImageReviewer_Controler:
             adjustment_size = None
         clean_text = self.configuration_manager.clean_text
 
-        layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine(),
+        layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine().clone(),
                                          window_size,
                                          improve_column_detection,
                                          column_min_width,
