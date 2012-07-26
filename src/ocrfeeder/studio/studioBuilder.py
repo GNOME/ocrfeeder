@@ -189,10 +189,14 @@ class Studio:
         return True
 
     def addImage(self, widget):
-        file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
+        location = getattr(self, "image_location", None)
+        if location is None:
+            location = "~"
+        file_open_dialog = widgetPresenter.FileDialog('open', current_folder=location, file_filters = [(_('Images'), ['image/*'], [])])
         response = file_open_dialog.run()
         if response == gtk.RESPONSE_OK:
             for file_name in file_open_dialog.get_filenames():
+                self.image_location = os.path.dirname(file_name)
                 self.__addImagesToReviewer([file_name])
         file_open_dialog.destroy()
 

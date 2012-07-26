@@ -755,10 +755,15 @@ class ImageReviewer_Controler:
             return None
 
     def __askForFileName(self, extension = ''):
-        save_dialog = FileDialog('save')
+        location = getattr(self, "file_save_path", None)
+        if location is None:
+            location = "~"
+        save_dialog = FileDialog('save', current_folder=location)
         response = save_dialog.run()
         if response == gtk.RESPONSE_OK:
             file_name = save_dialog.get_filename()
+            if file_name is not None:
+                self.file_save_path = os.path.dirname(file_name)
             if extension:
                 if not file_name.endswith(extension):
                     file_name += extension
