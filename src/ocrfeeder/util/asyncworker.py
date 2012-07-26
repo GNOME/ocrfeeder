@@ -22,10 +22,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from threading import Thread
+from threading import Thread, BoundedSemaphore, RLock
 import Queue
 import gobject
 from lib import debug
+
 
 class AsyncItem(object):
 
@@ -54,32 +55,65 @@ class AsyncItem(object):
     def cancel(self):
         self.canceled = True
 
+
+ready_lock = RLock()
+
+
 class AsyncWorker(Thread):
 
-    def __init__(self):
+    def __init__(self, parallel=1):
         Thread.__init__(self)
         self.queue = Queue.Queue(0)
         self.stopped = False
-        self.async_item = None
         self.item_number = -1
 
+        self.parallel = parallel
+        self.running_items = []
+        self.worker_threads = []
+        self.thread_sem = BoundedSemaphore(value=parallel)
+        self.done = False
+        self.queue_processing = True
+
     def run(self):
-        while not self.stopped:
-            if self.queue.empty():
-                self.stop()
-                break
-            try:
-                self.async_item = self.queue.get()
-                self.item_number += 1
-                self.async_item.run()
-                self.queue.task_done()
-                self.async_item = None
-            except Exception, exception:
-                debug(str(exception))
-                self.stop()
+        try:
+            while not self.stopped or not self.queue.empty():
+                try:
+                    async_item = self.queue.get(False)
+                    self.item_number += 1
+
+                    thread = Thread(target=self._run_item, args=(async_item, ))
+                    self.thread_sem.acquire()
+                    self.worker_threads.append(thread)
+                    thread.start()
+
+                except Queue.Empty:
+                    break
+
+                except Exception, exception:
+                    debug(str(exception))
+                    self.stop()
+        finally:
+            with ready_lock:
+                self.queue_processing = False
+            for thread in self.worker_threads:
+                thread.join()
+            self.stopped = True
+
 
     def stop(self):
         self.stopped = True
-        if self.async_item:
-            self.async_item.cancel()
+        if len(self.running_items):
+            for async_item in self.running_items:
+                async_item.cancel()
 
+
+    def _run_item(self, async_item):
+        with ready_lock:
+            self.running_items.append(async_item)
+        async_item.run()
+        self.queue.task_done()
+        self.running_items.remove(async_item)
+        with ready_lock:
+            if not self.queue_processing and not self.running_items:
+                self.done = True
+        self.thread_sem.release()

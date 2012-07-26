@@ -585,7 +585,7 @@ class ImageReviewer_Controler:
 
     def recognizeDocument(self):
         pages = self.source_images_selector_widget.getAllPages()
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        dialog = QueuedEventsProgressDialog(self.main_window.window, parallel=4)
         items = []
         i = 1
         total = len(pages)
@@ -645,7 +645,7 @@ class ImageReviewer_Controler:
                                               pages_to_process,
                                               data_boxes, error):
         page.data_boxes = data_boxes
-        if page == pages_to_process[-1]:
+        if dialog.worker.done:
             dialog.cancel()
             self.__updateImageReviewers()
 

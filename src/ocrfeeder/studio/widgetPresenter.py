@@ -1170,12 +1170,12 @@ class CommandProgressBarDialog(gtk.Dialog):
 
 class QueuedEventsProgressDialog(gtk.Dialog):
 
-    def __init__(self, parent, items_list = []):
+    def __init__(self, parent, items_list = [], parallel=1):
         super(QueuedEventsProgressDialog, self).__init__(parent = parent,
                                                        flags = gtk.DIALOG_MODAL)
         self.set_icon_from_file(WINDOW_ICON)
         self.info_list = []
-        self.worker = AsyncWorker()
+        self.worker = AsyncWorker(parallel)
         self.setItemsList(items_list)
         self.label = gtk.Label()
         self.__makeProgressBar()
