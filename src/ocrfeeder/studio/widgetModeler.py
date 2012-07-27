@@ -415,6 +415,9 @@ def _performRecognitionForPage(page, configuration_manager, ocr_engine):
                                      page.resolution[1])
 
 
+_pages_recognized_count_lock = threading.RLock()
+
+
 class ImageReviewer_Controler:
 
     REVIEWER_CACHE_LENGTH = 5
@@ -635,6 +638,7 @@ class ImageReviewer_Controler:
            self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
                 return
         dialog.setItemsList(items)
+        self._pages_recognized_count = 0
         dialog.run()
 
     def __getConfiguredOcrEngine(self):
@@ -647,9 +651,12 @@ class ImageReviewer_Controler:
                                               pages_to_process,
                                               data_boxes, error):
         page.data_boxes = data_boxes
-        if dialog.worker.done:
-            dialog.cancel()
-            self.__updateImageReviewers()
+
+        with _pages_recognized_count_lock:
+            if dialog.worker.done and self._pages_recognized_count == (len(pages_to_process) - 1):
+                dialog.cancel()
+                self.__updateImageReviewers()
+            self._pages_recognized_count +=1
 
     def copyRecognizedTextToClipboard(self, widget):
         image_reviewer = self.__getCurrentReviewer()
