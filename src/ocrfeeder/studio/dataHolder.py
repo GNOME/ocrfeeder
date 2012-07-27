@@ -81,6 +81,19 @@ class DataBox(gobject.GObject):
         self.text_data = TextData()
         self.text = text
 
+    def __setstate__(self, state):
+        state['image'] = Image.fromstring(*state['_image_state'])
+        del state['_image_state']
+        self.__dict__.update(state)
+        super(DataBox, self).__init__()
+        self.setType(self.type)
+
+    def __getstate__(self):
+        state = self.__dict__
+        state["_image_state"] = (state["image"].mode, (state["image"].size[0], state["image"].size[1]), state["image"].tostring())
+        del state["image"]
+        return state
+
     def configTextData(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 1, letter_space = 1):
         self.text_data = TextData(face, size, justification, line_space, letter_space)
 
