@@ -653,7 +653,7 @@ class ImageReviewer_Controler:
         page.data_boxes = data_boxes
 
         with _pages_recognized_count_lock:
-            if dialog.worker.done and self._pages_recognized_count == (len(pages_to_process) - 1):
+            if self._pages_recognized_count == (len(pages_to_process) - 1):
                 dialog.cancel()
                 self.__updateImageReviewers()
             self._pages_recognized_count +=1

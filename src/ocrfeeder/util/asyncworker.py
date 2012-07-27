@@ -78,8 +78,6 @@ class AsyncWorker(Thread):
         self.running_items = []
         self.worker_threads = []
         self.thread_sem = BoundedSemaphore(value=parallel)
-        self.done = False
-        self.queue_processing = True
 
         self.process_pool = None
         if parallel > 1:
@@ -91,13 +89,13 @@ class AsyncWorker(Thread):
             while not self.stopped and not self.queue.empty():
                 try:
                     async_item = self.queue.get(False)
-                    self.item_number += 1
 
                     thread = Thread(target=self._run_item, args=(async_item, ))
                     self.running_items.append(async_item)
                     self.thread_sem.acquire()
                     async_item.process_pool = self.process_pool
                     self.worker_threads.append(thread)
+                    self.item_number += 1
                     thread.start()
 
                 except Queue.Empty:
@@ -128,12 +126,10 @@ class AsyncWorker(Thread):
 
 
     def _run_item(self, async_item):
-        with ready_lock:
-            self.running_items.append(async_item)
-        async_item.run()
-        self.queue.task_done()
-        self.running_items.remove(async_item)
-        with ready_lock:
-            if not self.queue_processing and not self.running_items:
-                self.done = True
-        self.thread_sem.release()
+        try:
+            async_item.run()
+            self.queue.task_done()
+            self.running_items.remove(async_item)
+        finally:
+            self.thread_sem.release()
+
