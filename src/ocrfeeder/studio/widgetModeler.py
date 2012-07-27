@@ -385,6 +385,36 @@ class ImageReviewer(gtk.HPaned):
     def focusCurrentEditorTextArea(self):
         self.editor.box_editor.text_widget.grab_focus()
 
+
+def _performRecognitionForPage(page, configuration_manager, ocr_engine):
+    window_size = configuration_manager.window_size
+    if window_size == 'auto':
+        window_size = None
+    else:
+        window_size = float(window_size)
+    improve_column_detection = \
+        configuration_manager.improve_column_detection
+    column_min_width = configuration_manager.column_min_width
+    if column_min_width == 'auto':
+        column_min_width = None
+    adjust_boxes_bounds = \
+        configuration_manager.adjust_boxes_bounds
+    adjustment_size = configuration_manager.bounds_adjustment_size
+    if adjustment_size == 'auto':
+        adjustment_size = None
+    clean_text = configuration_manager.clean_text
+
+    layout_analysis = LayoutAnalysis(ocr_engine,
+                                     window_size,
+                                     improve_column_detection,
+                                     column_min_width,
+                                     clean_text,
+                                     adjust_boxes_bounds,
+                                     adjustment_size)
+    return layout_analysis.recognize(page.image_path,
+                                     page.resolution[1])
+
+
 class ImageReviewer_Controler:
 
     REVIEWER_CACHE_LENGTH = 5
@@ -575,8 +605,8 @@ class ImageReviewer_Controler:
                 return
         page = image_reviewer.page
         dialog = QueuedEventsProgressDialog(self.main_window.window)
-        item = AsyncItem(self.__performRecognitionForPage,
-                         (page,),
+        item = AsyncItem(_performRecognitionForPage,
+                         (page, self.configuration_manager, self.__getConfiguredOcrEngine()),
                          self.__performRecognitionForPageFinishedCb,
                          (dialog, page, [page]))
         info = (_('Recognizing Page'), _(u'Please wait…'))
@@ -592,8 +622,8 @@ class ImageReviewer_Controler:
         has_changes = False
         for page in pages:
             has_changes = has_changes or bool(page.data_boxes)
-            item = AsyncItem(self.__performRecognitionForPage,
-                             (page,),
+            item = AsyncItem(_performRecognitionForPage,
+                             (page, self.configuration_manager, self.__getConfiguredOcrEngine().clone()),
                              self.__performRecognitionForPageFinishedCb,
                              (dialog, page, pages))
             info = (_('Recognizing Document'),
@@ -606,34 +636,6 @@ class ImageReviewer_Controler:
                 return
         dialog.setItemsList(items)
         dialog.run()
-
-    def __performRecognitionForPage(self, page):
-        window_size = self.configuration_manager.window_size
-        if window_size == 'auto':
-            window_size = None
-        else:
-            window_size = float(window_size)
-        improve_column_detection = \
-            self.configuration_manager.improve_column_detection
-        column_min_width = self.configuration_manager.column_min_width
-        if column_min_width == 'auto':
-            column_min_width = None
-        adjust_boxes_bounds = \
-            self.configuration_manager.adjust_boxes_bounds
-        adjustment_size = self.configuration_manager.bounds_adjustment_size
-        if adjustment_size == 'auto':
-            adjustment_size = None
-        clean_text = self.configuration_manager.clean_text
-
-        layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine().clone(),
-                                         window_size,
-                                         improve_column_detection,
-                                         column_min_width,
-                                         clean_text,
-                                         adjust_boxes_bounds,
-                                         adjustment_size)
-        return layout_analysis.recognize(page.image_path,
-                                         page.resolution[1])
 
     def __getConfiguredOcrEngine(self):
         for engine, path in self.ocr_engines:
