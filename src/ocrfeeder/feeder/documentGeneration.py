@@ -376,13 +376,8 @@ class PdfGenerator(DocumentGenerator):
         text.setCharSpace(box.text_data.letter_space)
         text.setLeading(box.text_data.line_space + box.text_data.size)
         text.moveCursor(0, box.text_data.size)
-        try:
-            self.setFont(box.text_data.face,
-                         box.text_data.size)
-        except:
-            debug('Error setting font %s' % box.text_data.face)
-            self.canvas.setFontSize(box.text_data.size)
-        text.textLines(box.text)
+        #todo: efficiently add the required font
+        self.canvas.setFontSize(box.text_data.size)
         self.canvas.drawText(text)
 
     def addImage(self, box):
