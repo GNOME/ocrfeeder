@@ -32,7 +32,7 @@ from ocrfeeder.util.graphics import getImagePrintSize
 from ocrfeeder.util.lib import debug
 from reportlab.pdfgen import canvas
 from reportlab.lib import units
-from reportlab.lib.utils import ImageReader
+from reportlab.lib.utils import ImageReader, simpleSplit
 import math
 import os.path
 import shutil
@@ -378,6 +378,11 @@ class PdfGenerator(DocumentGenerator):
         text.moveCursor(0, box.text_data.size)
         #todo: efficiently add the required font
         self.canvas.setFontSize(box.text_data.size)
+        lines = simpleSplit(box.text,
+                            self.canvas._fontname,
+                            box.text_data.size,
+                            box.width)
+        text.textLines('\n'.join(lines))
         self.canvas.drawText(text)
 
     def addImage(self, box):
