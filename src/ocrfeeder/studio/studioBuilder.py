@@ -110,6 +110,8 @@ class Studio:
                                  'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard,
                                  'spell_checker': self.spellChecker,
                                  'help_contents': self.showHelpContents,
+                                 'select_next_page': self.selectNextPage,
+                                 'select_previous_page': self.selectPreviousPage,
                                  }
 
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
@@ -354,6 +356,12 @@ class Studio:
             self.source_images_controler.deleteCurrentPage()
             self.source_images_icon_view.deleteCurrentSelection()
         delete_dialog.destroy()
+
+    def selectNextPage(self, widget):
+        self.source_images_icon_view.selectPageFromOffset(1)
+
+    def selectPreviousPage(self, widget):
+        self.source_images_icon_view.selectPageFromOffset(-1)
 
     def __addImagesToReviewer(self, images):
         if not images:

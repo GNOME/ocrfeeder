@@ -150,6 +150,29 @@ class SourceImagesSelectorIconView(gtk.IconView):
     def clear(self):
         self.get_model().clear()
 
+    def _getIndexFromOffset(self, offset):
+        selected_items = self.get_selected_items()
+        if not len(selected_items):
+            return
+        selected_item_path = selected_items[0]
+        model = self.get_model()
+        iter = model.get_iter(selected_item_path)
+        index = model.get_path(iter)[0] + offset
+        number_of_items = model.iter_n_children(None)
+        if index < 0:
+            index = number_of_items + offset
+        elif index == number_of_items:
+            index = 0
+        return index
+
+    def selectPageFromOffset(self, offset):
+        selected_items = self.get_selected_items()
+        if not len(selected_items):
+            return
+        selected_item_path = selected_items[0]
+        model = self.get_model()
+        index = self._getIndexFromOffset(offset)
+        self.select_path((index,))
 
 class ImageReviewer(gtk.HPaned):
 
