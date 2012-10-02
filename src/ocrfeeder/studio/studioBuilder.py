@@ -110,6 +110,8 @@ class Studio:
                                  'copy_to_clipboard': self.source_images_controler.copyRecognizedTextToClipboard,
                                  'spell_checker': self.spellChecker,
                                  'help_contents': self.showHelpContents,
+                                 'move_page_down': self.movePageDown,
+                                 'move_page_up': self.movePageUp,
                                  'select_next_page': self.selectNextPage,
                                  'select_previous_page': self.selectPreviousPage,
                                  }
@@ -356,6 +358,12 @@ class Studio:
             self.source_images_controler.deleteCurrentPage()
             self.source_images_icon_view.deleteCurrentSelection()
         delete_dialog.destroy()
+
+    def movePageDown(self, widget):
+        self.source_images_icon_view.movePage(1)
+
+    def movePageUp(self, widget):
+        self.source_images_icon_view.movePage(-1)
 
     def selectNextPage(self, widget):
         self.source_images_icon_view.selectPageFromOffset(1)

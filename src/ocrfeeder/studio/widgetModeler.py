@@ -165,6 +165,19 @@ class SourceImagesSelectorIconView(gtk.IconView):
             index = 0
         return index
 
+    def movePage(self, offset):
+        selected_items = self.get_selected_items()
+        if not len(selected_items):
+            return
+        selected_item_path = selected_items[0]
+        model = self.get_model()
+        index = self._getIndexFromOffset(offset)
+        if index != selected_item_path[0] + offset:
+            return
+        model.swap(model.get_iter((index,)),
+                   model.get_iter(selected_item_path))
+        self.select_path((index,))
+
     def selectPageFromOffset(self, offset):
         selected_items = self.get_selected_items()
         if not len(selected_items):

@@ -71,6 +71,8 @@ class MainWindow:
             <menuitem action="DeletePage"/>
             <menuitem action="SelectNextPage"/>
             <menuitem action="SelectPreviousPage"/>
+            <menuitem action="MovePageUp"/>
+            <menuitem action="MovePageDown"/>
             <separator/>
             <menuitem action="ClearProject"/>
             <separator/>
@@ -170,6 +172,8 @@ class MainWindow:
                                   ('EditPage', gtk.STOCK_EDIT, _('_Edit Page'), None, _('Edit page settings'), menu_items['edit_page']),
                                   ('Preferences', gtk.STOCK_PREFERENCES, _('_Preferences'), None, _('Configure the application'), menu_items['preferences']),
                                   ('DeletePage', gtk.STOCK_DELETE, _('_Delete Page'), None, _('Delete current page'), menu_items['delete_page']),
+                                  ('MovePageDown', gtk.STOCK_GO_DOWN, _('Move Page Do_wn'), '<control><shift>Page_Down', _('Move page down'), menu_items['move_page_down']),
+                                  ('MovePageUp', gtk.STOCK_GO_UP, _('Move Page Up'), '<control><shift>Page_Up', _('Move page up'), menu_items['move_page_up']),
                                   ('SelectNextPage', gtk.STOCK_GO_DOWN, _('Select Next Page'), '<control>Page_Down', _('Select next page'), menu_items['select_next_page']),
                                   ('SelectPreviousPage', gtk.STOCK_GO_UP, _('Select Previous Page'), '<control>Page_Up', _('Select previous page'), menu_items['select_previous_page']),
                                   ('ClearProject', gtk.STOCK_DELETE, _('_Clear Project'), None, _('Delete all images'), menu_items['clear']),
