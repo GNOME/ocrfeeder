@@ -38,10 +38,22 @@ import os.path
 import shutil
 import tempfile
 
-class DocumentGenerator:
+class DocumentGeneratorManager(object):
+
+    GENERATORS = {}
 
     def __init__(self):
-        self.document = self.makeDocument()
+        pass
+
+    def register(self, id, generator):
+        self.GENERATORS[id] = generator
+
+    def get(self, id):
+        return self.GENERATORS.get(id)
+
+    def getFormats(self):
+        return self.GENERATORS.keys()
+
 
     def makeDocument(self):
         raise NotImplementedError('Method not defined!')
