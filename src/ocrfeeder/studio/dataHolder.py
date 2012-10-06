@@ -214,6 +214,19 @@ class PageData:
         dictionary['data_boxes'] = data_boxes_converted
         return {'PageData': dictionary}
 
+    def getTextFromBoxes(self, data_boxes=None):
+        text = ''
+        if data_boxes is None:
+            data_boxes = self.data_boxes
+        number_of_boxes = len(data_boxes)
+        for i in range(number_of_boxes):
+            data_box = data_boxes[i]
+            if data_box and data_box.getType() != TEXT_TYPE:
+                continue
+            text += data_box.getText()
+            if number_of_boxes > 1 and i < number_of_boxes - 1:
+                text += '\n\n'
+        return text
 
 def create_images_dict_from_liststore(list_store):
     images_dict = {}

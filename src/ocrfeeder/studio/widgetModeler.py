@@ -333,10 +333,13 @@ class ImageReviewer(gtk.HPaned):
 
     def getTextFromBoxes(self, boxes):
         text = ''
+        #@todo: Implement a proper way to get the boxes
+        # in reading order
         boxes.reverse()
         self.editor.saveDataBox()
         if boxes:
-            text = getTextFromBoxes([self.boxes_dict.get(box) for box in boxes])
+            text = self.page.getTextFromBoxes(
+                [self.boxes_dict.get(box) for box in boxes])
         else:
             if self.editor.box_editor.getType() == TEXT_TYPE:
                 text = self.box_editor.getText()
@@ -1148,17 +1151,3 @@ class Editor:
         else:
             self.reviewer.main_window.copy_to_clipboard_menu.set_sensitive(True)
             self.reviewer.main_window.spellchecker_menu.set_sensitive(True)
-
-
-# Helper function to get text from data boxes
-def getTextFromBoxes(data_boxes):
-    text = ''
-    number_of_boxes = len(data_boxes)
-    for i in range(number_of_boxes):
-        data_box = data_boxes[i]
-        if data_box and data_box.getType() != TEXT_TYPE:
-            continue
-        text += data_box.getText()
-        if number_of_boxes > 1 and i < number_of_boxes - 1:
-            text += '\n\n'
-    return text
