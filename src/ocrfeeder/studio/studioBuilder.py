@@ -29,6 +29,7 @@ from widgetModeler import SourceImagesListStore, \
 from dataHolder import DataBox, TextData
 from customWidgets import SelectableBoxesArea
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
+from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncItem
 from optparse import OptionParser
@@ -58,14 +59,15 @@ class Studio:
                                        languages = languages, fallback = True)
         _ = language.gettext
 
-        self.EXPORT_FORMATS = {0: (self.exportToOdt, _('ODT')),
-                               1: (self.exportToHtml, _('HTML')),
-                               2: (self.exportToPdf, _('PDF')),
-                               3: (self.exportToPlaintext, _('Plain Text'))}
+        self.EXPORT_FORMATS = {0: ('ODT', _('ODT')),
+                               1: ('HTML', _('HTML')),
+                               2: ('PDF', _('PDF')),
+                               3: ('TXT', _('Plain Text'))}
 
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()
         self.main_window.setTitle(self.title)
+        self.document_generator_manager = DocumentGeneratorManager()
         self.configuration_manager = ConfigurationManager()
         self.ocr_engines_manager = OcrEnginesManager(self.configuration_manager)
         self.configuration_manager.loadConfiguration()
@@ -296,59 +298,26 @@ class Studio:
                 self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
         file_open_dialog.destroy()
 
-    def exportToHtml(self, widget = None):
-        self.source_images_controler.exportPagesToHtml(self.source_images_list_store.getPixbufsSorted())
+    def exportToFormat(self, format, name):
+        generator = self.document_generator_manager.get(format)
+        self.source_images_controler.exportPagesWithGenerator(generator,
+                                                              name)
 
-    def exportToOdt(self, widget = None):
-        self.source_images_controler.exportPagesToOdt(self.source_images_list_store.getPixbufsSorted())
-
-    def exportToPlaintext(self, widget = None):
-        self.source_images_controler.exportPagesToPlaintext(self.source_images_list_store.getPixbufsSorted())
-
-    def exportToPdf(self, widget = None):
-        ask_pdf_type_dialog = gtk.MessageDialog(self.main_window.window,
-                      gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                      buttons = gtk.BUTTONS_OK_CANCEL)
-        ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
-                                         'wish?'))
-        pdf_from_scratch_radio = gtk.RadioButton(label= _('From scratch'))
-        pdf_from_scratch_radio.set_tooltip_text(
-                                    _('Creates a new PDF from scratch.'))
-        searchable_pdf_radio = gtk.RadioButton(pdf_from_scratch_radio,
-                                               _('Searchable PDF'))
-        searchable_pdf_radio.set_tooltip_text(_('Creates a PDF based on '
-                                                'the images but with searchable '
-                                                'text.'))
-        vbox = gtk.VBox(True)
-        vbox.add(pdf_from_scratch_radio)
-        vbox.add(searchable_pdf_radio)
-        content_area = ask_pdf_type_dialog.get_content_area()
-        content_area.add(vbox)
-        content_area.show_all()
-
-        response = ask_pdf_type_dialog.run()
-        ask_pdf_type_dialog.destroy()
-        if response == gtk.RESPONSE_CANCEL:
-            return
-
-        pdf_from_scratch = True
-        if searchable_pdf_radio.get_active():
-            pdf_from_scratch = False
-        self.source_images_controler.exportPagesToPdf(
-             self.source_images_list_store.getPixbufsSorted(),
-             pdf_from_scratch)
+    def exportToOdt(self, widget):
+        self.exportToFormat('ODT', 'ODT')
 
     def exportDialog(self, widget):
         format_names = [format[1] for format in self.EXPORT_FORMATS.values()]
-        export_dialog = widgetPresenter.ExportDialog(_('Export pages'), format_names)
+        export_dialog = widgetPresenter.ExportDialog(_('Export pages'),
+                                                     format_names)
         response = export_dialog.run()
         if response == gtk.RESPONSE_ACCEPT:
             format = export_dialog.getSelectedFormat()
             export_dialog.destroy()
             if format != -1:
                 # Retrieve and run the exportation function
-                exportation_function = self.EXPORT_FORMATS[format][0]
-                exportation_function()
+                self.exportToFormat(self.EXPORT_FORMATS[format][0],
+                                    self.EXPORT_FORMATS[format][1])
             return None
         export_dialog.destroy()
         return None

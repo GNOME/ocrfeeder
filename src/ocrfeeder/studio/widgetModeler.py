@@ -701,52 +701,57 @@ class ImageReviewer_Controler:
         document_generator.addPage(page_data)
         document_generator.save()
 
-    def exportPagesToHtml(self, pixbufs_sorted = []):
-        pages = self.__askForNumberOfPages(_('Export to HTML'), pixbufs_sorted)
+    def exportPagesWithGenerator(self, generator, format_name):
+        extra_args = {}
+        if format_name == 'PDF':
+            from_scratch, cancelled = self.__askPdfFromScratch()
+            if cancelled:
+                return
+            extra_args['from_scratch'] = from_scratch
+
+        pages = self.__askForNumberOfPages(_('Export to %(format_name)s') %
+                                           {'format_name': format_name})
         if not pages:
             return
         file_name = self.__askForFileName()
         if file_name:
             if os.path.exists(file_name):
                 os.remove(file_name)
-            document_generator = HtmlGenerator(file_name)
+            document_generator = generator(file_name, **extra_args)
             for page in pages:
                 document_generator.addPage(page)
             document_generator.save()
 
+    def __askPdfFromScratch(self):
+        ask_pdf_type_dialog = gtk.MessageDialog(self.main_window.window,
+                      gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
+                      buttons = gtk.BUTTONS_OK_CANCEL)
+        ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
+                                         'wish?'))
+        pdf_from_scratch_radio = gtk.RadioButton(label= _('From scratch'))
+        pdf_from_scratch_radio.set_tooltip_text(
+                                    _('Creates a new PDF from scratch.'))
+        searchable_pdf_radio = gtk.RadioButton(pdf_from_scratch_radio,
+                                               _('Searchable PDF'))
+        searchable_pdf_radio.set_tooltip_text(_('Creates a PDF based on '
+                                                'the images but with searchable '
+                                                'text.'))
+        vbox = gtk.VBox(True)
+        vbox.add(pdf_from_scratch_radio)
+        vbox.add(searchable_pdf_radio)
+        content_area = ask_pdf_type_dialog.get_content_area()
+        content_area.add(vbox)
+        content_area.show_all()
 
-    def exportPagesToOdt(self, pixbufs_sorted = []):
-        pages = self.__askForNumberOfPages(_('Export to ODT'), pixbufs_sorted)
-        if not pages:
-            return
-        file_name = self.__askForFileName()
-        if file_name:
-            document_generator = OdtGenerator(file_name)
-            for page in pages:
-                document_generator.addPage(page)
-            document_generator.save()
+        response = ask_pdf_type_dialog.run()
+        ask_pdf_type_dialog.destroy()
+        if response == gtk.RESPONSE_CANCEL:
+            return (False, True)
 
-    def exportPagesToPlaintext(self, pixbufs_sorted = []):
-        pages = self.__askForNumberOfPages(_('Export to Plain Text'), pixbufs_sorted)
-        if not pages:
-            return
-        file_name = self.__askForFileName()
-        if file_name:
-            document_generator = PlaintextGenerator(file_name)
-            for page in pages:
-                document_generator.addPage(page)
-            document_generator.save()
-
-    def exportPagesToPdf(self, pixbufs_sorted = [], pdf_from_scratch = True):
-        pages = self.__askForNumberOfPages(_('Export to PDF'), pixbufs_sorted)
-        if not pages:
-            return
-        file_name = self.__askForFileName()
-        if file_name:
-            document_generator = PdfGenerator(file_name, pdf_from_scratch)
-            for page in pages:
-                document_generator.addPage(page)
-            document_generator.save()
+        pdf_from_scratch = True
+        if searchable_pdf_radio.get_active():
+            pdf_from_scratch = False
+        return (pdf_from_scratch, False)
 
     def saveProjectAs(self):
         return self.__askForFileName(extension = '.ocrf')
@@ -776,7 +781,7 @@ class ImageReviewer_Controler:
         open_dialog.destroy()
         return project_file
 
-    def __askForNumberOfPages(self, title, pixbufs_sorted):
+    def __askForNumberOfPages(self, title):
         # Sync the current reviewer's page with its data
         self.__getCurrentReviewer().savePageData()
         export_dialog = PagesToExportDialog(title)
