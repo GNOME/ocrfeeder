@@ -54,6 +54,10 @@ class DocumentGeneratorManager(object):
     def getFormats(self):
         return self.GENERATORS.keys()
 
+class DocumentGenerator(object):
+
+    def __init__(self):
+        pass
 
     def makeDocument(self):
         raise NotImplementedError('Method not defined!')
