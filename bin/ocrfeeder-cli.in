@@ -36,18 +36,22 @@ from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.feeder.ocrEngines import OcrEnginesManager
 from ocrfeeder.studio.dataHolder import PageData
 from ocrfeeder.feeder.layoutAnalysis import LayoutAnalysis
-from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator
+from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from optparse import OptionParser
 
-parser = OptionParser(usage = 'Usage: %prog -i IMAGE1 [IMAGE2, ...] -o FILE',
+document_generator_manager = DocumentGeneratorManager()
+formats = document_generator_manager.getFormats()
+
+parser = OptionParser(usage = 'Usage: %prog -i IMAGE1 [-i IMAGE2, ...] -o FILE',
                       version = '%prog ' + OCRFEEDER_STUDIO_VERSION)
-parser.add_option('-i', '--images', dest = 'images',
-                  action = 'append', type = 'string', metavar = 'IMAGE1 [IMAGE2, ...]',
+parser.add_option('-i', '--image', dest = 'images',
+                  action = 'append', type = 'string', metavar = 'IMAGE1 [--image=IMAGE2, ...]',
                   help = 'images to be recognized', default = [])
+format_help_text = ', '.join(formats) + ' or SPDF (for a searchable PDF)'
 parser.add_option('-f', '--format', dest = 'format',
-                  action = 'store', type = 'choice', default = 'odt',
-                  help = 'format of the generated document', metavar = 'odt or html',
-                  choices = ['odt', 'html'])
+                  action = 'store', type = 'choice', default = 'ODT',
+                  help = 'format of the generated document', metavar = format_help_text,
+                  choices = formats + ['SPDF'])
 parser.add_option('-o', '--output', dest = 'output',
                   action = 'store', type = 'string',
                   help = 'the document to be generated')
@@ -108,11 +112,15 @@ for image in images:
                                                      resolution)
     pages.append(page_data)
 
-document_generator = OdtGenerator(file_name)
-if 'html' in export_format:
-    document_generator = HtmlGenerator(file_name)
+generator_class = document_generator_manager.get(export_format)
+if 'PDF' in export_format:
+    document_generator = generator_class(file_name, True)
+else:
+    document_generator = generator_class(file_name)
+
 for page in pages:
     document_generator.addPage(page)
+
 document_generator.save()
 
 configuration_manager.removeTemporaryFolder()
