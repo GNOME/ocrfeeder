@@ -429,3 +429,9 @@ class PdfGenerator(DocumentGenerator):
 
     def save(self):
         self.canvas.save()
+
+manager = DocumentGeneratorManager()
+manager.register('HTML', HtmlGenerator)
+manager.register('ODT', OdtGenerator)
+manager.register('TXT', PlaintextGenerator)
+manager.register('PDF', PdfGenerator)
