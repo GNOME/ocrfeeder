@@ -267,7 +267,7 @@ class MainWindow:
     def setDestroyEvent(self, function):
         self.window.connect('delete-event', function)
 
-    def setHasImages(self, has_images = True):
+    def setNumberOfPages(self, nr_images):
         if not self.action_group:
             return
         actions = ['ZoomIn', 'ZoomOut', 'ResetZoom',
@@ -275,8 +275,8 @@ class MainWindow:
                    'DeletePage', 'SaveProject', 'SaveProjectAs',
                    'OCRFeederReconDocument', 'EditPage', 'ClearProject',
                    'AppendProject', 'ZoomFit', 'ImageDeskewer']
-        self.__setActionsSensitiveness(actions, has_images)
-        if not has_images:
+        self.__setActionsSensitiveness(actions, nr_images > 0)
+        if nr_images:
             self.setHasSelectedBoxes(False)
             self.setHasContentBoxes(False)
 

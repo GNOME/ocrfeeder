@@ -187,6 +187,9 @@ class SourceImagesSelectorIconView(gtk.IconView):
         index = self._getIndexFromOffset(offset)
         self.select_path((index,))
 
+    def getNumberOfPages(self):
+        return self.get_model().iter_n_children(None)
+
 class ImageReviewer(gtk.HPaned):
 
     def __init__(self, main_window, page_data, ocr_engines):
@@ -541,7 +544,6 @@ class ImageReviewer_Controler:
         self.__setZoomStatus(None, reviewer.selectable_boxes_area.get_scale())
         self.__updateStatusBar(reviewer)
         reviewer.updateMainWindow()
-        self.main_window.setHasImages(bool(reviewer))
 
     def __setZoomStatus(self, widget, zoom):
         self.__updateStatusBar()

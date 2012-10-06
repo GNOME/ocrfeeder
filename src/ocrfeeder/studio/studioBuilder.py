@@ -139,7 +139,8 @@ class Studio:
 
         self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasContentBoxes(False)
-        self.main_window.setHasImages(not self.source_images_list_store.isEmpty())
+        self.main_window.setNumberOfPages(
+            self.source_images_icon_view.getNumberOfPages())
 
         # Show dialog to choose system-wide OCR engines when no engine was found
         if not self.ocr_engines:
