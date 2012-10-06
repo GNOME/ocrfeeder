@@ -734,7 +734,7 @@ class ImageReviewer_Controler:
         if file_name:
             document_generator = PlaintextGenerator(file_name)
             for page in pages:
-                document_generator.addText(getTextFromBoxes(page.data_boxes))
+                document_generator.addPage(page)
             document_generator.save()
 
     def exportPagesToPdf(self, pixbufs_sorted = [], pdf_from_scratch = True):

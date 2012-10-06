@@ -345,6 +345,9 @@ class PlaintextGenerator(DocumentGenerator):
     def addText(self, newText):
         self.text += newText
 
+    def addPage(self, page):
+        self.addText(page.getTextFromBoxes())
+
     def save(self):
         try:
             # This will create a new file or **overwrite an existing file
