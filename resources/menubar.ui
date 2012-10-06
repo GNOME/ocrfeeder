@@ -1,0 +1,73 @@
+<ui>
+    <menubar name="MenuBar">
+        <menu action="File">
+            <menuitem action="OpenProject"/>
+            <menuitem action="SaveProject"/>
+            <menuitem action="SaveProjectAs"/>
+            <separator/>
+            <menuitem action="AppendProject"/>
+            <separator/>
+            <menuitem action="AddImage"/>
+            <menuitem action="AddFolder"/>
+            <separator/>
+            <menuitem action="ImportPDF"/>
+            <separator/>
+            <menuitem action="ImportFromScanner"/>
+            <menuitem action="Export"/>
+            <separator/>
+            <menuitem action="Quit"/>
+        </menu>
+        <menu action="Edit">
+            <menuitem action="CopyToClipboard"/>
+            <separator/>
+            <menuitem action="EditPage"/>
+            <menuitem action="DeletePage"/>
+            <menuitem action="SelectNextPage"/>
+            <menuitem action="SelectPreviousPage"/>
+            <menuitem action="MovePageUp"/>
+            <menuitem action="MovePageDown"/>
+            <separator/>
+            <menuitem action="ClearProject"/>
+            <separator/>
+            <menuitem action="Preferences"/>
+        </menu>
+        <menu action="View">
+            <menuitem action="ZoomIn"/>
+            <menuitem action="ZoomOut"/>
+            <menuitem action="ResetZoom"/>
+            <menuitem action="ZoomFit"/>
+        </menu>
+        <menu action="Document">
+            <menuitem action="OCRFeederReconDocument"/>
+            <menuitem action="OCRFeederReconPage"/>
+            <menuitem action="RecognizeAreas"/>
+            <separator/>
+            <menuitem action="SelectAllAreas"/>
+            <menuitem action="SelectPreviousArea"/>
+            <menuitem action="SelectNextArea"/>
+            <separator/>
+            <menuitem action="DeleteSelectedAreas"/>
+        </menu>
+        <menu action="Tools">
+            <menuitem action="OCREngines"/>
+            <separator/>
+            <menuitem action="Unpaper"/>
+            <menuitem action="ImageDeskewer"/>
+            <separator/>
+            <menuitem action="SpellChecker"/>
+        </menu>
+        <menu action="Help">
+            <menuitem action="HelpContents"/>
+            <menuitem action="About"/>
+        </menu>
+    </menubar>
+    <toolbar name="ToolBar">
+        <toolitem action="AddImage"/>
+        <separator/>
+        <toolitem action="OCRFeederReconDocument"/>
+        <toolitem action="GenerateODT"/>
+        <separator/>
+        <toolitem action="ZoomOut"/>
+        <toolitem action="ZoomIn"/>
+    </toolbar>
+</ui>

@@ -87,6 +87,7 @@ GHOSTSCRIPT_COMMAND = 'gs'
 
 # DeskTop Publishing Point (for calculating print measures)
 DTP = 72
-# location of glade spellchecker UI file
 
+# UI files' location
 OCRFEEDER_SPELLCHECKER_UI = os.path.join(RESOURCES_DIR, 'spell-checker.ui')
+OCRFEEDER_MENUBAR_UI = os.path.join(RESOURCES_DIR, 'menubar.ui')
