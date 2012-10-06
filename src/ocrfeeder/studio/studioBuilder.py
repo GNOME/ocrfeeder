@@ -78,6 +78,10 @@ class Studio:
         self.source_images_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
         self.source_images_icon_view.connect('drag_data_received', self.dragDataReceived)
         self.source_images_icon_view.connect('drag_drop', self.dragDrop)
+        self.source_images_icon_view.get_model().connect('row-inserted',
+                                                 self.__pagesUpdatedCallback)
+        self.source_images_icon_view.get_model().connect('row-deleted',
+                                                 self.__pagesUpdatedCallback)
         self.source_images_icon_view.drag_dest_set(gtk.DEST_DEFAULT_MOTION | gtk.DEST_DEFAULT_HIGHLIGHT,
                                                    [('text/uri-list', 0, self.TARGET_TYPE_URI_LIST)], gtk.gdk.ACTION_COPY)
         self.source_images_icon_view.show()
@@ -461,6 +465,10 @@ class Studio:
 
     def zoomFit(self, widget = None):
         self.source_images_controler.zoomFit()
+
+    def __pagesUpdatedCallback(self, model, path, iter):
+        self.main_window.setNumberOfPages(
+            self.source_images_icon_view.getNumberOfPages())
 
     def __askForEnginesMigration(self):
         auto_update = self.engines_needing_update['auto']

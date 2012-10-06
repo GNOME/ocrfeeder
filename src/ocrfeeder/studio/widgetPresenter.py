@@ -279,6 +279,11 @@ class MainWindow:
         if nr_images:
             self.setHasSelectedBoxes(False)
             self.setHasContentBoxes(False)
+        self.__setActionsSensitiveness(['SelectNextPage',
+                                        'SelectPreviousPage',
+                                        'MovePageUp',
+                                        'MovePageDown'],
+                                        nr_images > 1)
 
     def setHasSelectedBoxes(self, has_selected_boxes = True):
         if not self.action_group:
