@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 AC_INIT([ocrfeeder],
-        [0.7.9],
+        [0.7.10],
         [https://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder],
         [ocrfeeder])
 

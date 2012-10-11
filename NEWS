@@ -1,3 +1,31 @@
+Version 0.7.10
+==============
+
+New Features
+-------------
+
+* Move or select next/previous pages
+* Add all exportation formats to the CLI version of OCRFeeder
+
+Improvements
+-------------
+
+* Move menubar UI XML to a separate file
+* Improve the generation of text lines in PDF generation
+* Improve the way the document generators are managed in the code
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cz]
+* Daniel Mustieles [es]
+* Bruno Brouard [fr]
+* Fran Diéguez [gl]
+* Piotr Drąg [pl]
+* Aleksej Kabanov [ru]
+* Matej Urbančič, Martin Srebotnjak [sl]
+
+
 Version 0.7.9
 =============
 
