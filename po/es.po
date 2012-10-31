@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: orcfeeder.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-06 16:12+0000\n"
-"PO-Revision-Date: 2012-10-13 12:53+0200\n"
+"POT-Creation-Date: 2012-10-31 11:09+0000\n"
+"PO-Revision-Date: 2012-10-31 12:21+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Gtranslator 2.91.5\n"
 
 #: ../resources/ocrfeeder.desktop.in.h:1
@@ -262,7 +262,6 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:712
 #, python-format
-#| msgid "Export to a chosen format"
 msgid "Export to %(format_name)s"
 msgstr "Exportar a %(format_name)s"
 
@@ -427,22 +426,18 @@ msgid "Move page up"
 msgstr "Subir la página"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:103
-#| msgid "Select _Next Area"
 msgid "Select Next Page"
 msgstr "Seleccionar la página siguiente"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:103
-#| msgid "Select _Next Area"
 msgid "Select next page"
 msgstr "Seleccionar la página siguiente"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:104
-#| msgid "Select _Previous Area"
 msgid "Select Previous Page"
 msgstr "Seleccionar la página anterior"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:104
-#| msgid "Select _Previous Area"
 msgid "Select previous page"
 msgstr "Seleccionar la página anterior"
 
@@ -504,7 +499,8 @@ msgid "Image Des_kewer"
 msgstr "Corrección de _inclinación de imagen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:116
-msgid "Trie to straighten the image"
+#| msgid "Trie to straighten the image"
+msgid "Tries to straighten the image"
 msgstr "Intentar enderezar la imagen"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:118
