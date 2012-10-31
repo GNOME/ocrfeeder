@@ -113,7 +113,7 @@ class MainWindow:
                                   ('OCREngines', None, _('_OCR Engines'), None, _('Manage OCR engines'), menu_items['ocr_engines']),
                                   ('Unpaper', gtk.STOCK_EXECUTE, _('_Unpaper'), None, _('Process image with unpaper'), menu_items['unpaper']),
                                   ('ImageDeskewer', None, _('Image Des_kewer'),
-                                   None, _('Trie to straighten the image'),
+                                   None, _('Tries to straighten the image'),
                                    menu_items['image_deskewer']),
                                   ('Help', None, _('_Help')),
                                   ('HelpContents', gtk.STOCK_HELP, _('_Help'), 'F1', _('Help contents'), menu_items['help_contents']),
