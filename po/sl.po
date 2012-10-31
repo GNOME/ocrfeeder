@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-06 16:12+0000\n"
-"PO-Revision-Date: 2012-10-06 20:21+0100\n"
+"POT-Creation-Date: 2012-10-31 11:24+0000\n"
+"PO-Revision-Date: 2012-10-31 18:57+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -417,17 +417,14 @@ msgid "Move page up"
 msgstr "Pomakni stran navzgor"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:103
-#| msgid "Select _Next Area"
 msgid "Select Next Page"
 msgstr "Izberi naslednjo stran"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:103
-#| msgid "Select _Next Area"
 msgid "Select next page"
 msgstr "Izberi naslednjo stran"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:104
-#| msgid "Select _Previous Area"
 msgid "Select Previous Page"
 msgstr "Izberi predhodno stran"
 
@@ -493,7 +490,7 @@ msgid "Image Des_kewer"
 msgstr "Odstranjevalnik na_giba slike"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:116
-msgid "Trie to straighten the image"
+msgid "Tries to straighten the image"
 msgstr "Poskusi izravnati sliko"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:118
@@ -1140,3 +1137,4 @@ msgstr "Opozorilo"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1818
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
+
