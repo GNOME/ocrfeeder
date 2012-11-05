@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-06 16:12+0000\n"
-"PO-Revision-Date: 2012-10-07 15:33+0200\n"
+"POT-Creation-Date: 2012-10-31 11:09+0000\n"
+"PO-Revision-Date: 2012-11-05 16:20+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -492,10 +492,10 @@ msgstr "Zpracovat obrázek programem Unpaper"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "Image Des_kewer"
-msgstr "Odstranění _deformace obrazu"
+msgstr "Odstranit _deformace obrazu"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:116
-msgid "Trie to straighten the image"
+msgid "Tries to straighten the image"
 msgstr "Zkusit obraz vyrovnat"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:118
