@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-12 01:01+0200\n"
-"PO-Revision-Date: 2012-10-12 01:02+0200\n"
+"POT-Creation-Date: 2012-11-11 18:50+0100\n"
+"PO-Revision-Date: 2012-11-11 18:51+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -497,8 +497,8 @@ msgid "Image Des_kewer"
 msgstr "Or_ganizador de imaxes"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:116
-msgid "Trie to straighten the image"
-msgstr "Tentar endereitar a imaxe"
+msgid "Tries to straighten the image"
+msgstr "Tenta endereitar a imaxe"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:118
 #: ../src/ocrfeeder/studio/widgetPresenter.py:119
