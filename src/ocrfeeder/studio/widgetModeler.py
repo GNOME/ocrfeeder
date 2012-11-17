@@ -757,6 +757,8 @@ class ImageReviewer_Controler:
         return self.__askForFileName(extension = '.ocrf')
 
     def saveProject(self, project_name):
+        image_reviewer = self.__getCurrentReviewer()
+        image_reviewer.savePageData()
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
         pages_data = self.source_images_selector_widget.getAllPages()
@@ -775,8 +777,9 @@ class ImageReviewer_Controler:
                 self.clear()
             for index in range(0, len(pages)):
                 page = pages[index]
-                image_reviewer = self.__addImage(page.image_path,
-                                                 select_image = index == 0)
+                self.__addImage(page.image_path,
+                                select_image = index == 0)
+                image_reviewer = self.__getCurrentReviewer()
                 image_reviewer.updatePageData(page)
         open_dialog.destroy()
         return project_file
