@@ -201,10 +201,10 @@ class Studio:
 
     def addImage(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
+        file_open_dialog.set_select_multiple(True)
         response = file_open_dialog.run()
         if response == gtk.RESPONSE_OK:
-            for file_name in file_open_dialog.get_filenames():
-                self.__addImagesToReviewer([file_name])
+            self.__addImagesToReviewer(file_open_dialog.get_filenames())
         file_open_dialog.destroy()
 
     def importFromScanner(self, widget):
