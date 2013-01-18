@@ -28,13 +28,15 @@ from ocrfeeder.studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.util import lib
 IMAGE_ARGUMENT = '$IMAGE'
 FILE_ARGUMENT = '$FILE'
+LANGUAGE_ARGUMENT = '$LANG'
 
 class Engine:
 
     def __init__(self, name, engine_path, arguments,
                  image = None, temporary_folder = '/tmp/',
                  image_format = 'PPM', failure_string = '',
-                 version = 0.0):
+                 languages = '', favorite_language = '',
+                 language_argument = '', version = 0.0):
 
         self.name = name
         self.engine_path = engine_path
@@ -50,6 +52,9 @@ class Engine:
             self.image_path = self.setImage(image)
         self.image_format = image_format
         self.failure_string = failure_string
+        self.language_argument = language_argument
+        self.languages = self.unserializeLanguages(languages)
+        self.favorite_language = favorite_language
         self.temporary_folder = temporary_folder
         self.__color_information = None
 
@@ -69,6 +74,16 @@ class Engine:
         if self.arguments.find(FILE_ARGUMENT) != -1:
             file_name = tempfile.mkstemp(dir = self.temporary_folder)[1]
             parsed_arguments = parsed_arguments.replace(FILE_ARGUMENT, file_name)
+
+        favorite_language = self.languages.get(self.favorite_language, '')
+        if not favorite_language:
+            values = self.languages.values()
+            if values:
+                favorite_language = values[0]
+        parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT,
+                                            '%s %s' % (self.language_argument,
+                                                       favorite_language))
+
         text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
         try:
             try:
@@ -114,6 +129,9 @@ class Engine:
                        'arguments': self.arguments,
                        'image_format': self.image_format,
                        'failure_string': self.failure_string,
+                       'language_argument': self.language_argument,
+                       'languages': self.serializeLanguages(self.languages),
+                       'favorite_language': self.favorite_language,
                        'version': self.version}
         root = ET.Element('engine')
         for key, value in engine_info.items():
@@ -122,6 +140,19 @@ class Engine:
             subelement = ET.SubElement(root, key)
             subelement.text = str(value)
         return ET.ElementTree(root).write(file_path, 'UTF-8')
+
+    def unserializeLanguages(self, languages):
+        langs_dict = {}
+        langs_list = languages.split(',')
+        for language in langs_list:
+            language_split = language.split(':')
+            if len(language_split) == 2:
+                langs_dict[language_split[0]] = language_split[1]
+        return langs_dict
+
+    def serializeLanguages(self, language_dict):
+        return ','.join(['%s:%s' % (lang, engine_lang)
+                         for lang, engine_lang in language_dict.items()])
 
 class OcrEnginesManager:
 
