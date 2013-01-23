@@ -131,12 +131,17 @@ class ConfigurationManager(object):
             image_format = PREDEFINED_ENGINES[name].get('image_format', 'PPM')
             failure_string = PREDEFINED_ENGINES[name].get('failure_string', '')
             version = PREDEFINED_ENGINES[name].get('version', 0.0)
+            language_argument = PREDEFINED_ENGINES[name].get('language_argument', '')
+            languages = PREDEFINED_ENGINES[name].get('languages', '')
+            favorite_language = PREDEFINED_ENGINES[name].get('favorite_language', '')
             engine = Engine(engine_name,
                             path,
                             arguments,
                             temporary_folder = self.TEMPORARY_FOLDER,
                             image_format = image_format,
                             failure_string = failure_string,
+                            languages = languages,
+                            language_argument = language_argument,
                             version = version)
             existing_engines.append(engine)
         return existing_engines
