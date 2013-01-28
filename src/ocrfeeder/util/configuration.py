@@ -76,9 +76,9 @@ class ConfigurationManager(object):
     ADJUST_BOXES_BOUNDS = 'adjust_boxes_bounds'
     BOUNDS_ADJUSTMENT_SIZE = 'bounds_adjustment_size'
     DESKEW_IMAGES_AFTER_ADDITION = 'deskew_images_after_addition'
+    LANGUAGE = 'language'
 
     TEMPORARY_FOLDER = tempfile.mkdtemp(prefix = OCRFEEDER_COMPACT_NAME + '_')
-
 
     DEFAULTS = {TEXT_FILL: (94, 156, 235, 150),
                 BOXES_STROKE: (94, 156, 235, 250),
@@ -97,6 +97,7 @@ class ConfigurationManager(object):
                 DESKEW_IMAGES_AFTER_ADDITION: False,
                 UNPAPER_IMAGES_AFTER_ADDITION: False,
                 UNPAPER_EXTRA_OPTIONS: '',
+                LANGUAGE: locale.getdefaultlocale()[0].split('_')[0],
                 }
 
     conf = dict(DEFAULTS)
@@ -275,6 +276,13 @@ class ConfigurationManager(object):
     def setCleanText(self, clean_text):
         self.setConf(self.CLEAN_TEXT, clean_text)
 
+    def getLanguage(self):
+        lang = self.getConf(self.LANGUAGE)
+        return lang
+
+    def setLanguage(self, language):
+        self.setConf(self.LANGUAGE, language)
+
     def setAdjustBoxesBounds(self, adjust_boxes_bounds):
         self.setConf(self.ADJUST_BOXES_BOUNDS, adjust_boxes_bounds)
 
@@ -407,3 +415,5 @@ class ConfigurationManager(object):
 
     deskew_images_after_addition = property(getDeskewImagesAfterAddition,
                                             setDeskewImagesAfterAddition)
+
+    language = property(getLanguage, setLanguage)
