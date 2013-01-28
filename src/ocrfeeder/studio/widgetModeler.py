@@ -954,6 +954,8 @@ class Editor:
         self.box_editor.align_fill_button.connect('toggled', self.__setDataBoxAlign, ALIGN_FILL)
         self.box_editor.letter_spacing_spin.connect('value-changed', self.__setDataBoxLetterSpacing)
         self.box_editor.line_spacing_spin.connect('value-changed', self.__setDataBoxLineSpacing)
+        self.box_editor.ocr_combo_box.connect('changed', self._onOCREngineChanged)
+        self.box_editor.languages_combo.connect('changed', self._onLanguageChanged)
         self.box_editor.hide()
 
     def __updateBoxX(self, spin_button):
@@ -1032,6 +1034,21 @@ class Editor:
         line_spacing_button = line_spacing_button or self.box_editor.line_spacing_spin
         self.data_box.setLineSpacing(line_spacing_button.get_value())
 
+    def __setDataBoxLanguage(self, language = ''):
+        language = language or self.box_editor.getLanguage()
+        self.data_box.setLanguage(language)
+
+    def _onOCREngineChanged(self, combobox):
+        index = self.box_editor.getSelectedOcrEngine()
+        if index == -1:
+            return
+        engine = self.ocr_engines[index][0]
+        self.box_editor.setAvailableLanguages(engine.getLanguages().keys())
+
+    def _onLanguageChanged(self, combobox):
+        if self.data_box:
+            self.data_box.setLanguage(self.box_editor.getLanguage())
+
     def update(self, box):
         self.box = box
         x, y, width, height = self.data_box.updateBoundsFromBox(self.box)
@@ -1101,7 +1118,7 @@ class Editor:
         self.__setDataBoxFont()
         self.__setDataBoxLetterSpacing()
         self.__setDataBoxLineSpacing()
-
+        self.__setDataBoxLanguage()
 
     def updateDataBox(self, data_box):
         self.__updating_data_box = True
@@ -1119,6 +1136,7 @@ class Editor:
         self.box_editor.setFontSize(self.data_box.text_data.size)
         self.box_editor.setLineSpacing(self.data_box.getLineSpacing())
         self.box_editor.setLetterSpacing(self.data_box.getLetterSpacing())
+        self.box_editor.setLanguage(self.data_box.getLanguage())
         self.__updating_data_box = False
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)

@@ -27,6 +27,8 @@ import math
 from constants import *
 import sane
 import tempfile
+import locale
+from lxml import etree
 
 def getIconOrLabel(icon_name, label_text, icon_size = gtk.ICON_SIZE_SMALL_TOOLBAR):
     icon = gtk.Image()
@@ -163,3 +165,15 @@ def scan(device):
         return filename
     except (RuntimeError, sane._sane.error), msgerr:
         return None
+
+languages = {}
+
+def getLanguages():
+    global languages
+    if not languages:
+        lc, encoding = locale.getdefaultlocale()
+        language_country = lc.split('_')
+        root = etree.parse(ISO_CODES_PATH + 'iso_639.xml')
+        for element in root.findall('//iso_639_entry[@iso_639_1_code]'):
+            languages[element.get('iso_639_1_code')] = element.get('name')
+    return languages

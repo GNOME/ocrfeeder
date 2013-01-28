@@ -91,3 +91,6 @@ DTP = 72
 # UI files' location
 OCRFEEDER_SPELLCHECKER_UI = os.path.join(RESOURCES_DIR, 'spell-checker.ui')
 OCRFEEDER_MENUBAR_UI = os.path.join(RESOURCES_DIR, 'menubar.ui')
+
+# ISO-codes location
+ISO_CODES_PATH = '/usr/share/xml/iso-codes/'

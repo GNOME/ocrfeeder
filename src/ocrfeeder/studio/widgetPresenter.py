@@ -228,6 +228,87 @@ class MainWindow:
                           for action in actions]:
             gtkaction.set_sensitive(set_sensitive)
 
+class LanguagesComboBox(gtk.ComboBox):
+
+    _ID_COLUMN = 0
+    _CHECK_COLUMN = 1
+    _LANG_COLUMN = 2
+
+    def __init__(self, use_icon = False):
+        gtk.ComboBox.__init__(self)
+
+        self._cached_iters = {}
+        self._model_columns = {self._ID_COLUMN: str, self._LANG_COLUMN: str}
+        if use_icon:
+            self._model_columns[self._CHECK_COLUMN] = bool
+        model = gtk.ListStore(*(self._model_columns.values()))
+
+        self.set_model(model)
+
+        if use_icon:
+            renderer = gtk.CellRendererToggle()
+            renderer.set_sensitive(False)
+            self.pack_start(renderer, False)
+            self.add_attribute(renderer, 'active', self._CHECK_COLUMN)
+
+        renderer = gtk.CellRendererText()
+        # setting width so the combo won't be crazy large
+        renderer.set_property('width', 50)
+        self.pack_start(renderer, False)
+        self.add_attribute(renderer, 'text', self._LANG_COLUMN)
+
+        languages = lib.getLanguages()
+        sorted_keys = sorted(languages, key = lambda k: languages[k])
+        if sorted_keys:
+            model.append(('', False, _('No language')))
+        for key in sorted_keys:
+            language = languages[key]
+            translation = gettext.dgettext('iso_639', language)
+            values = (key, translation)
+            if len(self._model_columns.keys()) == 3:
+                values = (key, False, translation)
+            model.append(values)
+
+    def setAvailableLanguages(self, languages):
+        if len(self._model_columns.keys()) != 3:
+            return
+        cached_languages = self._cached_iters.keys()
+        languages_to_unset = [lang for lang in cached_languages
+                              if lang not in languages]
+        model = self.get_model()
+        for lang in languages:
+            iter = self._cached_iters.get(lang)
+            if iter is None:
+                iter = model.get_iter_first()
+                while iter:
+                    if model.get_value(iter, self._ID_COLUMN) == lang:
+                        self._cached_iters[lang] = iter
+                        break
+                    iter = model.iter_next(iter)
+            if iter:
+                model.set_value(iter, self._CHECK_COLUMN, True)
+        for lang in languages_to_unset:
+            iter = self._cached_iters.get(lang)
+            if iter:
+                model.set_value(iter, self._CHECK_COLUMN, False)
+
+    def getLanguage(self):
+        iter = self.get_active_iter()
+        if iter:
+            return self.get_model().get_value(iter, self._ID_COLUMN)
+
+    def setLanguage(self, language):
+        iter = self._cached_iters.get(language)
+        model = self.get_model()
+        if not iter:
+            iter = model.get_iter_first()
+            while iter:
+                if model.get_value(iter, self._ID_COLUMN) == language:
+                    break
+                iter = model.iter_next(iter)
+        if iter:
+            self.set_active_iter(iter)
+
 class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
     __gtype_name__ = 'BoxEditor'
 
@@ -445,6 +526,9 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
 
         return self.align_left_button, self.align_center_button, self.align_right_button, self.align_fill_button
 
+    def getLanguage(self):
+        return self.languages_combo.getLanguage()
+
     def __makeOcrProperties(self, engines):
         hbox = gtk.HBox()
         self.perform_ocr_button = gtk.Button(_('OC_R'))
@@ -537,6 +621,15 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
             text_properties_notebook.append_page(angle_box, gtk.Label( _('Angle')))
             text_properties_notebook.set_tab_reorderable(angle_box, True)
 
+        label = gtk.Label( _('Mis_c'))
+        label.set_use_underline(True)
+        vbox = gtk.VBox()
+        language_frame = PlainFrame(_('Language'))
+        self.languages_combo = LanguagesComboBox(use_icon = True)
+        language_frame.add(self.languages_combo)
+        vbox.pack_start(language_frame, False, False, 0)
+        text_properties_notebook.append_page(vbox, label)
+
         vbox = gtk.VBox()
         label = gtk.Label(_('OCR engine to recogni_ze this area:'))
         label.set_mnemonic_widget(self.ocr_combo_box)
@@ -561,6 +654,11 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
         vbox.pack_start(self.detect_angle_button, False)
         return vbox
 
+    def setAvailableLanguages(self, languages):
+        self.languages_combo.setAvailableLanguages(languages)
+
+    def setLanguage(self, language):
+        self.languages_combo.setLanguage(language)
 
     def setFontSize(self, size):
         font_name = self.font_button.get_font_name().split(' ')
