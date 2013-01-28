@@ -28,7 +28,7 @@ from pango import WEIGHT_NORMAL, STYLE_NORMAL
 
 class TextData:
 
-    def __init__(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 0, letter_space = 0, style = STYLE_NORMAL, weight = WEIGHT_NORMAL):
+    def __init__(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 0, letter_space = 0, style = STYLE_NORMAL, weight = WEIGHT_NORMAL, language = ''):
         self.face = face
         self.size = size
         self.line_space = line_space
@@ -37,10 +37,11 @@ class TextData:
         self.style = style
         self.weight = weight
         self.angle = 0
+        self.language = language
 
     def convertToDict(self):
         dictionary = lib.getDictFromVariables(['face', 'size', 'line_space',
-                                               'letter_space', 'justification', 'angle'], self)
+                                               'letter_space', 'justification', 'angle', 'language'], self)
         dictionary['style'] = repr(self.style).split(' ')[1].strip('PANGO_')
         dictionary['weight'] = repr(self.weight).split(' ')[1].strip('PANGO_')
         return {'TextData': dictionary}
@@ -149,6 +150,12 @@ class DataBox(gobject.GObject):
 
     def setLineSpacing(self, spacing):
         self.text_data.line_space = spacing
+
+    def setLanguage(self, language):
+        self.text_data.language = language
+
+    def getLanguage(self):
+        return self.text_data.language
 
     def getLetterSpacing(self):
         return self.text_data.letter_space
