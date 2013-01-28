@@ -56,6 +56,7 @@ class Engine:
         self.setLanguages(languages)
         self.temporary_folder = temporary_folder
         self.__color_information = None
+        self.setLanguage('')
 
     def setImage(self, image):
         image_file = tempfile.mkstemp(dir = self.temporary_folder,
@@ -74,17 +75,18 @@ class Engine:
             file_name = tempfile.mkstemp(dir = self.temporary_folder)[1]
             parsed_arguments = parsed_arguments.replace(FILE_ARGUMENT, file_name)
 
-        favorite_language = ''
-        if self.language_argument:
-            if self._favorite_language and self.languages:
+        if self._favorite_language:
+            if self.languages:
                 favorite_language = self.languages.get(self._favorite_language, '')
                 if not favorite_language:
                     values = self.languages.values()
                     if values:
                         favorite_language = values[0]
-        parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT,
+                parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT,
                                          '%s %s' % (self.language_argument,
                                                     favorite_language))
+        else:
+            parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT, '')
 
         text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
         try:
