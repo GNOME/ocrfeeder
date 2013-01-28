@@ -231,17 +231,17 @@ class MainWindow:
 class LanguagesComboBox(gtk.ComboBox):
 
     _ID_COLUMN = 0
-    _CHECK_COLUMN = 1
-    _LANG_COLUMN = 2
+    _LANG_COLUMN = 1
+    _CHECK_COLUMN = 2
 
     def __init__(self, use_icon = False):
         gtk.ComboBox.__init__(self)
 
         self._cached_iters = {}
-        self._model_columns = {self._ID_COLUMN: str, self._LANG_COLUMN: str}
+        self._model_columns = (str, str)
         if use_icon:
-            self._model_columns[self._CHECK_COLUMN] = bool
-        model = gtk.ListStore(*(self._model_columns.values()))
+            self._model_columns += (bool,)
+        model = gtk.ListStore(*self._model_columns)
 
         self.set_model(model)
 
@@ -260,22 +260,28 @@ class LanguagesComboBox(gtk.ComboBox):
         languages = lib.getLanguages()
         sorted_keys = sorted(languages, key = lambda k: languages[k])
         if sorted_keys:
-            model.append(('', False, _('No language')))
+            values = ('', _('No language'))
+            if model.get_n_columns() == 3:
+                values += (False,)
+            model.append(values)
         for key in sorted_keys:
             language = languages[key]
             translation = gettext.dgettext('iso_639', language)
             values = (key, translation)
-            if len(self._model_columns.keys()) == 3:
-                values = (key, False, translation)
+            if model.get_n_columns() == 3:
+                values += (False,)
             model.append(values)
 
+    def _getListStoreTypes(self):
+        return (str, str)
+
     def setAvailableLanguages(self, languages):
-        if len(self._model_columns.keys()) != 3:
+        model = self.get_model()
+        if model.get_n_columns() != 3:
             return
         cached_languages = self._cached_iters.keys()
         languages_to_unset = [lang for lang in cached_languages
                               if lang not in languages]
-        model = self.get_model()
         for lang in languages:
             iter = self._cached_iters.get(lang)
             if iter is None:
