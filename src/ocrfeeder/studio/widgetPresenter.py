@@ -1299,7 +1299,8 @@ class PreferencesDialog(gtk.Dialog):
         self.__makeToolsPreferences(self.__makeUnpaper(),
                                     self.__makeEngines(),
                                     self.__makePreProcessorPreferences())
-        self.__makeRecognitionPreferences(self.__makeTextPreferences(),
+        self.__makeRecognitionPreferences(self.__makeLanguagePreferences(),
+                                      self.__makeTextPreferences(),
                                       self.__makeWindowSize(),
                                       self.__makeColumnDetectionPreferences(),
                                       self.__makeBoundsAdjustmentsPreferences())
@@ -1335,6 +1336,7 @@ class PreferencesDialog(gtk.Dialog):
             self.__getBoundsAdjustmentSize()
         self.configuration_manager.deskew_images_after_addition = \
             self.deskew_images.get_active()
+        self.configuration_manager.language = self.language_combo.getLanguage()
         if self.configuration_manager.has_unpaper:
             self.configuration_manager.unpaper_images_after_addition = \
                 self.unpaper_images.get_active()
@@ -1656,6 +1658,29 @@ class PreferencesDialog(gtk.Dialog):
         unpaper_preferences.run()
         unpaper_preferences.save()
         unpaper_preferences.destroy()
+
+    def __makeLanguagePreferences(self):
+        frame = PlainFrame(_('Language'))
+        self.language_combo = LanguagesComboBox(use_icon = False)
+        self.language_combo.setLanguage(self.configuration_manager.language)
+        vbox = gtk.VBox()
+        label = gtk.Label(_('The language may affect how the OCR engines work.\n'
+                        'If an engine is set to support languages but does not '
+                        'support the one chosen, it may result in blank text.\n'
+                        'You can choose "No Language" to prevent this.'))
+        alignment = gtk.Alignment(0, 0, 1, 0)
+        alignment.add(label)
+        vbox.pack_start(alignment, False, False, 12)
+        label = gtk.Label(_('Default _language:'))
+        label.set_use_underline(True)
+        label.set_mnemonic_widget(self.language_combo)
+        hbox = gtk.HBox()
+        hbox.pack_start(label, False, False, 12)
+        self.language_combo.set_size_request(250, -1)
+        hbox.pack_start(self.language_combo, False, True, 12)
+        vbox.pack_start(hbox, False, False, 0)
+        frame.add(vbox)
+        return frame
 
 class SystemEnginesDialog(gtk.Dialog):
 
