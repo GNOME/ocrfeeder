@@ -242,6 +242,7 @@ class ImageReviewer(gtk.HPaned):
     def addBoxEditor(self, box, data_box = None):
         if not data_box:
             data_box = DataBox()
+            data_box.setLanguage(self.configuration_manager.language)
             data_box.updateBoundsFromBox(box)
         self.boxes_dict[box] = data_box
         self.editor.setBoxes(box, data_box)
@@ -312,6 +313,8 @@ class ImageReviewer(gtk.HPaned):
         self.updateMainWindow()
 
     def performOcrForDataBox(self, data_box, engine):
+        if engine.hasLanguages():
+            engine.setLanguage(data_box.getLanguage())
         pixbuf_width = self.image_pixbuf.get_width()
         pixbuf_height = self.image_pixbuf.get_height()
         subpixbuf = self.image_pixbuf.subpixbuf(data_box.getX(),
@@ -667,7 +670,10 @@ class ImageReviewer_Controler:
             adjustment_size = None
         clean_text = self.configuration_manager.clean_text
 
-        layout_analysis = LayoutAnalysis(self.__getConfiguredOcrEngine(),
+        engine = self.__getConfiguredOcrEngine()
+        if engine.hasLanguages():
+            engine.setLanguage(self.configuration_manager.language)
+        layout_analysis = LayoutAnalysis(engine,
                                          window_size,
                                          improve_column_detection,
                                          column_min_width,

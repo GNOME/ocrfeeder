@@ -498,7 +498,9 @@ class LayoutAnalysis(object):
     def __recognizeImageFromBounds(self, image, bounds, page_resolution):
         clip = image.crop(bounds)
         text = clip_type = None
+        language = ''
         if self.ocr_engine:
+            language = self.ocr_engine.getLanguage()
             text = self.readImage(clip)
             clip_type = self.ocr_engine.classify(text)
 
@@ -507,6 +509,7 @@ class LayoutAnalysis(object):
                                                                    (x1, y1))
 
         data_box = DataBox(x, y, width, height, clip)
+        data_box.setLanguage(language)
         if text:
             data_box.setText(text)
             data_box.setType(clip_type)
