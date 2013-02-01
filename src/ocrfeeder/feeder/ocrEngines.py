@@ -151,12 +151,9 @@ class OcrEnginesManager:
         self.ocr_engines = []
         favorite_engine_exists = False
         for xml_file in self.getXmlFilesInFolder(folder):
-            try:
-                engine = self.getEngineFromXml(xml_file)
+            engine = self.getEngineFromXml(xml_file)
+            if engine:
                 self.ocr_engines.append((engine, xml_file))
-            except WrongSettingsForEngine, we:
-                lib.debug("Cannot load engine at %s: %s" %( xml_file, str(we)))
-            else:
                 favorite_engine_exists = favorite_engine_exists or \
                     self.configuration_manager.favorite_engine == engine.name
         if not len(self.ocr_engines):
@@ -195,8 +192,17 @@ class OcrEnginesManager:
             arg_name = child.tag
             arg_value = child.text
             arguments[arg_name] = arg_value
-        engine = Engine(**arguments)
-        engine.temporary_folder = self.configuration_manager.TEMPORARY_FOLDER
+
+        try:
+            engine = Engine(**arguments)
+        except TypeError, exception:
+            lib.debug('Error when unserializing engine: %s', exception.message)
+            engine = None
+        except WrongSettingsForEngine, we:
+            lib.debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
+            engine = None
+        else:
+            engine.temporary_folder = self.configuration_manager.TEMPORARY_FOLDER
         return engine
 
     def getXmlFilesInFolder(self, folder):
