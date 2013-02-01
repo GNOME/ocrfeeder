@@ -1841,6 +1841,7 @@ class OcrSettingsDialog(gtk.Dialog):
         self.engine = engine
         self.vbox.add(self.__makeMainArea())
         self.set_icon_from_file(WINDOW_ICON)
+        self.configuration_manager = ConfigurationManager()
         self.vbox.show_all()
 
     def __makeMainArea(self):
