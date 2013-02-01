@@ -1849,12 +1849,16 @@ class OcrSettingsDialog(gtk.Dialog):
         engine_path = ''
         failure_string = ''
         arguments = '$IMAGE'
+        language_argument = ''
+        languages = ''
         if self.engine:
             name = self.engine.name
             image_format = self.engine.image_format
             failure_string = self.engine.failure_string
             engine_path = self.engine.engine_path
             arguments = self.engine.arguments
+            language_argument = self.engine.language_argument
+            languages = self.engine.serializeLanguages(self.engine.languages)
         box = gtk.VBox(True, 0)
         size_group = gtk.SizeGroup(gtk.SIZE_GROUP_HORIZONTAL)
         self.name_entry = gtk.Entry()
@@ -1878,6 +1882,25 @@ class OcrSettingsDialog(gtk.Dialog):
                                   self.arguments_entry, arguments,
                                   _('Arguments: use $IMAGE for image '
                                     'and $FILE if it writes to a file'))
+        self.language_argument_entry = gtk.Entry()
+        self.__packSettingInFrame(box, size_group,
+                                  _('Engine _language argument:'),
+                                  self.language_argument_entry, language_argument,
+                                  _('The language argument in case this engine '
+                                    'uses it (for example "-l"). In order for '
+                                    'it to work, the engine\'s arguments should '
+                                    'have the $LANG keyword.'))
+        self.languages_entry = gtk.Entry()
+        self.__packSettingInFrame(box, size_group,
+                                  _('Engine lan_guages:'),
+                                  self.languages_entry, languages,
+                                  _('The languages this engine supports. '
+                                    'This should be given as pairs of the '
+                                    'language in the ISO 639-1 and the '
+                                    'engine\'s corresponding language '
+                                    '(for example "en:eng,pt:por,es:esp"). '
+                                    'In order for it to work, the engine\'s '
+                                    'arguments should have the $LANG keyword.'))
         return box
 
     def setEngine(self):
@@ -1895,11 +1918,15 @@ class OcrSettingsDialog(gtk.Dialog):
             arguments = self.arguments_entry.get_text()
             image_format = self.image_format_entry.get_text()
             failure_string = self.failure_string_entry.get_text()
+            languages = self.languages_entry.get_text()
+            language_argument = self.language_argument_entry.get_text()
             engine = self.engine_manager.newEngine(self.name_entry.get_text(),
                                                    path,
                                                    arguments,
                                                    image_format,
                                                    failure_string,
+                                                   languages,
+                                                   language_argument,
                                                    version)
             if self.engine:
                 self.engine_manager.replaceEngine(self.engine, engine)

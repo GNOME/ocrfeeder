@@ -261,11 +261,14 @@ class OcrEnginesManager:
         return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
 
     def newEngine(self, name, engine_path, arguments,
-                  image_format, failure_string, version):
+                  image_format, failure_string, languages,
+                  language_argument, version):
         engine = Engine(name = name, engine_path = engine_path,
                         arguments = arguments, image_format = image_format,
                         temporary_folder = self.configuration_manager.TEMPORARY_FOLDER,
                         failure_string = failure_string,
+                        languages = languages,
+                        language_argument = language_argument,
                         version = version)
         return engine
 
