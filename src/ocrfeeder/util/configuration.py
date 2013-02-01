@@ -25,16 +25,31 @@ import tempfile
 import shutil
 from xml.dom import minidom
 import os.path
+import locale
 
 PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                                     'image_format': 'TIF',
                                     'engine_path': 'tesseract',
-                                    'arguments': '$IMAGE $FILE >'
+                                    'arguments': '$LANG $IMAGE $FILE >'
                                     ' /dev/null 2> /dev/null; cat '
                                     '$FILE.txt; rm $FILE $FILE.txt',
-                                    'old_arguments': ['$IMAGE $FILE; cat '
+                                    'old_arguments': ['$IMAGE $FILE >'
+                                       ' /dev/null 2> /dev/null; cat '
+                                       '$FILE.txt; rm $FILE $FILE.txt',
+                                                  '$IMAGE $FILE; cat '
                                        '$FILE.txt; rm $FILE $FILE.txt'],
-                                    'version': 0.1},
+                                    'language_argument': '-l',
+                                    'languages': 'af:afr,ar:ara,az:aze,be:bel,'
+                                       'bn:ben,bg:bul,ca:cat,cs:cse,zh:chi-sim,'
+                                       'chr:chr,da:dan,de:deu,el:ell,en:eng,'
+                                       'et:est,eu:eus,fi:fin,fr:fra,gl:glg,he:heb,'
+                                       'hi:hin,hr:hrv,hu:hun,id:ind,is:isl,it:ita,'
+                                       'ja:jpn,kn:kan,ko:kor,lv:lav,lt:lit,ml:mal,'
+                                       'mk:mkd,mt:mlt,ms:msa,nl:nld,no:nor,pl:pol,'
+                                       'pt:por,ro:ron,ru:rus,sk:slk,sl:slv,es:spa,'
+                                       'sq:sqi,sr:srp,sw:swa,sv:swe,ta:tam,te:tel,'
+                                       'tl:tgl,th:tha,tr:tur,uk:ukr,vi:vie',
+                                    'version': 0.2},
                       'ocrad': {'name': 'Ocrad',
                                 'image_format': 'PPM',
                                 'engine_path': 'ocrad',
@@ -50,11 +65,19 @@ PREDEFINED_ENGINES = {'tesseract': {'name': 'Tesseract',
                       'cuneiform': {'name': 'Cuneiform',
                                'image_format': 'BMP',
                                'engine_path': 'cuneiform',
-                               'arguments': '-f text -o $FILE $IMAGE >'
+                               'arguments': '$LANG -f text -o $FILE $IMAGE >'
                                ' /dev/null 2> /dev/null && cat $FILE'
                                ' && rm $FILE',
-                               'old_arguments': [],
-                               'version': 0.0},
+                               'old_arguments': ['-f text -o $FILE $IMAGE >'
+                                      ' /dev/null 2> /dev/null && cat $FILE'
+                                      ' && rm $FILE'],
+                               'language_argument': '-l',
+                               'languages': 'en:eng,de:ger,fr:fra,ru:rus,sv:swe,'
+                                            'es:spa,it:ita,uk:ukr,'
+                                            'sr:srp,hr:hrv,pl:pol,da:dan,pt:por,'
+                                            'nl:dut,cs:cze,ro:rum,hu:hun,bg:bul,'
+                                            'sl:slv,lv:lav,lt:lit,et:est,tr:tur',
+                               'version': 0.1},
                      }
 
 class ConfigurationManager(object):
