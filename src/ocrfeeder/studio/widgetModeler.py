@@ -497,11 +497,12 @@ class ImageReviewer_Controler:
         if finished:
             dialog.cancel()
 
-    def __addImage(self, image_path, select_image = True):
+    def __addImage(self, image_path, select_image = True, page_data = None):
         image_path = os.path.abspath(os.path.expanduser(image_path))
         if not os.path.isfile(image_path):
             return None
-        page_data = PageData(image_path)
+        if page_data is None:
+            page_data = PageData(image_path)
         iter = self.source_images_selector_widget.get_model().addImage(page_data)
         if select_image:
             path = \
@@ -778,7 +779,8 @@ class ImageReviewer_Controler:
             for index in range(0, len(pages)):
                 page = pages[index]
                 self.__addImage(page.image_path,
-                                select_image = index == 0)
+                                select_image = index == 0,
+                                page_data = page)
                 image_reviewer = self.__getCurrentReviewer()
                 image_reviewer.updatePageData(page)
         open_dialog.destroy()
