@@ -435,7 +435,7 @@ class Studio:
     def zoomFit(self, widget = None):
         self.source_images_controler.zoomFit()
 
-    def __pagesUpdatedCallback(self, model, path, iter):
+    def __pagesUpdatedCallback(self, model, path, iter = None):
         self.main_window.setNumberOfPages(
             self.source_images_icon_view.getNumberOfPages())
 
