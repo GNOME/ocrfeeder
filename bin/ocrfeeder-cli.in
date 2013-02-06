@@ -42,6 +42,20 @@ from optparse import OptionParser
 document_generator_manager = DocumentGeneratorManager()
 formats = document_generator_manager.getFormats()
 
+configuration_manager = ConfigurationManager()
+ocr_engines_manager = OcrEnginesManager(configuration_manager)
+ocr_engines_manager.makeEnginesFromFolder(configuration_manager.user_engines_folder)
+ocr_engines = ocr_engines_manager.ocr_engines
+
+ocr_engines_help_text = 'the OCR engine to be used.'
+if not ocr_engines:
+    ocr_engines_help_text += ' No engines configured!'
+else:
+    ocr_engines_help_text +=  ' Options are: %s' % \
+                              ', '.join([engine[0].name for engine in ocr_engines[:-1]])
+    if len(ocr_engines) > 1:
+        ocr_engines_help_text += ' or %s' % ocr_engines[-1][0].name
+
 parser = OptionParser(usage = 'Usage: %prog -i IMAGE1 [-i IMAGE2, ...] -o FILE',
                       version = '%prog ' + OCRFEEDER_STUDIO_VERSION)
 parser.add_option('-i', '--image', dest = 'images',
@@ -55,6 +69,9 @@ parser.add_option('-f', '--format', dest = 'format',
 parser.add_option('-o', '--output', dest = 'output',
                   action = 'store', type = 'string',
                   help = 'the document to be generated')
+parser.add_option('-e', '--engine', dest = 'engine',
+                  action = 'store', type = 'string',
+                  help = ocr_engines_help_text)
 parser.add_option('--window-size', dest = 'window_size', default = 'auto',
                   action = 'store', type = 'string', metavar= 'auto or an integer value',
                   help = 'the segmentation algorithm window size')
@@ -85,16 +102,18 @@ file_name = options.output
 if not file_name:
     parser.error('Please choose the output name.')
 
-configuration_manager = ConfigurationManager()
-ocr_engines_manager = OcrEnginesManager(configuration_manager)
-ocr_engines_manager.makeEnginesFromFolder(configuration_manager.user_engines_folder)
-ocr_engines = ocr_engines_manager.ocr_engines
-
-if len(ocr_engines):
-    engine = ocr_engines[0]
-else:
+if not len(ocr_engines):
     parser.error('No OCR engines configured.')
     exit(0)
+
+engine_name = options.engine.lower()
+if engine_name:
+    for engine in ocr_engines:
+        if engine[0].name.lower() == engine_name:
+            ocr_engine = engine[0]
+            break
+else:
+    ocr_engine = ocr_engines[0][0]
 
 pages = []
 for image in images:
@@ -105,7 +124,7 @@ for image in images:
     page_data = PageData(image)
     data_boxes = []
     image_obj = Image.open(image)
-    layout_analysis = LayoutAnalysis(engine[0],
+    layout_analysis = LayoutAnalysis(ocr_engine,
                                      window_size)
     resolution = getImageResolution(image_obj)[1]
     page_data.data_boxes = layout_analysis.recognize(image,
