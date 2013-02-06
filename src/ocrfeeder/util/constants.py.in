@@ -25,10 +25,10 @@ import locale
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
 OCRFEEDER_STUDIO_VERSION = '@VERSION@'
-OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
-OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <joaquimrocha1@gmail.com>']
-OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2011 Joaquim Rocha\n' \
-                      'Copyright © 2009-2011 Igalia, SL'
+OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <me@joaquimrocha.com>']
+OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <me@joaquimrocha.com>']
+OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2013 Joaquim Rocha\n' \
+                      'Copyright © 2009-2012 Igalia, SL'
 OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
 GPL_STATEMENT = """
     OCRFeeder is free software: you can redistribute it and/or modify
