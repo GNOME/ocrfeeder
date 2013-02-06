@@ -72,6 +72,9 @@ parser.add_option('-o', '--output', dest = 'output',
 parser.add_option('-e', '--engine', dest = 'engine',
                   action = 'store', type = 'string',
                   help = ocr_engines_help_text)
+parser.add_option('-l', '--language', dest = 'language',
+                  action = 'store', type = 'string',
+                  help = 'the language according to the ISO-639-1. For example "pt" for Portuguese or "en" for English')
 parser.add_option('--window-size', dest = 'window_size', default = 'auto',
                   action = 'store', type = 'string', metavar= 'auto or an integer value',
                   help = 'the segmentation algorithm window size')
@@ -114,6 +117,9 @@ if engine_name:
             break
 else:
     ocr_engine = ocr_engines[0][0]
+
+if options.language:
+    ocr_engine.setLanguage(options.language)
 
 pages = []
 for image in images:
