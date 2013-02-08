@@ -1,3 +1,41 @@
+Version 0.7.11
+==============
+
+New Features
+-------------
+
+* Introduce language choices for the recognition
+  (both on GUI and on CLI)
+
+Bug Fixes
+----------
+
+* Fix saving and loading a project
+* Fix saving a previously loaded and edited project
+* Fix problem when adding new OCR engine from SettingsManager
+* Fix error when deleting a page
+
+Improvements
+-------------
+
+* Allow multiple images to be added at once
+* Prevent errors when the OCR engine's
+  configuration has unknown settings
+* Add OCR engine option to the CLI version
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cz]
+* Daniel Mustieles [es]
+* Gianvito Cavasoli [it]
+* Fran Diéguez [gl]
+* Piotr Drąg [pl]
+* Matej Urbančič [sl]
+* Yuri Myasoedov [ru]
+* Мирослав Николић [sr]
+
+
 Version 0.7.10
 ==============
 
