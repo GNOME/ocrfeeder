@@ -233,6 +233,8 @@ class OcrEnginesManager:
     def migrateEngine(self, engine, configuration, only_version = False):
         if not only_version:
             engine.arguments = configuration['arguments']
+            engine.language_argument = configuration['language_argument']
+            engine.setLanguages(configuration['languages'])
         engine.version = configuration['version']
         self.replaceEngine(engine, engine)
 
