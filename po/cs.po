@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the ocrfeeder package.
 #
 # Petr Kovar <pknbe@volny.cz>, 2010.
-# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012.
+# Marek Černocký <marek@manet.cz>, 2010, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-31 11:09+0000\n"
-"PO-Revision-Date: 2012-11-05 16:20+0200\n"
+"POT-Creation-Date: 2013-02-05 16:59+0000\n"
+"PO-Revision-Date: 2013-02-17 11:33+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../resources/ocrfeeder.desktop.in.h:1
 msgid "OCRFeeder"
@@ -107,10 +108,10 @@ msgstr "Zjišťují se skenery"
 #: ../src/ocrfeeder/studio/studioBuilder.py:215
 #: ../src/ocrfeeder/studio/studioBuilder.py:241
 #: ../src/ocrfeeder/studio/studioBuilder.py:283
-#: ../src/ocrfeeder/studio/widgetModeler.py:473
-#: ../src/ocrfeeder/studio/widgetModeler.py:478
-#: ../src/ocrfeeder/studio/widgetModeler.py:531
-#: ../src/ocrfeeder/studio/widgetModeler.py:623
+#: ../src/ocrfeeder/studio/widgetModeler.py:476
+#: ../src/ocrfeeder/studio/widgetModeler.py:481
+#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
 msgid "Please wait…"
 msgstr "Čekejte prosím…"
 
@@ -124,8 +125,8 @@ msgstr "Nenalezeno žádné skenovací zařízení"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:247
 #: ../src/ocrfeeder/studio/studioBuilder.py:262
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
 msgid "Error"
 msgstr "Chyba"
 
@@ -194,7 +195,7 @@ msgid "Pages"
 msgstr "Stránky"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1624
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1753
 msgid "Delete"
 msgstr "Odstranit"
 
@@ -202,39 +203,39 @@ msgstr "Odstranit"
 msgid "Selectable areas"
 msgstr "Oblasti, které lze vybrat"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:473
+#: ../src/ocrfeeder/studio/widgetModeler.py:476
 msgid "Preparing image"
 msgstr "Připravuje se obraz"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:475
+#: ../src/ocrfeeder/studio/widgetModeler.py:478
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr "Připravuje se obraz %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:531
+#: ../src/ocrfeeder/studio/widgetModeler.py:535
 msgid "Deskewing image"
 msgstr "Odstraňují se deformace obrazu"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:558
+#: ../src/ocrfeeder/studio/widgetModeler.py:562
 msgid "No images added"
 msgstr "Nebyl přidán žádný obrázek"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:561
+#: ../src/ocrfeeder/studio/widgetModeler.py:565
 #, python-format
 msgid "Zoom: %s %%"
 msgstr "Přiblížení: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:563
+#: ../src/ocrfeeder/studio/widgetModeler.py:567
 #, python-format
 msgid "Resolution: %.2f x %.2f"
 msgstr "Rozlišení: %.2f × %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:565
+#: ../src/ocrfeeder/studio/widgetModeler.py:569
 #, python-format
 msgid "Page size: %i x %i"
 msgstr "Velikost stránky: %i × %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:604
+#: ../src/ocrfeeder/studio/widgetModeler.py:608
 msgid ""
 "There are changes that may be overwritten by the new recognition.\n"
 "\n"
@@ -244,49 +245,49 @@ msgstr ""
 "\n"
 "Chcete pokračovat?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:623
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
 msgid "Recognizing Page"
 msgstr "Rozpoznává se stránka"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:640
+#: ../src/ocrfeeder/studio/widgetModeler.py:644
 msgid "Recognizing Document"
 msgstr "Rozpoznává se dokument"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:641
+#: ../src/ocrfeeder/studio/widgetModeler.py:645
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
 msgstr "Rozpoznává se stránka %(page_number)s/%(total_pages)s. Čekejte prosím…"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:712
+#: ../src/ocrfeeder/studio/widgetModeler.py:719
 #, python-format
 msgid "Export to %(format_name)s"
 msgstr "Exportovat do formátu %(format_name)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:729
+#: ../src/ocrfeeder/studio/widgetModeler.py:736
 msgid "What kind of PDF document do you wish?"
 msgstr "Jaký druh dokumentu PDF si přejete?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:731
+#: ../src/ocrfeeder/studio/widgetModeler.py:738
 msgid "From scratch"
 msgstr "Od základů"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:733
+#: ../src/ocrfeeder/studio/widgetModeler.py:740
 msgid "Creates a new PDF from scratch."
 msgstr "Vytvořit od základů nový dokument PDF."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:735
+#: ../src/ocrfeeder/studio/widgetModeler.py:742
 msgid "Searchable PDF"
 msgstr "Prohledávatelné PDF"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:736
+#: ../src/ocrfeeder/studio/widgetModeler.py:743
 msgid "Creates a PDF based on the images but with searchable text."
 msgstr "Vytvořit dokument PDF složený z obrázků, ale s vyhledatelným textem."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:767
+#: ../src/ocrfeeder/studio/widgetModeler.py:776
 msgid "OCRFeeder Projects"
 msgstr "Projekty OCRFeeder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:813
+#: ../src/ocrfeeder/studio/widgetModeler.py:824
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -297,7 +298,7 @@ msgstr ""
 "\n"
 "Soubor existuje v „%(dir)s“. Pokud jej nahradíte, přepíšete jeho obsah."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:820
+#: ../src/ocrfeeder/studio/widgetModeler.py:831
 msgid "Replace"
 msgstr "Nahradit"
 
@@ -470,7 +471,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:112
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1292
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1398
 msgid "_Tools"
 msgstr "Nás_troje"
 
@@ -603,406 +604,419 @@ msgstr "_Kontrola pravopisu"
 msgid "Spell Check Recognized Text"
 msgstr "Zkontrolovat pravopis rozpoznaného textu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:242
+#: ../src/ocrfeeder/studio/widgetPresenter.py:263
+msgid "No language"
+msgstr "Žádný jazyk"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:329
 msgid "Area editor"
 msgstr "Editor oblasti"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:250
+#: ../src/ocrfeeder/studio/widgetPresenter.py:337
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr "Nastavuje souřadnici X levého horního rohu oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:254
+#: ../src/ocrfeeder/studio/widgetPresenter.py:341
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr "Nastavuje souřadnici Y levého horního rohu oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:258
+#: ../src/ocrfeeder/studio/widgetPresenter.py:345
 msgid "Sets the content area's width"
 msgstr "Nastavuje šířku oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:261
+#: ../src/ocrfeeder/studio/widgetPresenter.py:348
 msgid "Sets the content area's height"
 msgstr "Nastavuje výšku oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:264
-#: ../src/ocrfeeder/studio/widgetPresenter.py:479
+#: ../src/ocrfeeder/studio/widgetPresenter.py:351
+#: ../src/ocrfeeder/studio/widgetPresenter.py:569
 msgid "_Text"
 msgstr "_Text"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:265
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
 msgid "Set this content area to be the text type"
 msgstr "Nastavit tuto oblast s obsahem, aby byla typu text"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:266
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
 msgid "_Image"
 msgstr "O_brázek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:267
+#: ../src/ocrfeeder/studio/widgetPresenter.py:354
 msgid "Set this content area to be the image type"
 msgstr "Nastavit tuto oblast s obsahem, aby byla typu obrázek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:268
+#: ../src/ocrfeeder/studio/widgetPresenter.py:355
 msgid "Type"
 msgstr "Typ"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:278
+#: ../src/ocrfeeder/studio/widgetPresenter.py:365
 msgid "Clip"
 msgstr "Výřez"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:361
+#: ../src/ocrfeeder/studio/widgetPresenter.py:448
 msgid "Bounds"
 msgstr "Meze"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:366
+#: ../src/ocrfeeder/studio/widgetPresenter.py:453
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:375
+#: ../src/ocrfeeder/studio/widgetPresenter.py:462
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:387
-#: ../src/ocrfeeder/studio/widgetPresenter.py:736
+#: ../src/ocrfeeder/studio/widgetPresenter.py:474
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
 msgid "_Width:"
 msgstr "Šíř_ka:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:396
+#: ../src/ocrfeeder/studio/widgetPresenter.py:483
 msgid "Hei_ght:"
 msgstr "Výšk_a:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:506
 msgid "Left"
 msgstr "Vlevo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:510
 msgid "Set text to be left aligned"
 msgstr "Nastavit text, aby byl zarovnán doleva"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:425
+#: ../src/ocrfeeder/studio/widgetPresenter.py:512
 msgid "Center"
 msgstr "Na střed"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:430
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
 msgid "Set text to be centered"
 msgstr "Nastavit text, aby byl zarovnán na střed"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:432
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
 msgid "Right"
 msgstr "Vpravo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:437
+#: ../src/ocrfeeder/studio/widgetPresenter.py:524
 msgid "Set text to be right aligned"
 msgstr "Nastavit text, aby byl zarovnán doprava"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:439
+#: ../src/ocrfeeder/studio/widgetPresenter.py:526
 msgid "Fill"
 msgstr "Do bloku"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
 msgid "Set text to be fill its area"
 msgstr "Nastavit text, aby byl zarovnán do bloku"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:450
+#: ../src/ocrfeeder/studio/widgetPresenter.py:540
 msgid "OC_R"
 msgstr "OC_R"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:451
+#: ../src/ocrfeeder/studio/widgetPresenter.py:541
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr ""
 "Provést OCR na této oblasti s obsahem pomocí vybraného výkonného programu "
 "OCR."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:457
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OCR engine to recognize this content area"
 msgstr "Výkonný program OCR pro rozpoznání této oblasti s obsahem"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:465
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 msgid "Text Properties"
 msgstr "Vlastnosti textu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:487
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
 msgid "Font"
 msgstr "Písmo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:494
+#: ../src/ocrfeeder/studio/widgetPresenter.py:584
 msgid "Align"
 msgstr "Zarovnání"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:498
+#: ../src/ocrfeeder/studio/widgetPresenter.py:588
 msgid "Spacing"
 msgstr "Rozestupy"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:500
+#: ../src/ocrfeeder/studio/widgetPresenter.py:590
 msgid "Set the text's letter spacing"
 msgstr "Nastavit mezery mezi znaky textu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:502
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
 msgid "Set the text's line spacing"
 msgstr "Nastavit mezery mezi řádky textu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:507
+#: ../src/ocrfeeder/studio/widgetPresenter.py:597
 msgid "_Line:"
 msgstr "Řá_dek:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:608
 msgid "L_etter:"
 msgstr "Písm_eno:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:530
+#: ../src/ocrfeeder/studio/widgetPresenter.py:620
 msgid "Sty_le"
 msgstr "Sty_l"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:537
+#: ../src/ocrfeeder/studio/widgetPresenter.py:627
 msgid "Angle"
 msgstr "Úhel"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:541
+#: ../src/ocrfeeder/studio/widgetPresenter.py:630
+msgid "Mis_c"
+msgstr "_Různé"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:633
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+msgid "Language"
+msgstr "Jazyk"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:640
 msgid "OCR engine to recogni_ze this area:"
 msgstr "Výkonný program OCR pro ro_zpoznání této oblasti:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+#: ../src/ocrfeeder/studio/widgetPresenter.py:654
 msgid "Detect"
 msgstr "Vyhledat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:557
+#: ../src/ocrfeeder/studio/widgetPresenter.py:656
 msgid "Angle:"
 msgstr "Úhel:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:645
+#: ../src/ocrfeeder/studio/widgetPresenter.py:749
 msgid "Save File"
 msgstr "Uložení souboru"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+#: ../src/ocrfeeder/studio/widgetPresenter.py:752
 msgid "Open File"
 msgstr "Otevření souboru"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:652
+#: ../src/ocrfeeder/studio/widgetPresenter.py:756
 msgid "Open Folder"
 msgstr "Otevření složky"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:679
+#: ../src/ocrfeeder/studio/widgetPresenter.py:783
 msgid "Pages to export"
 msgstr "Které stránky exportovat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:681
+#: ../src/ocrfeeder/studio/widgetPresenter.py:785
 msgid "All"
 msgstr "Všechny"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:682
+#: ../src/ocrfeeder/studio/widgetPresenter.py:786
 msgid "Current"
 msgstr "Současnou"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:698
+#: ../src/ocrfeeder/studio/widgetPresenter.py:802
 msgid "Choose the format"
 msgstr "Zvolte formát"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:715
-#: ../src/ocrfeeder/studio/widgetPresenter.py:722
+#: ../src/ocrfeeder/studio/widgetPresenter.py:819
+#: ../src/ocrfeeder/studio/widgetPresenter.py:826
 msgid "Page size"
 msgstr "Velikost stránky"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:727
+#: ../src/ocrfeeder/studio/widgetPresenter.py:831
 msgid "Custom…"
 msgstr "Vlastní…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:741
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
 msgid "_Height:"
 msgstr "Výšk_a:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:750
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
 msgid "Affected pages"
 msgstr "Použít na stránky"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:752
+#: ../src/ocrfeeder/studio/widgetPresenter.py:856
 msgid "C_urrent"
 msgstr "So_učasnou"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:755
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
 msgid "_All"
 msgstr "_Všechny"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:815
+#: ../src/ocrfeeder/studio/widgetPresenter.py:919
 msgid "Unpaper Image Processor"
 msgstr "Obrazový procesor Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:933
 msgid "Preview"
 msgstr "Náhled"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:835
+#: ../src/ocrfeeder/studio/widgetPresenter.py:939
 msgid "_Preview"
 msgstr "_Náhled"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:861
+#: ../src/ocrfeeder/studio/widgetPresenter.py:965
 msgid "Performing Unpaper"
 msgstr "Zpracování programem Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:861
+#: ../src/ocrfeeder/studio/widgetPresenter.py:965
 msgid "Performing unpaper. Please wait…"
 msgstr "Provádí se vylepšení programem Unpaper. Čekejte prosím…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:905
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1009
 msgid "Noise Filter Intensity"
 msgstr "Citlivost šumového filtru"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:907
-#: ../src/ocrfeeder/studio/widgetPresenter.py:939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1011
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1043
 msgid "Default"
 msgstr "Výchozí"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:909
-#: ../src/ocrfeeder/studio/widgetPresenter.py:941
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1013
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1045
 msgid "Custom"
 msgstr "Vlastní"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:911
-#: ../src/ocrfeeder/studio/widgetPresenter.py:943
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1015
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1047
 msgid "None"
 msgstr "Žádný"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:937
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1041
 msgid "Gray Filter Size"
 msgstr "Filtr úrovně šedé"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:969
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1073
 msgid "Black Filter"
 msgstr "Filtr černé"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:970
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1074
 msgid "Use"
 msgstr "Použít"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1081
 msgid "Extra Options"
 msgstr "Další volby"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:979
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1083
 msgid "Unpaper's command line arguments"
 msgstr "Argumenty příkazového řádku pro program Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1140
 msgid "Unpaper Preferences"
 msgstr "Předvolby pro Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
 msgid "An error occurred!"
 msgstr "Vyskytla se chyba!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1175
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1279
 msgid "Cancelled"
 msgstr "Zrušeno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1189
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1293
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1246
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1352
 msgid "_General"
 msgstr "_Obecné"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1254
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
 msgid "_Recognition"
 msgstr "_Rozpoznávání"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1259
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
 msgid "Select boxes' colors"
 msgstr "Vyberte barvy oblastí"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1265
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1371
 msgid "Te_xt areas' fill color"
 msgstr "Barva oblasti s te_xtem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1271
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
 msgid "Text areas' _stroke color"
 msgstr "Ohraničení obla_sti s textem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1277
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1383
 msgid "_Image areas' fill color"
 msgstr "Barva oblasti s o_brázkem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1297
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1403
 msgid "Path to unpaper"
 msgstr "Cesta k programu Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1301
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1407
 msgid "Choose"
 msgstr "Zvolit"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1309
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1559
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1597
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1615
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1706
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1415
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1726
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1835
 msgid "OCR Engines"
 msgstr "Výkonné programy OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1311
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr ""
 "Výkonný program, který by měl být použit, když se provádí automatické "
 "rozpoznání."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1322
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
 msgid "Favorite _engine:"
 msgstr "Oblíb_ený výkonný programy:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
 msgid "Window size"
 msgstr "Velikost okna"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1338
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
 msgid "A_utomatic"
 msgstr "A_utomaticky"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1339
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1445
 msgid "Cu_stom"
 msgstr "_Vlastní"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr "Velikost okna je velikost dělící plochy detekčního algoritmu."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1466
 msgid "Columns Detection"
 msgstr "Detekce sloupců"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1471
 msgid "_Improve columns detection"
 msgstr "Zdokonal_it vyhledání sloupců"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1367
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1473
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "Použít algoritmy dodatečné detekce ke zdokonalenému vyhledání sloupců"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1378
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1452
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1558
 msgid "_Automatic"
 msgstr "_Automaticky"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1380
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
 msgid "Custo_m"
 msgstr "Vlast_ní"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1384
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1490
 msgid "The columns' minimum width in pixels"
 msgstr "Minimální šířka sloupce v pixelech"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1400
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
 msgid "Minimum width that a column should have:"
 msgstr "Minimální šířka, kterou by sloupec měl mít:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1421
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
 msgid "Recognized Text"
 msgstr "Rozpoznaný text"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1422
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1528
 msgid "_Fix line breaks and hyphenization"
 msgstr "_Opravit zalomení řádků a rozdělení slov"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1424
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1530
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
 "engines"
@@ -1010,85 +1024,101 @@ msgstr ""
 "Odstraní jednořádková zalomení a rozdělení slov z textu vygenerovaného "
 "výkonným programem OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1540
 msgid "Content Areas"
 msgstr "Oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1439
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1545
 msgid "A_djust content areas' bounds"
 msgstr "Přizpůsobit hranice oblastí s o_bsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1441
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr ""
 "Použít algoritmy dodatečné detekce ke zmenšení okrajů oblastí s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1458
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1564
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr "Maximální velikost v pixelech pro okraje oblasti s obsahem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1581
 msgid "Maximum size that the content areas' margins should have:"
 msgstr "Maximální velikost, kterou by měly mít okraje oblastí s obsahem:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1521
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1627
 msgid "Image Pre-processing"
 msgstr "Předzpracování obrazu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1628
 msgid "Des_kew images"
 msgstr "Odstranit de_formace obrazu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1524
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1630
 msgid "Tries to straighten the images before they are added"
 msgstr "Zkusí vylepšit obrazy, než jsou přidány"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1533
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1639
 msgid "_Unpaper images"
 msgstr "Vyčistit programem _Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1535
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1641
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr "Vyčistí obraz pomocí předzpracování programem Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1539
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1645
 msgid "Unpaper _Preferences"
 msgstr "_Předvolby pro Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1667
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one "
+"chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+"Jazyk může ovlivnit, jak bude výkonný program OCR pracovat.\n"
+"Když výkonný program nastavíte na podporu jazyků a zvolený jazyk zrovna "
+"podporován nebude, může se ve výsledku objevit prázdný text.\n"
+"Abyste tomu předešli, můžete zvolit „Žádný jazyk“."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+msgid "Default _language:"
+msgstr "Výchozí _jazyk:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1702
 msgid "Engines to be added"
 msgstr "Výkonné programy, který se mají přidat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
 msgid "Include"
 msgstr "Zahrnout"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1582
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1619
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1711
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
 msgid "Engine"
 msgstr "Výkonný program"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1623
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
 msgid "Add"
 msgstr "Přidat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1625
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1754
 msgid "Edit"
 msgstr "Upravit"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1626
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1755
 msgid "De_tect"
 msgstr "De_tekovat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1640
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1769
 msgid "Are you sure you want to delete this engine?"
 msgstr "Opravdu chcete odebrat tento výkonný program?"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
 msgid "No OCR engines available"
 msgstr "Není dostupný žádný výkonný program OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1689
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -1097,62 +1127,91 @@ msgstr ""
 "Ujistěte se prosím, že máte v systému nějaké výkonné programy OCR "
 "nainstalované a přístupné."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1708
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1837
 #, python-format
 msgid "%s engine"
 msgstr "Výkonný program %s"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1732
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1866
 msgid "_Name:"
 msgstr "_Název:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1733
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1867
 msgid "Engine name"
 msgstr "Název výkonného programu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1735
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1869
 msgid "_Image format:"
 msgstr "_Formát obrazu:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
 msgid "The required image format"
 msgstr "Požadovaný formát obrazu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1739
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1873
 msgid "_Failure string:"
 msgstr "Řetězec při sel_hání:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1741
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1875
 msgid "The failure string or character that this engine uses"
 msgstr "Řetězec nebo znak, který tento výkonný program používá při selhání"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1878
 msgid "Engine _path:"
 msgstr "Cesta k výkonnému _programu:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
 msgid "The path to the engine program"
 msgstr "Cesta k výkonnému programu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
 msgid "Engine _arguments:"
 msgstr "_Argumenty výkonného programu:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1750
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1884
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 "Argumenty: použijte $IMAGE pro obrázek a $FILE, pokud zapisuje do souboru"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1782
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1888
+msgid "Engine _language argument:"
+msgstr "Argument s jaz_ykem pro výkonný program:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1890
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In "
+"order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr ""
+"Argument pro určení jazyka v případě, že jej výkonný program využívá (např. "
+"„-l“). Aby to fungovalo, měly by argumenty výkonného programu obsahovat "
+"klíčové slovo $LANG."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1896
+msgid "Engine lan_guages:"
+msgstr "_Jazyky výkonného programu:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1898
+msgid ""
+"The languages this engine supports. This should be given as pairs of the "
+"language in the ISO 639-1 and the engine's corresponding language (for "
+"example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
+"arguments should have the $LANG keyword."
+msgstr ""
+"Jazyky, které tento výkonný program podporuje. Měly by být zadány jako "
+"dvojice jazyk v ISO 639-1 a jazyk odpovídající ve výkonném programu (např. "
+"„en:eng,cs:ces,es:esp“). Aby to fungovalo, měly by argumenty výkonného "
+"programu obsahovat klíčové slovo $LANG."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
 msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
 "Chyba při nastavování nového výkonného programu, zkontrolujte prosím své "
 "nastavení."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1782
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
 msgid "Warning"
 msgstr "Varování"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1975
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
