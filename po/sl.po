@@ -2,14 +2,14 @@
 # Copyright (C) 2010 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2010 - 2012.
+# Matej Urbančič <mateju@svn.gnome.org>, 2010 - 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-10-31 11:24+0000\n"
-"PO-Revision-Date: 2012-10-31 18:57+0100\n"
+"POT-Creation-Date: 2013-02-05 16:59+0000\n"
+"PO-Revision-Date: 2013-03-11 17:07+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -108,10 +108,10 @@ msgstr "Pridobivanje optičnih bralnikov"
 #: ../src/ocrfeeder/studio/studioBuilder.py:215
 #: ../src/ocrfeeder/studio/studioBuilder.py:241
 #: ../src/ocrfeeder/studio/studioBuilder.py:283
-#: ../src/ocrfeeder/studio/widgetModeler.py:473
-#: ../src/ocrfeeder/studio/widgetModeler.py:478
-#: ../src/ocrfeeder/studio/widgetModeler.py:531
-#: ../src/ocrfeeder/studio/widgetModeler.py:623
+#: ../src/ocrfeeder/studio/widgetModeler.py:476
+#: ../src/ocrfeeder/studio/widgetModeler.py:481
+#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
 msgid "Please wait…"
 msgstr "Počakajte ..."
 
@@ -125,8 +125,8 @@ msgstr "Naprave za optično branje ni mogoče najti."
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:247
 #: ../src/ocrfeeder/studio/studioBuilder.py:262
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
 msgid "Error"
 msgstr "Napaka"
 
@@ -189,7 +189,7 @@ msgid "Pages"
 msgstr "Strani"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1624
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1753
 msgid "Delete"
 msgstr "Izbriši"
 
@@ -197,39 +197,39 @@ msgstr "Izbriši"
 msgid "Selectable areas"
 msgstr "Izbirna območja"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:473
+#: ../src/ocrfeeder/studio/widgetModeler.py:476
 msgid "Preparing image"
 msgstr "Pripravljanje slike"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:475
+#: ../src/ocrfeeder/studio/widgetModeler.py:478
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr "Pripravljanje slike %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:531
+#: ../src/ocrfeeder/studio/widgetModeler.py:535
 msgid "Deskewing image"
 msgstr "Odstranjevanje nagiba slike"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:558
+#: ../src/ocrfeeder/studio/widgetModeler.py:562
 msgid "No images added"
 msgstr "Ni dodanih slik"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:561
+#: ../src/ocrfeeder/studio/widgetModeler.py:565
 #, python-format
 msgid "Zoom: %s %%"
 msgstr "Približanje: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:563
+#: ../src/ocrfeeder/studio/widgetModeler.py:567
 #, python-format
 msgid "Resolution: %.2f x %.2f"
 msgstr "Ločljivost: %.2f x %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:565
+#: ../src/ocrfeeder/studio/widgetModeler.py:569
 #, python-format
 msgid "Page size: %i x %i"
 msgstr "Velikost strani: %i x %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:604
+#: ../src/ocrfeeder/studio/widgetModeler.py:608
 msgid ""
 "There are changes that may be overwritten by the new recognition.\n"
 "\n"
@@ -239,49 +239,49 @@ msgstr ""
 "\n"
 "Ali želite nadaljevati?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:623
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
 msgid "Recognizing Page"
 msgstr "Optično prepoznavanje strani"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:640
+#: ../src/ocrfeeder/studio/widgetModeler.py:644
 msgid "Recognizing Document"
 msgstr "Optično prepoznavanje dokumenta"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:641
+#: ../src/ocrfeeder/studio/widgetModeler.py:645
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
 msgstr "Optično prepoznavanje strani %(page_number)s/%(total_pages)s. Počakajte …"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:712
+#: ../src/ocrfeeder/studio/widgetModeler.py:719
 #, python-format
 msgid "Export to %(format_name)s"
 msgstr "Izvozi v zapis %(format_name)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:729
+#: ../src/ocrfeeder/studio/widgetModeler.py:736
 msgid "What kind of PDF document do you wish?"
 msgstr "Kakšno vrsto datoteke PDF želite ustvariti?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:731
+#: ../src/ocrfeeder/studio/widgetModeler.py:738
 msgid "From scratch"
 msgstr "Od začetka"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:733
+#: ../src/ocrfeeder/studio/widgetModeler.py:740
 msgid "Creates a new PDF from scratch."
 msgstr "Ustvari nov PDF od začetka."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:735
+#: ../src/ocrfeeder/studio/widgetModeler.py:742
 msgid "Searchable PDF"
 msgstr "PDF s podporo iskanja"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:736
+#: ../src/ocrfeeder/studio/widgetModeler.py:743
 msgid "Creates a PDF based on the images but with searchable text."
 msgstr "Iz slik ustvari datoteko PDF, ki omogoča tudi iskanje besedila."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:767
+#: ../src/ocrfeeder/studio/widgetModeler.py:776
 msgid "OCRFeeder Projects"
 msgstr "Projekt OCRFeeder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:813
+#: ../src/ocrfeeder/studio/widgetModeler.py:824
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -292,7 +292,7 @@ msgstr ""
 "\n"
 "Datoteka obstaja v mapi \"%(dir)s\". Z zamenjavo bo prepisana vsebina datoteke."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:820
+#: ../src/ocrfeeder/studio/widgetModeler.py:831
 msgid "Replace"
 msgstr "Zamenjaj"
 
@@ -465,7 +465,7 @@ msgid "_Document"
 msgstr "_Dokument"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:112
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1292
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1398
 msgid "_Tools"
 msgstr "_Orodja"
 
@@ -598,482 +598,511 @@ msgstr "_Črkovalnik"
 msgid "Spell Check Recognized Text"
 msgstr "Pregled črkovanja besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:242
+#: ../src/ocrfeeder/studio/widgetPresenter.py:263
+#| msgid "Language:"
+msgid "No language"
+msgstr "Brez jezika"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:329
 msgid "Area editor"
 msgstr "Urejevalnik območja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:250
+#: ../src/ocrfeeder/studio/widgetPresenter.py:337
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr "Določi koordinato X zgornjega levega oglišča vsebinskega območja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:254
+#: ../src/ocrfeeder/studio/widgetPresenter.py:341
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr "Določi koordinato Y zgornjega levega oglišča vsebinskega območja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:258
+#: ../src/ocrfeeder/studio/widgetPresenter.py:345
 msgid "Sets the content area's width"
 msgstr "Nastavi širino območja vsebine"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:261
+#: ../src/ocrfeeder/studio/widgetPresenter.py:348
 msgid "Sets the content area's height"
 msgstr "Nastavi višino območja vsebine"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:264
-#: ../src/ocrfeeder/studio/widgetPresenter.py:479
+#: ../src/ocrfeeder/studio/widgetPresenter.py:351
+#: ../src/ocrfeeder/studio/widgetPresenter.py:569
 msgid "_Text"
 msgstr "_Besedilo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:265
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
 msgid "Set this content area to be the text type"
 msgstr "Nastavi območje vsebine kot vrsta besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:266
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
 msgid "_Image"
 msgstr "_Slika"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:267
+#: ../src/ocrfeeder/studio/widgetPresenter.py:354
 msgid "Set this content area to be the image type"
 msgstr "Določi to vsebinsko območje kot slikovno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:268
+#: ../src/ocrfeeder/studio/widgetPresenter.py:355
 msgid "Type"
 msgstr "Vrsta"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:278
+#: ../src/ocrfeeder/studio/widgetPresenter.py:365
 msgid "Clip"
 msgstr "Izrezek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:361
+#: ../src/ocrfeeder/studio/widgetPresenter.py:448
 msgid "Bounds"
 msgstr "Vezi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:366
+#: ../src/ocrfeeder/studio/widgetPresenter.py:453
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:375
+#: ../src/ocrfeeder/studio/widgetPresenter.py:462
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:387
-#: ../src/ocrfeeder/studio/widgetPresenter.py:736
+#: ../src/ocrfeeder/studio/widgetPresenter.py:474
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
 msgid "_Width:"
 msgstr "_Širina:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:396
+#: ../src/ocrfeeder/studio/widgetPresenter.py:483
 msgid "Hei_ght:"
 msgstr "_Višina:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:506
 msgid "Left"
 msgstr "Levo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:510
 msgid "Set text to be left aligned"
 msgstr "Nastavi besedilo kot poravnano na levi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:425
+#: ../src/ocrfeeder/studio/widgetPresenter.py:512
 msgid "Center"
 msgstr "Sredinsko"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:430
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
 msgid "Set text to be centered"
 msgstr "Določi besedilo za sredinsko postavitev"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:432
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
 msgid "Right"
 msgstr "Desno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:437
+#: ../src/ocrfeeder/studio/widgetPresenter.py:524
 msgid "Set text to be right aligned"
 msgstr "Nastavi besedilo kot poravnano na desni"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:439
+#: ../src/ocrfeeder/studio/widgetPresenter.py:526
 msgid "Fill"
 msgstr "Zapolni"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
 msgid "Set text to be fill its area"
 msgstr "Nastavi besedilo, da zapolni območje besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:450
+#: ../src/ocrfeeder/studio/widgetPresenter.py:540
 msgid "OC_R"
 msgstr "O_CR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:451
+#: ../src/ocrfeeder/studio/widgetPresenter.py:541
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr "Izvajanje optičnega prepoznavanja tega vsebinskega območja z uporabo izbranega programnika prepoznavanja."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:457
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OCR engine to recognize this content area"
 msgstr "Programnik optičnega prepoznavanja za to vsebinsko območje"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:465
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 msgid "Text Properties"
 msgstr "Lastnosti besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:487
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
 msgid "Font"
 msgstr "Pisava"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:494
+#: ../src/ocrfeeder/studio/widgetPresenter.py:584
 msgid "Align"
 msgstr "Poravnaj"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:498
+#: ../src/ocrfeeder/studio/widgetPresenter.py:588
 msgid "Spacing"
 msgstr "Razmik"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:500
+#: ../src/ocrfeeder/studio/widgetPresenter.py:590
 msgid "Set the text's letter spacing"
 msgstr "Določi razmik črk v besedilu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:502
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
 msgid "Set the text's line spacing"
 msgstr "Določi razmik vrstic v besedilu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:507
+#: ../src/ocrfeeder/studio/widgetPresenter.py:597
 msgid "_Line:"
 msgstr "_Vrstica:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:608
 msgid "L_etter:"
 msgstr "Č_rka:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:530
+#: ../src/ocrfeeder/studio/widgetPresenter.py:620
 msgid "Sty_le"
 msgstr "Slo_g"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:537
+#: ../src/ocrfeeder/studio/widgetPresenter.py:627
 msgid "Angle"
 msgstr "Kot"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:541
+#: ../src/ocrfeeder/studio/widgetPresenter.py:630
+msgid "Mis_c"
+msgstr "Ra_zno"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:633
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+#| msgid "Language:"
+msgid "Language"
+msgstr "Jezik"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:640
 msgid "OCR engine to recogni_ze this area:"
 msgstr "Programnik optičnega prepoznavanja za _to območje: "
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+#: ../src/ocrfeeder/studio/widgetPresenter.py:654
 msgid "Detect"
 msgstr "Zaznaj"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:557
+#: ../src/ocrfeeder/studio/widgetPresenter.py:656
 msgid "Angle:"
 msgstr "Kot:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:645
+#: ../src/ocrfeeder/studio/widgetPresenter.py:749
 msgid "Save File"
 msgstr "Shrani datoteko"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+#: ../src/ocrfeeder/studio/widgetPresenter.py:752
 msgid "Open File"
 msgstr "Odpri datoteko"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:652
+#: ../src/ocrfeeder/studio/widgetPresenter.py:756
 msgid "Open Folder"
 msgstr "Odpri mapo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:679
+#: ../src/ocrfeeder/studio/widgetPresenter.py:783
 msgid "Pages to export"
 msgstr "Strani za izvoz"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:681
+#: ../src/ocrfeeder/studio/widgetPresenter.py:785
 msgid "All"
 msgstr "Vse"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:682
+#: ../src/ocrfeeder/studio/widgetPresenter.py:786
 msgid "Current"
 msgstr "Trenutno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:698
+#: ../src/ocrfeeder/studio/widgetPresenter.py:802
 msgid "Choose the format"
 msgstr "Izbor vrste zapisa"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:715
-#: ../src/ocrfeeder/studio/widgetPresenter.py:722
+#: ../src/ocrfeeder/studio/widgetPresenter.py:819
+#: ../src/ocrfeeder/studio/widgetPresenter.py:826
 msgid "Page size"
 msgstr "Velikost strani"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:727
+#: ../src/ocrfeeder/studio/widgetPresenter.py:831
 msgid "Custom…"
 msgstr "Po meri ..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:741
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
 msgid "_Height:"
 msgstr "_Višina:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:750
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
 msgid "Affected pages"
 msgstr "Izbrane strani"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:752
+#: ../src/ocrfeeder/studio/widgetPresenter.py:856
 msgid "C_urrent"
 msgstr "Tren_utno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:755
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
 msgid "_All"
 msgstr "_Vse"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:815
+#: ../src/ocrfeeder/studio/widgetPresenter.py:919
 msgid "Unpaper Image Processor"
 msgstr "Razstranjanje slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:933
 msgid "Preview"
 msgstr "Predogled"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:835
+#: ../src/ocrfeeder/studio/widgetPresenter.py:939
 msgid "_Preview"
 msgstr "_Predogled"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:861
+#: ../src/ocrfeeder/studio/widgetPresenter.py:965
 msgid "Performing Unpaper"
 msgstr "Izvajanje razstranjanja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:861
+#: ../src/ocrfeeder/studio/widgetPresenter.py:965
 msgid "Performing unpaper. Please wait…"
 msgstr "Izvajanje razstranjanja. Počakajte ..."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:905
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1009
 msgid "Noise Filter Intensity"
 msgstr "Trenutni filter hrupnosti"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:907
-#: ../src/ocrfeeder/studio/widgetPresenter.py:939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1011
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1043
 msgid "Default"
 msgstr "Privzeto"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:909
-#: ../src/ocrfeeder/studio/widgetPresenter.py:941
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1013
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1045
 msgid "Custom"
 msgstr "Po meri"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:911
-#: ../src/ocrfeeder/studio/widgetPresenter.py:943
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1015
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1047
 msgid "None"
 msgstr "Brez"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:937
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1041
 msgid "Gray Filter Size"
 msgstr "Velikost filtra sivin"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:969
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1073
 msgid "Black Filter"
 msgstr "Filter črnine"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:970
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1074
 msgid "Use"
 msgstr "Uporabi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1081
 msgid "Extra Options"
 msgstr "Dodatne možnosti"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:979
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1083
 msgid "Unpaper's command line arguments"
 msgstr "Argumenti ukaza razstranjevanja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1140
 msgid "Unpaper Preferences"
 msgstr "Možnosti razstranjanja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
 msgid "An error occurred!"
 msgstr "Prišlo je do napake!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1175
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1279
 msgid "Cancelled"
 msgstr "Preklicano"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1189
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1293
 msgid "Preferences"
 msgstr "Možnosti"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1246
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1352
 msgid "_General"
 msgstr "_Splošno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1254
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
 msgid "_Recognition"
 msgstr "_Prepoznavanje"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1259
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
 msgid "Select boxes' colors"
 msgstr "Izbor barve okvirja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1265
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1371
 msgid "Te_xt areas' fill color"
 msgstr "Barva _polnila območja besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1271
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
 msgid "Text areas' _stroke color"
 msgstr "Barva _črt območja besedila"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1277
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1383
 msgid "_Image areas' fill color"
 msgstr "Barva _polnila območja slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1297
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1403
 msgid "Path to unpaper"
 msgstr "Pot do programa za razstranjanje"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1301
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1407
 msgid "Choose"
 msgstr "Izbor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1309
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1559
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1597
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1615
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1706
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1415
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1726
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1835
 msgid "OCR Engines"
 msgstr "Programniki OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1311
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
 msgid "The engine that should be used when performing the automatic recognition."
 msgstr "Programnik, ki naj bo uporabljen med izvajanjem samodejne prepoznave"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1322
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
 msgid "Favorite _engine:"
 msgstr "Pri_ljubljeni programnik:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
 msgid "Window size"
 msgstr "Velikost okna"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1338
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
 msgid "A_utomatic"
 msgstr "_Samodejno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1339
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1445
 msgid "Cu_stom"
 msgstr "Po _meri"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr "Velikost okna je enaka velikosti algoritma zaznanega razdelka območja."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1466
 msgid "Columns Detection"
 msgstr "Zaznava stolpcev"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1471
 msgid "_Improve columns detection"
 msgstr "_Izboljšaj zaznavanje stolpcev"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1367
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1473
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "Uporabi algoritem za izboljšanje zaznavanja stolpcev"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1378
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1452
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1558
 msgid "_Automatic"
 msgstr "_Samodejno"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1380
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
 msgid "Custo_m"
 msgstr "Po _meri"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1384
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1490
 msgid "The columns' minimum width in pixels"
 msgstr "Najmanjša širina stolpca v točkah"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1400
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
 msgid "Minimum width that a column should have:"
 msgstr "Najmanjša širina stolpca:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1421
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
 msgid "Recognized Text"
 msgstr "Prepoznano besedilo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1422
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1528
 msgid "_Fix line breaks and hyphenization"
 msgstr "_Popravi prelome vrstic in vezaje"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1424
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1530
 msgid "Removes single line breaks and hyphenization from text generated by OCR engines"
 msgstr "Odstrani enojne prelome vrstic in vezaje, ki so ustvarjeni s programniki za optično prepoznavanje"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1540
 msgid "Content Areas"
 msgstr "Vsebinska območja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1439
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1545
 msgid "A_djust content areas' bounds"
 msgstr "Prilagodi robove vsebinskih območij"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1441
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr "Uporabi algoritem za skrajševanje robov območja vsebine."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1458
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1564
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr "Največja velikost robov območja vsebine v točkah"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1581
 msgid "Maximum size that the content areas' margins should have:"
 msgstr "Največja velikost robov območja vsebine:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1521
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1627
 msgid "Image Pre-processing"
 msgstr "Obdelava slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1628
 msgid "Des_kew images"
 msgstr "Odstranjevanje _nagiba slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1524
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1630
 msgid "Tries to straighten the images before they are added"
 msgstr "Poskusi izravnati sliko preden je dodana"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1533
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1639
 msgid "_Unpaper images"
 msgstr "_Razstrani slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1535
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1641
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr "Počisti sliko z razstranjevanjem"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1539
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1645
 msgid "Unpaper _Preferences"
 msgstr "Možnosti razstranjevanja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1667
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+"Jezik lahko vpliva na delovanje programnikov OCR.\n"
+"Če je izbran programnik, ki podpira jezike, vendar ne podpira izbranega jezika, lahko vrne prazno besedilo.\n"
+"To lahko preprečite z izbiro \"Brez jezika\"."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+msgid "Default _language:"
+msgstr "Privzeti _jezik:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1702
 msgid "Engines to be added"
 msgstr "Programniki za dodajanje"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
 msgid "Include"
 msgstr "Vključi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1582
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1619
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1711
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
 msgid "Engine"
 msgstr "Programnik"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1623
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
 msgid "Add"
 msgstr "Dodaj"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1625
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1754
 msgid "Edit"
 msgstr "Uredi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1626
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1755
 msgid "De_tect"
 msgstr "_Zaznaj"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1640
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1769
 msgid "Are you sure you want to delete this engine?"
 msgstr "Ali ste prepričani, da želite izbrisati ta programnik?"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
 msgid "No OCR engines available"
 msgstr "Na voljo ni nobenega programnika OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1689
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
 msgid ""
 "No OCR engines were found in the system.\n"
 "Please make sure you have OCR engines installed and available."
@@ -1081,60 +1110,78 @@ msgstr ""
 "V sistemu ni programnikov za optično prepoznavanje.\n"
 "Prepričajte se, da so nameščeni in dostopni z vašimi dovoljenji."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1708
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1837
 #, python-format
 msgid "%s engine"
 msgstr "Programnik %s"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1732
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1866
 msgid "_Name:"
 msgstr "_Ime:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1733
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1867
 msgid "Engine name"
 msgstr "Ime programnika"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1735
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1869
 msgid "_Image format:"
 msgstr "_Zapis slike:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
 msgid "The required image format"
 msgstr "Zahtevan zapis slike"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1739
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1873
 msgid "_Failure string:"
 msgstr "Niz _napake:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1741
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1875
 msgid "The failure string or character that this engine uses"
 msgstr "Niz napak ali znak, ki ga programnik uporablja"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1878
 msgid "Engine _path:"
 msgstr "Pot _programnika:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
 msgid "The path to the engine program"
 msgstr "Pot do programa programnika"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
 msgid "Engine _arguments:"
 msgstr "_Argumenti programnika:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1750
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1884
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr "Argumenti: uporabite $IMAGE za slike in $FILE, če bo zapisano v datoteko"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1782
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1888
+#| msgid "Engine _arguments:"
+msgid "Engine _language argument:"
+msgstr "Argument programnika za _jezik:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1890
+msgid "The language argument in case this engine uses it (for example \"-l\"). In order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr "Argument jezika, če ga ta programnik uporablja (npr. \"-l\"). Da bo delovalo, morajo imeti argumenti programnika $LANG."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1896
+#| msgid "Engine _arguments:"
+msgid "Engine lan_guages:"
+msgstr "_Jeziki programnika:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1898
+msgid "The languages this engine supports. This should be given as pairs of the language in the ISO 639-1 and the engine's corresponding language (for example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr "Jeziki, ki jih podpira ta programnik. Podan mora biti kot jezikovni par v kodi ISO 639-1 in ustreznem jeziku programnika (npr. \"en:eng,pt:por,es:esp\"). Da bo delovalo, morajo imeti argumenti programnika $LANG."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
 msgid "Error setting the new engine; please check your engine settings."
 msgstr "Napaka med nastavljanjem novega programnika. Preverite nastavitve."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1782
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1975
 msgid "translator-credits"
 msgstr "Matej Urbančič <mateju@svn.gnome.org>"
 
