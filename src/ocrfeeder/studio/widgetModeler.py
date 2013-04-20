@@ -823,9 +823,9 @@ class ImageReviewer_Controler:
                 confirm_overwrite = gtk.MessageDialog(type = gtk.MESSAGE_QUESTION)
                 message = _('<b>A file named "%(name)s" already exists. Do you want '
                             'to replace it?</b>\n\nThe file exists in "%(dir)s". '
-                            'Replacing it will overwrite its contents.' %
-                            {'name': os.path.basename(file_name),
-                             'dir': os.path.dirname(file_name)})
+                            'Replacing it will overwrite its contents.') % {
+                             'name': os.path.basename(file_name),
+                             'dir': os.path.dirname(file_name)}
                 confirm_overwrite.set_markup(message)
                 confirm_overwrite.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
                 confirm_overwrite.add_button(_('Replace'), gtk.RESPONSE_OK)
