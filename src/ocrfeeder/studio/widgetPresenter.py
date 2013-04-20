@@ -1834,7 +1834,7 @@ class OcrSettingsDialog(gtk.Dialog):
     def __init__(self, engine_manager, engine = None):
         label = _('OCR Engines')
         if engine:
-            label = _('%s engine' % engine.name)
+            label = _('%s engine') % engine.name
         super(OcrSettingsDialog, self).__init__(label, flags = gtk.DIALOG_MODAL, buttons = (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
                                                                      gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
         self.engine_manager = engine_manager
