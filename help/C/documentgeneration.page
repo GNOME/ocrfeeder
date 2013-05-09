@@ -23,19 +23,30 @@ the desired document format.</p>
 with the document pages represented by one HTML file. In each page
 there are links to go to the previous and next pages. Image content
 areas are stored in a subfolder called <em>images</em>.</p></note>
-<p>After the recognition and eventual manual edition need generating <em>PDF</em> document, two <em>PDF</em> type document possible choose:</p>
+<p>When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:</p>
 <list>
 <item>
-<p>From scratch: If this type are selected, <app>OCRFeeder</app> creates a new <em>PDF</em> from scratch.</p>
+<p>From scratch: If this option is selected, <app>OCRFeeder</app> creates a
+new <em>PDF</em> from scratch.</p>
 </item>
-<item><p>Searchable PDF: If this type are selected, <app>OCRFeeder</app> Creates a <em>PDF</em> based on the images but with searchable text.</p>
+<item><p>Searchable PDF: If this option is selected, <app>OCRFeeder</app>
+creates a <em>PDF</em> showing the original image but with invisible text
+over it, making it possible to index or search.</p>
 </item>
 </list>
 <steps>
 <title>Exporting the recognized document</title>
-<item><p>Click <guiseq><gui>File</gui><gui>Export…</gui></guiseq> menu item, or press <keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></keyseq> key combination.</p></item>
-<item><p>The first dialog choose the proper document format, and click <gui>OK</gui> button.</p></item>
-<item><p>Depending your needs, choose how many pages would like exporting from the recognized document and click <gui>OK</gui> button. If you choose the <gui>All</gui> radio button, <app>OCRFeeder</app> exporting all recognized pages. If you choose <gui>Current</gui> radio button, <app>OCRFeeder</app> exporting only the current selected page. The default checked radio button is the <gui>All</gui> possibility.</p></item>
-<item><p>The last dialog type the output filename and click <gui>Save</gui> button. If already exist a file and you would like overwriting the file, the confirmation dialog click the <gui>Replace</gui> button. The recognized document are exported.</p></item>
+<item><p>After the recognition and eventual manual edition has been
+performed, it is possible to generate a document by clicking
+<guiseq><gui>File</gui><gui>Export…</gui></guiseq> (or pressing
+<keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></keyseq>) and choosing
+the desired document format.</item>
+<item><p>Depending your needs, choose whether all pages (with the <gui>All</gui>
+option) or only the currently selected one (<gui>Current</gui> option) should
+be exported. The default option is <gui>All</gui>. After making your selection,
+press <gui>OK</gui> to generate the document.</p></item>
+<item><p>On the last dialog, write the output filename and click the <gui>Save</gui>
+button. If a file with that name already exists and you would like overwrite it,
+click the <gui>Replace</gui> button on the confirmation dialog.</p></item>
 </steps>
 </page>
