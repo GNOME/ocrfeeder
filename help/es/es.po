@@ -1,19 +1,20 @@
 # Spanish translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2012-02-22 18:59+0000\n"
-"PO-Revision-Date: 2012-02-23 12:23+0100\n"
+"POT-Creation-Date: 2013-05-09 10:33+0000\n"
+"PO-Revision-Date: 2013-05-14 14:25+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: C/unpaper.page:8(desc)
 msgid "Cleaning images before performing OCR"
@@ -801,13 +802,6 @@ msgstr ""
 "automático o manual cuando las columnas no se detectan correctamente."
 
 #: C/finetuning.page:46(p)
-#| msgid ""
-#| "<gui>Adjust content areas' bounds</gui>: The detected content areas "
-#| "sometimes have a considerable margin between their contents and the "
-#| "areas' edges. By checking this option, <app>OCRFeeder</app> will minimize "
-#| "those margins, adjusting the areas to its contents better. Optionally, a "
-#| "manual value can be check to indicate the minimum value of the adjusted "
-#| "margins."
 msgid ""
 "<gui>Adjust content areas' bounds</gui>: The detected content areas "
 "sometimes have a considerable margin between their contents and the areas' "
@@ -833,13 +827,13 @@ msgstr "Generación de un documento"
 #: C/documentgeneration.page:14(p)
 #| msgid ""
 #| "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-#| "em><em>HTML</em> and <em>Plain Text</em>."
+#| "em>, <em>HTML</em> and <em>Plain Text</em>."
 msgid ""
-"<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-"em>, <em>HTML</em> and <em>Plain Text</em>."
+"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
 msgstr ""
-"Actualmente, <app>OCRFeeder</app> genera tres formatos de documentos: "
-"<em>ODT</em> y <em>HTML</em> y <em>texto plano</em>."
+"Actualmente, <app>OCRFeeder</app> genera cuatro formatos de documentos: "
+"<em>ODT</em>,<em>HTML</em>, <em>PDF</em> y <em>texto plano</em>."
 
 #: C/documentgeneration.page:17(p)
 msgid ""
@@ -863,6 +857,59 @@ msgstr ""
 "representadas por un archivo HTML. En cada página hay enlaces para ir a las "
 "páginas anterior y siguiente. Las áreas de contenido de la imagen se "
 "almacenan en una subcarpeta llamada <em>images</em>."
+
+#: C/documentgeneration.page:26(p)
+msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
+msgstr ""
+"Al exportar a <em>PDF</em>, se pueden elegir dos tipos de <em>PDF</em>:"
+
+#: C/documentgeneration.page:29(p)
+msgid ""
+"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
+"<em>PDF</em> from scratch."
+msgstr ""
+"Desde cero: si se selecciona esta opción, <app>OCRFeeder</app> crea un "
+"<em>PDF</em> nuevo desde cero."
+
+#: C/documentgeneration.page:32(p)
+msgid ""
+"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
+"<em>PDF</em> showing the original image but with invisible text over it, "
+"making it possible to index or search."
+msgstr ""
+"PDF buscable: si se selecciona esta opción, <app>OCRFeeder</app> crear un "
+"archivo <em>PDF</em> que muestra la imagen original con texto invisible por "
+"encima, haciendo que sea posible indexarlo o buscarlo."
+
+#: C/documentgeneration.page:38(title)
+#| msgid "Creating an editable document"
+msgid "Exporting the recognized document"
+msgstr "Exportar el documento reconocido"
+
+#: C/documentgeneration.page:39(p)
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
+"format. Depending your needs, choose whether all pages (with the All option) "
+"or only the currently selected one (Current option) should be exported. The "
+"default option is All. After making your selection, press OK to generate the "
+"document. On the last dialog, write the output filename and click the Save "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the Replace button on the confirmation dialog."
+msgstr ""
+"Después de realizar el reconocimiento y la edición manual, es posible "
+"generar un documento pulsandoº <guiseq><gui>Archivo</gui><gui>Exportar…</"
+"gui></guiseq> (o pulsando <keyseq><key>Mayús</key><key>Ctrl</key><key>E</"
+"key></keyseq>) y eligiendo el tipo de formato de documento que quiere. "
+"Dependiendo de sus necesidades, elija si se exportarán todas todas las "
+"páginas (con la opción Todas) o sólo la página selecciona actualmente "
+"(opción Actual). La opción predeterminada es Todas. Después de marcar su "
+"selección, pulse Aceptar para generar el documento. En el último diálogo, "
+"escriba el nombre del archivo de salida y pulse el botón Guardar. Si ya "
+"existe un archivo con ese mismo nombre y quiere sobreescribirlo, pulse el "
+"botón Reemplazar en el diálogo de confirmación."
 
 #: C/deskewing.page:8(desc)
 msgid "Correcting the skew in the images"
@@ -1026,10 +1073,6 @@ msgid "Page Configuration"
 msgstr "Configuración de página"
 
 #: C/addingimage.page:34(p)
-#| msgid ""
-#| "To configre the pages' size click in <guiseq><gui>Edit</gui><gui>Edit "
-#| "Page</gui></guiseq> and choose either a custom size, providing the "
-#| "respective values or a standard paper size from a list."
 msgid ""
 "To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
 "gui></guiseq> and choose either a custom size, providing the respective "
