@@ -159,9 +159,13 @@ def obtainScanners():
 
 def scan(device):
     try:
-        result = sane.open(device).scan()
+        scandev = sane.open(device)
+        scandev.mode = 'color'
+        scandev.resolution = 300
+        result = scandev.scan()
         filename = tempfile.mktemp(suffix='.png')
         result.save(filename, 'PNG')
+        scandev.close()
         return filename
     except (RuntimeError, sane._sane.error), msgerr:
         return None
