@@ -45,152 +45,7 @@ import sys
 pygtk.require('2.0')
 _ = gettext.gettext
 
-
-
-class SourceImagesListStore(gtk.ListStore):
-
-    def __init__(self, list_of_images = []):
-        super(SourceImagesListStore, self).__init__(str, gtk.gdk.Pixbuf, object)
-        if len(list_of_images):
-            for path in list_of_images:
-                self.__renderImage(path, self.__generateImageName(path))
-
-    def addImage(self, page_data):
-        image_name = self.__generateImageName(page_data.image_path)
-        return self.__renderImage(image_name, page_data)
-
-    def __renderImage(self, image_name, page_data):
-        pixbuf = gtk.gdk.pixbuf_new_from_file_at_size(page_data.image_path,
-                                                      150, 100)
-        return self.append([image_name, pixbuf, page_data])
-
-    def __countEqualPathsStored(self, path):
-        iter = self.get_iter_root()
-        counter = 0
-        while iter != None:
-            page_data = self.get_value(iter, 2)
-            image_path = page_data.image_path
-            if image_path == path:
-                counter += 1
-            iter = self.iter_next(iter)
-        return counter
-
-    def __generateImageName(self, path):
-        image_name = os.path.basename(path)
-        number_of_equal_paths = self.__countEqualPathsStored(path)
-        if number_of_equal_paths:
-            image_name += ' ('+ str(number_of_equal_paths + 1) + ')'
-        return image_name
-
-    def getPixbufsSorted(self):
-        pixbufs = []
-        iter = self.get_iter_root()
-        while iter != None:
-            pixbufs.append(self.get_value(iter, 2))
-            iter = self.iter_next(iter)
-        return pixbufs
-
-    def removeIter(self, path):
-        iter = self.get_iter(path)
-        self.remove(iter)
-
-    def isEmpty(self):
-        return self.get_iter_first() == None
-
-class SourceImagesSelectorIconView(gtk.IconView):
-
-    def __init__(self, source_images_list_store):
-        super(SourceImagesSelectorIconView, self).__init__(source_images_list_store)
-        self.get_accessible().set_name(_('Pages'))
-        self.set_text_column(0)
-        self.set_pixbuf_column(1)
-        self.set_orientation(gtk.ORIENTATION_VERTICAL)
-        self.set_columns(1)
-        self.set_reorderable(True)
-        self.add_events(gtk.gdk.BUTTON_PRESS_MASK)
-        self.set_selection_mode(gtk.SELECTION_BROWSE)
-        self.connect('button-press-event', self.pressedRightButton)
-
-    def pressedRightButton(self, target, event):
-        if event.button == 3:
-            selected_items = self.get_selected_items()
-            if selected_items:
-                menu = getPopupMenu([(gtk.STOCK_DELETE, _('Delete'), self.delete_current_page_function)])
-                menu.popup(None, None, None, event.button, event.time)
-
-    def getSelectedPageData(self):
-        selected_items = self.get_selected_items()
-        if len(selected_items):
-            selected_item_path = selected_items[0]
-            model = self.get_model()
-            iter = model.get_iter(selected_item_path)
-            return self.get_model().get_value(iter, 2)
-        return None
-
-    def getAllPages(self):
-        model = self.get_model()
-        pages = []
-        iter = model.get_iter_root()
-        while iter:
-            pages.append(model.get_value(iter, 2))
-            iter = model.iter_next(iter)
-        return pages
-
-    def setDeleteCurrentPageFunction(self, function):
-        self.delete_current_page_function = function
-
-    def deleteCurrentSelection(self):
-        selected_items = self.get_selected_items()
-        if len(selected_items):
-            selected_item_path = selected_items[0]
-            self.get_model().removeIter(selected_item_path)
-            if not self.get_model().isEmpty():
-                self.select_path(0)
-
-    def clear(self):
-        self.get_model().clear()
-
-    def _getIndexFromOffset(self, offset):
-        selected_items = self.get_selected_items()
-        if not len(selected_items):
-            return
-        selected_item_path = selected_items[0]
-        model = self.get_model()
-        iter = model.get_iter(selected_item_path)
-        index = model.get_path(iter)[0] + offset
-        number_of_items = model.iter_n_children(None)
-        if index < 0:
-            index = number_of_items + offset
-        elif index == number_of_items:
-            index = 0
-        return index
-
-    def movePage(self, offset):
-        selected_items = self.get_selected_items()
-        if not len(selected_items):
-            return
-        selected_item_path = selected_items[0]
-        model = self.get_model()
-        index = self._getIndexFromOffset(offset)
-        if index != selected_item_path[0] + offset:
-            return
-        model.swap(model.get_iter((index,)),
-                   model.get_iter(selected_item_path))
-        self.select_path((index,))
-
-    def selectPageFromOffset(self, offset):
-        selected_items = self.get_selected_items()
-        if not len(selected_items):
-            return
-        selected_item_path = selected_items[0]
-        model = self.get_model()
-        index = self._getIndexFromOffset(offset)
-        self.select_path((index,))
-
-    def getNumberOfPages(self):
-        return self.get_model().iter_n_children(None)
-
-class ImageReviewer(gtk.HPaned):
+class ImageReviewer(Gtk.HPaned):
 
     def __init__(self, main_window, page_data, ocr_engines):
         super(ImageReviewer, self).__init__()
@@ -434,16 +289,16 @@ class ImageReviewer_Controler:
 
     REVIEWER_CACHE_LENGTH = 5
 
-    def __init__(self, main_window, source_images_selector_widget,
+    def __init__(self, main_window, pages_icon_view,
                  ocr_engines, configuration_manager):
         self.main_window = main_window
         self.notebook = self.main_window.notebook
-        self.source_images_selector_widget = source_images_selector_widget
+        self.pages_icon_view = pages_icon_view
         self.ocr_engines = ocr_engines
         self.configuration_manager = configuration_manager
         self.statusbar = self.main_window.statusbar
         self._page_info_message_id = self.statusbar.get_context_id('page_info_message')
-        self.source_images_selector_widget.connect('selection-changed', self.selectImageReviewer)
+        self.pages_icon_view.connect('selection-changed', self.selectImageReviewer)
         self.__updateStatusBar()
 
     def __createdImageReviewer(self, page_data):
@@ -506,11 +361,11 @@ class ImageReviewer_Controler:
             return None
         if page_data is None:
             page_data = PageData(image_path)
-        iter = self.source_images_selector_widget.get_model().addImage(page_data)
+        iter = self.pages_icon_view.get_model().addImage(page_data)
         if select_image:
             path = \
-                self.source_images_selector_widget.get_model().get_path(iter)
-            self.source_images_selector_widget.select_path(path)
+                self.pages_icon_view.get_model().get_path(iter)
+            self.pages_icon_view.select_path(path)
         return page_data
 
     def __deskewImage(self, image_path, target_image_path = None):
@@ -544,7 +399,7 @@ class ImageReviewer_Controler:
         dialog.cancel()
 
     def selectImageReviewer(self, widget):
-        page_data = self.source_images_selector_widget.getSelectedPageData()
+        page_data = self.pages_icon_view.getSelectedPageData()
         if not page_data:
             return
         reviewer = self.__setImageReviewerFromPageData(page_data)
@@ -629,7 +484,7 @@ class ImageReviewer_Controler:
         dialog.run()
 
     def recognizeDocument(self):
-        pages = self.source_images_selector_widget.getAllPages()
+        pages = self.pages_icon_view.getAllPages()
         dialog = QueuedEventsProgressDialog(self.main_window.window)
         items = []
         i = 1
@@ -768,7 +623,7 @@ class ImageReviewer_Controler:
         image_reviewer.savePageData()
         if not project_name.endswith('.ocrf'):
             project_name += '.ocrf'
-        pages_data = self.source_images_selector_widget.getAllPages()
+        pages_data = self.pages_icon_view.getAllPages()
         project_saver = ProjectSaver(pages_data)
         project_saver.serialize(project_name)
 
@@ -796,7 +651,7 @@ class ImageReviewer_Controler:
         # Sync the current reviewer's page with its data
         self.__getCurrentReviewer().savePageData()
         export_dialog = PagesToExportDialog(title)
-        pages = self.source_images_selector_widget.getAllPages()
+        pages = self.pages_icon_view.getAllPages()
         # When there's only one document loaded or none,
         # we don't ask for the number of pages to export
         if len(pages) < 2:
@@ -845,7 +700,7 @@ class ImageReviewer_Controler:
         if response == gtk.RESPONSE_ACCEPT:
             size = page_size_dialog.getSize()
             if page_size_dialog.all_pages_radio.get_active():
-                for page in self.source_images_selector_widget.getAllPages():
+                for page in self.pages_icon_view.getAllPages():
                     page.setSize(size)
             else:
                 current_reviewer.page.setSize(size)
@@ -879,11 +734,11 @@ class ImageReviewer_Controler:
         # remove all pages from notebook
         for index in range(self.notebook.get_n_pages()):
             self.notebook.remove_page(0)
-        self.source_images_selector_widget.clear()
+        self.pages_icon_view.clear()
         self.__updateStatusBar()
 
     def getPixbufsSorted(self):
-        return self.source_images_selector_widget.source_images_selector.getPixbufsSorted()
+        return self.pages_icon_view.source_images_selector.getPixbufsSorted()
 
     def updateFromConfiguration(self):
         for index in range(self.notebook.get_n_pages()):

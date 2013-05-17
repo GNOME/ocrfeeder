@@ -24,10 +24,10 @@ import sys
 import os.path
 import urllib
 import widgetPresenter
-from widgetModeler import SourceImagesListStore, \
-     SourceImagesSelectorIconView, ImageReviewer_Controler
+from widgetModeler import ImageReviewer_Controler
 from dataHolder import DataBox, TextData
 from customWidgets import SelectableBoxesArea
+from pagesiconview import PagesIconView
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager
@@ -35,11 +35,8 @@ from ocrfeeder.util.asyncworker import AsyncItem
 from optparse import OptionParser
 import gettext
 import locale
+from gi.repository import Gdk, Gtk
 _ = gettext.gettext
-
-import pygtk
-pygtk.require('2.0')
-import gtk
 
 class Studio:
 
@@ -75,22 +72,22 @@ class Studio:
         self.engines_needing_update = \
             self.ocr_engines_manager.makeEnginesFromFolder(user_engines_folder)
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
-        self.source_images_list_store = SourceImagesListStore()
-        self.source_images_icon_view = SourceImagesSelectorIconView(self.source_images_list_store)
-        self.source_images_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
-        self.source_images_icon_view.connect('drag_data_received', self.dragDataReceived)
-        self.source_images_icon_view.connect('drag_drop', self.dragDrop)
-        self.source_images_icon_view.get_model().connect('row-inserted',
+        self.pages_icon_view = PagesIconView()
+        self.pages_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
+        self.pages_icon_view.connect('drag_data_received', self.dragDataReceived)
+        self.pages_icon_view.connect('drag_drop', self.dragDrop)
+        self.pages_icon_view.get_model().connect('row-inserted',
                                                  self.__pagesUpdatedCallback)
-        self.source_images_icon_view.get_model().connect('row-deleted',
+        self.pages_icon_view.get_model().connect('row-deleted',
                                                  self.__pagesUpdatedCallback)
-        self.source_images_icon_view.drag_dest_set(gtk.DEST_DEFAULT_MOTION | gtk.DEST_DEFAULT_HIGHLIGHT,
-                                                   [('text/uri-list', 0, self.TARGET_TYPE_URI_LIST)], gtk.gdk.ACTION_COPY)
-        self.source_images_icon_view.show()
-        self.main_window.main_area_left.add_with_viewport(self.source_images_icon_view)
+        target_entry = Gtk.TargetEntry.new('text/uri-list', 0, self.TARGET_TYPE_URI_LIST)
+        self.pages_icon_view.drag_dest_set(Gtk.DestDefaults.MOTION | Gtk.DestDefaults.HIGHLIGHT,
+                                           [target_entry], Gdk.DragAction.COPY)
+        self.pages_icon_view.show()
+        self.main_window.main_area_left.add_with_viewport(self.pages_icon_view)
         self.images_selectable_area = {}
         self.source_images_controler = ImageReviewer_Controler(self.main_window,
-                                                               self.source_images_icon_view,
+                                                               self.pages_icon_view,
                                                                self.ocr_engines,
                                                                self.configuration_manager)
         self.project_name = None
@@ -146,7 +143,7 @@ class Studio:
         self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasContentBoxes(False)
         self.main_window.setNumberOfPages(
-            self.source_images_icon_view.getNumberOfPages())
+            self.pages_icon_view.getNumberOfPages())
 
         # Show dialog to choose system-wide OCR engines when no engine was found
         if not self.ocr_engines:
@@ -330,20 +327,20 @@ class Studio:
         response = delete_dialog.run()
         if response == gtk.RESPONSE_YES:
             self.source_images_controler.deleteCurrentPage()
-            self.source_images_icon_view.deleteCurrentSelection()
+            self.pages_icon_view.deleteCurrentSelection()
         delete_dialog.destroy()
 
     def movePageDown(self, widget):
-        self.source_images_icon_view.movePage(1)
+        self.pages_icon_view.movePage(1)
 
     def movePageUp(self, widget):
-        self.source_images_icon_view.movePage(-1)
+        self.pages_icon_view.movePage(-1)
 
     def selectNextPage(self, widget):
-        self.source_images_icon_view.selectPageFromOffset(1)
+        self.pages_icon_view.selectPageFromOffset(1)
 
     def selectPreviousPage(self, widget):
-        self.source_images_icon_view.selectPageFromOffset(-1)
+        self.pages_icon_view.selectPageFromOffset(-1)
 
     def __addImagesToReviewer(self, images):
         if not images:
@@ -437,7 +434,7 @@ class Studio:
 
     def __pagesUpdatedCallback(self, model, path, iter = None):
         self.main_window.setNumberOfPages(
-            self.source_images_icon_view.getNumberOfPages())
+            self.pages_icon_view.getNumberOfPages())
 
     def __askForEnginesMigration(self):
         auto_update = self.engines_needing_update['auto']
@@ -478,8 +475,8 @@ class Studio:
                 self.ocrEngines()
 
     def quit(self, widget = None, data = None):
-        if not self.project_name and not self.source_images_list_store.isEmpty():
-            quit_dialog = widgetPresenter.QuestionDialog('<b>' + _("The project hasn't been saved.") + '</b>', gtk.BUTTONS_NONE)
+        if not self.project_name and not self.pages_icon_view.isEmpty():
+            quit_dialog = widgetPresenter.QuestionDialog('<b>' + _("The project hasn't been saved.") + '</b>', Gtk.BUTTONS_NONE)
             quit_dialog.format_secondary_text(_('Do you want to save it before closing?'))
             quit_dialog.add_buttons(_('Close anyway'), gtk.RESPONSE_NO, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE_AS, gtk.RESPONSE_YES)
             response = quit_dialog.run()
