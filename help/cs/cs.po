@@ -1,21 +1,21 @@
 # Czech translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-#
-# Marek Černocký <marek@manet.cz>, 2011, 2012.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2012-02-22 18:59+0000\n"
-"PO-Revision-Date: 2012-03-26 10:33+0200\n"
+"POT-Creation-Date: 2013-05-09 10:33+0000\n"
+"PO-Revision-Date: 2013-06-11 16:02+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: C/unpaper.page:8(desc)
 msgid "Cleaning images before performing OCR"
@@ -820,11 +820,11 @@ msgstr "Generování dokumentu"
 
 #: C/documentgeneration.page:14(p)
 msgid ""
-"<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-"em>, <em>HTML</em> and <em>Plain Text</em>."
+"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
 msgstr ""
-"Aplikace <app>OCRFeeder</app> v současnosti generuje tři formáty dokumentů: "
-"<em>ODT</em>, <em>HTML</em> a <em>prostý text</em>."
+"Aplikace <app>OCRFeeder</app> v současnosti generuje čtyři formáty "
+"dokumentů: <em>ODT</em>, <em>HTML</em>, <em>PDF</em> a <em>prostý text</em>."
 
 #: C/documentgeneration.page:17(p)
 msgid ""
@@ -847,6 +847,58 @@ msgstr ""
 "představujícími jednotlivé stránky dokumentu. Na každé stránce je odkaz na "
 "předchozí stránku a následující stránku. Obsažené obrázky jsou uloženy v "
 "podsložce <em>images</em>."
+
+#: C/documentgeneration.page:26(p)
+msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
+msgstr ""
+"Při exportu do <em>PDF</em> si lze vybrat ze dvou typů dokumentů <em>PDF</"
+"em>:"
+
+#: C/documentgeneration.page:29(p)
+msgid ""
+"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
+"<em>PDF</em> from scratch."
+msgstr ""
+"Od základu nový: Když je vybrána tato volba, vytvoří <app>OCRFeeder</app> "
+"nové <em>PDF</em> z prázdného základu."
+
+#: C/documentgeneration.page:32(p)
+msgid ""
+"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
+"<em>PDF</em> showing the original image but with invisible text over it, "
+"making it possible to index or search."
+msgstr ""
+"Prohledávatelné PDF: Když je vybrána tato volba, vytvoří <app>OCRFeeder</"
+"app> <em>PDF</em> zobrazující původní obrázek, který je ale překrytý "
+"neviditelným textem. Díky tomu je možné jej indexovat a vyhledávat v něm."
+
+#: C/documentgeneration.page:38(title)
+msgid "Exporting the recognized document"
+msgstr "Export rozpoznaného dokumentu"
+
+#: C/documentgeneration.page:39(p)
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
+"format. Depending your needs, choose whether all pages (with the All option) "
+"or only the currently selected one (Current option) should be exported. The "
+"default option is All. After making your selection, press OK to generate the "
+"document. On the last dialog, write the output filename and click the Save "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the Replace button on the confirmation dialog."
+msgstr ""
+"Po té, co je provedeno rozpoznávání a případné ruční korektury, můžete "
+"vygenerovat dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</"
+"gui></guiseq> (nebo zmáčknutím <keyseq><key>SHIFT</key><key>CTRL</"
+"key><key>E</key></keyseq>) a výběrem požadovaného formátu dokumentu. Na "
+"základě svých potřeb si zvolte, jestli se mají vyexportovat všechny stránky "
+"(volbou Všechny) nebo jen aktuálně vybraná (volba Současnou). Výchozí volbou "
+"jsou všechny. Po dokončení výběru klikněte na Budiž a dokument se "
+"vygeneruje. V posledním dialogovém okně zadejte název výstupního souboru a "
+"klikněte na tlačítko Uložit. Pokud už soubor existuje a chcete jej přepsat, "
+"klikněte v potvrzovacím dialogovém okně na tlačítko Nahradit."
 
 #: C/deskewing.page:8(desc)
 msgid "Correcting the skew in the images"
