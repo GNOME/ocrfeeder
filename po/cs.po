@@ -269,11 +269,11 @@ msgstr "Jaký druh dokumentu PDF si přejete?"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:738
 msgid "From scratch"
-msgstr "Od základů"
+msgstr "Od základu nový"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:740
 msgid "Creates a new PDF from scratch."
-msgstr "Vytvořit od základů nový dokument PDF."
+msgstr "Vytvořit nový dokument PDF z prázdného základu."
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:742
 msgid "Searchable PDF"
