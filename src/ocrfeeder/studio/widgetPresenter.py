@@ -26,7 +26,7 @@ from ocrfeeder.util.asyncworker import AsyncWorker
 from ocrfeeder.util.constants import *
 from ocrfeeder.util.graphics import convertPixbufToImage
 from enchant.checker import SpellChecker
-import Image
+from PIL import Image
 import gettext
 import gobject
 import goocanvas

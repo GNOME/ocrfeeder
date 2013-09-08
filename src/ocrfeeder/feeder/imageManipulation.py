@@ -21,7 +21,7 @@
 from ocrfeeder.util.lib import debug
 
 import gettext
-import Image, ImageDraw
+from PIL import Image, ImageDraw
 import os.path
 from ocrfeeder.util import graphics
 import sys
