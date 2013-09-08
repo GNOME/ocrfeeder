@@ -23,7 +23,7 @@ from ocrfeeder.util import graphics
 from ocrfeeder.util.constants import OCRFEEDER_DEBUG, DTP
 from ocrfeeder.studio.dataHolder import DataBox
 from imageManipulation import ImageProcessor
-import Image
+from PIL import Image
 import re
 import math
 

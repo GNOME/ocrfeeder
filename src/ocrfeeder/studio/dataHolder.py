@@ -20,7 +20,7 @@
 
 import os.path
 from ocrfeeder.util import graphics
-import Image
+from PIL import Image
 import gobject
 from ocrfeeder.util.graphics import getImagePrintSize, getImageResolution
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, lib

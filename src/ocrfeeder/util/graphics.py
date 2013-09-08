@@ -19,7 +19,7 @@
 ###########################################################################
 
 from lib import debug
-import Image
+from PIL import Image
 import gtk
 import math
 

@@ -20,7 +20,7 @@
 
 import os
 import mimetypes
-import Image
+from PIL import Image
 import tempfile
 import gtk
 import math
