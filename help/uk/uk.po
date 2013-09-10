@@ -371,7 +371,7 @@ msgstr "Щоб спростити перетворення друкованих 
 
 #: C/importingfromscanner.page:17(p)
 msgid "To import an image from a scanner device, use the menu <guiseq><gui>File</gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
-msgstr "Щоб отримати зображення зі сканера, скористайтесь меню <gui>Файл</gui><gui>Імпортувати сторінку зі сканера</gui></guiseq> або клавішами <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr "Щоб отримати зображення зі сканера, скористайтесь меню <guiseq><gui>Файл</gui><gui>Імпортувати сторінку зі сканера</gui></guiseq> або клавішами <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
 
 #: C/importingfromscanner.page:22(p)
 msgid "The currently detected scanner device will be used to scan the page. If more than one scanner if found, then a dialog will be shown with the options to choose from."
