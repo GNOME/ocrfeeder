@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from customWidgets import SelectableBoxesArea
+from boxesarea import BoxesArea
 from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator, PdfGenerator
 from ocrfeeder.feeder.imageManipulation import *
@@ -55,7 +55,7 @@ class ImageReviewer(Gtk.HPaned):
         self.text_box_fill_color = (94, 156, 235, 150)
         self.box_stroke_color = (94, 156, 235, 250)
         self.image_box_fill_color = (0, 183, 0, 150)
-        self.selectable_boxes_area = SelectableBoxesArea(self.path_to_image)
+        self.selectable_boxes_area = BoxesArea(self.path_to_image)
         self.selectable_boxes_area.connect('selected_box', self.selectedBox)
         self.selectable_boxes_area.connect('removed_box', self.removedBox)
         self.selectable_boxes_area.connect('updated_box', self.updatedBox)
