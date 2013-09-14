@@ -22,7 +22,7 @@ import os
 import mimetypes
 from PIL import Image
 import tempfile
-import gtk
+from gi.repository import Gtk
 import math
 from constants import *
 import sane
@@ -30,13 +30,13 @@ import tempfile
 import locale
 from lxml import etree
 
-def getIconOrLabel(icon_name, label_text, icon_size = gtk.ICON_SIZE_SMALL_TOOLBAR):
-    icon = gtk.Image()
-    theme = gtk.icon_theme_get_default()
-    if theme.lookup_icon(icon_name, icon_size, gtk.ICON_LOOKUP_USE_BUILTIN):
-        icon = gtk.image_new_from_icon_name(icon_name, icon_size)
+def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR):
+    icon = Gtk.Image()
+    theme = Gtk.IconTheme.get_default()
+    if theme.lookup_icon(icon_name, icon_size, Gtk.IconLookupFlags.USE_BUILTIN):
+        icon = Gtk.Image.new_from_icon_name(icon_name, icon_size)
     else:
-        icon.set_from_stock(gtk.STOCK_EXECUTE, icon_size)
+        icon.set_from_stock(Gtk.STOCK_EXECUTE, icon_size)
     label = label_text
     if icon != None:
         label = None
