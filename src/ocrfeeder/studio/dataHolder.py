@@ -21,7 +21,7 @@
 import os.path
 from ocrfeeder.util import graphics
 from PIL import Image
-import gobject
+from gi.repository import GObject
 from ocrfeeder.util.graphics import getImagePrintSize, getImageResolution
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, lib
 from pango import WEIGHT_NORMAL, STYLE_NORMAL
@@ -46,29 +46,29 @@ class TextData:
         dictionary['weight'] = repr(self.weight).split(' ')[1].strip('PANGO_')
         return {'TextData': dictionary}
 
-class DataBox(gobject.GObject):
+class DataBox(GObject.GObject):
 
     __gtype_name__ = 'DataBox'
 
     __gsignals__ = {
-        'changed_x' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_INT,)),
-        'changed_y' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_INT,)),
-        'changed_width' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_INT,)),
-        'changed_height' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_INT,)),
-        'changed_image' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_PYOBJECT,)),
-        'changed_type' : (gobject.SIGNAL_RUN_LAST,
-                     gobject.TYPE_NONE,
-                     (gobject.TYPE_INT,))
+        'changed_x' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_INT,)),
+        'changed_y' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_INT,)),
+        'changed_width' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_INT,)),
+        'changed_height' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_INT,)),
+        'changed_image' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_PYOBJECT,)),
+        'changed_type' : (GObject.SIGNAL_RUN_LAST,
+                     GObject.TYPE_NONE,
+                     (GObject.TYPE_INT,))
         }
 
     def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = ''):
