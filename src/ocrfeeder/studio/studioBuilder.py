@@ -26,7 +26,6 @@ import urllib
 import widgetPresenter
 from widgetModeler import ImageReviewer_Controler
 from dataHolder import DataBox, TextData
-from customWidgets import SelectableBoxesArea
 from pagesiconview import PagesIconView
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
