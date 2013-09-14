@@ -150,7 +150,7 @@ class Studio:
             if engines:
                 add_engines_dialog = widgetPresenter.SystemEnginesDialog(engines)
                 response = add_engines_dialog.run()
-                if response == gtk.RESPONSE_ACCEPT:
+                if response == Gtk.ResponseType.ACCEPT:
                     for engine in add_engines_dialog.getChosenEngines():
                         self.ocr_engines_manager.addNewEngine(engine)
                 add_engines_dialog.destroy()
@@ -159,8 +159,8 @@ class Studio:
             self.__askForEnginesMigration()
 
     def run(self):
-        gtk.gdk.threads_init()
-        gtk.main()
+        Gdk.threads_init()
+        Gtk.main()
 
     def dragDataReceived(self, widget, context, x, y, selection, target_type, timestamp):
         if target_type == self.TARGET_TYPE_URI_LIST:
@@ -199,7 +199,7 @@ class Studio:
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
         file_open_dialog.set_select_multiple(True)
         response = file_open_dialog.run()
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             self.__addImagesToReviewer(file_open_dialog.get_filenames())
         file_open_dialog.destroy()
 
@@ -219,11 +219,11 @@ class Studio:
             scanner_chooser_dialog = widgetPresenter.ScannerChooserDialog(\
                                                     self.main_window.window,
                                                     devices)
-            gtk.gdk.threads_enter()
+            Gdk.threads_enter()
             response = scanner_chooser_dialog.run()
-            gtk.gdk.threads_leave()
+            Gdk.threads_leave()
             scanner_chooser_dialog.destroy()
-            if response == gtk.RESPONSE_ACCEPT:
+            if response == Gtk.ResponseType.ACCEPT:
                 device = scanner_chooser_dialog.getSelectedDevice()
             else:
                 return
@@ -242,30 +242,30 @@ class Studio:
                                              _("No scanner devices were found"),
                                              _("Error"),
                                              'warning')
-            gtk.gdk.threads_enter()
+            Gdk.threads_enter()
             error.run()
-            gtk.gdk.threads_leave()
+            Gdk.threads_leave()
 
     def __scanFinishedCb(self, dialog, image_path, error):
         dialog.destroy()
         if image_path:
-            gtk.gdk.threads_enter()
+            Gdk.threads_enter()
             self.__addImagesToReviewer([image_path])
-            gtk.gdk.threads_leave()
+            Gdk.threads_leave()
         else:
             error = widgetPresenter.SimpleDialog(\
                                              _("Error scanning page"),
                                              _("Error"),
                                              'warning')
-            gtk.gdk.threads_enter()
+            Gdk.threads_enter()
             error.run()
-            gtk.gdk.threads_leave()
+            Gdk.threads_leave()
 
     def importPdf(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('PDF'), ['application/pdf'], [])])
         response = file_open_dialog.run()
         files = []
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             files = file_open_dialog.get_filenames()
         file_open_dialog.destroy()
         for file_name in files:
@@ -287,7 +287,7 @@ class Studio:
     def addFolder(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('select-folder')
         response = file_open_dialog.run()
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             filenames = file_open_dialog.get_filenames()
             file_open_dialog.destroy()
             for folder in filenames:
@@ -307,7 +307,7 @@ class Studio:
         export_dialog = widgetPresenter.ExportDialog(_('Export pages'),
                                                      format_names)
         response = export_dialog.run()
-        if response == gtk.RESPONSE_ACCEPT:
+        if response == Gtk.ResponseType.ACCEPT:
             format = export_dialog.getSelectedFormat()
             export_dialog.destroy()
             if format != -1:
@@ -324,7 +324,7 @@ class Studio:
     def deleteCurrentPage(self, widget):
         delete_dialog = widgetPresenter.QuestionDialog(_('Are you sure you want to delete the current image?'))
         response = delete_dialog.run()
-        if response == gtk.RESPONSE_YES:
+        if response == Gtk.ResponseType.YES:
             self.source_images_controler.deleteCurrentPage()
             self.pages_icon_view.deleteCurrentSelection()
         delete_dialog.destroy()
@@ -384,7 +384,7 @@ class Studio:
         dialog = widgetPresenter.QuestionDialog(_('Are you sure you want '
                                                   'to clear the project?'))
         response = dialog.run()
-        if response == gtk.RESPONSE_YES:
+        if response == Gtk.ResponseType.YES:
             self.source_images_controler.clear()
         dialog.destroy()
 
@@ -396,7 +396,7 @@ class Studio:
 
     def preferences(self, widget = None):
         preferences_dialog = widgetPresenter.PreferencesDialog(self.configuration_manager, self.ocr_engines_manager.ocr_engines)
-        if preferences_dialog.run() == gtk.RESPONSE_ACCEPT:
+        if preferences_dialog.run() == Gtk.ResponseType.ACCEPT:
             preferences_dialog.saveToManager()
             self.source_images_controler.updateFromConfiguration()
         preferences_dialog.destroy()
@@ -415,9 +415,9 @@ class Studio:
             about_dialog.destroy()
 
     def showHelpContents(self, widget = None):
-        gtk.show_uri(self.main_window.window.get_screen(),
+        Gtk.show_uri(self.main_window.window.get_screen(),
                      'ghelp:ocrfeeder',
-                     gtk.get_current_event_time())
+                     Gtk.get_current_event_time())
 
     def zoomIn(self, widget = None):
         self.source_images_controler.zoomIn()
@@ -447,14 +447,14 @@ class Studio:
             names = []
             for migration in manual_update:
                 names.append(migration['engine'].name)
-            dialog = gtk.MessageDialog(self.main_window.window,
-                                       gtk.DIALOG_MODAL |
-                                       gtk.DIALOG_DESTROY_WITH_PARENT,
-                                       gtk.MESSAGE_WARNING)
+            dialog = Gtk.MessageDialog(self.main_window.window,
+                                       Gtk.DIALOG_MODAL |
+                                       Gtk.DIALOG_DESTROY_WITH_PARENT,
+                                       Gtk.MessageType.WARNING)
             dialog.add_buttons(_('_Keep Current Configuration') ,
-                               gtk.RESPONSE_CANCEL,
+                               Gtk.ResponseType.CANCEL,
                                _('_Open OCR Engines Manager Dialog'),
-                               gtk.RESPONSE_OK)
+                               Gtk.ResponseType.OK)
             message = _('The following OCR engines\' arguments '
                         'might need to be updated but it appears '
                         'you have changed their default configuration so '
@@ -470,20 +470,20 @@ class Studio:
             for migration in manual_update:
                 self.ocr_engines_manager.migrateEngine(migration['engine'],
                                                 migration['configuration'])
-            if response == gtk.RESPONSE_OK:
+            if response == Gtk.ResponseType.OK:
                 self.ocrEngines()
 
     def quit(self, widget = None, data = None):
         if not self.project_name and not self.pages_icon_view.isEmpty():
-            quit_dialog = widgetPresenter.QuestionDialog('<b>' + _("The project hasn't been saved.") + '</b>', Gtk.BUTTONS_NONE)
+            quit_dialog = widgetPresenter.QuestionDialog('<b>' + _("The project hasn't been saved.") + '</b>', Gtk.ButtonsType.NONE)
             quit_dialog.format_secondary_text(_('Do you want to save it before closing?'))
-            quit_dialog.add_buttons(_('Close anyway'), gtk.RESPONSE_NO, gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE_AS, gtk.RESPONSE_YES)
+            quit_dialog.add_buttons(_('Close anyway'), Gtk.ResponseType.NO, Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_SAVE_AS, Gtk.ResponseType.YES)
             response = quit_dialog.run()
             quit_dialog.destroy()
-            if response == gtk.RESPONSE_YES:
+            if response == Gtk.ResponseType.YES:
                 self.saveProjectAs()
                 self.__main_quit()
-            elif response == gtk.RESPONSE_NO:
+            elif response == Gtk.ResponseType.NO:
                 quit_dialog.destroy()
                 self.__main_quit()
             else:
@@ -495,4 +495,4 @@ class Studio:
     def __main_quit(self):
         self.configuration_manager.configurationToXml()
         self.configuration_manager.removeTemporaryFolder()
-        gtk.main_quit()
+        Gtk.main_quit()
