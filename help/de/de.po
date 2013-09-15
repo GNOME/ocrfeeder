@@ -444,7 +444,7 @@ msgstr ""
 "Bild ist, wird dieser Bereich aus der Originalseite unverändert in das "
 "erzeugte Dokument übernommen. Falls es Text ist, wird der Bereich wiederum "
 "als Text im erzeugten Dokument dargestellt. Erstellte ODT-Dokumente erhalten "
-"hierfür Textrahmen, falls Bereiche auf den Typ <em>Texty/em> gesetzt wurden."
+"hierfür Textrahmen, falls Bereiche auf den Typ <em>Text</em> gesetzt wurden."
 
 #: C/manualeditionandcorrection.page:44(p)
 msgid ""
