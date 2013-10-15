@@ -20,7 +20,7 @@
 
 from lib import debug
 from PIL import Image
-import gtk
+from gi.repository import GdkPixbuf
 import math
 
 def getContainerRectangle(points_list):
@@ -52,7 +52,7 @@ def getBoundsFromStartEndPoints(start_point, end_point):
     return start_x, start_y, width, height
 
 def convertPixbufToImage(pixbuf):
-    assert(pixbuf.get_colorspace() == gtk.gdk.COLORSPACE_RGB)
+    assert(pixbuf.get_colorspace() == GdkPixbuf.Colorspace.RGB)
     dimensions = pixbuf.get_width(), pixbuf.get_height()
     stride = pixbuf.get_rowstride()
     pixels = pixbuf.get_pixels()
