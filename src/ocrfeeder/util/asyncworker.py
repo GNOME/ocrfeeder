@@ -24,7 +24,7 @@
 
 from threading import Thread
 import Queue
-import gobject
+from gi.repository import GLib
 from lib import debug
 
 class AsyncItem(object):
@@ -49,7 +49,7 @@ class AsyncItem(object):
             return
         self.finish_callback_args += (results,)
         self.finish_callback_args += (error,)
-        gobject.idle_add(self.finish_callback, *self.finish_callback_args)
+        GLib.idle_add(self.finish_callback, *self.finish_callback_args)
 
     def cancel(self):
         self.canceled = True
