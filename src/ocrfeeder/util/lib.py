@@ -181,3 +181,13 @@ def getLanguages():
         for element in root.findall('//iso_639_entry[@iso_639_1_code]'):
             languages[element.get('iso_639_1_code')] = element.get('name')
     return languages
+
+def makeRadioButton(label, from_widget=None):
+    if from_widget:
+        button = Gtk.RadioButton.new_from_widget(from_widget)
+    else:
+        button = Gtk.RadioButton()
+    button.set_label(label)
+    button.set_use_underline(True)
+
+    return button
