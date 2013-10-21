@@ -35,14 +35,11 @@ from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
-import gobject
-import gtk
+from gi.repository import Gtk, GObject, Gdk, GdkPixbuf
 import math
 import os.path
-import pygtk
 import threading
 import sys
-pygtk.require('2.0')
 _ = gettext.gettext
 
 class ImageReviewer(Gtk.HPaned):
@@ -62,17 +59,17 @@ class ImageReviewer(Gtk.HPaned):
         self.selectable_boxes_area.connect('dragged_box', self.updatedBoxBounds)
         self.selectable_boxes_area.connect('deselected_box',
                                            self.deselectedBoxCb)
-        self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
+        self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
         self.set_position(500)
         self.show()
         self.ocr_engines = ocr_engines
         self.editor = Editor(self.image_pixbuf, self.ocr_engines, self)
         self.boxes_dict = {}
 
-        selectable_boxes_scrolled_window = gtk.ScrolledWindow()
+        selectable_boxes_scrolled_window = Gtk.ScrolledWindow()
         selectable_boxes_scrolled_window.get_accessible().set_name(
                                                          _('Selectable areas'))
-        selectable_boxes_scrolled_window.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        selectable_boxes_scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         selectable_boxes_scrolled_window.add(self.selectable_boxes_area)
         self.selectable_boxes_area.show()
         selectable_boxes_scrolled_window.show()
@@ -172,10 +169,12 @@ class ImageReviewer(Gtk.HPaned):
             engine.setLanguage(data_box.getLanguage())
         pixbuf_width = self.image_pixbuf.get_width()
         pixbuf_height = self.image_pixbuf.get_height()
-        subpixbuf = self.image_pixbuf.subpixbuf(data_box.getX(),
-                                                data_box.getY(),
-                                                min(data_box.getWidth(), pixbuf_width),
-                                                min(data_box.getHeight(), pixbuf_height))
+        new_pixbuf_width = min(data_box.getWidth(), pixbuf_width)
+        new_pixbuf_height = min(data_box.getHeight(), pixbuf_height)
+        subpixbuf = self.image_pixbuf.new_subpixbuf(data_box.getX(),
+                                                    data_box.getY(),
+                                                    new_pixbuf_width,
+                                                    new_pixbuf_height)
         image = graphics.convertPixbufToImage(subpixbuf)
         layout_analysis = LayoutAnalysis(engine,
                                          clean_text = self.configuration_manager.clean_text)
@@ -206,7 +205,7 @@ class ImageReviewer(Gtk.HPaned):
     def copyTextToClipboard(self):
         selected_boxes = self.selectable_boxes_area.getSelectedAreas()
         text = self.getTextFromBoxes(selected_boxes)
-        gtk.Clipboard().set_text(text)
+        Gtk.Clipboard.get(Gdk.Atom.intern("CLIPBOARD", True)).set_text(text, -1)
 
     def getAllText(self):
         boxes = self.selectable_boxes_area.getAllAreas()
@@ -243,7 +242,7 @@ class ImageReviewer(Gtk.HPaned):
         if not os.path.exists(self.path_to_image):
             return
         try:
-            self.image_pixbuf = gtk.gdk.pixbuf_new_from_file(self.path_to_image)
+            self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
         except Exception, exception:
             debug(exception.message)
             return
@@ -258,7 +257,8 @@ class ImageReviewer(Gtk.HPaned):
 
     def zoomFit(self):
         parent = self.selectable_boxes_area.get_parent()
-        parent_height, parent_width = parent.allocation.height, parent.allocation.width
+        allocation = parent.get_allocation()
+        parent_height, parent_width = allocation.height, allocation.width
         image_height, image_width = self.selectable_boxes_area.getImageSize()
         changed = False
         if image_height > parent_height:
@@ -439,7 +439,7 @@ class ImageReviewer_Controler:
         if n_pages == self.REVIEWER_CACHE_LENGTH:
             self.notebook.remove_page(0)
         reviewer = self.__createdImageReviewer(page_data)
-        index = self.notebook.append_page(reviewer)
+        index = self.notebook.append_page(reviewer, None)
         self.notebook.set_current_page(index)
         return reviewer
 
@@ -457,9 +457,11 @@ class ImageReviewer_Controler:
         image_reviewer.performOcrForSelectedBoxes()
 
     def __confirmOveritePossibilityByRecognition(self):
-        confirm_recognition = gtk.MessageDialog(parent = self.main_window.window,
-                                                type = gtk.MESSAGE_QUESTION,
-                                                buttons = gtk.BUTTONS_YES_NO)
+        confirm_recognition = Gtk.MessageDialog(self.main_window.window,
+                                                message_type = Gtk.MessageType.QUESTION,
+                                                buttons = Gtk.ButtonsType.YES_NO,
+                                                flags = Gtk.DialogFlags.MODAL |
+                                                Gtk.DialogFlags.DESTROY_WITH_PARENT)
         message = _('There are changes that may be overwritten '
                     'by the new recognition.\n\n'
                     'Do you want to continue?')
@@ -471,7 +473,7 @@ class ImageReviewer_Controler:
     def recognizeCurrentPage(self):
         image_reviewer = self.__getCurrentReviewer()
         if image_reviewer.selectable_boxes_area.getAllAreas() and \
-           self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
+           self.__confirmOveritePossibilityByRecognition() != Gtk.ResponseType.YES:
                 return
         page = image_reviewer.page
         dialog = QueuedEventsProgressDialog(self.main_window.window)
@@ -502,7 +504,7 @@ class ImageReviewer_Controler:
             items.append((info, item))
             i += 1
         if has_changes and \
-           self.__confirmOveritePossibilityByRecognition() != gtk.RESPONSE_YES:
+           self.__confirmOveritePossibilityByRecognition() != Gtk.ResponseType.YES:
                 return
         dialog.setItemsList(items)
         dialog.run()
@@ -585,20 +587,20 @@ class ImageReviewer_Controler:
             document_generator.save()
 
     def __askPdfFromScratch(self):
-        ask_pdf_type_dialog = gtk.MessageDialog(self.main_window.window,
-                      gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-                      buttons = gtk.BUTTONS_OK_CANCEL)
+        ask_pdf_type_dialog = Gtk.MessageDialog(self.main_window.window,
+                      Gtk.DIALOG_MODAL | Gtk.DIALOG_DESTROY_WITH_PARENT,
+                      buttons = Gtk.ButtonsType.OK_CANCEL)
         ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
                                          'wish?'))
-        pdf_from_scratch_radio = gtk.RadioButton(label= _('From scratch'))
+        pdf_from_scratch_radio = Gtk.RadioButton(label= _('From scratch'))
         pdf_from_scratch_radio.set_tooltip_text(
                                     _('Creates a new PDF from scratch.'))
-        searchable_pdf_radio = gtk.RadioButton(pdf_from_scratch_radio,
+        searchable_pdf_radio = Gtk.RadioButton(pdf_from_scratch_radio,
                                                _('Searchable PDF'))
         searchable_pdf_radio.set_tooltip_text(_('Creates a PDF based on '
                                                 'the images but with searchable '
                                                 'text.'))
-        vbox = gtk.VBox(True)
+        vbox = Gtk.VBox(True)
         vbox.add(pdf_from_scratch_radio)
         vbox.add(searchable_pdf_radio)
         content_area = ask_pdf_type_dialog.get_content_area()
@@ -607,7 +609,7 @@ class ImageReviewer_Controler:
 
         response = ask_pdf_type_dialog.run()
         ask_pdf_type_dialog.destroy()
-        if response == gtk.RESPONSE_CANCEL:
+        if response == Gtk.ResponseType.CANCEL:
             return (False, True)
 
         pdf_from_scratch = True
@@ -631,7 +633,7 @@ class ImageReviewer_Controler:
         open_dialog = FileDialog('open', file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
         response = open_dialog.run()
         project_file = None
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             project_file = open_dialog.get_filename()
             project_loader = ProjectLoader(project_file)
             pages = project_loader.loadConfiguration()
@@ -657,7 +659,7 @@ class ImageReviewer_Controler:
         if len(pages) < 2:
             return pages
         response = export_dialog.run()
-        if response == gtk.RESPONSE_ACCEPT:
+        if response == Gtk.ResponseType.ACCEPT:
             if export_dialog.current_page_button.get_active():
                 pages = [self.__getCurrentReviewer().page]
             export_dialog.destroy()
@@ -669,22 +671,22 @@ class ImageReviewer_Controler:
     def __askForFileName(self, extension = ''):
         save_dialog = FileDialog('save')
         response = save_dialog.run()
-        if response == gtk.RESPONSE_OK:
+        if response == Gtk.ResponseType.OK:
             file_name = save_dialog.get_filename()
             if extension:
                 if not file_name.endswith(extension):
                     file_name += extension
             if os.path.isfile(file_name):
-                confirm_overwrite = gtk.MessageDialog(type = gtk.MESSAGE_QUESTION)
+                confirm_overwrite = Gtk.MessageDialog(message_type = Gtk.MessageType.QUESTION)
                 message = _('<b>A file named "%(name)s" already exists. Do you want '
                             'to replace it?</b>\n\nThe file exists in "%(dir)s". '
                             'Replacing it will overwrite its contents.') % {
                              'name': os.path.basename(file_name),
                              'dir': os.path.dirname(file_name)}
                 confirm_overwrite.set_markup(message)
-                confirm_overwrite.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
-                confirm_overwrite.add_button(_('Replace'), gtk.RESPONSE_OK)
-                if confirm_overwrite.run() != gtk.RESPONSE_OK:
+                confirm_overwrite.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)
+                confirm_overwrite.add_button(_('Replace'), Gtk.ResponseType.OK)
+                if confirm_overwrite.run() != Gtk.ResponseType.OK:
                     file_name = None
                 confirm_overwrite.destroy()
             save_dialog.destroy()
@@ -697,7 +699,7 @@ class ImageReviewer_Controler:
         current_page = current_reviewer.page
         page_size_dialog = PageSizeDialog((current_page.width, current_page.height))
         response = page_size_dialog.run()
-        if response == gtk.RESPONSE_ACCEPT:
+        if response == Gtk.ResponseType.ACCEPT:
             size = page_size_dialog.getSize()
             if page_size_dialog.all_pages_radio.get_active():
                 for page in self.pages_icon_view.getAllPages():
@@ -723,7 +725,7 @@ class ImageReviewer_Controler:
         unpaper_dialog = UnpaperDialog(current_reviewer,
                                     self.configuration_manager.unpaper,
                                     self.configuration_manager.TEMPORARY_FOLDER)
-        if unpaper_dialog.run() == gtk.RESPONSE_ACCEPT:
+        if unpaper_dialog.run() == Gtk.ResponseType.ACCEPT:
             unpapered_image = unpaper_dialog.getUnpaperedImage()
             current_reviewer.updateBackgroundImage(unpapered_image)
             unpaper_dialog.destroy()
@@ -899,12 +901,15 @@ class Editor:
         language = language or self.box_editor.getLanguage()
         self.data_box.setLanguage(language)
 
-    def _onOCREngineChanged(self, combobox):
+    def _resetLanguages(self):
         index = self.box_editor.getSelectedOcrEngine()
         if index == -1:
             return
         engine = self.ocr_engines[index][0]
         self.box_editor.setAvailableLanguages(engine.getLanguages().keys())
+
+    def _onOCREngineChanged(self, combobox):
+        self._resetLanguages()
 
     def _onLanguageChanged(self, combobox):
         if self.data_box:
@@ -915,12 +920,15 @@ class Editor:
         x, y, width, height = self.data_box.updateBoundsFromBox(self.box)
         pixbuf_width = self.pixbuf.get_width()
         pixbuf_height = self.pixbuf.get_height()
-        sub_pixbuf = self.pixbuf.subpixbuf(x, y, min(width, pixbuf_width), min(height, pixbuf_height))
+        sub_pixbuf = self.pixbuf.new_subpixbuf(x, y,
+                                               min(width, pixbuf_width),
+                                               min(height, pixbuf_height))
         self.data_box.setImage(sub_pixbuf)
 
     def updateOcrEngines(self, engines_list):
         engines_names = [engine.name for engine, path in engines_list]
         self.box_editor.setOcrEngines(engines_names)
+        self._resetLanguages()
 
     def __pressedImageContextButton(self, toggle_button):
         self.data_box.setType(IMAGE_TYPE)
