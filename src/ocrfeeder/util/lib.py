@@ -2,7 +2,8 @@
 
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
-#    Copyright (C) 2009 Joaquim Rocha
+#    Copyright (C) 2013 Joaquim Rocha <me@joaquimrocha.com>
+#    Copyright (C) 2009-2012 Igalia, S.L.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
