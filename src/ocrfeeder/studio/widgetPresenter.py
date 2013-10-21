@@ -719,29 +719,6 @@ class BoxEditor(gtk.ScrolledWindow, gobject.GObject):
     def editedByUser(self, widget):
         self.emit('text_edited_by_user', self.getText())
 
-class BoxEditor_DataBox_Controller:
-
-    def __init__(self, notebook):
-        self.notebook = notebook
-        self.boxes_list = []
-
-    def addEditor(self, pixbuf, box):
-        x, y, width, height = box.props.x, box.props.y, box.props.width, box.props.height
-        sub_pixbuf = pixbuf.subpixbuf(x, y, width, height)
-        box_editor = BoxEditor(sub_pixbuf, x, y, width, height)
-        data_box = DataBox(x, y, width, height, sub_pixbuf)
-        self.boxes_list.append((box, box_editor, data_box))
-        self.notebook.append_page(box_editor, None)
-
-    def removeEditor(self, box):
-        for i in xrange(len(self.boxes_list)):
-            editor_data = self.boxes_list[i]
-            if editor_data[0] == box:
-                box.remove()
-                page_num = self.notebook.page_num(editor_data[1])
-                self.notebook.remove_page(page_num)
-                del self.boxes_list[i]
-
 class FileDialog(gtk.FileChooserDialog):
 
     def __init__(self, type = 'open', current_folder = '~', filename = None, file_filters = []):
