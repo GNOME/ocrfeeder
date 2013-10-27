@@ -7,7 +7,9 @@ ocrfeeder_studio_PYTHON = \
 	project.py \
 	studioBuilder.py \
 	widgetModeler.py \
-	widgetPresenter.py
+	widgetPresenter.py \
+	pagesiconview.py \
+	boxesarea.py
 
 clean-local:
 	rm -rf *.pyc *.pyo
