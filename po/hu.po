@@ -4,14 +4,14 @@
 #
 # György Balló <ballogy at freestart dot hu>, 2011.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2011, 2013.
-# Attila Hammer <hammera at pickup dot hu>, 2013.
+# Attila Hammer <hammera at pickup dot hu>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-20 02:25+0200\n"
-"PO-Revision-Date: 2013-04-20 02:09+0200\n"
-"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"POT-Creation-Date: 2014-02-23 09:08+0100\n"
+"PO-Revision-Date: 2014-02-23 09:09+0200\n"
+"Last-Translator: Attila Hammer <hammera at pickup dot hu>\n"
 "Language-Team: Hungarian <gnome at fsf dot hu>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
@@ -301,9 +301,10 @@ msgstr ""
 "A fájl már létezik a(z) „%(dir)s” könyvtárban. Lecserélésével felülírja "
 "annak tartalmát."
 
+# Megjegyzés: itt lehet nyugodtan aláhúzás szimbólumot használni, ebben az esetben a képernyőolvasó felolvassa az aláhúzott betűt gyorsbillentyűként
 #: ../src/ocrfeeder/studio/widgetModeler.py:831
 msgid "Replace"
-msgstr "Csere"
+msgstr "_Csere"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "_File"
