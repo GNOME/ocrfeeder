@@ -40,7 +40,7 @@ over it, making it possible to index or search.</p>
 performed, it is possible to generate a document by clicking
 <guiseq><gui>File</gui><gui>Export…</gui></guiseq> (or pressing
 <keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></keyseq>) and choosing
-the desired document format.</item>
+the desired document format.</p></item>
 <item><p>Depending your needs, choose whether all pages (with the <gui>All</gui>
 option) or only the currently selected one (<gui>Current</gui> option) should
 be exported. The default option is <gui>All</gui>. After making your selection,
