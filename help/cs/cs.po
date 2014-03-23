@@ -1,13 +1,13 @@
 # Czech translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2013-05-09 10:33+0000\n"
-"PO-Revision-Date: 2013-06-11 16:02+0200\n"
+"POT-Creation-Date: 2014-03-23 20:51+0000\n"
+"PO-Revision-Date: 2014-03-23 22:52+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -92,15 +92,15 @@ msgstr ""
 "volby programu <em>Unpaper</em>, které se mají použít při jeho automatické "
 "vyvolání pro načtení obrázku."
 
-#: C/projects.page:8(desc)
+#: C/projects.page:7(desc)
 msgid "Loading and saving projects"
 msgstr "Načítání a ukládání projektů"
 
-#: C/projects.page:11(title) C/index.page:43(title)
+#: C/projects.page:10(title) C/index.page:43(title)
 msgid "Projects"
 msgstr "Projekty"
 
-#: C/projects.page:13(p)
+#: C/projects.page:12(p)
 msgid ""
 "Sometimes a user may want to save the progress of the work done so far in an "
 "image and continue with it later. For this case <app>OCRFeeder</app> offers "
@@ -110,7 +110,7 @@ msgstr ""
 "později. Pro tyto případy nabízí aplikace <app>OCRFeeder</app> možnost "
 "projekty ukládat a načítat."
 
-#: C/projects.page:18(p)
+#: C/projects.page:17(p)
 msgid ""
 "Projects are compressed files with the <em>ocrf</em> extension which hold "
 "information about pages (images) and content areas."
@@ -118,11 +118,11 @@ msgstr ""
 "Projekty jsou komprimované soubory s příponou <em>ocrf</em>, které "
 "uchovávají informace o stránkách (obrázcích) a oblastech s obsahem."
 
-#: C/projects.page:22(title)
+#: C/projects.page:21(title)
 msgid "Saving A Project"
 msgstr "Ukládání projektu"
 
-#: C/projects.page:24(p)
+#: C/projects.page:23(p)
 msgid ""
 "After having done some work in an image, a project can be created by "
 "clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
@@ -139,11 +139,11 @@ msgstr ""
 "nebo <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq>. Objeví "
 "se dialogové okno ukládání, do kterého se zadá název a umístění projektu."
 
-#: C/projects.page:35(title)
+#: C/projects.page:34(title)
 msgid "Loading A Project"
 msgstr "Načítání projektu"
 
-#: C/projects.page:37(p)
+#: C/projects.page:36(p)
 msgid ""
 "An existing project can be loaded simply by clicking <guiseq><gui>File</"
 "gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
@@ -153,11 +153,11 @@ msgstr ""
 "gui><gui>Otevřít</gui></guiseq> nebo zmáčknutím <keyseq><key>Control</"
 "key><key>O</key></keyseq>."
 
-#: C/projects.page:44(title)
+#: C/projects.page:43(title)
 msgid "Appending A Project"
 msgstr "Připojování projektu"
 
-#: C/projects.page:46(p)
+#: C/projects.page:45(p)
 msgid ""
 "Sometimes it is useful to merge two or more projects in order to create only "
 "one document with the pages of several <app>OCRFeeder</app> projects. This "
@@ -173,11 +173,11 @@ msgstr ""
 "<guiseq><gui>Soubor</gui><gui>Připojit projekt</gui></guiseq> a zvolte ten, "
 "který chcete připojit."
 
-#: C/projects.page:56(title)
+#: C/projects.page:55(title)
 msgid "Clearing A Project"
 msgstr "Mazání projektu"
 
-#: C/projects.page:58(p)
+#: C/projects.page:57(p)
 msgid ""
 "If all the information is a project should be deleted (for example, to start "
 "over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
@@ -882,23 +882,35 @@ msgid ""
 "possible to generate a document by clicking <guiseq><gui>File</"
 "gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
 "key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
-"format. Depending your needs, choose whether all pages (with the All option) "
-"or only the currently selected one (Current option) should be exported. The "
-"default option is All. After making your selection, press OK to generate the "
-"document. On the last dialog, write the output filename and click the Save "
-"button. If a file with that name already exists and you would like overwrite "
-"it, click the Replace button on the confirmation dialog."
+"format."
 msgstr ""
-"Po té, co je provedeno rozpoznávání a případné ruční korektury, můžete "
-"vygenerovat dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</"
-"gui></guiseq> (nebo zmáčknutím <keyseq><key>SHIFT</key><key>CTRL</"
-"key><key>E</key></keyseq>) a výběrem požadovaného formátu dokumentu. Na "
-"základě svých potřeb si zvolte, jestli se mají vyexportovat všechny stránky "
-"(volbou Všechny) nebo jen aktuálně vybraná (volba Současnou). Výchozí volbou "
-"jsou všechny. Po dokončení výběru klikněte na Budiž a dokument se "
-"vygeneruje. V posledním dialogovém okně zadejte název výstupního souboru a "
-"klikněte na tlačítko Uložit. Pokud už soubor existuje a chcete jej přepsat, "
-"klikněte v potvrzovacím dialogovém okně na tlačítko Nahradit."
+"Po provedení rozpoznání a případných ručních úpravách, můžete vygenerovat "
+"dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</gui></guiseq> "
+"(nebo zmáčkněte <keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></"
+"keyseq>) a zvolením požadovaného formátu dokumentu."
+
+#: C/documentgeneration.page:44(p)
+msgid ""
+"Depending your needs, choose whether all pages (with the <gui>All</gui> "
+"option) or only the currently selected one (<gui>Current</gui> option) "
+"should be exported. The default option is <gui>All</gui>. After making your "
+"selection, press <gui>OK</gui> to generate the document."
+msgstr ""
+"Podle toho, co potřebujete, zvolte, jestli se mají exportovat všechny "
+"stránky (volba <gui>Vše</gui>) nebo jen jedna právě vybraná (volba "
+"<gui>Aktuální</gui>). Výchozí volbou je <gui>Vše</gui>. Nakonec zmáčkněte "
+"<gui>Budiž</gui> a dokument se vygeneruje."
+
+#: C/documentgeneration.page:48(p)
+msgid ""
+"On the last dialog, write the output filename and click the <gui>Save</gui> "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the <gui>Replace</gui> button on the confirmation dialog."
+msgstr ""
+"V posledním dialogovém okně napiště název výstupního souboru a klikněte na "
+"tlačítko <gui>Uložit</gui>. Pokud už zadaný soubor existuje a chcete jej "
+"přepsat, klikněte v potvrzovacím dialogovém okně na tlačítko <gui>Nahradit</"
+"gui>."
 
 #: C/deskewing.page:8(desc)
 msgid "Correcting the skew in the images"
@@ -1086,6 +1098,31 @@ msgstr ""
 "gui><gui>Přidat složku</gui></guiseq>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/index.page:0(None)
+#: C/addingfolder.page:0(None)
 msgid "translator-credits"
 msgstr "Marek Černocký <marek@manet.cz>"
+
+#~ msgid ""
+#~ "After the recognition and eventual manual edition has been performed, it "
+#~ "is possible to generate a document by clicking <guiseq><gui>File</"
+#~ "gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+#~ "key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired "
+#~ "document format. Depending your needs, choose whether all pages (with the "
+#~ "All option) or only the currently selected one (Current option) should be "
+#~ "exported. The default option is All. After making your selection, press "
+#~ "OK to generate the document. On the last dialog, write the output "
+#~ "filename and click the Save button. If a file with that name already "
+#~ "exists and you would like overwrite it, click the Replace button on the "
+#~ "confirmation dialog."
+#~ msgstr ""
+#~ "Po té, co je provedeno rozpoznávání a případné ruční korektury, můžete "
+#~ "vygenerovat dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</"
+#~ "gui></guiseq> (nebo zmáčknutím <keyseq><key>SHIFT</key><key>CTRL</"
+#~ "key><key>E</key></keyseq>) a výběrem požadovaného formátu dokumentu. Na "
+#~ "základě svých potřeb si zvolte, jestli se mají vyexportovat všechny "
+#~ "stránky (volbou Všechny) nebo jen aktuálně vybraná (volba Současnou). "
+#~ "Výchozí volbou jsou všechny. Po dokončení výběru klikněte na Budiž a "
+#~ "dokument se vygeneruje. V posledním dialogovém okně zadejte název "
+#~ "výstupního souboru a klikněte na tlačítko Uložit. Pokud už soubor "
+#~ "existuje a chcete jej přepsat, klikněte v potvrzovacím dialogovém okně na "
+#~ "tlačítko Nahradit."
