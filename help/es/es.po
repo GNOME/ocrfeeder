@@ -1,13 +1,13 @@
 # Spanish translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2013-05-09 10:33+0000\n"
-"PO-Revision-Date: 2013-05-14 14:25+0200\n"
+"POT-Creation-Date: 2014-03-23 20:51+0000\n"
+"PO-Revision-Date: 2014-03-26 17:58+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -15,6 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Gtranslator 2.91.5\n"
 
 #: C/unpaper.page:8(desc)
 msgid "Cleaning images before performing OCR"
@@ -91,15 +92,15 @@ msgstr ""
 "después de añadir una imagen se pueden configurar pulsando en el botón "
 "<gui>Preferencias de Unpaper</gui>."
 
-#: C/projects.page:8(desc)
+#: C/projects.page:7(desc)
 msgid "Loading and saving projects"
 msgstr "Cargar y guardar proyectos"
 
-#: C/projects.page:11(title) C/index.page:43(title)
+#: C/projects.page:10(title) C/index.page:43(title)
 msgid "Projects"
 msgstr "Proyectos"
 
-#: C/projects.page:13(p)
+#: C/projects.page:12(p)
 msgid ""
 "Sometimes a user may want to save the progress of the work done so far in an "
 "image and continue with it later. For this case <app>OCRFeeder</app> offers "
@@ -109,7 +110,7 @@ msgstr ""
 "momento en la imagen y continuarlo más tarde. Para estos casos, "
 "<app>OCRFeeder</app> ofrece la posibilidad de guardar y cargar proyectos."
 
-#: C/projects.page:18(p)
+#: C/projects.page:17(p)
 msgid ""
 "Projects are compressed files with the <em>ocrf</em> extension which hold "
 "information about pages (images) and content areas."
@@ -117,11 +118,11 @@ msgstr ""
 "Los proyectos son archivos comprimidos con la extensión <em>ocrf</em>, que "
 "almacena información osbre las páginas (imágenes) y las áreas de contenido."
 
-#: C/projects.page:22(title)
+#: C/projects.page:21(title)
 msgid "Saving A Project"
 msgstr "Guardar un proyecto"
 
-#: C/projects.page:24(p)
+#: C/projects.page:23(p)
 msgid ""
 "After having done some work in an image, a project can be created by "
 "clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
@@ -139,11 +140,11 @@ msgstr ""
 "mostrará un diálogo de guardado de archivos para que introduzca el nombre y "
 "la ubicación del proyecto."
 
-#: C/projects.page:35(title)
+#: C/projects.page:34(title)
 msgid "Loading A Project"
 msgstr "Cargar un proyecto"
 
-#: C/projects.page:37(p)
+#: C/projects.page:36(p)
 msgid ""
 "An existing project can be loaded simply by clicking <guiseq><gui>File</"
 "gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
@@ -153,11 +154,11 @@ msgstr ""
 "<guiseq><gui>Archivo</gui><gui>Abrir</gui></guiseq> o <keyseq><key>Ctrl</"
 "key><key>O</key></keyseq>."
 
-#: C/projects.page:44(title)
+#: C/projects.page:43(title)
 msgid "Appending A Project"
 msgstr "Añadir un proyecto"
 
-#: C/projects.page:46(p)
+#: C/projects.page:45(p)
 msgid ""
 "Sometimes it is useful to merge two or more projects in order to create only "
 "one document with the pages of several <app>OCRFeeder</app> projects. This "
@@ -173,11 +174,11 @@ msgstr ""
 "<guiseq><gui>Archivo</gui><gui>Añadir proyecto</gui></guiseq> y elija el "
 "proyecto que quiere."
 
-#: C/projects.page:56(title)
+#: C/projects.page:55(title)
 msgid "Clearing A Project"
 msgstr "Limpiar un proyecto"
 
-#: C/projects.page:58(p)
+#: C/projects.page:57(p)
 msgid ""
 "If all the information is a project should be deleted (for example, to start "
 "over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
@@ -825,9 +826,6 @@ msgid "Document Generation"
 msgstr "Generación de un documento"
 
 #: C/documentgeneration.page:14(p)
-#| msgid ""
-#| "<app>OCRFeeder</app> currently generates three document formats: <em>ODT</"
-#| "em>, <em>HTML</em> and <em>Plain Text</em>."
 msgid ""
 "<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
 "em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
@@ -882,34 +880,49 @@ msgstr ""
 "encima, haciendo que sea posible indexarlo o buscarlo."
 
 #: C/documentgeneration.page:38(title)
-#| msgid "Creating an editable document"
 msgid "Exporting the recognized document"
 msgstr "Exportar el documento reconocido"
 
 #: C/documentgeneration.page:39(p)
+#| msgid ""
+#| "After the recognition and eventual manual edition has been performed, it "
+#| "is possible to generate a document by clicking <guiseq><gui>File</"
+#| "gui><gui>Export…</gui></guiseq> and choosing the desired document format."
 msgid ""
 "After the recognition and eventual manual edition has been performed, it is "
 "possible to generate a document by clicking <guiseq><gui>File</"
 "gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
 "key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
-"format. Depending your needs, choose whether all pages (with the All option) "
-"or only the currently selected one (Current option) should be exported. The "
-"default option is All. After making your selection, press OK to generate the "
-"document. On the last dialog, write the output filename and click the Save "
-"button. If a file with that name already exists and you would like overwrite "
-"it, click the Replace button on the confirmation dialog."
+"format."
 msgstr ""
-"Después de realizar el reconocimiento y la edición manual, es posible "
-"generar un documento pulsandoº <guiseq><gui>Archivo</gui><gui>Exportar…</"
-"gui></guiseq> (o pulsando <keyseq><key>Mayús</key><key>Ctrl</key><key>E</"
-"key></keyseq>) y eligiendo el tipo de formato de documento que quiere. "
-"Dependiendo de sus necesidades, elija si se exportarán todas todas las "
-"páginas (con la opción Todas) o sólo la página selecciona actualmente "
-"(opción Actual). La opción predeterminada es Todas. Después de marcar su "
-"selección, pulse Aceptar para generar el documento. En el último diálogo, "
-"escriba el nombre del archivo de salida y pulse el botón Guardar. Si ya "
-"existe un archivo con ese mismo nombre y quiere sobreescribirlo, pulse el "
-"botón Reemplazar en el diálogo de confirmación."
+"Después del reconocimiento y de realizar una posible edición manual, es "
+"posible generar un documento pulsando en <guiseq><gui>Archivo</"
+"gui><gui>Exportar…</gui></guiseq> (o pulsando <keyseq><key>Mayús</"
+"key><key>CTRL</key><key>E</key></keyseq>) y eligiendo el formato de "
+"documento que quiere."
+
+#: C/documentgeneration.page:44(p)
+msgid ""
+"Depending your needs, choose whether all pages (with the <gui>All</gui> "
+"option) or only the currently selected one (<gui>Current</gui> option) "
+"should be exported. The default option is <gui>All</gui>. After making your "
+"selection, press <gui>OK</gui> to generate the document."
+msgstr ""
+"Dependiendo de sus necesidades, elija si quiere exportar todas las páginas "
+"(con la opción <gui>Todas</gui>) o sólo la seleccionada actualmente (opción "
+"<gui>Actual</gui>). La opción predeterminada es <gui>Todas</gui>. Después de "
+"hacer su selección, pulse <gui>Aceptar</gui> para generar el documento."
+
+#: C/documentgeneration.page:48(p)
+msgid ""
+"On the last dialog, write the output filename and click the <gui>Save</gui> "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the <gui>Replace</gui> button on the confirmation dialog."
+msgstr ""
+"En el último diálogo, escriba el nombre del archivo de salida y pulse el "
+"botón <gui>Guardar</gui>, Si ya existe un archivo con ese nombre y quiere "
+"sobrescribirlo, pulse el botón <gui>Reemplazar</gui> en el diálogo de "
+"confirmación."
 
 #: C/deskewing.page:8(desc)
 msgid "Correcting the skew in the images"
@@ -1102,6 +1115,31 @@ msgstr ""
 "gui><gui>Añadir carpeta</gui></guiseq>."
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/index.page:0(None)
+#: C/addingfolder.page:0(None)
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011"
+
+#~ msgid ""
+#~ "After the recognition and eventual manual edition has been performed, it "
+#~ "is possible to generate a document by clicking <guiseq><gui>File</"
+#~ "gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+#~ "key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired "
+#~ "document format. Depending your needs, choose whether all pages (with the "
+#~ "All option) or only the currently selected one (Current option) should be "
+#~ "exported. The default option is All. After making your selection, press "
+#~ "OK to generate the document. On the last dialog, write the output "
+#~ "filename and click the Save button. If a file with that name already "
+#~ "exists and you would like overwrite it, click the Replace button on the "
+#~ "confirmation dialog."
+#~ msgstr ""
+#~ "Después de realizar el reconocimiento y la edición manual, es posible "
+#~ "generar un documento pulsandoº <guiseq><gui>Archivo</gui><gui>Exportar…</"
+#~ "gui></guiseq> (o pulsando <keyseq><key>Mayús</key><key>Ctrl</key><key>E</"
+#~ "key></keyseq>) y eligiendo el tipo de formato de documento que quiere. "
+#~ "Dependiendo de sus necesidades, elija si se exportarán todas todas las "
+#~ "páginas (con la opción Todas) o sólo la página selecciona actualmente "
+#~ "(opción Actual). La opción predeterminada es Todas. Después de marcar su "
+#~ "selección, pulse Aceptar para generar el documento. En el último diálogo, "
+#~ "escriba el nombre del archivo de salida y pulse el botón Guardar. Si ya "
+#~ "existe un archivo con ese mismo nombre y quiere sobreescribirlo, pulse el "
+#~ "botón Reemplazar en el diálogo de confirmación."
