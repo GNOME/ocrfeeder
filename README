@@ -5,7 +5,7 @@ OCRFeeder - A Complete OCR Suite
 :Author: Joaquim Rocha
 :Contact: joaquimrocha1 {AT} gmail {DOT} com
 :Date: 2009-05-10
-:Web site: http://code.google.com/p/ocrfeeder/
+:Web site: https://wiki.gnome.org/Apps/OCRFeeder
 :Version: 0.3
 :License: OCRFeeder is published under the GNU GPL v3 license.
 
@@ -59,7 +59,7 @@ Installation on Ubuntu
 =======================
 
 The only packages needed to be installed on Ubuntu 8.10 is PyGoocanvas and
-Unpaper, the rest of the dependences are already installed in a fresh install
+Unpaper, the rest of the dependencies are already installed in a fresh install
 of this version of Ubuntu. The engine Ocrad is also installed for the reasons
 explained in the previous section.
 
@@ -132,7 +132,7 @@ OCRFeeder is (c) 2008-2010 Joaquim Rocha
 
 OCRFeeder is (c) 2009-2010 Igalia, S.L.
 
-http://live.gnome.org/OCRFeeder
+https://wiki.gnome.org/Apps/OCRFeeder
 
 
 The *odf* module is (c) Søren Roug, European Environment Agency

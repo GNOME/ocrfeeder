@@ -6,7 +6,9 @@
 
   <name xml:lang="en">ocrfeeder</name>
   <shortdesc xml:lang="en">A document layout analysis and optical character recognition application</shortdesc>
-  <homepage rdf:resource="http://live.gnome.org/OCRFeeder" />
+  <homepage rdf:resource="https://wiki.gnome.org/Apps/OCRFeeder" />
+  <download-page rdf:resource="http://download.gnome.org/sources/ocrfeeder/" />
+  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=ocrfeeder" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#productivity" />
 
   <maintainer>
