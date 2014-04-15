@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: orcfeeder.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-02-05 16:59+0000\n"
+"POT-Creation-Date: 2013-12-19 15:56+0000\n"
 "PO-Revision-Date: 2013-02-11 14:09+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -242,7 +242,7 @@ msgid ""
 "\n"
 "Do you want to continue?"
 msgstr ""
-"Hay cambios que se pueden sobreescribir al reconocer otra vez.\n"
+"Hay cambios que se pueden sobrescribir al reconocer otra vez.\n"
 "\n"
 "¿Quiere continuar?"
 
@@ -298,7 +298,7 @@ msgid ""
 msgstr ""
 "<b>Ya existe un archivo llamado «%(name)s». ¿Quiere reemplazarlo?</b>\n"
 "\n"
-"El archivo ya existe en «%(dir)s». Al reemplazar se sobreescribirá el "
+"El archivo ya existe en «%(dir)s». Al reemplazar se sobrescribirá el "
 "contenido."
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:831
@@ -608,7 +608,6 @@ msgid "Spell Check Recognized Text"
 msgstr "Comprobación ortográfica del texto reconocido"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:263
-#| msgid "Language:"
 msgid "No language"
 msgstr "Sin idioma"
 
@@ -771,7 +770,6 @@ msgstr "Mis_celánea"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:633
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1663
-#| msgid "Language:"
 msgid "Language"
 msgstr "Idioma"
 
@@ -1181,7 +1179,6 @@ msgstr ""
 "Argumentos: use $IMAGE para imágenes y $FILE si se escribe a un archivo"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1888
-#| msgid "Engine _arguments:"
 msgid "Engine _language argument:"
 msgstr "_Argumento de _idioma del motor:"
 
@@ -1195,7 +1192,6 @@ msgstr ""
 "$LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1896
-#| msgid "Engine _arguments:"
 msgid "Engine lan_guages:"
 msgstr "_Idiomas del motor:"
 
