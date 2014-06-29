@@ -159,6 +159,8 @@ class Studio:
         else:
             self.__askForEnginesMigration()
 
+        self._last_images_dir = ''
+
     def run(self):
         Gdk.threads_init()
         Gtk.main()
@@ -199,9 +201,16 @@ class Studio:
     def addImage(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
         file_open_dialog.set_select_multiple(True)
+
+        if self._last_images_dir:
+            file_open_dialog.set_current_folder(self._last_images_dir)
+
         response = file_open_dialog.run()
+
         if response == Gtk.ResponseType.OK:
             self.__addImagesToReviewer(file_open_dialog.get_filenames())
+
+        self._last_images_dir = file_open_dialog.get_current_folder()
         file_open_dialog.destroy()
 
     def importFromScanner(self, widget):
