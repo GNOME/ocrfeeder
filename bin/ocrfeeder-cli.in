@@ -137,10 +137,12 @@ for image in images:
                                                      resolution)
     pages.append(page_data)
 
-generator_class = document_generator_manager.get(export_format)
-if 'PDF' in export_format:
-    document_generator = generator_class(file_name, True)
+isPDF = 'PDF' in export_format
+if isPDF or 'SPDF' in export_format:
+    generator_class = document_generator_manager.get('PDF')
+    document_generator = generator_class(file_name, isPDF)
 else:
+    generator_class = document_generator_manager.get(export_format)
     document_generator = generator_class(file_name)
 
 for page in pages:
