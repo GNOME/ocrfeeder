@@ -588,15 +588,16 @@ class ImageReviewer_Controler:
 
     def __askPdfFromScratch(self):
         ask_pdf_type_dialog = Gtk.MessageDialog(self.main_window.window,
-                      Gtk.DIALOG_MODAL | Gtk.DIALOG_DESTROY_WITH_PARENT,
+                    Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
                       buttons = Gtk.ButtonsType.OK_CANCEL)
         ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
                                          'wish?'))
         pdf_from_scratch_radio = Gtk.RadioButton(label= _('From scratch'))
         pdf_from_scratch_radio.set_tooltip_text(
                                     _('Creates a new PDF from scratch.'))
-        searchable_pdf_radio = Gtk.RadioButton(pdf_from_scratch_radio,
-                                               _('Searchable PDF'))
+        searchable_pdf_radio = \
+                         Gtk.RadioButton.new_from_widget(pdf_from_scratch_radio)
+        searchable_pdf_radio.set_label(_('Searchable PDF'))
         searchable_pdf_radio.set_tooltip_text(_('Creates a PDF based on '
                                                 'the images but with searchable '
                                                 'text.'))
