@@ -397,6 +397,8 @@ class PdfGenerator(DocumentGenerator):
         text.moveCursor(0, box.text_data.size)
         #todo: efficiently add the required font
         self.canvas.setFontSize(box.text_data.size)
+        if not box.text:
+            return
         lines = simpleSplit(box.text,
                             self.canvas._fontname,
                             box.text_data.size,
