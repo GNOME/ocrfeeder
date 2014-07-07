@@ -109,8 +109,9 @@ if not len(ocr_engines):
     parser.error('No OCR engines configured.')
     exit(0)
 
-engine_name = options.engine.lower()
+engine_name = options.engine
 if engine_name:
+    engine_name = engine_name.lower()
     for engine in ocr_engines:
         if engine[0].name.lower() == engine_name:
             ocr_engine = engine[0]
