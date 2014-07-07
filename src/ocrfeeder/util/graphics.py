@@ -55,11 +55,9 @@ def getBoundsFromStartEndPoints(start_point, end_point):
 def convertPixbufToImage(pixbuf):
     assert(pixbuf.get_colorspace() == GdkPixbuf.Colorspace.RGB)
     dimensions = pixbuf.get_width(), pixbuf.get_height()
-    stride = pixbuf.get_rowstride()
     pixels = pixbuf.get_pixels()
     mode = pixbuf.get_has_alpha() and "RGBA" or "RGB"
-    return Image.frombuffer(mode, dimensions, pixels,
-                            "raw", mode, stride, 1)
+    return Image.frombytes(mode, dimensions, pixels)
 
 def rgbaToInteger(rgba):
     r, g, b, a = rgba
