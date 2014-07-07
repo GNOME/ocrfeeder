@@ -135,19 +135,23 @@ def getUnpaperCommand(configuration_manager):
 def unpaperImage(configuration_manager, image_path):
     tmp_dir = configuration_manager.TEMPORARY_FOLDER
     prefix = os.path.splitext(image_path)[0]
-    unpapered_name = os.path.join(tmp_dir, os.path.basename(prefix) + '.ppm')
-    if os.path.exists(unpapered_name):
-        unpapered_name = getNonExistingFileName(unpapered_name)
+    basename = os.path.basename(prefix)
+    unpapered_in = getNonExistingFileName(os.path.join(tmp_dir,
+                                                       basename + '_orig.pnm'))
+    unpapered_name = getNonExistingFileName(os.path.join(tmp_dir,
+                                                         basename + '.pnm'))
     image_path = Image.open(image_path)
-    image_path.save(unpapered_name, format = 'PPM')
+    image_path.save(unpapered_in, format = 'PPM')
     command = getUnpaperCommand(configuration_manager)
-    command += ' %s %s' % (unpapered_name, unpapered_name)
+    command += ' %s %s' % (unpapered_in, unpapered_name)
     print command
     try:
         os.system(command)
     except Exception, exception:
         debug(exception)
         return None
+    finally:
+        os.unlink(unpapered_in)
     return unpapered_name
 
 def obtainScanners():
