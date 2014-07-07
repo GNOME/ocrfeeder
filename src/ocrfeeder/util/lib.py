@@ -144,7 +144,7 @@ def unpaperImage(configuration_manager, image_path):
     image_path.save(unpapered_in, format = 'PPM')
     command = getUnpaperCommand(configuration_manager)
     command += ' %s %s' % (unpapered_in, unpapered_name)
-    print command
+    debug(command)
     try:
         os.system(command)
     except Exception, exception:
