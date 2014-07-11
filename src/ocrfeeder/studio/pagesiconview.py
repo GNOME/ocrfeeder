@@ -20,7 +20,7 @@
 
 import os
 import gettext
-from gi.repository import Gtk, Gdk, GdkPixbuf
+from gi.repository import Gtk, Gdk, GdkPixbuf, Pango
 _ = gettext.gettext
 
 class PagesListStore(Gtk.ListStore):
@@ -72,17 +72,25 @@ class PagesListStore(Gtk.ListStore):
 
 class PagesIconView(Gtk.IconView):
 
+    MAX_WIDTH_CHARS = 50
+
     def __init__(self):
         Gtk.IconView.__init__(self)
         self.set_model(PagesListStore())
         self.get_accessible().set_name(_('Pages'))
-        self.set_text_column(0)
         self.set_pixbuf_column(1)
         self.set_item_orientation(Gtk.Orientation.VERTICAL)
         self.set_columns(1)
         self.set_reorderable(True)
         self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
         self.set_selection_mode(Gtk.SelectionMode.BROWSE)
+        text_renderer = Gtk.CellRendererText.new()
+        text_renderer.set_property('ellipsize-set', True)
+        text_renderer.set_property('max-width-chars', self.MAX_WIDTH_CHARS)
+        text_renderer.set_property('ellipsize', Pango.EllipsizeMode.MIDDLE)
+        self.pack_start(text_renderer, False)
+        self.add_attribute(text_renderer, 'text', 0)
+        area = self.get_area()
         self.connect('button-press-event', self.pressedRightButton)
 
     def pressedRightButton(self, target, event):
