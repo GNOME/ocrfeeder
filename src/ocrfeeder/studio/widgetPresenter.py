@@ -63,7 +63,7 @@ class MainWindow:
         self.main_area_left.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.main_area_left.show()
 
-        self.main_area.pack1(self.main_area_left, False, False)
+        self.main_area.pack1(self.main_area_left, False, True)
         self.notebook = Gtk.Notebook()
         self.notebook.set_show_tabs(False)
         self.notebook.set_show_border(False)
