@@ -23,13 +23,12 @@ from ocrfeeder.odf.opendocument import OpenDocumentText
 from ocrfeeder.odf.style import Style, MasterPage, GraphicProperties, ParagraphProperties, \
     TextProperties, PageLayout, PageLayoutProperties
 from ocrfeeder.odf.text import P, Page, PageSequence
-from pango import WEIGHT_BOLD, WEIGHT_NORMAL, STYLE_ITALIC, STYLE_NORMAL, \
-    STYLE_OBLIQUE
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
     ALIGN_FILL
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.graphics import getImagePrintSize
 from ocrfeeder.util.lib import debug
+from gi.repository import Pango
 from reportlab.pdfgen import canvas
 from reportlab.lib import units
 from reportlab.lib.utils import ImageReader, simpleSplit
@@ -157,14 +156,14 @@ class HtmlGenerator(DocumentGenerator):
         return style_name
 
     def convertFontStyle(self, style):
-        if style == STYLE_OBLIQUE:
+        if style == Pango.Style.OBLIQUE:
             return 'oblique'
-        elif style == STYLE_ITALIC:
+        elif style == Pango.Style.ITALIC:
             return 'italic'
         return 'normal'
 
     def convertFontWeight(self, weight):
-        if weight == WEIGHT_BOLD:
+        if weight == Pango.Weight.BOLD:
             return 'bold'
         return 'normal'
 
@@ -341,14 +340,14 @@ class OdtGenerator(DocumentGenerator):
         return style_name
 
     def convertFontStyle(self, style):
-        if style == STYLE_OBLIQUE:
+        if style == Pango.Style.OBLIQUE:
             return 'oblique'
-        elif style == STYLE_ITALIC:
+        elif style == Pango.Style.ITALIC:
             return 'italic'
         return 'normal'
 
     def convertFontWeight(self, weight):
-        if weight == WEIGHT_BOLD:
+        if weight == Pango.Weight.BOLD:
             return 'bold'
         return 'normal'
 

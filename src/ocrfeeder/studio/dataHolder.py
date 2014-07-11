@@ -21,14 +21,15 @@
 import os.path
 from ocrfeeder.util import graphics
 from PIL import Image
-from gi.repository import GObject
+from gi.repository import GObject, Pango
 from ocrfeeder.util.graphics import getImagePrintSize, getImageResolution
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, lib
-from pango import WEIGHT_NORMAL, STYLE_NORMAL
 
 class TextData:
 
-    def __init__(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 0, letter_space = 0, style = STYLE_NORMAL, weight = WEIGHT_NORMAL, language = ''):
+    def __init__(self, face = 'Sans', size = 12, justification = ALIGN_LEFT,
+                 line_space = 0, letter_space = 0, style = Pango.Style.NORMAL,
+                 weight = Pango.Weight.NORMAL, language = ''):
         self.face = face
         self.size = size
         self.line_space = line_space

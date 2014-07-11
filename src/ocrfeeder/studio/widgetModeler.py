@@ -23,7 +23,6 @@ from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator, PdfGenerator
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
-from pango import FontDescription, SCALE
 from project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
@@ -35,7 +34,7 @@ from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
-from gi.repository import Gtk, GObject, Gdk, GdkPixbuf
+from gi.repository import Gtk, GObject, Gdk, GdkPixbuf, Pango
 import math
 import os.path
 import threading
@@ -880,9 +879,9 @@ class Editor:
 
     def __setDataBoxFont(self, font_button = None):
         font_button = font_button or self.box_editor.font_button
-        font_description = FontDescription(font_button.get_font_name())
+        font_description = Pango.FontDescription(font_button.get_font_name())
         self.data_box.setFontFace(font_description.get_family())
-        self.data_box.setFontSize(font_description.get_size() / SCALE)
+        self.data_box.setFontSize(font_description.get_size() / Pango.SCALE)
         self.data_box.setFontStyle(font_description.get_style())
         self.data_box.setFontWeight(font_description.get_weight())
 
