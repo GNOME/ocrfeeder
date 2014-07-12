@@ -257,6 +257,7 @@ class LanguagesComboBox(Gtk.ComboBox):
         self.add_attribute(renderer, 'text', self._LANG_COLUMN)
 
         languages = lib.getLanguages()
+
         sorted_keys = sorted(languages, key = lambda k: languages[k])
         if sorted_keys:
             values = ('', _('No language'))

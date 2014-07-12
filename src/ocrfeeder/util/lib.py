@@ -180,8 +180,6 @@ languages = {}
 def getLanguages():
     global languages
     if not languages:
-        lc, encoding = locale.getdefaultlocale()
-        language_country = lc.split('_')
         root = etree.parse(ISO_CODES_PATH + 'iso_639.xml')
         for element in root.findall('//iso_639_entry[@iso_639_1_code]'):
             languages[element.get('iso_639_1_code')] = element.get('name')

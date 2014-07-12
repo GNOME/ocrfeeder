@@ -103,6 +103,8 @@ class ConfigurationManager(object):
 
     TEMPORARY_FOLDER = tempfile.mkdtemp(prefix = OCRFEEDER_COMPACT_NAME + '_')
 
+    DEFAULT_LOCALE = locale.getdefaultlocale()[0]
+
     DEFAULTS = {TEXT_FILL: (94, 156, 235, 150),
                 BOXES_STROKE: (94, 156, 235, 250),
                 IMAGE_FILL: (0, 183, 0, 150),
@@ -120,7 +122,7 @@ class ConfigurationManager(object):
                 DESKEW_IMAGES_AFTER_ADDITION: False,
                 UNPAPER_IMAGES_AFTER_ADDITION: False,
                 UNPAPER_EXTRA_OPTIONS: '',
-                LANGUAGE: locale.getdefaultlocale()[0].split('_')[0],
+                LANGUAGE: DEFAULT_LOCALE.split('_')[0] if DEFAULT_LOCALE else '',
                 }
 
     conf = dict(DEFAULTS)
