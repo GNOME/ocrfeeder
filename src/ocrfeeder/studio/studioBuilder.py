@@ -74,15 +74,10 @@ class Studio:
         self.ocr_engines = self.ocr_engines_manager.ocr_engines
         self.pages_icon_view = PagesIconView()
         self.pages_icon_view.setDeleteCurrentPageFunction(self.deleteCurrentPage)
-        self.pages_icon_view.connect('drag_data_received', self.dragDataReceived)
-        self.pages_icon_view.connect('drag_drop', self.dragDrop)
         self.pages_icon_view.get_model().connect('row-inserted',
                                                  self.__pagesUpdatedCallback)
         self.pages_icon_view.get_model().connect('row-deleted',
                                                  self.__pagesUpdatedCallback)
-        target_entry = Gtk.TargetEntry.new('text/uri-list', 0, self.TARGET_TYPE_URI_LIST)
-        self.pages_icon_view.drag_dest_set(Gtk.DestDefaults.MOTION | Gtk.DestDefaults.HIGHLIGHT,
-                                           [target_entry], Gdk.DragAction.COPY)
         self.pages_icon_view.show()
         self.main_window.main_area_left.add_with_viewport(self.pages_icon_view)
         self.images_selectable_area = {}
@@ -164,39 +159,6 @@ class Studio:
     def run(self):
         Gdk.threads_init()
         Gtk.main()
-
-    def dragDataReceived(self, widget, context, x, y, selection, target_type, timestamp):
-        if target_type == self.TARGET_TYPE_URI_LIST:
-            uris = selection.data.strip('\r\n\x00').split()
-            paths = []
-            for uri in uris:
-                path = ""
-                if uri.startswith('file:\\\\\\'): # windows
-                    path = uri[8:]
-                elif uri.startswith('file://'): # nautilus, rox
-                    path = uri[7:]
-                elif uri.startswith('file:'): # xffm
-                    path = uri[5:]
-                path = urllib.url2pathname(path).strip('\r\n\x00')
-                if os.path.isfile(path):
-                    paths.append(path)
-            for path in paths:
-                if os.path.splitext(path)[1] == '.pdf':
-                    folder = lib.convertPdfToImages(path,
-                                       self.configuration_manager.TEMPORARY_FOLDER)
-                    self.__addImagesToReviewer(lib.getImagesFromFolder(folder))
-                else:
-                    try:
-                        self.__addImagesToReviewer([path])
-                    except:
-                        pass
-
-    def dragDrop(self, widget, context, x, y, timestamp):
-        target_atom = widget.drag_dest_find_target(context, widget.drag_dest_get_target_list())
-        if target_atom != None:
-            widget.drag_get_data(context, target_atom, timestamp)
-            context.finish(True, False, timestamp)
-        return True
 
     def addImage(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
