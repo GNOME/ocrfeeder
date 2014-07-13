@@ -21,6 +21,7 @@
 import os
 import gettext
 from gi.repository import Gtk, Gdk, GdkPixbuf, Pango
+from widgetPresenter import getPopupMenu
 _ = gettext.gettext
 
 class PagesListStore(Gtk.ListStore):

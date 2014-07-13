@@ -31,7 +31,7 @@ from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util import constants
 from ocrfeeder.util.asyncworker import AsyncItem
 from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
-    PageSizeDialog, getPopupMenu, WarningDialog, UnpaperDialog, \
+    PageSizeDialog, WarningDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
 from gi.repository import Gtk, GObject, Gdk, GdkPixbuf, Pango

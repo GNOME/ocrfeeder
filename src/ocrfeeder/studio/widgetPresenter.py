@@ -1989,9 +1989,10 @@ def getPopupMenu(menus_info):
     for menu_info in menus_info:
         image, name, callback = menu_info
         if image:
-            menu_item = Gtk.ImageMenuItem(image, name)
+            menu_item = Gtk.ImageMenuItem.new_from_stock(image, None)
+            menu_item.set_label(name)
         else:
-            menu_item = Gtk.MenuItem(name)
+            menu_item = Gtk.MenuItem.new_with_label(name)
         menu.append(menu_item)
         menu_item.connect("activate", callback)
         menu_item.show()
