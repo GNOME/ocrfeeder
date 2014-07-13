@@ -16,13 +16,28 @@ dnl == check for python ==
 AM_PATH_PYTHON(2.5)
 
 dnl == Python dependencies ==
-AX_PYTHON_MODULE([gtk],[needed])
-AX_PYTHON_MODULE([pygtk],[needed])
-AX_PYTHON_MODULE([gtkspell],[needed])
-AX_PYTHON_MODULE([goocanvas],[needed])
 AX_PYTHON_MODULE([enchant],[needed])
 AX_PYTHON_MODULE([sane],[needed])
 AX_PYTHON_MODULE([reportlab],[needed])
+
+dnl == Introspection Dependencies ==
+
+PYTHON_GI_MODULES="Gtk GooCanvas"
+
+for i in $PYTHON_GI_MODULES;
+do
+AC_MSG_CHECKING(gobject introspection module $i)
+$PYTHON -c "from gi.repository import $i" 2>/dev/null;
+
+if test $? -eq 0;
+then
+	AC_MSG_RESULT(yes)
+else
+	AC_MSG_RESULT(no)
+	AC_MSG_ERROR(failed to find required GObject Introspection module $i)
+	exit 1
+fi
+done
 
 dnl == i18n ==
 GETTEXT_PACKAGE=ocrfeeder
