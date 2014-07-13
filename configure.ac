@@ -16,13 +16,17 @@ dnl == check for python ==
 AM_PATH_PYTHON(2.5)
 
 dnl == Python dependencies ==
-AX_PYTHON_MODULE([gtk],[needed])
-AX_PYTHON_MODULE([pygtk],[needed])
-AX_PYTHON_MODULE([gtkspell],[needed])
-AX_PYTHON_MODULE([goocanvas],[needed])
 AX_PYTHON_MODULE([enchant],[needed])
 AX_PYTHON_MODULE([sane],[needed])
 AX_PYTHON_MODULE([reportlab],[needed])
+
+dnl == Introspection Dependencies ==
+
+GOOCANVAS_VERSION = 2.0.2
+PKG_CHECK_MODULES(INTROSPECTION, gtk+-3.0
+				 gtkspell3-3.0
+				 goocanvas-2.0 >= GOOCANVAS_VERSION
+				 gobject-introspection-1.0)
 
 dnl == i18n ==
 GETTEXT_PACKAGE=ocrfeeder
