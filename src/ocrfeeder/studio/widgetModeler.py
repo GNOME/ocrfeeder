@@ -647,8 +647,6 @@ class ImageReviewer_Controler:
                 self.__addImage(page.image_path,
                                 select_image = index == 0,
                                 page_data = page)
-                image_reviewer = self.__getCurrentReviewer()
-                image_reviewer.updatePageData(page)
         open_dialog.destroy()
         return project_file
 
