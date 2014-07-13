@@ -19,10 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import debug
+from lib import debug, getNonExistingFileName
 from PIL import Image
 from gi.repository import GdkPixbuf
 import math
+import imghdr
+import os
 
 def getContainerRectangle(points_list):
     points_list = list(points_list)
@@ -164,3 +166,36 @@ def getImageRotated(image, angle):
     collage = Image.new('RGBA', transparent_bg_image.size, 'white')
     collage.paste(transparent_bg_image, (0, 0), transparent_bg_image)
     return collage
+
+def convertMultiImage(image_path, temp_dir):
+    converted_paths = []
+    if imghdr.what(image_path) != 'tiff':
+        return [image_path]
+
+    debug('Checking for multiple images in TIFF')
+    i = 0
+    base_name = os.path.basename(image_path)
+    name, extension = os.path.splitext(base_name)
+    image = Image.open(image_path)
+    try:
+        while True:
+            image.seek(i)
+            file_name = os.path.join(temp_dir, name + ' #' + str(i + 1) + \
+                                     extension)
+            image_name = getNonExistingFileName(file_name)
+            image.save(image_name, format='TIFF')
+            debug('Saved %s' % image_name)
+            converted_paths.append(image_name)
+            i += 1
+    except EOFError:
+        # No more images in the file
+        pass
+
+    return converted_paths
+
+def convertMultiImagesInList(image_list, temp_dir):
+    for i in range(len(image_list)):
+        converted_images = convertMultiImage(image_list[i], temp_dir)
+        converted_list = image_list[:i] + converted_images + image_list[i + 1:]
+        image_path_list = converted_list
+    return converted_list
