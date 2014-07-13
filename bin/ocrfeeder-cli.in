@@ -31,7 +31,7 @@ if os.path.exists(installed_src):
 
 from PIL import Image
 from ocrfeeder.util.constants import OCRFEEDER_STUDIO_VERSION
-from ocrfeeder.util.graphics import getImageResolution
+from ocrfeeder.util.graphics import getImageResolution, convertMultiImagesInList
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.feeder.ocrEngines import OcrEnginesManager
 from ocrfeeder.studio.dataHolder import PageData
@@ -123,7 +123,11 @@ if options.language:
     ocr_engine.setLanguage(options.language)
 
 pages = []
-for image in images:
+
+image_list = convertMultiImagesInList(images,
+                                  configuration_manager.TEMPORARY_FOLDER)
+
+for image in image_list:
     if not os.path.isfile(image):
         parser.error('The image "%s" is not a file or does not exist.' %\
                      image)

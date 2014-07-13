@@ -310,6 +310,9 @@ class ImageReviewer_Controler:
 
     def addImages(self, image_path_list):
         item_list = []
+        temp_dir = self.configuration_manager.TEMPORARY_FOLDER
+        image_path_list = graphics.convertMultiImagesInList(image_path_list,
+                                                            temp_dir)
         item_list_length = len(image_path_list)
         if not self.configuration_manager.deskew_images_after_addition and \
            not self.configuration_manager.unpaper_images_after_addition:
