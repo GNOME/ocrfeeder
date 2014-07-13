@@ -18,7 +18,9 @@ AM_PATH_PYTHON(2.5)
 dnl == Python dependencies ==
 AX_PYTHON_MODULE([enchant],[needed])
 AX_PYTHON_MODULE([sane],[needed])
+AX_PYTHON_MODULE([PIL],[needed])
 AX_PYTHON_MODULE([reportlab],[needed])
+AX_PYTHON_MODULE([gobject],[needed])
 
 dnl == Introspection Dependencies ==
 
