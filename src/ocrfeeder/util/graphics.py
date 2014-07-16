@@ -59,6 +59,21 @@ def convertPixbufToImage(pixbuf):
     dimensions = pixbuf.get_width(), pixbuf.get_height()
     pixels = pixbuf.get_pixels()
     mode = pixbuf.get_has_alpha() and "RGBA" or "RGB"
+    num_channels = len(mode)
+
+    # When calling get_pixels() on subpixbufs, the buffer is the same
+    # as the original pixbuf's but the first character is given by the
+    # x and y of the subpixbuf. This means that we have to extract the
+    # right buffer part corresponding only to the subpixbuf's pixels when
+    # creating the Image from bytes.
+    if pixbuf.get_byte_length() > num_channels * dimensions[0] * dimensions[1]:
+        i = 0
+        p = ''
+        for j in range(pixbuf.get_height()):
+            p += pixels[i:i + pixbuf.get_width() * num_channels]
+            i += pixbuf.width * num_channels
+        pixels = p
+
     return Image.frombytes(mode, dimensions, pixels)
 
 def rgbaToInteger(rgba):
