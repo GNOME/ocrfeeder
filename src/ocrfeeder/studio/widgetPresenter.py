@@ -705,7 +705,7 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.text_properties_frame.set_sensitive(status)
 
     def setText(self, text):
-        self.text_content.set_text(str(text).strip())
+        self.text_content.set_text(text.strip())
 
     def getText(self):
         start = self.text_content.get_start_iter()
