@@ -174,6 +174,9 @@ class ImageReviewer(Gtk.HPaned):
                                                     data_box.getY(),
                                                     new_pixbuf_width,
                                                     new_pixbuf_height)
+        subpixbuf.x = data_box.getX()
+        subpixbuf.y = data_box.getY()
+        subpixbuf.width = pixbuf_width
         image = graphics.convertPixbufToImage(subpixbuf)
         layout_analysis = LayoutAnalysis(engine,
                                          clean_text = self.configuration_manager.clean_text)
@@ -924,6 +927,9 @@ class Editor:
         sub_pixbuf = self.pixbuf.new_subpixbuf(x, y,
                                                min(width, pixbuf_width),
                                                min(height, pixbuf_height))
+        sub_pixbuf.x = x
+        sub_pixbuf.y = y
+        sub_pixbuf.width = pixbuf_width
         self.data_box.setImage(sub_pixbuf)
 
     def updateOcrEngines(self, engines_list):
