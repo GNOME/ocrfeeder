@@ -90,11 +90,11 @@ class BoxesArea(GooCanvas.Canvas):
         pixbuf = GdkPixbuf.Pixbuf.new_from_file(image_path)
         self.image.set_property('pixbuf', pixbuf)
         self.set_bounds(0, 0, self.image.props.width * 2, self.image.props.height * 1.5)
-        #for line in self.frame:
-        #    line.remove()
-        #self.__createFrame()
-        #for line in self.frame:
-        #    self.get_root_item().add_child(line, 0)
+        for line in self.frame:
+           line.remove()
+        self.__createFrame()
+        for line in self.frame:
+           self.get_root_item().add_child(line, 0)
 
     def __createFrame(self):
         line = GooCanvas.CanvasRect(fill_color = self.IMAGE_FRAME_COLOR, line_width = 0)
