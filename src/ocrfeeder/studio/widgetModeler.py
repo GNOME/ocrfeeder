@@ -287,6 +287,10 @@ class ImageReviewer(Gtk.HPaned):
     def focusCurrentEditorTextArea(self):
         self.editor.box_editor.text_widget.grab_focus()
 
+    def updateOcrEngines(self, ocr_engines):
+        self.ocr_engines = ocr_engines
+        self.editor.updateOcrEngines(ocr_engines)
+
 class ImageReviewer_Controler:
 
     REVIEWER_CACHE_LENGTH = 5
@@ -792,6 +796,13 @@ class ImageReviewer_Controler:
         current_reviewer = self.__getCurrentReviewer()
         SpellCheckerDialog(self.main_window.window, current_reviewer, locale)
 
+    def updateOcrEngines(self, ocr_engines):
+        n_pages = self.notebook.get_n_pages()
+        index = 0
+        while index < n_pages:
+            reviewer = self.notebook.get_nth_page(index)
+            reviewer.updateOcrEngines(ocr_engines)
+            index += 1
 
 class Editor:
 

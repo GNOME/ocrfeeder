@@ -1747,6 +1747,7 @@ class OcrManagerDialog(Gtk.Dialog):
         self.new_engine.connect('clicked', self.__engine_settings)
         self.edit_engine.connect('clicked', self.__edit)
         self.detect_engines.connect('clicked', self.__detectEnginesCb)
+        self.modified = False
 
     def __makeMainArea(self):
         frame = PlainFrame(_('OCR Engines'))
@@ -1778,6 +1779,7 @@ class OcrManagerDialog(Gtk.Dialog):
             delete_dialog = QuestionDialog(_('Are you sure you want to delete this engine?'))
             response = delete_dialog.run()
             if response == Gtk.ResponseType.YES:
+                self.modified = True
                 index = model.get_path(iter)[0]
                 self.engines_manager.delete(index)
                 model.remove(iter)
@@ -1791,6 +1793,7 @@ class OcrManagerDialog(Gtk.Dialog):
         if index != None:
             engine = self.engines_manager.ocr_engines[index][0]
             if engine:
+                self.modified = True
                 self.__engine_settings(widget, engine)
 
     def __engine_settings(self, widget, engine = None):
@@ -1798,6 +1801,7 @@ class OcrManagerDialog(Gtk.Dialog):
         quit = False
         while not quit:
             if new_ocr_dialog.run() == Gtk.ResponseType.ACCEPT:
+                self.modified = True
                 quit = new_ocr_dialog.setEngine()
                 if quit:
                     self.__getEngines()
@@ -1833,7 +1837,9 @@ class OcrManagerDialog(Gtk.Dialog):
         engines_dialog = SystemEnginesDialog(engines)
         response = engines_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
-            for engine in engines_dialog.getChosenEngines():
+            engines = engines_dialog.getChosenEngines()
+            self.modified = bool(engines)
+            for engine in engines:
                 self.engines_manager.addNewEngine(engine)
         engines_dialog.destroy()
         self.__getEngines()

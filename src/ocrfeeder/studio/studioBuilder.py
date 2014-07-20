@@ -376,6 +376,9 @@ class Studio:
     def ocrEngines(self, widget = None):
         ocr_dialog = widgetPresenter.OcrManagerDialog(self.ocr_engines_manager)
         ocr_dialog.run()
+        if ocr_dialog.modified:
+            ocr_engines = self.ocr_engines_manager.ocr_engines
+            self.source_images_controler.updateOcrEngines(ocr_engines)
         ocr_dialog.destroy()
 
     def enginesTool(self, widget = None):
