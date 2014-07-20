@@ -91,14 +91,6 @@ class PagesIconView(Gtk.IconView):
         self.pack_start(text_renderer, False)
         self.add_attribute(text_renderer, 'text', 0)
         area = self.get_area()
-        self.connect('button-press-event', self.pressedRightButton)
-
-    def pressedRightButton(self, target, event):
-        if event.button == 3:
-            selected_items = self.get_selected_items()
-            if selected_items:
-                menu = getPopupMenu([(Gtk.STOCK_DELETE, _('Delete'), self.delete_current_page_function)])
-                menu.popup(None, None, None, event.button, event.time)
 
     def getSelectedPageData(self):
         selected_items = self.get_selected_items()

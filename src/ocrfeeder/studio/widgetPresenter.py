@@ -1990,19 +1990,6 @@ class CustomAboutDialog(Gtk.AboutDialog):
         self.set_translator_credits(_('translator-credits'))
         self.set_icon_from_file(WINDOW_ICON)
 
-def getPopupMenu(menus_info):
-    menu = Gtk.Menu()
-    for menu_info in menus_info:
-        image, name, callback = menu_info
-        if image:
-            menu_item = Gtk.ImageMenuItem(image, name)
-        else:
-            menu_item = Gtk.MenuItem(name)
-        menu.append(menu_item)
-        menu_item.connect("activate", callback)
-        menu_item.show()
-    return menu
-
 class ScannerChooserDialog(Gtk.Dialog):
 
     def __init__(self, parent, devices):
