@@ -688,6 +688,11 @@ class BoxEditor(Gtk.ScrolledWindow):
             self.ocr_combo_box.append_text(engine)
         if engines_list:
             self.ocr_combo_box.set_active(0)
+            self.ocr_combo_box.set_sensitive(True)
+            self.perform_ocr_button.set_sensitive(True)
+        else:
+            self.ocr_combo_box.set_sensitive(False)
+            self.perform_ocr_button.set_sensitive(False)
 
     def setType(self, new_type):
         if new_type == TEXT_TYPE:
