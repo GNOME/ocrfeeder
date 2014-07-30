@@ -98,7 +98,7 @@ class Studio:
                                  'unpaper': self.unpaper, 'preferences': self.preferences, 'about': self.about,
                                  'ocr_engines': self.ocrEngines, 'zoom_in': self.zoomIn, 'zoom_out': self.zoomOut,
                                  'zoom_fit': self.zoomFit, 'reset_zoom': self.resetZoom,
-                                 'recognize_areas': self.source_images_controler.recognizeSelectedAreas,
+                                 'recognize_areas': self.__recognizeSelectedAreas,
                                  'import_from_scanner': self.importFromScanner,
                                  'select_next_area': self.source_images_controler.selectNextArea,
                                  'select_previous_area': self.source_images_controler.selectPreviousArea,
@@ -322,10 +322,22 @@ class Studio:
         self.source_images_controler.addImages(images)
 
     def __recognizePageAction(self, widget):
+        if not self.ocr_engines_manager.ocr_engines:
+            self.warnNoOCREngines()
+            return
         self.source_images_controler.recognizeCurrentPage()
 
     def __recognizeDocumentAction(self, widget):
+        if not self.ocr_engines_manager.ocr_engines:
+            self.warnNoOCREngines()
+            return
         self.source_images_controler.recognizeDocument()
+
+    def __recognizeSelectedAreas(self, widget):
+        if not self.ocr_engines_manager.ocr_engines:
+            self.warnNoOCREngines()
+            return
+        self.source_images_controler.recognizeSelectedAreas()
 
     def setProjectName(self, project_name):
         self.project_name = project_name

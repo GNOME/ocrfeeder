@@ -461,7 +461,7 @@ class ImageReviewer_Controler:
             reviewer.updatePageData(reviewer.page)
             index += 1
 
-    def recognizeSelectedAreas(self, widget):
+    def recognizeSelectedAreas(self):
         image_reviewer = self.__getCurrentReviewer()
         image_reviewer.performOcrForSelectedBoxes()
 
@@ -480,6 +480,9 @@ class ImageReviewer_Controler:
         return response
 
     def recognizeCurrentPage(self):
+        if not self.ocr_engines:
+            self.main_window._warnNoOCREngines()
+            return
         image_reviewer = self.__getCurrentReviewer()
         if image_reviewer.selectable_boxes_area.getAllAreas() and \
            self.__confirmOveritePossibilityByRecognition() != Gtk.ResponseType.YES:
