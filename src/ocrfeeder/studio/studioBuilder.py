@@ -156,6 +156,9 @@ class Studio:
 
         self._last_images_dir = ''
 
+        if not self.ocr_engines:
+            self.warnNoOCREngines()
+
     def run(self):
         Gdk.threads_init()
         Gtk.main()
@@ -380,6 +383,26 @@ class Studio:
             ocr_engines = self.ocr_engines_manager.ocr_engines
             self.source_images_controler.updateOcrEngines(ocr_engines)
         ocr_dialog.destroy()
+
+    def warnNoOCREngines(self):
+        lib.debug('No OCR engines found')
+        dialog = Gtk.MessageDialog(self.main_window.window,
+                                   Gtk.DialogFlags.MODAL |
+                                   Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                                   Gtk.MessageType.INFO)
+        dialog.set_title(_('No OCR engines available'))
+        dialog.set_markup(_('No OCR engines were found in the system.\n'
+                            'Please make sure you have OCR engines installed '
+                            'and available.'))
+        dialog.add_buttons(_('_Ignore'),
+                           Gtk.ResponseType.CANCEL,
+                           _('_Open OCR Engines Manager Dialog'),
+                           Gtk.ResponseType.OK)
+
+        response = dialog.run()
+        dialog.destroy()
+        if response == Gtk.ResponseType.OK:
+            self.ocrEngines()
 
     def enginesTool(self, widget = None):
         pass
