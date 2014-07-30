@@ -458,8 +458,8 @@ class Studio:
             for migration in manual_update:
                 names.append(migration['engine'].name)
             dialog = Gtk.MessageDialog(self.main_window.window,
-                                       Gtk.DIALOG_MODAL |
-                                       Gtk.DIALOG_DESTROY_WITH_PARENT,
+                                       Gtk.DialogFlags.MODAL |
+                                       Gtk.DialogFlags.DESTROY_WITH_PARENT,
                                        Gtk.MessageType.WARNING)
             dialog.add_buttons(_('_Keep Current Configuration') ,
                                Gtk.ResponseType.CANCEL,
