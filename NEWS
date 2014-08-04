@@ -1,3 +1,52 @@
+Version 0.8
+============
+
+New Features
+-------------
+
+* Add support for multiple image TIFFs
+
+Bug Fixes
+----------
+
+* Fix PIL importation
+* Fix error when exporting a PDF with empty text areas
+* Fix PDF output options in ocrfeeder-cli
+* Fix getting engine name in ocrfeeder-cli
+* Fix the use of newer versions of Unpaper
+* Fix text in the pages icon view
+* Fix reordering pages in the icon view
+* Fix issues when no locale is set
+* Fix loading project with more than one page
+* Fix updating the OCR engines in the BoxEditor
+
+Improvements
+-------------
+
+* Port the application to GObject Introspection
+* Scan with 300 DPI and in color mode
+* Use the last visited directory when adding a new image
+* Warn when no OCR engines are found on startup or when
+  performing the recognition
+* Update the box editor's OCR controls sensitiveness
+  according to the existence of OCR engines
+
+New and Updated Translations
+-----------------------------
+
+* Marek Černocký [cz]
+* Daniel Mustieles [es]
+* Fran Diéguez [gl]
+* Dimitris Spingos [el]
+* Aharon Don [he]
+* Attila Hammer, Gabor Kelemen [hu]
+* Rafael Ferreira [pt_BR]
+* Martin Srebotnjak [sl]
+* Мирослав Николић [sr]
+* Piotr Drąg [uk]
+* Wylmer Wang [zh_CN]
+
+
 Version 0.7.11
 ==============
 
