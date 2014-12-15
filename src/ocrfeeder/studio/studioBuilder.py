@@ -161,7 +161,9 @@ class Studio:
 
     def run(self):
         Gdk.threads_init()
+        Gdk.threads_enter()
         Gtk.main()
+        Gdk.threads_leave()
 
     def addImage(self, widget):
         file_open_dialog = widgetPresenter.FileDialog('open', file_filters = [(_('Images'), ['image/*'], [])])
