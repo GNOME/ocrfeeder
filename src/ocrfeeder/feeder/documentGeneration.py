@@ -368,7 +368,7 @@ class PlaintextGenerator(DocumentGenerator):
             # This will create a new file or **overwrite an existing file
             f = open(self.name, "w")
             try:
-                f.write(self.text) # Write text to file
+                f.write(self.text.encode('utf-8'))
             finally:
                 f.close() # Close the file
         except IOError:
