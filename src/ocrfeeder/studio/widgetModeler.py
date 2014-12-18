@@ -941,17 +941,8 @@ class Editor:
             self.data_box.setLanguage(self.box_editor.getLanguage())
 
     def update(self, box):
-        self.box = box
-        x, y, width, height = self.data_box.updateBoundsFromBox(self.box)
-        pixbuf_width = self.pixbuf.get_width()
-        pixbuf_height = self.pixbuf.get_height()
-        sub_pixbuf = self.pixbuf.new_subpixbuf(x, y,
-                                               min(width, pixbuf_width),
-                                               min(height, pixbuf_height))
-        sub_pixbuf.x = x
-        sub_pixbuf.y = y
-        sub_pixbuf.width = pixbuf_width
-        self.data_box.setImage(sub_pixbuf)
+        self.data_box.updateBoundsFromBox(self.box)
+        self.data_box.updateImage(self.pixbuf)
 
     def updateOcrEngines(self, engines_list):
         engines_names = [engine.name for engine, path in engines_list]
