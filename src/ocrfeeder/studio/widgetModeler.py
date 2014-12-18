@@ -594,7 +594,14 @@ class ImageReviewer_Controler:
             if os.path.exists(file_name):
                 os.remove(file_name)
             document_generator = generator(file_name, **extra_args)
+            reviewer = self.__getCurrentReviewer()
             for page in pages:
+                # if the page is not the current reviewer, we need to
+                # update the box's image before exporting it
+                if page != reviewer.page:
+                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(page.image_path)
+                    for box in page.data_boxes:
+                        box.updateImage(pixbuf)
                 document_generator.addPage(page)
             document_generator.save()
 

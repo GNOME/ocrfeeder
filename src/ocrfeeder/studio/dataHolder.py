@@ -197,6 +197,16 @@ class DataBox(GObject.GObject):
         self.setHeight(height)
         return (x, y, width, height)
 
+    def updateImage(self, pixbuf):
+        pixbuf_width = pixbuf.get_width()
+        pixbuf_height = pixbuf.get_height()
+        sub_pixbuf = pixbuf.new_subpixbuf(self.x, self.y,
+                                          min(self.width, pixbuf_width),
+                                          min(self.height, pixbuf_height))
+        sub_pixbuf.x = self.x
+        sub_pixbuf.y = self.y
+        sub_pixbuf.width = pixbuf_width
+        self.setImage(sub_pixbuf)
 
 
 class PageData:
