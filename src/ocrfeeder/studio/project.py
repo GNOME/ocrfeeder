@@ -75,7 +75,8 @@ class ProjectSaver:
             for element in item:
                 self.convertToXml(element, root_node)
         else:
-            text_node = self.document.createTextNode(str(item))
+            text = unicode(str(item), 'utf-8')
+            text_node = self.document.createTextNode(text)
             root_node.appendChild(text_node)
         return root_node
 
@@ -84,7 +85,7 @@ class ProjectSaver:
         pages_dict = {'pages': [page_data.convertToDict() for page_data in self.pages_data]}
         new_node = self.convertToXml(pages_dict, root_node)
         self.__imagesToXml(root_node)
-        self.__createProjectFile(new_node.toxml(), file_name)
+        self.__createProjectFile(new_node.toxml('utf-8'), file_name)
 
     def __createProjectFile(self, xml_content, file_name):
         temp_dir = tempfile.mkstemp(dir = self.temp_dir)[1]
