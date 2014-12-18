@@ -71,7 +71,7 @@ def convertPixbufToImage(pixbuf):
         p = ''
         for j in range(pixbuf.get_height()):
             p += pixels[i:i + pixbuf.get_width() * num_channels]
-            i += pixbuf.width * num_channels
+            i += pixbuf.get_rowstride()
         pixels = p
 
     return Image.frombytes(mode, dimensions, pixels)
