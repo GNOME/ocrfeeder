@@ -932,13 +932,6 @@ class QuestionDialog(Gtk.MessageDialog):
         self.set_icon_from_file(WINDOW_ICON)
         self.set_markup(message)
 
-class WarningDialog(Gtk.MessageDialog):
-
-    def __init__(self, message, buttons = Gtk.ButtonsType.OK, parent = None):
-        super(WarningDialog, self).__init__(message_type = Gtk.MessageType.WARNING,
-                                            buttons = buttons,
-                                            parent = parent)
-
 class UnpaperDialog(Gtk.Dialog):
 
     def __init__(self, parent, reviewer , unpaper, temp_dir = '/tmp'):
