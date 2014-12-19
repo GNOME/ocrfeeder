@@ -754,7 +754,7 @@ class BoxEditor_DataBox_Controller:
 
 class FileDialog(Gtk.FileChooserDialog):
 
-    def __init__(self, type = 'open', current_folder = '~', filename = None, file_filters = []):
+    def __init__(self, parent, type = 'open', current_folder = '~', filename = None, file_filters = []):
         dialog_type = Gtk.FileChooserAction.SAVE
         title = _('Save File')
         button = Gtk.STOCK_SAVE
@@ -766,8 +766,11 @@ class FileDialog(Gtk.FileChooserDialog):
             title = _('Open Folder')
             dialog_type = Gtk.FileChooserAction.SELECT_FOLDER
             button = Gtk.STOCK_OPEN
-        super(FileDialog, self).__init__(title = title, action = dialog_type, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                                                                        button, Gtk.ResponseType.OK))
+        super(FileDialog, self).__init__(title = title, parent = parent,
+                                         action = dialog_type,
+                                         buttons = (Gtk.STOCK_CANCEL,
+                                                    Gtk.ResponseType.CANCEL,
+                                                    button, Gtk.ResponseType.OK))
         self.set_current_folder(os.path.expanduser(current_folder))
         if filename:
             self.set_filename(filename)
@@ -783,8 +786,9 @@ class FileDialog(Gtk.FileChooserDialog):
 
 class PagesToExportDialog(Gtk.Dialog):
 
-    def __init__(self, title = None):
+    def __init__(self, parent, title = None):
         super(PagesToExportDialog, self).__init__(title,
+                                                  parent = parent,
                                                   flags = Gtk.DialogFlags.MODAL,
                                                   buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                                                              Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
@@ -804,9 +808,14 @@ class PagesToExportDialog(Gtk.Dialog):
 
 class ExportDialog(Gtk.Dialog):
 
-    def __init__(self, title = None, format_choices = []):
-        super(ExportDialog, self).__init__(title, flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                      Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    def __init__(self, parent, title = None, format_choices = []):
+        super(ExportDialog, self).__init__(title, parent = parent,
+                                           flags = Gtk.DialogFlags.MODAL,
+                                           buttons = (Gtk.STOCK_CANCEL,
+                                                      Gtk.ResponseType.REJECT,
+
+                                                      Gtk.STOCK_OK,
+                                                      Gtk.ResponseType.ACCEPT))
         self.__makeFormatSelectionArea(format_choices)
         self.set_icon_from_file(WINDOW_ICON)
 
@@ -827,9 +836,14 @@ class ExportDialog(Gtk.Dialog):
 
 class PageSizeDialog(Gtk.Dialog):
 
-    def __init__(self, current_page_size):
-        super(PageSizeDialog, self).__init__(_('Page size'), flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                      Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    def __init__(self, parent, current_page_size):
+        super(PageSizeDialog, self).__init__(_('Page size'),
+                                             parent = parent,
+                                             flags = Gtk.DialogFlags.MODAL,
+                                             buttons = (Gtk.STOCK_CANCEL,
+                                                        Gtk.ResponseType.REJECT,
+                                                        Gtk.STOCK_OK,
+                                                        Gtk.ResponseType.ACCEPT))
         self.__makePageSizeArea(current_page_size)
         self.paper_sizes.connect('changed', self.__changedPageSize, current_page_size)
         self.set_icon_from_file(WINDOW_ICON)
@@ -909,8 +923,12 @@ class PageSizeDialog(Gtk.Dialog):
 
 class QuestionDialog(Gtk.MessageDialog):
 
-    def __init__(self, message, buttons = Gtk.ButtonsType.YES_NO):
-        super(QuestionDialog, self).__init__(None, message_type = Gtk.MessageType.QUESTION, flags = Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT, buttons = buttons)
+    def __init__(self, parent, message, buttons = Gtk.ButtonsType.YES_NO):
+        super(QuestionDialog, self).__init__(parent = parent,
+                                             message_type = Gtk.MessageType.QUESTION,
+                                             flags = Gtk.DialogFlags.MODAL |
+                                             Gtk.DialogFlags.DESTROY_WITH_PARENT,
+                                             buttons = buttons)
         self.set_icon_from_file(WINDOW_ICON)
         self.set_markup(message)
 
@@ -920,14 +938,17 @@ class WarningDialog(Gtk.MessageDialog):
         super(WarningDialog, self).__init__(message_type = Gtk.MessageType.WARNING,
                                             buttons = buttons,
                                             parent = parent)
-        self.set_icon_from_file(WINDOW_ICON)
-        self.set_markup(message)
 
 class UnpaperDialog(Gtk.Dialog):
 
-    def __init__(self, reviewer , unpaper, temp_dir = '/tmp'):
-        super(UnpaperDialog, self).__init__(_('Unpaper Image Processor'), flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                      Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    def __init__(self, parent, reviewer , unpaper, temp_dir = '/tmp'):
+        super(UnpaperDialog, self).__init__(_('Unpaper Image Processor'),
+                                            parent = parent,
+                                            flags = Gtk.DialogFlags.MODAL,
+                                            buttons = (Gtk.STOCK_CANCEL,
+                                                       Gtk.ResponseType.REJECT,
+                                                       Gtk.STOCK_OK,
+                                                       Gtk.ResponseType.ACCEPT))
         self.unpaper_preferences = UnpaperPreferences()
         self.reviewer = reviewer
         self.unpaper = unpaper
@@ -974,7 +995,7 @@ class UnpaperDialog(Gtk.Dialog):
         if os.path.exists(unpapered_image):
             unpapered_image = lib.getNonExistingFileName(unpapered_image)
         command += ' %s %s' % (name, unpapered_image)
-        progress_bar = CommandProgressBarDialog(command, _('Performing Unpaper'), _(u'Performing unpaper. Please wait…'))
+        progress_bar = CommandProgressBarDialog(self, command, _('Performing Unpaper'), _(u'Performing unpaper. Please wait…'))
         progress_bar.run()
         self.unpapered_image = unpapered_image
 
@@ -1165,11 +1186,13 @@ class UnpaperPreferencesDialog(Gtk.Dialog):
 
 class SimpleDialog(Gtk.MessageDialog):
 
-    def __init__(self, message, title = '', type = 'info'):
+    def __init__(self, parent, message, title = '', type = 'info'):
         message_type = Gtk.MessageType.INFO
         if type == 'warning':
             message_type = Gtk.MessageType.WARNING
-        super(SimpleDialog, self).__init__(message_type = message_type, buttons = Gtk.ButtonsType.OK)
+        super(SimpleDialog, self).__init__(parent = parent,
+                                           message_type = message_type,
+                                           buttons = Gtk.ButtonsType.OK)
         self.set_title(title)
         self.set_markup(message)
         self.set_icon_from_file(WINDOW_ICON)
@@ -1180,8 +1203,10 @@ class SimpleDialog(Gtk.MessageDialog):
 
 class CommandProgressBarDialog(Gtk.Dialog):
 
-    def __init__(self, command, title = '', label = ''):
-        super(CommandProgressBarDialog, self).__init__(_(title), flags = Gtk.DialogFlags.MODAL)
+    def __init__(self, parent, command, title = '', label = ''):
+        super(CommandProgressBarDialog, self).__init__(_(title),
+                                                       parent = parent,
+                                                       flags = Gtk.DialogFlags.MODAL)
         self.__makeProgressBar(label)
         self.vbox.show_all()
         self.command = command
@@ -1206,7 +1231,7 @@ class CommandProgressBarDialog(Gtk.Dialog):
         try:
             self.process = subprocess.Popen(self.command.split(), stdout = subprocess.PIPE, stderr = subprocess.STDOUT, bufsize=1)
         except:
-            warning = SimpleDialog(_('An error occurred!'), _('Error'), 'warning')
+            warning = SimpleDialog(self, _('An error occurred!'), _('Error'), 'warning')
             warning.run()
             return False
         self.timer = GLib.timeout_add(100, self.__pulse)
@@ -1217,7 +1242,7 @@ class CommandProgressBarDialog(Gtk.Dialog):
         exit_value = self.process.poll()
         if exit_value != None:
             if exit_value != 0:
-                warning = SimpleDialog(_('An error occurred!'), _('Error'), 'warning')
+                warning = SimpleDialog(self, _('An error occurred!'), _('Error'), 'warning')
                 warning.run()
             self.destroy()
             return False
@@ -1457,7 +1482,7 @@ class PreferencesDialog(Gtk.Dialog):
         return engines_frame
 
     def __unpaperSelectDialog(self, widget):
-        unpaper_select_dialog = FileDialog('open')
+        unpaper_select_dialog = FileDialog(self, 'open')
         if unpaper_select_dialog.run() == Gtk.ResponseType.OK:
             self.unpaper_entry.set_text(unpaper_select_dialog.get_filename())
         unpaper_select_dialog.destroy()
@@ -1709,8 +1734,9 @@ class PreferencesDialog(Gtk.Dialog):
 
 class SystemEnginesDialog(Gtk.Dialog):
 
-    def __init__(self, engines):
+    def __init__(self, parent, engines):
         super(SystemEnginesDialog, self).__init__(_('OCR Engines'),
+                                                  parent = parent,
                                                   flags = Gtk.DialogFlags.MODAL |
                                                           Gtk.DialogFlags.DESTROY_WITH_PARENT,
                                                   buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
@@ -1747,8 +1773,12 @@ class SystemEnginesDialog(Gtk.Dialog):
 
 class OcrManagerDialog(Gtk.Dialog):
 
-    def __init__(self, engines_manager):
-        super(OcrManagerDialog, self).__init__(_('OCR Engines'), flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE))
+    def __init__(self, parent, engines_manager):
+        super(OcrManagerDialog, self).__init__(_('OCR Engines'),
+                                               parent = parent,
+                                               flags = Gtk.DialogFlags.MODAL,
+                                               buttons = (Gtk.STOCK_CLOSE,
+                                                          Gtk.ResponseType.CLOSE))
         self.engines_manager = engines_manager
         self.set_size_request(400, -1)
         self.list_store = Gtk.ListStore(str)
@@ -1793,7 +1823,7 @@ class OcrManagerDialog(Gtk.Dialog):
         selection = self.tree_view.get_selection()
         model, iter = selection.get_selected()
         if iter:
-            delete_dialog = QuestionDialog(_('Are you sure you want to delete this engine?'))
+            delete_dialog = QuestionDialog(self, _('Are you sure you want to delete this engine?'))
             response = delete_dialog.run()
             if response == Gtk.ResponseType.YES:
                 self.modified = True
@@ -1814,7 +1844,7 @@ class OcrManagerDialog(Gtk.Dialog):
                 self.__engine_settings(widget, engine)
 
     def __engine_settings(self, widget, engine = None):
-        new_ocr_dialog = OcrSettingsDialog(self.engines_manager, engine)
+        new_ocr_dialog = OcrSettingsDialog(self, self.engines_manager, engine)
         quit = False
         while not quit:
             if new_ocr_dialog.run() == Gtk.ResponseType.ACCEPT:
@@ -1851,7 +1881,7 @@ class OcrManagerDialog(Gtk.Dialog):
             info.run()
             info.destroy()
             return
-        engines_dialog = SystemEnginesDialog(engines)
+        engines_dialog = SystemEnginesDialog(self, engines)
         response = engines_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
             engines = engines_dialog.getChosenEngines()
@@ -1863,12 +1893,16 @@ class OcrManagerDialog(Gtk.Dialog):
 
 class OcrSettingsDialog(Gtk.Dialog):
 
-    def __init__(self, engine_manager, engine = None):
+    def __init__(self, parent, engine_manager, engine = None):
         label = _('OCR Engines')
         if engine:
             label = _('%s engine') % engine.name
-        super(OcrSettingsDialog, self).__init__(label, flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                                                                     Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+        super(OcrSettingsDialog, self).__init__(label, parent = parent,
+                                            flags = Gtk.DialogFlags.MODAL,
+                                            buttons = (Gtk.STOCK_CANCEL,
+                                                       Gtk.ResponseType.CANCEL,
+                                                       Gtk.STOCK_OK,
+                                                       Gtk.ResponseType.ACCEPT))
         self.engine_manager = engine_manager
         self.engine = engine
         self.vbox.add(self.__makeMainArea())
@@ -1968,7 +2002,7 @@ class OcrSettingsDialog(Gtk.Dialog):
                 self.engine_manager.addNewEngine(engine)
             return True
         except:
-            SimpleDialog(_('Error setting the new engine; please check your engine settings.'), _('Warning'), 'warning').run()
+            SimpleDialog(self, _('Error setting the new engine; please check your engine settings.'), _('Warning'), 'warning').run()
             print sys.exc_info()
             return False
 
@@ -1990,8 +2024,8 @@ class OcrSettingsDialog(Gtk.Dialog):
 
 class CustomAboutDialog(Gtk.AboutDialog):
 
-    def __init__(self):
-        super(CustomAboutDialog, self).__init__()
+    def __init__(self, parent):
+        super(CustomAboutDialog, self).__init__(parent = parent)
         self.set_size_request(350, -1)
         self.set_name(OCRFEEDER_STUDIO_NAME)
         self.set_program_name(OCRFEEDER_STUDIO_NAME)

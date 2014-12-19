@@ -650,7 +650,8 @@ class ImageReviewer_Controler:
         project_saver.serialize(project_name)
 
     def openProject(self, clear_current = True):
-        open_dialog = FileDialog('open', file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
+        open_dialog = FileDialog(self.main_window.window, 'open',
+                                 file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
         response = open_dialog.run()
         project_file = None
         if response == Gtk.ResponseType.OK:
@@ -670,7 +671,8 @@ class ImageReviewer_Controler:
     def __askForNumberOfPages(self, title):
         # Sync the current reviewer's page with its data
         self.__getCurrentReviewer().savePageData()
-        export_dialog = PagesToExportDialog(title)
+        export_dialog = PagesToExportDialog(self.main_window.window,
+                                            title)
         pages = self.pages_icon_view.getAllPages()
         # When there's only one document loaded or none,
         # we don't ask for the number of pages to export
@@ -687,7 +689,7 @@ class ImageReviewer_Controler:
             return None
 
     def __askForFileName(self, extension = ''):
-        save_dialog = FileDialog('save')
+        save_dialog = FileDialog(self.main_window.window, 'save')
         response = save_dialog.run()
         if response == Gtk.ResponseType.OK:
             file_name = save_dialog.get_filename()
@@ -715,7 +717,8 @@ class ImageReviewer_Controler:
     def choosePageSize(self):
         current_reviewer = self.__getCurrentReviewer()
         current_page = current_reviewer.page
-        page_size_dialog = PageSizeDialog((current_page.width, current_page.height))
+        page_size_dialog = PageSizeDialog(self.main_window.window,
+                                          (current_page.width, current_page.height))
         response = page_size_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
             size = page_size_dialog.getSize()
@@ -740,7 +743,8 @@ class ImageReviewer_Controler:
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
-        unpaper_dialog = UnpaperDialog(current_reviewer,
+        unpaper_dialog = UnpaperDialog(self.main_window.window,
+                                       current_reviewer,
                                     self.configuration_manager.unpaper,
                                     self.configuration_manager.TEMPORARY_FOLDER)
         if unpaper_dialog.run() == Gtk.ResponseType.ACCEPT:
