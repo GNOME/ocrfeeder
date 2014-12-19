@@ -1301,9 +1301,13 @@ class QueuedEventsProgressDialog(Gtk.Dialog):
 
 class PreferencesDialog(Gtk.Dialog):
 
-    def __init__(self, configuration_manager, ocr_engines):
-        super(PreferencesDialog, self).__init__(_('Preferences'), flags = Gtk.DialogFlags.MODAL, buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
-                      Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
+    def __init__(self, parent, configuration_manager, ocr_engines):
+        super(PreferencesDialog, self).__init__(_('Preferences'), parent=parent,
+                                            flags = Gtk.DialogFlags.MODAL,
+                                            buttons = (Gtk.STOCK_CANCEL,
+                                                       Gtk.ResponseType.REJECT,
+                                                       Gtk.STOCK_OK,
+                                                       Gtk.ResponseType.ACCEPT))
         self.configuration_manager = configuration_manager
         self.ocr_engines = ocr_engines
         self.notebook = Gtk.Notebook()

@@ -384,7 +384,10 @@ class Studio:
         self.source_images_controler.spellCheck(locale.getdefaultlocale()[0])
 
     def preferences(self, widget = None):
-        preferences_dialog = widgetPresenter.PreferencesDialog(self.configuration_manager, self.ocr_engines_manager.ocr_engines)
+        parent = self.main_window.window
+        preferences_dialog = widgetPresenter.PreferencesDialog(parent,
+                                            self.configuration_manager,
+                                            self.ocr_engines_manager.ocr_engines)
         if preferences_dialog.run() == Gtk.ResponseType.ACCEPT:
             preferences_dialog.saveToManager()
             self.source_images_controler.updateFromConfiguration()
