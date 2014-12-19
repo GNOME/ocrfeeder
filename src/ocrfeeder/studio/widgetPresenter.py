@@ -1693,6 +1693,7 @@ class PreferencesDialog(Gtk.Dialog):
                         'support the one chosen, it may result in blank text.\n'
                         'You can choose "No Language" to prevent this.'))
         alignment = Gtk.Alignment.new(0, 0, 1, 0)
+        label.set_line_wrap(True)
         alignment.add(label)
         vbox.pack_start(alignment, False, False, 12)
         label = Gtk.Label(_('Default _language:'))
