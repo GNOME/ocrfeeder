@@ -1301,6 +1301,8 @@ class QueuedEventsProgressDialog(Gtk.Dialog):
 
 class PreferencesDialog(Gtk.Dialog):
 
+    PREFERENCES_DIALOG_SIZE = (600, 500)
+
     def __init__(self, parent, configuration_manager, ocr_engines):
         super(PreferencesDialog, self).__init__(_('Preferences'), parent=parent,
                                             flags = Gtk.DialogFlags.MODAL,
@@ -1324,6 +1326,7 @@ class PreferencesDialog(Gtk.Dialog):
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
         self.vbox.add(self.notebook)
         self.set_icon_from_file(WINDOW_ICON)
+        self.set_size_request(*self.PREFERENCES_DIALOG_SIZE)
         self.vbox.show_all()
 
     def __getWindowSize(self):
