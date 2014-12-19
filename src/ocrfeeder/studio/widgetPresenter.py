@@ -1375,7 +1375,11 @@ class PreferencesDialog(Gtk.Dialog):
             general_box.pack_start(arg, False, True, 0)
         label = Gtk.Label(_('_Recognition'))
         label.set_use_underline(True)
-        self.notebook.append_page(general_box, label)
+        scrolled_window = Gtk.ScrolledWindow()
+        scrolled_window.set_property('vexpand', True)
+        scrolled_window.set_property('hexpand', True)
+        scrolled_window.add(general_box)
+        self.notebook.append_page(scrolled_window, label)
 
     def __makeColors(self):
         colors_frame = PlainFrame(_('Select boxes\' colors'))
