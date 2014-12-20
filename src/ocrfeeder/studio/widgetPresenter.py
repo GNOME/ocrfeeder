@@ -19,7 +19,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from customWidgets import PlainFrame, PlainExpander
 from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.util import lib, PAPER_SIZES
 from ocrfeeder.util.configuration import ConfigurationManager
@@ -2172,3 +2171,33 @@ class SpellCheckerDialog():
     def __fillSuggest(self, suggests):
         for suggest in suggests:
             self.suggestions_list.append([suggest])
+
+class PlainFrame(Gtk.Frame):
+
+    def __init__(self, label):
+        super(PlainFrame, self).__init__()
+        label_widget = Gtk.Label()
+        label_widget.set_markup('<b>' + label + '</b>')
+        self.set_label_widget(label_widget)
+        self._container = Gtk.Alignment.new(0, 0, 1, 1)
+        self._container.set_padding(12, 0, 12, 12)
+        super(PlainFrame, self).add(self._container)
+        self.set_shadow_type(Gtk.ShadowType.NONE)
+
+    def add(self, widget):
+        self._container.add(widget)
+
+class PlainExpander(Gtk.Expander):
+
+    def __init__(self, label):
+        super(PlainExpander, self).__init__()
+        label_widget = Gtk.Label()
+        label_widget.set_markup('<b>' + label + '</b>')
+        self.set_label_widget(label_widget)
+        self._container = Gtk.Alignment.new(0, 0, 1, 1)
+        self._container.set_padding(12, 0, 12, 12)
+        super(PlainExpander, self).add(self._container)
+        self.set_expanded(False)
+
+    def add(self, widget):
+        self._container.add(widget)

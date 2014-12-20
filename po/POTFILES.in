@@ -7,7 +7,6 @@ src/ocrfeeder/feeder/documentGeneration.py
 src/ocrfeeder/feeder/imageManipulation.py
 src/ocrfeeder/feeder/layoutAnalysis.py
 src/ocrfeeder/feeder/ocrEngines.py
-src/ocrfeeder/studio/customWidgets.py
 src/ocrfeeder/studio/dataHolder.py
 src/ocrfeeder/studio/studioBuilder.py
 src/ocrfeeder/studio/widgetModeler.py
