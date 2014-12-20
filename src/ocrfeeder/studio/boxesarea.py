@@ -53,8 +53,6 @@ class BoxesArea(GooCanvas.Canvas):
         self.frame = []
         self.setBackgroundImage(image_path)
         self.grab_focus(self.image)
-        #style = Gtk.widget_get_default_style()
-        #self.set_property('background-color', style.bg[Gtk.STATE_NORMAL].to_string())
         self.realize()
         self.get_root_item().add_child(self.image, 0)
         self.area_fill_rgba = (94, 156, 235, 150)
