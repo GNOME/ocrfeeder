@@ -167,7 +167,7 @@ class MainWindow:
 
         self.main_box.pack_start(tool_bar, False, False, 0)
         odt_export_button = ui_manager.get_widget('/ToolBar/GenerateODT')
-        odt_export_button.set_icon_name('ooo-writer')
+        odt_export_button.set_icon_name('x-office-document')
         detection_button = ui_manager.get_widget('/ToolBar/OCRFeederReconDocument')
         detection_icon = Gtk.Image.new_from_file(DETECT_ICON)
         detection_icon.show()
