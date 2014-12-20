@@ -29,7 +29,7 @@ OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <me@joaquimrocha.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <me@joaquimrocha.com>']
 OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2013 Joaquim Rocha\n' \
                       'Copyright © 2009-2012 Igalia, SL'
-OCRFEEDER_WEBSITE = 'http://live.gnome.org/OCRFeeder'
+OCRFEEDER_WEBSITE = 'https://wiki.gnome.org/Apps/OCRFeeder'
 GPL_STATEMENT = """
     OCRFeeder is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
