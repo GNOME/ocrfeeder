@@ -21,6 +21,7 @@
 import sys
 import os
 import locale
+from gi.repository import GLib
 
 OCRFEEDER_STUDIO_NAME = 'OCRFeeder'
 OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
@@ -47,6 +48,7 @@ GPL_STATEMENT = """
 OCRFEEDER_STUDIO_COMMENTS = 'The complete OCR suite.'
 
 # DIRECTORIES
+USER_CONFIG_DIR = os.path.join(GLib.get_user_config_dir(), OCRFEEDER_COMPACT_NAME)
 DEFAULT_SYSTEM_APP_DIR = os.path.join('@prefix@', 'share', 'ocrfeeder')
 APP_DIR = DEFAULT_SYSTEM_APP_DIR
 RESOURCES_DIR = APP_DIR

@@ -20,7 +20,7 @@
 
 from ocrfeeder.feeder.ocrEngines import Engine
 from ocrfeeder.util.lib import getExecPath, debug
-from ocrfeeder.util.constants import OCRFEEDER_COMPACT_NAME
+from ocrfeeder.util.constants import OCRFEEDER_COMPACT_NAME, USER_CONFIG_DIR
 import tempfile
 import shutil
 from xml.dom import minidom
@@ -128,7 +128,8 @@ class ConfigurationManager(object):
     conf = dict(DEFAULTS)
 
     def __init__(self):
-        self.user_configuration_folder = os.path.expanduser('~/.ocrfeeder')
+        self.user_configuration_folder = USER_CONFIG_DIR
+        self.migrateOldConfigFolder()
         self.user_engines_folder = os.path.join(self.user_configuration_folder, 'engines')
         self.makeUserConfigurationFolder()
         self.has_unpaper = self.getDefault(self.UNPAPER)
@@ -395,6 +396,15 @@ class ConfigurationManager(object):
         except:
             debug('Error when removing the temporary folder: ' + \
                   self.TEMPORARY_FOLDER)
+
+    def migrateOldConfigFolder(self):
+        old_config_folder = os.path.expanduser('~/.ocrfeeder')
+        if os.path.exists(old_config_folder) and \
+           not os.path.exists(self.user_configuration_folder):
+            shutil.copytree(old_config_folder, self.user_configuration_folder)
+            debug('Migrated old configuration directory "%s" to the '
+                  'new one: "%s"' %
+                  (old_config_folder, self.user_configuration_folder))
 
     text_fill = property(getTextFill,
                          setTextFill)
