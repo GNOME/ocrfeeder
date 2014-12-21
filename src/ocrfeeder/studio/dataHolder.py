@@ -87,11 +87,11 @@ class DataBox(GObject.GObject):
         self.text_data = TextData(face, size, justification, line_space, letter_space)
 
     def setX(self, new_x):
-        self.x = new_x
+        self.x = max(0, new_x)
         self.emit('changed_x', self.x)
 
     def setY(self, new_y):
-        self.y = new_y
+        self.y = max(0, new_y)
         self.emit('changed_y', self.y)
 
     def setWidth(self, new_width):
