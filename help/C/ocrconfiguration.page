@@ -80,7 +80,7 @@ following fields:</p>
 </list>
 
 <note style="advanced"><p>The engines' configuration is stored in their own XML file
-in the user's home under <em>.ocrfeeder/engines/</em>.</p></note>
+in the user's home under <em>.config/ocrfeeder/engines/</em>.</p></note>
 
 </section>
 
