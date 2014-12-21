@@ -1466,6 +1466,7 @@ class PreferencesDialog(Gtk.Dialog):
             self.auto_window_size.set_active(True)
             self.custom_window_size_entry.set_sensitive(False)
         window_size_box = Gtk.VBox()
+        window_size_box.set_property('halign', Gtk.Align.START)
         label = Gtk.Label(_("The window size is the detection algorithm's "
                             "subdivision areas' size."))
         window_size_box.pack_start(label, False, False, 0)
@@ -1685,6 +1686,7 @@ class PreferencesDialog(Gtk.Dialog):
                         'support the one chosen, it may result in blank text.\n'
                         'You can choose "No Language" to prevent this.'))
         alignment = Gtk.Alignment.new(0, 0, 1, 0)
+        alignment.set_property('halign', Gtk.Align.START)
         label.set_line_wrap(True)
         alignment.add(label)
         vbox.pack_start(alignment, False, False, 12)
