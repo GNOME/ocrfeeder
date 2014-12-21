@@ -28,7 +28,7 @@ OCRFEEDER_COMPACT_NAME = 'ocrfeeder'
 OCRFEEDER_STUDIO_VERSION = '@VERSION@'
 OCRFEEDER_STUDIO_AUTHORS = ['Joaquim Rocha <me@joaquimrocha.com>']
 OCRFEEDER_STUDIO_ARTISTS = ['Joaquim Rocha <me@joaquimrocha.com>']
-OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2013 Joaquim Rocha\n' \
+OCRFEEDER_COPYRIGHT = 'Copyright © 2008-2014 Joaquim Rocha\n' \
                       'Copyright © 2009-2012 Igalia, SL'
 OCRFEEDER_WEBSITE = 'https://wiki.gnome.org/Apps/OCRFeeder'
 GPL_STATEMENT = """
