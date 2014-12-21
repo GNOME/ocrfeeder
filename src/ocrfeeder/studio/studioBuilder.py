@@ -63,7 +63,7 @@ class Studio:
 
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()
-        self.main_window.setTitle(self.title)
+        self.main_window.set_title(self.title)
         self.document_generator_manager = DocumentGeneratorManager()
         self.configuration_manager = ConfigurationManager()
         self.ocr_engines_manager = OcrEnginesManager(self.configuration_manager)
@@ -350,7 +350,7 @@ class Studio:
     def setProjectName(self, project_name):
         self.project_name = project_name
         project_title = os.path.splitext(os.path.basename(self.project_name))[0]
-        self.main_window.setTitle('%s - %s' % (self.title, project_title))
+        self.main_window.set_title('%s - %s' % (self.title, project_title))
 
     def saveProjectAs(self, widget = None):
         file_name = self.source_images_controler.saveProjectAs()

@@ -71,8 +71,6 @@ class MainWindow(Gtk.Window):
         self.action_group = None
 
         self.show()
-    def setTitle(self, new_title):
-        self.set_title(new_title)
 
     def setHeader(self, menu_items, tool_items):
         ui_manager = Gtk.UIManager()
