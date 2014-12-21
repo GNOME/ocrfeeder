@@ -8,7 +8,7 @@
     <title type='text'>OCRFeeder Document Conversion System</title>
     <credit type="author">
       <name>Joaquim Rocha</name>
-      <email>jrocha@igalia.com</email>
+      <email>me@joaquimrocha.com</email>
     </credit>
 
     <include href="legal.xml" xmlns="http://www.w3.org/2001/XInclude" />
