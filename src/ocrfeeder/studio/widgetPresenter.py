@@ -347,13 +347,19 @@ class BoxEditor(Gtk.ScrolledWindow):
 
         self.make_text_button = self.__makeRadioButton(_('_Text'), 'gnome-mime-text')
         self.make_text_button.set_tooltip_text(_('Set this content area to be the text type'))
+        self.make_text_button.set_property('draw-indicator', False)
+        self.make_text_button.set_property('relief', Gtk.ReliefStyle.NORMAL)
         self.make_image_button = self.__makeRadioButton(_('_Image'), 'gnome-mime-image', self.make_text_button)
         self.make_image_button.set_tooltip_text(_('Set this content area to be the image type'))
+        self.make_image_button.set_property('draw-indicator', False)
+        self.make_image_button.set_property('relief', Gtk.ReliefStyle.NORMAL)
         box_type_frame = PlainFrame(_('Type'))
-        box_type_table = Gtk.Table(1, 2, True)
-        box_type_table.attach(self.make_text_button, 0, 1, 0, 1)
-        box_type_table.attach(self.make_image_button, 1, 2, 0, 1)
-        box_type_frame.add(box_type_table)
+        button_box = Gtk.ButtonBox.new(Gtk.Orientation.HORIZONTAL)
+        button_box.set_layout(Gtk.ButtonBoxStyle.EXPAND)
+        button_box.add(self.make_text_button)
+        button_box.add(self.make_image_button)
+        button_box.set_property('halign', Gtk.Align.CENTER)
+        box_type_frame.add(button_box)
         self.contents.pack_start(box_type_frame, False, False, 0)
 
         self.image_width = image_width
