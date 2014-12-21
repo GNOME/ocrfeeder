@@ -327,7 +327,7 @@ class ImageReviewer_Controler:
                 if not self.__addImage(image_path_list[index], index == 0):
                     debug('Failed to load image "%s"' % image_path_list[index])
             return
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        dialog = QueuedEventsProgressDialog(self.main_window)
         for index in range(0, item_list_length):
             image_path = image_path_list[index]
             item = AsyncItem(self.__imagePreProcessing,
@@ -391,7 +391,7 @@ class ImageReviewer_Controler:
 
     def deskewCurrentImage(self, widget):
         reviewer = self.__getCurrentReviewer()
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        dialog = QueuedEventsProgressDialog(self.main_window)
         item = AsyncItem(self.__deskewImage,
                          (reviewer.path_to_image,),
                          self.__deskewCurrentImageFinishedCb,
@@ -466,7 +466,7 @@ class ImageReviewer_Controler:
         image_reviewer.performOcrForSelectedBoxes()
 
     def __confirmOveritePossibilityByRecognition(self):
-        confirm_recognition = Gtk.MessageDialog(self.main_window.window,
+        confirm_recognition = Gtk.MessageDialog(self.main_window,
                                                 message_type = Gtk.MessageType.QUESTION,
                                                 buttons = Gtk.ButtonsType.YES_NO,
                                                 flags = Gtk.DialogFlags.MODAL |
@@ -488,7 +488,7 @@ class ImageReviewer_Controler:
            self.__confirmOveritePossibilityByRecognition() != Gtk.ResponseType.YES:
                 return
         page = image_reviewer.page
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        dialog = QueuedEventsProgressDialog(self.main_window)
         item = AsyncItem(self.__performRecognitionForPage,
                          (page,),
                          self.__performRecognitionForPageFinishedCb,
@@ -499,7 +499,7 @@ class ImageReviewer_Controler:
 
     def recognizeDocument(self):
         pages = self.pages_icon_view.getAllPages()
-        dialog = QueuedEventsProgressDialog(self.main_window.window)
+        dialog = QueuedEventsProgressDialog(self.main_window)
         items = []
         i = 1
         total = len(pages)
@@ -606,7 +606,7 @@ class ImageReviewer_Controler:
             document_generator.save()
 
     def __askPdfFromScratch(self):
-        ask_pdf_type_dialog = Gtk.MessageDialog(self.main_window.window,
+        ask_pdf_type_dialog = Gtk.MessageDialog(self.main_window,
                     Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
                       buttons = Gtk.ButtonsType.OK_CANCEL)
         ask_pdf_type_dialog.set_markup(_('What kind of PDF document do you '
@@ -650,7 +650,7 @@ class ImageReviewer_Controler:
         project_saver.serialize(project_name)
 
     def openProject(self, clear_current = True):
-        open_dialog = FileDialog(self.main_window.window, 'open',
+        open_dialog = FileDialog(self.main_window, 'open',
                                  file_filters = [(_('OCRFeeder Projects'), [], ['*.ocrf'])])
         response = open_dialog.run()
         project_file = None
@@ -671,7 +671,7 @@ class ImageReviewer_Controler:
     def __askForNumberOfPages(self, title):
         # Sync the current reviewer's page with its data
         self.__getCurrentReviewer().savePageData()
-        export_dialog = PagesToExportDialog(self.main_window.window,
+        export_dialog = PagesToExportDialog(self.main_window,
                                             title)
         pages = self.pages_icon_view.getAllPages()
         # When there's only one document loaded or none,
@@ -689,7 +689,7 @@ class ImageReviewer_Controler:
             return None
 
     def __askForFileName(self, extension = ''):
-        save_dialog = FileDialog(self.main_window.window, 'save')
+        save_dialog = FileDialog(self.main_window, 'save')
         response = save_dialog.run()
         if response == Gtk.ResponseType.OK:
             file_name = save_dialog.get_filename()
@@ -717,7 +717,7 @@ class ImageReviewer_Controler:
     def choosePageSize(self):
         current_reviewer = self.__getCurrentReviewer()
         current_page = current_reviewer.page
-        page_size_dialog = PageSizeDialog(self.main_window.window,
+        page_size_dialog = PageSizeDialog(self.main_window,
                                           (current_page.width, current_page.height))
         response = page_size_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
@@ -743,7 +743,7 @@ class ImageReviewer_Controler:
 
     def unpaperTool(self):
         current_reviewer = self.__getCurrentReviewer()
-        unpaper_dialog = UnpaperDialog(self.main_window.window,
+        unpaper_dialog = UnpaperDialog(self.main_window,
                                        current_reviewer,
                                     self.configuration_manager.unpaper,
                                     self.configuration_manager.TEMPORARY_FOLDER)
@@ -808,7 +808,7 @@ class ImageReviewer_Controler:
 
     def spellCheck(self, locale):
         current_reviewer = self.__getCurrentReviewer()
-        SpellCheckerDialog(self.main_window.window, current_reviewer, locale)
+        SpellCheckerDialog(self.main_window, current_reviewer, locale)
 
     def updateOcrEngines(self, ocr_engines):
         n_pages = self.notebook.get_n_pages()

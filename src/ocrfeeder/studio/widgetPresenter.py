@@ -38,12 +38,12 @@ import Queue
 import time
 _ = gettext.gettext
 
-class MainWindow:
+class MainWindow(Gtk.Window):
 
     def __init__(self):
-        self.window = Gtk.Window(Gtk.WindowType.TOPLEVEL)
-        self.window.set_size_request(800, 600)
-        self.window.set_icon_from_file(WINDOW_ICON)
+        Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
+        self.set_size_request(800, 600)
+        self.set_icon_from_file(WINDOW_ICON)
         self.main_box = Gtk.VBox()
         self.main_box.show()
 
@@ -56,7 +56,7 @@ class MainWindow:
         self.main_area.show()
         self.main_box.pack_end(self.main_area, True, True, 0)
 
-        self.window.add(self.main_box)
+        self.add(self.main_box)
         self.main_area_left = Gtk.ScrolledWindow()
         self.main_area_left.get_accessible().set_name(_('Pages'))
         self.main_area_left.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
@@ -70,14 +70,14 @@ class MainWindow:
         self.main_area.pack2(self.notebook, False, False)
         self.action_group = None
 
-        self.window.show()
+        self.show()
     def setTitle(self, new_title):
-        self.window.set_title(new_title)
+        self.set_title(new_title)
 
     def setHeader(self, menu_items, tool_items):
         ui_manager = Gtk.UIManager()
         accel_group = ui_manager.get_accel_group()
-        self.window.add_accel_group(accel_group)
+        self.add_accel_group(accel_group)
         action_group = Gtk.ActionGroup('MainWindow')
         action_group.add_actions([('File', None, _('_File')),
                                   ('Quit', Gtk.STOCK_QUIT, _('_Quit'), None, _('Exit the program'), menu_items['exit']),
@@ -186,7 +186,7 @@ class MainWindow:
         self.spellchecker_menu.set_sensitive(False)
 
     def setDestroyEvent(self, function):
-        self.window.connect('delete-event', function)
+        self.connect('delete-event', function)
 
     def setNumberOfPages(self, nr_images):
         if not self.action_group:
@@ -2051,10 +2051,10 @@ class SpellCheckerDialog():
     def __init__(self, parent, current_reviewer, language):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(OCRFEEDER_SPELLCHECKER_UI)
-        self.window = self.builder.get_object('check_spelling_window')
-        self.window.set_transient_for(parent)
+        self = self.builder.get_object('check_spelling_window')
+        self.set_transient_for(parent)
         self.builder.connect_signals(self)
-        self.window.present()
+        self.present()
         self.reviewer = current_reviewer
         self.text = self.reviewer.editor.box_editor.getText()
         self.dictButtons = {'change_button':self.builder.get_object('change_button'),
@@ -2123,10 +2123,10 @@ class SpellCheckerDialog():
         self.__next()
 
     def close_button_clicked_cb(self, widget):
-        self.window.destroy()
+        self.destroy()
 
     def check_spelling_window_delete_event_cb(self, widget, data):
-        self.window.destroy()
+        self.destroy()
 
     def __set_no_more(self):
         self.misspelled_word.set_text('')
