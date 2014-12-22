@@ -12,6 +12,13 @@ For help on how to use the command line interface, run the command:
 
 The graphical interface also features documentation on how to use it, which can be accessed through the Help menu or by pressing F1.
 
+Building from git
+==================
+
+$ git clone git://git.gnome.org/ocrfeeder
+$ cd ocrfeeder
+$ ./autogen.sh
+$ make
 
 Copyright
 ==========
