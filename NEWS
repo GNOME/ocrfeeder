@@ -1,3 +1,23 @@
+Version 0.8.1
+=============
+
+Bug Fixes
+----------
+
+* Fix Gtk thread related problems
+* Fix unicode issues when saving a project and exporting a document
+* Fix issue when exporting a picture in a document from a loaded project
+* Fix ODT exportation button's icon
+
+Improvements
+-------------
+
+* The Preferences dialog is now smaller (the big contents are wrapped
+  in a scrolled window)
+* All dialogs are now centered to the main window
+* Use XDG user's configuration directory instead of .ocrfeeder
+
+
 Version 0.8
 ============
 
