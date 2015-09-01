@@ -1,15 +1,15 @@
 # Spanish translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014.
 #
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2014-03-27 23:36+0000\n"
-"PO-Revision-Date: 2014-03-26 17:58+0100\n"
+"POT-Creation-Date: 2014-12-21 00:32+0000\n"
+"PO-Revision-Date: 2015-09-01 \n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Spanish <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -349,12 +349,15 @@ msgstr ""
 "$FILE.txt; rm $FILE</em>."
 
 #: C/ocrconfiguration.page:82(p)
+#| msgid ""
+#| "The engines' configuration is stored in their own XML file in the user's "
+#| "home under <em>.ocrfeeder/engines/</em>."
 msgid ""
 "The engines' configuration is stored in their own XML file in the user's "
-"home under <em>.ocrfeeder/engines/</em>."
+"home under <em>.config/ocrfeeder/engines/</em>."
 msgstr ""
 "La configuración de los motores se almacena en su propio archivo XML en la "
-"carpeta personal del usuario, en <em>.ocrfeeder/engines/</em>."
+"carpeta personal del usuario, en <em>.config/ocrfeeder/engines/</em>."
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -571,8 +574,9 @@ msgid "Joaquim Rocha"
 msgstr "Joaquim Rocha"
 
 #: C/index.page:11(email)
-msgid "jrocha@igalia.com"
-msgstr "jrocha@igalia.com"
+#| msgid "Joaquim Rocha"
+msgid "me@joaquimrocha.com"
+msgstr "me@joaquimrocha.com"
 
 #: C/index.page:18(p)
 msgid ""
@@ -1114,6 +1118,9 @@ msgstr ""
 #: C/addingfolder.page:0(None)
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011"
+
+#~ msgid "jrocha@igalia.com"
+#~ msgstr "jrocha@igalia.com"
 
 #~ msgid ""
 #~ "After the recognition and eventual manual edition has been performed, it "
