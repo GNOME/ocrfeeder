@@ -1,12 +1,12 @@
-include $(top_srcdir)/gnome-doc-utils.make
+@YELP_HELP_RULES@
 
-DOC_ID = ocrfeeder
+HELP_ID = ocrfeeder
 
-DOC_FIGURES = \
+HELP_MEDIA = \
 	figures/areas-edition.png \
 	figures/content-areas.png
 
-DOC_PAGES = \
+HELP_FILES = \
 	addingfolder.page \
 	addingimage.page \
 	automaticrecognition.page \
@@ -22,6 +22,4 @@ DOC_PAGES = \
 	projects.page \
 	unpaper.page
 
-DOC_LINGUAS = cs de el es fr gl ru sl uk
-
-dist-hook: doc-dist-hook
+HELP_LINGUAS = cs de el es fr gl ru sl uk

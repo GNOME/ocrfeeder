@@ -439,7 +439,7 @@ class Studio:
 
     def showHelpContents(self, widget = None):
         Gtk.show_uri(self.main_window.get_screen(),
-                     'ghelp:ocrfeeder',
+                     'help:ocrfeeder',
                      Gtk.get_current_event_time())
 
     def zoomIn(self, widget = None):

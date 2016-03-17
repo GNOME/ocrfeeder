@@ -51,7 +51,7 @@ dnl == intltool check ==
 IT_PROG_INTLTOOL([0.35.0])
 
 dnl == Documentation ==
-GNOME_DOC_INIT
+YELP_HELP_INIT
 
 dnl == generate makefiles ==
 AC_OUTPUT([
