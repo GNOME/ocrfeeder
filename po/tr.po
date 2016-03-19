@@ -1,0 +1,1205 @@
+# Turkish translation for ocrfeeder.
+# Copyright (C) 2015 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Simge Sezgin <simgesezgin88@gmail.com>, 2015.
+# Muhammet Kara <muhammetk@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=ocrfeeder&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-06-01 11:08+0000\n"
+"PO-Revision-Date: 2016-03-19 15:56+0200\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
+"X-POOTLE-MTIME: 1432996976.000000\n"
+
+#: ../resources/ocrfeeder.desktop.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/ocrfeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "Tam OCR takımı."
+
+#: ../resources/spell-checker.ui.h:1
+msgid "Check spelling"
+msgstr "Yazım denetimi"
+
+#: ../resources/spell-checker.ui.h:2
+msgid "Misspelled word:"
+msgstr "Hatalı yazılmış sözcük:"
+
+#: ../resources/spell-checker.ui.h:3
+msgid "Change _to:"
+msgstr "_Şununla değiştir:"
+
+#: ../resources/spell-checker.ui.h:4
+msgid "_Suggestions:"
+msgstr "_Öneriler:"
+
+#: ../resources/spell-checker.ui.h:5
+msgid "Cha_nge"
+msgstr "Değ_iştir"
+
+#: ../resources/spell-checker.ui.h:6
+msgid "Ignore _All"
+msgstr "_Tümünü Yoksay"
+
+#: ../resources/spell-checker.ui.h:7
+msgid "Change A_ll"
+msgstr "T_ümünü Değiştir"
+
+#: ../resources/spell-checker.ui.h:8
+#: ../src/ocrfeeder/studio/studioBuilder.py:422
+msgid "_Ignore"
+msgstr "_Yoksay"
+
+#: ../resources/spell-checker.ui.h:9
+msgid "Language:"
+msgstr "Dil:"
+
+#: ../resources/spell-checker.ui.h:10
+msgid "<b>Language</b>"
+msgstr "<b>Dil</b>"
+
+#: ../src/ocrfeeder/feeder/imageManipulation.py:37
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"Görüntü açılmaya çalışılırken bir sorun oluştu:\n"
+" %s\n"
+"Görüntünün varolduğundan emin olun ya da başka bir biçime dönüştürmeyi "
+"deneyin."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:59
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:60
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:61
+#: ../src/ocrfeeder/studio/studioBuilder.py:245
+msgid "PDF"
+msgstr "PDF"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "Plain Text"
+msgstr "Düz Metin"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:171
+msgid "Images"
+msgstr "Görüntüler"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+msgid "Obtaining scanners"
+msgstr "Tarayıcılar bulunuyor"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+#: ../src/ocrfeeder/studio/widgetModeler.py:340
+#: ../src/ocrfeeder/studio/widgetModeler.py:345
+#: ../src/ocrfeeder/studio/widgetModeler.py:399
+#: ../src/ocrfeeder/studio/widgetModeler.py:496
+msgid "Please wait…"
+msgstr "Lütfen bekleyin…"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+msgid "Scanning"
+msgstr "Taranıyor"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+msgid "No scanner devices were found"
+msgstr "Tarayıcı aygıt bulunamadı"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:221
+#: ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1207
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1218
+msgid "Error"
+msgstr "Hata"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
+msgid "Error scanning page"
+msgstr "Sayfa taranırken hata"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+msgid "Loading PDF"
+msgstr "PDF yükleniyor"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:289
+msgid "Export pages"
+msgstr "Sayfaları dışa aktar"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
+msgid "Are you sure you want to delete the current image?"
+msgstr "Mevcut görüntüyü silmek istediğinizden emin misiniz?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:380
+msgid "Are you sure you want to clear the project?"
+msgstr "Projeyi temizlemek istediğinizden emin misiniz?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:418
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1852
+msgid "No OCR engines available"
+msgstr "Kullanılabilir OCR motoru yok"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1853
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"Sistemde OCR motoru bulunamadı.\n"
+"Lütfen kurulu ve kullanılabilir OCR motoru olduğundan emin olun."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/studioBuilder.py:479
+msgid "_Open OCR Engines Manager Dialog"
+msgstr "OCR Motoru Yönetim Penceresini _Aç"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:477
+msgid "_Keep Current Configuration"
+msgstr "Mevcut Yapılandırmayı _Koru"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:481
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
+"manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
+msgstr ""
+"Aşağıdaki OCR motorlarının değişkenlerinin değiştirilmesi gerekebilir fakat "
+"öntanımlı yapılandırmaları değiştirilmiş görünüyor bu yüzden elle güncelleme "
+"gerektiriyor:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"Eğer değişikliklerinizi tutmak istemezseniz sadece şu anki yapılandırmayı "
+"kaldırabilir ve OCR motorlarınızı yeniden belirleyebilirsiniz."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:502
+msgid "The project hasn't been saved."
+msgstr "Proje kaydedilemedi."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:503
+msgid "Do you want to save it before closing?"
+msgstr "Kapatmadan önce kaydetmek istiyor musunuz?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:504
+msgid "Close anyway"
+msgstr "Yine de kapat"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:70
+msgid "Selectable areas"
+msgstr "Seçilebilir alanlar"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:340
+msgid "Preparing image"
+msgstr "Görüntü hazırlanıyor"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:342
+#, python-format
+msgid "Preparing image %(current_index)s/%(total)s"
+msgstr "Görüntü hazırlanıyor %(current_index)s/%(total)s"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:399
+msgid "Deskewing image"
+msgstr "Görüntü eğriliği düzeltiliyor"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:426
+msgid "No images added"
+msgstr "Hiç görüntü eklenemedi"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:429
+#, python-format
+msgid "Zoom: %s %%"
+msgstr "Büyüt: %s %%"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:431
+#, python-format
+msgid "Resolution: %.2f x %.2f"
+msgstr "Çözünürlük: %.2f x %.2f"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:433
+#, python-format
+msgid "Page size: %i x %i"
+msgstr "Sayfa boyutu: %i x %i"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:474
+msgid ""
+"There are changes that may be overwritten by the new recognition.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+"Yeni tanımlamalara göre üzerine yazılabilir değişiklikler var.\n"
+"\n"
+"Devam etmek istiyor musunuz?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:496
+msgid "Recognizing Page"
+msgstr "Sayfa Tanıma"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:513
+msgid "Recognizing Document"
+msgstr "Belge Tanıma"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:514
+#, python-format
+#| msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgstr "Sayfa %(page_number)s/%(total_pages)s tanınıyor. Lütfen bekleyin…"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:588
+#, python-format
+msgid "Export to %(format_name)s"
+msgstr "%(format_name)s dışarı aktar"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:612
+msgid "What kind of PDF document do you wish?"
+msgstr "Ne tür PDF belgesi istiyorsunuz?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:614
+msgid "From scratch"
+msgstr "En baştan"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:616
+msgid "Creates a new PDF from scratch."
+msgstr "Baştan yeni bir PDF oluşturur."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:619
+msgid "Searchable PDF"
+msgstr "Aranabilir PDF"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:620
+msgid "Creates a PDF based on the images but with searchable text."
+msgstr "Aranabilir metin ile görüntü tabanlı PDF oluşturur."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:654
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder Projeleri"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:701
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+"<b>\"%(name)s\" olarak adlandırılmış bir dosya zaten var. Bununla yer "
+"değiştirmek ister misiniz?</b>\n"
+"\n"
+"Dosya \"%(dir)s\" içinde var. Yer değiştirme işlemi içeriğinin üzerine "
+"yazacak."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:708
+msgid "Replace"
+msgstr "Değiştir"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:61
+#: ../src/ocrfeeder/studio/pagesiconview.py:80
+msgid "Pages"
+msgstr "Sayfalar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:80
+msgid "_File"
+msgstr "_Dosya"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:81
+msgid "_Quit"
+msgstr "_Çık"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:81
+msgid "Exit the program"
+msgstr "Programdan çık"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "_Open"
+msgstr "_Aç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "Open project"
+msgstr "Proje aç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "_Save"
+msgstr "_Kaydet"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "Save project"
+msgstr "Proje kaydet"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "_Save As…"
+msgstr "Farklı _Kaydet…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "Save project with a chosen name"
+msgstr "Seçilen bir ad ile proje kaydet"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "_Add Image"
+msgstr "Görüntü _Ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "Add another image"
+msgstr "Başka görüntü ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Add _Folder"
+msgstr "_Klasör Ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Add all images in a folder"
+msgstr "Bütün görüntüleri bir klasöre ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Append Project"
+msgstr "Proje Ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Load a project and append it to the current one"
+msgstr "Bir proje yükle ve mevcut olana ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "_Import PDF"
+msgstr "PDF _İçe Aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Import PDF"
+msgstr "PDF İçe Aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "_Export…"
+msgstr "_Dışa Aktar…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Export to a chosen format"
+msgstr "Seçilen biçime dışa aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "_Edit"
+msgstr "_Düzenle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "_Edit Page"
+msgstr "Sayfayı _Düzenle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "Edit page settings"
+msgstr "Sayfa ayarlarını düzenle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+msgid "_Preferences"
+msgstr "_Tercihler"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+msgid "Configure the application"
+msgstr "Uygulamayı yapılandır"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "_Delete Page"
+msgstr "Sayfayı _Sil"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "Delete current page"
+msgstr "Mevcut sayfayı sil"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "Move Page Do_wn"
+msgstr "Sayfayı Aş_ağı Taşı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "Move page down"
+msgstr "Sayfayı aşağı taşı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Move Page Up"
+msgstr "Sayfayı Yukarı Taşı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Move page up"
+msgstr "Sayfayı yukarı taşı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Select Next Page"
+msgstr "Sonraki Sayfayı Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Select next page"
+msgstr "Sonraki sayfayı seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Select Previous Page"
+msgstr "Önceki Sayfayı Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Select previous page"
+msgstr "Önceki sayfayı seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "_Clear Project"
+msgstr "Proje _Temizle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Delete all images"
+msgstr "Bütün görüntüleri sil"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "_View"
+msgstr "_Görünüm"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "Zoom In"
+msgstr "Yakınlaştır"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+msgid "Zoom Out"
+msgstr "Uzaklaştır"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+msgid "Best Fit"
+msgstr "En Uygun"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+msgid "Normal Size"
+msgstr "Normal Boyut"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+msgid "_Document"
+msgstr "_Belge"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1419
+msgid "_Tools"
+msgstr "_Araçlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+msgid "_OCR Engines"
+msgstr "_OCR Motorları"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+msgid "Manage OCR engines"
+msgstr "OCR motorlarını yönet"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+msgid "_Unpaper"
+msgstr "_Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+msgid "Process image with unpaper"
+msgstr "Unpaper ile görüntü işle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "Image Des_kewer"
+msgstr "Görüntü Eğriliği_Düzelticisi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "Tries to straighten the image"
+msgstr "Görüntü düzeltme denemeleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+#: ../src/ocrfeeder/studio/widgetPresenter.py:112
+msgid "_Help"
+msgstr "_Yardım"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:112
+msgid "Help contents"
+msgstr "Yardım içerikleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+msgid "_About"
+msgstr "_Hakkında"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+msgid "About this application"
+msgstr "Bu uygulama hakkında"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "_Recognize Document"
+msgstr "Belge _Tanı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:116
+msgid "Automatically detect and recognize all pages"
+msgstr "Bütün sayfaları otomatik algıla ve tanı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:119
+msgid "R_ecognize Page"
+msgstr "Sayfa T_anı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:120
+msgid "Automatically detect and recognize the current page"
+msgstr "Mevcut sayfayı otomatik algıla ve tanı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:123
+msgid "Recognize _Selected Areas"
+msgstr "_Seçilen Alanları Tanı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:124
+msgid "Recognize Selected Areas"
+msgstr "Seçilen Alanları Tanı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:127
+msgid "Select _All Areas"
+msgstr "_Bütün Alanları Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:128
+msgid "Select all content areas"
+msgstr "Tüm içerik alanlarını seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:131
+msgid "Select _Previous Area"
+msgstr "_Önceki Alanı Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:132
+msgid "Select the previous area from the content areas"
+msgstr "İçerik alanlarından önceki alanı seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:135
+msgid "Select _Next Area"
+msgstr "_Sonraki Alanı Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:136
+msgid "Select the next area from the content areas"
+msgstr "İçerik alanlarından sonraki alanı seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:139
+msgid "Delete Selected Areas"
+msgstr "Seçilen Alanları Sil"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:140
+msgid "Deletes all the currently selected content areas"
+msgstr "Şuanda seçilen tüm içerik alanlarını siler"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "_Generate ODT"
+msgstr "ODT _Oluştur"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "Export to ODT"
+msgstr "ODT olarak dışa aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "Import Page From S_canner"
+msgstr "T_arayıcıdan Sayfa İçe Aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:146
+msgid "Import From Scanner"
+msgstr "Tarayıcıdan İçe Aktar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:149
+msgid "_Copy to Clipboard"
+msgstr "Panoya _Kopyala"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:151
+msgid "Copy recognized text to clipboard"
+msgstr "Tanınan metni geçici taşıma panosuna kopyala"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:154
+msgid "Spell_checker"
+msgstr "Yazım_denetleyicisi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+msgid "Spell Check Recognized Text"
+msgstr "Tanınan Metin Yazım Denetimi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:260
+msgid "No language"
+msgstr "Dil yok"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:326
+msgid "Area editor"
+msgstr "Alan düzenleyici"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:334
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr "İçerik alanlarının üst sol köşesinin X koordinatını ayarlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr "İçerik alanlarının üst sol köşesinin Y koordinatını ayarlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
+msgid "Sets the content area's width"
+msgstr "İçerik alanlarının genişliğini ayarlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:345
+msgid "Sets the content area's height"
+msgstr "İçerik alanlarının yüksekliğini ayarlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
+msgid "_Text"
+msgstr "_Metin"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+msgid "Set this content area to be the text type"
+msgstr "Bu içerik alanını metin türü olarak ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+msgid "_Image"
+msgstr "_Görüntü"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
+msgid "Set this content area to be the image type"
+msgstr "Bu içerik alanını görüntü türü olarak ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
+msgid "Type"
+msgstr "Tür"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:368
+msgid "Clip"
+msgstr "Kırp"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:451
+msgid "Bounds"
+msgstr "Sınır Çizgileri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
+msgid "_X:"
+msgstr "_X:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:465
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:477
+#: ../src/ocrfeeder/studio/widgetPresenter.py:846
+msgid "_Width:"
+msgstr "_Genişlik:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:486
+msgid "Hei_ght:"
+msgstr "Yük_seklik:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:511
+msgid "Left"
+msgstr "Sol"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:515
+msgid "Set text to be left aligned"
+msgstr "Metni sola hizalanmış şekilde ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+msgid "Center"
+msgstr "Orta"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:522
+msgid "Set text to be centered"
+msgstr "Metni ortalanmış şekilde ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:524
+msgid "Right"
+msgstr "Sağ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
+msgid "Set text to be right aligned"
+msgstr "Metni sağa hizalanmış şekilde ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+msgid "Fill"
+msgstr "Doldur"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:536
+msgid "Set text to be fill its area"
+msgstr "Metin alanını doldurmak için ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:546
+msgid "OC_R"
+msgstr "OC_R"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:548
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr "Seçilen OCR motorunu kullanarak bu içerik alanında OCR gerçekleştir."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:554
+msgid "OCR engine to recognize this content area"
+msgstr "İçerik alanını tanımak için OCR motoru"
+
+#. Text Properties
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
+msgid "Text Properties"
+msgstr "Metin Özellikleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
+msgid "Font"
+msgstr "Yazı Tipi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+msgid "Align"
+msgstr "Hizala"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
+msgid "Spacing"
+msgstr "Aralık"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
+msgid "Set the text's letter spacing"
+msgstr "Metnin harf aralığını ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
+msgid "Set the text's line spacing"
+msgstr "Metnin satır aralığını ayarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
+msgid "_Line:"
+msgstr "_Satır:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
+msgid "L_etter:"
+msgstr "H_arf:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
+msgid "Sty_le"
+msgstr "Biç_em"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
+msgid "Angle"
+msgstr "Köşe"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
+msgid "Mis_c"
+msgstr "Diğe_r"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1686
+msgid "Language"
+msgstr "Dil"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+msgid "OCR engine to recogni_ze this area:"
+msgstr "Bu alanı tanım_ak için OCR motoru:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
+msgid "Detect"
+msgstr "Algıla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
+msgid "Angle:"
+msgstr "Köşe:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:739
+msgid "Save File"
+msgstr "Dosya Kaydet"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:742
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:746
+msgid "Open Folder"
+msgstr "Klasör Aç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:779
+msgid "Pages to export"
+msgstr "Dışa aktarın için sayfalar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:781
+msgid "All"
+msgstr "Bütün"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:782
+msgid "Current"
+msgstr "Şu anda"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:803
+msgid "Choose the format"
+msgstr "Biçim seçiniz"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:820
+#: ../src/ocrfeeder/studio/widgetPresenter.py:832
+msgid "Page size"
+msgstr "Sayfa boyutu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:837
+msgid "Custom…"
+msgstr "Özel…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:851
+msgid "_Height:"
+msgstr "_Yükseklik"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:860
+msgid "Affected pages"
+msgstr "Etkilenen sayfalar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:862
+msgid "C_urrent"
+msgstr "Ş_uanki"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:863
+msgid "_All"
+msgstr "_Bütün"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:918
+msgid "Unpaper Image Processor"
+msgstr "Unpaper Görüntü İşleyici"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:937
+msgid "Preview"
+msgstr "Önizleme"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:944
+msgid "_Preview"
+msgstr "_Önizleme"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:971
+msgid "Performing Unpaper"
+msgstr "Unpaper İşlemi Gerçekleştirme"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:971
+msgid "Performing unpaper. Please wait…"
+msgstr "Unpaper işlemi gerçekleştiriliyor. Lütfen bekleyiniz…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1015
+msgid "Noise Filter Intensity"
+msgstr "Gürültü Filtresi Yoğunluğu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1017
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1049
+msgid "Default"
+msgstr "Öntanımlı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1020
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1052
+msgid "None"
+msgstr "Hiçbiri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1047
+msgid "Gray Filter Size"
+msgstr "Gri Süzgeç Boyutu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1050
+msgid "Custom"
+msgstr "Özel"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1079
+msgid "Black Filter"
+msgstr "Siyah Filtre"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1080
+msgid "Use"
+msgstr "Kullan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1087
+msgid "Extra Options"
+msgstr "Ek Seçenekler"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1089
+msgid "Unpaper's command line arguments"
+msgstr "Unpaper komut satırı değişkenleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1146
+msgid "Unpaper Preferences"
+msgstr "Unpaper Tercihleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1207
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1218
+msgid "An error occurred!"
+msgstr "Bir hata oluştu!"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1289
+msgid "Cancelled"
+msgstr "İptal Edildi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1305
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1369
+msgid "_General"
+msgstr "_Genel"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
+msgid "_Recognition"
+msgstr "_Tanıma"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1386
+msgid "Select boxes' colors"
+msgstr "Kutuların renklerini seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1392
+msgid "Te_xt areas' fill color"
+msgstr "Me_tin alanlarının dolgu rengi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1398
+msgid "Text areas' _stroke color"
+msgstr "Metin alanının _çizgi rengi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1404
+msgid "_Image areas' fill color"
+msgstr "_Görüntü alanlarının dolgu rengi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1424
+msgid "Path to unpaper"
+msgstr "Unpaper yolu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
+msgid "Choose"
+msgstr "Seç"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1436
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1713
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1775
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1872
+msgid "OCR Engines"
+msgstr "OCR Motoru"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
+msgid ""
+"The engine that should be used when performing the automatic recognition."
+msgstr "Otomatik tanıma gerçekleştirilirken motor kullanılması gerekir."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1449
+msgid "Favorite _engine:"
+msgstr "Sık kullanılan _motor:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1464
+msgid "Window size"
+msgstr "Pencere boyutu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1465
+msgid "A_utomatic"
+msgstr "O_tomatik"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1466
+msgid "Cu_stom"
+msgstr "Öz_el"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr "Algılama algoritmasının alt alanlarının boyutu pencere boyutudur."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1489
+msgid "Columns Detection"
+msgstr "Sütun Algılama"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1494
+msgid "_Improve columns detection"
+msgstr "Sütun algılamayı _geliştir"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1496
+msgid "Use a post-detection algorithm to improve the detection of columns"
+msgstr ""
+"Sütunların algılanmasını geliştirmek için bir algı-sonrası algoritması kullan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1507
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1581
+msgid "_Automatic"
+msgstr "_Otomatik"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1508
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1582
+msgid "Custo_m"
+msgstr "Öze_l"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1512
+msgid "The columns' minimum width in pixels"
+msgstr "Piksel sütunların asgari genişliği"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1528
+msgid "Minimum width that a column should have:"
+msgstr "Bir sütunun olması gereken asgari genişliği:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1550
+msgid "Recognized Text"
+msgstr "Tanınan Metin"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1551
+msgid "_Fix line breaks and hyphenization"
+msgstr "Satır sonları ve bölmesini _düzelt"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1553
+msgid ""
+"Removes single line breaks and hyphenization from text generated by OCR "
+"engines"
+msgstr ""
+"OCR motoru tarafından oluşturulan metinden tek satır sonları ve bölmesini "
+"kaldırır"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
+msgid "Content Areas"
+msgstr "İçerik Alanları"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1568
+msgid "A_djust content areas' bounds"
+msgstr "İçerik alanlarının sınırlarını a_yarla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1570
+msgid "Use a post-detection algorithm to shorten the contents areas' margins"
+msgstr ""
+"İçerik alanlarının kenar boşluklarını kısaltmak için algılama-sonrası "
+"algoritması kullan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1586
+msgid "The maximum size for the content areas' margins in pixels"
+msgstr "İçerik alanlarının kenar boşluklarının piksel olarak azami boyutu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1603
+msgid "Maximum size that the content areas' margins should have:"
+msgstr "İçerik alanlarının olması gereken kenar boşlukları azami boyutu:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1650
+msgid "Image Pre-processing"
+msgstr "Görüntü ön işleme"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1651
+msgid "Des_kew images"
+msgstr "Görüntü eğriliğini _düzelt"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1653
+msgid "Tries to straighten the images before they are added"
+msgstr "Eklemeden önce görüntüleri düzeltmek için dener"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1662
+msgid "_Unpaper images"
+msgstr "Görüntülere _Unpaper işlemi uygula"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1664
+msgid "Cleans the image using the Unpaper pre-processor"
+msgstr "Unpaper ön-işleyici kullanarak görüntü temizler"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1668
+msgid "Unpaper _Preferences"
+msgstr "Unpaper _Tercihleri"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1690
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one "
+"chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+"Dil OCR motorunun nasıl çalışacağını etkileyebilir.\n"
+"Eğer motor destek dillerine ayarlandıysa ve seçilen dil desteklenmiyorsa, "
+"sonuç boş metin olabilir.\n"
+"Bu durumdan kurtulmak için \"Dil Yok\" seçebilirsiniz."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1699
+msgid "Default _language:"
+msgstr "Öntanımlı _dil:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1728
+msgid "Engines to be added"
+msgstr "Eklenecek motorlar"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1733
+msgid "Include"
+msgstr "Ekle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1779
+msgid "Engine"
+msgstr "Motor"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1786
+msgid "De_tect"
+msgstr "AL_gıla"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1801
+msgid "Are you sure you want to delete this engine?"
+msgstr "Motoru silmek istediğinizden emin misiniz?"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1874
+#, python-format
+msgid "%s engine"
+msgstr "%s motor"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1907
+msgid "_Name:"
+msgstr "_Ad:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1908
+msgid "Engine name"
+msgstr "Motor adı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1910
+msgid "_Image format:"
+msgstr "_Görüntü biçimi:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1912
+msgid "The required image format"
+msgstr "İstenen görüntü biçimi"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
+msgid "_Failure string:"
+msgstr "_Hata dizgesi:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1916
+msgid "The failure string or character that this engine uses"
+msgstr "Bu motorun kullandığı hata dizgesi ya da karakter"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
+msgid "Engine _path:"
+msgstr "Motor _yolu:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
+msgid "The path to the engine program"
+msgstr "Motor programı yolu"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
+msgid "Engine _arguments:"
+msgstr "Motor _değişkenleri:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1925
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr ""
+"Değişkenler: görüntü için $IMAGE, eğer bir dosyaya yazarsanız $FILE kullanın"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1929
+msgid "Engine _language argument:"
+msgstr "Motor _dil değişkeni:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1931
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In "
+"order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr ""
+"Bu motorun (örneğin \"-l\" için) kullandığı durumdaki dil değişkeni."
+"Çalışması için sırayla, motorun değişkenleri $LANG anahtar kelimesine sahip "
+"olmalıdır."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1937
+msgid "Engine lan_guages:"
+msgstr "Motor dil_leri:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
+msgid ""
+"The languages this engine supports. This should be given as pairs of the "
+"language in the ISO 639-1 and the engine's corresponding language (for "
+"example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
+"arguments should have the $LANG keyword."
+msgstr ""
+"Diller bu motoru destekler. Bu ISO 639-1 ve motorun uyumlu olduğu dil "
+"çiftleri olarak verilmelidir (örneğin \"en:eng,pt:por,es:esp\"). Çalışması "
+"için sırayla, motorun değişkenleri $LANG anahtar kelimesini sahip olmalıdır."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1980
+msgid "Error setting the new engine; please check your engine settings."
+msgstr "Yeni motor ayarlarında hata; lütfen motor ayarlarınızı kontrol edin."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1980
+msgid "Warning"
+msgstr "Uyarı"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2016
+msgid "translator-credits"
+msgstr "Simge Sezgin <simgeszgn@gmail.com>"
