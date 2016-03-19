@@ -26,6 +26,7 @@ import xml.etree.ElementTree as ET
 from xml.parsers.expat import ExpatError
 from ocrfeeder.studio.dataHolder import TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.util import lib
+from ocrfeeder.util.log import debug
 IMAGE_ARGUMENT = '$IMAGE'
 FILE_ARGUMENT = '$FILE'
 LANGUAGE_ARGUMENT = '$LANG'
@@ -209,7 +210,7 @@ class OcrEnginesManager:
                 favorite_engine_exists = favorite_engine_exists or \
                     self.configuration_manager.favorite_engine == engine.name
         if not len(self.ocr_engines):
-            lib.debug("Warning: no engines found!")
+            debug("Warning: no engines found!")
         elif not favorite_engine_exists:
             self.configuration_manager.favorite_engine = self.ocr_engines[0][0].name
         engines_needing_update = {'auto': [],
@@ -250,10 +251,10 @@ class OcrEnginesManager:
         try:
             engine = Engine(**arguments)
         except TypeError, exception:
-            lib.debug('Error when unserializing engine: %s' % exception.message)
+            debug('Error when unserializing engine: %s' % exception.message)
             engine = None
         except WrongSettingsForEngine, we:
-            lib.debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
+            debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
             engine = None
         else:
             engine.temporary_folder = self.configuration_manager.TEMPORARY_FOLDER

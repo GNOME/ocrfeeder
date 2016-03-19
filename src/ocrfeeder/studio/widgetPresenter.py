@@ -24,6 +24,7 @@ from ocrfeeder.util import lib, PAPER_SIZES
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncWorker
 from ocrfeeder.util.constants import *
+from ocrfeeder.util.log import debug
 from ocrfeeder.util.graphics import convertPixbufToImage
 from enchant.checker import SpellChecker
 from PIL import Image
@@ -979,7 +980,7 @@ class UnpaperDialog(Gtk.Dialog):
         try:
             thumbnail_image = Image.open(image_path)
         except Exception, exception:
-            lib.debug(exception.message)
+            debug(exception.message)
             return
         thumbnail_image.thumbnail((150, 200), Image.ANTIALIAS)
         image_thumbnail_path = lib.getNonExistingFileName(name + '_thumb.png')
@@ -1359,7 +1360,7 @@ class PreferencesDialog(Gtk.Dialog):
                 self.unpaper_images.get_active()
         index = self.engines_combo.get_active()
         if index != -1:
-            lib.debug('ACTIVE INDEX: %s %s' % (index, self.ocr_engines[index][0].name))
+            debug('ACTIVE INDEX: %s %s' % (index, self.ocr_engines[index][0].name))
             self.configuration_manager.setFavoriteEngine(self.ocr_engines[index][0].name)
 
     def __makeGeneralPreferences(self, *args):

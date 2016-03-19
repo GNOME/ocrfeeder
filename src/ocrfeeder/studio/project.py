@@ -19,7 +19,7 @@
 ###########################################################################
 
 from dataHolder import PageData, DataBox, TextData
-from ocrfeeder.util.lib import debug
+from ocrfeeder.util.log import debug
 from ocrfeeder.util.configuration import ConfigurationManager
 from xml.dom import minidom
 import os.path

@@ -25,7 +25,7 @@
 from threading import Thread
 import Queue
 from gi.repository import GLib
-from lib import debug
+from log import debug
 
 class AsyncItem(object):
 

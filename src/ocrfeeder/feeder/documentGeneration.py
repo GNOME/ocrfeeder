@@ -27,7 +27,7 @@ from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN
     ALIGN_FILL
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.graphics import getImagePrintSize
-from ocrfeeder.util.lib import debug
+from ocrfeeder.util.log import debug
 from gi.repository import Pango
 from reportlab.pdfgen import canvas
 from reportlab.lib import units

@@ -26,7 +26,8 @@ from ocrfeeder.feeder.layoutAnalysis import *
 from project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
-from ocrfeeder.util.lib import debug, getNonExistingFileName, unpaperImage
+from ocrfeeder.util.lib import getNonExistingFileName, unpaperImage
+from ocrfeeder.util.log import debug, warning
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util import constants
 from ocrfeeder.util.asyncworker import AsyncItem
@@ -316,6 +317,17 @@ class ImageReviewer_Controler:
         return image_reviewer
 
     def addImages(self, image_path_list):
+        paths = []
+        for path in image_path_list:
+            if os.path.exists(path):
+                paths.append(path)
+            else:
+                warning('Could not load image "%s": does not exist' % path)
+
+        if not paths:
+            return
+
+        image_path_list = paths
         item_list = []
         temp_dir = self.configuration_manager.TEMPORARY_FOLDER
         image_path_list = graphics.convertMultiImagesInList(image_path_list,

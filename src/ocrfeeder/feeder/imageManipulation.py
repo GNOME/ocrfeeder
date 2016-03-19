@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from ocrfeeder.util.lib import debug
+from ocrfeeder.util.log import debug
 
 import gettext
 from PIL import Image, ImageDraw

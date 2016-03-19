@@ -6,7 +6,8 @@ ocrfeeder_util_PYTHON = \
 	configuration.py \
 	constants.py \
 	graphics.py \
-	lib.py
+	lib.py \
+	log.py
 
 DISTCLEANFILES = constants.py
 

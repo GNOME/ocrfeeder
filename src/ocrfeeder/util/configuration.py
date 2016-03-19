@@ -19,7 +19,8 @@
 ###########################################################################
 
 from ocrfeeder.feeder.ocrEngines import Engine
-from ocrfeeder.util.lib import getExecPath, debug
+from ocrfeeder.util.lib import getExecPath
+from ocrfeeder.util.log import debug
 from ocrfeeder.util.constants import OCRFEEDER_COMPACT_NAME, USER_CONFIG_DIR
 import tempfile
 import shutil

@@ -19,7 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import debug, getNonExistingFileName
+from lib import getNonExistingFileName
+from log import debug
 from PIL import Image
 from gi.repository import GdkPixbuf
 import math

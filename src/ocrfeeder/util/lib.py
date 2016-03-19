@@ -30,6 +30,7 @@ import sane
 import tempfile
 import locale
 from lxml import etree
+from log import debug
 
 def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR):
     icon = Gtk.Image()
@@ -99,10 +100,6 @@ def getStandardDeviation(list_of_values):
         op_list.append((i - average) ** 2)
     new_average = sum(op_list) / float(number_of_values)
     return math.sqrt(new_average)
-
-def debug(*args):
-    if OCRFEEDER_DEBUG:
-        print 'OCRFEEDER DEBUG :::::: ', args
 
 def getExecPath(exec_name):
     real_exec_name = None

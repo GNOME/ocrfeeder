@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from ocrfeeder.util.lib import debug
+from ocrfeeder.util.log import debug
 from ocrfeeder.util import graphics
 from ocrfeeder.util.constants import OCRFEEDER_DEBUG, DTP
 from ocrfeeder.studio.dataHolder import DataBox

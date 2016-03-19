@@ -32,6 +32,7 @@ from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncItem
+from ocrfeeder.util.log import debug
 from optparse import OptionParser
 import gettext
 import locale
@@ -410,7 +411,7 @@ class Studio:
         ocr_dialog.destroy()
 
     def warnNoOCREngines(self):
-        lib.debug('No OCR engines found')
+        debug('No OCR engines found')
         dialog = Gtk.MessageDialog(self.main_window,
                                    Gtk.DialogFlags.MODAL |
                                    Gtk.DialogFlags.DESTROY_WITH_PARENT,
