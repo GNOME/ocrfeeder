@@ -136,7 +136,7 @@ def getTextSizeFromImage(image):
                 text_size = math.floor(i)
                 break
         text_size = max(text_sizes)
-    debug('Text Size: ', text_size)
+    debug('Text Size: %s' % text_size)
     return text_size
 
 def getTextBeginHeight(image):

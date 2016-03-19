@@ -727,7 +727,7 @@ class ImageReviewer_Controler:
                     page.setSize(size)
             else:
                 current_reviewer.page.setSize(size)
-            debug('Page size: ', size)
+            debug('Page size: %s' % size)
         page_size_dialog.destroy()
         self.__updateStatusBar(current_reviewer)
 
@@ -997,7 +997,7 @@ class Editor:
     def __pressedAngleDetectionButton(self, widget):
         image = graphics.convertPixbufToImage(self.box_editor.getImage())
         angle = graphics.getHorizontalAngleForText(image)
-        debug('ANGLE: ', angle)
+        debug('ANGLE: %s' % angle)
         self.box_editor.setAngle(angle)
 
     def saveDataBox(self):

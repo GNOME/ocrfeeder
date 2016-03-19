@@ -250,7 +250,7 @@ class OcrEnginesManager:
         try:
             engine = Engine(**arguments)
         except TypeError, exception:
-            lib.debug('Error when unserializing engine: %s', exception.message)
+            lib.debug('Error when unserializing engine: %s' % exception.message)
             engine = None
         except WrongSettingsForEngine, we:
             lib.debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))

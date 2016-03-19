@@ -250,7 +250,7 @@ class OdtGenerator(DocumentGenerator):
     def addText(self, data_box):
         text = data_box.getText().decode('utf-8')
         frame_style = Style(name='FrameStyle', family = 'graphic')
-        debug('Angle: ', data_box.text_data.angle)
+        debug('Angle: %s' % data_box.text_data.angle)
         angle = data_box.text_data.angle
         if angle:
             frame_style = Style(name='FrameStyleRotated', family = 'graphic')

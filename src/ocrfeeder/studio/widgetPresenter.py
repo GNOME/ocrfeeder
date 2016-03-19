@@ -1359,7 +1359,7 @@ class PreferencesDialog(Gtk.Dialog):
                 self.unpaper_images.get_active()
         index = self.engines_combo.get_active()
         if index != -1:
-            lib.debug('ACTIVE INDEX: ', index, self.ocr_engines[index][0].name)
+            lib.debug('ACTIVE INDEX: %s %s' % (index, self.ocr_engines[index][0].name))
             self.configuration_manager.setFavoriteEngine(self.ocr_engines[index][0].name)
 
     def __makeGeneralPreferences(self, *args):

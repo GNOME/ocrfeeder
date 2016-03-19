@@ -132,7 +132,7 @@ class ProjectLoader:
         page_data_nodes = document.getElementsByTagName('PageData')
         pages = []
         for page_data in self.__getPageDataInfo(page_data_nodes):
-            debug('Page Data:', page_data)
+            debug('Page Data: %s' % page_data)
             data_boxes = []
             for data_box in page_data['data_boxes']:
                 args = []

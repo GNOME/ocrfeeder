@@ -45,7 +45,7 @@ def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR
 
 def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
     dir_name = tempfile.mkdtemp(dir = temp_dir)
-    debug('Converting PDF: ', pdf_file, ' to image')
+    debug('Converting PDF: %s to image' % pdf_file)
     resolution = 300
     file_name = os.path.splitext(os.path.basename(pdf_file))[0]
     command = 'gs -SDEVICE=jpeg -r%(resolution)sx%(resolution)s -sPAPERSIZE=letter ' \
