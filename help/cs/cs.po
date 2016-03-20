@@ -1,13 +1,13 @@
 # Czech translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2014-12-21 00:32+0000\n"
-"PO-Revision-Date: 2014-12-26 10:04+0100\n"
+"POT-Creation-Date: 2016-03-19 20:31+0000\n"
+"PO-Revision-Date: 2016-03-20 14:39+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -15,17 +15,1173 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: C/unpaper.page:8(desc)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>"
+
+#. (itstool) path: info/desc
+#: C/addingfolder.page:8
+msgid "Adding all the images from a folder"
+msgstr "Přidávání všech obrázků ze složky"
+
+#. (itstool) path: page/title
+#: C/addingfolder.page:11
+msgid "Adding Folder"
+msgstr "Přidávání složky"
+
+#. (itstool) path: page/p
+#: C/addingfolder.page:13
+msgid ""
+"Sometimes it is useful to add all the images from a given folder. "
+"<app>OCRFeeder</app> provides this functionality by choosing "
+"<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr ""
+"Někdy se může hodit přidat všechny obrázky ze zadané složky. Aplikace "
+"<app>OCRFeeder</app> poskytuje tuto funkci pod volbou <guiseq><gui>Soubor</"
+"gui><gui>Přidat složku</gui></guiseq>."
+
+#. (itstool) path: info/desc
+#: C/addingimage.page:7
+msgid "Adding an image to be recognized"
+msgstr "Přidávání obrázku, který má být rozpoznán"
+
+#. (itstool) path: page/title
+#: C/addingimage.page:10
+msgid "Adding An Image"
+msgstr "Přidávání obrázku"
+
+#. (itstool) path: page/p
+#: C/addingimage.page:12
+msgid ""
+"Adding an image to OCRFeeder is usually the first step when converting a "
+"document."
+msgstr ""
+"Přidání obrázku, ve kterém má být rozpoznán text, je obvykle prvním krokem "
+"při převodu dokumentu."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:15
+msgid ""
+"Each added image represents a page in the final document. A thumbnail of the "
+"image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr ""
+"Každý přidaný obrázek představuje jednu stránku ve výsledném dokumentu. "
+"Náhledy obrázků jsou zobrazovány v oblasti stránek (oblast v levé části "
+"aplikace <app>OCRFeeder</app>)."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:19
+msgid ""
+"The order of the pages in the final document will be the same as the images' "
+"order in the pages' area. This way, pages can be reordered by dragging them "
+"in the images' thumbnails in the pages' area."
+msgstr ""
+"Pořadí stránek ve výsledném dokumentu bude stejné, jako pořadí obrázků v "
+"oblasti stránek. Proto máte možnost měnit pořadí stránek přetahováním "
+"náhledů obrázků v oblasti stránek."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:24
+msgid ""
+"You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
+"gui></guiseq>."
+msgstr ""
+"Obrázek přidáte kliknutím na <guiseq><gui>Soubor</gui><gui>Přidat obrázek</"
+"gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:27
+msgid ""
+"To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></"
+"guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
+"gui>."
+msgstr ""
+"Pokud chcete stránku odstranit, klikněte na <guiseq><gui>Upravit</"
+"gui><gui>Odstranit stránku</gui></guiseq> nebo klikněte pravým tlačítkem na "
+"náhled stránky a zvolte <gui>Odstranit</gui>."
+
+#. (itstool) path: section/title
+#: C/addingimage.page:32
+msgid "Page Configuration"
+msgstr "Nastavení stránky"
+
+#. (itstool) path: section/p
+#: C/addingimage.page:34
+msgid ""
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"gui></guiseq> and choose either a custom size, providing the respective "
+"values or a standard paper size from a list."
+msgstr ""
+"Pro nastavení velikosti stránky klikněte na <guiseq><gui>Upravit</"
+"gui><gui>Upravit stránku</gui></guiseq> a zvolte buďto vlastní velikost a "
+"zadejte příslušné údaje nebo si vyberte ze seznamu standardních velikostí "
+"papíru."
+
+#. (itstool) path: info/desc
+#: C/automaticrecognition.page:8
+msgid "Automatically recognizing an image"
+msgstr "Automatické rozpoznávání obrazu"
+
+#. (itstool) path: page/title
+#: C/automaticrecognition.page:11
+msgid "Automatic Recognition"
+msgstr "Automatické rozpoznávání"
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:13
+msgid ""
+"<app>OCRFeeder</app> tries to detect the contents in a document image and "
+"perform OCR over them, also distinguishing between what is graphics and what "
+"is text. To simplify this concept, we call it recognition."
+msgstr ""
+"Aplikace <app>OCRFeeder</app> zkouší detekovat obsah v obrázcích dokumentu a "
+"provést na nich rozpoznání textu. Zároveň se snaží rozhodnout, co je grafika "
+"a co text. Celý tento postup se nazývá rozpoznávání."
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:18
+msgid ""
+"After an image is added it can be automatically recognized by clicking "
+"<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr ""
+"Po té, co je přidán obrázek, může být automaticky rozpoznán kliknutím na "
+"<guiseq><gui>Dokument</gui><gui>Rozpoznat dokument</gui></guiseq>."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:22
+msgid ""
+"Since there are many different document layouts out there, the automatic "
+"recognition, mainly the page segmentation, may turn out not to be accurate "
+"for you document. In this case, some manual editing of the recognition "
+"results might be needed."
+msgstr ""
+"Vzhledem k tomu, že rozvržení dokumentu může mít spoustu podob, nemusí "
+"automatické rozpoznání, hlavně rozdělení stránky, dopadnou úplně správně. V "
+"takových případech je nutné přistoupit k ruční úpravě výsledků rozpoznávání."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:28
+msgid ""
+"The automatic recognition performs some complex operations and may take some "
+"time depending on the size of the image and the complexity of the layout."
+msgstr ""
+"Automatické rozpoznávání provádí některé komplexní operace a může trvat "
+"nějako dobu v závislosti na velikosti obrázku a složitosti obsahu."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:31
+msgid ""
+"The automatic recognition will replace all the content areas in the "
+"currently selected page."
+msgstr ""
+"Automatické rozpoznání nahradí vše v oblastech textu na aktuálně vybrané "
+"stránce."
+
+#. (itstool) path: info/desc
+#: C/deskewing.page:8
+msgid "Correcting the skew in the images"
+msgstr "Opravování deformací v obrázcích"
+
+#. (itstool) path: page/title
+#: C/deskewing.page:11
+msgid "Deskewing"
+msgstr "Odstraňování deformací"
+
+#. (itstool) path: page/p
+#: C/deskewing.page:13
+msgid ""
+"Some images, especially if they were added from a scanner device, may be "
+"skewed and this makes it harder to recognize the image."
+msgstr ""
+"Některé obrázky, zvláště pokud byly pořízeny ze skeneru, mohou být "
+"deformovány, což rozpoznávání obrázku ztěžuje."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:16
+msgid ""
+"<app>OCRFeeder</app> offers a way to automatically deskew an image. To "
+"deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
+"gui></guiseq>."
+msgstr ""
+"Aplikace <app>OCRFeeder</app> nabízí způsob automatického odstranění "
+"deformace. Pro odstranění deformace načteného obrázku klikněte na "
+"<guiseq><gui>Nástroje</gui><gui>Odstranění deformace obrazu</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:20
+msgid ""
+"This operation can also be set to be performed automatically every time an "
+"image is added. To set it, simply open the <gui>Preferences</gui> dialog "
+"from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check "
+"<gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr ""
+"Můžete si také nastavit, aby se tato operace provedla automaticky pokaždé, "
+"když je přidán obrázek. Uděláte to tak, že otevřete dialogové okno "
+"<gui>Předvolby</gui> z <guiseq><gui>Upravit</gui><gui>Předvolby</gui></"
+"guiseq> a zaškrtnete na kartě <gui>Nástroje</gui> položku <gui>Odstranit "
+"deformace obrazu</gui>."
+
+#. (itstool) path: note/p
+#: C/deskewing.page:26
+msgid ""
+"Depending on the size and characteristics of the image, deskewing an image "
+"may take some time."
+msgstr ""
+"V závislosti na velikosti a charakteru obrazu může operace zabrat nějaký čas."
+
+#. (itstool) path: info/desc
+#: C/documentgeneration.page:9
+msgid "Creating an editable document"
+msgstr "Vytváření upravitelného dokumentu"
+
+#. (itstool) path: page/title
+#: C/documentgeneration.page:12
+msgid "Document Generation"
+msgstr "Generování dokumentu"
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:14
+msgid ""
+"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
+msgstr ""
+"Aplikace <app>OCRFeeder</app> v současnosti generuje čtyři formáty "
+"dokumentů: <em>ODT</em>, <em>HTML</em>, <em>PDF</em> a <em>prostý text</em>."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:17
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr ""
+"Po provedení rozpoznání a případných ručních úpravách, můžete vygenerovat "
+"dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</gui></guiseq> a "
+"zvolte požadovaný formát dokumentu."
+
+#. (itstool) path: note/p
+#: C/documentgeneration.page:22
+msgid ""
+"The HTML exportation generates a folder with the document pages represented "
+"by one HTML file. In each page there are links to go to the previous and "
+"next pages. Image content areas are stored in a subfolder called <em>images</"
+"em>."
+msgstr ""
+"Při exportu ve formátu HTML se vygeneruje složka se soubory HTML "
+"představujícími jednotlivé stránky dokumentu. Na každé stránce je odkaz na "
+"předchozí stránku a následující stránku. Obsažené obrázky jsou uloženy v "
+"podsložce <em>images</em>."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:26
+msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
+msgstr ""
+"Při exportu do <em>PDF</em> si lze vybrat ze dvou typů dokumentů <em>PDF</"
+"em>:"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:29
+msgid ""
+"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
+"<em>PDF</em> from scratch."
+msgstr ""
+"Od základu nový: Když je vybrána tato volba, vytvoří <app>OCRFeeder</app> "
+"nové <em>PDF</em> z prázdného základu."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:32
+msgid ""
+"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
+"<em>PDF</em> showing the original image but with invisible text over it, "
+"making it possible to index or search."
+msgstr ""
+"Prohledávatelné PDF: Když je vybrána tato volba, vytvoří <app>OCRFeeder</"
+"app> <em>PDF</em> zobrazující původní obrázek, který je ale překrytý "
+"neviditelným textem. Díky tomu je možné jej indexovat a vyhledávat v něm."
+
+#. (itstool) path: steps/title
+#: C/documentgeneration.page:38
+msgid "Exporting the recognized document"
+msgstr "Export rozpoznaného dokumentu"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:39
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
+"format."
+msgstr ""
+"Po provedení rozpoznání a případných ručních úpravách, můžete vygenerovat "
+"dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</gui></guiseq> "
+"(nebo zmáčkněte <keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></"
+"keyseq>) a zvolením požadovaného formátu dokumentu."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:44
+msgid ""
+"Depending your needs, choose whether all pages (with the <gui>All</gui> "
+"option) or only the currently selected one (<gui>Current</gui> option) "
+"should be exported. The default option is <gui>All</gui>. After making your "
+"selection, press <gui>OK</gui> to generate the document."
+msgstr ""
+"Podle toho, co potřebujete, zvolte, jestli se mají exportovat všechny "
+"stránky (volba <gui>Vše</gui>) nebo jen jedna právě vybraná (volba "
+"<gui>Aktuální</gui>). Výchozí volbou je <gui>Vše</gui>. Nakonec zmáčkněte "
+"<gui>Budiž</gui> a dokument se vygeneruje."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:48
+msgid ""
+"On the last dialog, write the output filename and click the <gui>Save</gui> "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the <gui>Replace</gui> button on the confirmation dialog."
+msgstr ""
+"V posledním dialogovém okně napiště název výstupního souboru a klikněte na "
+"tlačítko <gui>Uložit</gui>. Pokud už zadaný soubor existuje a chcete jej "
+"přepsat, klikněte v potvrzovacím dialogovém okně na tlačítko <gui>Nahradit</"
+"gui>."
+
+#. (itstool) path: info/desc
+#: C/finetuning.page:8
+msgid "Advanced options for a better recognition"
+msgstr "Pokročilé volby pro lepší rozpoznávání"
+
+#. (itstool) path: page/title
+#: C/finetuning.page:11
+msgid "Fine-tuning"
+msgstr "Jemné ladění"
+
+#. (itstool) path: page/p
+#: C/finetuning.page:13
+msgid ""
+"<app>OCRFeeder</app> has some advanced options that can be used to perform a "
+"better recognition. These options can be chosen from the <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
+"tab."
+msgstr ""
+"Aplikace <app>OCRFeeder</app> má některé pokročilé volby, které lze použít k "
+"provádění lepšího rozpoznávání. Tyto volby můžete zvolit v dialogovém okně "
+"<guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq>, na kartě "
+"<gui>Rozpoznávání</gui>."
+
+#. (itstool) path: page/p
+#: C/finetuning.page:18
+msgid "The following list describes the mentioned options:"
+msgstr "Následující seznam popisuje zmíněné volby:"
+
+#. (itstool) path: item/p
+#: C/finetuning.page:20
+msgid ""
+"<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the "
+"text line by line and seperate each line with a line break. Sometimes, this "
+"is not what the user wants because the text might be broken in the middle of "
+"a sentence."
+msgstr ""
+"<gui>Opravit zalomení řádků a rozdělení slov</gui>: Výkonné programy OCR "
+"obvykle čtou text po řádcích a každý řádek oddělí zalomením. Což vždy nemusí "
+"být to, co uživatel chce, protože text může být přerušen uprostřed věty."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:24
+msgid ""
+"Checking this option will make <app>OCRFeeder</app> remove single newline "
+"characters after the text is recognized by the engines."
+msgstr ""
+"Při zaškrtnutím této volby bude aplikace <app>OCRFeeder</app> po rozpoznání "
+"textu výkonným programem odstraňovat jednotlivé znaky nového řádku."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:26
+msgid ""
+"Since just removing newlines in an hyphenized text would result in wrongly "
+"separated words, hyphenization is also detected and removed in this process."
+msgstr ""
+"V textu s rozdělenými slovy může ale odstranění nových řádků pro změnu dát "
+"nesprávné výsledky u rozdělených slov, proto jsou při tomto zpracování "
+"nalezena a odstraněna rovněž rozdělovací znaménka."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:29
+msgid ""
+"<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the "
+"contents in an image uses the concept of <em>window size</em> which is the "
+"division of the image in small windows. A smaller window size means it is "
+"likely to detect more content areas but size that is too small may result in "
+"contents that should be part of a bigger area instead. On the other hand, a "
+"bigger window size means less divisions of contents but may end up in "
+"contents which should be subdivided."
+msgstr ""
+"<gui>Velikost okna</gui>: Algoritmus aplikace <app>OCRFeeder</app> používá k "
+"detekci obsahu v obrázku techniku <em>velikosti oken</em>, která dělí "
+"obrázek na malá okna. Menší velikost okna znamená, že se lépe detekuje více "
+"oblastí s obsahem, ale příliš malá hodnota může způsobit, že výsledkem budou "
+"oblasti, které by ve skutečnosti měly tvořit jednu velkou oblast. Na druhou "
+"stranu, příliš velká velikost okna znamená méně dělení obsahu, takže může "
+"skončit s oblastí, která by správně měla být dál rozdělená."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:36
+msgid ""
+"A good window size should be slightly bigger than the text line spacing in "
+"an image."
+msgstr ""
+"Dobrá velikost okna by měla být lehce větší, než je mezera mezi řádky v "
+"obrazu."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:37
+msgid ""
+"Users may want to manually set this value if automatic one doesn't produce "
+"any valid content areas but normally it is easier to use the automatic one "
+"and perform any needed corrections directly in the content areas."
+msgstr ""
+"Uživatel může chtít ručně nastavit tuto hodnotu v případě, že automatika "
+"nepodává platné oblasti obsahu, ale běžně je jednodušší použít automatickou "
+"hodnotu a případné opravy provést přímo v oblasti obsahu."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:41
+msgid ""
+"<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</"
+"app> should try to divide the detected content areas horizontally "
+"(originating more columns). The value that is used to check the existance of "
+"blank space within the contents may be set to automatic or manual when the "
+"columns aren't detected correctly."
+msgstr ""
+"<gui>Zdokonalit vyhledávání sloupců</gui>: Tuto volbu zaškrtněte, když se má "
+"aplikace <app>OCRFeeder</app> snažit vodorovně rozdělit detekované oblasti "
+"(tak vznikne více sloupců). Hodnota, která se používá ke zjišťování "
+"prázdného místa v obsahu může být nastavena na automatickou nebo ruční, když "
+"se sloupce nedetekují správně."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:46
+msgid ""
+"<gui>Adjust content areas' bounds</gui>: The detected content areas "
+"sometimes have a considerable margin between their contents and the areas' "
+"edges. By checking this option, <app>OCRFeeder</app> will minimize those "
+"margins, adjusting the areas to its contents better. Optionally, a manual "
+"value can be check to indicate the maximum value of the adjusted margins."
+msgstr ""
+"<gui>Přizpůsobit hranice oblastí s obsahem</gui>: Detekovaná oblast má někdy "
+"značně velký okraj mezi vlastním obsahem a hranami. Po zaškrtnutím této voly "
+"bude aplikace <app>OCRFeeder</app> minimalizovat tyto okraje lepším "
+"přizpůsobením oblasti jejímu obsahu. Případně je možné ručně nastavit "
+"hodnotu, která má při kontrole představovat minimální hodnotu přizpůsobených "
+"okrajů."
+
+#. (itstool) path: info/desc
+#: C/importingfromscanner.page:8
+msgid "Importing from a scanner device"
+msgstr "Importování ze skenovacího zařízení"
+
+#. (itstool) path: page/title
+#: C/importingfromscanner.page:11
+msgid "Importing From Scanner"
+msgstr "Importování ze skeneru"
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:13
+msgid ""
+"In order to help convert a printed document into an editable document, "
+"<app>OCRFeeder</app> offers a way to import images directly from a scanner "
+"device."
+msgstr ""
+"Aby vám aplikace <app>OCRFeeder</app> pomohla s převodem tištěných dokumentů "
+"do editovatelné podoby, nabízí přímý import obrázků ze skenovacího zařízení."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:17
+msgid ""
+"To import an image from a scanner device, use the menu <guiseq><gui>File</"
+"gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut "
+"<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr ""
+"Když chcete obrázek importovat ze skenovacího zařízení, použijte nabídku "
+"<guiseq><gui>Soubor</gui><gui>Importovat stránku ze skeneru</gui></guiseq> "
+"nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></"
+"keyseq>."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:22
+msgid ""
+"The currently detected scanner device will be used to scan the page. If more "
+"than one scanner if found, then a dialog will be shown with the options to "
+"choose from."
+msgstr ""
+"Ke skenování stránky budou požit aktuálně detekované skenovací zařízení. "
+"Pokud je nalezen více než jeden skener, objeví se dialogové okno, ve kterém "
+"si jeden zvolíte."
+
+#. (itstool) path: info/desc
+#: C/importingpdf.page:8
+msgid "Importing PDF documents"
+msgstr "Importování dokumentů PDF"
+
+#. (itstool) path: page/title
+#: C/importingpdf.page:11
+msgid "Importing PDF"
+msgstr "Importování PDF"
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:13
+msgid ""
+"Some documents are nothing more than images placed in a PDF document. For "
+"cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
+"can then be converted into an editable document."
+msgstr ""
+"Některé dokumenty nejsou ničím víc než obrázky vloženými do dokumentu PDF. V "
+"takovýchto případech může aplikace <app>OCRFeeder</app> dokument PDF "
+"naimportovat, aby jej převedla na editovatelný dokument."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:18
+msgid ""
+"To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</"
+"gui></guiseq>."
+msgstr ""
+"Dokument PDF naimportujete kliknutím na <guiseq><gui>Soubor</"
+"gui><gui>Importovat PDF</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:21
+msgid ""
+"Each PDF page will be converted to an image and placed in the pages' area."
+msgstr ""
+"Každá ze stránek PDF bude převedena na obrázek a vložena do oblasti stránek."
+
+#. (itstool) path: note/p
+#: C/importingpdf.page:24
+msgid ""
+"The PDF conversion can be a demanding process and take some time for large "
+"PDF files."
+msgstr ""
+"Převod PDF může být náročný proces a pro rozsáhlé soubory PDF může zabrat "
+"nějaký čas."
+
+#. (itstool) path: info/desc
+#: C/index.page:6
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Nápověda k <app>Systému OCRFeeder pro konverzi dokumentů</app>."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "OCRFeeder Document Conversion System"
+msgstr "Systém OCRFeeder pro konverzi dokumentů"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "OCRFeeder Document Conversion System"
+msgstr "Systém OCRFeeder pro konverzi dokumentů"
+
+#. (itstool) path: credit/name
+#: C/index.page:10
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "OCRFeeder Document Conversion System"
+msgstr "Systém OCRFeeder pro konverzi dokumentů"
+
+#. (itstool) path: page/p
+#: C/index.page:18
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+"Aplikace OCRFeeder slouží k analýze rozvržení dokumentu a optickému "
+"rozpoznávání znaků (OCR)."
+
+#. (itstool) path: page/p
+#: C/index.page:20
+msgid ""
+"OCRFeeder was created to allow users to easily convert document images (for "
+"example, a PNG image with text) into editable documents (for example, an ODT "
+"version with that text)."
+msgstr ""
+"Byla vytvořena pro uživatele za účelem snadného převodu obrazových dokumentů "
+"(například obrázek PNG s textem) na editovatelné dokumenty (například "
+"dokument ODT s tímto textem)."
+
+#. (itstool) path: page/p
+#: C/index.page:24
+msgid ""
+"Given the images it will automatically outline its contents, perform OCR and "
+"distinguish between what's graphics and text. It generates multiple formats "
+"being its main one ODT."
+msgstr ""
+"V zadaném obrázku je automaticky označen jeho obsah, provedeno rozpoznání "
+"textu a rozlišení mezi tím, co je grafika a co text. Generuje se více "
+"formátu, přičemž tím hlavním je ODT."
+
+#. (itstool) path: page/p
+#: C/index.page:28
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr ""
+"Tato příručka vám vysvětlí, jak aplikaci OCRFeeder nastavit a používat."
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Adding Images"
+msgstr "Přidávání obrázků"
+
+#. (itstool) path: section/title
+#: C/index.page:35
+msgid "Recognition"
+msgstr "Rozpoznávání"
+
+#. (itstool) path: section/title
+#: C/index.page:39
+msgid "Configuration"
+msgstr "Nastavení"
+
+#. (itstool) path: section/title
+#. (itstool) path: page/title
+#: C/index.page:43 C/projects.page:10
+msgid "Projects"
+msgstr "Projekty"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 United States License"
+msgstr "Creative Commons Attribution-Share Alike 3.0 United States License"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Toto dílo je licencováno pod <_:link-1/>."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Jako speciální výjimku, vám držitel autorských práv dává oprávnění "
+"kopírovat, upravovat a šířit ukázkový kód obsažený v tomto dokumentu za "
+"podmínek, které si zvolíte a bez omezení."
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+
+#. (itstool) path: media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+
+#. (itstool) path: info/desc
+#: C/manualeditionandcorrection.page:9
+msgid "Manual edition and correction of results"
+msgstr "Ruční úpravy a opravy výsledků"
+
+#. (itstool) path: page/title
+#: C/manualeditionandcorrection.page:12
+msgid "Manual Edition"
+msgstr "Ruční úpravy"
+
+#. (itstool) path: page/p
+#: C/manualeditionandcorrection.page:14
+msgid ""
+"One may want to manually select just a portion of an image to be recognized "
+"or correct the results of the automatic recognition. <app>OCRFeeder</app> "
+"lets its users manually edit every aspect of a document's contents in an "
+"easy way."
+msgstr ""
+"Někdo může chtít ručně vybrat část obrázku, která má být rozpoznána, jindy "
+"je třeba opravit výsledky automatického rozpoznání. Aplikace <app>OCRFeeder</"
+"app> umožňuje uživateli jednoduchým způsobem ručně upravit každou část "
+"obsahu dokumentu."
+
+#. (itstool) path: section/title
+#: C/manualeditionandcorrection.page:21
+msgid "Content Areas"
+msgstr "Oblasti obsahu"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:23
+msgid ""
+"The mentioned document's contents are represented by areas like shown in the "
+"following image:"
+msgstr ""
+"Zmíněný obsah dokumentu je představován oblastmi, podobně jako na "
+"následujícím obrázku:"
+
+#. (itstool) path: section/media
+#: C/manualeditionandcorrection.page:26
+msgid "A picture of two content areas with one of them selected."
+msgstr "Obrázek se čtyřmi oblastmi, z nichž je jedna vybraná."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:30
+msgid ""
+"The attributes of a selected are shown and can be changed from the right "
+"part of the main window, like shown in the following image:"
+msgstr ""
+"Vlastnosti vybrané oblasti jsou zobrazeny a mohou být změněny v pravé části "
+"hlavního okna, podobně jak můžete vidět na následujícím obrázku:"
+
+#. (itstool) path: section/media
+#: C/manualeditionandcorrection.page:33
+msgid "A picture showing the areas' edition UI"
+msgstr "Obrázek ukazující uživatelské rozhraní pro úpravy oblasti"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:36
+msgid "The following list describes the content areas' attributes:"
+msgstr "Následující seznam popisuje vlastnosti oblasti obsahu:"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:38
+msgid ""
+"<em>Type</em>: sets the area to be either the type image or text. The image "
+"type will clip the area from the original page and place it in the generated "
+"document. The text type will use the text assigned to the area and represent "
+"it as text in the generated document. (Generated ODT documents will have "
+"text boxes when an area was marked as being of the type text)"
+msgstr ""
+"<em>Typ</em>: nastavuje, zda je oblast typu obrázek nebo text. Při typu "
+"obrázek se oblast z původní stránky vyřízne a umístí do generovaného "
+"dokumentu. Při typu text se použije text obsažený v oblasti a umístí se jako "
+"text do generovaného dokumentu. (Pokud je nějaká oblast označená jako text, "
+"bude mít generovaný dokument ODT textové rámce)"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:44
+msgid ""
+"<em>Clip</em>: Shows the current clip from the original area. This makes it "
+"easier for users to check exactly what's within the area."
+msgstr ""
+"<em>Výřez</em>: Zobrazuje aktuální výřez z oblasti originálu. Usnadňuje to "
+"uživateli přesně kontrolovat, co se v oblasti nachází."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:46
+msgid ""
+"<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
+"top left corner of the area is placed as well as the areas' width and height."
+msgstr ""
+"<em>Meze</em>: Zobrazují bod (X a Y) v originální obrázku, kde začíná levý "
+"horní roh oblasti, a také šířku a výšku oblasti."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:49
+msgid ""
+"<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
+"area's text with by (by pressing the <gui>OCR</gui> button)"
+msgstr ""
+"<em>Výkonný program OCR pro rozpoznávání této oblasti</em>: Umožňuje "
+"uživateli zvolit výkonný program OCR a rozpoznat text v oblasti (zmáčknutím "
+"tlačítka <gui>OCR</gui>)"
+
+#. (itstool) path: note/p
+#: C/manualeditionandcorrection.page:51
+msgid ""
+"Using the OCR engine to recognize the text will directly assign that text to "
+"the area and replace the one assigned before."
+msgstr ""
+"Použitím výkonného programu OCR k rozpoznání textu bude text přímo přiřazen "
+"do textové oblasti a nahradí ten, co tam byl případně před tím."
+
+#. (itstool) path: list/item
+#: C/manualeditionandcorrection.page:49
+msgid "<_:p-1/>. <_:note-2/>"
+msgstr "<_:p-1/>. <_:note-2/>"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:54
+msgid ""
+"<em>Text Area</em>: Represents the text assigned to that area and lets the "
+"user edit it. This area is disabled when the area is of the type image"
+msgstr ""
+"<em>Textová oblast</em>: Představuje text přiřazený oblasti a umožňuje jej "
+"upravovat. Tato oblast je nepřístupná, když je oblast typu obrázek."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:57
+msgid ""
+"<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
+"the text alignment, line and letter spacing."
+msgstr ""
+"<em>Karta styl</em>: Umožňuje uživateli zvolit typ a velikost písma, "
+"zarovnání textu a rozpal řádků a znaků."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:61
+msgid ""
+"The content areas can be selected by clicking on them or by using the menus "
+"<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and "
+"<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are "
+"also keyboard shortcuts for these actions: <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr ""
+"Oblast obsahu můžete vybrat tím, že na ni kliknete nebo použijete nabídky "
+"<guiseq><gui>Dokument</gui><gui>Vybrat předchozí oblast</gui></guiseq> a "
+"<guiseq><gui>Dokument</gui><gui>Vybrat následující oblast</gui></guiseq>. "
+"Případně na to existují i klávesové zkratky <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>P</key></keyseq> a <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>N</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:68
+msgid ""
+"Selecting all areas is also possible using <guiseq><gui>Document</"
+"gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>A</key></keyseq>."
+msgstr ""
+"Dají se vybrat i všechny oblasti pomocí <guiseq><gui>Dokument</"
+"gui><gui>Vybrat všechny oblasti</gui></guiseq> nebo <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>A</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:72
+msgid ""
+"When at least one content area is selected, it is possible to recognize "
+"their contents automatically or delete them. These actions can be "
+"accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected "
+"Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected "
+"Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</"
+"key></keyseq>), respectively."
+msgstr ""
+"Pokud je vybrána nejméně jedna oblast, je možné její obsah automaticky "
+"rozpoznat nebo ji odstranit. To můžete vykonat kliknutím na "
+"<guiseq><gui>Dokument</gui><gui>Rozpoznat vybrané oblasti</gui></guiseq> a "
+"<guiseq><gui>Dokument</gui><gui>Vymazat vybrané oblasti</gui></guiseq> (nebo "
+"<keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>)."
+
+#. (itstool) path: info/desc
+#: C/ocrconfiguration.page:9
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Nastavení výkonných programů OCR, které provádí rozpoznání textu"
+
+#. (itstool) path: page/title
+#: C/ocrconfiguration.page:12
+msgid "OCR Engines Configuration"
+msgstr "Nastavení výkonných programů OCR"
+
+#. (itstool) path: page/p
+#: C/ocrconfiguration.page:14
+msgid ""
+"<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from "
+"images. This means any OCR engine that can be used from the command line "
+"should also be used in <app>OCRFeeder</app>."
+msgstr ""
+"Aplikace <app>OCRFeeder</app> používá k získání textu z obrázků výkonné "
+"programy OCR nainstalované v systému. To znamená, že jakýkoliv program OCR, "
+"který lze použít z příkazové řádky, je možné použít i v aplikaci "
+"<app>OCRFeeder</app>."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:20
+msgid "Automatic Detection of OCR Engines"
+msgstr "Automatické nalezení výkonných programů OCR"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:22
+msgid ""
+"The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and "
+"<em>Cuneiform</em>) are already automatically detected and configured in "
+"most systems, the first time <app>OCRFeeder</app> is run."
+msgstr ""
+"Výkonné programy OCR (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> a "
+"<em>Cuneiform</em>), které jsou již nainstalovány, jsou ve většině systému "
+"zjištěny a nastaveny automaticky při prvním spuštění aplikace "
+"<app>OCRFeeder</app>."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:26
+msgid ""
+"If an OCR engine is installed after <app>OCRFeeder</app> had configured "
+"already an engine, it will not be automatically configured but, depending on "
+"the engine, users might easily go to the <gui>OCR Engines</gui> dialog and "
+"choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr ""
+"Pokud je výkonný program OCR nainstalován až po té, co již byla aplikace "
+"<app>OCRFeeder</app> nastavena, nebude nastaven automaticky, ale podle typu "
+"výkonného programu, může uživatel jít do dialogového okna <gui>Výkonné "
+"programy OCR</gui> a zvolit s jej v seznamu po zmáčknutí tlačítka "
+"<gui>Vyhledat</gui>."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:31
+msgid ""
+"Already configured OCR engines might be detected again and it is up to the "
+"user to uncheck these engines if they shouldn't be added again."
+msgstr ""
+"Již nastavené výkonné programy OCR mohou být nalezeny znovu a je na "
+"uživateli, aby je odškrtl, pokud se nemají znovu přidat."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:38
+msgid "Manual Configuration"
+msgstr "Ruční nastavení"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:40
+msgid ""
+"The currently configured OCR engines are shown in the <gui>OCR Engines</gui> "
+"dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
+"gui></guiseq>."
+msgstr ""
+"Aktuálně nastavené výkonné programy OCR jsou zobrazeny v dialogovém okně "
+"<gui>Výkonné programy OCR</gui>, které můžete otevřít z "
+"<guiseq><gui>Nástroje</gui><gui>Výkonné programy OCR</gui></guiseq>."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:44
+msgid ""
+"Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog "
+"allows to add new engines, edit or delete the current ones and detect "
+"engines installed in the system."
+msgstr ""
+"Po straně nastavených výkonných programů OCR v dialogovém okně <gui>Výkonné "
+"programy OCR</gui> jsou tlačítka, která umožňují přidat, upravit nebo smazat "
+"některý z aktuálních a vyhledat výkonné programy nainstalované v systému."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:48
+msgid ""
+"When adding or editing an OCR engine (by pressing the <gui>Add</gui> or "
+"<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
+"fields:"
+msgstr ""
+"Když přidáváte nebo upravujete výkonný program OCR (zmáčknutím tlačítka "
+"<gui>Přidat</gui> či <gui>Upravit</gui>), zobrazí se dialogové okno s "
+"následujícími poli:"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:53
+msgid ""
+"<gui>Name</gui>: The engine's name. This name will be used in throughout the "
+"UI when referring to the engine;"
+msgstr ""
+"<gui>Název</gui>: Název výkonného programu. Tento název bude používán v "
+"uživatelském rozhraní, kde je potřeba se na výkonný program odkázat;"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:55
+msgid ""
+"<gui>Image format</gui>: The image format that the engine recognizes (for "
+"example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr ""
+"<gui>Formát obrazu</gui>: Formát obrazu, se kterým výkonný program pracuje "
+"(například <em>TIF</em> v případě programu <em>Tesseract</em>);"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:58
+msgid ""
+"<gui>Failure string</gui>: Some engines replace unrecognized characters by "
+"another, pre-defined character (for example, <em>_</em> in the case of "
+"<em>GOCR</em>)."
+msgstr ""
+"<gui>Řetězec při selhání</gui>: Některé výkonné programy nahrazují "
+"nerozpoznané znaky jiným, předdefinovaným znakem (například <em>_</em> v "
+"případě programu <em>GOCR</em>);"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:61
+msgid ""
+"<gui>Engine path</gui>: The path in the system to the engine's executable "
+"(for example, <em>/usr/bin/tesseract</em>)."
+msgstr ""
+"<gui>Cesta k výkonnému programu</gui>: Cesta v systému ke spustitelnému "
+"souboru výkonného programu (například <em>/usr/bin/tesseract</em>);"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:63
+msgid ""
+"<gui>Engine arguments</gui>: The arguments that feed an image to the engine "
+"and make it output the recognized text to the standard output. "
+"<app>OCRFeeder</app> runs the engine with these arguments as if it was in "
+"the command line and looks for the recognized text in the standard output. "
+"Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while "
+"other, like <em>Tesseract</em>, write the text into a file."
+msgstr ""
+"<gui>Argumenty výkonného programu</gui>: Argumenty, které předávají obraz do "
+"výkonného programu a provedou výpis rozpoznaného textu na standardní výstup. "
+"Aplikace <app>OCRFeeder</app> spustí výkonný program s těmito argumenty "
+"stejně, jako by to bylo na příkazovém řádku a rozpoznaný text se očekává na "
+"standardním výstupu. Některé výkonné programy to tak již dělají, jako třeba "
+"<em>Ocrad</em> a <em>GOCR</em>, jiné jako <em>Tesseract</em>, zapisují text "
+"do souboru."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:70
+msgid ""
+"Since the image's path to be read is always needed, a special argument <em>"
+"$IMAGE</em> is provided for this and will be replaced by the image path when "
+"the engine is run. For the cases where a file name is needed, like the one "
+"mentioned previously, a special argument <em>$FILE</em> is provided and will "
+"be replaced by a temporary file name."
+msgstr ""
+"Protože cesta ke čtenému obrázku je potřeba vždy, je pro tento účel "
+"poskytován speciální argument <em>$IMAGE</em> a při spuštění výkonného "
+"programu je nahrazen cestou k obrázku. Pro případy, kdy je zapotřebí název "
+"souboru, jak bylo uvedeno dříve, je poskytován speciální argument <em>$FILE</"
+"em>, který bude nahrazen názvem dočasného souboru."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:76
+msgid ""
+"So, in case of <em>Tesseract</em> (which writes the recognized text into a "
+"file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr ""
+"Takže v případě programu <em>Tesseract</em> (který zapisuje rozpoznaný text "
+"do souboru), by argumenty byly <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</"
+"em>."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:82
+msgid ""
+"The engines' configuration is stored in their own XML file in the user's "
+"home under <em>.config/ocrfeeder/engines/</em>."
+msgstr ""
+"Nastavení výkonných programů je uchováváno v jejich vlastním souboru XML v "
+"domovské složce uživatele pod <em>.config/ocrfeeder/engines/</em>."
+
+#. (itstool) path: info/desc
+#: C/projects.page:7
+msgid "Loading and saving projects"
+msgstr "Načítání a ukládání projektů"
+
+#. (itstool) path: page/p
+#: C/projects.page:12
+msgid ""
+"Sometimes a user may want to save the progress of the work done so far in an "
+"image and continue with it later. For this case <app>OCRFeeder</app> offers "
+"the possibility to save and load projects."
+msgstr ""
+"Někdy může uživatel chtít uložit stav práce na obrázku a pokračovat v ní "
+"později. Pro tyto případy nabízí aplikace <app>OCRFeeder</app> možnost "
+"projekty ukládat a načítat."
+
+#. (itstool) path: page/p
+#: C/projects.page:17
+msgid ""
+"Projects are compressed files with the <em>ocrf</em> extension which hold "
+"information about pages (images) and content areas."
+msgstr ""
+"Projekty jsou komprimované soubory s příponou <em>ocrf</em>, které "
+"uchovávají informace o stránkách (obrázcích) a oblastech s obsahem."
+
+#. (itstool) path: section/title
+#: C/projects.page:21
+msgid "Saving A Project"
+msgstr "Ukládání projektu"
+
+#. (itstool) path: section/p
+#: C/projects.page:23
+msgid ""
+"After having done some work in an image, a project can be created by "
+"clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
+"<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the "
+"<keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</"
+"key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A "
+"file saving dialog will then be shown so the project's name and location is "
+"entered."
+msgstr ""
+"Po dokončení nějakých prací na obrázku je možné uložit projekt kliknutím na "
+"<guiseq><gui>Soubor</gui><gui>Uložit</gui></guiseq> nebo "
+"<guiseq><gui>Soubor</gui><gui>Uložit jako…</gui></guiseq>. Případně lze "
+"použít klávesových zkratek <keyseq><key>Control</key><key>S</key></keyseq> "
+"nebo <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq>. Objeví "
+"se dialogové okno ukládání, do kterého se zadá název a umístění projektu."
+
+#. (itstool) path: section/title
+#: C/projects.page:34
+msgid "Loading A Project"
+msgstr "Načítání projektu"
+
+#. (itstool) path: section/p
+#: C/projects.page:36
+msgid ""
+"An existing project can be loaded simply by clicking <guiseq><gui>File</"
+"gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
+"keyseq>."
+msgstr ""
+"Existující projekt lze načíst jednoduše kliknutím na <guiseq><gui>Soubor</"
+"gui><gui>Otevřít</gui></guiseq> nebo zmáčknutím <keyseq><key>Control</"
+"key><key>O</key></keyseq>."
+
+#. (itstool) path: section/title
+#: C/projects.page:43
+msgid "Appending A Project"
+msgstr "Připojování projektu"
+
+#. (itstool) path: section/p
+#: C/projects.page:45
+msgid ""
+"Sometimes it is useful to merge two or more projects in order to create only "
+"one document with the pages of several <app>OCRFeeder</app> projects. This "
+"can be accomplished by appending a project, which simply loads the pages "
+"from a chosen project into the current one. To do this, click in "
+"<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
+"wanted project."
+msgstr ""
+"Někdy může být užitečné sloučit dohromady dva nebo více projektů, aby z nich "
+"vznikl dokument s více stránkami z několika projektů <app>OCRFeeder</app>. "
+"To lze udělat připojením projektu, kdy se prostě načtou stránky ze zvoleného "
+"projektu do aktuálního projektu. Pokud to chcete, klikněte na "
+"<guiseq><gui>Soubor</gui><gui>Připojit projekt</gui></guiseq> a zvolte ten, "
+"který chcete připojit."
+
+#. (itstool) path: section/title
+#: C/projects.page:55
+msgid "Clearing A Project"
+msgstr "Mazání projektu"
+
+#. (itstool) path: section/p
+#: C/projects.page:57
+msgid ""
+"If all the information is a project should be deleted (for example, to start "
+"over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
+"Project</gui></guiseq>."
+msgstr ""
+"Když je potřeba všechny informace v projektu vymazat (například, když chcete "
+"začít od znovu), můžete tak učinit volbou <guiseq><gui>Upravit</"
+"gui><gui>Vymazat projekt</gui></guiseq>."
+
+#. (itstool) path: info/desc
+#: C/unpaper.page:8
 msgid "Cleaning images before performing OCR"
 msgstr "Čištění obrázků před provedením rozpoznávání"
 
-#: C/unpaper.page:11(title)
+#. (itstool) path: page/title
+#: C/unpaper.page:11
 msgid "Unpaper"
 msgstr "Unpaper"
 
-#: C/unpaper.page:13(p)
+#. (itstool) path: page/p
+#: C/unpaper.page:13
 msgid ""
 "<em>Unpaper</em> is a tool to clean images in order to make them easier to "
 "read on screen. It is aimed mainly at images obtained from scanned documents "
@@ -35,7 +1191,8 @@ msgstr ""
 "rozpoznat. Je zaměřen hlavně na obrázky získané z naskenovaných dokumentů, "
 "které obvykle obsahují zrnka prachu, černé okraje a další vady."
 
-#: C/unpaper.page:18(p)
+#. (itstool) path: page/p
+#: C/unpaper.page:18
 msgid ""
 "<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before "
 "processing them, which usually results in a better recognition."
@@ -44,7 +1201,8 @@ msgstr ""
 "vyčištění svých obrázků před zpracováním, což obvykle vede k lepšímu "
 "rozpoznání."
 
-#: C/unpaper.page:22(p)
+#. (itstool) path: page/p
+#: C/unpaper.page:22
 msgid ""
 "<em>Unpaper</em> needs to be installed in order to be used. If it is not "
 "installed, <app>OCRFeeder</app> won't show it's action in the interface."
@@ -53,7 +1211,8 @@ msgstr ""
 "Pokud nainstalován není, příslušná akce se v uživatelském rozhraní aplikace "
 "<app>OCRFeeder</app> nezobrazí."
 
-#: C/unpaper.page:26(p)
+#. (itstool) path: page/p
+#: C/unpaper.page:26
 msgid ""
 "To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</"
 "gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> "
@@ -67,7 +1226,8 @@ msgstr ""
 "oblast s náhledem změn před jeho použitím na načtený obrázek. V závislosti "
 "na velikosti a charakteru obrázku může použití tohoto nástroje chvíli trvat."
 
-#: C/unpaper.page:33(p)
+#. (itstool) path: page/p
+#: C/unpaper.page:33
 msgid ""
 "<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</"
 "gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. "
@@ -91,1013 +1251,3 @@ msgstr ""
 "app>. Kliknutím na tlačítko <gui>Předvolby pro Unpaper</gui> můžete nastavit "
 "volby programu <em>Unpaper</em>, které se mají použít při jeho automatické "
 "vyvolání pro načtení obrázku."
-
-#: C/projects.page:7(desc)
-msgid "Loading and saving projects"
-msgstr "Načítání a ukládání projektů"
-
-#: C/projects.page:10(title) C/index.page:43(title)
-msgid "Projects"
-msgstr "Projekty"
-
-#: C/projects.page:12(p)
-msgid ""
-"Sometimes a user may want to save the progress of the work done so far in an "
-"image and continue with it later. For this case <app>OCRFeeder</app> offers "
-"the possibility to save and load projects."
-msgstr ""
-"Někdy může uživatel chtít uložit stav práce na obrázku a pokračovat v ní "
-"později. Pro tyto případy nabízí aplikace <app>OCRFeeder</app> možnost "
-"projekty ukládat a načítat."
-
-#: C/projects.page:17(p)
-msgid ""
-"Projects are compressed files with the <em>ocrf</em> extension which hold "
-"information about pages (images) and content areas."
-msgstr ""
-"Projekty jsou komprimované soubory s příponou <em>ocrf</em>, které "
-"uchovávají informace o stránkách (obrázcích) a oblastech s obsahem."
-
-#: C/projects.page:21(title)
-msgid "Saving A Project"
-msgstr "Ukládání projektu"
-
-#: C/projects.page:23(p)
-msgid ""
-"After having done some work in an image, a project can be created by "
-"clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
-"<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the "
-"<keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</"
-"key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A "
-"file saving dialog will then be shown so the project's name and location is "
-"entered."
-msgstr ""
-"Po dokončení nějakých prací na obrázku je možné uložit projekt kliknutím na "
-"<guiseq><gui>Soubor</gui><gui>Uložit</gui></guiseq> nebo "
-"<guiseq><gui>Soubor</gui><gui>Uložit jako…</gui></guiseq>. Případně lze "
-"použít klávesových zkratek <keyseq><key>Control</key><key>S</key></keyseq> "
-"nebo <keyseq><key>Control</key><key>Shift</key><key>S</key></keyseq>. Objeví "
-"se dialogové okno ukládání, do kterého se zadá název a umístění projektu."
-
-#: C/projects.page:34(title)
-msgid "Loading A Project"
-msgstr "Načítání projektu"
-
-#: C/projects.page:36(p)
-msgid ""
-"An existing project can be loaded simply by clicking <guiseq><gui>File</"
-"gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
-"keyseq>."
-msgstr ""
-"Existující projekt lze načíst jednoduše kliknutím na <guiseq><gui>Soubor</"
-"gui><gui>Otevřít</gui></guiseq> nebo zmáčknutím <keyseq><key>Control</"
-"key><key>O</key></keyseq>."
-
-#: C/projects.page:43(title)
-msgid "Appending A Project"
-msgstr "Připojování projektu"
-
-#: C/projects.page:45(p)
-msgid ""
-"Sometimes it is useful to merge two or more projects in order to create only "
-"one document with the pages of several <app>OCRFeeder</app> projects. This "
-"can be accomplished by appending a project, which simply loads the pages "
-"from a chosen project into the current one. To do this, click in "
-"<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
-"wanted project."
-msgstr ""
-"Někdy může být užitečné sloučit dohromady dva nebo více projektů, aby z nich "
-"vznikl dokument s více stránkami z několika projektů <app>OCRFeeder</app>. "
-"To lze udělat připojením projektu, kdy se prostě načtou stránky ze zvoleného "
-"projektu do aktuálního projektu. Pokud to chcete, klikněte na "
-"<guiseq><gui>Soubor</gui><gui>Připojit projekt</gui></guiseq> a zvolte ten, "
-"který chcete připojit."
-
-#: C/projects.page:55(title)
-msgid "Clearing A Project"
-msgstr "Mazání projektu"
-
-#: C/projects.page:57(p)
-msgid ""
-"If all the information is a project should be deleted (for example, to start "
-"over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
-"Project</gui></guiseq>."
-msgstr ""
-"Když je potřeba všechny informace v projektu vymazat (například, když chcete "
-"začít od znovu), můžete tak učinit volbou <guiseq><gui>Upravit</"
-"gui><gui>Vymazat projekt</gui></guiseq>."
-
-#: C/ocrconfiguration.page:9(desc)
-msgid "Configure the OCR engines to recognize the text"
-msgstr "Nastavení výkonných programů OCR, které provádí rozpoznání textu"
-
-#: C/ocrconfiguration.page:12(title)
-msgid "OCR Engines Configuration"
-msgstr "Nastavení výkonných programů OCR"
-
-#: C/ocrconfiguration.page:14(p)
-msgid ""
-"<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from "
-"images. This means any OCR engine that can be used from the command line "
-"should also be used in <app>OCRFeeder</app>."
-msgstr ""
-"Aplikace <app>OCRFeeder</app> používá k získání textu z obrázků výkonné "
-"programy OCR nainstalované v systému. To znamená, že jakýkoliv program OCR, "
-"který lze použít z příkazové řádky, je možné použít i v aplikaci "
-"<app>OCRFeeder</app>."
-
-#: C/ocrconfiguration.page:20(title)
-msgid "Automatic Detection of OCR Engines"
-msgstr "Automatické nalezení výkonných programů OCR"
-
-#: C/ocrconfiguration.page:22(p)
-msgid ""
-"The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and "
-"<em>Cuneiform</em>) are already automatically detected and configured in "
-"most systems, the first time <app>OCRFeeder</app> is run."
-msgstr ""
-"Výkonné programy OCR (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> a "
-"<em>Cuneiform</em>), které jsou již nainstalovány, jsou ve většině systému "
-"zjištěny a nastaveny automaticky při prvním spuštění aplikace "
-"<app>OCRFeeder</app>."
-
-#: C/ocrconfiguration.page:26(p)
-msgid ""
-"If an OCR engine is installed after <app>OCRFeeder</app> had configured "
-"already an engine, it will not be automatically configured but, depending on "
-"the engine, users might easily go to the <gui>OCR Engines</gui> dialog and "
-"choose it from the list of detected engines after pressing <gui>Detect</gui>."
-msgstr ""
-"Pokud je výkonný program OCR nainstalován až po té, co již byla aplikace "
-"<app>OCRFeeder</app> nastavena, nebude nastaven automaticky, ale podle typu "
-"výkonného programu, může uživatel jít do dialogového okna <gui>Výkonné "
-"programy OCR</gui> a zvolit s jej v seznamu po zmáčknutí tlačítka "
-"<gui>Vyhledat</gui>."
-
-#: C/ocrconfiguration.page:31(p)
-msgid ""
-"Already configured OCR engines might be detected again and it is up to the "
-"user to uncheck these engines if they shouldn't be added again."
-msgstr ""
-"Již nastavené výkonné programy OCR mohou být nalezeny znovu a je na "
-"uživateli, aby je odškrtl, pokud se nemají znovu přidat."
-
-#: C/ocrconfiguration.page:38(title)
-msgid "Manual Configuration"
-msgstr "Ruční nastavení"
-
-#: C/ocrconfiguration.page:40(p)
-msgid ""
-"The currently configured OCR engines are shown in the <gui>OCR Engines</gui> "
-"dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
-"gui></guiseq>."
-msgstr ""
-"Aktuálně nastavené výkonné programy OCR jsou zobrazeny v dialogovém okně "
-"<gui>Výkonné programy OCR</gui>, které můžete otevřít z "
-"<guiseq><gui>Nástroje</gui><gui>Výkonné programy OCR</gui></guiseq>."
-
-#: C/ocrconfiguration.page:44(p)
-msgid ""
-"Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog "
-"allows to add new engines, edit or delete the current ones and detect "
-"engines installed in the system."
-msgstr ""
-"Po straně nastavených výkonných programů OCR v dialogovém okně <gui>Výkonné "
-"programy OCR</gui> jsou tlačítka, která umožňují přidat, upravit nebo smazat "
-"některý z aktuálních a vyhledat výkonné programy nainstalované v systému."
-
-#: C/ocrconfiguration.page:48(p)
-msgid ""
-"When adding or editing an OCR engine (by pressing the <gui>Add</gui> or "
-"<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
-"fields:"
-msgstr ""
-"Když přidáváte nebo upravujete výkonný program OCR (zmáčknutím tlačítka "
-"<gui>Přidat</gui> či <gui>Upravit</gui>), zobrazí se dialogové okno s "
-"následujícími poli:"
-
-#: C/ocrconfiguration.page:53(p)
-msgid ""
-"<gui>Name</gui>: The engine's name. This name will be used in throughout the "
-"UI when referring to the engine;"
-msgstr ""
-"<gui>Název</gui>: Název výkonného programu. Tento název bude používán v "
-"uživatelském rozhraní, kde je potřeba se na výkonný program odkázat;"
-
-#: C/ocrconfiguration.page:55(p)
-msgid ""
-"<gui>Image format</gui>: The image format that the engine recognizes (for "
-"example, <em>TIF</em> in the case of <em>Tesseract</em>);"
-msgstr ""
-"<gui>Formát obrazu</gui>: Formát obrazu, se kterým výkonný program pracuje "
-"(například <em>TIF</em> v případě programu <em>Tesseract</em>);"
-
-#: C/ocrconfiguration.page:58(p)
-msgid ""
-"<gui>Failure string</gui>: Some engines replace unrecognized characters by "
-"another, pre-defined character (for example, <em>_</em> in the case of "
-"<em>GOCR</em>)."
-msgstr ""
-"<gui>Řetězec při selhání</gui>: Některé výkonné programy nahrazují "
-"nerozpoznané znaky jiným, předdefinovaným znakem (například <em>_</em> v "
-"případě programu <em>GOCR</em>);"
-
-#: C/ocrconfiguration.page:61(p)
-msgid ""
-"<gui>Engine path</gui>: The path in the system to the engine's executable "
-"(for example, <em>/usr/bin/tesseract</em>)."
-msgstr ""
-"<gui>Cesta k výkonnému programu</gui>: Cesta v systému ke spustitelnému "
-"souboru výkonného programu (například <em>/usr/bin/tesseract</em>);"
-
-#: C/ocrconfiguration.page:63(p)
-msgid ""
-"<gui>Engine arguments</gui>: The arguments that feed an image to the engine "
-"and make it output the recognized text to the standard output. "
-"<app>OCRFeeder</app> runs the engine with these arguments as if it was in "
-"the command line and looks for the recognized text in the standard output. "
-"Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while "
-"other, like <em>Tesseract</em>, write the text into a file."
-msgstr ""
-"<gui>Argumenty výkonného programu</gui>: Argumenty, které předávají obraz do "
-"výkonného programu a provedou výpis rozpoznaného textu na standardní výstup. "
-"Aplikace <app>OCRFeeder</app> spustí výkonný program s těmito argumenty "
-"stejně, jako by to bylo na příkazovém řádku a rozpoznaný text se očekává na "
-"standardním výstupu. Některé výkonné programy to tak již dělají, jako třeba "
-"<em>Ocrad</em> a <em>GOCR</em>, jiné jako <em>Tesseract</em>, zapisují text "
-"do souboru."
-
-#: C/ocrconfiguration.page:70(p)
-msgid ""
-"Since the image's path to be read is always needed, a special argument <em>"
-"$IMAGE</em> is provided for this and will be replaced by the image path when "
-"the engine is run. For the cases where a file name is needed, like the one "
-"mentioned previously, a special argument <em>$FILE</em> is provided and will "
-"be replaced by a temporary file name."
-msgstr ""
-"Protože cesta ke čtenému obrázku je potřeba vždy, je pro tento účel "
-"poskytován speciální argument <em>$IMAGE</em> a při spuštění výkonného "
-"programu je nahrazen cestou k obrázku. Pro případy, kdy je zapotřebí název "
-"souboru, jak bylo uvedeno dříve, je poskytován speciální argument <em>$FILE</"
-"em>, který bude nahrazen názvem dočasného souboru."
-
-#: C/ocrconfiguration.page:76(p)
-msgid ""
-"So, in case of <em>Tesseract</em> (which writes the recognized text into a "
-"file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
-msgstr ""
-"Takže v případě programu <em>Tesseract</em> (který zapisuje rozpoznaný text "
-"do souboru), by argumenty byly <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</"
-"em>."
-
-#: C/ocrconfiguration.page:82(p)
-msgid ""
-"The engines' configuration is stored in their own XML file in the user's "
-"home under <em>.config/ocrfeeder/engines/</em>."
-msgstr ""
-"Nastavení výkonných programů je uchováváno v jejich vlastním souboru XML v "
-"domovské složce uživatele pod <em>.config/ocrfeeder/engines/</em>."
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/manualeditionandcorrection.page:26(None)
-msgid ""
-"@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
-msgstr ""
-"@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/manualeditionandcorrection.page:33(None)
-msgid ""
-"@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
-msgstr ""
-"@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
-
-#: C/manualeditionandcorrection.page:9(desc)
-msgid "Manual edition and correction of results"
-msgstr "Ruční úpravy a opravy výsledků"
-
-#: C/manualeditionandcorrection.page:12(title)
-msgid "Manual Edition"
-msgstr "Ruční úpravy"
-
-#: C/manualeditionandcorrection.page:14(p)
-msgid ""
-"One may want to manually select just a portion of an image to be recognized "
-"or correct the results of the automatic recognition. <app>OCRFeeder</app> "
-"lets its users manually edit every aspect of a document's contents in an "
-"easy way."
-msgstr ""
-"Někdo může chtít ručně vybrat část obrázku, která má být rozpoznána, jindy "
-"je třeba opravit výsledky automatického rozpoznání. Aplikace <app>OCRFeeder</"
-"app> umožňuje uživateli jednoduchým způsobem ručně upravit každou část "
-"obsahu dokumentu."
-
-#: C/manualeditionandcorrection.page:21(title)
-msgid "Content Areas"
-msgstr "Oblasti obsahu"
-
-#: C/manualeditionandcorrection.page:23(p)
-msgid ""
-"The mentioned document's contents are represented by areas like shown in the "
-"following image:"
-msgstr ""
-"Zmíněný obsah dokumentu je představován oblastmi, podobně jako na "
-"následujícím obrázku:"
-
-#: C/manualeditionandcorrection.page:26(media)
-msgid "A picture of two content areas with one of them selected."
-msgstr "Obrázek se čtyřmi oblastmi, z nichž je jedna vybraná."
-
-#: C/manualeditionandcorrection.page:30(p)
-msgid ""
-"The attributes of a selected are shown and can be changed from the right "
-"part of the main window, like shown in the following image:"
-msgstr ""
-"Vlastnosti vybrané oblasti jsou zobrazeny a mohou být změněny v pravé části "
-"hlavního okna, podobně jak můžete vidět na následujícím obrázku:"
-
-#: C/manualeditionandcorrection.page:33(media)
-msgid "A picture showing the areas' edition UI"
-msgstr "Obrázek ukazující uživatelské rozhraní pro úpravy oblasti"
-
-#: C/manualeditionandcorrection.page:36(p)
-msgid "The following list describes the content areas' attributes:"
-msgstr "Následující seznam popisuje vlastnosti oblasti obsahu:"
-
-#: C/manualeditionandcorrection.page:38(p)
-msgid ""
-"<em>Type</em>: sets the area to be either the type image or text. The image "
-"type will clip the area from the original page and place it in the generated "
-"document. The text type will use the text assigned to the area and represent "
-"it as text in the generated document. (Generated ODT documents will have "
-"text boxes when an area was marked as being of the type text)"
-msgstr ""
-"<em>Typ</em>: nastavuje, zda je oblast typu obrázek nebo text. Při typu "
-"obrázek se oblast z původní stránky vyřízne a umístí do generovaného "
-"dokumentu. Při typu text se použije text obsažený v oblasti a umístí se jako "
-"text do generovaného dokumentu. (Pokud je nějaká oblast označená jako text, "
-"bude mít generovaný dokument ODT textové rámce)"
-
-#: C/manualeditionandcorrection.page:44(p)
-msgid ""
-"<em>Clip</em>: Shows the current clip from the original area. This makes it "
-"easier for users to check exactly what's within the area."
-msgstr ""
-"<em>Výřez</em>: Zobrazuje aktuální výřez z oblasti originálu. Usnadňuje to "
-"uživateli přesně kontrolovat, co se v oblasti nachází."
-
-#: C/manualeditionandcorrection.page:46(p)
-msgid ""
-"<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
-"top left corner of the area is placed as well as the areas' width and height."
-msgstr ""
-"<em>Meze</em>: Zobrazují bod (X a Y) v originální obrázku, kde začíná levý "
-"horní roh oblasti, a také šířku a výšku oblasti."
-
-#: C/manualeditionandcorrection.page:49(p)
-msgid ""
-"<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
-"area's text with by (by pressing the <gui>OCR</gui> button)"
-msgstr ""
-"<em>Výkonný program OCR pro rozpoznávání této oblasti</em>: Umožňuje "
-"uživateli zvolit výkonný program OCR a rozpoznat text v oblasti (zmáčknutím "
-"tlačítka <gui>OCR</gui>)"
-
-#: C/manualeditionandcorrection.page:51(p)
-msgid ""
-"Using the OCR engine to recognize the text will directly assign that text to "
-"the area and replace the one assigned before."
-msgstr ""
-"Použitím výkonného programu OCR k rozpoznání textu bude text přímo přiřazen "
-"do textové oblasti a nahradí ten, co tam byl případně před tím."
-
-#: C/manualeditionandcorrection.page:49(item)
-msgid "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
-msgstr "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
-
-#: C/manualeditionandcorrection.page:54(p)
-msgid ""
-"<em>Text Area</em>: Represents the text assigned to that area and lets the "
-"user edit it. This area is disabled when the area is of the type image"
-msgstr ""
-"<em>Textová oblast</em>: Představuje text přiřazený oblasti a umožňuje jej "
-"upravovat. Tato oblast je nepřístupná, když je oblast typu obrázek."
-
-#: C/manualeditionandcorrection.page:57(p)
-msgid ""
-"<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
-"the text alignment, line and letter spacing."
-msgstr ""
-"<em>Karta styl</em>: Umožňuje uživateli zvolit typ a velikost písma, "
-"zarovnání textu a rozpal řádků a znaků."
-
-#: C/manualeditionandcorrection.page:61(p)
-msgid ""
-"The content areas can be selected by clicking on them or by using the menus "
-"<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and "
-"<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are "
-"also keyboard shortcuts for these actions: <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>N</key></keyseq>, respectively."
-msgstr ""
-"Oblast obsahu můžete vybrat tím, že na ni kliknete nebo použijete nabídky "
-"<guiseq><gui>Dokument</gui><gui>Vybrat předchozí oblast</gui></guiseq> a "
-"<guiseq><gui>Dokument</gui><gui>Vybrat následující oblast</gui></guiseq>. "
-"Případně na to existují i klávesové zkratky <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>P</key></keyseq> a <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>N</key></keyseq>."
-
-#: C/manualeditionandcorrection.page:68(p)
-msgid ""
-"Selecting all areas is also possible using <guiseq><gui>Document</"
-"gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>A</key></keyseq>."
-msgstr ""
-"Dají se vybrat i všechny oblasti pomocí <guiseq><gui>Dokument</"
-"gui><gui>Vybrat všechny oblasti</gui></guiseq> nebo <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>A</key></keyseq>."
-
-#: C/manualeditionandcorrection.page:72(p)
-msgid ""
-"When at least one content area is selected, it is possible to recognize "
-"their contents automatically or delete them. These actions can be "
-"accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected "
-"Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected "
-"Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</"
-"key></keyseq>), respectively."
-msgstr ""
-"Pokud je vybrána nejméně jedna oblast, je možné její obsah automaticky "
-"rozpoznat nebo ji odstranit. To můžete vykonat kliknutím na "
-"<guiseq><gui>Dokument</gui><gui>Rozpoznat vybrané oblasti</gui></guiseq> a "
-"<guiseq><gui>Dokument</gui><gui>Vymazat vybrané oblasti</gui></guiseq> (nebo "
-"<keyseq><key>Ctrl</key><key>Shift</key><key>Delete</key></keyseq>)."
-
-#: C/legal.xml:3(p)
-msgid ""
-"This work is licensed under a <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
-"States License</link>."
-msgstr ""
-"Tato práce je licencována pod <link href=\"http://creativecommons.org/"
-"licenses/by-sa/3.0/us/\">Creative Commons Attribution-Share Alike 3.0 United "
-"States License</link>."
-
-#: C/legal.xml:6(p)
-msgid ""
-"As a special exception, the copyright holders give you permission to copy, "
-"modify, and distribute the example code contained in this document under the "
-"terms of your choosing, without restriction."
-msgstr ""
-"Jako speciální výjimku, vám držitel autorských práv dává oprávnění "
-"kopírovat, upravovat a šířit ukázkový kód obsažený v tomto dokumentu za "
-"podmínek, které si zvolíte a bez omezení."
-
-#: C/index.page:6(desc)
-msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
-msgstr "Nápověda k <app>Systému OCRFeeder pro konverzi dokumentů</app>."
-
-#: C/index.page:7(title) C/index.page:8(title) C/index.page:17(title)
-msgid "OCRFeeder Document Conversion System"
-msgstr "Systém OCRFeeder pro konverzi dokumentů"
-
-#: C/index.page:10(name)
-msgid "Joaquim Rocha"
-msgstr "Joaquim Rocha"
-
-#: C/index.page:11(email)
-msgid "me@joaquimrocha.com"
-msgstr "me@joaquimrocha.com"
-
-#: C/index.page:18(p)
-msgid ""
-"OCRFeeder is a document layout analysis and optical character recognition "
-"system."
-msgstr ""
-"Aplikace OCRFeeder slouží k analýze rozvržení dokumentu a optickému "
-"rozpoznávání znaků (OCR)."
-
-#: C/index.page:20(p)
-msgid ""
-"OCRFeeder was created to allow users to easily convert document images (for "
-"example, a PNG image with text) into editable documents (for example, an ODT "
-"version with that text)."
-msgstr ""
-"Byla vytvořena pro uživatele za účelem snadného převodu obrazových dokumentů "
-"(například obrázek PNG s textem) na editovatelné dokumenty (například "
-"dokument ODT s tímto textem)."
-
-#: C/index.page:24(p)
-msgid ""
-"Given the images it will automatically outline its contents, perform OCR and "
-"distinguish between what's graphics and text. It generates multiple formats "
-"being its main one ODT."
-msgstr ""
-"V zadaném obrázku je automaticky označen jeho obsah, provedeno rozpoznání "
-"textu a rozlišení mezi tím, co je grafika a co text. Generuje se více "
-"formátu, přičemž tím hlavním je ODT."
-
-#: C/index.page:28(p)
-msgid "This guide will explain you how to configure and use OCRFeeder."
-msgstr ""
-"Tato příručka vám vysvětlí, jak aplikaci OCRFeeder nastavit a používat."
-
-#: C/index.page:31(title)
-msgid "Adding Images"
-msgstr "Přidávání obrázků"
-
-#: C/index.page:35(title)
-msgid "Recognition"
-msgstr "Rozpoznávání"
-
-#: C/index.page:39(title)
-msgid "Configuration"
-msgstr "Nastavení"
-
-#: C/importingpdf.page:8(desc)
-msgid "Importing PDF documents"
-msgstr "Importování dokumentů PDF"
-
-#: C/importingpdf.page:11(title)
-msgid "Importing PDF"
-msgstr "Importování PDF"
-
-#: C/importingpdf.page:13(p)
-msgid ""
-"Some documents are nothing more than images placed in a PDF document. For "
-"cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
-"can then be converted into an editable document."
-msgstr ""
-"Některé dokumenty nejsou ničím víc než obrázky vloženými do dokumentu PDF. V "
-"takovýchto případech může aplikace <app>OCRFeeder</app> dokument PDF "
-"naimportovat, aby jej převedla na editovatelný dokument."
-
-#: C/importingpdf.page:18(p)
-msgid ""
-"To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</"
-"gui></guiseq>."
-msgstr ""
-"Dokument PDF naimportujete kliknutím na <guiseq><gui>Soubor</"
-"gui><gui>Importovat PDF</gui></guiseq>."
-
-#: C/importingpdf.page:21(p)
-msgid ""
-"Each PDF page will be converted to an image and placed in the pages' area."
-msgstr ""
-"Každá ze stránek PDF bude převedena na obrázek a vložena do oblasti stránek."
-
-#: C/importingpdf.page:24(p)
-msgid ""
-"The PDF conversion can be a demanding process and take some time for large "
-"PDF files."
-msgstr ""
-"Převod PDF může být náročný proces a pro rozsáhlé soubory PDF může zabrat "
-"nějaký čas."
-
-#: C/importingfromscanner.page:8(desc)
-msgid "Importing from a scanner device"
-msgstr "Importování ze skenovacího zařízení"
-
-#: C/importingfromscanner.page:11(title)
-msgid "Importing From Scanner"
-msgstr "Importování ze skeneru"
-
-#: C/importingfromscanner.page:13(p)
-msgid ""
-"In order to help convert a printed document into an editable document, "
-"<app>OCRFeeder</app> offers a way to import images directly from a scanner "
-"device."
-msgstr ""
-"Aby vám aplikace <app>OCRFeeder</app> pomohla s převodem tištěných dokumentů "
-"do editovatelné podoby, nabízí přímý import obrázků ze skenovacího zařízení."
-
-#: C/importingfromscanner.page:17(p)
-msgid ""
-"To import an image from a scanner device, use the menu <guiseq><gui>File</"
-"gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut "
-"<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
-msgstr ""
-"Když chcete obrázek importovat ze skenovacího zařízení, použijte nabídku "
-"<guiseq><gui>Soubor</gui><gui>Importovat stránku ze skeneru</gui></guiseq> "
-"nebo klávesovou zkratku <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></"
-"keyseq>."
-
-#: C/importingfromscanner.page:22(p)
-msgid ""
-"The currently detected scanner device will be used to scan the page. If more "
-"than one scanner if found, then a dialog will be shown with the options to "
-"choose from."
-msgstr ""
-"Ke skenování stránky budou požit aktuálně detekované skenovací zařízení. "
-"Pokud je nalezen více než jeden skener, objeví se dialogové okno, ve kterém "
-"si jeden zvolíte."
-
-#: C/finetuning.page:8(desc)
-msgid "Advanced options for a better recognition"
-msgstr "Pokročilé volby pro lepší rozpoznávání"
-
-#: C/finetuning.page:11(title)
-msgid "Fine-tuning"
-msgstr "Jemné ladění"
-
-#: C/finetuning.page:13(p)
-msgid ""
-"<app>OCRFeeder</app> has some advanced options that can be used to perform a "
-"better recognition. These options can be chosen from the <guiseq><gui>Edit</"
-"gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
-"tab."
-msgstr ""
-"Aplikace <app>OCRFeeder</app> má některé pokročilé volby, které lze použít k "
-"provádění lepšího rozpoznávání. Tyto volby můžete zvolit v dialogovém okně "
-"<guiseq><gui>Upravit</gui><gui>Předvolby</gui></guiseq>, na kartě "
-"<gui>Rozpoznávání</gui>."
-
-#: C/finetuning.page:18(p)
-msgid "The following list describes the mentioned options:"
-msgstr "Následující seznam popisuje zmíněné volby:"
-
-#: C/finetuning.page:20(p)
-msgid ""
-"<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the "
-"text line by line and seperate each line with a line break. Sometimes, this "
-"is not what the user wants because the text might be broken in the middle of "
-"a sentence."
-msgstr ""
-"<gui>Opravit zalomení řádků a rozdělení slov</gui>: Výkonné programy OCR "
-"obvykle čtou text po řádcích a každý řádek oddělí zalomením. Což vždy nemusí "
-"být to, co uživatel chce, protože text může být přerušen uprostřed věty."
-
-#: C/finetuning.page:24(p)
-msgid ""
-"Checking this option will make <app>OCRFeeder</app> remove single newline "
-"characters after the text is recognized by the engines."
-msgstr ""
-"Při zaškrtnutím této volby bude aplikace <app>OCRFeeder</app> po rozpoznání "
-"textu výkonným programem odstraňovat jednotlivé znaky nového řádku."
-
-#: C/finetuning.page:26(p)
-msgid ""
-"Since just removing newlines in an hyphenized text would result in wrongly "
-"separated words, hyphenization is also detected and removed in this process."
-msgstr ""
-"V textu s rozdělenými slovy může ale odstranění nových řádků pro změnu dát "
-"nesprávné výsledky u rozdělených slov, proto jsou při tomto zpracování "
-"nalezena a odstraněna rovněž rozdělovací znaménka."
-
-#: C/finetuning.page:29(p)
-msgid ""
-"<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the "
-"contents in an image uses the concept of <em>window size</em> which is the "
-"division of the image in small windows. A smaller window size means it is "
-"likely to detect more content areas but size that is too small may result in "
-"contents that should be part of a bigger area instead. On the other hand, a "
-"bigger window size means less divisions of contents but may end up in "
-"contents which should be subdivided."
-msgstr ""
-"<gui>Velikost okna</gui>: Algoritmus aplikace <app>OCRFeeder</app> používá k "
-"detekci obsahu v obrázku techniku <em>velikosti oken</em>, která dělí "
-"obrázek na malá okna. Menší velikost okna znamená, že se lépe detekuje více "
-"oblastí s obsahem, ale příliš malá hodnota může způsobit, že výsledkem budou "
-"oblasti, které by ve skutečnosti měly tvořit jednu velkou oblast. Na druhou "
-"stranu, příliš velká velikost okna znamená méně dělení obsahu, takže může "
-"skončit s oblastí, která by správně měla být dál rozdělená."
-
-#: C/finetuning.page:36(p)
-msgid ""
-"A good window size should be slightly bigger than the text line spacing in "
-"an image."
-msgstr ""
-"Dobrá velikost okna by měla být lehce větší, než je mezera mezi řádky v "
-"obrazu."
-
-#: C/finetuning.page:37(p)
-msgid ""
-"Users may want to manually set this value if automatic one doesn't produce "
-"any valid content areas but normally it is easier to use the automatic one "
-"and perform any needed corrections directly in the content areas."
-msgstr ""
-"Uživatel může chtít ručně nastavit tuto hodnotu v případě, že automatika "
-"nepodává platné oblasti obsahu, ale běžně je jednodušší použít automatickou "
-"hodnotu a případné opravy provést přímo v oblasti obsahu."
-
-#: C/finetuning.page:41(p)
-msgid ""
-"<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</"
-"app> should try to divide the detected content areas horizontally "
-"(originating more columns). The value that is used to check the existance of "
-"blank space within the contents may be set to automatic or manual when the "
-"columns aren't detected correctly."
-msgstr ""
-"<gui>Zdokonalit vyhledávání sloupců</gui>: Tuto volbu zaškrtněte, když se má "
-"aplikace <app>OCRFeeder</app> snažit vodorovně rozdělit detekované oblasti "
-"(tak vznikne více sloupců). Hodnota, která se používá ke zjišťování "
-"prázdného místa v obsahu může být nastavena na automatickou nebo ruční, když "
-"se sloupce nedetekují správně."
-
-#: C/finetuning.page:46(p)
-msgid ""
-"<gui>Adjust content areas' bounds</gui>: The detected content areas "
-"sometimes have a considerable margin between their contents and the areas' "
-"edges. By checking this option, <app>OCRFeeder</app> will minimize those "
-"margins, adjusting the areas to its contents better. Optionally, a manual "
-"value can be check to indicate the maximum value of the adjusted margins."
-msgstr ""
-"<gui>Přizpůsobit hranice oblastí s obsahem</gui>: Detekovaná oblast má někdy "
-"značně velký okraj mezi vlastním obsahem a hranami. Po zaškrtnutím této voly "
-"bude aplikace <app>OCRFeeder</app> minimalizovat tyto okraje lepším "
-"přizpůsobením oblasti jejímu obsahu. Případně je možné ručně nastavit "
-"hodnotu, která má při kontrole představovat minimální hodnotu přizpůsobených "
-"okrajů."
-
-#: C/documentgeneration.page:9(desc)
-msgid "Creating an editable document"
-msgstr "Vytváření upravitelného dokumentu"
-
-#: C/documentgeneration.page:12(title)
-msgid "Document Generation"
-msgstr "Generování dokumentu"
-
-#: C/documentgeneration.page:14(p)
-msgid ""
-"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
-"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
-msgstr ""
-"Aplikace <app>OCRFeeder</app> v současnosti generuje čtyři formáty "
-"dokumentů: <em>ODT</em>, <em>HTML</em>, <em>PDF</em> a <em>prostý text</em>."
-
-#: C/documentgeneration.page:17(p)
-msgid ""
-"After the recognition and eventual manual edition has been performed, it is "
-"possible to generate a document by clicking <guiseq><gui>File</"
-"gui><gui>Export…</gui></guiseq> and choosing the desired document format."
-msgstr ""
-"Po provedení rozpoznání a případných ručních úpravách, můžete vygenerovat "
-"dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</gui></guiseq> a "
-"zvolte požadovaný formát dokumentu."
-
-#: C/documentgeneration.page:22(p)
-msgid ""
-"The HTML exportation generates a folder with the document pages represented "
-"by one HTML file. In each page there are links to go to the previous and "
-"next pages. Image content areas are stored in a subfolder called <em>images</"
-"em>."
-msgstr ""
-"Při exportu ve formátu HTML se vygeneruje složka se soubory HTML "
-"představujícími jednotlivé stránky dokumentu. Na každé stránce je odkaz na "
-"předchozí stránku a následující stránku. Obsažené obrázky jsou uloženy v "
-"podsložce <em>images</em>."
-
-#: C/documentgeneration.page:26(p)
-msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
-msgstr ""
-"Při exportu do <em>PDF</em> si lze vybrat ze dvou typů dokumentů <em>PDF</"
-"em>:"
-
-#: C/documentgeneration.page:29(p)
-msgid ""
-"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
-"<em>PDF</em> from scratch."
-msgstr ""
-"Od základu nový: Když je vybrána tato volba, vytvoří <app>OCRFeeder</app> "
-"nové <em>PDF</em> z prázdného základu."
-
-#: C/documentgeneration.page:32(p)
-msgid ""
-"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
-"<em>PDF</em> showing the original image but with invisible text over it, "
-"making it possible to index or search."
-msgstr ""
-"Prohledávatelné PDF: Když je vybrána tato volba, vytvoří <app>OCRFeeder</"
-"app> <em>PDF</em> zobrazující původní obrázek, který je ale překrytý "
-"neviditelným textem. Díky tomu je možné jej indexovat a vyhledávat v něm."
-
-#: C/documentgeneration.page:38(title)
-msgid "Exporting the recognized document"
-msgstr "Export rozpoznaného dokumentu"
-
-#: C/documentgeneration.page:39(p)
-msgid ""
-"After the recognition and eventual manual edition has been performed, it is "
-"possible to generate a document by clicking <guiseq><gui>File</"
-"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
-"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
-"format."
-msgstr ""
-"Po provedení rozpoznání a případných ručních úpravách, můžete vygenerovat "
-"dokument kliknutím na <guiseq><gui>Soubor</gui><gui>Export…</gui></guiseq> "
-"(nebo zmáčkněte <keyseq><key>SHIFT</key><key>CTRL</key><key>E</key></"
-"keyseq>) a zvolením požadovaného formátu dokumentu."
-
-#: C/documentgeneration.page:44(p)
-msgid ""
-"Depending your needs, choose whether all pages (with the <gui>All</gui> "
-"option) or only the currently selected one (<gui>Current</gui> option) "
-"should be exported. The default option is <gui>All</gui>. After making your "
-"selection, press <gui>OK</gui> to generate the document."
-msgstr ""
-"Podle toho, co potřebujete, zvolte, jestli se mají exportovat všechny "
-"stránky (volba <gui>Vše</gui>) nebo jen jedna právě vybraná (volba "
-"<gui>Aktuální</gui>). Výchozí volbou je <gui>Vše</gui>. Nakonec zmáčkněte "
-"<gui>Budiž</gui> a dokument se vygeneruje."
-
-#: C/documentgeneration.page:48(p)
-msgid ""
-"On the last dialog, write the output filename and click the <gui>Save</gui> "
-"button. If a file with that name already exists and you would like overwrite "
-"it, click the <gui>Replace</gui> button on the confirmation dialog."
-msgstr ""
-"V posledním dialogovém okně napiště název výstupního souboru a klikněte na "
-"tlačítko <gui>Uložit</gui>. Pokud už zadaný soubor existuje a chcete jej "
-"přepsat, klikněte v potvrzovacím dialogovém okně na tlačítko <gui>Nahradit</"
-"gui>."
-
-#: C/deskewing.page:8(desc)
-msgid "Correcting the skew in the images"
-msgstr "Opravování deformací v obrázcích"
-
-#: C/deskewing.page:11(title)
-msgid "Deskewing"
-msgstr "Odstraňování deformací"
-
-#: C/deskewing.page:13(p)
-msgid ""
-"Some images, especially if they were added from a scanner device, may be "
-"skewed and this makes it harder to recognize the image."
-msgstr ""
-"Některé obrázky, zvláště pokud byly pořízeny ze skeneru, mohou být "
-"deformovány, což rozpoznávání obrázku ztěžuje."
-
-#: C/deskewing.page:16(p)
-msgid ""
-"<app>OCRFeeder</app> offers a way to automatically deskew an image. To "
-"deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
-"gui></guiseq>."
-msgstr ""
-"Aplikace <app>OCRFeeder</app> nabízí způsob automatického odstranění "
-"deformace. Pro odstranění deformace načteného obrázku klikněte na "
-"<guiseq><gui>Nástroje</gui><gui>Odstranění deformace obrazu</gui></guiseq>."
-
-#: C/deskewing.page:20(p)
-msgid ""
-"This operation can also be set to be performed automatically every time an "
-"image is added. To set it, simply open the <gui>Preferences</gui> dialog "
-"from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check "
-"<gui>Deskew images</gui> under the <gui>Tools</gui> tab."
-msgstr ""
-"Můžete si také nastavit, aby se tato operace provedla automaticky pokaždé, "
-"když je přidán obrázek. Uděláte to tak, že otevřete dialogové okno "
-"<gui>Předvolby</gui> z <guiseq><gui>Upravit</gui><gui>Předvolby</gui></"
-"guiseq> a zaškrtnete na kartě <gui>Nástroje</gui> položku <gui>Odstranit "
-"deformace obrazu</gui>."
-
-#: C/deskewing.page:26(p)
-msgid ""
-"Depending on the size and characteristics of the image, deskewing an image "
-"may take some time."
-msgstr ""
-"V závislosti na velikosti a charakteru obrazu může operace zabrat nějaký čas."
-
-#: C/automaticrecognition.page:8(desc)
-msgid "Automatically recognizing an image"
-msgstr "Automatické rozpoznávání obrazu"
-
-#: C/automaticrecognition.page:11(title)
-msgid "Automatic Recognition"
-msgstr "Automatické rozpoznávání"
-
-#: C/automaticrecognition.page:13(p)
-msgid ""
-"<app>OCRFeeder</app> tries to detect the contents in a document image and "
-"perform OCR over them, also distinguishing between what is graphics and what "
-"is text. To simplify this concept, we call it recognition."
-msgstr ""
-"Aplikace <app>OCRFeeder</app> zkouší detekovat obsah v obrázcích dokumentu a "
-"provést na nich rozpoznání textu. Zároveň se snaží rozhodnout, co je grafika "
-"a co text. Celý tento postup se nazývá rozpoznávání."
-
-#: C/automaticrecognition.page:18(p)
-msgid ""
-"After an image is added it can be automatically recognized by clicking "
-"<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
-msgstr ""
-"Po té, co je přidán obrázek, může být automaticky rozpoznán kliknutím na "
-"<guiseq><gui>Dokument</gui><gui>Rozpoznat dokument</gui></guiseq>."
-
-#: C/automaticrecognition.page:22(p)
-msgid ""
-"Since there are many different document layouts out there, the automatic "
-"recognition, mainly the page segmentation, may turn out not to be accurate "
-"for you document. In this case, some manual editing of the recognition "
-"results might be needed."
-msgstr ""
-"Vzhledem k tomu, že rozvržení dokumentu může mít spoustu podob, nemusí "
-"automatické rozpoznání, hlavně rozdělení stránky, dopadnou úplně správně. V "
-"takových případech je nutné přistoupit k ruční úpravě výsledků rozpoznávání."
-
-#: C/automaticrecognition.page:28(p)
-msgid ""
-"The automatic recognition performs some complex operations and may take some "
-"time depending on the size of the image and the complexity of the layout."
-msgstr ""
-"Automatické rozpoznávání provádí některé komplexní operace a může trvat "
-"nějako dobu v závislosti na velikosti obrázku a složitosti obsahu."
-
-#: C/automaticrecognition.page:31(p)
-msgid ""
-"The automatic recognition will replace all the content areas in the "
-"currently selected page."
-msgstr ""
-"Automatické rozpoznání nahradí vše v oblastech textu na aktuálně vybrané "
-"stránce."
-
-#: C/addingimage.page:7(desc)
-msgid "Adding an image to be recognized"
-msgstr "Přidávání obrázku, který má být rozpoznán"
-
-#: C/addingimage.page:10(title)
-msgid "Adding An Image"
-msgstr "Přidávání obrázku"
-
-#: C/addingimage.page:12(p)
-msgid ""
-"Adding an image to OCRFeeder is usually the first step when converting a "
-"document."
-msgstr ""
-"Přidání obrázku, ve kterém má být rozpoznán text, je obvykle prvním krokem "
-"při převodu dokumentu."
-
-#: C/addingimage.page:15(p)
-msgid ""
-"Each added image represents a page in the final document. A thumbnail of the "
-"image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
-msgstr ""
-"Každý přidaný obrázek představuje jednu stránku ve výsledném dokumentu. "
-"Náhledy obrázků jsou zobrazovány v oblasti stránek (oblast v levé části "
-"aplikace <app>OCRFeeder</app>)."
-
-#: C/addingimage.page:19(p)
-msgid ""
-"The order of the pages in the final document will be the same as the images' "
-"order in the pages' area. This way, pages can be reordered by dragging them "
-"in the images' thumbnails in the pages' area."
-msgstr ""
-"Pořadí stránek ve výsledném dokumentu bude stejné, jako pořadí obrázků v "
-"oblasti stránek. Proto máte možnost měnit pořadí stránek přetahováním "
-"náhledů obrázků v oblasti stránek."
-
-#: C/addingimage.page:24(p)
-msgid ""
-"You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
-"gui></guiseq>."
-msgstr ""
-"Obrázek přidáte kliknutím na <guiseq><gui>Soubor</gui><gui>Přidat obrázek</"
-"gui></guiseq>."
-
-#: C/addingimage.page:27(p)
-msgid ""
-"To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></"
-"guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
-"gui>."
-msgstr ""
-"Pokud chcete stránku odstranit, klikněte na <guiseq><gui>Upravit</"
-"gui><gui>Odstranit stránku</gui></guiseq> nebo klikněte pravým tlačítkem na "
-"náhled stránky a zvolte <gui>Odstranit</gui>."
-
-#: C/addingimage.page:32(title)
-msgid "Page Configuration"
-msgstr "Nastavení stránky"
-
-#: C/addingimage.page:34(p)
-msgid ""
-"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
-"gui></guiseq> and choose either a custom size, providing the respective "
-"values or a standard paper size from a list."
-msgstr ""
-"Pro nastavení velikosti stránky klikněte na <guiseq><gui>Upravit</"
-"gui><gui>Upravit stránku</gui></guiseq> a zvolte buďto vlastní velikost a "
-"zadejte příslušné údaje nebo si vyberte ze seznamu standardních velikostí "
-"papíru."
-
-#: C/addingfolder.page:8(desc)
-msgid "Adding all the images from a folder"
-msgstr "Přidávání všech obrázků ze složky"
-
-#: C/addingfolder.page:11(title)
-msgid "Adding Folder"
-msgstr "Přidávání složky"
-
-#: C/addingfolder.page:13(p)
-msgid ""
-"Sometimes it is useful to add all the images from a given folder. "
-"<app>OCRFeeder</app> provides this functionality by choosing "
-"<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
-msgstr ""
-"Někdy se může hodit přidat všechny obrázky ze zadané složky. Aplikace "
-"<app>OCRFeeder</app> poskytuje tuto funkci pod volbou <guiseq><gui>Soubor</"
-"gui><gui>Přidat složku</gui></guiseq>."
-
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/addingfolder.page:0(None)
-msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>"
