@@ -358,7 +358,7 @@ class PlaintextGenerator(DocumentGenerator):
         self.text = ''
 
     def addText(self, newText):
-        self.text += newText
+        self.text += unicode(newText, 'utf-8')
 
     def addPage(self, page):
         self.addText(page.getTextFromBoxes())
