@@ -19,7 +19,7 @@
 ###########################################################################
 
 from ocrfeeder.util.log import debug
-from ocrfeeder.util import graphics
+from ocrfeeder.util import graphics, lib
 from ocrfeeder.util.constants import OCRFEEDER_DEBUG, DTP
 from ocrfeeder.studio.dataHolder import DataBox
 from imageManipulation import ImageProcessor
@@ -547,7 +547,7 @@ class LayoutAnalysis(object):
         text = self.ocr_engine.read()
         if self.clean_text:
             text = self.__cleanText(text)
-        return text
+        return lib.ensureUnicode(text)
 
     def __cleanText(self, text):
         clean_text = re.sub(r'(?<!-)-\n(?!\n)', r'', text)
