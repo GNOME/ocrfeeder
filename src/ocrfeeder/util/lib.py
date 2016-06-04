@@ -191,3 +191,9 @@ def makeRadioButton(label, from_widget=None):
     button.set_use_underline(True)
 
     return button
+
+def ensureUnicode(text):
+    if isinstance(text, unicode):
+        return text
+
+    return unicode(text, 'utf-8')

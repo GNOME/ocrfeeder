@@ -213,12 +213,12 @@ class HtmlGenerator(DocumentGenerator):
             os.mkdir(images_folder)
         if pages:
             file = open(os.path.join(self.name, 'index.html'), 'w')
-            file.write(pages[0])
+            file.write(pages[0].encode('utf-8'))
             file.close()
             if len(pages) > 1:
                 for i in xrange(1, len(pages)):
                     file = open(os.path.join(self.name, 'page%s.html' % (i + 1)), 'w')
-                    file.write(pages[i])
+                    file.write(pages[i].encode('utf-8'))
                     file.close()
         if self.styles:
             file = open(os.path.join(self.name, 'style.css'), 'w')
@@ -248,7 +248,7 @@ class OdtGenerator(DocumentGenerator):
         self.document.automaticstyles.addElement(frame_style_rotated)
 
     def addText(self, data_box):
-        text = data_box.getText().decode('utf-8')
+        text = data_box.getText()
         frame_style = Style(name='FrameStyle', family = 'graphic')
         debug('Angle: %s' % data_box.text_data.angle)
         angle = data_box.text_data.angle
@@ -355,10 +355,10 @@ class OdtGenerator(DocumentGenerator):
 class PlaintextGenerator(DocumentGenerator):
     def __init__(self, name):
         self.name = name
-        self.text = ''
+        self.text = u''
 
     def addText(self, newText):
-        self.text += unicode(newText, 'utf-8')
+        self.text += newText
 
     def addPage(self, page):
         self.addText(page.getTextFromBoxes())

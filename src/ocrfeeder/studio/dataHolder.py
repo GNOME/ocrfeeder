@@ -72,7 +72,7 @@ class DataBox(GObject.GObject):
                      (GObject.TYPE_INT,))
         }
 
-    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = ''):
+    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = u''):
         super(DataBox, self).__init__()
         self.x = int(x)
         self.y = int(y)
@@ -81,7 +81,7 @@ class DataBox(GObject.GObject):
         self.image = image
         self.setType(type)
         self.text_data = TextData()
-        self.text = text
+        self.text = self.setText(text)
 
     def configTextData(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 1, letter_space = 1):
         self.text_data = TextData(face, size, justification, line_space, letter_space)
@@ -132,7 +132,7 @@ class DataBox(GObject.GObject):
         self.text_data.weight = font_weight
 
     def setText(self, text):
-        self.text = text
+        self.text = lib.ensureUnicode(text)
 
     def getText(self):
         return self.text
@@ -233,7 +233,7 @@ class PageData:
         return {'PageData': dictionary}
 
     def getTextFromBoxes(self, data_boxes=None):
-        text = ''
+        text = u''
         if data_boxes is None:
             data_boxes = self.data_boxes
         number_of_boxes = len(data_boxes)
