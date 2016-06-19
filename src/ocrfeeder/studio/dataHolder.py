@@ -81,7 +81,7 @@ class DataBox(GObject.GObject):
         self.image = image
         self.setType(type)
         self.text_data = TextData()
-        self.text = self.setText(text)
+        self.setText(text)
 
     def configTextData(self, face = 'Sans', size = 12, justification = ALIGN_LEFT, line_space = 1, letter_space = 1):
         self.text_data = TextData(face, size, justification, line_space, letter_space)
