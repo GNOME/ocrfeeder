@@ -510,31 +510,27 @@ class BoxEditor(Gtk.ScrolledWindow):
         return new_radio_button
 
     def __makeAlignButtons(self):
-        icon, label = lib.getIconOrLabel(Gtk.STOCK_JUSTIFY_LEFT, _('Left'))
         self.align_left_button = Gtk.RadioToolButton()
-        self.align_left_button.set_label(label)
-        self.align_left_button.set_icon_widget(icon)
+        self.align_left_button.set_label(_('Left'))
+        self.align_left_button.set_icon_name("format-justify-left")
         self.align_left_button.set_tooltip_text(_('Set text to be left aligned'))
 
-        icon, label = lib.getIconOrLabel(Gtk.STOCK_JUSTIFY_CENTER, _('Center'))
         self.align_center_button = \
                      Gtk.RadioToolButton.new_from_widget(self.align_left_button)
-        self.align_center_button.set_label(label)
-        self.align_center_button.set_icon_widget(icon)
+        self.align_center_button.set_label(_('Center'))
+        self.align_center_button.set_icon_name('format-justify-center')
         self.align_center_button.set_tooltip_text(_('Set text to be centered'))
 
-        icon, label = lib.getIconOrLabel(Gtk.STOCK_JUSTIFY_RIGHT, _('Right'))
         self.align_right_button = \
                      Gtk.RadioToolButton.new_from_widget(self.align_left_button)
-        self.align_right_button.set_label(label)
-        self.align_right_button.set_icon_widget(icon)
+        self.align_right_button.set_label(_('Right'))
+        self.align_right_button.set_icon_name('format-justify-right')
         self.align_right_button.set_tooltip_text(_('Set text to be right aligned'))
 
-        icon, label = lib.getIconOrLabel(Gtk.STOCK_JUSTIFY_FILL, _('Fill'))
         self.align_fill_button = \
                      Gtk.RadioToolButton.new_from_widget(self.align_left_button)
-        self.align_fill_button.set_label(label)
-        self.align_fill_button.set_icon_widget(icon)
+        self.align_fill_button.set_label(_('Fill'))
+        self.align_fill_button.set_icon_name('format-justify-fill')
         self.align_fill_button.set_tooltip_text(_('Set text to be fill its area'))
 
         return self.align_left_button, self.align_center_button, self.align_right_button, self.align_fill_button
