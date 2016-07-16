@@ -49,6 +49,8 @@ class BoxesArea(GooCanvas.Canvas):
 
     def __init__(self, image_path):
         GooCanvas.Canvas.__init__(self)
+        self.set_property('anchor', GooCanvas.CanvasAnchorType.CENTER)
+        self.set_property('automatic-bounds', True)
         self.image = GooCanvas.CanvasImage()
         self.frame = []
         self.setBackgroundImage(image_path)
@@ -72,7 +74,6 @@ class BoxesArea(GooCanvas.Canvas):
 
     def __getRectangleFromPoints(self, start_point, end_point):
         start_x, start_y = start_point
-        start_x, start_y = self.convert_from_pixels(start_x, start_y)
         end_x, end_y = end_point
         width = end_x - start_x
         height = end_y - start_y
@@ -212,7 +213,7 @@ class BoxesArea(GooCanvas.Canvas):
         fill_color = self.__rgbaToInteger(self.area_fill_rgba)
         stroke_color = self.__rgbaToInteger(self.area_stroke_rgba)
         self.currently_created_area = Box(fill_color_rgba = fill_color, stroke_color_rgba = stroke_color)
-        x, y = event.x * self.get_scale(), event.y * self.get_scale()
+        x, y = event.x, event.y
         self.currently_created_area.props.x = x
         self.currently_created_area.props.y = y
         self.currently_created_area.start_point = x, y
