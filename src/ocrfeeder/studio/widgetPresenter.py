@@ -367,7 +367,8 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.image_width = image_width
         self.image_height = image_height
 
-        image_frame = PlainFrame(_('Clip'))
+        image_frame = PlainExpander(_('Clip'))
+        image_frame.set_expanded(True)
         image_frame.add(self.image_window)
         self.contents.pack_start(image_frame, False, False, 0)
 
