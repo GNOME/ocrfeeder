@@ -37,7 +37,7 @@ from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncItem
 from ocrfeeder.util.log import debug
-from optparse import OptionParser
+from argparse import ArgumentParser
 import gettext
 import locale
 from gi.repository import Gdk, Gtk
@@ -122,23 +122,21 @@ class Studio:
         self.main_window.setHeader(menubar_callback_dict, toolbar_callback_dict)
         self.main_window.setDestroyEvent(self.quit)
 
-        parser = OptionParser(version = '%prog ' + OCRFEEDER_STUDIO_VERSION)
-        parser.add_option('-i', '--images', dest = 'images',
-                          action = 'append', type = 'string',
-                          metavar = 'IMAGE1 [IMAGE2, ...]', default = [],
-                          help = 'images to be automatically added on start-up. '
-                                 'Use the option before every image path.')
-        parser.add_option('-d', '--dir', dest = 'directory',
-                          action = 'store', type = 'string',
-                          help = 'directory with images to be added'
-                          ' automatically on start-up')
-        options, args = parser.parse_args()
-        imgs = options.images
+        parser = ArgumentParser(description=OCRFEEDER_STUDIO_COMMENTS)
+        parser.add_argument('-i', '--images', metavar='IMAGE1 [IMAGE2, ...]',
+                            nargs='+', help='images to be automatically added '
+                            'on start-up. Use the option before every image '
+                            'path.')
+        parser.add_argument('-d', '--dir', help='directory with images to be '
+                            'added automatically on start-up')
+        parser.add_argument('-v', '--version', action='version',
+                            version='%(prog)s ' + OCRFEEDER_STUDIO_VERSION)
+        args = parser.parse_args()
+        imgs = args.images
         if imgs:
             self.__addImagesToReviewer(imgs)
-        if options.directory:
-            self.__addImagesToReviewer(
-                lib.getImagesFromFolder(options.directory))
+        if args.dir:
+            self.__addImagesToReviewer(lib.getImagesFromFolder(args.dir))
 
         self.main_window.setHasSelectedBoxes(False)
         self.main_window.setHasContentBoxes(False)
