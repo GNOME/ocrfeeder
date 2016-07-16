@@ -53,6 +53,7 @@ class MainWindow(Gtk.Window):
         self.main_box.pack_end(self.statusbar, False, False, 0)
 
         self.main_area = Gtk.Paned.new(orientation=Gtk.Orientation.HORIZONTAL)
+        self.main_area.set_wide_handle(True)
         self.main_area.set_position(150)
         self.main_area.show()
         self.main_box.pack_end(self.main_area, True, True, 0)

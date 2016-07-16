@@ -46,6 +46,7 @@ class ImageReviewer(Gtk.Paned):
 
     def __init__(self, main_window, page_data, ocr_engines):
         super(ImageReviewer, self).__init__(orientation=Gtk.Orientation.HORIZONTAL)
+        self.set_wide_handle(True)
         self.configuration_manager = ConfigurationManager()
         self.main_window = main_window
         self.path_to_image = page_data.image_path
