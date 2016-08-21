@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: pt-PT\n"
+"Language: pt\n"
 
 #: ../resources/ocrfeeder.desktop.in.h:1
 #| msgid "OCRFeeder Projects"
