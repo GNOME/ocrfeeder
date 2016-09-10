@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 16:01+0200\n"
-"PO-Revision-Date: 2016-08-21 16:02+0200\n"
+"POT-Creation-Date: 2016-09-10 18:31+0200\n"
+"PO-Revision-Date: 2016-09-10 18:32+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -47,7 +47,7 @@ msgstr "_Sugestie:"
 
 #: ../resources/spell-checker.ui.h:5
 msgid "Cha_nge"
-msgstr "_Zmień"
+msgstr "_Zmień"
 
 #: ../resources/spell-checker.ui.h:6
 msgid "Ignore _All"
@@ -288,7 +288,7 @@ msgstr "Wyszukiwalny plik PDF"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:632
 msgid "Creates a PDF based on the images but with searchable text."
-msgstr "Tworzy plik PDF oparty na obrazach, ale z wyszukiwalnym tekstem."
+msgstr "Tworzy plik PDF na podstawie obrazów, ale z wyszukiwalnym tekstem."
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:666
 msgid "OCRFeeder Projects"
@@ -441,7 +441,7 @@ msgstr "Zaznacz następną stronę"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Select next page"
-msgstr "Zaznacza następna stronę"
+msgstr "Zaznacza następną stronę"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:98
 msgid "Select Previous Page"
@@ -1063,7 +1063,7 @@ msgstr "_Prostowanie obrazu"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1654
 msgid "Tries to straighten the images before they are added"
-msgstr "Próbuje wyprostować obrazy zanim zostaną dodane"
+msgstr "Próbuje wyprostować obrazy, zanim zostaną dodane"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1663
 msgid "_Unpaper images"
@@ -1171,7 +1171,7 @@ msgid ""
 "order for it to work, the engine's arguments should have the $LANG keyword."
 msgstr ""
 "Parametr języka w przypadku, gdy ten mechanizm go używa (na przykład „-l”). "
-"Aby to zadziałało, parametry języka powinny posiadać słowo kluczowe $LANG."
+"Aby to zadziałało, parametry języka powinny mieć słowo kluczowe $LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1938
 msgid "Engine lan_guages:"
@@ -1187,7 +1187,7 @@ msgstr ""
 "Języki obsługiwane przez ten mechanizm. Powinno to zostać podane jako para "
 "języka w formacie ISO 639-1 i odpowiedniego języka mechanizmu (na przykład "
 "„en:eng,pt:por,es:esp”). Aby to zadziałało, parametry mechanizmu powinny "
-"posiadać słowo kluczowe $LANG."
+"mieć słowo kluczowe $LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1981
 msgid "Error setting the new engine; please check your engine settings."
