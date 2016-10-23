@@ -102,7 +102,7 @@ msgstr "Imatges"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:189
 msgid "Obtaining scanners"
-msgstr "S'estan obtenint els escànners"
+msgstr "S'estan obtenint els escàners"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:189
 #: ../src/ocrfeeder/studio/studioBuilder.py:215
@@ -120,7 +120,7 @@ msgstr "S'està escanejant"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:220
 msgid "No scanner devices were found"
-msgstr "No s'ha trobat cap escànner"
+msgstr "No s'ha trobat cap escàner"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:221
 #: ../src/ocrfeeder/studio/studioBuilder.py:236
@@ -184,7 +184,7 @@ msgid ""
 "configuration and have your OCR engines detected again."
 msgstr ""
 "Els arguments dels motors OCR haurien d'actualitzar-se però sembla que heu "
-"canviat la configuració per defecte i per això heu de actualitzar de forma "
+"canviat la configuració per defecte i per això heu d'actualitzar de forma "
 "manual.\n"
 "<b>%(engines)s</b>\n"
 "\n"
@@ -247,7 +247,7 @@ msgid ""
 msgstr ""
 "Hi ha canvis que poden ser sobreescrits pel reconeixement nou.\n"
 "\n"
-"Voleu continuar ?"
+"Voleu continuar?"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:496
 msgid "Recognizing Page"
@@ -270,7 +270,7 @@ msgstr "Exporta a %(format_name)s"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:612
 msgid "What kind of PDF document do you wish?"
-msgstr "Quin tipus de document PDF desitgeu ?"
+msgstr "Quin tipus de document PDF desitgeu?"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:614
 msgid "From scratch"
@@ -379,7 +379,7 @@ msgstr "_Importa un PDF"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Import PDF"
-msgstr "Import un PDF"
+msgstr "Importa un PDF"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "_Export…"
@@ -565,7 +565,7 @@ msgstr "Selecciona l'àrea prèvia"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:132
 msgid "Select the previous area from the content areas"
-msgstr "Selecciona l'àrea prèvia des del àrea de continguts"
+msgstr "Selecciona l'àrea prèvia des de l'àrea de continguts"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:135
 msgid "Select _Next Area"
@@ -593,19 +593,19 @@ msgstr "Exporta a ODT"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:144
 msgid "Import Page From S_canner"
-msgstr "Importa la pàgina des del e_scanner"
+msgstr "_Importa la pàgina des de l'escàner"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:146
 msgid "Import From Scanner"
-msgstr "Importa des de l'escanner"
+msgstr "Importa des de l'escàner"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:149
 msgid "_Copy to Clipboard"
-msgstr "_Copia al portapapers"
+msgstr "_Copia al porta-retalls"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:151
 msgid "Copy recognized text to clipboard"
-msgstr "Copia el text reconegut al portapapers"
+msgstr "Copia el text reconegut al porta-retalls"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:154
 msgid "Spell_checker"
@@ -1142,7 +1142,7 @@ msgstr "El format requerit de la imatge"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1914
 msgid "_Failure string:"
-msgstr "La cadena d'_errada"
+msgstr "La cadena d'_errada:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1916
 msgid "The failure string or character that this engine uses"
@@ -1175,7 +1175,7 @@ msgid ""
 "order for it to work, the engine's arguments should have the $LANG keyword."
 msgstr ""
 "L'argument del llenguatge en el cas d'aquest motor ho utilitza (per exemple "
-"\"-l\"). Per tal de que funcioni, els arguments del motor han de tenir la "
+"\"-l\"). Per tal de què funcioni, els arguments del motor han de tenir la "
 "paraula clau $LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1937
