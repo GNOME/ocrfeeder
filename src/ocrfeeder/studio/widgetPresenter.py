@@ -325,6 +325,8 @@ class BoxEditor(Gtk.ScrolledWindow):
 
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
+
+        self.set_size_request(300, -1)
         self.get_accessible().set_name(_('Area editor'))
         self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.contents = Gtk.VBox()

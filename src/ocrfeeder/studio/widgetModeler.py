@@ -61,7 +61,6 @@ class ImageReviewer(Gtk.Paned):
         self.selectable_boxes_area.connect('deselected_box',
                                            self.deselectedBoxCb)
         self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
-        self.set_position(500)
         self.show()
         self.ocr_engines = ocr_engines
         self.editor = Editor(self.image_pixbuf, self.ocr_engines, self)
@@ -76,7 +75,7 @@ class ImageReviewer(Gtk.Paned):
         selectable_boxes_scrolled_window.show()
 
         self.pack1(selectable_boxes_scrolled_window, True, False)
-        self.pack2(self.editor.box_editor, True, False)
+        self.pack2(self.editor.box_editor, False, True)
         self.page = page_data
         self.updatePageData(self.page)
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
