@@ -278,7 +278,7 @@ msgstr "Des de scratch"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:616
 msgid "Creates a new PDF from scratch."
-msgstr "Crea un PDF nou des de scratch"
+msgstr "Crea un PDF nou des de scratch."
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:619
 msgid "Searchable PDF"
@@ -756,7 +756,7 @@ msgstr "Estableix l'espaiat de la lletra del text"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:600
 msgid "Set the text's line spacing"
-msgstr "Estableix l'espaiat de la línia del text"
+msgstr "Estableix l'interlineat del text"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:605
 msgid "_Line:"
