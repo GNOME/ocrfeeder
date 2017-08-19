@@ -740,7 +740,7 @@ class ImageReviewer_Controler:
                     page.setSize(size)
             else:
                 current_reviewer.page.setSize(size)
-            debug('Page size: %s' % size)
+            debug('Page size: %s' % str(size))
         page_size_dialog.destroy()
         self.__updateStatusBar(current_reviewer)
 
