@@ -29,7 +29,7 @@ from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
 from ocrfeeder.util.lib import getNonExistingFileName, unpaperImage
 from ocrfeeder.util.log import debug, warning
 from ocrfeeder.util.configuration import ConfigurationManager
-from ocrfeeder.util import constants
+from ocrfeeder.util import constants, UNITS_DICT
 from ocrfeeder.util.asyncworker import AsyncItem
 from ocrfeeder.studio.widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, UnpaperDialog, \
@@ -443,8 +443,11 @@ class ImageReviewer_Controler:
             page_data = reviewer.savePageData()
             status_message += ' ' + _('Resolution: %.2f x %.2f') % (page_data.resolution[0],
                                                                     page_data.resolution[1])
-            status_message += ' ' + _('Page size: %i x %i') % (page_data.width,
-                                                               page_data.height)
+            width = page_data.width * UNITS_DICT[page_data.unit]
+            height = page_data.height * UNITS_DICT[page_data.unit]
+            status_message += ' ' + _('Page size: %g x %g %s') % (width,
+                                                                  height,
+                                                                  page_data.unit)
 
         self.statusbar.pop(self._page_info_message_id)
         self.statusbar.push(self._page_info_message_id, status_message)
@@ -735,11 +738,12 @@ class ImageReviewer_Controler:
         response = page_size_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
             size = page_size_dialog.getSize()
+            unit = page_size_dialog.getUnit()
             if page_size_dialog.all_pages_radio.get_active():
                 for page in self.pages_icon_view.getAllPages():
-                    page.setSize(size)
+                    page.setSize(size, unit)
             else:
-                current_reviewer.page.setSize(size)
+                current_reviewer.page.setSize(size, unit)
             debug('Page size: %s' % str(size))
         page_size_dialog.destroy()
         self.__updateStatusBar(current_reviewer)

@@ -893,6 +893,9 @@ class PageSizeDialog(Gtk.Dialog):
         unit = self.prev_unit
         return self.width_entry.get_value()/unit, self.height_entry.get_value()/unit
 
+    def getUnit(self):
+        return self.unit_choose.get_active_text()
+
     def __changedPageSize(self, widget, current_page_size):
         active_index = self.paper_sizes.get_active()
         self.entries_hbox.set_sensitive(not active_index)

@@ -10,8 +10,8 @@ IN = 1
 MM = CM*10
 
 UNITS_DICT = {
-    'in': IN,
     'cm': CM,
+    'in': IN,
     'mm': MM,
 }
 
