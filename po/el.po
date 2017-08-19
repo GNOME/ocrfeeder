@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-02 11:50+0000\n"
+"POT-Creation-Date: 2017-08-19 14:46-0300\n"
 "PO-Revision-Date: 2014-02-02 23:10+0300\n"
 "Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
 "Language-Team: team@lists.gnome.gr\n"
@@ -59,6 +59,7 @@ msgid "Change A_ll"
 msgstr "Αλλαγή ό_λων"
 
 #: ../resources/spell-checker.ui.h:8
+#: ../src/ocrfeeder/studio/studioBuilder.py:427
 msgid "_Ignore"
 msgstr "Α_γνόηση"
 
@@ -82,85 +83,100 @@ msgstr ""
 "Βεβαιωθείτε για την ύπαρξη της εικόνας ή δοκιμάστε να την μετατρέψετε σε "
 "διαφορετική μορφή."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:62
+#: ../src/ocrfeeder/studio/studioBuilder.py:64
 msgid "ODT"
 msgstr "ODT"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:63
+#: ../src/ocrfeeder/studio/studioBuilder.py:65
 msgid "HTML"
 msgstr "HTML"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:64
-#: ../src/ocrfeeder/studio/studioBuilder.py:269
+#: ../src/ocrfeeder/studio/studioBuilder.py:66
+#: ../src/ocrfeeder/studio/studioBuilder.py:250
 msgid "PDF"
 msgstr "PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:65
+#: ../src/ocrfeeder/studio/studioBuilder.py:67
 msgid "Plain Text"
 msgstr "Απλό κείμενο"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:203
+#: ../src/ocrfeeder/studio/studioBuilder.py:176
 msgid "Images"
 msgstr "Εικόνες"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:194
 msgid "Obtaining scanners"
 msgstr "Γίνεται εύρεση σαρωτών"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:215
-#: ../src/ocrfeeder/studio/studioBuilder.py:241
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
-#: ../src/ocrfeeder/studio/widgetModeler.py:476
-#: ../src/ocrfeeder/studio/widgetModeler.py:481
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
-#: ../src/ocrfeeder/studio/widgetModeler.py:627
+#: ../src/ocrfeeder/studio/studioBuilder.py:194
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:512
 msgid "Please wait…"
 msgstr "Παρακαλώ περιμένετε…"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:241
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
 msgid "Scanning"
 msgstr "Γίνεται σάρωση"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:246
+#: ../src/ocrfeeder/studio/studioBuilder.py:225
 msgid "No scanner devices were found"
 msgstr "Δε βρέθηκαν συσκευές σαρωτών"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:247
-#: ../src/ocrfeeder/studio/studioBuilder.py:262
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
+#: ../src/ocrfeeder/studio/studioBuilder.py:226
+#: ../src/ocrfeeder/studio/studioBuilder.py:241
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1226
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1237
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:261
+#: ../src/ocrfeeder/studio/studioBuilder.py:240
 msgid "Error scanning page"
 msgstr "Σφάλμα κατά τη σάρωση της σελίδας"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
 msgid "Loading PDF"
 msgstr "Φόρτωση PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:311
+#: ../src/ocrfeeder/studio/studioBuilder.py:294
 msgid "Export pages"
 msgstr "Εξαγωγή σελίδων"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:329
+#: ../src/ocrfeeder/studio/studioBuilder.py:313
 msgid "Are you sure you want to delete the current image?"
 msgstr "Θέλετε σίγουρα να διαγράψετε την τρέχουσα σελίδα;"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:388
+#: ../src/ocrfeeder/studio/studioBuilder.py:385
 msgid "Are you sure you want to clear the project?"
 msgstr "Θέλετε σίγουρα να καταργήσετε την εργασία;"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:458
-msgid "_Keep Current Configuration"
-msgstr "_Διατήρηση τρέχουσας διαμόρφωσης"
+#: ../src/ocrfeeder/studio/studioBuilder.py:423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
+msgid "No OCR engines available"
+msgstr "Δεν υπάρχουν διαθέσιμες μηχανές OCR"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:460
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1872
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"Δεν βρέθηκαν μηχανές OCR στο σύστημα.\n"
+"Παρακαλώ βεβαιωθείτε ότι υπάρχουν εγκατεστημένες και διαθέσιμες μηχανές OCR."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:429
+#: ../src/ocrfeeder/studio/studioBuilder.py:484
 msgid "_Open OCR Engines Manager Dialog"
 msgstr "Ά_νοιγμα διαλόγου διαχειριστή μηχανών OCR"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:462
+#: ../src/ocrfeeder/studio/studioBuilder.py:482
+msgid "_Keep Current Configuration"
+msgstr "_Διατήρηση τρέχουσας διαμόρφωσης"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:486
 #, python-format
 msgid ""
 "The following OCR engines' arguments might need to be updated but it appears "
@@ -179,65 +195,55 @@ msgstr ""
 "Αν δεν θέλετε να διατηρήσετε τις αλλαγές σας, μπορείτε απλώς να αφαιρέσετε "
 "την τρέχουσα διαμόρφωση και να έχετε τις μηχανές OCR αναγνωρισμένες ξανά."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:482
+#: ../src/ocrfeeder/studio/studioBuilder.py:507
 msgid "The project hasn't been saved."
 msgstr "Το έργο σας δεν έχει αποθηκευτεί."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:483
+#: ../src/ocrfeeder/studio/studioBuilder.py:508
 msgid "Do you want to save it before closing?"
 msgstr "Θέλετε να αποθηκευτεί πριν κλείσετε;"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:484
+#: ../src/ocrfeeder/studio/studioBuilder.py:509
 msgid "Close anyway"
 msgstr "Κλείσιμο"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:104
-#: ../src/ocrfeeder/studio/widgetPresenter.py:66
-msgid "Pages"
-msgstr "Σελίδες"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1753
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:219
+#: ../src/ocrfeeder/studio/widgetModeler.py:71
 msgid "Selectable areas"
 msgstr "Περιοχές που μπορούν να επιλεχθούν"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:476
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
 msgid "Preparing image"
 msgstr "Ετοιμασία εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:478
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr "Προετοιμασία εικόνας %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
 msgid "Deskewing image"
 msgstr "Διόρθωση παραμόρφωσης εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:562
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
 msgid "No images added"
 msgstr "Δεν προστέθηκαν εικόνες"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:565
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
 #, python-format
 msgid "Zoom: %s %%"
 msgstr "Μεγέθυνση: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:567
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
 #, python-format
 msgid "Resolution: %.2f x %.2f"
 msgstr "Ανάλυση: %.2f x %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:569
-#, python-format
-msgid "Page size: %i x %i"
+#: ../src/ocrfeeder/studio/widgetModeler.py:448
+#, fuzzy, python-format
+msgid "Page size: %g x %g %s"
 msgstr "Μέγεθος σελίδας: %i x %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:608
+#: ../src/ocrfeeder/studio/widgetModeler.py:490
 msgid ""
 "There are changes that may be overwritten by the new recognition.\n"
 "\n"
@@ -248,51 +254,51 @@ msgstr ""
 "\n"
 "Θέλετε να συνεχίσετε;"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:627
+#: ../src/ocrfeeder/studio/widgetModeler.py:512
 msgid "Recognizing Page"
 msgstr "Γίνεται αναγνώριση σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:644
+#: ../src/ocrfeeder/studio/widgetModeler.py:529
 msgid "Recognizing Document"
 msgstr "Γίνεται αναγνώριση εγγράφου"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:645
+#: ../src/ocrfeeder/studio/widgetModeler.py:530
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
 msgstr ""
 "Γίνεται αναγνώριση σελίδας %(page_number)s/%(total_pages)s. Παρακαλώ "
 "περιμένετε…"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:719
+#: ../src/ocrfeeder/studio/widgetModeler.py:604
 #, python-format
 msgid "Export to %(format_name)s"
 msgstr "Εξαγωγή σε %(format_name)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:736
+#: ../src/ocrfeeder/studio/widgetModeler.py:628
 msgid "What kind of PDF document do you wish?"
 msgstr "Τι είδους έγγραφο PDF θέλετε;"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:738
+#: ../src/ocrfeeder/studio/widgetModeler.py:630
 msgid "From scratch"
 msgstr "Από την αρχή"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:740
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
 msgid "Creates a new PDF from scratch."
 msgstr "Δημιουργεί ένα νέο PDF από την αρχή."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:742
+#: ../src/ocrfeeder/studio/widgetModeler.py:635
 msgid "Searchable PDF"
 msgstr "Αναζητήσιμο PDF"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:743
+#: ../src/ocrfeeder/studio/widgetModeler.py:636
 msgid "Creates a PDF based on the images but with searchable text."
 msgstr "Δημιουργεί ένα PDF με βάση τις εικόνες, αλλά με αναζητήσιμο κείμενο."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:776
+#: ../src/ocrfeeder/studio/widgetModeler.py:670
 msgid "OCRFeeder Projects"
 msgstr "Εργασίες του OCRFeeder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:824
+#: ../src/ocrfeeder/studio/widgetModeler.py:717
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -303,344 +309,349 @@ msgstr ""
 "Το αρχείο υπάρχει στο «%(dir)s». Η αντικατάστασή του θα διαγράψει "
 "προηγούμενα περιεχόμενα του."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:831
+#: ../src/ocrfeeder/studio/widgetModeler.py:724
 msgid "Replace"
 msgstr "Αντικατάσταση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
+#: ../src/ocrfeeder/studio/pagesiconview.py:80
+msgid "Pages"
+msgstr "Σελίδες"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:81
 msgid "_File"
 msgstr "Α_ρχείο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
 msgid "_Quit"
 msgstr "Έ_ξοδος"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
 msgid "Exit the program"
 msgstr "Έξοδος από το πρόγραμμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "_Open"
 msgstr "Άν_οιγμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "Open project"
 msgstr "Άνοιγμα εργασίας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "_Save"
 msgstr "_Αποθήκευση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "Save project"
 msgstr "Αποθήκευση εργασίας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "_Save As…"
 msgstr "Απο_θήκευση ως…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "Save project with a chosen name"
 msgstr "Αποθήκευση της εργασίας με διαφορετικό όνομα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "_Add Image"
 msgstr "Προσθήκη ει_κόνας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "Add another image"
 msgstr "Προσθήκη άλλης εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add _Folder"
 msgstr "Προσθήκη φακέ_λου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add all images in a folder"
 msgstr "Προσθήκη όλων των φωτογραφιών ενός φακέλου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Append Project"
 msgstr "Προσάρτηση εργασίας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Load a project and append it to the current one"
 msgstr "Φόρτωση εργασίας και προσάρτησή της στην τρέχουσα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "_Import PDF"
 msgstr "Ε_ισαγωγή PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Import PDF"
 msgstr "Εισαγωγή PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "_Export…"
 msgstr "Ε_ξαγωγή…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "Export to a chosen format"
 msgstr "Εξαγωγή σε επιλεγμένη μορφή αρχείου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "_Edit"
 msgstr "Ε_πεξεργασία"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "_Edit Page"
 msgstr "Ε_πεξεργασία σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "Edit page settings"
 msgstr "Επεξεργασία ρυθμίσεων σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "_Preferences"
 msgstr "Προ_τιμήσεις"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "Configure the application"
 msgstr "Ρύθμιση της εφαρμογής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "_Delete Page"
 msgstr "_Διαγραφή σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "Delete current page"
 msgstr "Διαγραφή τρέχουσας σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "Move Page Do_wn"
 msgstr "Μετακίνηση σελίδας προς τα κά_τω"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "Move page down"
 msgstr "Μετακίνηση σελίδας προς τα κάτω"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move Page Up"
 msgstr "Μετακίνηση σελίδας προς τα πάνω"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move page up"
 msgstr "Μετακίνηση σελίδας προς τα πάνω"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Select Next Page"
 msgstr "Επιλογή επόμενης σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Select next page"
 msgstr "Επιλογή επόμενης σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
 msgid "Select Previous Page"
 msgstr "Επιλογή προηγούμενης σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
 msgid "Select previous page"
 msgstr "Επιλογή προηγούμενης σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "_Clear Project"
 msgstr "_Κατάργηση έργου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Delete all images"
 msgstr "Διαγραφή όλων των εικόνων"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "_View"
 msgstr "Προ_βολή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
 msgid "Zoom In"
 msgstr "Μεγέθυνση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
 msgid "Zoom Out"
 msgstr "Σμίκρυνση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
 msgid "Best Fit"
 msgstr "Καλύτερο ταίριασμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
 msgid "Normal Size"
 msgstr "Κανονικό μέγεθος"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
 msgid "_Document"
 msgstr "Έ_γγραφο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:112
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1398
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
 msgid "_Tools"
 msgstr "Εργ_αλεία"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
 msgid "_OCR Engines"
 msgstr "Μηχανές _OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
 msgid "Manage OCR engines"
 msgstr "Διαχείριση μηχανών OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "Process image with unpaper"
 msgstr "Επεξεργασία της εικόνας με το Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "Image Des_kewer"
 msgstr "Απ_οπαραμορφωτής εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:116
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
 msgid "Tries to straighten the image"
 msgstr "Προσπαθεί να ευθυγραμμίσει την εικόνα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:119
+#: ../src/ocrfeeder/studio/widgetPresenter.py:112
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:119
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
 msgid "Help contents"
 msgstr "Περιεχόμενα βοήθειας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:120
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "_About"
 msgstr "Πε_ρί"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:120
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "About this application"
 msgstr "Σχετικά με την εφαρμογή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:122
+#: ../src/ocrfeeder/studio/widgetPresenter.py:116
 msgid "_Recognize Document"
 msgstr "_Αναγνώριση εγγράφου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:123
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
 msgid "Automatically detect and recognize all pages"
 msgstr "Αυτόματος εντοπισμός και αναγνώριση όλων των σελίδων"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:126
+#: ../src/ocrfeeder/studio/widgetPresenter.py:120
 msgid "R_ecognize Page"
 msgstr "Α_ναγνώριση σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:127
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
 msgid "Automatically detect and recognize the current page"
 msgstr "Αυτόματος εντοπισμός και αναγνώριση της τρέχουσας σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:130
+#: ../src/ocrfeeder/studio/widgetPresenter.py:124
 msgid "Recognize _Selected Areas"
 msgstr "Αναγνώρι_ση επιλεγμένων περιοχών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:131
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
 msgid "Recognize Selected Areas"
 msgstr "Αναγνώριση επιλεγμένων περιοχών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:134
+#: ../src/ocrfeeder/studio/widgetPresenter.py:128
 msgid "Select _All Areas"
 msgstr "Επιλογή ό_λων των περιοχών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:135
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
 msgid "Select all content areas"
 msgstr "Επιλογή όλων των περιοχών περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:138
+#: ../src/ocrfeeder/studio/widgetPresenter.py:132
 msgid "Select _Previous Area"
 msgstr "Επιλογή _προηγούμενης περιοχής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:139
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
 msgid "Select the previous area from the content areas"
 msgstr "Επιλογή της προηγούμενης περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+#: ../src/ocrfeeder/studio/widgetPresenter.py:136
 msgid "Select _Next Area"
 msgstr "Επιλογή επόμε_νης περιοχής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:143
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
 msgid "Select the next area from the content areas"
 msgstr "Επιλογή της επομένης περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:146
+#: ../src/ocrfeeder/studio/widgetPresenter.py:140
 msgid "Delete Selected Areas"
 msgstr "Διαγραφή επιλεγμένων περιοχών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:147
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
 msgid "Deletes all the currently selected content areas"
 msgstr "Διαγραφή όλων των επιλεγμένων περιοχών περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:149
+#: ../src/ocrfeeder/studio/widgetPresenter.py:143
 msgid "_Generate ODT"
 msgstr "_Παραγωγή ODT"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:149
+#: ../src/ocrfeeder/studio/widgetPresenter.py:143
 msgid "Export to ODT"
 msgstr "Εξαγωγή σε ODT"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:151
+#: ../src/ocrfeeder/studio/widgetPresenter.py:145
 msgid "Import Page From S_canner"
 msgstr "Εισαγωγή σελίδας από το σα_ρωτή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:153
+#: ../src/ocrfeeder/studio/widgetPresenter.py:147
 msgid "Import From Scanner"
 msgstr "Εισαγωγή από το σαρωτή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+#: ../src/ocrfeeder/studio/widgetPresenter.py:150
 msgid "_Copy to Clipboard"
 msgstr "Αντιγρα_φή στο πρόχειρο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+#: ../src/ocrfeeder/studio/widgetPresenter.py:152
 msgid "Copy recognized text to clipboard"
 msgstr "Αντιγραφή αναγνωρισμένου κειμένου στο πρόχειρο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:155
 msgid "Spell_checker"
 msgstr "Ορ_θογραφικός έλεγχος"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:163
+#: ../src/ocrfeeder/studio/widgetPresenter.py:157
 msgid "Spell Check Recognized Text"
 msgstr "Ορθογραφικός έλεγχος για το αναγνωρισμένο κείμενο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:263
+#: ../src/ocrfeeder/studio/widgetPresenter.py:261
 msgid "No language"
 msgstr "Χωρίς γλώσσα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:329
+#: ../src/ocrfeeder/studio/widgetPresenter.py:327
 msgid "Area editor"
 msgstr "Επεξεργαστής περιοχής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:335
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr ""
 "Καθορισμός συντεταγμένης X του πάνω αριστερά γωνίας της περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:341
+#: ../src/ocrfeeder/studio/widgetPresenter.py:339
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr ""
 "Καθορισμός συντεταγμένης Y του πάνω αριστερά γωνίας της περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:345
+#: ../src/ocrfeeder/studio/widgetPresenter.py:343
 msgid "Sets the content area's width"
 msgstr "Καθορισμός του πλάτους της περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
 msgid "Sets the content area's height"
 msgstr "Καθορισμός του μήκους της περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:351
-#: ../src/ocrfeeder/studio/widgetPresenter.py:569
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+#: ../src/ocrfeeder/studio/widgetPresenter.py:578
 msgid "_Text"
 msgstr "Κείμε_νο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:350
 msgid "Set this content area to be the text type"
 msgstr "Καθορισμός του τύπου της περιοχής περιεχομένου ως κείμενο"
 
@@ -652,378 +663,381 @@ msgstr "Ει_κόνα"
 msgid "Set this content area to be the image type"
 msgstr "Καθορισμός του τύπου της περιοχής περιεχομένου ως εικόνα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:355
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
 msgid "Type"
 msgstr "Τύπος"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:369
 msgid "Clip"
 msgstr "Αφαίρεση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:448
+#: ../src/ocrfeeder/studio/widgetPresenter.py:452
 msgid "Bounds"
 msgstr "Όρια"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:453
+#: ../src/ocrfeeder/studio/widgetPresenter.py:457
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:462
+#: ../src/ocrfeeder/studio/widgetPresenter.py:466
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:474
-#: ../src/ocrfeeder/studio/widgetPresenter.py:840
+#: ../src/ocrfeeder/studio/widgetPresenter.py:478
+#: ../src/ocrfeeder/studio/widgetPresenter.py:848
 msgid "_Width:"
 msgstr "_Πλάτος:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:483
+#: ../src/ocrfeeder/studio/widgetPresenter.py:487
 msgid "Hei_ght:"
 msgstr "Ύ_ψος:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:506
+#: ../src/ocrfeeder/studio/widgetPresenter.py:512
 msgid "Left"
 msgstr "Αριστερά"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:510
+#: ../src/ocrfeeder/studio/widgetPresenter.py:516
 msgid "Set text to be left aligned"
 msgstr "Καθορισμός κειμένου για αριστερή στοίχιση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:512
+#: ../src/ocrfeeder/studio/widgetPresenter.py:518
 msgid "Center"
 msgstr "Κεντράρισμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
 msgid "Set text to be centered"
 msgstr "Επιλογή κειμένου για κεντράρισμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:519
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
 msgid "Right"
 msgstr "Δεξιά"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:524
+#: ../src/ocrfeeder/studio/widgetPresenter.py:530
 msgid "Set text to be right aligned"
 msgstr "Καθορισμός κειμένου για δεξιά στοίχιση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:526
+#: ../src/ocrfeeder/studio/widgetPresenter.py:532
 msgid "Fill"
 msgstr "Γέμισμα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
 msgid "Set text to be fill its area"
 msgstr "Καθορισμός κειμένου για γέμισμα περιοχής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:540
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OC_R"
 msgstr "OC_R"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:541
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr ""
 "Εκτέλεση του OCR στην παρούσα περιοχή περιεχομένου με τη χρήση της "
 "επιλεγμένης μηχανής OCR."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 msgid "OCR engine to recognize this content area"
 msgstr "Μηχανή OCR για την αναγνώριση της περιοχής περιεχομένου"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+#: ../src/ocrfeeder/studio/widgetPresenter.py:563
 msgid "Text Properties"
 msgstr "Ιδιότητες κειμένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:577
+#: ../src/ocrfeeder/studio/widgetPresenter.py:586
 msgid "Font"
 msgstr "Γραμματοσειρά"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:584
+#: ../src/ocrfeeder/studio/widgetPresenter.py:593
 msgid "Align"
 msgstr "Στοίχιση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:588
+#: ../src/ocrfeeder/studio/widgetPresenter.py:597
 msgid "Spacing"
 msgstr "Διάστιχο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:590
+#: ../src/ocrfeeder/studio/widgetPresenter.py:599
 msgid "Set the text's letter spacing"
 msgstr "Καθορισμός διαστίχου των γραμμάτων του κειμένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+#: ../src/ocrfeeder/studio/widgetPresenter.py:601
 msgid "Set the text's line spacing"
 msgstr "Καθορισμός διαστίχου των γραμμών του κειμένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:597
+#: ../src/ocrfeeder/studio/widgetPresenter.py:606
 msgid "_Line:"
 msgstr "Γρα_μμή:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:608
+#: ../src/ocrfeeder/studio/widgetPresenter.py:617
 msgid "L_etter:"
 msgstr "Γράμμ_α:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:620
+#: ../src/ocrfeeder/studio/widgetPresenter.py:629
 msgid "Sty_le"
 msgstr "Στυ_λ:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:627
+#: ../src/ocrfeeder/studio/widgetPresenter.py:636
 msgid "Angle"
 msgstr "Γωνία"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:630
+#: ../src/ocrfeeder/studio/widgetPresenter.py:639
 msgid "Mis_c"
 msgstr "Διά_φορα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:633
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+#: ../src/ocrfeeder/studio/widgetPresenter.py:642
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1705
 msgid "Language"
 msgstr "Γλώσσα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:640
+#: ../src/ocrfeeder/studio/widgetPresenter.py:649
 msgid "OCR engine to recogni_ze this area:"
 msgstr "Μηχανή OCR για την αναγ_νώριση αυτής της περιοχής:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:654
+#: ../src/ocrfeeder/studio/widgetPresenter.py:663
 msgid "Detect"
 msgstr "Εντοπισμός"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:656
+#: ../src/ocrfeeder/studio/widgetPresenter.py:665
 msgid "Angle:"
 msgstr "Γωνία:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:749
+#: ../src/ocrfeeder/studio/widgetPresenter.py:740
 msgid "Save File"
 msgstr "Αποθήκευση αρχείου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:752
+#: ../src/ocrfeeder/studio/widgetPresenter.py:743
 msgid "Open File"
 msgstr "Άνοιγμα αρχείου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:756
+#: ../src/ocrfeeder/studio/widgetPresenter.py:747
 msgid "Open Folder"
 msgstr "Άνοιγμα φακέλου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:780
 msgid "Pages to export"
 msgstr "Σελίδες για εξαγωγή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:785
+#: ../src/ocrfeeder/studio/widgetPresenter.py:782
 msgid "All"
 msgstr "Όλες"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:786
+#: ../src/ocrfeeder/studio/widgetPresenter.py:783
 msgid "Current"
 msgstr "Τρέχουσα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:802
+#: ../src/ocrfeeder/studio/widgetPresenter.py:804
 msgid "Choose the format"
 msgstr "Επιλογή μορφοποίησης"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:819
-#: ../src/ocrfeeder/studio/widgetPresenter.py:826
+#: ../src/ocrfeeder/studio/widgetPresenter.py:821
+#: ../src/ocrfeeder/studio/widgetPresenter.py:835
 msgid "Page size"
 msgstr "Μέγεθος σελίδας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:831
+#: ../src/ocrfeeder/studio/widgetPresenter.py:839
 msgid "Custom…"
 msgstr "Προσαρμοσμένο…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:845
+#: ../src/ocrfeeder/studio/widgetPresenter.py:853
 msgid "_Height:"
 msgstr "Ύ_ψος:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:854
+#: ../src/ocrfeeder/studio/widgetPresenter.py:863
+msgid "Unit:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
 msgid "Affected pages"
 msgstr "Επηρεασμένες σελίδες"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:856
+#: ../src/ocrfeeder/studio/widgetPresenter.py:872
 msgid "C_urrent"
 msgstr "Τρέχο_υσα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:859
+#: ../src/ocrfeeder/studio/widgetPresenter.py:873
 msgid "_All"
 msgstr "Ό_λες"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:919
+#: ../src/ocrfeeder/studio/widgetPresenter.py:937
 msgid "Unpaper Image Processor"
 msgstr "Επεξεργαστής εικόνας Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:933
+#: ../src/ocrfeeder/studio/widgetPresenter.py:956
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:963
 msgid "_Preview"
 msgstr "_Προεπισκόπηση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:965
+#: ../src/ocrfeeder/studio/widgetPresenter.py:990
 msgid "Performing Unpaper"
 msgstr "Εκτελείται το Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:965
+#: ../src/ocrfeeder/studio/widgetPresenter.py:990
 msgid "Performing unpaper. Please wait…"
 msgstr "Εκτελείται το unpaper. Παρακαλώ περιμένετε…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1009
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1034
 msgid "Noise Filter Intensity"
 msgstr "Ένταση φίλτρου θορύβου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1011
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1043
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1068
 msgid "Default"
 msgstr "Προεπιλεγμένο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1013
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1045
-msgid "Custom"
-msgstr "Προσαρμοσμένο"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1015
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1047
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1039
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1071
 msgid "None"
 msgstr "Κανένα"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1041
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1066
 msgid "Gray Filter Size"
 msgstr "Μέγεθος γκρίζου φίλτρου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1073
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1069
+msgid "Custom"
+msgstr "Προσαρμοσμένο"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1098
 msgid "Black Filter"
 msgstr "Μαύρο φίλτρο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1074
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1099
 msgid "Use"
 msgstr "Χρήση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1081
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1106
 msgid "Extra Options"
 msgstr "Επιπλέον επιλογές"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1083
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1108
 msgid "Unpaper's command line arguments"
 msgstr "Ορίσματα γραμμής εντολών του Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1140
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1165
 msgid "Unpaper Preferences"
 msgstr "Προτιμήσεις Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1226
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1237
 msgid "An error occurred!"
 msgstr "Παρουσιάστηκε σφάλμα!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1279
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1308
 msgid "Cancelled"
 msgstr "Ακυρώθηκε"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1293
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1324
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1388
 msgid "_General"
 msgstr "_Γενικά"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
 msgid "_Recognition"
 msgstr "Αναγνώ_ριση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1405
 msgid "Select boxes' colors"
 msgstr "Επιλογή αποχρώσεων των πλαισίων"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1371
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1411
 msgid "Te_xt areas' fill color"
 msgstr "Από_χρωση γεμίσματος περιοχών κειμένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
 msgid "Text areas' _stroke color"
 msgstr "Από_χρωση γεμίσματος περιοχών κειμένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1383
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1423
 msgid "_Image areas' fill color"
 msgstr "Απόχρωση γεμίσματος περ_ιοχών εικόνων"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1403
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
 msgid "Path to unpaper"
 msgstr "Μονοπάτι του προγράμματος Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1407
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1447
 msgid "Choose"
 msgstr "Επιλογή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1415
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1726
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1835
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1455
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1732
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1771
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1891
 msgid "OCR Engines"
 msgstr "Μηχανές OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1457
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr "Η μηχανή που θα πρέπει να χρησιμοποιηθεί κατά την αυτόματη αναγνώριση."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1468
 msgid "Favorite _engine:"
 msgstr "Αγαπημένη _μηχανή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1483
 msgid "Window size"
 msgstr "Μέγεθος παραθύρου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
 msgid "A_utomatic"
 msgstr "Α_υτόματο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1445
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1485
 msgid "Cu_stom"
 msgstr "Προ_σαρμοσμένο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1495
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr ""
 "Το μέγεθος παραθύρου είναι το μέγεθος τμημάτων περιοχής κατά τον αλγόριθμό "
 "εντοπισμού."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1466
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1508
 msgid "Columns Detection"
 msgstr "Εντοπισμός στηλών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1471
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1513
 msgid "_Improve columns detection"
 msgstr "Βελτίωση εντοπ_ισμού στηλών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1473
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1515
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "Χρήση επιπλέον αλγορίθμου για την βελτίωση του εντοπισμού των στηλών"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1558
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1526
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1600
 msgid "_Automatic"
 msgstr "_Αυτόματη"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1601
 msgid "Custo_m"
 msgstr "Προσαρ_μοσμένο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1490
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1531
 msgid "The columns' minimum width in pixels"
 msgstr "Το ελάχιστο πλάτος της στήλης σε εικονοστοιχεία"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
 msgid "Minimum width that a column should have:"
 msgstr "Το ελάχιστο πλάτος που πρέπει να έχει μια στήλη:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1569
 msgid "Recognized Text"
 msgstr "Αναγνωρισμένο κείμενο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1528
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1570
 msgid "_Fix line breaks and hyphenization"
 msgstr "_Επιδιόρθωση αλλαγών γραμμής και συλλαβισμού"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1530
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1572
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
 "engines"
@@ -1031,53 +1045,53 @@ msgstr ""
 "Διαγραφή μονών αλλαγών γραμμών και συλλαβισμού από το κείμενο που παράγεται "
 "με μηχανές OCR."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1540
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1582
 msgid "Content Areas"
 msgstr "Περιοχές περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1545
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1587
 msgid "A_djust content areas' bounds"
 msgstr "Ρύθμιση των ορίων της περιοχής περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1589
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr ""
 "Χρήση αλγορίθμου για τον περιορισμό των ορίων των περιοχών περιεχομένου"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1564
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1605
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr ""
 "Το μέγιστο μέγεθος των ορίων της περιοχής περιεχομένου σε εικονοστοιχεία"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1581
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1622
 msgid "Maximum size that the content areas' margins should have:"
 msgstr "Μέγιστο μέγεθος των περιοχών περιεχομένων:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1627
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1669
 msgid "Image Pre-processing"
 msgstr "Προεπεξεργασία εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1628
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1670
 msgid "Des_kew images"
 msgstr "Διόρθωση παραμορφώσεων ει_κόνων"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1630
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
 msgid "Tries to straighten the images before they are added"
 msgstr "Προσπάθεια για ευθυγράμμιση των εικόνων πριν την πρόσθεση τους"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1639
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1681
 msgid "_Unpaper images"
 msgstr "Επεξεργασία εικόνων με το _Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1683
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr "Καθαρισμός εικόνας με προεπεξεργασία στο Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1645
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1687
 msgid "Unpaper _Preferences"
 msgstr "_Προτιμήσεις Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1667
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
 msgid ""
 "The language may affect how the OCR engines work.\n"
 "If an engine is set to support languages but does not support the one "
@@ -1089,103 +1103,83 @@ msgstr ""
 "επιλεγμένη, μπορεί να καταλήξει σε κενό κείμενο.\n"
 "Μπορείτε να επιλέξετε \"Χωρίς γλώσσα\" για να το αποτρέψετε."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1718
 msgid "Default _language:"
 msgstr "Προεπιλεγμένη _γλώσσα:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1702
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1747
 msgid "Engines to be added"
 msgstr "Μηχανές για προσθήκη"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
 msgid "Include"
 msgstr "Συμπεριλήψη"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1711
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1756
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1798
 msgid "Engine"
 msgstr "Μηχανή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
-msgid "Add"
-msgstr "Προσθήκη"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1754
-msgid "Edit"
-msgstr "Επεξεργασία"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1755
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1805
 msgid "De_tect"
 msgstr "Εν_τοπισμός"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1769
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1820
 msgid "Are you sure you want to delete this engine?"
 msgstr "Θέλετε σίγουρα να διαγράψετε αυτή τη μηχανή;"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
-msgid "No OCR engines available"
-msgstr "Δεν υπάρχουν διαθέσιμες μηχανές OCR"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
-msgid ""
-"No OCR engines were found in the system.\n"
-"Please make sure you have OCR engines installed and available."
-msgstr ""
-"Δεν βρέθηκαν μηχανές OCR στο σύστημα.\n"
-"Παρακαλώ βεβαιωθείτε ότι υπάρχουν εγκατεστημένες και διαθέσιμες μηχανές OCR."
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1837
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1893
 #, python-format
 msgid "%s engine"
 msgstr "Μηχανή %s"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1866
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
 msgid "_Name:"
 msgstr "Όν_ομα:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1867
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1927
 msgid "Engine name"
 msgstr "Όνομα μηχανής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1869
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1929
 msgid "_Image format:"
 msgstr "Μορφή ε_ικόνας:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1931
 msgid "The required image format"
 msgstr "Η απαιτούμενη μορφή εικόνας"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1873
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1933
 msgid "_Failure string:"
 msgstr "Αλφαριθμητικό _αποτυχίας:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1875
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1935
 msgid "The failure string or character that this engine uses"
 msgstr "Το αλφαριθμητικό ή χαρακτήρας αποτυχίας που χρησιμοποιεί η μηχανή"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1878
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
 msgid "Engine _path:"
 msgstr "Μονο_πάτι μηχανής:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1940
 msgid "The path to the engine program"
 msgstr "Το μονοπάτι του προγράμματος της μηχανής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1942
 msgid "Engine _arguments:"
 msgstr "Ορίσματα μηχ_ανής"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1884
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 "Ορίσματα: χρήση του $IMAGE για εικόνα και του $FILE αν γίνεται εγγραφή σε "
 "αρχείο"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1888
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1948
 msgid "Engine _language argument:"
 msgstr "Όρισμα _γλώσσας μηχανής:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1890
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1950
 msgid ""
 "The language argument in case this engine uses it (for example \"-l\"). In "
 "order for it to work, the engine's arguments should have the $LANG keyword."
@@ -1194,11 +1188,11 @@ msgstr ""
 "παράδειγμα \"-l\"). Για να δουλέψει το όρισμα, τα ορίσματα της μηχανής "
 "πρέπει να έχουν τη λέξη-κλειδί $LANG."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1896
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1956
 msgid "Engine lan_guages:"
 msgstr "Γ_λώσσες μηχανής:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1898
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1958
 msgid ""
 "The languages this engine supports. This should be given as pairs of the "
 "language in the ISO 639-1 and the engine's corresponding language (for "
@@ -1210,21 +1204,30 @@ msgstr ""
 "παράδειγμα \"en:eng,pt:por,es:esp\"). Για να δουλέψει αυτό, τα ορίσματα της "
 "μηχανής πρέπει να έχουν τη λέξη-κλειδί $LANG."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1999
 msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
 "Σφάλμα κατά τη ρύθμιση της νέας μηχανής. Ελέγξτε τις ρυθμίσεις μηχανής."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1999
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1975
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2035
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
 "Ευάγγελος Βαφειάδης <vagvaf@gmail.com>\n"
 "Δημήτρης Σπίγγος <dmtrs32@gmail.com>"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Add"
+#~ msgstr "Προσθήκη"
+
+#~ msgid "Edit"
+#~ msgstr "Επεξεργασία"
 
 #~ msgid "Resolution"
 #~ msgstr "Ανάλυση"

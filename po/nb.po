@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-19 11:37+0200\n"
+"POT-Creation-Date: 2017-08-19 14:46-0300\n"
 "PO-Revision-Date: 2011-07-19 12:18+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -15,14 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ../src/ocrfeeder/feeder/imageManipulation.py:38
-#, python-format
-msgid ""
-"A problem occurred while trying to open the image:\n"
-" %s\n"
-"Ensure the image exists or try converting it to another format."
-msgstr ""
 
 #: ../resources/ocrfeeder.desktop.in.h:1
 msgid "OCRFeeder"
@@ -33,210 +25,255 @@ msgid "The complete OCR suite."
 msgstr "Komplett OCR-suite."
 
 #: ../resources/spell-checker.ui.h:1
-msgid "<b>Language</b>"
-msgstr "<b>Språk</b>"
+msgid "Check spelling"
+msgstr "Sjekk staving"
 
 #: ../resources/spell-checker.ui.h:2
-msgid "Cha_nge"
-msgstr "E_ndre"
+msgid "Misspelled word:"
+msgstr "Feilstavet ord:"
 
 #: ../resources/spell-checker.ui.h:3
-msgid "Change A_ll"
-msgstr "Endre a_lle"
-
-#: ../resources/spell-checker.ui.h:4
 msgid "Change _to:"
 msgstr "Endre _til:"
 
+#: ../resources/spell-checker.ui.h:4
+msgid "_Suggestions:"
+msgstr "_Forslag:"
+
 #: ../resources/spell-checker.ui.h:5
-msgid "Check spelling"
-msgstr "Sjekk staving"
+msgid "Cha_nge"
+msgstr "E_ndre"
 
 #: ../resources/spell-checker.ui.h:6
 msgid "Ignore _All"
 msgstr "Ignorer _alle"
 
 #: ../resources/spell-checker.ui.h:7
-msgid "Language:"
-msgstr "Språk:"
+msgid "Change A_ll"
+msgstr "Endre a_lle"
 
 #: ../resources/spell-checker.ui.h:8
-msgid "Misspelled word:"
-msgstr "Feilstavet ord:"
-
-#: ../resources/spell-checker.ui.h:9
+#: ../src/ocrfeeder/studio/studioBuilder.py:427
 msgid "_Ignore"
 msgstr "_Ignorer"
 
+#: ../resources/spell-checker.ui.h:9
+msgid "Language:"
+msgstr "Språk:"
+
 #: ../resources/spell-checker.ui.h:10
-msgid "_Suggestions:"
-msgstr "_Forslag:"
+msgid "<b>Language</b>"
+msgstr "<b>Språk</b>"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:61
-msgid "HTML"
-msgstr "HTML"
+#: ../src/ocrfeeder/feeder/imageManipulation.py:37
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:62
+#: ../src/ocrfeeder/studio/studioBuilder.py:64
 msgid "ODT"
 msgstr "ODT"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:63
-msgid "Plain Text"
-msgstr "Vanlig tekst"
+#: ../src/ocrfeeder/studio/studioBuilder.py:65
+msgid "HTML"
+msgstr "HTML"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:186
-msgid "Images"
-msgstr "Bilder"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:198
-msgid "Obtaining scanners"
-msgstr "Henter skannere"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:198
-#: ../src/ocrfeeder/studio/studioBuilder.py:224
-#: ../src/ocrfeeder/studio/studioBuilder.py:266
-#: ../src/ocrfeeder/studio/widgetModeler.py:464
-#: ../src/ocrfeeder/studio/widgetModeler.py:469
-#: ../src/ocrfeeder/studio/widgetModeler.py:525
-#: ../src/ocrfeeder/studio/widgetModeler.py:591
-msgid "Please wait…"
-msgstr "Vennligst vent …"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:224
-msgid "Scanning"
-msgstr "Skanner"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:229
-msgid "No scanner devices were found"
-msgstr "Ingen skannerenheter ble funnet"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:230
-#: ../src/ocrfeeder/studio/studioBuilder.py:245
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1150
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1161
-msgid "Error"
-msgstr "Feil"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:244
-msgid "Error scanning page"
-msgstr "Feil ved skanning av side"
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:252
+#: ../src/ocrfeeder/studio/studioBuilder.py:66
+#: ../src/ocrfeeder/studio/studioBuilder.py:250
 msgid "PDF"
 msgstr "PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:266
+#: ../src/ocrfeeder/studio/studioBuilder.py:67
+msgid "Plain Text"
+msgstr "Vanlig tekst"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:176
+msgid "Images"
+msgstr "Bilder"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:194
+msgid "Obtaining scanners"
+msgstr "Henter skannere"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:194
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:512
+msgid "Please wait…"
+msgstr "Vennligst vent …"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+msgid "Scanning"
+msgstr "Skanner"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:225
+msgid "No scanner devices were found"
+msgstr "Ingen skannerenheter ble funnet"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:226
+#: ../src/ocrfeeder/studio/studioBuilder.py:241
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1226
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1237
+msgid "Error"
+msgstr "Feil"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:240
+msgid "Error scanning page"
+msgstr "Feil ved skanning av side"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:264
 msgid "Loading PDF"
 msgstr "Laster PDF"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:295
+#: ../src/ocrfeeder/studio/studioBuilder.py:294
 msgid "Export pages"
 msgstr "Eksporter sider"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:312
+#: ../src/ocrfeeder/studio/studioBuilder.py:313
 msgid "Are you sure you want to delete the current image?"
 msgstr "Er du sikker på at du vil slette dette bildet?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:359
+#: ../src/ocrfeeder/studio/studioBuilder.py:385
 msgid "Are you sure you want to clear the project?"
 msgstr "Er du sikker på at du vil tømme prosjektet?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:416
+#: ../src/ocrfeeder/studio/studioBuilder.py:423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
+msgid "No OCR engines available"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1872
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:429
+#: ../src/ocrfeeder/studio/studioBuilder.py:484
+msgid "_Open OCR Engines Manager Dialog"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:482
+msgid "_Keep Current Configuration"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:486
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
+"manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:507
 msgid "The project hasn't been saved."
 msgstr "Prosjektet er ikke lagret."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:417
+#: ../src/ocrfeeder/studio/studioBuilder.py:508
 msgid "Do you want to save it before closing?"
 msgstr "Vil du lagre det før du lukker programmet?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:418
+#: ../src/ocrfeeder/studio/studioBuilder.py:509
 msgid "Close anyway"
 msgstr "Lukk likevel"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:125
-#: ../src/ocrfeeder/studio/widgetPresenter.py:134
-msgid "Pages"
-msgstr "Sider"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:139
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1708
-msgid "Delete"
-msgstr "Slett"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:190
+#: ../src/ocrfeeder/studio/widgetModeler.py:71
 msgid "Selectable areas"
 msgstr "Velgbare områder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:464
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
 msgid "Preparing image"
 msgstr "Forbereder bilde"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:466
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:525
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
 msgid "Deskewing image"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:552
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
 msgid "No images added"
 msgstr "Ingen bilder lagt til"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:555
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
 #, python-format
 msgid "Zoom: %s %%"
 msgstr "Zoom: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:557
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
 #, python-format
 msgid "Resolution: %.2f x %.2f"
 msgstr "Oppløsing: %.2f x %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:559
-#, python-format
-msgid "Page size: %i x %i"
+#: ../src/ocrfeeder/studio/widgetModeler.py:448
+#, fuzzy, python-format
+msgid "Page size: %g x %g %s"
 msgstr "Sidestørrelse: %i x %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:573
+#: ../src/ocrfeeder/studio/widgetModeler.py:490
 msgid ""
 "There are changes that may be overwritten by the new recognition.\n"
 "\n"
 "Do you want to continue?"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:591
+#: ../src/ocrfeeder/studio/widgetModeler.py:512
 msgid "Recognizing Page"
 msgstr "Gjenkjenner side"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:608
+#: ../src/ocrfeeder/studio/widgetModeler.py:529
 msgid "Recognizing Document"
 msgstr "Gjenkjenner dokument"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:609
+#: ../src/ocrfeeder/studio/widgetModeler.py:530
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:677
-msgid "Export to HTML"
-msgstr "Eksporter til HTML"
+#: ../src/ocrfeeder/studio/widgetModeler.py:604
+#, fuzzy, python-format
+msgid "Export to %(format_name)s"
+msgstr "Eksporter til valgt format"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:691
-#: ../src/ocrfeeder/studio/widgetPresenter.py:213
-msgid "Export to ODT"
-msgstr "Eksporter til ODT"
+#: ../src/ocrfeeder/studio/widgetModeler.py:628
+msgid "What kind of PDF document do you wish?"
+msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:702
-msgid "Export to Plain Text"
-msgstr "Eksporter til tekst"
+#: ../src/ocrfeeder/studio/widgetModeler.py:630
+msgid "From scratch"
+msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:723
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
+msgid "Creates a new PDF from scratch."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:635
+msgid "Searchable PDF"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:636
+msgid "Creates a PDF based on the images but with searchable text."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:670
 msgid "OCRFeeder Projects"
 msgstr "OCRFeeder-prosjekter"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:781
+#: ../src/ocrfeeder/studio/widgetModeler.py:717
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
@@ -244,824 +281,918 @@ msgid ""
 "The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:788
+#: ../src/ocrfeeder/studio/widgetModeler.py:724
 msgid "Replace"
 msgstr "Erstatt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:155
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
+#: ../src/ocrfeeder/studio/pagesiconview.py:80
+msgid "Pages"
+msgstr "Sider"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:81
 msgid "_File"
 msgstr "_Fil"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
 msgid "_Quit"
 msgstr "A_vslutt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
 msgid "Exit the program"
 msgstr "Avslutt programmet"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:157
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "_Open"
 msgstr "_Åpne"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:157
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "Open project"
 msgstr "Åpne prosjekt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "_Save"
 msgstr "_Lagre"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "Save project"
 msgstr "Lagre prosjekt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:159
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "_Save As…"
 msgstr "Lagre _som …"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:159
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "Save project with a chosen name"
 msgstr "Lagre prosjektet med et nytt navn"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:160
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "_Add Image"
 msgstr "_Legg til bilde"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:160
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "Add another image"
 msgstr "Legg til et nytt bilde"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add _Folder"
 msgstr "Legg til _mappe"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add all images in a folder"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:162
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Append Project"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:162
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Load a project and append it to the current one"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:163
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "_Import PDF"
 msgstr "_Importer PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:163
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Import PDF"
 msgstr "Importer PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:164
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "_Export…"
 msgstr "_Eksporter …"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:164
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "Export to a chosen format"
 msgstr "Eksporter til valgt format"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:165
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "_Edit"
 msgstr "R_ediger"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:166
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "_Edit Page"
 msgstr "R_ediger side"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:166
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "Edit page settings"
 msgstr "Rediger sideinnstillinger"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:167
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "_Preferences"
 msgstr "_Brukervalg"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:167
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "Configure the application"
 msgstr "Konfigurer programmet"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:168
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "_Delete Page"
 msgstr "_Slett side"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:168
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "Delete current page"
 msgstr "Slett aktiv side"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:169
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Move Page Do_wn"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Move page down"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move Page Up"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move page up"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+#, fuzzy
+msgid "Select Next Page"
+msgstr "Velg _neste område"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+#, fuzzy
+msgid "Select next page"
+msgstr "Velg _neste område"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#, fuzzy
+msgid "Select Previous Page"
+msgstr "_Slett side"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#, fuzzy
+msgid "Select previous page"
+msgstr "Slett aktiv side"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "_Clear Project"
 msgstr "_Tøm prosjekt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:169
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Delete all images"
 msgstr "Slett alle bilder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:170
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "_View"
 msgstr "_Vis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:171
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
 msgid "Zoom In"
 msgstr "Zoom inn"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:172
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
 msgid "Zoom Out"
 msgstr "Zoom ut"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:173
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
 msgid "Best Fit"
 msgstr "Beste tilpasning"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:174
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
 msgid "Normal Size"
 msgstr "Normal størrelse"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:175
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
 msgid "_Document"
 msgstr "_Dokument"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:176
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1376
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
 msgid "_Tools"
 msgstr "Verk_tøy"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:177
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
 msgid "_OCR Engines"
 msgstr "_OCR-motorer"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:177
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
 msgid "Manage OCR engines"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:178
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "_Unpaper"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:178
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "Process image with unpaper"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:179
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "Image Des_kewer"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:180
-msgid "Trie to straighten the image"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+msgid "Tries to straighten the image"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:182
-#: ../src/ocrfeeder/studio/widgetPresenter.py:183
+#: ../src/ocrfeeder/studio/widgetPresenter.py:112
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:183
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
 msgid "Help contents"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:184
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:184
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "About this application"
 msgstr "Om dette programmet"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:186
+#: ../src/ocrfeeder/studio/widgetPresenter.py:116
 msgid "_Recognize Document"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:187
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
 msgid "Automatically detect and recognize all pages"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:190
+#: ../src/ocrfeeder/studio/widgetPresenter.py:120
 msgid "R_ecognize Page"
 msgstr "Gj_enkjenn side"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:191
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
 msgid "Automatically detect and recognize the current page"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:194
+#: ../src/ocrfeeder/studio/widgetPresenter.py:124
 #, fuzzy
 msgid "Recognize _Selected Areas"
 msgstr "Gjenkjent tekst"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:195
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
 msgid "Recognize Selected Areas"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:198
+#: ../src/ocrfeeder/studio/widgetPresenter.py:128
 msgid "Select _All Areas"
 msgstr "Velg _alle områder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:199
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
 msgid "Select all content areas"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:202
+#: ../src/ocrfeeder/studio/widgetPresenter.py:132
 msgid "Select _Previous Area"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:203
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
 msgid "Select the previous area from the content areas"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:206
+#: ../src/ocrfeeder/studio/widgetPresenter.py:136
 msgid "Select _Next Area"
 msgstr "Velg _neste område"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:207
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
 msgid "Select the next area from the content areas"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:210
+#: ../src/ocrfeeder/studio/widgetPresenter.py:140
 msgid "Delete Selected Areas"
 msgstr "Slett valgte områder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:211
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
 msgid "Deletes all the currently selected content areas"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:143
 msgid "_Generate ODT"
 msgstr "_Generer ODT"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:215
+#: ../src/ocrfeeder/studio/widgetPresenter.py:143
+msgid "Export to ODT"
+msgstr "Eksporter til ODT"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:145
 msgid "Import Page From S_canner"
 msgstr "Importer side fra s_kanner"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:217
+#: ../src/ocrfeeder/studio/widgetPresenter.py:147
 msgid "Import From Scanner"
 msgstr "Importer fra skanner"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:220
+#: ../src/ocrfeeder/studio/widgetPresenter.py:150
 msgid "_Copy to Clipboard"
 msgstr "_Kopier til utklippstavle"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:222
+#: ../src/ocrfeeder/studio/widgetPresenter.py:152
 msgid "Copy recognized text to clipboard"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:225
+#: ../src/ocrfeeder/studio/widgetPresenter.py:155
 msgid "Spell_checker"
 msgstr "Stave_kontroll"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:227
+#: ../src/ocrfeeder/studio/widgetPresenter.py:157
 msgid "Spell Check Recognized Text"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:301
+#: ../src/ocrfeeder/studio/widgetPresenter.py:261
+#, fuzzy
+msgid "No language"
+msgstr "Språk:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:327
 msgid "Area editor"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:309
+#: ../src/ocrfeeder/studio/widgetPresenter.py:335
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:313
+#: ../src/ocrfeeder/studio/widgetPresenter.py:339
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:317
+#: ../src/ocrfeeder/studio/widgetPresenter.py:343
 msgid "Sets the content area's width"
 msgstr "Setter innholdsområdets bredde"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:320
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
 msgid "Sets the content area's height"
 msgstr "Setter innholdsområdets høyde"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:323
-#: ../src/ocrfeeder/studio/widgetPresenter.py:539
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+#: ../src/ocrfeeder/studio/widgetPresenter.py:578
 msgid "_Text"
 msgstr "_Tekst"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:324
+#: ../src/ocrfeeder/studio/widgetPresenter.py:350
 msgid "Set this content area to be the text type"
 msgstr "Sett dette innholdsområdet til å være av type tekst"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:325
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
 msgid "_Image"
 msgstr "B_ilde"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:326
+#: ../src/ocrfeeder/studio/widgetPresenter.py:354
 msgid "Set this content area to be the image type"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:327
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
 msgid "Type"
 msgstr "Type"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:369
 msgid "Clip"
 msgstr "Utklipp"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:421
+#: ../src/ocrfeeder/studio/widgetPresenter.py:452
 msgid "Bounds"
 msgstr "Grenser"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:426
+#: ../src/ocrfeeder/studio/widgetPresenter.py:457
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:435
+#: ../src/ocrfeeder/studio/widgetPresenter.py:466
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:447
-#: ../src/ocrfeeder/studio/widgetPresenter.py:793
+#: ../src/ocrfeeder/studio/widgetPresenter.py:478
+#: ../src/ocrfeeder/studio/widgetPresenter.py:848
 msgid "_Width:"
 msgstr "_Bredde:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:456
+#: ../src/ocrfeeder/studio/widgetPresenter.py:487
 msgid "Hei_ght:"
 msgstr "Høy_de:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:479
+#: ../src/ocrfeeder/studio/widgetPresenter.py:512
 msgid "Left"
 msgstr "Venstre"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:483
+#: ../src/ocrfeeder/studio/widgetPresenter.py:516
 msgid "Set text to be left aligned"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:485
+#: ../src/ocrfeeder/studio/widgetPresenter.py:518
 msgid "Center"
 msgstr "Senter"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:490
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
 msgid "Set text to be centered"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:492
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
 msgid "Right"
 msgstr "Høyre"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:497
+#: ../src/ocrfeeder/studio/widgetPresenter.py:530
 msgid "Set text to be right aligned"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:499
+#: ../src/ocrfeeder/studio/widgetPresenter.py:532
 msgid "Fill"
 msgstr "Fyll"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:504
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
 msgid "Set text to be fill its area"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:510
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OC_R"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:511
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 msgid "OCR engine to recognize this content area"
 msgstr ""
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:525
+#: ../src/ocrfeeder/studio/widgetPresenter.py:563
 msgid "Text Properties"
 msgstr "Egenskaper for tekst"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:586
 msgid "Font"
 msgstr "Skrift"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:554
+#: ../src/ocrfeeder/studio/widgetPresenter.py:593
 msgid "Align"
 msgstr "Juster"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:558
+#: ../src/ocrfeeder/studio/widgetPresenter.py:597
 msgid "Spacing"
 msgstr "Mellomrom"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:560
+#: ../src/ocrfeeder/studio/widgetPresenter.py:599
 msgid "Set the text's letter spacing"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:562
+#: ../src/ocrfeeder/studio/widgetPresenter.py:601
 msgid "Set the text's line spacing"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:567
+#: ../src/ocrfeeder/studio/widgetPresenter.py:606
 msgid "_Line:"
 msgstr "_Linje:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:578
+#: ../src/ocrfeeder/studio/widgetPresenter.py:617
 msgid "L_etter:"
 msgstr "B_okstav:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:590
+#: ../src/ocrfeeder/studio/widgetPresenter.py:629
 msgid "Sty_le"
 msgstr "Sti_"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:597
+#: ../src/ocrfeeder/studio/widgetPresenter.py:636
 msgid "Angle"
 msgstr "Vinkel"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:601
+#: ../src/ocrfeeder/studio/widgetPresenter.py:639
+msgid "Mis_c"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:642
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1705
+#, fuzzy
+msgid "Language"
+msgstr "Språk:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:649
 msgid "OCR engine to recogni_ze this area:"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:615
+#: ../src/ocrfeeder/studio/widgetPresenter.py:663
 msgid "Detect"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:617
+#: ../src/ocrfeeder/studio/widgetPresenter.py:665
 msgid "Angle:"
 msgstr "Vinkel:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:702
+#: ../src/ocrfeeder/studio/widgetPresenter.py:740
 msgid "Save File"
 msgstr "Lagre fil"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:705
+#: ../src/ocrfeeder/studio/widgetPresenter.py:743
 msgid "Open File"
 msgstr "Åpne fil"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:709
+#: ../src/ocrfeeder/studio/widgetPresenter.py:747
 msgid "Open Folder"
 msgstr "Åpne mappe"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:736
+#: ../src/ocrfeeder/studio/widgetPresenter.py:780
 msgid "Pages to export"
 msgstr "Sider som skal eksporteres"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:738
+#: ../src/ocrfeeder/studio/widgetPresenter.py:782
 msgid "All"
 msgstr "Alle"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:739
+#: ../src/ocrfeeder/studio/widgetPresenter.py:783
 msgid "Current"
 msgstr "Aktiv"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:755
+#: ../src/ocrfeeder/studio/widgetPresenter.py:804
 msgid "Choose the format"
 msgstr "Velg format"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:772
-#: ../src/ocrfeeder/studio/widgetPresenter.py:779
+#: ../src/ocrfeeder/studio/widgetPresenter.py:821
+#: ../src/ocrfeeder/studio/widgetPresenter.py:835
 msgid "Page size"
 msgstr "Papirstørrelse"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:784
+#: ../src/ocrfeeder/studio/widgetPresenter.py:839
 msgid "Custom…"
 msgstr "Egendefinert …"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:798
+#: ../src/ocrfeeder/studio/widgetPresenter.py:853
 msgid "_Height:"
 msgstr "_Høyde:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:807
+#: ../src/ocrfeeder/studio/widgetPresenter.py:863
+msgid "Unit:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
 msgid "Affected pages"
 msgstr "Påvirkede sider"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:809
+#: ../src/ocrfeeder/studio/widgetPresenter.py:872
 msgid "C_urrent"
 msgstr "A_ktiv"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:812
+#: ../src/ocrfeeder/studio/widgetPresenter.py:873
 msgid "_All"
 msgstr "_Alle"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:872
+#: ../src/ocrfeeder/studio/widgetPresenter.py:937
 msgid "Unpaper Image Processor"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:886
+#: ../src/ocrfeeder/studio/widgetPresenter.py:956
 msgid "Preview"
 msgstr "Forhåndsvis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:892
+#: ../src/ocrfeeder/studio/widgetPresenter.py:963
 msgid "_Preview"
 msgstr "_Forhåndsvis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:918
+#: ../src/ocrfeeder/studio/widgetPresenter.py:990
 msgid "Performing Unpaper"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:918
+#: ../src/ocrfeeder/studio/widgetPresenter.py:990
 msgid "Performing unpaper. Please wait…"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:962
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1034
 msgid "Noise Filter Intensity"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:964
-#: ../src/ocrfeeder/studio/widgetPresenter.py:996
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1068
 msgid "Default"
 msgstr "Forvalg"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:966
-#: ../src/ocrfeeder/studio/widgetPresenter.py:998
-msgid "Custom"
-msgstr "Egendefinert"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:968
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1000
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1039
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1071
 msgid "None"
 msgstr "Ingen"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:994
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1066
 msgid "Gray Filter Size"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1069
+msgid "Custom"
+msgstr "Egendefinert"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1098
 msgid "Black Filter"
 msgstr "Sort filter"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1027
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1099
 msgid "Use"
 msgstr "Bruk"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1034
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1106
 msgid "Extra Options"
 msgstr "Ekstra alternativer"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1036
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1108
 msgid "Unpaper's command line arguments"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1165
 #, fuzzy
 msgid "Unpaper Preferences"
 msgstr "Brukervalg"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1150
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1161
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1226
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1237
 msgid "An error occurred!"
 msgstr "En feil oppsto!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1232
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1308
 msgid "Cancelled"
 msgstr "Avbrutt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1246
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1324
 msgid "Preferences"
 msgstr "Brukervalg"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1312
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1388
 msgid "_General"
 msgstr "_Generelt"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1317
-msgid "Temporary folder"
-msgstr "Midlertidig mappe"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1321
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1385
-msgid "Choose"
-msgstr "Velg"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1338
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
 msgid "_Recognition"
 msgstr "_Gjenkjenning"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1343
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1405
 msgid "Select boxes' colors"
 msgstr "Velg farger for bokser"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1349
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1411
 msgid "Te_xt areas' fill color"
 msgstr "Fyllfarge for tekstområder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1355
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
 msgid "Text areas' _stroke color"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1361
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1423
 #, fuzzy
 msgid "_Image areas' fill color"
 msgstr "Farge for tekstfyll"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1381
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
 msgid "Path to unpaper"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1393
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1643
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1681
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1699
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1790
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1447
+msgid "Choose"
+msgstr "Velg"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1455
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1732
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1771
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1891
 msgid "OCR Engines"
 msgstr "OCR-motorer"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1395
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1457
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1406
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1468
 msgid "Favorite _engine:"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1421
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1483
 msgid "Window size"
 msgstr "Vindustørrelse"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1422
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
 msgid "A_utomatic"
 msgstr "A_utomatisk"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1423
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1485
 msgid "Cu_stom"
 msgstr "E_gendefinert"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1432
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1495
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1508
 msgid "Columns Detection"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1449
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1513
 msgid "_Improve columns detection"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1451
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1515
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1462
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1536
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1526
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1600
 msgid "_Automatic"
 msgstr "_Automatisk"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1464
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1601
 msgid "Custo_m"
 msgstr "Ege_ndefinert"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1468
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1531
 msgid "The columns' minimum width in pixels"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
 msgid "Minimum width that a column should have:"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1505
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1569
 msgid "Recognized Text"
 msgstr "Gjenkjent tekst"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1570
 msgid "_Fix line breaks and hyphenization"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1508
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1572
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
 "engines"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1582
 msgid "Content Areas"
 msgstr "Innholdsområder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1523
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1587
 msgid "A_djust content areas' bounds"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1525
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1589
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1542
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1605
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1559
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1622
 msgid "Maximum size that the content areas' margins should have:"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1605
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1669
 msgid "Image Pre-processing"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1606
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1670
 #, fuzzy
 msgid "Des_kew images"
 msgstr "Slett alle bilder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1608
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
 msgid "Tries to straighten the images before they are added"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1617
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1681
 msgid "_Unpaper images"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1619
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1683
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1623
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1687
 #, fuzzy
 msgid "Unpaper _Preferences"
 msgstr "_Brukervalg"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1657
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one "
+"chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1718
+msgid "Default _language:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1747
 #, fuzzy
 msgid "Engines to be added"
 msgstr "Navn på motor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1662
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
 msgid "Include"
 msgstr "Ta med"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1666
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1703
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1756
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1798
 msgid "Engine"
 msgstr "Motor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
-msgid "Add"
-msgstr "Legg til"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
-msgid "Edit"
-msgstr "Rediger"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1710
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1805
 msgid "De_tect"
 msgstr "G_jenkjenn"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1724
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1820
 msgid "Are you sure you want to delete this engine?"
 msgstr "Er du sikker på at du vil slette denne motoren?"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1772
-msgid "No OCR engines available"
-msgstr ""
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1773
-msgid ""
-"No OCR engines were found in the system.\n"
-"Please make sure you have OCR engines installed and available."
-msgstr ""
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1792
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1893
 #, python-format
 msgid "%s engine"
 msgstr "%s motor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1816
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
 msgid "_Name:"
 msgstr "_Navn:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1927
 msgid "Engine name"
 msgstr "Navn på motor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1819
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1929
 msgid "_Image format:"
 msgstr "B_ildeformat:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1821
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1931
 msgid "The required image format"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1823
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1933
 msgid "_Failure string:"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1825
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1935
 msgid "The failure string or character that this engine uses"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1828
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
 msgid "Engine _path:"
 msgstr "Sti til _motor:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1830
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1940
 msgid "The path to the engine program"
 msgstr "Sti til motorprogrammet"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1832
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1942
 msgid "Engine _arguments:"
 msgstr "_Argumenter for motor:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1834
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1851
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1948
+#, fuzzy
+msgid "Engine _language argument:"
+msgstr "_Argumenter for motor:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1950
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In "
+"order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1956
+#, fuzzy
+msgid "Engine lan_guages:"
+msgstr "_Argumenter for motor:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1958
+msgid ""
+"The languages this engine supports. This should be given as pairs of the "
+"language in the ISO 639-1 and the engine's corresponding language (for "
+"example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
+"arguments should have the $LANG keyword."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1999
 msgid "Error setting the new engine; please check your engine settings."
 msgstr ""
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1851
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1999
 msgid "Warning"
 msgstr "Advarsel"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1887
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2035
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+
+#~ msgid "Delete"
+#~ msgstr "Slett"
+
+#~ msgid "Export to HTML"
+#~ msgstr "Eksporter til HTML"
+
+#~ msgid "Export to Plain Text"
+#~ msgstr "Eksporter til tekst"
+
+#~ msgid "Temporary folder"
+#~ msgstr "Midlertidig mappe"
+
+#~ msgid "Add"
+#~ msgstr "Legg til"
+
+#~ msgid "Edit"
+#~ msgstr "Rediger"
