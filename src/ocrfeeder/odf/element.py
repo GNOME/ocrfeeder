@@ -20,9 +20,9 @@
 #
 
 import xml.dom
-from namespaces import nsdict
-import grammar
-from attrconverters import AttrConverters
+from ocrfeeder.odf.namespaces import nsdict
+from ocrfeeder.odf import grammar
+from ocrfeeder.odf.attrconverters import AttrConverters
 
 # The following code is pasted form xml.sax.saxutils
 # Tt makes it possible to run the code without the xml sax package installed
@@ -74,9 +74,9 @@ def _nsassign(namespace):
     return nsdict.setdefault(namespace,"ns" + str(len(nsdict)))
 
 # Exceptions
-class IllegalChild(StandardError):
+class IllegalChild(Exception):
     """ Complains if you add an element to a parent where it is not allowed """
-class IllegalText(StandardError):
+class IllegalText(Exception):
     """ Complains if you add text or cdata to an element where it is not allowed """
 
 class Node(xml.dom.Node):
@@ -153,7 +153,7 @@ class Element(Node):
         if required:
             for r in required:
                 if self.getAttr(r[0],r[1]) is None:
-                    raise AttributeError, "Required attribute missing: %s in <%s>" % (r[1].lower().replace('-',''), self.type)
+                    raise AttributeError("Required attribute missing: %s in <%s>" % (r[1].lower().replace('-',''), self.type))
 
     def allowed_attributes(self):
         return grammar.allowed_attributes.get(self.qname)
@@ -165,20 +165,20 @@ class Element(Node):
         """
         if self.allowed_children is not None:
             if element.qname not in self.allowed_children:
-                raise IllegalChild, "<%s> is not allowed in <%s>" % ( element.type, self.type)
+                raise IllegalChild("<%s> is not allowed in <%s>" % ( element.type, self.type))
         self.elements.append(element)
         element.parentNode = self
 
     def addText(self, text):
         if self.qname not in grammar.allows_text:
-            raise IllegalText, "The <%s> element does not allow text" % self.type
+            raise IllegalText("The <%s> element does not allow text" % self.type)
         else:
             if text != '':
                 self.elements.append(Text(text))
 
     def addCDATA(self, cdata):
         if self.qname not in grammar.allows_text:
-            raise IllegalText, "The <%s> element does not allow text" % self.type
+            raise IllegalText("The <%s> element does not allow text" % self.type)
         else:
             self.elements.append(CDATASection(cdata))
 
@@ -195,12 +195,12 @@ class Element(Node):
                 prefix, localname = attr
                 self.addAttrNS(prefix, localname, value)
             else:
-                raise AttributeError, "Unable to add simple attribute - use (namespace, localpart)"
+                raise AttributeError("Unable to add simple attribute - use (namespace, localpart)")
         else:
             # Construct a list of allowed arguments
             allowed_args = [ a[1].lower().replace('-','') for a in allowed_attrs]
             if attr not in allowed_args:
-                raise AttributeError, "Attribute %s is not allowed in <%s>" % ( attr, self.type)
+                raise AttributeError("Attribute %s is not allowed in <%s>" % ( attr, self.type))
             i = allowed_args.index(attr)
             self.addAttrNS(allowed_attrs[i][0], allowed_attrs[i][1], value)
 
@@ -215,7 +215,7 @@ class Element(Node):
         if not self.namespaces.has_key(namespace):
             self.namespaces[namespace] = prefix
 #       if allowed_attrs and (namespace, localpart) not in allowed_attrs:
-#           raise AttributeError, "Attribute %s:%s is not allowed in element <%s>" % ( prefix, localpart, self.type)
+#           raise AttributeError("Attribute %s:%s is not allowed in element <%s>" % ( prefix, localpart, self.type))
         c = AttrConverters()
         self.attributes[prefix + ":" + localpart] = c.convert((namespace, localpart), value, self.qname)
 

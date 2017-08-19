@@ -18,8 +18,8 @@
 # Contributor(s):
 #
 
-from namespaces import STYLENS
-from element import Element
+from ocrfeeder.odf.namespaces import STYLENS
+from ocrfeeder.odf.element import Element
 
 def StyleElement(name, **args):
     e = Element(name=name, **args)

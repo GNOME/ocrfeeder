@@ -18,12 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from boxesarea import BoxesArea
-from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
+from ocrfeeder.studio.boxesarea import BoxesArea
+from ocrfeeder.studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator, PdfGenerator
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
-from project import ProjectSaver, ProjectLoader
+from ocrfeeder.studio.project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
 from ocrfeeder.util.lib import getNonExistingFileName, unpaperImage
@@ -31,7 +31,7 @@ from ocrfeeder.util.log import debug, warning
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util import constants
 from ocrfeeder.util.asyncworker import AsyncItem
-from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
+from ocrfeeder.studio.widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
@@ -120,9 +120,10 @@ class ImageReviewer(Gtk.HPaned):
 
     def removedBox(self, widget, box):
         self.updateMainWindow()
-        if not self.boxes_dict.has_key(box):
+        try:
+            del self.boxes_dict[box]
+        except KeyError:
             return False
-        del self.boxes_dict[box]
         if self.editor.box == box:
             self.editor.updateDataBox(None)
             self.editor.box = None
@@ -246,7 +247,7 @@ class ImageReviewer(Gtk.HPaned):
             return
         try:
             self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
-        except Exception, exception:
+        except Exception as exception:
             debug(exception.message)
             return
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)

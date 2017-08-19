@@ -192,7 +192,7 @@ class ConfigurationManager(object):
         color_list = [value.strip('()\ ') for value in color.split(',')]
         try:
             int_color_list = [int(value) for value in color_list]
-        except ValueError, exception:
+        except ValueError as exception:
             return None
         return tuple(int_color_list)
 
@@ -385,8 +385,8 @@ class ConfigurationManager(object):
             new_node = doc.createElement(key)
             new_node.appendChild(doc.createTextNode(str(value)))
             root_node.appendChild(new_node)
-        configuration = doc.toxml(encoding = 'utf-8')
-        configuration += '\n' + root_node.toxml(encoding = 'utf-8')
+        configuration = doc.toxml()
+        configuration += '\n' + root_node.toxml()
         new_configuration_file = open(configuration_file, 'w')
         new_configuration_file.write(configuration)
         new_configuration_file.close()
