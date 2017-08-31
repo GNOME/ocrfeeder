@@ -216,11 +216,13 @@ class PageData:
         self.pixel_width, self.pixel_height = image.size
         self.image_path = image_path
         self.setSize(getImagePrintSize(image))
+        self.unit = 'cm'
         self.resolution = getImageResolution(image)
         self.data_boxes = data_boxes
 
-    def setSize(self, page_size):
+    def setSize(self, page_size, unit = 'cm'):
         self.width, self.height = page_size
+        self.unit = unit
         self.resolution = self.pixel_width / self.width, self.pixel_height / self.height
 
     def setResolution(self, new_resolution):

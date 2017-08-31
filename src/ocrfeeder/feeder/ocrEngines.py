@@ -90,11 +90,7 @@ class Engine:
             parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT, '')
 
         text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
-        try:
-            try:
-                text = unicode(text, 'utf-8', 'replace')
-            except UnicodeDecodeError:
-                text = unicode(text, 'ascii', 'replace').encode('utf-8', 'replace')
+        try: pass
         finally:
             os.unlink(self.image_path)
         return text
@@ -250,10 +246,10 @@ class OcrEnginesManager:
 
         try:
             engine = Engine(**arguments)
-        except TypeError, exception:
+        except TypeError as exception:
             debug('Error when unserializing engine: %s' % exception.message)
             engine = None
-        except WrongSettingsForEngine, we:
+        except WrongSettingsForEngine as we:
             debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
             engine = None
         else:

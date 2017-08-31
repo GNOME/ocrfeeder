@@ -76,8 +76,8 @@ class ODFParser(handler.ContentHandler):
         try:
             e = element.Element(qname = tag, qattributes=attrdict)
             self.curr = e
-        except AttributeError, v:
-            print "Error: %s" % v
+        except AttributeError as v:
+            print("Error: %s" % v)
 
         if tag == (OFFICENS,'styles'):
             self.doc.styles = e

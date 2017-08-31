@@ -21,11 +21,11 @@
 __doc__="""Use OpenDocument to generate your documents."""
 
 import zipfile, time, sys, mimetypes, copy
-import cStringIO
-from namespaces import *
-import manifest, meta
-from office import *
-from element import Node
+import io
+from ocrfeeder.odf.namespaces import *
+from ocrfeeder.odf import manifest, meta
+from ocrfeeder.odf.office import *
+from ocrfeeder.odf.element import Node
 
 __version__= TOOLSVERSION
 
@@ -82,8 +82,8 @@ class OpenDocument:
         self.body = Body()
 
     def toXml(self, filename=''):
-        import cStringIO
-        xml=cStringIO.StringIO()
+        import io
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         self.body.toXml(0, xml)
         if not filename:
@@ -102,14 +102,14 @@ class OpenDocument:
             x.addElement(self.fontfacedecls)
         x.addElement(self.automaticstyles)
         x.addElement(self.body)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
 
     def manifestxml(self):
         """ Generates the manifest.xml file """
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         self.manifest.toXml(0,xml)
         return xml.getvalue()
@@ -118,7 +118,7 @@ class OpenDocument:
         """ Generates the meta.xml file """
         x = DocumentMeta()
         x.addElement(self.meta)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
@@ -127,7 +127,7 @@ class OpenDocument:
         """ Generates the settings.xml file """
         x = DocumentSettings()
         x.addElement(self.settings)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
@@ -167,7 +167,7 @@ class OpenDocument:
         x.addElement(self.styles)
         if self.masterstyles.hasChildren():
             x.addElement(self.masterstyles)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()

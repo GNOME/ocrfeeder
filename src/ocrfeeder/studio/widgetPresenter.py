@@ -19,8 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
-from ocrfeeder.util import lib, PAPER_SIZES
+from ocrfeeder.studio.dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
+from ocrfeeder.util import lib, PAPER_SIZES, UNITS_DICT
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncWorker
 from ocrfeeder.util.constants import *
@@ -35,7 +35,7 @@ import signal
 import subprocess
 import sys
 import threading
-import Queue
+import queue
 import time
 _ = gettext.gettext
 
@@ -825,8 +825,10 @@ class PageSizeDialog(Gtk.Dialog):
                                                         Gtk.ResponseType.REJECT,
                                                         Gtk.STOCK_OK,
                                                         Gtk.ResponseType.ACCEPT))
+        self.unit_dict = UNITS_DICT
         self.__makePageSizeArea(current_page_size)
         self.paper_sizes.connect('changed', self.__changedPageSize, current_page_size)
+        self.unit_choose.connect('changed', self.__changedUnit, current_page_size)
         self.set_icon_from_file(WINDOW_ICON)
 
     def __makePageSizeArea(self, page_size):
@@ -834,7 +836,6 @@ class PageSizeDialog(Gtk.Dialog):
         size_box = Gtk.VBox(spacing = 12)
         self.paper_sizes = Gtk.ComboBoxText.new()
         papers = PAPER_SIZES.keys()
-        papers.sort()
         self.paper_sizes.append_text(_(u'Custom…'))
         for paper in papers:
             self.paper_sizes.append_text(paper)
@@ -854,6 +855,14 @@ class PageSizeDialog(Gtk.Dialog):
         label.set_mnemonic_widget(self.height_entry)
         self.entries_hbox.add(label)
         self.entries_hbox.add(self.height_entry)
+        self.unit_choose = Gtk.ComboBoxText.new()
+        for unit in self.unit_dict:
+            self.unit_choose.append_text(unit)
+        self.unit_choose.set_active(0)
+        self.prev_unit = self.unit_dict[self.unit_choose.get_active_text()]
+        label = Gtk.Label(_('Unit:'))
+        self.entries_hbox.add(label)
+        self.entries_hbox.add(self.unit_choose)
         size_box.add(self.entries_hbox)
         page_size_frame.add(size_box)
         self.vbox.add(page_size_frame)
@@ -876,11 +885,16 @@ class PageSizeDialog(Gtk.Dialog):
 
     def __setPageSize(self, page_size):
         width, height = page_size
-        self.width_entry.set_value(width)
-        self.height_entry.set_value(height)
+        unit = self.prev_unit
+        self.width_entry.set_value(width*unit)
+        self.height_entry.set_value(height*unit)
 
     def getSize(self):
-        return self.width_entry.get_value(), self.height_entry.get_value()
+        unit = self.prev_unit
+        return self.width_entry.get_value()/unit, self.height_entry.get_value()/unit
+
+    def getUnit(self):
+        return self.unit_choose.get_active_text()
 
     def __changedPageSize(self, widget, current_page_size):
         active_index = self.paper_sizes.get_active()
@@ -889,11 +903,15 @@ class PageSizeDialog(Gtk.Dialog):
             width, height = PAPER_SIZES[self.paper_sizes.get_active_text()]
             self.__setPageSize((width, height))
 
+    def __changedUnit(self, widget, current_page_size):
+        page_size = self.getSize()
+        self.prev_unit = self.unit_dict[self.unit_choose.get_active_text()]
+        self.__setPageSize(page_size)
+
     def __checkIfSizeIsStandard(self, page_size):
         width, height = page_size
         i = 1
         names = PAPER_SIZES.keys()
-        names.sort()
         for name in names:
             size = PAPER_SIZES[name]
             standard_width, standard_height = size
@@ -979,7 +997,7 @@ class UnpaperDialog(Gtk.Dialog):
             return
         try:
             thumbnail_image = Image.open(image_path)
-        except Exception, exception:
+        except Exception as exception:
             debug(exception.message)
             return
         thumbnail_image.thumbnail((150, 200), Image.ANTIALIAS)
@@ -1979,7 +1997,7 @@ class OcrSettingsDialog(Gtk.Dialog):
             return True
         except:
             SimpleDialog(self, _('Error setting the new engine; please check your engine settings.'), _('Warning'), 'warning').run()
-            print sys.exc_info()
+            print(sys.exc_info())
             return False
 
     def __packSettingInFrame(self, box, size_group, entry_name, entry,

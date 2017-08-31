@@ -28,10 +28,10 @@ from ocrfeeder.util.constants import *
 import sys
 import os.path
 import urllib
-import widgetPresenter
-from widgetModeler import ImageReviewer_Controler
-from dataHolder import DataBox, TextData
-from pagesiconview import PagesIconView
+from ocrfeeder.studio import widgetPresenter
+from ocrfeeder.studio.widgetModeler import ImageReviewer_Controler
+from ocrfeeder.studio.dataHolder import DataBox, TextData
+from ocrfeeder.studio.pagesiconview import PagesIconView
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager

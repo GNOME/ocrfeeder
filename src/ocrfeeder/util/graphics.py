@@ -19,8 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import getNonExistingFileName
-from log import debug
+from ocrfeeder.util.lib import getNonExistingFileName
+from ocrfeeder.util.log import debug
 from PIL import Image
 from gi.repository import GdkPixbuf
 import math
@@ -69,7 +69,7 @@ def convertPixbufToImage(pixbuf):
     # creating the Image from bytes.
     if pixbuf.get_byte_length() > num_channels * dimensions[0] * dimensions[1]:
         i = 0
-        p = ''
+        p = b''
         for j in range(pixbuf.get_height()):
             p += pixels[i:i + pixbuf.get_width() * num_channels]
             i += pixbuf.get_rowstride()

@@ -20,7 +20,7 @@
 ###########################################################################
 
 import logging
-from constants import OCRFEEDER_COMPACT_NAME, OCRFEEDER_DEBUG
+from .constants import OCRFEEDER_COMPACT_NAME, OCRFEEDER_DEBUG
 
 logger = logging.getLogger(OCRFEEDER_COMPACT_NAME)
 LOG_FORMAT = "%(asctime)-15s %(levelname)s: %(message)s"

@@ -18,20 +18,20 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from boxesarea import BoxesArea
-from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
+from ocrfeeder.studio.boxesarea import BoxesArea
+from ocrfeeder.studio.dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator, PdfGenerator
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
-from project import ProjectSaver, ProjectLoader
+from ocrfeeder.studio.project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
 from ocrfeeder.util.lib import getNonExistingFileName, unpaperImage
 from ocrfeeder.util.log import debug, warning
 from ocrfeeder.util.configuration import ConfigurationManager
-from ocrfeeder.util import constants
+from ocrfeeder.util import constants, UNITS_DICT
 from ocrfeeder.util.asyncworker import AsyncItem
-from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
+from ocrfeeder.studio.widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
@@ -120,9 +120,10 @@ class ImageReviewer(Gtk.HPaned):
 
     def removedBox(self, widget, box):
         self.updateMainWindow()
-        if not self.boxes_dict.has_key(box):
+        try:
+            del self.boxes_dict[box]
+        except KeyError:
             return False
-        del self.boxes_dict[box]
         if self.editor.box == box:
             self.editor.updateDataBox(None)
             self.editor.box = None
@@ -246,7 +247,7 @@ class ImageReviewer(Gtk.HPaned):
             return
         try:
             self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
-        except Exception, exception:
+        except Exception as exception:
             debug(exception.message)
             return
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
@@ -442,8 +443,11 @@ class ImageReviewer_Controler:
             page_data = reviewer.savePageData()
             status_message += ' ' + _('Resolution: %.2f x %.2f') % (page_data.resolution[0],
                                                                     page_data.resolution[1])
-            status_message += ' ' + _('Page size: %i x %i') % (page_data.width,
-                                                               page_data.height)
+            width = page_data.width * UNITS_DICT[page_data.unit]
+            height = page_data.height * UNITS_DICT[page_data.unit]
+            status_message += ' ' + _('Page size: %g x %g %s') % (width,
+                                                                  height,
+                                                                  page_data.unit)
 
         self.statusbar.pop(self._page_info_message_id)
         self.statusbar.push(self._page_info_message_id, status_message)
@@ -734,12 +738,13 @@ class ImageReviewer_Controler:
         response = page_size_dialog.run()
         if response == Gtk.ResponseType.ACCEPT:
             size = page_size_dialog.getSize()
+            unit = page_size_dialog.getUnit()
             if page_size_dialog.all_pages_radio.get_active():
                 for page in self.pages_icon_view.getAllPages():
-                    page.setSize(size)
+                    page.setSize(size, unit)
             else:
-                current_reviewer.page.setSize(size)
-            debug('Page size: %s' % size)
+                current_reviewer.page.setSize(size, unit)
+            debug('Page size: %s' % str(size))
         page_size_dialog.destroy()
         self.__updateStatusBar(current_reviewer)
 
