@@ -48,7 +48,7 @@ picture showing the areas' edition UI</p></media>
              and height.</p></item>
     <item><p><em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the
              area's text with by (by pressing the <gui>OCR</gui> button).</p>
-             <note type="warning"><p>Using the OCR engine to recognize the text
+             <note style="warning"><p>Using the OCR engine to recognize the text
              will directly assign that text to the area and replace the one
              assigned before.</p></note></item>
     <item><p><em>Text Area</em>: Represents the text assigned to that area and lets the
