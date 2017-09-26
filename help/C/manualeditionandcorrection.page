@@ -24,14 +24,14 @@ a document's contents in an easy way.</p>
 shown in the following image:</p>
 <media type="image" mime="image/png" src="figures/content-areas.png"
 width="300px">
-A picture of two content areas with one of them selected.
+<p>A picture of two content areas with one of them selected.</p>
 </media>
 
 <p>The attributes of a selected are shown and can be changed from
 the right part of the main window, like shown in the following image:
 </p>
-<media type="image" mime="image/png" src="figures/areas-edition.png" width="200px">A
-picture showing the areas' edition UI</media>
+<media type="image" mime="image/png" src="figures/areas-edition.png" width="200px"><p>A
+picture showing the areas' edition UI</p></media>
 
 <p>The following list describes the content areas' attributes:</p>
 <list>
