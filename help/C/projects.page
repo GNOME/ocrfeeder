@@ -17,7 +17,7 @@ projects.</p>
 <p>Projects are compressed files with the <em>ocrf</em> extension
 which hold information about pages (images) and content areas.</p>
 
-<section>
+<section id="save">
 <title>Saving A Project</title>
 
 <p>After having done some work in an image, a project can be created
@@ -30,7 +30,7 @@ project's name and location is entered.</p>
 
 </section>
 
-<section>
+<section id="load">
 <title>Loading A Project</title>
 
 <p>An existing project can be loaded simply by clicking
@@ -39,7 +39,7 @@ project's name and location is entered.</p>
 
 </section>
 
-<section>
+<section id="append">
 <title>Appending A Project</title>
 
 <p>Sometimes it is useful to merge two or more projects in order to create
@@ -51,7 +51,7 @@ wanted project.</p>
 
 </section>
 
-<section>
+<section id="clear">
 <title>Clearing A Project</title>
 
 <p>If all the information is a project should be deleted (for example,
