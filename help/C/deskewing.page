@@ -23,7 +23,7 @@ every time an image is added. To set it, simply open the
 <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check
 <gui>Deskew images</gui> under the <gui>Tools</gui> tab.</p>
 
-<note type="warning"><p>Depending on the size and characteristics
+<note style="warning"><p>Depending on the size and characteristics
 of the image, deskewing an image may take some time.</p></note>
 
 </page>
