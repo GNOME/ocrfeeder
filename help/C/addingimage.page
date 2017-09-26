@@ -28,7 +28,7 @@ in the pages' area.</p>
 <guiseq><gui>Edit</gui><gui>Delete Page</gui></guiseq> or
 right-click over the page's thumbnail and choose <gui>Delete</gui>.</p>
 
-<section>
+<section id="page-configuration">
 <title>Page Configuration</title>
 
 <p>To configure the page's size click in
