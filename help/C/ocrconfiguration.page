@@ -15,7 +15,7 @@
 the text from images. This means any OCR engine that can be
 used from the command line should also be used in <app>OCRFeeder</app>.</p>
 
-<section>
+<section id="automatic">
 
 <title>Automatic Detection of OCR Engines</title>
 
@@ -33,7 +33,7 @@ up to the user to uncheck these engines if they shouldn't be added again.</p></n
 
 </section>
 
-<section>
+<section id="manual">
 
 <title>Manual Configuration</title>
 
