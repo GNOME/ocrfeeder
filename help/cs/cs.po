@@ -1,13 +1,13 @@
 # Czech translation for ocrfeeder.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2016.
+# Marek Černocký <marek@manet.cz>, 2011, 2012, 2013, 2014, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2016-03-19 20:31+0000\n"
-"PO-Revision-Date: 2016-03-20 14:39+0100\n"
+"POT-Creation-Date: 2017-09-26 14:48+0000\n"
+"PO-Revision-Date: 2017-09-26 19:49+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -670,34 +670,6 @@ msgstr ""
 "kopírovat, upravovat a šířit ukázkový kód obsažený v tomto dokumentu za "
 "podmínek, které si zvolíte a bez omezení."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:26
-msgctxt "_"
-msgid ""
-"external ref='figures/content-areas.png' "
-"md5='ea6353c14876c61c1830f30c40b98dc4'"
-msgstr ""
-"external ref='figures/content-areas.png' "
-"md5='ea6353c14876c61c1830f30c40b98dc4'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:33
-msgctxt "_"
-msgid ""
-"external ref='figures/areas-edition.png' "
-"md5='fc649b4486501cb1cef1f146d50b02dc'"
-msgstr ""
-"external ref='figures/areas-edition.png' "
-"md5='fc649b4486501cb1cef1f146d50b02dc'"
-
 #. (itstool) path: info/desc
 #: C/manualeditionandcorrection.page:9
 msgid "Manual edition and correction of results"
@@ -736,7 +708,21 @@ msgstr ""
 "následujícím obrázku:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
 #: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:27
 msgid "A picture of two content areas with one of them selected."
 msgstr "Obrázek se čtyřmi oblastmi, z nichž je jedna vybraná."
 
@@ -750,6 +736,20 @@ msgstr ""
 "hlavního okna, podobně jak můžete vidět na následujícím obrázku:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+
+#. (itstool) path: media/p
 #: C/manualeditionandcorrection.page:33
 msgid "A picture showing the areas' edition UI"
 msgstr "Obrázek ukazující uživatelské rozhraní pro úpravy oblasti"
@@ -796,11 +796,11 @@ msgstr ""
 #: C/manualeditionandcorrection.page:49
 msgid ""
 "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
-"area's text with by (by pressing the <gui>OCR</gui> button)"
+"area's text with by (by pressing the <gui>OCR</gui> button)."
 msgstr ""
 "<em>Výkonný program OCR pro rozpoznávání této oblasti</em>: Umožňuje "
 "uživateli zvolit výkonný program OCR a rozpoznat text v oblasti (zmáčknutím "
-"tlačítka <gui>OCR</gui>)"
+"tlačítka <gui>OCR</gui>)."
 
 #. (itstool) path: note/p
 #: C/manualeditionandcorrection.page:51
@@ -810,11 +810,6 @@ msgid ""
 msgstr ""
 "Použitím výkonného programu OCR k rozpoznání textu bude text přímo přiřazen "
 "do textové oblasti a nahradí ten, co tam byl případně před tím."
-
-#. (itstool) path: list/item
-#: C/manualeditionandcorrection.page:49
-msgid "<_:p-1/>. <_:note-2/>"
-msgstr "<_:p-1/>. <_:note-2/>"
 
 #. (itstool) path: item/p
 #: C/manualeditionandcorrection.page:54
