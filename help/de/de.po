@@ -1,25 +1,25 @@
 # German translation for the ocrfeeder manual.
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2016.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder help master\n"
-"POT-Creation-Date: 2016-03-19 20:31+0000\n"
-"PO-Revision-Date: 2016-03-22 10:34+0100\n"
+"POT-Creation-Date: 2017-09-26 14:48+0000\n"
+"PO-Revision-Date: 2017-10-16 23:23+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2016"
+msgstr "Mario Blättermann <mario.blaettermann@gmail.com>, 2011, 2016-2017"
 
 #. (itstool) path: info/desc
 #: C/addingfolder.page:8
@@ -186,7 +186,7 @@ msgstr ""
 #. (itstool) path: info/desc
 #: C/deskewing.page:8
 msgid "Correcting the skew in the images"
-msgstr "Korrektur von Schräglagen in einem Dokument."
+msgstr "Korrektur von Schräglagen in einem Dokument"
 
 #. (itstool) path: page/title
 #: C/deskewing.page:11
@@ -687,30 +687,6 @@ msgstr ""
 "Einschränkung unter den Bedingungen Ihrer Wahl zu kopieren, zu verändern und "
 "zu verbreiten."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:26
-msgctxt "_"
-msgid ""
-"external ref='figures/content-areas.png' "
-"md5='ea6353c14876c61c1830f30c40b98dc4'"
-msgstr "translated"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:33
-msgctxt "_"
-msgid ""
-"external ref='figures/areas-edition.png' "
-"md5='fc649b4486501cb1cef1f146d50b02dc'"
-msgstr "translated"
-
 #. (itstool) path: info/desc
 #: C/manualeditionandcorrection.page:9
 msgid "Manual edition and correction of results"
@@ -749,7 +725,19 @@ msgstr ""
 "im folgenden Bild:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
 #: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr "translated"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:27
 msgid "A picture of two content areas with one of them selected."
 msgstr "Ein Bild mit zwei Inhaltsbereichen, wovon einer ausgewählt ist."
 
@@ -763,6 +751,18 @@ msgstr ""
 "Hauptfensters bearbeitet werden, wie im folgenden Bild gezeigt:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr "translated"
+
+#. (itstool) path: media/p
 #: C/manualeditionandcorrection.page:33
 msgid "A picture showing the areas' edition UI"
 msgstr ""
@@ -811,7 +811,7 @@ msgstr ""
 #: C/manualeditionandcorrection.page:49
 msgid ""
 "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
-"area's text with by (by pressing the <gui>OCR</gui> button)"
+"area's text with by (by pressing the <gui>OCR</gui> button)."
 msgstr ""
 "<em>OCR-Anwendung</em>: Hier können Sie eine OCR-Anwendung auswählen und den "
 "Text des ausgewählten Bereiches durch Anklicken von <gui>OCR</gui> erkennen "
@@ -825,11 +825,6 @@ msgid ""
 msgstr ""
 "Der Aufruf der OCR-Anwendung zur Texterkennung ordnet diesen Text diesem "
 "Bereich zu und ersetzt vorher zugewiesene Texte."
-
-#. (itstool) path: list/item
-#: C/manualeditionandcorrection.page:49
-msgid "<_:p-1/>. <_:note-2/>"
-msgstr "<_:p-1/>. <_:note-2/>"
 
 #. (itstool) path: item/p
 #: C/manualeditionandcorrection.page:54
@@ -1281,4 +1276,3 @@ msgstr ""
 "<em>Unpaper</em> beim automatischen Aufruf nach dem Hinzufügen eines Bildes "
 "können nach einem Klick auf den Knopf <gui>Unpaper-Einstellungen</gui> "
 "konfiguriert werden."
-
