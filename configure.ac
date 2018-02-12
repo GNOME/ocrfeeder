@@ -20,7 +20,6 @@ AX_PYTHON_MODULE([enchant],[needed])
 AX_PYTHON_MODULE([sane],[needed])
 AX_PYTHON_MODULE([PIL],[needed])
 AX_PYTHON_MODULE([reportlab],[needed])
-AX_PYTHON_MODULE([gobject],[needed])
 
 dnl == Introspection Dependencies ==
 
