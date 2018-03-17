@@ -22,4 +22,4 @@ HELP_FILES = \
 	projects.page \
 	unpaper.page
 
-HELP_LINGUAS = cs de el es fr gl ru sl uk
+HELP_LINGUAS = cs de el es fr gl ru sl sv uk

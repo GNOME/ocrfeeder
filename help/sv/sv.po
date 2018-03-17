@@ -1,0 +1,1257 @@
+# Swedish translation for ocrfeeder.
+# Copyright © 2017 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Erik Sköldås <erik.skoldas@tele2.se>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"POT-Creation-Date: 2017-11-11 17:59+0000\n"
+"PO-Revision-Date: 2018-03-18 00:27+0100\n"
+"Last-Translator: Erik Sköldås <erik.skoldas@tele2.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"Erik Sköldås <erik.skoldas@tele2.se>, 2017\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>"
+
+#. (itstool) path: info/desc
+#: C/addingfolder.page:8
+msgid "Adding all the images from a folder"
+msgstr "Lägga till alla bilder från en mapp"
+
+#. (itstool) path: page/title
+#: C/addingfolder.page:11
+msgid "Adding Folder"
+msgstr "Lägga till mapp"
+
+#. (itstool) path: page/p
+#: C/addingfolder.page:13
+msgid ""
+"Sometimes it is useful to add all the images from a given folder. "
+"<app>OCRFeeder</app> provides this functionality by choosing "
+"<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr ""
+"Ibland är det användbart att lägga till alla bilder från en viss mapp. "
+"<app>OCRFeeder</app> tillhandahåller denna funktion genom att välja "
+"<guiseq><gui>Arkiv</gui><gui>Lägg till mapp</gui></guiseq>."
+
+#. (itstool) path: info/desc
+#: C/addingimage.page:7
+msgid "Adding an image to be recognized"
+msgstr "Lägga till en bild som ska identifieras"
+
+#. (itstool) path: page/title
+#: C/addingimage.page:10
+msgid "Adding An Image"
+msgstr "Lägga till en bild"
+
+#. (itstool) path: page/p
+#: C/addingimage.page:12
+msgid ""
+"Adding an image to OCRFeeder is usually the first step when converting a "
+"document."
+msgstr ""
+"Att lägga till en bild i OCRFeeder är vanligtvis det första steget vid "
+"konvertering av ett dokument."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:15
+msgid ""
+"Each added image represents a page in the final document. A thumbnail of the "
+"image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr ""
+"Varje tillagd bild representerar en sida i det slutliga dokumentet. En "
+"miniatyrbild av bilden visas i sidområdet (på vänstra sida av "
+"<app>OCRFeeder</app>)."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:19
+msgid ""
+"The order of the pages in the final document will be the same as the images' "
+"order in the pages' area. This way, pages can be reordered by dragging them "
+"in the images' thumbnails in the pages' area."
+msgstr ""
+"Ordningen på sidorna i det slutliga dokumentet kommer att vara densamma som "
+"bildernas ordning i sidområdet. På så sätt kan sidor omordnas genom att dra "
+"miniatyrbilderna i sidområdet."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:24
+msgid ""
+"You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
+"gui></guiseq>."
+msgstr ""
+"Du kan lägga till en bild genom att klicka på <guiseq><gui>Arkiv</"
+"gui><gui>Lägg till bild</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:27
+msgid ""
+"To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></"
+"guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
+"gui>."
+msgstr ""
+"För att ta bort en sida klicka på <guiseq><gui>Redigera</gui><gui>Ta bort "
+"sida</gui></guiseq> eller högerklicka på sidans miniatyrbild och välj "
+"<gui>Ta bort</gui>."
+
+#. (itstool) path: section/title
+#: C/addingimage.page:32
+msgid "Page Configuration"
+msgstr "Sidkonfiguration"
+
+#. (itstool) path: section/p
+#: C/addingimage.page:34
+msgid ""
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"gui></guiseq> and choose either a custom size, providing the respective "
+"values or a standard paper size from a list."
+msgstr ""
+"För att konfigurera sidstorleken klicka på <guiseq><gui>Redigera</"
+"gui><gui>Redigera sida</gui></guiseq> och välj antingen en anpassad storlek "
+"samt ange respektive värden eller välj från en lista med pappersstorlekar."
+
+#. (itstool) path: info/desc
+#: C/automaticrecognition.page:8
+msgid "Automatically recognizing an image"
+msgstr "Automatisk igenkänning av en bild"
+
+#. (itstool) path: page/title
+#: C/automaticrecognition.page:11
+msgid "Automatic Recognition"
+msgstr "Automatisk igenkänning"
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:13
+msgid ""
+"<app>OCRFeeder</app> tries to detect the contents in a document image and "
+"perform OCR over them, also distinguishing between what is graphics and what "
+"is text. To simplify this concept, we call it recognition."
+msgstr ""
+"<app>OCRFeeder</app> försöker upptäcka innehållet i en dokumentbild och "
+"utföra OCR på den, samt skilja mellan vad som är grafik och vad som är text. "
+"För att förenkla detta koncept kallar vi det igenkänning."
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:18
+msgid ""
+"After an image is added it can be automatically recognized by clicking "
+"<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr ""
+"Efter att en bild har lagts till kan den automatiskt identifieras genom att "
+"klicka på <guiseq><gui>Dokument</gui><gui>Känn igen dokument</gui></guiseq>."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:22
+msgid ""
+"Since there are many different document layouts out there, the automatic "
+"recognition, mainly the page segmentation, may turn out not to be accurate "
+"for you document. In this case, some manual editing of the recognition "
+"results might be needed."
+msgstr ""
+"Eftersom det används många olika dokumentlayouter, kan det automatiska "
+"igenkännandet, främst siduppdelningen, visa sig vara inkorrekt för ditt "
+"dokument. I det fallet kan det behövas viss manuell redigering av "
+"igenkänningsresultatet."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:28
+msgid ""
+"The automatic recognition performs some complex operations and may take some "
+"time depending on the size of the image and the complexity of the layout."
+msgstr ""
+"Den automatiska igenkänningsproceduren utför en del komplexa åtgärder och "
+"kan ta lite tid beroende på bildens storlek och layoutens komplexitet."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:31
+msgid ""
+"The automatic recognition will replace all the content areas in the "
+"currently selected page."
+msgstr ""
+"Den automatiska igenkänningen kommer att ersätta alla innehållsområden på "
+"den valda sidan."
+
+#. (itstool) path: info/desc
+#: C/deskewing.page:8
+msgid "Correcting the skew in the images"
+msgstr "Att korrigera snedställning i bilderna"
+
+#. (itstool) path: page/title
+#: C/deskewing.page:11
+msgid "Deskewing"
+msgstr "Räta upp"
+
+#. (itstool) path: page/p
+#: C/deskewing.page:13
+msgid ""
+"Some images, especially if they were added from a scanner device, may be "
+"skewed and this makes it harder to recognize the image."
+msgstr ""
+"Vissa bilder, särskilt om de lagts till från en bildläsarenhet, kan vara "
+"snedställda vilket försvårar möjligheten att känna igen bilden."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:16
+msgid ""
+"<app>OCRFeeder</app> offers a way to automatically deskew an image. To "
+"deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
+"gui></guiseq>."
+msgstr ""
+"<app>OCRFeeder</app> erbjuder en möjlighet till en automatisk bildupprätare. "
+"För att räta upp en inläst bild, klicka på <guiseq><gui>Verktyg</"
+"gui><gui>Bildupprätare</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:20
+msgid ""
+"This operation can also be set to be performed automatically every time an "
+"image is added. To set it, simply open the <gui>Preferences</gui> dialog "
+"from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check "
+"<gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr ""
+"Denna operation kan också ställas in för att utföras automatiskt varje gång "
+"en bild läggs till. För att aktivera den, öppna dialogen <gui>Inställningar</"
+"gui> från <guiseq><gui>Redigera</gui><gui>Inställningar</gui></guiseq> och "
+"kryssa i <gui>Räta upp bilder</gui> under fliken <gui>Verktyg</gui>."
+
+#. (itstool) path: note/p
+#: C/deskewing.page:26
+msgid ""
+"Depending on the size and characteristics of the image, deskewing an image "
+"may take some time."
+msgstr ""
+"Beroende på storlek och bildens egenskaper, kan det ta lite tid att räta upp "
+"en bild."
+
+#. (itstool) path: info/desc
+#: C/documentgeneration.page:9
+msgid "Creating an editable document"
+msgstr "Skapa ett redigerbart dokument"
+
+#. (itstool) path: page/title
+#: C/documentgeneration.page:12
+msgid "Document Generation"
+msgstr "Dokumentgenerering"
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:14
+msgid ""
+"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
+msgstr ""
+"<app>OCRFeeder</app> genererar för närvarande fyra dokumentformat: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> och <em>vanlig text</em>."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:17
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr ""
+"Efter igenkänningen och eventuell manuell redigering har utförts, är det "
+"möjligt att generera ett dokument genom att klicka på <guiseq><gui>Arkiv</"
+"gui><gui>Exportera…</gui></guiseq> och välja önskat dokumentformat."
+
+#. (itstool) path: note/p
+#: C/documentgeneration.page:22
+msgid ""
+"The HTML exportation generates a folder with the document pages represented "
+"by one HTML file. In each page there are links to go to the previous and "
+"next pages. Image content areas are stored in a subfolder called <em>images</"
+"em>."
+msgstr ""
+"HTML-exporten genererar en mapp med dokumentsidorna representerade av en "
+"HTML-fil. På varje sida finns länkar för att gå till föregående och nästa "
+"sida. Områden för bildinnehåll lagras i en undermapp som heter <em>bilder</"
+"em>."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:26
+msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
+msgstr "Vid export till <em>PDF</em> kan två <em>PDF</em>-typer väljas:"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:29
+msgid ""
+"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
+"<em>PDF</em> from scratch."
+msgstr ""
+"Från grunden: Om detta alternativ är valt skapar <app>OCRFeeder</app> en ny "
+"<em>PDF</em> från grunden."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:32
+msgid ""
+"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
+"<em>PDF</em> showing the original image but with invisible text over it, "
+"making it possible to index or search."
+msgstr ""
+"Sökbar PDF: Om detta alternativ är valt, skapar <app>OCRFeeder</app> en "
+"<em>PDF</em>-fil som visar originalbilden men med osynlig text över den, "
+"vilket gör det möjligt att indexera eller söka."
+
+#. (itstool) path: steps/title
+#: C/documentgeneration.page:38
+msgid "Exporting the recognized document"
+msgstr "Exportera det igenkända dokumentet"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:39
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
+"format."
+msgstr ""
+"Efter igenkänningsproceduren och eventuell manuell redigering är gjord, är "
+"det möjligt att generera ett dokument genom att klicka på "
+"<guiseq><gui>Arkiv</gui><gui>Exportera…</gui></guiseq> (eller trycka på "
+"<keyseq><key>SKIFT</key><key>CTRL</key><key>E</key></keyseq>) och välja "
+"önskat dokumentformat."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:44
+msgid ""
+"Depending your needs, choose whether all pages (with the <gui>All</gui> "
+"option) or only the currently selected one (<gui>Current</gui> option) "
+"should be exported. The default option is <gui>All</gui>. After making your "
+"selection, press <gui>OK</gui> to generate the document."
+msgstr ""
+"Beroende på dina behov, välj om alla sidor (med alternativet <gui>Alla</"
+"gui>) eller bara den aktuellt valda sidan (alternativet <gui>Aktuell</gui>) "
+"ska exporteras. Standardalternativet är <gui>Alla</gui>. Efter att du har "
+"gjort ditt val trycker du på <gui>OK</gui> för att generera dokumentet."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:48
+msgid ""
+"On the last dialog, write the output filename and click the <gui>Save</gui> "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the <gui>Replace</gui> button on the confirmation dialog."
+msgstr ""
+"Skriv i filnamnet i den sista dialogrutan och klicka på knappen <gui>Spara</"
+"gui>. Om en fil med det namnet redan existerar och du vill skriva över den, "
+"klicka på knappen <gui>Ersätt</gui> i bekräftelsedialogrutan."
+
+#. (itstool) path: info/desc
+#: C/finetuning.page:8
+msgid "Advanced options for a better recognition"
+msgstr "Avancerade alternativ för en bättre igenkänning"
+
+#. (itstool) path: page/title
+#: C/finetuning.page:11
+msgid "Fine-tuning"
+msgstr "Finjustering"
+
+#. (itstool) path: page/p
+#: C/finetuning.page:13
+msgid ""
+"<app>OCRFeeder</app> has some advanced options that can be used to perform a "
+"better recognition. These options can be chosen from the <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
+"tab."
+msgstr ""
+"<app>OCRFeeder</app> har några avancerade inställningar som kan användas för "
+"att utföra bättre igenkänning. Dessa alternativ kan väljas från dialogrutan "
+"<guiseq><gui>Redigera</gui><gui>Inställningar</gui></guiseq>, under fliken "
+"<gui>Igenkänning</gui>."
+
+#. (itstool) path: page/p
+#: C/finetuning.page:18
+msgid "The following list describes the mentioned options:"
+msgstr "Följande lista beskriver de nämnda alternativen:"
+
+# TODO: seperate -> separate
+#. (itstool) path: item/p
+#: C/finetuning.page:20
+msgid ""
+"<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the "
+"text line by line and seperate each line with a line break. Sometimes, this "
+"is not what the user wants because the text might be broken in the middle of "
+"a sentence."
+msgstr ""
+"<gui>Rätta till radbrytningar och avstavningar</gui>: OCR-motorer läser "
+"vanligtvis texten rad för rad och separerar varje rad med en radbrytning. "
+"Ibland är det inte vad användaren vill, eftersom texten då kan brytas mitt i "
+"en mening."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:24
+msgid ""
+"Checking this option will make <app>OCRFeeder</app> remove single newline "
+"characters after the text is recognized by the engines."
+msgstr ""
+"Om du kryssar i det här alternativet kommer <app>OCRFeeder</app> att ta bort "
+"enstaka nyradstecken i en ny rad efter att texten har identifierats av "
+"motorerna."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:26
+msgid ""
+"Since just removing newlines in an hyphenized text would result in wrongly "
+"separated words, hyphenization is also detected and removed in this process."
+msgstr ""
+"Då borttagning av nya rader i en avstavad text skulle resultera i felaktigt "
+"separerade ord, identifieras också avstavningen och tas bort i denna process."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:29
+msgid ""
+"<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the "
+"contents in an image uses the concept of <em>window size</em> which is the "
+"division of the image in small windows. A smaller window size means it is "
+"likely to detect more content areas but size that is too small may result in "
+"contents that should be part of a bigger area instead. On the other hand, a "
+"bigger window size means less divisions of contents but may end up in "
+"contents which should be subdivided."
+msgstr ""
+"<gui>Fönsterstorlek</gui>: <app>OCRFeeder</app>s algoritm för att upptäcka "
+"innehållet i en bild är att använda <em>fönsterstorlek</em> som koncept "
+"vilket är uppdelningen av bilden i små fönster. En mindre fönsterstorlek "
+"betyder att det är sannolikt att detektera fler innehållsområden men om "
+"storleken är för liten kan resultatet av innehållet vara en del som borde "
+"tillhört ett större område istället. Å andra sidan betyder en större "
+"fönsterstorlek färre indelningar av innehåll vilket kan innebära innehåll "
+"som borde ha delats upp."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:36
+msgid ""
+"A good window size should be slightly bigger than the text line spacing in "
+"an image."
+msgstr ""
+"En bra fönsterstorlek ska vara något större än textens radavstånd i en bild."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:37
+msgid ""
+"Users may want to manually set this value if automatic one doesn't produce "
+"any valid content areas but normally it is easier to use the automatic one "
+"and perform any needed corrections directly in the content areas."
+msgstr ""
+"Användare kan vilja manuellt ställa in detta värde om den automatiska inte "
+"skapar några giltiga innehållsområden men det är vanligtvis lättare att "
+"använda den automatiska och göra nödvändiga korrigeringar direkt i "
+"innehållsområdena."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:41
+msgid ""
+"<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</"
+"app> should try to divide the detected content areas horizontally "
+"(originating more columns). The value that is used to check the existance of "
+"blank space within the contents may be set to automatic or manual when the "
+"columns aren't detected correctly."
+msgstr ""
+"<gui>Förbättra kolumnidentifiering</gui>: Markera det här alternativet om "
+"<app>OCRFeeder</app> ska försöka separera de upptäckta innehållsområdena "
+"horisontellt (skapar fler kolumner). Värdet som används för att kontrollera "
+"förekomsten av tomt utrymme i innehållet kan ställas in automatiskt eller "
+"manuellt när kolumnerna inte detekteras korrekt."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:46
+msgid ""
+"<gui>Adjust content areas' bounds</gui>: The detected content areas "
+"sometimes have a considerable margin between their contents and the areas' "
+"edges. By checking this option, <app>OCRFeeder</app> will minimize those "
+"margins, adjusting the areas to its contents better. Optionally, a manual "
+"value can be check to indicate the maximum value of the adjusted margins."
+msgstr ""
+"<gui>Justera innehållsområdenas avgränsningar</gui>: De upptäckta "
+"innehållsområdena har ibland en skillnad i marginal mellan deras innehåll "
+"och områdenas kanter. Genom att markera det här alternativet kommer "
+"<app>OCRFeeder</app> att minimera marginalerna och anpassa områdena till "
+"innehållet bättre. Eventuellt kan ett manuellt värde anges för att "
+"kontrollera maximivärdet för de justerade marginalerna."
+
+#. (itstool) path: info/desc
+#: C/importingfromscanner.page:8
+msgid "Importing from a scanner device"
+msgstr "Importera från en bildläsarenhet"
+
+#. (itstool) path: page/title
+#: C/importingfromscanner.page:11
+msgid "Importing From Scanner"
+msgstr "Importera från Bildläsare"
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:13
+msgid ""
+"In order to help convert a printed document into an editable document, "
+"<app>OCRFeeder</app> offers a way to import images directly from a scanner "
+"device."
+msgstr ""
+"För att hjälpa till att konvertera ett tryckt dokument till ett redigerbart "
+"dokument, erbjuder <app>OCRFeeder</app> ett sätt att importera bilder direkt "
+"från en bildläsarenhet."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:17
+msgid ""
+"To import an image from a scanner device, use the menu <guiseq><gui>File</"
+"gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut "
+"<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr ""
+"För att importera en bild från en bildläsarenhet, använd menyalternativet "
+"<guiseq><gui>Arkiv</gui><gui>Importera sida från bildläsare</gui></guiseq> "
+"eller tangentbordsgenvägen <keyseq><key>Ctrl</key><key>Skift</key><key>I</"
+"key></keyseq>."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:22
+msgid ""
+"The currently detected scanner device will be used to scan the page. If more "
+"than one scanner if found, then a dialog will be shown with the options to "
+"choose from."
+msgstr ""
+"Den aktuella detekterade bildläsaren används för att läsa in sidan. Om mer "
+"än en bildläsare hittas, kommer en dialogruta att visas med alternativen att "
+"välja mellan."
+
+#. (itstool) path: info/desc
+#: C/importingpdf.page:8
+msgid "Importing PDF documents"
+msgstr "Importera PDF-dokument"
+
+#. (itstool) path: page/title
+#: C/importingpdf.page:11
+msgid "Importing PDF"
+msgstr "Importera PDF"
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:13
+msgid ""
+"Some documents are nothing more than images placed in a PDF document. For "
+"cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
+"can then be converted into an editable document."
+msgstr ""
+"Vissa dokument är inget annat än bilder som placeras i ett PDF-dokument. För "
+"fall som dessa, kan <app>OCRFeeder</app> fortfarande importera ett PDF-"
+"dokument så att det sedan kan omvandlas till ett redigerbart dokument."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:18
+msgid ""
+"To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</"
+"gui></guiseq>."
+msgstr ""
+"För att importera ett PDF-dokument, klicka på <guiseq><gui>Arkiv</"
+"gui><gui>Importera PDF</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:21
+msgid ""
+"Each PDF page will be converted to an image and placed in the pages' area."
+msgstr ""
+"Varje PDF-sida kommer att konverteras till en bild och placeras i sidområdet."
+
+#. (itstool) path: note/p
+#: C/importingpdf.page:24
+msgid ""
+"The PDF conversion can be a demanding process and take some time for large "
+"PDF files."
+msgstr ""
+"PDF-konverteringen kan vara en krävande process och ta lite tid för stora "
+"PDF-filer."
+
+#. (itstool) path: info/desc
+#: C/index.page:6
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Hjälp för <app>OCRFeeder Dokumentkonverteringssystem</app>."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "OCRFeeder Document Conversion System"
+msgstr "OCRFeeder Dokumentkonverteringssystem"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "OCRFeeder Document Conversion System"
+msgstr "OCRFeeder Dokumentkonverteringssystem"
+
+#. (itstool) path: credit/name
+#: C/index.page:10
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "OCRFeeder Document Conversion System"
+msgstr "OCRFeeder Dokumentkonverteringssystem"
+
+#. (itstool) path: page/p
+#: C/index.page:18
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+"OCRFeeder är ett system för dokumentlayoutanalys och optisk "
+"teckenigenkänning."
+
+#. (itstool) path: page/p
+#: C/index.page:20
+msgid ""
+"OCRFeeder was created to allow users to easily convert document images (for "
+"example, a PNG image with text) into editable documents (for example, an ODT "
+"version with that text)."
+msgstr ""
+"OCRFeeder skapades för att ge möjlighet för användare att enkelt konvertera "
+"dokumentbilder (till exempel en PNG-bild med text) till redigerbara dokument "
+"(till exempel en ODT-version med den texten)."
+
+#. (itstool) path: page/p
+#: C/index.page:24
+msgid ""
+"Given the images it will automatically outline its contents, perform OCR and "
+"distinguish between what's graphics and text. It generates multiple formats "
+"being its main one ODT."
+msgstr ""
+"Programmet kommer automatiskt att beskriva bildens innehåll, utföra OCR och "
+"skilja mellan vad som är grafik och text. Det genererar flera olika format "
+"men dess huvudformat är ODT."
+
+#. (itstool) path: page/p
+#: C/index.page:28
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr ""
+"Den här guiden kommer att förklara hur du konfigurerar och använder "
+"OCRFeeder."
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Adding Images"
+msgstr "Lägga till bilder"
+
+#. (itstool) path: section/title
+#: C/index.page:35
+msgid "Recognition"
+msgstr "Igenkänning"
+
+#. (itstool) path: section/title
+#: C/index.page:39
+msgid "Configuration"
+msgstr "Anpassa"
+
+#. (itstool) path: section/title
+#. (itstool) path: page/title
+#: C/index.page:43 C/projects.page:10
+msgid "Projects"
+msgstr "Projekt"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 United States License"
+msgstr "Creative Commons Erkännande DelaLika 3.0 United States"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Detta arbete är licensierat under licensen <_:link-1/>."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Som ett särskilt undantag, ger upphovsrättsinnehavarna dig tillstånd att "
+"kopiera, modifiera och distribuera exempelkoden i detta dokument i enlighet "
+"med villkoren som du väljer, utan begränsning."
+
+#. (itstool) path: info/desc
+#: C/manualeditionandcorrection.page:9
+msgid "Manual edition and correction of results"
+msgstr "Manuell redigering och korrigering av resultat"
+
+#. (itstool) path: page/title
+#: C/manualeditionandcorrection.page:12
+msgid "Manual Edition"
+msgstr "Manuell redigering"
+
+#. (itstool) path: page/p
+#: C/manualeditionandcorrection.page:14
+msgid ""
+"One may want to manually select just a portion of an image to be recognized "
+"or correct the results of the automatic recognition. <app>OCRFeeder</app> "
+"lets its users manually edit every aspect of a document's contents in an "
+"easy way."
+msgstr ""
+"Man kan tänkas vilja manuellt välja bara en del av en bild som ska kännas "
+"igen eller korrigera resultaten av det automatiska igenkännandet. "
+"<app>OCRFeeder</app> låter sina användare manuellt redigera alla aspekter av "
+"ett dokuments innehåll på ett enkelt sätt."
+
+#. (itstool) path: section/title
+#: C/manualeditionandcorrection.page:21
+msgid "Content Areas"
+msgstr "Innehållsområden"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:23
+msgid ""
+"The mentioned document's contents are represented by areas like shown in the "
+"following image:"
+msgstr ""
+"Det nämnda dokumentets innehåll representeras av områden som visas i "
+"följande bild:"
+
+#. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:27
+msgid "A picture of two content areas with one of them selected."
+msgstr "En bild av två innehållsområden där det ena av dem är markerad."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:30
+msgid ""
+"The attributes of a selected are shown and can be changed from the right "
+"part of the main window, like shown in the following image:"
+msgstr ""
+"Attributen för en markerad bild visas och kan ändras från den högra delen av "
+"huvudfönstret, som visas i följande bild:"
+
+#. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:33
+msgid "A picture showing the areas' edition UI"
+msgstr "Bilden visar innehållsområdenas gränssnitt"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:36
+msgid "The following list describes the content areas' attributes:"
+msgstr "Följande lista beskriver innehållsområdenas attribut:"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:38
+msgid ""
+"<em>Type</em>: sets the area to be either the type image or text. The image "
+"type will clip the area from the original page and place it in the generated "
+"document. The text type will use the text assigned to the area and represent "
+"it as text in the generated document. (Generated ODT documents will have "
+"text boxes when an area was marked as being of the type text)"
+msgstr ""
+"<em>Typ</em>: Ställer in området som antingen typen bild eller text. "
+"Bildtypen kommer att klippa ut området från originalsidan och placerar det i "
+"det genererade dokumentet. Texttypen kommer att använda texten som "
+"tilldelats området och representerar den som text i det genererade "
+"dokumentet. (Genererade ODT-dokument kommer att ha textrutor när ett område "
+"markerats vara av typen text)"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:44
+msgid ""
+"<em>Clip</em>: Shows the current clip from the original area. This makes it "
+"easier for users to check exactly what's within the area."
+msgstr ""
+"<em>Klipp</em>: Visar det aktuella klippet från det ursprungliga området. "
+"Det gör det lättare för användarna att kontrollera exakt vad som finns inom "
+"området."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:46
+msgid ""
+"<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
+"top left corner of the area is placed as well as the areas' width and height."
+msgstr ""
+"<em>Gränser</em>: Visar punkten (X och Y) i originalbilden där det övre "
+"vänstra hörnet av området är placerat såväl som områdenas bredd och höjd."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:49
+msgid ""
+"<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
+"area's text with by (by pressing the <gui>OCR</gui> button)."
+msgstr ""
+"<em>OCR-motor</em>: Låter användaren välja en OCR-motor och känna igen "
+"områdets text (genom att trycka på <gui>OCR</gui>-knappen)."
+
+#. (itstool) path: note/p
+#: C/manualeditionandcorrection.page:51
+msgid ""
+"Using the OCR engine to recognize the text will directly assign that text to "
+"the area and replace the one assigned before."
+msgstr ""
+"Om du använder OCR-motorn för att känna igen texten, tilldelas den texten "
+"direkt till området och ersätter den som tilldelats tidigare."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:54
+msgid ""
+"<em>Text Area</em>: Represents the text assigned to that area and lets the "
+"user edit it. This area is disabled when the area is of the type image"
+msgstr ""
+"<em>Textområde</em>: Representerar texten som tilldelats det området och "
+"låter användaren redigera den. Det här området är inaktiverat när området är "
+"av typen bild"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:57
+msgid ""
+"<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
+"the text alignment, line and letter spacing."
+msgstr ""
+"<em>Stilflik</em>: Låter användaren välja typsnitt och storlek, samt "
+"textjustering, rad- och bokstavsavstånd."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:61
+msgid ""
+"The content areas can be selected by clicking on them or by using the menus "
+"<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and "
+"<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are "
+"also keyboard shortcuts for these actions: <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr ""
+"Innehållsområdena kan väljas genom att klicka på dem eller genom att använda "
+"menyerna <guiseq><gui>Dokument</gui><gui>Välj föregående område</gui></"
+"guiseq> och <guiseq><gui>Dokument</gui><gui>Välj nästa område</gui></"
+"guiseq>. Det finns också tangentbordsgenvägar för dessa åtgärder: "
+"<keyseq><key>Ctrl</key><key>Skift</key><key>P</key></keyseq> respektive "
+"<keyseq><key>Ctrl</key><key>Skift</key><key>N</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:68
+msgid ""
+"Selecting all areas is also possible using <guiseq><gui>Document</"
+"gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>A</key></keyseq>."
+msgstr ""
+"Att välja alla områden är också möjligt med <guiseq><gui>Dokument</"
+"gui><gui>Välj alla områden</gui></guiseq> eller <keyseq><key>Ctrl</"
+"key><key>Skift</key><key>A</key></keyseq>."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:72
+msgid ""
+"When at least one content area is selected, it is possible to recognize "
+"their contents automatically or delete them. These actions can be "
+"accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected "
+"Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected "
+"Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</"
+"key></keyseq>), respectively."
+msgstr ""
+"När minst ett innehållsområde väljs är det möjligt att automatiskt "
+"identifiera innehållet eller radera dem. Dessa åtgärder kan åstadkommas "
+"genom att klicka på <guiseq><gui>Dokument</gui><gui>Känn igen markerade "
+"områden</gui></guiseq> och <guiseq><gui>Dokument</gui><gui>Ta bort markerade "
+"områden</gui></guiseq> (eller <keyseq><key>Ctrl</key><key>Skift</"
+"key><key>Delete</key></keyseq>)."
+
+#. (itstool) path: info/desc
+#: C/ocrconfiguration.page:9
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Konfigurera OCR-motorerna för att känna igen texten"
+
+#. (itstool) path: page/title
+#: C/ocrconfiguration.page:12
+msgid "OCR Engines Configuration"
+msgstr "Konfiguration av OCR-motorer"
+
+#. (itstool) path: page/p
+#: C/ocrconfiguration.page:14
+msgid ""
+"<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from "
+"images. This means any OCR engine that can be used from the command line "
+"should also be used in <app>OCRFeeder</app>."
+msgstr ""
+"<app>OCRFeeder</app> använder systemomfattande OCR-motorer för att extrahera "
+"texten från bilder. Det betyder att en OCR-motor som kan användas från "
+"kommandoraden bör också användas i <app>OCRFeeder</app>."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:20
+msgid "Automatic Detection of OCR Engines"
+msgstr "Automatisk identifiering av OCR-motorer"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:22
+msgid ""
+"The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and "
+"<em>Cuneiform</em>) are already automatically detected and configured in "
+"most systems, the first time <app>OCRFeeder</app> is run."
+msgstr ""
+"OCR-motorerna (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> och "
+"<em>Cuneiform</em>) är redan automatiskt identifierade och konfigurerade i "
+"de flesta system, första gången <app>OCRFeeder</app> körs."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:26
+msgid ""
+"If an OCR engine is installed after <app>OCRFeeder</app> had configured "
+"already an engine, it will not be automatically configured but, depending on "
+"the engine, users might easily go to the <gui>OCR Engines</gui> dialog and "
+"choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr ""
+"Om en OCR-motor installeras efter att <app>OCRFeeder</app> redan har "
+"konfigurerat en motor, kommer den inte automatiskt att konfigureras men "
+"beroende på motorn kan man enkelt gå till dialogrutan för <gui>OCR-motorer</"
+"gui> och välja den i listan över upptäckta motorer efter att ha tryckt på "
+"<gui>Identifiera</gui>."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:31
+msgid ""
+"Already configured OCR engines might be detected again and it is up to the "
+"user to uncheck these engines if they shouldn't be added again."
+msgstr ""
+"Tidigare konfigurerade OCR-motorer kan bli identifierade på nytt, och det är "
+"upp till användaren att avmarkera dessa motorer om de inte ska läggas till "
+"igen."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:38
+msgid "Manual Configuration"
+msgstr "Manuell konfiguration"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:40
+msgid ""
+"The currently configured OCR engines are shown in the <gui>OCR Engines</gui> "
+"dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
+"gui></guiseq>."
+msgstr ""
+"De för närvarande konfigurerade OCR-motorerna visas i dialogrutan <gui>OCR-"
+"motorer</gui> som kan öppnas från <guiseq><gui>Verktyg</gui><gui>OCR-"
+"motorer</gui></guiseq>."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:44
+msgid ""
+"Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog "
+"allows to add new engines, edit or delete the current ones and detect "
+"engines installed in the system."
+msgstr ""
+"Förutom att visa de konfigurerade OCR-motorerna, ger dialogrutan för "
+"<gui>OCR-motor</gui> möjligheten att lägga till nya motorer, redigera eller "
+"ta bort de aktuella samt upptäcka motorer som är installerade i systemet."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:48
+msgid ""
+"When adding or editing an OCR engine (by pressing the <gui>Add</gui> or "
+"<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
+"fields:"
+msgstr ""
+"När du lägger till eller redigerar en OCR-motor (genom att antingen klicka "
+"på knappen <gui>Lägg till</gui> eller <gui>Redigera</gui>), visas en dialog "
+"med följande fält:"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:53
+msgid ""
+"<gui>Name</gui>: The engine's name. This name will be used in throughout the "
+"UI when referring to the engine;"
+msgstr ""
+"<gui>Namn</gui>: Motorns namn. Detta namn kommer att användas i hela "
+"gränssnittet när det hänvisar till motorn;"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:55
+msgid ""
+"<gui>Image format</gui>: The image format that the engine recognizes (for "
+"example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr ""
+"<gui>Bildformat</gui>: Bildformatet som motorn känner igen (till exempel "
+"<em>TIF</em> i fallet med <em>Tesseract</em>);"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:58
+msgid ""
+"<gui>Failure string</gui>: Some engines replace unrecognized characters by "
+"another, pre-defined character (for example, <em>_</em> in the case of "
+"<em>GOCR</em>)."
+msgstr ""
+"<gui>Felsträng</gui>: Vissa motorer ersätter okända tecken med ett annat, "
+"fördefinierat tecken (till exempel <em>_</em> i fallet med <em>GOCR</em>)."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:61
+msgid ""
+"<gui>Engine path</gui>: The path in the system to the engine's executable "
+"(for example, <em>/usr/bin/tesseract</em>)."
+msgstr ""
+"<gui>Sökväg till motor</gui>: Sökvägen i systemet till motorns körbara fil "
+"(till exempel, <em>/usr/bin/tesseract</em>)."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:63
+msgid ""
+"<gui>Engine arguments</gui>: The arguments that feed an image to the engine "
+"and make it output the recognized text to the standard output. "
+"<app>OCRFeeder</app> runs the engine with these arguments as if it was in "
+"the command line and looks for the recognized text in the standard output. "
+"Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while "
+"other, like <em>Tesseract</em>, write the text into a file."
+msgstr ""
+"<gui>Argument för motorn</gui>: Argumenten som matar en bild till motorn och "
+"gör att den matar ut den igenkända texten till standardutmatningen. "
+"<app>OCRFeeder</app> driver motorn med dessa argument som om den befann sig "
+"i kommandoraden och letar efter den igenkända texten i standard ut. Vissa "
+"motorer gör redan detta, som <em>Ocrad</em> och <em>GOCR</em> medan andra, "
+"som <em>Tesseract</em>, skriver texten i en fil."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:70
+msgid ""
+"Since the image's path to be read is always needed, a special argument <em>"
+"$IMAGE</em> is provided for this and will be replaced by the image path when "
+"the engine is run. For the cases where a file name is needed, like the one "
+"mentioned previously, a special argument <em>$FILE</em> is provided and will "
+"be replaced by a temporary file name."
+msgstr ""
+"Eftersom sökvägen till bilden som ska läsas in alltid behövs, tillhandahålls "
+"ett speciellt argument <em>$IMAGE</em> för detta och kommer att ersättas av "
+"bildsökvägen när motorn körs. För de fall där ett filnamn behövs, som det "
+"som nämnts tidigare, tillhandahålls ett särskilt argument <em>$FILE</em> och "
+"kommer att ersättas av ett temporärt filnamn."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:76
+msgid ""
+"So, in case of <em>Tesseract</em> (which writes the recognized text into a "
+"file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr ""
+"Så, med <em>Tesseract</em> (som skriver den igenkända texten i en fil), "
+"skulle argumenten vara <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:82
+msgid ""
+"The engines' configuration is stored in their own XML file in the user's "
+"home under <em>.config/ocrfeeder/engines/</em>."
+msgstr ""
+"Motorernas konfiguration lagras i en egen XML-fil i användarens hemkatalog "
+"under <em>.config/ocrfeeder/engines/</em>."
+
+#. (itstool) path: info/desc
+#: C/projects.page:7
+msgid "Loading and saving projects"
+msgstr "Läsa in och spara projekt"
+
+#. (itstool) path: page/p
+#: C/projects.page:12
+msgid ""
+"Sometimes a user may want to save the progress of the work done so far in an "
+"image and continue with it later. For this case <app>OCRFeeder</app> offers "
+"the possibility to save and load projects."
+msgstr ""
+"Ibland kan en användare vilja spara det gjorda arbetet i en bild för att "
+"fortsätta med det senare. För dessa fall erbjuder <app>OCRFeeder</app> "
+"möjligheten att spara och läsa in projekt."
+
+#. (itstool) path: page/p
+#: C/projects.page:17
+msgid ""
+"Projects are compressed files with the <em>ocrf</em> extension which hold "
+"information about pages (images) and content areas."
+msgstr ""
+"Projekt är komprimerade filer med filändelsen <em>ocrf</em> som innehåller "
+"information om sidor (bilder) samt innehållsområden."
+
+#. (itstool) path: section/title
+#: C/projects.page:21
+msgid "Saving A Project"
+msgstr "Spara ett projekt"
+
+#. (itstool) path: section/p
+#: C/projects.page:23
+msgid ""
+"After having done some work in an image, a project can be created by "
+"clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
+"<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the "
+"<keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</"
+"key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A "
+"file saving dialog will then be shown so the project's name and location is "
+"entered."
+msgstr ""
+"Efter att ha påbörjat ett arbete i en bild kan projektet sparas genom att "
+"klicka på <guiseq><gui>Arkiv</gui><gui>Spara</gui></guiseq> eller "
+"<guiseq><gui>Arkiv</gui><gui>Spara som…</gui></guiseq>. eventuellt kan "
+"tangentbordsgenvägarna <keyseq><key>Ctrl</key><key>S</key></keyseq> eller "
+"<keyseq><key>Ctrl</key><key>Skift</key><key>S</key></keyseq> användas. "
+"Dialogrutan för att spara filen visas då så att projektets namn och plats "
+"anges."
+
+#. (itstool) path: section/title
+#: C/projects.page:34
+msgid "Loading A Project"
+msgstr "Läsa in ett projekt"
+
+#. (itstool) path: section/p
+#: C/projects.page:36
+msgid ""
+"An existing project can be loaded simply by clicking <guiseq><gui>File</"
+"gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
+"keyseq>."
+msgstr ""
+"Ett befintligt projekt kan läsas in enkelt genom att klicka på "
+"<guiseq><gui>Arkiv</gui><gui>Öppna</gui></guiseq> eller <keyseq><key>Ctrl</"
+"key><key>O</key></keyseq>."
+
+#. (itstool) path: section/title
+#: C/projects.page:43
+msgid "Appending A Project"
+msgstr "Lägga till i ett projekt"
+
+#. (itstool) path: section/p
+#: C/projects.page:45
+msgid ""
+"Sometimes it is useful to merge two or more projects in order to create only "
+"one document with the pages of several <app>OCRFeeder</app> projects. This "
+"can be accomplished by appending a project, which simply loads the pages "
+"from a chosen project into the current one. To do this, click in "
+"<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
+"wanted project."
+msgstr ""
+"Ibland är det användbart att sammanfoga två eller flera projekt för att "
+"skapa endast ett dokument med sidorna från flera <app>OCRFeeder</app>-"
+"projekt. Detta kan uppnås genom att lägga till i ett projekt, vilket bara "
+"läser in sidorna från ett valt projekt till det aktuella. För att göra detta "
+"klicka på <guiseq><gui>Arkiv</gui><gui> Lägg till i projekt</gui></guiseq> "
+"och välj det önskade projektet."
+
+#. (itstool) path: section/title
+#: C/projects.page:55
+msgid "Clearing A Project"
+msgstr "Tömma ett Projekt"
+
+#. (itstool) path: section/p
+#: C/projects.page:57
+msgid ""
+"If all the information is a project should be deleted (for example, to start "
+"over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
+"Project</gui></guiseq>."
+msgstr ""
+"Om all information i ett projekt skall raderas (till exempel för att börja "
+"om igen), kan det göras genom att välja <guiseq><gui>Redigera</gui><gui>Töm "
+"Projektet</gui></guiseq>."
+
+#. (itstool) path: info/desc
+#: C/unpaper.page:8
+msgid "Cleaning images before performing OCR"
+msgstr "Rensa bilder innan du utför OCR"
+
+#. (itstool) path: page/title
+#: C/unpaper.page:11
+msgid "Unpaper"
+msgstr "Unpaper"
+
+#. (itstool) path: page/p
+#: C/unpaper.page:13
+msgid ""
+"<em>Unpaper</em> is a tool to clean images in order to make them easier to "
+"read on screen. It is aimed mainly at images obtained from scanned documents "
+"which usually show dust, black margins or other flaws."
+msgstr ""
+"<em>Unpaper</em> är ett verktyg för att rengöra bilder för att de skall bli "
+"enklare att läsa på skärmen. Det används främst till bilder från skannade "
+"dokument som ofta innehåller damm, svarta marginaler eller andra brister."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:18
+msgid ""
+"<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before "
+"processing them, which usually results in a better recognition."
+msgstr ""
+"<app>OCRFeeder</app> kan använda <em>Unpaper</em> för att rengöra bilderna "
+"innan de bearbetas, vilket vanligtvis resulterar i ett bättre resultat."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:22
+msgid ""
+"<em>Unpaper</em> needs to be installed in order to be used. If it is not "
+"installed, <app>OCRFeeder</app> won't show it's action in the interface."
+msgstr ""
+"<em>Unpaper</em> måste vara installerat för att kunna användas. Om det inte "
+"är installerat, kommer <app>OCRFeeder</app> inte att visa dess genväg i "
+"gränssnittet."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:26
+msgid ""
+"To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</"
+"gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> "
+"dialog will be shown with <em>Unpaper</em>'s options and an area to preview "
+"the changes before applying them to the loaded image. Depending on the size "
+"and characteristics of the image, using this tool might take some time."
+msgstr ""
+"Om du vill använda <em>Unpaper</em> på en inläst bild, klicka på "
+"<guiseq><gui>Verktyg</gui><gui>Unpaper</gui></guiseq>. Dialogrutan för "
+"<gui>Bildbehandlaren Unpaper</gui> kommer att visas med <em>Unpaper</em>s "
+"alternativ och ett område för att förhandsgranska ändringarna innan de "
+"appliceras på den inlästa bilden. Beroende på bildens storlek och egenskaper "
+"kan det ta lite tid att använda det här verktyget."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:33
+msgid ""
+"<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. "
+"In this area one can enter the path to <em>Unpaper</em>'s executable "
+"(normally this is already configured if <em>Unpaper</em> was installed the "
+"first time <app>OCRFeeder</app> was run). In the same area, under <gui>Image "
+"Pre-Processing</gui>, one can check <gui>Unpaper images</gui> to make images "
+"being processed automatically by <em>Unpaper</em> after they are loaded into "
+"<app>OCRFeeder</app>. The options taken by <em>Unpaper</em> when it's "
+"automatically called after adding an image can be configured by clicking the "
+"<gui>Unpaper Preferences</gui> button."
+msgstr ""
+"<em>Unpaper</em> kan konfigureras genom att öppna <guiseq><gui>Redigera</"
+"gui><gui>Inställningar</gui></guiseq> och öppna fliken <gui>Verktyg</gui>. I "
+"det här området kan man ange sökvägen till <em>Unpaper</em>s körbara fil "
+"(normalt är det redan konfigurerat om <em>Unpaper</em> var installerat "
+"första gången <app>OCRFeeder</app> kördes). I samma område, under "
+"<gui>Förbehandling av bild</gui> kan man kryssa i <gui>Kör Unpaper på "
+"bilder</gui> för att bilder ska behandlas automatiskt av <em>Unpaper</em> "
+"efter att de blivit inlästa av <app>OCRFeeder</app>. Alternativ som används "
+"av <em>Unpaper</em> när det automatiskt anropats efter att en bild lagts "
+"till kan konfigureras genom att klicka på knappen <gui>Inställningar för "
+"Unpaper</gui>."
+
+#~ msgid "<_:p-1/>. <_:note-2/>"
+#~ msgstr "<_:p-1/>. <_:note-2/>"
