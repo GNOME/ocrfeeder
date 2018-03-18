@@ -123,10 +123,9 @@ class Studio:
         self.main_window.setDestroyEvent(self.quit)
 
         parser = ArgumentParser(description=OCRFEEDER_STUDIO_COMMENTS)
-        parser.add_argument('-i', '--images', metavar='IMAGE1 [IMAGE2, ...]',
-                            nargs='+', help='images to be automatically added '
-                            'on start-up. Use the option before every image '
-                            'path.')
+        parser.add_argument('images', metavar='IMAGE',
+                            nargs='*', help='images to be automatically added '
+                            'on start-up')
         parser.add_argument('-d', '--dir', help='directory with images to be '
                             'added automatically on start-up')
         parser.add_argument('-v', '--version', action='version',
