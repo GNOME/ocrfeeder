@@ -17,6 +17,7 @@ Building from git
 
 $ git clone git://git.gnome.org/ocrfeeder
 $ cd ocrfeeder
+$ pip install -r requirements.txt
 $ ./autogen.sh
 $ make
 
