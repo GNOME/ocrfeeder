@@ -2,27 +2,26 @@
 # Copyright (C) 2011 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2016-03-19 20:31+0000\n"
-"PO-Revision-Date: 2016-04-08 16:24+0200\n"
+"POT-Creation-Date: 2018-06-10 18:04+0000\n"
+"PO-Revision-Date: 2018-11-30 11:21+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
-#| msgid "translator-credits"
 msgctxt "_"
 msgid "translator-credits"
-msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011 - 2016"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011 - 2018"
 
 #. (itstool) path: info/desc
 #: C/addingfolder.page:8
@@ -583,14 +582,12 @@ msgstr "Ayuda del <app>Sistema de conversión de documentos de OCRFeeder</app>."
 
 #. (itstool) path: info/title
 #: C/index.page:7
-#| msgid "OCRFeeder Document Conversion System"
 msgctxt "link"
 msgid "OCRFeeder Document Conversion System"
 msgstr "Sistema de conversión de documentos de OCRFeeder"
 
 #. (itstool) path: info/title
 #: C/index.page:8
-#| msgid "OCRFeeder Document Conversion System"
 msgctxt "text"
 msgid "OCRFeeder Document Conversion System"
 msgstr "Sistema de conversión de documentos de OCRFeeder"
@@ -685,38 +682,6 @@ msgstr ""
 "copiar, modificar y distribuir el código de ejemplo contenido en este "
 "documento bajo los términos que elija, sin restricción."
 
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:26
-#| msgid ""
-#| "@@image: 'figures/content-areas.png'; md5=ea6353c14876c61c1830f30c40b98dc4"
-msgctxt "_"
-msgid ""
-"external ref='figures/content-areas.png' "
-"md5='ea6353c14876c61c1830f30c40b98dc4'"
-msgstr ""
-"external ref='figures/content-areas.png' "
-"md5='ea6353c14876c61c1830f30c40b98dc4'"
-
-#. (itstool) path: media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/manualeditionandcorrection.page:33
-#| msgid ""
-#| "@@image: 'figures/areas-edition.png'; md5=fc649b4486501cb1cef1f146d50b02dc"
-msgctxt "_"
-msgid ""
-"external ref='figures/areas-edition.png' "
-"md5='fc649b4486501cb1cef1f146d50b02dc'"
-msgstr ""
-"external ref='figures/areas-edition.png' "
-"md5='fc649b4486501cb1cef1f146d50b02dc'"
-
 #. (itstool) path: info/desc
 #: C/manualeditionandcorrection.page:9
 msgid "Manual edition and correction of results"
@@ -755,7 +720,21 @@ msgstr ""
 "se muestra en la siguiente imagen:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
 #: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:27
 msgid "A picture of two content areas with one of them selected."
 msgstr ""
 "Una imagen que de dos áreas de contenido con una de ellas seleccionada."
@@ -771,6 +750,20 @@ msgstr ""
 "imagen:"
 
 #. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+
+#. (itstool) path: media/p
 #: C/manualeditionandcorrection.page:33
 msgid "A picture showing the areas' edition UI"
 msgstr "Una imagen que muestra la IU de edición de áreas"
@@ -817,12 +810,15 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/manualeditionandcorrection.page:49
+#| msgid ""
+#| "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
+#| "area's text with by (by pressing the <gui>OCR</gui> button)"
 msgid ""
 "<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
-"area's text with by (by pressing the <gui>OCR</gui> button)"
+"area's text with by (by pressing the <gui>OCR</gui> button)."
 msgstr ""
 "<em>Motor OCR</em>: permite al usuario elegir un motor OCR y reconocer el "
-"área de texto con él (pulsando el botón <gui>OCR</gui>)"
+"área de texto con él (pulsando el botón <gui>OCR</gui>)."
 
 #. (itstool) path: note/p
 #: C/manualeditionandcorrection.page:51
@@ -832,11 +828,6 @@ msgid ""
 msgstr ""
 "Al usar el motor OCR para reconocer texto se asignará directamente ese texto "
 "al área y se reemplazará el asignado anteriormente."
-
-#. (itstool) path: list/item
-#: C/manualeditionandcorrection.page:49
-msgid "<_:p-1/>. <_:note-2/>"
-msgstr "<_:p-1/>. <_:note-2/>"
 
 #. (itstool) path: item/p
 #: C/manualeditionandcorrection.page:54
@@ -1274,6 +1265,9 @@ msgstr ""
 "Las opciones que usa <em>Unpaper</em> cuando se le llama automáticamente "
 "después de añadir una imagen se pueden configurar pulsando en el botón "
 "<gui>Preferencias de Unpaper</gui>."
+
+#~ msgid "<_:p-1/>. <_:note-2/>"
+#~ msgstr "<_:p-1/>. <_:note-2/>"
 
 #~ msgid "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
 #~ msgstr "<placeholder-1/>. <note type=\"warning\"><placeholder-2/></note>"
