@@ -9,7 +9,7 @@
   <homepage rdf:resource="https://wiki.gnome.org/Apps/OCRFeeder" />
   <download-page rdf:resource="http://download.gnome.org/sources/ocrfeeder/" />
   <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=ocrfeeder" />
-  <category rdf:resource="http://api.gnome.org/doap-extensions#productivity" />
+  <!-- <category rdf:resource="http://api.gnome.org/doap-extensions#productivity" /> -->
 
   <maintainer>
     <foaf:Person>
