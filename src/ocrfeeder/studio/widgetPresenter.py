@@ -43,7 +43,7 @@ class MainWindow(Gtk.Window):
 
     def __init__(self):
         Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
-        self.set_size_request(800, 600)
+        self.set_size_request(1280, 720)
         self.set_default_icon_name(APP_ID)
         self.main_box = Gtk.VBox()
         self.main_box.show()
