@@ -54,7 +54,7 @@ class MainWindow(Gtk.Window):
 
         self.main_area = Gtk.Paned.new(orientation=Gtk.Orientation.HORIZONTAL)
         self.main_area.set_wide_handle(True)
-        self.main_area.set_position(150)
+        self.main_area.set_position(200)
         self.main_area.show()
         self.main_box.pack_end(self.main_area, True, True, 0)
 
@@ -62,14 +62,15 @@ class MainWindow(Gtk.Window):
         self.main_area_left = Gtk.ScrolledWindow()
         self.main_area_left.get_accessible().set_name(_('Pages'))
         self.main_area_left.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.main_area_left.set_size_request(200, -1)
         self.main_area_left.show()
 
-        self.main_area.pack1(self.main_area_left, False, True)
+        self.main_area.pack1(self.main_area_left, False, False)
         self.notebook = Gtk.Notebook()
         self.notebook.set_show_tabs(False)
         self.notebook.set_show_border(False)
         self.notebook.show()
-        self.main_area.pack2(self.notebook, False, False)
+        self.main_area.pack2(self.notebook, True, False)
         self.action_group = None
 
         self.show()
@@ -326,7 +327,7 @@ class BoxEditor(Gtk.ScrolledWindow):
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
 
-        self.set_size_request(300, -1)
+        self.set_size_request(400, -1)
         self.get_accessible().set_name(_('Area editor'))
         self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.contents = Gtk.VBox()
