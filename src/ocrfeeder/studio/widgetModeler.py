@@ -75,7 +75,7 @@ class ImageReviewer(Gtk.Paned):
         selectable_boxes_scrolled_window.show()
 
         self.pack1(selectable_boxes_scrolled_window, True, False)
-        self.pack2(self.editor.box_editor, False, True)
+        self.pack2(self.editor.box_editor, False, False)
         self.page = page_data
         self.updatePageData(self.page)
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
