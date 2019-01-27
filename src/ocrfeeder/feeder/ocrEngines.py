@@ -212,7 +212,7 @@ class OcrEnginesManager:
         if not len(self.ocr_engines):
             debug("Warning: no engines found!")
         elif not favorite_engine_exists:
-            self.configuration_manager.favorite_engine = self.ocr_engines[0][0].name
+            self.configuration_manager.favorite_engine = self.ocr_engines[-1][0].name
         engines_needing_update = {'auto': [],
                                   'manual': []}
         for engine, path in self.ocr_engines:
@@ -261,7 +261,7 @@ class OcrEnginesManager:
         return engine
 
     def getXmlFilesInFolder(self, folder):
-        return [os.path.join(folder, file) for file in os.listdir(folder) if file.endswith('.xml')]
+        return [os.path.join(folder, file) for file in sorted(os.listdir(folder)) if file.endswith('.xml')]
 
     def newEngine(self, name, engine_path, arguments,
                   image_format, failure_string, languages,
