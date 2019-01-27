@@ -1317,15 +1317,20 @@ class PreferencesDialog(Gtk.Dialog):
         self.ocr_engines = ocr_engines
         self.notebook = Gtk.Notebook()
         self.__makeGeneralPreferences(self.__makeColors())
-        self.__makeToolsPreferences(self.__makeUnpaper(),
-                                    self.__makeEngines(),
-                                    self.__makePreProcessorPreferences())
+        if not OCRFEEDER_SANDBOX:
+            self.__makeToolsPreferences(self.__makeUnpaper(),
+                                        self.__makeEngines(),
+                                        self.__makePreProcessorPreferences())
+        else:
+            self.__makeToolsPreferences(self.__makeEngines(),
+                                        self.__makePreProcessorPreferences())
         self.__makeRecognitionPreferences(self.__makeLanguagePreferences(),
                                       self.__makeTextPreferences(),
                                       self.__makeWindowSize(),
                                       self.__makeColumnDetectionPreferences(),
                                       self.__makeBoundsAdjustmentsPreferences())
-        self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
+        if not OCRFEEDER_SANDBOX:
+            self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
         self.vbox.add(self.notebook)
         self.set_size_request(*self.PREFERENCES_DIALOG_SIZE)
@@ -1346,7 +1351,8 @@ class PreferencesDialog(Gtk.Dialog):
         self.configuration_manager.setBoxesStroke(
             self.__getColor(self.boxes_stroke_color))
         self.configuration_manager.setImageFill(self.__getColor(self.image_fill_color))
-        self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
+        if not OCRFEEDER_SANDBOX:
+            self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
         self.configuration_manager.improve_column_detection = \
             self.improve_column_detection.get_active()
         self.configuration_manager.column_min_width = self.__getColumnMinWidth()
