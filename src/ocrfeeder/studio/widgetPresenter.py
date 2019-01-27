@@ -555,7 +555,6 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.ocr_combo_box.set_tooltip_text(_('OCR engine to recognize '
                                               'this content area'))
         self.setOcrEngines(engines)
-        self.ocr_combo_box.set_active(0)
         hbox.pack_end(self.perform_ocr_button, False, False, 0)
         hbox.add(self.ocr_combo_box)
 
@@ -687,11 +686,23 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.letter_spacing_spin.set_value(spacing)
 
     def setOcrEngines(self, engines_list):
+        current_engine = self.ocr_combo_box.get_active_text()
         self.ocr_combo_box.get_model().clear()
         for engine in engines_list:
             self.ocr_combo_box.append_text(engine)
         if engines_list:
-            self.ocr_combo_box.set_active(0)
+            engine_index = None
+            if current_engine:
+                try:
+                    engine_index = engines_list.index(current_engine)
+                except ValueError:
+                    engine_index = -1
+            if not engine_index >= 0:
+                try:
+                    engine_index = engines_list.index(ConfigurationManager().favorite_engine)
+                except ValueError:
+                    engine_index = 0 if len(engines_list) == 0 else len(engines_list) - 1
+            self.ocr_combo_box.set_active(engine_index)
             self.ocr_combo_box.set_sensitive(True)
             self.perform_ocr_button.set_sensitive(True)
         else:
