@@ -1435,7 +1435,7 @@ class PreferencesDialog(Gtk.Dialog):
         try:
             index = [engine.name for engine, path in self.ocr_engines].index(self.configuration_manager.favorite_engine)
         except ValueError:
-            index = 0
+            index = 0 if len(self.ocr_engines) == 0 else len(self.ocr_engines) - 1
         self.engines_combo.set_active(index)
         engines_box = Gtk.HBox(spacing = 10)
         label = Gtk.Label(_("Favorite _engine:"))
