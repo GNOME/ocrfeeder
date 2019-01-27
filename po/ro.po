@@ -40,6 +40,10 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "Suită OCR completă."
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Suită OCR completă"
+
 #: ../src/ocrfeeder/studio/studioBuilder.py:179
 msgid "Images"
 msgstr "Imagini"

@@ -29,6 +29,10 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "Kompletní aplikace pro OCR."
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Kompletní aplikace pro OCR"
+
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"
 msgstr "Kontrola pravopisu"
