@@ -6,7 +6,7 @@ AC_INIT([ocrfeeder],
 
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11])
+AM_INIT_AUTOMAKE([1.11 foreign])
 AM_MAINTAINER_MODE([enable])
 # Support silent build rules. Disable by either passing --disable-silent-rules
 # to configure or passing V=1 to make
