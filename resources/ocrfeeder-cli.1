@@ -1,4 +1,4 @@
-.TH ocrfeeder-cli 1 "2010\-11\-19"
+.TH ocrfeeder-cli 1 "2016\-02\-05"
 .SH NAME
 ocrfeeder-cli \- command line interface for OCRFeeder, a document layout analysis and optical character recognition system.
 .SH SYNOPSIS
@@ -32,7 +32,15 @@ Name for the generated file
 Images to be recognized
 .TP
 .BI \-f " FORMAT\fR, " \-\^\-format= "FORMAT"
-Format for the generated document (odt or html)
+Format for the generated document: PDF, HTML, ODT, TXT or SPDF
+(searchable PDF)
+.TP
+.BI \-e " ENGINE\fR, " \-\^\-engine= "ENGINE"
+The OCR engine to be used. Options are: GOCR or Ocrad
+.TP
+.BI \-l " LANGUAGE\fR, " \-\^\-language= "LANGUAGE"
+The language according to the ISO-639-1. For example "pt" for
+Portuguese or "en" for English
 .TP
 .BI \-\^\-window-size= "WINDOW_SIZE"
 Desired window size of OCRFeeder's segmentation algorithm. If 
