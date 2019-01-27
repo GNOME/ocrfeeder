@@ -2,6 +2,7 @@
 bin/ocrfeeder-cli.in
 bin/ocrfeeder.in
 resources/ocrfeeder.desktop.in
+resources/ocrfeeder.appdata.xml.in
 [type: gettext/glade]resources/spell-checker.ui
 src/ocrfeeder/feeder/documentGeneration.py
 src/ocrfeeder/feeder/imageManipulation.py
