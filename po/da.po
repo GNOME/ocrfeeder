@@ -30,6 +30,10 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "Den komplette OCR-pakke."
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Den komplette OCR-pakke"
+
 # måske stavekontrol
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"

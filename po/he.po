@@ -26,6 +26,10 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "החבילה המושלמת לזיהי OCR."
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "החבילה המושלמת לזיהי OCR"
+
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"
 msgstr "בודק איות"

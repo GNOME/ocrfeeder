@@ -32,6 +32,10 @@ msgstr "OCRFeeder"
 msgid "The complete OCR suite."
 msgstr "完整的 OCR 套裝軟體。"
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "完整的 OCR 套裝軟體"
+
 #: ../studio/studioBuilder.py:157
 msgid "Images"
 msgstr "圖片"
