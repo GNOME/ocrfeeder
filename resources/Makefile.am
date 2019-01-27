@@ -1,12 +1,12 @@
 SUBDIRS = icons
 
 desktopdir = $(datadir)/applications
-desktop_in_files = ocrfeeder.desktop.in
+desktop_in_files = org.gnome.OCRFeeder.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 appstreamdir = $(datadir)/metainfo
-appstream_in_files = ocrfeeder.appdata.xml.in
+appstream_in_files = org.gnome.OCRFeeder.appdata.xml.in
 appstream_DATA = $(appstream_in_files:.xml.in=.xml)
 @INTLTOOL_XML_RULE@
 

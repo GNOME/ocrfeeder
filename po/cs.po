@@ -21,11 +21,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "Kompletní aplikace pro OCR."
 

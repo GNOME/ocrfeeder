@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "Language: pt\n"
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 #| msgid "OCRFeeder Projects"
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "A aplicação completa de ROC"
 
