@@ -19,11 +19,11 @@ msgstr ""
 "X-Generator: Launchpad (build 17341)\n"
 "X-Launchpad-Export-Date: 2015-02-15 06:15+0000\n"
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "Kompletan OCR paket."
 

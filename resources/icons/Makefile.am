@@ -1,7 +1,7 @@
 iconsdir = $(datadir)/ocrfeeder/icons/
 icons_DATA = \
 	detect_icon.svg \
-	ocrfeeder.svg \
+	org.gnome.OCRFeeder.svg \
 	ocr.svg \
 	window_icon.png
 
