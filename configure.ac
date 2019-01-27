@@ -12,6 +12,18 @@ AM_MAINTAINER_MODE([enable])
 # to configure or passing V=1 to make
 AM_SILENT_RULES([yes])
 
+dnl == define if sandbox mode is enabled ==
+AC_ARG_ENABLE([sandbox],
+	AS_HELP_STRING([--enable-sandbox], [Enable sandbox mode]),
+	[enable_sandbox="$enableval"],
+	[enable_sandbox="no"])
+
+AS_IF([test "x$enable_sandbox" = "xyes"], [
+	AC_SUBST([SANDBOX], [True])
+], [
+	AC_SUBST([SANDBOX], [False])
+])
+
 dnl == check for python ==
 AM_PATH_PYTHON(2.5)
 
