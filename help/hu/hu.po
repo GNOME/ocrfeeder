@@ -1,0 +1,1276 @@
+# Hungarian translation for ocrfeeder help.
+# Copyright (C) 2018 Free Software Foundation, Inc.
+# This file is distributed under the same license as the ocrfeeder package.
+#
+# Balázs Úr <ur.balazs@fsf.hu>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"POT-Creation-Date: 2018-02-23 23:38+0000\n"
+"PO-Revision-Date: 2018-03-20 13:11+0100\n"
+"Last-Translator: Balázs Úr <ur.balazs@fsf.hu>\n"
+"Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Úr Balázs <ur.balazs@fsf.hu>, 2018."
+
+#. (itstool) path: info/desc
+#: C/addingfolder.page:8
+msgid "Adding all the images from a folder"
+msgstr "Az összes kép hozzáadása egy mappából"
+
+#. (itstool) path: page/title
+#: C/addingfolder.page:11
+msgid "Adding Folder"
+msgstr "Mappa hozzáadása"
+
+#. (itstool) path: page/p
+#: C/addingfolder.page:13
+msgid ""
+"Sometimes it is useful to add all the images from a given folder. "
+"<app>OCRFeeder</app> provides this functionality by choosing "
+"<guiseq><gui>File</gui><gui>Add Folder</gui></guiseq>."
+msgstr ""
+"Néha hasznos lehet az összes kép hozzáadása egy adott mappából. Az <app"
+">OCRFeeder</app> ezt a funkcionalitást a <guiseq><gui>Fájl</gui><gui>Mappa "
+"hozzáadása</gui></guiseq> menüpont választásával biztosítja."
+
+#. (itstool) path: info/desc
+#: C/addingimage.page:7
+msgid "Adding an image to be recognized"
+msgstr "Kép hozzáadása a felismeréshez"
+
+#. (itstool) path: page/title
+#: C/addingimage.page:10
+msgid "Adding An Image"
+msgstr "Egy kép hozzáadása"
+
+#. (itstool) path: page/p
+#: C/addingimage.page:12
+msgid ""
+"Adding an image to OCRFeeder is usually the first step when converting a "
+"document."
+msgstr ""
+"Egy kép hozzáadása az OCRFeeder programhoz általában az első lépés egy "
+"dokumentum átalakításakor."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:15
+msgid ""
+"Each added image represents a page in the final document. A thumbnail of the "
+"image will be shown in the pages area (left area of <app>OCRFeeder</app>)."
+msgstr ""
+"Minden egyes hozzáadott kép egy oldalt képvisel a végső dokumentumban. A kép "
+"bélyegképe az oldalak területén jelenik meg (az <app>OCRFeeder</app> bal "
+"területén)."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:19
+msgid ""
+"The order of the pages in the final document will be the same as the images' "
+"order in the pages' area. This way, pages can be reordered by dragging them "
+"in the images' thumbnails in the pages' area."
+msgstr ""
+"A végső dokumentumban az oldalak sorrendje ugyanaz lesz mint a képek "
+"sorrendje az oldalak területén. Ily módon az oldalak átrendezhetők azok "
+"áthúzásával a képek bélyegképeiben az oldalak területén."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:24
+msgid ""
+"You can add an image by clicking <guiseq><gui>File</gui><gui>Add Image</"
+"gui></guiseq>."
+msgstr ""
+"Hozzáadhat egy képet a <guiseq><gui>Fájl</gui><gui>Kép hozzáadása</gui><"
+"/guiseq> menüponttal."
+
+#. (itstool) path: page/p
+#: C/addingimage.page:27
+msgid ""
+"To delete a page, click in <guiseq><gui>Edit</gui><gui>Delete Page</gui></"
+"guiseq> or right-click over the page's thumbnail and choose <gui>Delete</"
+"gui>."
+msgstr ""
+"Egy oldal törléséhez kattintson a <guiseq><gui>Szerkesztés</gui><gui>Oldal "
+"törlése</gui></guiseq> menüpontra, vagy kattintson a jobb egérgombbal egy "
+"oldal bélyegképe fölött, és válassza a <gui>Törlés</gui> lehetőséget."
+
+#. (itstool) path: section/title
+#: C/addingimage.page:32
+msgid "Page Configuration"
+msgstr "Oldalbeállítás"
+
+#. (itstool) path: section/p
+#: C/addingimage.page:34
+msgid ""
+"To configure the page's size click in <guiseq><gui>Edit</gui><gui>Edit Page</"
+"gui></guiseq> and choose either a custom size, providing the respective "
+"values or a standard paper size from a list."
+msgstr ""
+"Az oldal méretének beállításához kattintson a <guiseq><gui>Szerkesztés</gui><"
+"gui>Oldal szerkesztése</gui></guiseq> menüpontra, és válasszon egy egyéni "
+"méretet a megfelelő értékek megadásával, vagy egy szabványos papírméretet a "
+"listából."
+
+#. (itstool) path: info/desc
+#: C/automaticrecognition.page:8
+msgid "Automatically recognizing an image"
+msgstr "Egy kép automatikus felismerése"
+
+#. (itstool) path: page/title
+#: C/automaticrecognition.page:11
+msgid "Automatic Recognition"
+msgstr "Automatikus felismerés"
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:13
+msgid ""
+"<app>OCRFeeder</app> tries to detect the contents in a document image and "
+"perform OCR over them, also distinguishing between what is graphics and what "
+"is text. To simplify this concept, we call it recognition."
+msgstr ""
+"Az <app>OCRFeeder</app> megpróbálja észlelni a tartalmat egy dokumentum "
+"képén, és optikai karakterfelismerést hajt végre rajtuk, különbséget téve "
+"aközött is, hogy mik a grafikus elemek és mi a szöveg. Ezen elgondolás "
+"egyszerűsítéséhez hívjuk ezt felismerésnek."
+
+#. (itstool) path: page/p
+#: C/automaticrecognition.page:18
+msgid ""
+"After an image is added it can be automatically recognized by clicking "
+"<guiseq><gui>Document</gui><gui>Recognize Document</gui></guiseq>."
+msgstr ""
+"Miután egy kép hozzáadásra került, automatikusan felismerhető a <guiseq><gui"
+">Dokumentum</gui><gui>Dokumentum felismerése</gui></guiseq> menüpontra "
+"kattintva."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:22
+msgid ""
+"Since there are many different document layouts out there, the automatic "
+"recognition, mainly the page segmentation, may turn out not to be accurate "
+"for you document. In this case, some manual editing of the recognition "
+"results might be needed."
+msgstr ""
+"Mivel sokféle dokumentum-elrendezés létezik, az automatikus felismeréskor "
+"(főleg az oldalszakaszolásnál) kiderülhet, hogy nem pontos a dokumentumnál. "
+"Ebben az esetben a felismerés eredményeinek valamilyen kézi szerkesztése "
+"lehet szükséges."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:28
+msgid ""
+"The automatic recognition performs some complex operations and may take some "
+"time depending on the size of the image and the complexity of the layout."
+msgstr ""
+"Az automatikus felismerés végrehajt néhány összetett műveletet, és a kép "
+"méretétől, valamint az elrendezés bonyolultságától függően eltarthat egy "
+"ideig."
+
+#. (itstool) path: note/p
+#: C/automaticrecognition.page:31
+msgid ""
+"The automatic recognition will replace all the content areas in the "
+"currently selected page."
+msgstr ""
+"Az automatikus felismerés ki fogja cserélni az összes tartalmi területet az "
+"aktuálisan kijelölt oldalon."
+
+#. (itstool) path: info/desc
+#: C/deskewing.page:8
+msgid "Correcting the skew in the images"
+msgstr "A ferdeség javítása a képeken"
+
+#. (itstool) path: page/title
+#: C/deskewing.page:11
+msgid "Deskewing"
+msgstr "Kiegyenesítés"
+
+#. (itstool) path: page/p
+#: C/deskewing.page:13
+msgid ""
+"Some images, especially if they were added from a scanner device, may be "
+"skewed and this makes it harder to recognize the image."
+msgstr ""
+"Néhány kép ferde lehet, különösen ha egy lapolvasó eszközről lettek "
+"hozzáadva, és ez nehezebbé teszi a kép felismerését."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:16
+msgid ""
+"<app>OCRFeeder</app> offers a way to automatically deskew an image. To "
+"deskew a loaded image, click <guiseq><gui>Tools</gui><gui>Image Deskewer</"
+"gui></guiseq>."
+msgstr ""
+"Az <app>OCRFeeder</app> biztosít egy módszert egy kép automatikus "
+"kiegyenesítésére. Egy betöltött kép kiegyenesítéséhez kattintson az <guiseq"
+"><gui>Eszközök</gui><gui>Képkiegyenesítő</gui></guiseq> menüpontra."
+
+#. (itstool) path: page/p
+#: C/deskewing.page:20
+msgid ""
+"This operation can also be set to be performed automatically every time an "
+"image is added. To set it, simply open the <gui>Preferences</gui> dialog "
+"from <guiseq><gui>Edit</gui><gui>Preferences</gui></guiseq> and check "
+"<gui>Deskew images</gui> under the <gui>Tools</gui> tab."
+msgstr ""
+"Ez a művelet is beállítható, hogy automatikusan végre legyen hajtva minden "
+"alkalommal, amikor egy képet hozzáadnak. Ennek beállításához egyszerűen "
+"nyissa meg a <gui>Beállítások</gui> párbeszédablakot a <guiseq><gui"
+">Szerkesztés</gui><gui>Beállítások</gui></guiseq> menüpontból, és nézze meg a "
+"<gui>Képek kiegyenesítése</gui> lapot az <gui>Eszközök</gui> fül alatt."
+
+#. (itstool) path: note/p
+#: C/deskewing.page:26
+msgid ""
+"Depending on the size and characteristics of the image, deskewing an image "
+"may take some time."
+msgstr ""
+"A kép méretétől és jellemzőitől függően egy kép kiegyenesítése eltarthat egy "
+"ideig."
+
+#. (itstool) path: info/desc
+#: C/documentgeneration.page:9
+msgid "Creating an editable document"
+msgstr "Szerkeszthető dokumentum létrehozása"
+
+#. (itstool) path: page/title
+#: C/documentgeneration.page:12
+msgid "Document Generation"
+msgstr "Dokumentum-előállítás"
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:14
+msgid ""
+"<app>OCRFeeder</app> currently generates four document formats: <em>ODT</"
+"em>, <em>HTML</em>, <em>PDF</em> and <em>Plain Text</em>."
+msgstr ""
+"Az <app>OCRFeeder</app> jelenleg négy dokumentumformátumot állít elő: <em"
+">ODT</em>, <em>HTML</em>, <em>PDF</em> és <em>egyszerű szöveg</em>."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:17
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> and choosing the desired document format."
+msgstr ""
+"A felismerés és a végső kézi szerkesztés elvégzése után lehetőség van egy "
+"dokumentum előállítására a <guiseq><gui>Fájl</gui><gui>Exportálás…</gui><"
+"/guiseq> menüpontra kattintással és a kívánt dokumentumformátum "
+"kiválasztásával."
+
+#. (itstool) path: note/p
+#: C/documentgeneration.page:22
+msgid ""
+"The HTML exportation generates a folder with the document pages represented "
+"by one HTML file. In each page there are links to go to the previous and "
+"next pages. Image content areas are stored in a subfolder called <em>images</"
+"em>."
+msgstr ""
+"A HTML exportálás előállít egy mappát a dokumentum oldalaival, amelyet egy "
+"HTML fájl képvisel. Minden egyes oldalon hivatkozások vannak az előző és a "
+"következő oldalra ugráshoz. A képtartalmi területek egy <em>images</em> nevű "
+"almappában lesznek tárolva."
+
+#. (itstool) path: page/p
+#: C/documentgeneration.page:26
+msgid "When exporting to <em>PDF</em>, two <em>PDF</em> types can be chosen:"
+msgstr ""
+"A <em>PDF</em> formátumba exportáláskor két <em>PDF</em> típus közül lehet "
+"választani:"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:29
+msgid ""
+"From scratch: If this option is selected, <app>OCRFeeder</app> creates a new "
+"<em>PDF</em> from scratch."
+msgstr ""
+"Üres: ha ez a lehetőség lett kiválasztva, akkor az <app>OCRFeeder</app> "
+"létrehoz egy új, üres <em>PDF</em> fájt."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:32
+msgid ""
+"Searchable PDF: If this option is selected, <app>OCRFeeder</app> creates a "
+"<em>PDF</em> showing the original image but with invisible text over it, "
+"making it possible to index or search."
+msgstr ""
+"Kereshető PDF: ha ez a lehetőség lett kiválasztva, akkor az <app>OCRFeeder<"
+"/app> létrehoz egy <em>PDF</em> fájlt, amely az eredeti képet jeleníti meg, "
+"de láthatatlan szöveggel fölötte, amely lehetővé teszi az indexelést vagy a "
+"keresést."
+
+#. (itstool) path: steps/title
+#: C/documentgeneration.page:38
+msgid "Exporting the recognized document"
+msgstr "A felismert dokumentum exportálása"
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:39
+msgid ""
+"After the recognition and eventual manual edition has been performed, it is "
+"possible to generate a document by clicking <guiseq><gui>File</"
+"gui><gui>Export…</gui></guiseq> (or pressing <keyseq><key>SHIFT</"
+"key><key>CTRL</key><key>E</key></keyseq>) and choosing the desired document "
+"format."
+msgstr ""
+"A felismerés és a végső kézi szerkesztés elvégzése után lehetőség van egy "
+"dokumentum előállítására a <guiseq><gui>Fájl</gui><gui>Exportálás…</gui><"
+"/guiseq> menüpontra kattintással (vagy a <keyseq><key>SHIFT</key><key>CTRL<"
+"/key><key>E</key></keyseq> megnyomásával) és a kívánt dokumentumformátum "
+"kiválasztásával."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:44
+msgid ""
+"Depending your needs, choose whether all pages (with the <gui>All</gui> "
+"option) or only the currently selected one (<gui>Current</gui> option) "
+"should be exported. The default option is <gui>All</gui>. After making your "
+"selection, press <gui>OK</gui> to generate the document."
+msgstr ""
+"Az igényeitől függően válassza ki, hogy az összes oldalt (az <gui>Összes</gui"
+"> lehetőséggel) vagy a jelenleg kijelöltet (<gui>Jelenlegi</gui> lehetőség) "
+"kell exportálni. Az alapértelmezett beállítás az <gui>Összes</gui>. A "
+"választás után nyomja meg az <gui>OK</gui> gombot a dokumentum "
+"előállításához."
+
+#. (itstool) path: item/p
+#: C/documentgeneration.page:48
+msgid ""
+"On the last dialog, write the output filename and click the <gui>Save</gui> "
+"button. If a file with that name already exists and you would like overwrite "
+"it, click the <gui>Replace</gui> button on the confirmation dialog."
+msgstr ""
+"Az utolsó párbeszédablakon írja be a kimeneti fájlnevet, és kattintson a <gui"
+">Mentés</gui> gombra. Ha már létezik ilyen nevű fájl, és felül szeretné írni, "
+"akkor kattintson a <gui>Csere</gui> gombra a megerősítő párbeszédablakon."
+
+#. (itstool) path: info/desc
+#: C/finetuning.page:8
+msgid "Advanced options for a better recognition"
+msgstr "Speciális beállítások a jobb felismeréshez"
+
+#. (itstool) path: page/title
+#: C/finetuning.page:11
+msgid "Fine-tuning"
+msgstr "Finomhangolás"
+
+#. (itstool) path: page/p
+#: C/finetuning.page:13
+msgid ""
+"<app>OCRFeeder</app> has some advanced options that can be used to perform a "
+"better recognition. These options can be chosen from the <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> dialog, under its <gui>Recognition</gui> "
+"tab."
+msgstr ""
+"Az <app>OCRFeeder</app> rendelkezik néhány speciális beállítással, amelyek a "
+"jobb felismerés elvégzéséhez használhatók. Ezeket a beállításokat a <guiseq"
+"><gui>Szerkesztés</gui><gui>Beállítások</gui></guiseq> párbeszédablak <gui"
+">Felismerés</gui> lapja alatt lehet kiválasztani."
+
+#. (itstool) path: page/p
+#: C/finetuning.page:18
+msgid "The following list describes the mentioned options:"
+msgstr "A következő lista bemutatja az említett beállításokat:"
+
+#. (itstool) path: item/p
+#: C/finetuning.page:20
+msgid ""
+"<gui>Fix line breaks and hyphenization</gui>: OCR engines usually read the "
+"text line by line and seperate each line with a line break. Sometimes, this "
+"is not what the user wants because the text might be broken in the middle of "
+"a sentence."
+msgstr ""
+"<gui>Sortörések és elválasztás javítása</gui>: az OCR motorok általában "
+"sorról sorra olvassák a szöveget, és minden sort sortöréssel választanak el. "
+"Néha ez nem az, amit a felhasználó vár, mert a szöveg megtörhet egy mondat "
+"közepén."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:24
+msgid ""
+"Checking this option will make <app>OCRFeeder</app> remove single newline "
+"characters after the text is recognized by the engines."
+msgstr ""
+"A beállítás bejelölésével az <app>OCRFeeder</app> eltávolítja az egyedülálló "
+"új sor karaktereket, miután a motor felismerte a szöveget."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:26
+msgid ""
+"Since just removing newlines in an hyphenized text would result in wrongly "
+"separated words, hyphenization is also detected and removed in this process."
+msgstr ""
+"Mivel az elválasztást használó szövegből az új sor karakterek eltávolítása "
+"hibásan elválasztott szavakat eredményez, az elválasztásokat is észleli és "
+"eltávolítja ebben a folyamatban."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:29
+msgid ""
+"<gui>Window Size</gui>: <app>OCRFeeder</app>'s algorithm to detect the "
+"contents in an image uses the concept of <em>window size</em> which is the "
+"division of the image in small windows. A smaller window size means it is "
+"likely to detect more content areas but size that is too small may result in "
+"contents that should be part of a bigger area instead. On the other hand, a "
+"bigger window size means less divisions of contents but may end up in "
+"contents which should be subdivided."
+msgstr ""
+"<gui>Ablakméret</gui>: Egy képen lévő tartalom észleléséhez az <app"
+">OCRFeeder</app> algoritmusa az <em>ablakméret</em> elgondolását használja, "
+"amely a kép felosztása kis ablakokba. Egy kisebb ablakméret azt jelenti, "
+"hogy valószínűleg több tartalmi területet észlel, de a túl kicsi méret olyan "
+"tartalmat eredményezhet, amelynek inkább egy nagyobb terület részének "
+"kellene lennie. Másrészről egy nagyobb ablakméret kevesebb "
+"tartalomfelosztást jelent, de olyan tartalom lehet végül, amelyet fel kell "
+"osztani."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:36
+msgid ""
+"A good window size should be slightly bigger than the text line spacing in "
+"an image."
+msgstr ""
+"Egy jó ablakméretnek kissé nagyobbnak kell lennie a képen lévő szöveg "
+"sorközénél."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:37
+msgid ""
+"Users may want to manually set this value if automatic one doesn't produce "
+"any valid content areas but normally it is easier to use the automatic one "
+"and perform any needed corrections directly in the content areas."
+msgstr ""
+"A felhasználók akkor szeretnék kézzel beállítani ezt az értéket, ha az "
+"automatikus nem állít elő semmilyen érvényes tartalmi területet, de "
+"általában egyszerűbb az automatikusat használni, és minden szükséges "
+"javítást közvetlenül a tartalmi területeken végrehajtani."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:41
+msgid ""
+"<gui>Improve columns detection</gui>: Check this option if <app>OCRFeeder</"
+"app> should try to divide the detected content areas horizontally "
+"(originating more columns). The value that is used to check the existance of "
+"blank space within the contents may be set to automatic or manual when the "
+"columns aren't detected correctly."
+msgstr ""
+"<gui>Hasábok felderítésének javítása</gui>: Akkor jelölje be ezt a "
+"beállítást, ha az <app>OCRFeeder</app> próbálja meg felosztani a felderített "
+"tartalmi területeket vízszintesen (több hasábot eredményezve). Az üres "
+"terület meglétének ellenőrzéséhez használt érték beállítható automatikusra "
+"vagy kézire, ha a hasábok nincsenek helyesen felderítve."
+
+#. (itstool) path: item/p
+#: C/finetuning.page:46
+msgid ""
+"<gui>Adjust content areas' bounds</gui>: The detected content areas "
+"sometimes have a considerable margin between their contents and the areas' "
+"edges. By checking this option, <app>OCRFeeder</app> will minimize those "
+"margins, adjusting the areas to its contents better. Optionally, a manual "
+"value can be check to indicate the maximum value of the adjusted margins."
+msgstr ""
+"<gui>Tartalmi területek határainak igazítása</gui>: A felderített tartalmi "
+"területek néha tekintélyes méretű margóval rendelkeznek a tartalmuk és a "
+"területek szélei között. A beállítás bejelölésével az <app>OCRFeeder</app> "
+"megpróbálja minimalizálni ezeket a margókat, és beállítani a területeket, "
+"hogy jobban illeszkedjen a tartalmukhoz. Választhatóan egy kézi érték is "
+"bejelölhető a megigazított margók legnagyobb értékének jelzéséhez."
+
+#. (itstool) path: info/desc
+#: C/importingfromscanner.page:8
+msgid "Importing from a scanner device"
+msgstr "Importálás lapolvasó eszközről"
+
+#. (itstool) path: page/title
+#: C/importingfromscanner.page:11
+msgid "Importing From Scanner"
+msgstr "Importálás lapolvasóról"
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:13
+msgid ""
+"In order to help convert a printed document into an editable document, "
+"<app>OCRFeeder</app> offers a way to import images directly from a scanner "
+"device."
+msgstr ""
+"Egy nyomtatott dokumentum szerkeszthető dokumentumba történő átalakítása "
+"érdekében az <app>OCRFeeder</app> lehetőséget nyújt a képek közvetlen "
+"importálására egy lapolvasó eszközről."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:17
+msgid ""
+"To import an image from a scanner device, use the menu <guiseq><gui>File</"
+"gui><gui>Import Page From Scanner</gui></guiseq> or the keyboard shortcut "
+"<keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq>."
+msgstr ""
+"Egy lapolvasó eszközről történő képimportáláshoz használja a <guiseq><gui"
+">Fájl</gui><gui>Oldal importálása lapolvasóról</gui></guiseq> menüpontot vagy "
+"a <keyseq><key>Ctrl</key><key>Shift</key><key>I</key></keyseq> "
+"billentyűkombinációt."
+
+#. (itstool) path: page/p
+#: C/importingfromscanner.page:22
+msgid ""
+"The currently detected scanner device will be used to scan the page. If more "
+"than one scanner if found, then a dialog will be shown with the options to "
+"choose from."
+msgstr ""
+"A jelenleg kiválasztott lapolvasó eszközt fogja használni az oldal "
+"beolvasásához. Ha egynél több lapolvasó található, akkor egy párbeszédablak "
+"jelenik meg azokkal a lehetőségekkel, amelyekből választani lehet."
+
+#. (itstool) path: info/desc
+#: C/importingpdf.page:8
+msgid "Importing PDF documents"
+msgstr "PDF-dokumentumok importálása"
+
+#. (itstool) path: page/title
+#: C/importingpdf.page:11
+msgid "Importing PDF"
+msgstr "PDF importálása"
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:13
+msgid ""
+"Some documents are nothing more than images placed in a PDF document. For "
+"cases like this, <app>OCRFeeder</app> can still import a PDF document so it "
+"can then be converted into an editable document."
+msgstr ""
+"Néhány dokumentum nem több mint egy PDF-dokumentumban elhelyezett képek "
+"halmaza. Az ilyen eseteknél az <app>OCRFeeder</app> továbbra is "
+"importálhatja a PDF-dokumentumot, így az ezután átalakítható szerkeszthető "
+"dokumentummá."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:18
+msgid ""
+"To import a PDF document, click in <guiseq><gui>File</gui><gui>Import PDF</"
+"gui></guiseq>."
+msgstr ""
+"Egy PDF-dokumentum importálásához kattintson a <guiseq><gui>Fájl</gui><gui"
+">PDF importálása</gui></guiseq> menüpontra."
+
+#. (itstool) path: page/p
+#: C/importingpdf.page:21
+msgid ""
+"Each PDF page will be converted to an image and placed in the pages' area."
+msgstr ""
+"Minden egyes PDF oldal átalakításra kerül egy képpé, és el lesz helyezve az "
+"oldalak területén."
+
+#. (itstool) path: note/p
+#: C/importingpdf.page:24
+msgid ""
+"The PDF conversion can be a demanding process and take some time for large "
+"PDF files."
+msgstr ""
+"A PDF átalakítás erőforrásigényes folyamat lehet, és eltarthat egy ideig a "
+"nagy PDF-fájloknál."
+
+#. (itstool) path: info/desc
+#: C/index.page:6
+msgid "Help for the <app>OCRFeeder Document Conversion System</app>."
+msgstr "Az <app>OCRFeeder dokumentumátalakító rendszerének</app> súgója."
+
+#. (itstool) path: info/title
+#: C/index.page:7
+msgctxt "link"
+msgid "OCRFeeder Document Conversion System"
+msgstr "Az OCRFeeder dokumentumátalakító rendszere"
+
+#. (itstool) path: info/title
+#: C/index.page:8
+msgctxt "text"
+msgid "OCRFeeder Document Conversion System"
+msgstr "Az OCRFeeder dokumentumátalakító rendszere"
+
+#. (itstool) path: credit/name
+#: C/index.page:10
+msgid "Joaquim Rocha"
+msgstr "Joaquim Rocha"
+
+#. (itstool) path: page/title
+#: C/index.page:17
+msgid "OCRFeeder Document Conversion System"
+msgstr "Az OCRFeeder dokumentumátalakító rendszere"
+
+#. (itstool) path: page/p
+#: C/index.page:18
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+"Az OCRFeeder egy dokumentumelrendezés-elemző és optikai karakterfelismerő "
+"rendszer."
+
+#. (itstool) path: page/p
+#: C/index.page:20
+msgid ""
+"OCRFeeder was created to allow users to easily convert document images (for "
+"example, a PNG image with text) into editable documents (for example, an ODT "
+"version with that text)."
+msgstr ""
+"Az OCRFeeder azért jött létre, hogy lehetővé tegye a felhasználóknak a "
+"dokumentumképek (például egy szöveget tartalmazó PNG) egyszerű átalakítását "
+"szerkeszthető dokumentummá (például a szöveg ODT verziójába)."
+
+#. (itstool) path: page/p
+#: C/index.page:24
+msgid ""
+"Given the images it will automatically outline its contents, perform OCR and "
+"distinguish between what's graphics and text. It generates multiple formats "
+"being its main one ODT."
+msgstr ""
+"A képek alapján automatikusan meghatározza a tartalmukat, optikai "
+"karakterfelismerést hajt végre, és különbséget tesz a grafika és a szöveg "
+"között. Többféle formátumot állít elő, amelyből a legfontosabb az ODT."
+
+#. (itstool) path: page/p
+#: C/index.page:28
+msgid "This guide will explain you how to configure and use OCRFeeder."
+msgstr ""
+"Ez az útmutató bemutatja, hogyan kell beállítani és használni az OCRFeeder "
+"alkalmazást."
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "Adding Images"
+msgstr "Képek hozzáadása"
+
+#. (itstool) path: section/title
+#: C/index.page:35
+msgid "Recognition"
+msgstr "Felismerés"
+
+#. (itstool) path: section/title
+#: C/index.page:39
+msgid "Configuration"
+msgstr "Beállítások"
+
+#. (itstool) path: section/title
+#. (itstool) path: page/title
+#: C/index.page:43 C/projects.page:10
+msgid "Projects"
+msgstr "Projektek"
+
+#. (itstool) path: p/link
+#: C/legal.xml:4
+msgid "Creative Commons Attribution-Share Alike 3.0 United States License"
+msgstr ""
+"Creative Commons Nevezd meg! – Így add tovább! 3.0 Egyesült Államok licenc"
+
+#. (itstool) path: license/p
+#: C/legal.xml:3
+msgid "This work is licensed under a <_:link-1/>."
+msgstr "Ez a mű a <_:link-1/> alapján használható fel."
+
+#. (itstool) path: license/p
+#: C/legal.xml:6
+msgid ""
+"As a special exception, the copyright holders give you permission to copy, "
+"modify, and distribute the example code contained in this document under the "
+"terms of your choosing, without restriction."
+msgstr ""
+"Különleges kivételként a jogtulajdonosok felhatalmazzák az ebben a "
+"dokumentumban lévő példakódok másolására, módosítására és terjesztésére az "
+"Ön választása szerinti licenc alatt, további megkötések nélkül."
+
+#. (itstool) path: info/desc
+#: C/manualeditionandcorrection.page:9
+msgid "Manual edition and correction of results"
+msgstr "Az eredmények kézi szerkesztése és javítása"
+
+#. (itstool) path: page/title
+#: C/manualeditionandcorrection.page:12
+msgid "Manual Edition"
+msgstr "Kézi szerkesztés"
+
+#. (itstool) path: page/p
+#: C/manualeditionandcorrection.page:14
+msgid ""
+"One may want to manually select just a portion of an image to be recognized "
+"or correct the results of the automatic recognition. <app>OCRFeeder</app> "
+"lets its users manually edit every aspect of a document's contents in an "
+"easy way."
+msgstr ""
+"Van aki kézzel szeretné kijelölni egy képnek csak egy részét a felismeréshez, "
+"vagy az automatikus felismerés eredményének javításához. Az <app>OCRFeeder<"
+"/app> egyszerű módon teszi lehetővé a felhasználóknak egy dokumentum "
+"tartalmának minden szempont szerinti kézi módosítását."
+
+#. (itstool) path: section/title
+#: C/manualeditionandcorrection.page:21
+msgid "Content Areas"
+msgstr "Tartalmi területek"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:23
+msgid ""
+"The mentioned document's contents are represented by areas like shown in the "
+"following image:"
+msgstr ""
+"Az említett dokumentumtartalmak területekkel vannak ábrázolva, amint a "
+"következő képen látható:"
+
+#. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:26
+msgctxt "_"
+msgid ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+msgstr ""
+"external ref='figures/content-areas.png' "
+"md5='ea6353c14876c61c1830f30c40b98dc4'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:27
+msgid "A picture of two content areas with one of them selected."
+msgstr "Két tartalmi terület képe, amelyek közül az egyik ki van jelölve."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:30
+msgid ""
+"The attributes of a selected are shown and can be changed from the right "
+"part of the main window, like shown in the following image:"
+msgstr ""
+"Egy kijelölt jellemzői a főablak jobb oldalán jelennek meg és szerkeszthetők, "
+"amint a következő képen látható:"
+
+#. (itstool) path: section/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/manualeditionandcorrection.page:33
+msgctxt "_"
+msgid ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+msgstr ""
+"external ref='figures/areas-edition.png' "
+"md5='fc649b4486501cb1cef1f146d50b02dc'"
+
+#. (itstool) path: media/p
+#: C/manualeditionandcorrection.page:33
+msgid "A picture showing the areas' edition UI"
+msgstr "A területek szerkesztő felhasználói felületét bemutató kép"
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:36
+msgid "The following list describes the content areas' attributes:"
+msgstr "A következő lista a tartalmi területek jellemzőit mutatja be:"
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:38
+msgid ""
+"<em>Type</em>: sets the area to be either the type image or text. The image "
+"type will clip the area from the original page and place it in the generated "
+"document. The text type will use the text assigned to the area and represent "
+"it as text in the generated document. (Generated ODT documents will have "
+"text boxes when an area was marked as being of the type text)"
+msgstr ""
+"<em>Típus</em>: Beállítja a területet, amely vagy kép vagy szöveg. A kép "
+"típus kivágja a területet az eredeti oldalból, és elhelyezi az előállított "
+"dokumentumba. A szöveg típus a területhez rendelt szöveget használja, és "
+"szövegként jeleníti meg az előállított dokumentumban. Az előállított "
+"ODT-dokumentumok szövegdobozokat kapnak, amikor egy területet úgy jelölnek "
+"meg, hogy szöveg típus legyen."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:44
+msgid ""
+"<em>Clip</em>: Shows the current clip from the original area. This makes it "
+"easier for users to check exactly what's within the area."
+msgstr ""
+"<em>Levágás</em>: Megjeleníti a jelenlegi levágást az eredeti területről. Ez "
+"egyszerűbbé teszi a felhasználók számára, hogy pontosan ellenőrizhessék, mi "
+"van a területen belül."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:46
+msgid ""
+"<em>Bounds</em>: Shows the point (X and Y) in the original image where the "
+"top left corner of the area is placed as well as the areas' width and height."
+msgstr ""
+"<em>Határok</em>: Megjeleníti azt a pontot (X és Y) az eredeti képen, ahol a "
+"terület bal felső sarka el van helyezve, valamint a területek szélességét és "
+"magasságát."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:49
+msgid ""
+"<em>OCR Engine</em>: Lets the user choose an OCR engine and recognize the "
+"area's text with by (by pressing the <gui>OCR</gui> button)."
+msgstr ""
+"<em>OCR motor</em>: Lehetővé teszi a felhasználónak, hogy válasszon egy OCR "
+"motort, és felismertesse a terület szövegét vele (az <gui>OCR</gui> gomb "
+"megnyomásával)."
+
+#. (itstool) path: note/p
+#: C/manualeditionandcorrection.page:51
+msgid ""
+"Using the OCR engine to recognize the text will directly assign that text to "
+"the area and replace the one assigned before."
+msgstr ""
+"A szöveg felismeréséhez az OCR motor használatával közvetlenül hozzárendeli "
+"azt a szöveget a területhez, és kicseréli a korábban hozzárendeltet."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:54
+msgid ""
+"<em>Text Area</em>: Represents the text assigned to that area and lets the "
+"user edit it. This area is disabled when the area is of the type image"
+msgstr ""
+"<em>Szövegterület</em>: Megjeleníti a területhez hozzárendelt szöveget, és "
+"lehetővé teszi a felhasználónak, hogy szerkessze. Ez a terület le van "
+"tiltva, ha a terület kép típusú."
+
+#. (itstool) path: item/p
+#: C/manualeditionandcorrection.page:57
+msgid ""
+"<em>Style Tab</em>: Lets the user choose the font type and size, as well as "
+"the text alignment, line and letter spacing."
+msgstr ""
+"<em>Stílus lap</em>: Lehetővé teszi a felhasználónak, hogy kiválassza a "
+"betűkészlet típusát és méretét, valamint a szöveg igazítását, a sor- és "
+"betűközöket."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:61
+msgid ""
+"The content areas can be selected by clicking on them or by using the menus "
+"<guiseq><gui>Document</gui><gui>Select Previous Area</gui></guiseq> and "
+"<guiseq><gui>Document</gui><gui>Select Next Area</gui></guiseq>. There are "
+"also keyboard shortcuts for these actions: <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>P</key></keyseq> and <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>N</key></keyseq>, respectively."
+msgstr ""
+"A tartalmi területek a rájuk történő kattintással jelölhetők ki, vagy a <"
+"guiseq><gui>Dokumentum</gui><gui>Előző terület kijelölése</gui></guiseq> és a "
+"<guiseq><gui>Dokumentum</gui><gui>Következő terület kijelölése</gui></guiseq"
+"> menüpontok használatával. Billentyűkombinációk is léteznek ezekhez a "
+"műveletekhez: <keyseq><key>Ctrl</key><key>Shift</key><key>P</key></keyseq> "
+"és <keyseq><key>Ctrl</key><key>Shift</key><key>N</key></keyseq> a fentieknek "
+"megfelelően."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:68
+msgid ""
+"Selecting all areas is also possible using <guiseq><gui>Document</"
+"gui><gui>Select All Areas</gui></guiseq> or <keyseq><key>Ctrl</"
+"key><key>Shift</key><key>A</key></keyseq>."
+msgstr ""
+"Az összes terület kijelölése is lehetséges a <guiseq><gui>Dokumentum</gui><"
+"gui>Minden terület kijelölése</gui></guiseq> menüpont vagy a <keyseq><key"
+">Ctrl</key><key>Shift</key><key>A</key></keyseq> billentyűkombináció "
+"használatával."
+
+#. (itstool) path: section/p
+#: C/manualeditionandcorrection.page:72
+msgid ""
+"When at least one content area is selected, it is possible to recognize "
+"their contents automatically or delete them. These actions can be "
+"accomplished by clicking <guiseq><gui>Document</gui><gui>Recognized Selected "
+"Areas</gui></guiseq> and <guiseq><gui>Document</gui><gui>Delete Selected "
+"Areas</gui></guiseq> (or <keyseq><key>Ctrl</key><key>Shift</key><key>Delete</"
+"key></keyseq>), respectively."
+msgstr ""
+"Amikor legalább egy tartalmi terület ki van jelölve, akkor lehetőség van a "
+"tartalmuk automatikus felismerésére vagy azok törlésére. Ezek a műveletek a "
+"<guiseq><gui>Dokumentum</gui><gui>Kijelölt területek felismerése</gui><"
+"/guiseq> és a <guiseq><gui>Dokumentum</gui><gui>Kijelölt területek törlése<"
+"/gui></guiseq> menüpontra kattintással (vagy <keyseq><key>Ctrl</key><key"
+">Shift</key><key>Delete</key></keyseq> billentyűkombinációval) végezhetők el."
+
+#. (itstool) path: info/desc
+#: C/ocrconfiguration.page:9
+msgid "Configure the OCR engines to recognize the text"
+msgstr "Az OCR motorok beállítása a szöveg felismeréséhez"
+
+#. (itstool) path: page/title
+#: C/ocrconfiguration.page:12
+msgid "OCR Engines Configuration"
+msgstr "OCR motorok beállításai"
+
+#. (itstool) path: page/p
+#: C/ocrconfiguration.page:14
+msgid ""
+"<app>OCRFeeder</app> uses system-wide OCR engines to extract the text from "
+"images. This means any OCR engine that can be used from the command line "
+"should also be used in <app>OCRFeeder</app>."
+msgstr ""
+"Az <app>OCRFeeder</app> a rendszerszintű OCR motorokat használja a képekről "
+"történő szövegkinyeréshez. Ez azt jelenti, hogy a parancssorból használható "
+"bármely OCR motort az <app>OCRFeeder</app> alkalmazásban is tudni kell "
+"használni."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:20
+msgid "Automatic Detection of OCR Engines"
+msgstr "OCR motorok automatikus felderítése"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:22
+msgid ""
+"The OCR engines (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> and "
+"<em>Cuneiform</em>) are already automatically detected and configured in "
+"most systems, the first time <app>OCRFeeder</app> is run."
+msgstr ""
+"Az OCR motorok (<em>Tesseract</em>, <em>GOCR</em>, <em>Ocrad</em> és <em"
+">Cuneiform</em>) a legtöbb rendszeren már automatikusan felderítésre és "
+"beállításra kerültek az <app>OCRFeeder</app> első futtatásakor."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:26
+msgid ""
+"If an OCR engine is installed after <app>OCRFeeder</app> had configured "
+"already an engine, it will not be automatically configured but, depending on "
+"the engine, users might easily go to the <gui>OCR Engines</gui> dialog and "
+"choose it from the list of detected engines after pressing <gui>Detect</gui>."
+msgstr ""
+"Ha egy OCR motort azután telepítenek, hogy az <app>OCRFeeder</app> már "
+"beállított egy motort, akkor az nem lesz automatikusan beállítva, de a "
+"motortól függően a felhasználók egyszerűen megnyithatják az <gui>OCR "
+"motorok</gui> párbeszédablakot, és a <gui>Felderítés</gui> gombra kattintás "
+"után választhatnak a felderített motorok listájából."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:31
+msgid ""
+"Already configured OCR engines might be detected again and it is up to the "
+"user to uncheck these engines if they shouldn't be added again."
+msgstr ""
+"A már beállított OCR motorok újra felderíthetők, és a felhasználótón múlik, "
+"hogy kiveszi-e ezeket a motorokat, ha nem szabad újra hozzáadni azokat."
+
+#. (itstool) path: section/title
+#: C/ocrconfiguration.page:38
+msgid "Manual Configuration"
+msgstr "Kézi beállítás"
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:40
+msgid ""
+"The currently configured OCR engines are shown in the <gui>OCR Engines</gui> "
+"dialog which can be opened from <guiseq><gui>Tools</gui><gui>OCR Engines</"
+"gui></guiseq>."
+msgstr ""
+"A jelenleg beállított OCR motorok az <gui>OCR motorok</gui> párbeszédablakban "
+"jelennek meg, amely az <guiseq><gui>Eszközök</gui><gui>OCR motorok</gui><"
+"/guiseq> menüpontból nyitható meg."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:44
+msgid ""
+"Besides seeing the configured OCR engines, the <gui>OCR Engines</gui> dialog "
+"allows to add new engines, edit or delete the current ones and detect "
+"engines installed in the system."
+msgstr ""
+"A beállított OCR motorok megtekintése mellett az <gui>OCR motorok</gui> "
+"párbeszédablak lehetővé teszi új motorok hozzáadását, a jelenlegi motorok "
+"szerkesztését vagy törlését, valamint a rendszerre telepített motorok "
+"felderítését."
+
+#. (itstool) path: section/p
+#: C/ocrconfiguration.page:48
+msgid ""
+"When adding or editing an OCR engine (by pressing the <gui>Add</gui> or "
+"<gui>Edit</gui> buttons, respectively), a dialog is shown with the following "
+"fields:"
+msgstr ""
+"Egy OCR motor hozzáadásakor vagy szerkesztésekor (a hozzájuk tartozó <gui"
+">Hozzáadás</gui> vagy <gui>Szerkesztés</gui> gombok megnyomásával) egy "
+"párbeszédablak jelenik meg a következő mezőkkel:"
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:53
+msgid ""
+"<gui>Name</gui>: The engine's name. This name will be used in throughout the "
+"UI when referring to the engine;"
+msgstr ""
+"<gui>Név</gui>: A motor neve. Ez a név lesz használva a felhasználói "
+"felületen mindenütt, ha egy motorra hivatkoznak."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:55
+msgid ""
+"<gui>Image format</gui>: The image format that the engine recognizes (for "
+"example, <em>TIF</em> in the case of <em>Tesseract</em>);"
+msgstr ""
+"<gui>Képformátum</gui>: Az a képformátum, amelyet a motor felismer (például <"
+"em>TIF</em> a <em>Tesseract</em> használata esetén)."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:58
+msgid ""
+"<gui>Failure string</gui>: Some engines replace unrecognized characters by "
+"another, pre-defined character (for example, <em>_</em> in the case of "
+"<em>GOCR</em>)."
+msgstr ""
+"<gui>Hibát jelző karakterlánc</gui>: Néhány motor kicseréli a "
+"felismerhetetlen karaktereket egy másik, előre meghatározott karakterre "
+"(például <em>_</em> karakterre a <em>GOCR</em> használata esetén)."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:61
+msgid ""
+"<gui>Engine path</gui>: The path in the system to the engine's executable "
+"(for example, <em>/usr/bin/tesseract</em>)."
+msgstr ""
+"<gui>Motor elérési útja</gui>: A motor végrehajtható állományára mutató "
+"útvonal a rendszeren (például <em>/usr/bin/tesseract</em>)."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:63
+msgid ""
+"<gui>Engine arguments</gui>: The arguments that feed an image to the engine "
+"and make it output the recognized text to the standard output. "
+"<app>OCRFeeder</app> runs the engine with these arguments as if it was in "
+"the command line and looks for the recognized text in the standard output. "
+"Some engines already do this, like <em>Ocrad</em> and <em>GOCR</em> while "
+"other, like <em>Tesseract</em>, write the text into a file."
+msgstr ""
+"<gui>Motor utasításai</gui>: Azok az argumentumok, amelyek egy képet adnak a "
+"motornak, és kiíratják a felismert szöveget a szabványos kimenetre. Az <app"
+">OCRFeeder</app> azokkal az argumentumokkal futtatja a motort, ahogy az a "
+"parancssorban volt, és a szabványos kimeneten keresi a felismert szöveget. "
+"Néhány motor már ezt teszi, mint például az <em>Ocrad</em> és a <em>GOCR</em"
+">, míg mások (például a <em>Tesseract</em>) fájlba írják a szöveget."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:70
+msgid ""
+"Since the image's path to be read is always needed, a special argument <em>"
+"$IMAGE</em> is provided for this and will be replaced by the image path when "
+"the engine is run. For the cases where a file name is needed, like the one "
+"mentioned previously, a special argument <em>$FILE</em> is provided and will "
+"be replaced by a temporary file name."
+msgstr ""
+"Mivel a beolvasandó kép elérési útja mindig szükséges, egy különleges <em"
+">$IMAGE</em> argumentumot biztosítanak ehhez, amely ki lesz cserélve a kép "
+"elérési útjára a motor futtatásakor. Azokban az esetekben, amikor fájlnév "
+"szükséges (mint például az előbb említett esetben), egy különleges <em"
+">$FILE</em> argumentumot biztosítanak, amely egy átmeneti fájl nevével lesz "
+"helyettesítve."
+
+#. (itstool) path: item/p
+#: C/ocrconfiguration.page:76
+msgid ""
+"So, in case of <em>Tesseract</em> (which writes the recognized text into a "
+"file), the arguments would be <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em>."
+msgstr ""
+"Így a <em>Tesseract</em> használata esetén (amely a felismert szöveget fájlba "
+"írja), az argumentumok <em>$IMAGE $FILE; cat $FILE.txt; rm $FILE</em> "
+"értékűek lehetnek."
+
+#. (itstool) path: note/p
+#: C/ocrconfiguration.page:82
+msgid ""
+"The engines' configuration is stored in their own XML file in the user's "
+"home under <em>.config/ocrfeeder/engines/</em>."
+msgstr ""
+"A motorok beállításai a saját XML-fájlukban vannak tárolva a felhasználó "
+"saját mappájában a <em>.config/ocrfeeder/engines/</em> alatt."
+
+#. (itstool) path: info/desc
+#: C/projects.page:7
+msgid "Loading and saving projects"
+msgstr "Projektek betöltése és mentése"
+
+#. (itstool) path: page/p
+#: C/projects.page:12
+msgid ""
+"Sometimes a user may want to save the progress of the work done so far in an "
+"image and continue with it later. For this case <app>OCRFeeder</app> offers "
+"the possibility to save and load projects."
+msgstr ""
+"Néha a felhasználó el szeretné menteni az addigi munkájának elvégzett "
+"folyamatát egy képbe, és később folytatni. Erre az esetre az <app>OCRFeeder<"
+"/app> a projektek mentésének és betöltésének képességét nyújtja."
+
+#. (itstool) path: page/p
+#: C/projects.page:17
+msgid ""
+"Projects are compressed files with the <em>ocrf</em> extension which hold "
+"information about pages (images) and content areas."
+msgstr ""
+"A projektek <em>ocrf</em> kiterjesztésű tömörített fájlok, amelyek "
+"információkat tárolnak az oldalakkal (képekkel) és a tartalmi területekkel "
+"kapcsolatban."
+
+#. (itstool) path: section/title
+#: C/projects.page:21
+msgid "Saving A Project"
+msgstr "Projekt mentése"
+
+#. (itstool) path: section/p
+#: C/projects.page:23
+msgid ""
+"After having done some work in an image, a project can be created by "
+"clicking <guiseq><gui>File</gui><gui>Save</gui></guiseq> or "
+"<guiseq><gui>File</gui><gui>Save As…</gui></guiseq>. Optionally, the "
+"<keyseq><key>Control</key><key>S</key></keyseq> or <keyseq><key>Control</"
+"key><key>Shift</key><key>S</key></keyseq> keyboard shortcuts can be used. A "
+"file saving dialog will then be shown so the project's name and location is "
+"entered."
+msgstr ""
+"Miután elvégzett valamilyen munkát egy képen, létrehozható egy projekt a <"
+"guiseq><gui>Fájl</gui><gui>Mentés</gui></guiseq> vagy a <guiseq><gui>Fájl<"
+"/gui><gui>Mentés másként…</gui></guiseq> menüpontra kattintva. Adott esetben "
+"a <keyseq><key>Control</key><key>S</key></keyseq> vagy a <keyseq><key"
+">Control</key><key>Shift</key><key>S</key></keyseq> billentyűkombinációk is "
+"használhatók. Ezután egy fájl mentése párbeszédablak jelenik meg, hogy a "
+"projekt neve és helye megadható legyen."
+
+#. (itstool) path: section/title
+#: C/projects.page:34
+msgid "Loading A Project"
+msgstr "Projekt betöltése"
+
+#. (itstool) path: section/p
+#: C/projects.page:36
+msgid ""
+"An existing project can be loaded simply by clicking <guiseq><gui>File</"
+"gui><gui>Open</gui></guiseq> or <keyseq><key>Control</key><key>O</key></"
+"keyseq>."
+msgstr ""
+"Egy meglévő projekt egyszerűen a <guiseq><gui>Fájl</gui><gui>Megnyitás</gui><"
+"/guiseq> menüpontra kattintva vagy a <keyseq><key>Control</key><key>O</key><"
+"/keyseq> billentyűkombinációval tölthető be."
+
+#. (itstool) path: section/title
+#: C/projects.page:43
+msgid "Appending A Project"
+msgstr "Projekt hozzáadása"
+
+#. (itstool) path: section/p
+#: C/projects.page:45
+msgid ""
+"Sometimes it is useful to merge two or more projects in order to create only "
+"one document with the pages of several <app>OCRFeeder</app> projects. This "
+"can be accomplished by appending a project, which simply loads the pages "
+"from a chosen project into the current one. To do this, click in "
+"<guiseq><gui>File</gui><gui>Append Project</gui></guiseq> and choose the "
+"wanted project."
+msgstr ""
+"Néha hasznos lehet kettő vagy több projekt egyesítése annak érdekében, hogy "
+"csak egyetlen dokumentum jöjjön létre több <app>OCRFeeder</app> projekt "
+"oldalával. Ez egy projekt hozzáfűzésével valósítható meg, amely egyszerűen "
+"betölti az oldalakat egy kiválasztott projektből a jelenlegibe. Ehhez "
+"kattintson a <guiseq><gui>Fájl</gui><gui>Projekt hozzáfűzése</gui></guiseq> "
+"menüpontra, és válassza ki a kívánt projektet."
+
+#. (itstool) path: section/title
+#: C/projects.page:55
+msgid "Clearing A Project"
+msgstr "Projekt törlése"
+
+#. (itstool) path: section/p
+#: C/projects.page:57
+msgid ""
+"If all the information is a project should be deleted (for example, to start "
+"over again), it can be done by choosing <guiseq><gui>Edit</gui><gui>Clear "
+"Project</gui></guiseq>."
+msgstr ""
+"Ha egy projekt összes információját törölni kell (például az újrakezdéshez), "
+"akkor ez a <guiseq><gui>Szerkesztés</gui><gui>Projekt törlése</gui></guiseq> "
+"menüpont kiválasztásával végezhető el."
+
+#. (itstool) path: info/desc
+#: C/unpaper.page:8
+msgid "Cleaning images before performing OCR"
+msgstr "Képek tisztítása az optikai karakterfelismerés végrehajtása előtt"
+
+#. (itstool) path: page/title
+#: C/unpaper.page:11
+msgid "Unpaper"
+msgstr "Unpaper"
+
+#. (itstool) path: page/p
+#: C/unpaper.page:13
+msgid ""
+"<em>Unpaper</em> is a tool to clean images in order to make them easier to "
+"read on screen. It is aimed mainly at images obtained from scanned documents "
+"which usually show dust, black margins or other flaws."
+msgstr ""
+"Az <em>Unpaper</em> a képek tisztításához használható eszköz annak érdekében, "
+"hogy egyszerűbben olvashatók legyenek a képernyőn. Főleg a beolvasott "
+"dokumentumokból származó képekhez szánták, amelyek általában port, fekete "
+"margókat vagy egyéb hibákat tartalmaznak."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:18
+msgid ""
+"<app>OCRFeeder</app> can use <em>Unpaper</em> to clean its images before "
+"processing them, which usually results in a better recognition."
+msgstr ""
+"Az <app>OCRFeeder</app> képes az <em>Unpaper</em> használatára a képei "
+"tisztításához, mielőtt feldolgozza azokat, ami általában jobb felismerést "
+"eredményez."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:22
+msgid ""
+"<em>Unpaper</em> needs to be installed in order to be used. If it is not "
+"installed, <app>OCRFeeder</app> won't show it's action in the interface."
+msgstr ""
+"Az <em>Unpaper</em> programnak telepítve kell lennie a használatához. Ha "
+"nincs telepítve, akkor az <app>OCRFeeder</app> nem fogja megjeleníteni a "
+"műveleteit a felületen."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:26
+msgid ""
+"To use <em>Unpaper</em> on a loaded image, click <guiseq><gui>Tools</"
+"gui><gui>Unpaper</gui></guiseq>. The <gui>Unpaper Image Processor</gui> "
+"dialog will be shown with <em>Unpaper</em>'s options and an area to preview "
+"the changes before applying them to the loaded image. Depending on the size "
+"and characteristics of the image, using this tool might take some time."
+msgstr ""
+"Egy betöltött képen az <em>Unpaper</em> használatához kattintson az <guiseq><"
+"gui>Eszközök</gui><gui>Unpaper</gui></guiseq> menüpontra. Az <gui>Unpaper "
+"képfeldolgozó</gui> párbeszédablak jelenik meg az <em>Unpaper</em> "
+"beállításaival és egy területtel a változtatások előnézetéhez, mielőtt a "
+"betöltött képen alkalmazná azokat. A kép méretétől és jellegzetességétől "
+"függően az eszköz használata eltarthat egy ideig."
+
+#. (itstool) path: page/p
+#: C/unpaper.page:33
+msgid ""
+"<em>Unpaper</em> can be configured opening <guiseq><gui>Edit</"
+"gui><gui>Preferences</gui></guiseq> and accessing the <gui>Tools</gui> tab. "
+"In this area one can enter the path to <em>Unpaper</em>'s executable "
+"(normally this is already configured if <em>Unpaper</em> was installed the "
+"first time <app>OCRFeeder</app> was run). In the same area, under <gui>Image "
+"Pre-Processing</gui>, one can check <gui>Unpaper images</gui> to make images "
+"being processed automatically by <em>Unpaper</em> after they are loaded into "
+"<app>OCRFeeder</app>. The options taken by <em>Unpaper</em> when it's "
+"automatically called after adding an image can be configured by clicking the "
+"<gui>Unpaper Preferences</gui> button."
+msgstr ""
+"Az <em>Unpaper</em> a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><"
+"/guiseq> megnyitásával és az <gui>Eszközök</gui> lap elérésével állítható be. "
+"Ezen a területen adható meg az <em>Unpaper</em> futtatható fájljának elérési "
+"útja (általában ez már be van állítva, ha az <em>Unpaper</em> telepítve volt "
+"az <app>OCRFeeder</app> első futtatásakor). Ugyanezen a területen a <gui"
+">Kép-előfeldolgozás</gui> alatt bejelölhető az <gui>Unpaper képek</gui>, hogy "
+"az <em>Unpaper</em> automatikusan feldolgozza a képeket, miután be lettek "
+"töltve az <app>OCRFeeder</app> programba. Az <em>Unpaper</em> által végzett "
+"azon beállítások, amelyek egy kép hozzáadása után kerülnek automatikusan "
+"meghívásra, az <gui>Unpaper beállítások</gui> gombra kattintva állíthatók be."
+
