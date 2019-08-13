@@ -76,7 +76,7 @@ msgid ""
 msgstr ""
 "S'ha produït un error en obrir la imatge:\n"
 " %s\n"
-"Assegureu-vos que la imatge existeix o proveu a convertir-la a un altre "
+"Assegureu-vos que la imatge existeix o proveu de convertir-la a un altre "
 "format."
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:59
@@ -251,7 +251,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:496
 msgid "Recognizing Page"
-msgstr "S'està reconeixent la pàgina."
+msgstr "S'està reconeixent la pàgina"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:513
 msgid "Recognizing Document"
@@ -343,7 +343,7 @@ msgstr "Desa el projecte"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "_Save As…"
-msgstr "Anomena i de_sa"
+msgstr "Anomena i de_sa…"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "Save project with a chosen name"
@@ -561,7 +561,7 @@ msgstr "Selecciona tot el contingut de les àrees"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:131
 msgid "Select _Previous Area"
-msgstr "Selecciona l'àrea prèvia"
+msgstr "_Selecciona l'àrea prèvia"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:132
 msgid "Select the previous area from the content areas"
@@ -768,7 +768,7 @@ msgstr "Ll_etra:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:628
 msgid "Sty_le"
-msgstr "Estil:"
+msgstr "_Estil"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:635
 msgid "Angle"
@@ -785,7 +785,7 @@ msgstr "Idioma"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:648
 msgid "OCR engine to recogni_ze this area:"
-msgstr "Motor OCR per reconèixer aquesta àrea:"
+msgstr "_Motor OCR per reconèixer aquesta àrea:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:662
 msgid "Detect"
@@ -904,7 +904,7 @@ msgstr "Opcions extres"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1089
 msgid "Unpaper's command line arguments"
-msgstr "Arguments de la línia d'ordre de unpaper"
+msgstr "Arguments de la línia d'ordres de unpaper"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1146
 msgid "Unpaper Preferences"
@@ -1064,7 +1064,7 @@ msgstr "S'està preprocessant la imatge"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1651
 msgid "Des_kew images"
-msgstr "Redreça les imatges"
+msgstr "_Redreça les imatges"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1653
 msgid "Tries to straighten the images before they are added"
@@ -1072,7 +1072,7 @@ msgstr "Intenta posar rectes les imatges abans d'afegir-les"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1662
 msgid "_Unpaper images"
-msgstr "Imatges processades amb unpaper"
+msgstr "_Imatges processades amb unpaper"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1664
 msgid "Cleans the image using the Unpaper pre-processor"
@@ -1092,7 +1092,7 @@ msgstr ""
 "L'idioma pot afectar a com els motors OCR treballen.\n"
 "Si un motor està configurat per suportar idiomes, però no és compatible amb "
 "el triat, pot resultar en un text en blanc.\n"
-"Podeu triar  \"Sense idioma\"  per prevenir això."
+"Podeu triar «Sense idioma» per prevenir això."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1699
 msgid "Default _language:"
@@ -1175,7 +1175,7 @@ msgid ""
 "order for it to work, the engine's arguments should have the $LANG keyword."
 msgstr ""
 "L'argument del llenguatge en el cas d'aquest motor ho utilitza (per exemple "
-"\"-l\"). Per tal de què funcioni, els arguments del motor han de tenir la "
+"\"-l\"). Per tal que funcioni, els arguments del motor han de tenir la "
 "paraula clau $LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1937
