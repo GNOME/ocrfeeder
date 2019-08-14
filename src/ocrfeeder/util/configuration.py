@@ -114,7 +114,7 @@ class ConfigurationManager(object):
                 UNPAPER_USE_BLACK_FILTER: True,
                 UNPAPER_NOISE_FILTER_INTENSITY: 'auto',
                 UNPAPER_GRAY_FILTER_SIZE: 'auto',
-                FAVORITE_ENGINE: 'ocrad',
+                FAVORITE_ENGINE: 'tesseract',
                 IMPROVE_COLUMN_DETECTION: True,
                 COLUMN_MIN_WIDTH: 'auto',
                 CLEAN_TEXT: True,
@@ -172,7 +172,7 @@ class ConfigurationManager(object):
                             language_argument = language_argument,
                             version = version)
             existing_engines.append(engine)
-        return existing_engines
+        return sorted(existing_engines, key=lambda x: x.name, reverse=False)
 
     def setConf(self, conf_key, value):
         ConfigurationManager.conf[conf_key] = value

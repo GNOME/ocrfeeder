@@ -30,13 +30,17 @@ msgstr ""
 "Assegureu-vos que la imatge existeix o proveu a convertir-la a un altre "
 "format."
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "El paquet OCR complet."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "El paquet OCR complet"
 
 #: ../resources/spell-checker.ui.h:1
 msgid "<b>Language</b>"

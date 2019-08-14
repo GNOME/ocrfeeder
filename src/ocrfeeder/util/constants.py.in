@@ -96,3 +96,7 @@ OCRFEEDER_MENUBAR_UI = os.path.join(RESOURCES_DIR, 'menubar.ui')
 
 # ISO-codes location
 ISO_CODES_PATH = '/usr/share/xml/iso-codes/'
+
+APP_ID = 'org.gnome.OCRFeeder'
+
+OCRFEEDER_SANDBOX = @SANDBOX@

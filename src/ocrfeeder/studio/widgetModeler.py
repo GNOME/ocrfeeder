@@ -75,7 +75,7 @@ class ImageReviewer(Gtk.Paned):
         selectable_boxes_scrolled_window.show()
 
         self.pack1(selectable_boxes_scrolled_window, True, False)
-        self.pack2(self.editor.box_editor, False, True)
+        self.pack2(self.editor.box_editor, False, False)
         self.page = page_data
         self.updatePageData(self.page)
         selectable_boxes_scrolled_window.connect_after("size-allocate", self.zoomFitCb)
@@ -250,6 +250,9 @@ class ImageReviewer(Gtk.Paned):
             debug(exception.message)
             return
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
+        self.editor.updateImage(self.image_pixbuf)
+        if self.editor.box:
+            self.editor.update(self.editor.box)
 
     def updateBoxesColors(self):
         self.editor.updateBoxColor()
@@ -1044,6 +1047,9 @@ class Editor:
         self.__updating_data_box = False
         self.__connectDataBoxSignals()
         self.__updateBoxColor(None, self.data_box.type)
+
+    def updateImage(self, pixbuf):
+        self.pixbuf = pixbuf
 
     def __connectDataBoxSignals(self):
         handler_id = self.data_box.connect('changed_x', self.__updateEditorX)

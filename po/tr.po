@@ -21,13 +21,17 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.6\n"
 "X-POOTLE-MTIME: 1432996976.000000\n"
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "Tam OCR takımı."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Tam OCR takımı"
 
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"

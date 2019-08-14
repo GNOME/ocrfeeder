@@ -32,13 +32,17 @@ msgstr ""
 "„%s”\n"
 "Asigurați-vă că imaginea există sau încercați să o convertiți în alt format."
 
-#: ../resources/ocrfeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
-#: ../resources/ocrfeeder.desktop.in.h:2
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "Suită OCR completă."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Suită OCR completă"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:179
 msgid "Images"

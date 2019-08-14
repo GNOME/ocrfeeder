@@ -43,8 +43,8 @@ class MainWindow(Gtk.Window):
 
     def __init__(self):
         Gtk.Window.__init__(self, Gtk.WindowType.TOPLEVEL)
-        self.set_size_request(800, 600)
-        self.set_icon_from_file(WINDOW_ICON)
+        self.set_size_request(1280, 720)
+        self.set_default_icon_name(APP_ID)
         self.main_box = Gtk.VBox()
         self.main_box.show()
 
@@ -54,7 +54,7 @@ class MainWindow(Gtk.Window):
 
         self.main_area = Gtk.Paned.new(orientation=Gtk.Orientation.HORIZONTAL)
         self.main_area.set_wide_handle(True)
-        self.main_area.set_position(150)
+        self.main_area.set_position(200)
         self.main_area.show()
         self.main_box.pack_end(self.main_area, True, True, 0)
 
@@ -62,14 +62,15 @@ class MainWindow(Gtk.Window):
         self.main_area_left = Gtk.ScrolledWindow()
         self.main_area_left.get_accessible().set_name(_('Pages'))
         self.main_area_left.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.main_area_left.set_size_request(200, -1)
         self.main_area_left.show()
 
-        self.main_area.pack1(self.main_area_left, False, True)
+        self.main_area.pack1(self.main_area_left, False, False)
         self.notebook = Gtk.Notebook()
         self.notebook.set_show_tabs(False)
         self.notebook.set_show_border(False)
         self.notebook.show()
-        self.main_area.pack2(self.notebook, False, False)
+        self.main_area.pack2(self.notebook, True, False)
         self.action_group = None
 
         self.show()
@@ -326,7 +327,7 @@ class BoxEditor(Gtk.ScrolledWindow):
     def __init__(self, image_width = 0, image_height = 0, pixbuf = 0, x = 0, y = 0, width = 0, height = 0, ocr_engines_list = []):
         super(BoxEditor, self).__init__()
 
-        self.set_size_request(300, -1)
+        self.set_size_request(400, -1)
         self.get_accessible().set_name(_('Area editor'))
         self.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.contents = Gtk.VBox()
@@ -555,7 +556,6 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.ocr_combo_box.set_tooltip_text(_('OCR engine to recognize '
                                               'this content area'))
         self.setOcrEngines(engines)
-        self.ocr_combo_box.set_active(0)
         hbox.pack_end(self.perform_ocr_button, False, False, 0)
         hbox.add(self.ocr_combo_box)
 
@@ -687,11 +687,23 @@ class BoxEditor(Gtk.ScrolledWindow):
         self.letter_spacing_spin.set_value(spacing)
 
     def setOcrEngines(self, engines_list):
+        current_engine = self.ocr_combo_box.get_active_text()
         self.ocr_combo_box.get_model().clear()
         for engine in engines_list:
             self.ocr_combo_box.append_text(engine)
         if engines_list:
-            self.ocr_combo_box.set_active(0)
+            engine_index = None
+            if current_engine:
+                try:
+                    engine_index = engines_list.index(current_engine)
+                except ValueError:
+                    engine_index = -1
+            if not engine_index >= 0:
+                try:
+                    engine_index = engines_list.index(ConfigurationManager().favorite_engine)
+                except ValueError:
+                    engine_index = 0 if len(engines_list) == 0 else len(engines_list) - 1
+            self.ocr_combo_box.set_active(engine_index)
             self.ocr_combo_box.set_sensitive(True)
             self.perform_ocr_button.set_sensitive(True)
         else:
@@ -763,7 +775,6 @@ class FileDialog(Gtk.FileChooserDialog):
             for pattern in file_filter[2]:
                 filter.add_pattern(pattern)
             self.add_filter(filter)
-        self.set_icon_from_file(WINDOW_ICON)
 
 class PagesToExportDialog(Gtk.Dialog):
 
@@ -774,7 +785,6 @@ class PagesToExportDialog(Gtk.Dialog):
                                                   buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
                                                              Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
         self.__makePageSelectionArea()
-        self.set_icon_from_file(WINDOW_ICON)
 
     def __makePageSelectionArea(self):
         page_selection_frame = PlainFrame(_('Pages to export'))
@@ -798,7 +808,6 @@ class ExportDialog(Gtk.Dialog):
                                                       Gtk.STOCK_OK,
                                                       Gtk.ResponseType.ACCEPT))
         self.__makeFormatSelectionArea(format_choices)
-        self.set_icon_from_file(WINDOW_ICON)
 
     def __makeFormatSelectionArea(self, format_choices):
         page_selection_frame = PlainFrame(_('Choose the format'))
@@ -827,7 +836,6 @@ class PageSizeDialog(Gtk.Dialog):
                                                         Gtk.ResponseType.ACCEPT))
         self.__makePageSizeArea(current_page_size)
         self.paper_sizes.connect('changed', self.__changedPageSize, current_page_size)
-        self.set_icon_from_file(WINDOW_ICON)
 
     def __makePageSizeArea(self, page_size):
         page_size_frame = PlainFrame(_('Page size'))
@@ -910,7 +918,6 @@ class QuestionDialog(Gtk.MessageDialog):
                                              flags = Gtk.DialogFlags.MODAL |
                                              Gtk.DialogFlags.DESTROY_WITH_PARENT,
                                              buttons = buttons)
-        self.set_icon_from_file(WINDOW_ICON)
         self.set_markup(message)
 
 class UnpaperDialog(Gtk.Dialog):
@@ -929,7 +936,6 @@ class UnpaperDialog(Gtk.Dialog):
         self.temp_dir = temp_dir
         self.unpapered_image = None
         self.__makePreviewArea()
-        self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
         self.preview.connect('clicked', self.__getPreview)
         self.set_size_request(500, -1)
@@ -1169,7 +1175,6 @@ class SimpleDialog(Gtk.MessageDialog):
                                            buttons = Gtk.ButtonsType.OK)
         self.set_title(title)
         self.set_markup(message)
-        self.set_icon_from_file(WINDOW_ICON)
 
     def run(self):
         super(SimpleDialog, self).run()
@@ -1227,7 +1232,6 @@ class QueuedEventsProgressDialog(Gtk.Dialog):
     def __init__(self, parent, items_list = []):
         super(QueuedEventsProgressDialog, self).__init__(parent = parent,
                                                        flags = Gtk.DialogFlags.MODAL)
-        self.set_icon_from_file(WINDOW_ICON)
         self.info_list = []
         self.worker = AsyncWorker()
         self.setItemsList(items_list)
@@ -1313,18 +1317,22 @@ class PreferencesDialog(Gtk.Dialog):
         self.ocr_engines = ocr_engines
         self.notebook = Gtk.Notebook()
         self.__makeGeneralPreferences(self.__makeColors())
-        self.__makeToolsPreferences(self.__makeUnpaper(),
-                                    self.__makeEngines(),
-                                    self.__makePreProcessorPreferences())
+        if not OCRFEEDER_SANDBOX:
+            self.__makeToolsPreferences(self.__makeUnpaper(),
+                                        self.__makeEngines(),
+                                        self.__makePreProcessorPreferences())
+        else:
+            self.__makeToolsPreferences(self.__makeEngines(),
+                                        self.__makePreProcessorPreferences())
         self.__makeRecognitionPreferences(self.__makeLanguagePreferences(),
                                       self.__makeTextPreferences(),
                                       self.__makeWindowSize(),
                                       self.__makeColumnDetectionPreferences(),
                                       self.__makeBoundsAdjustmentsPreferences())
-        self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
+        if not OCRFEEDER_SANDBOX:
+            self.unpaper_select.connect('clicked', self.__unpaperSelectDialog)
         self.custom_window_size.connect('toggled', self.__toggledCustomWindowSize)
         self.vbox.add(self.notebook)
-        self.set_icon_from_file(WINDOW_ICON)
         self.set_size_request(*self.PREFERENCES_DIALOG_SIZE)
         self.vbox.show_all()
 
@@ -1343,7 +1351,8 @@ class PreferencesDialog(Gtk.Dialog):
         self.configuration_manager.setBoxesStroke(
             self.__getColor(self.boxes_stroke_color))
         self.configuration_manager.setImageFill(self.__getColor(self.image_fill_color))
-        self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
+        if not OCRFEEDER_SANDBOX:
+            self.configuration_manager.setUnpaper(self.unpaper_entry.get_text())
         self.configuration_manager.improve_column_detection = \
             self.improve_column_detection.get_active()
         self.configuration_manager.column_min_width = self.__getColumnMinWidth()
@@ -1444,7 +1453,7 @@ class PreferencesDialog(Gtk.Dialog):
         try:
             index = [engine.name for engine, path in self.ocr_engines].index(self.configuration_manager.favorite_engine)
         except ValueError:
-            index = 0
+            index = 0 if len(self.ocr_engines) == 0 else len(self.ocr_engines) - 1
         self.engines_combo.set_active(index)
         engines_box = Gtk.HBox(spacing = 10)
         label = Gtk.Label(_("Favorite _engine:"))
@@ -1718,7 +1727,6 @@ class SystemEnginesDialog(Gtk.Dialog):
                                                   buttons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
                                                              Gtk.STOCK_ADD, Gtk.ResponseType.ACCEPT))
         self.set_size_request(300, -1)
-        self.set_icon_from_file(WINDOW_ICON)
         self.list_store = Gtk.ListStore(bool, str, GObject.TYPE_PYOBJECT)
         for engine in engines:
             self.list_store.append((True, engine.name, engine))
@@ -1764,7 +1772,6 @@ class OcrManagerDialog(Gtk.Dialog):
         if first_iter:
             selection = self.tree_view.get_selection()
             selection.select_iter(first_iter)
-        self.set_icon_from_file(WINDOW_ICON)
         self.vbox.show_all()
         self.delete_engine.connect('clicked', self.__delete)
         self.new_engine.connect('clicked', self.__engine_settings)
@@ -1882,7 +1889,6 @@ class OcrSettingsDialog(Gtk.Dialog):
         self.engine_manager = engine_manager
         self.engine = engine
         self.vbox.add(self.__makeMainArea())
-        self.set_icon_from_file(WINDOW_ICON)
         self.configuration_manager = ConfigurationManager()
         self.vbox.show_all()
 
@@ -2015,7 +2021,6 @@ class CustomAboutDialog(Gtk.AboutDialog):
         self.set_artists(OCRFEEDER_STUDIO_ARTISTS)
         self.set_comments(_(OCRFEEDER_STUDIO_COMMENTS))
         self.set_translator_credits(_('translator-credits'))
-        self.set_icon_from_file(WINDOW_ICON)
 
 class ScannerChooserDialog(Gtk.Dialog):
 
