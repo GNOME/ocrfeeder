@@ -456,8 +456,8 @@ class MarkDownGenerator(DocumentGenerator):
         data_box.image.save(image_file, format = format)
         self.images.append(image_file)
         alt_text = "Image " + str(self.image_counter)
-        self.text.append(unicode('![%s](%s) "%s")' % (alt_text, image_file, alt_text)))
-        self.image_counter += 1 
+        self.text.append(unicode('![%s](%s) "%s")\n' % (alt_text, image_file, alt_text)))
+        self.image_counter += 1
 
     def save(self):
         if not os.path.isdir(self.name):
