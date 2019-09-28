@@ -18,12 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from boxesarea import BoxesArea
-from dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
+from .boxesarea import BoxesArea
+from .dataHolder import DataBox, PageData, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.feeder.documentGeneration import OdtGenerator, HtmlGenerator, PlaintextGenerator, PdfGenerator
 from ocrfeeder.feeder.imageManipulation import *
 from ocrfeeder.feeder.layoutAnalysis import *
-from project import ProjectSaver, ProjectLoader
+from .project import ProjectSaver, ProjectLoader
 from ocrfeeder.util import graphics, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
      ALIGN_FILL, PAPER_SIZES
 from ocrfeeder.util.lib import getNonExistingFileName, unpaperImage
@@ -31,7 +31,7 @@ from ocrfeeder.util.log import debug, warning
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util import constants
 from ocrfeeder.util.asyncworker import AsyncItem
-from widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
+from .widgetPresenter import BoxEditor, PagesToExportDialog, FileDialog, \
     PageSizeDialog, UnpaperDialog, \
     QueuedEventsProgressDialog, SpellCheckerDialog
 import gettext
@@ -120,7 +120,7 @@ class ImageReviewer(Gtk.Paned):
 
     def removedBox(self, widget, box):
         self.updateMainWindow()
-        if not self.boxes_dict.has_key(box):
+        if box not in self.boxes_dict:
             return False
         del self.boxes_dict[box]
         if self.editor.box == box:
@@ -216,7 +216,7 @@ class ImageReviewer(Gtk.Paned):
 
     def __getAllDataBoxes(self):
         boxes = []
-        for data_box in self.boxes_dict.values():
+        for data_box in list(self.boxes_dict.values()):
             boxes.append((data_box.y, data_box))
             boxes.sort()
         boxes_sorted = []
@@ -246,7 +246,7 @@ class ImageReviewer(Gtk.Paned):
             return
         try:
             self.image_pixbuf = GdkPixbuf.Pixbuf.new_from_file(self.path_to_image)
-        except Exception, exception:
+        except Exception as exception:
             debug(exception.message)
             return
         self.selectable_boxes_area.setBackgroundImage(self.path_to_image)
@@ -349,12 +349,12 @@ class ImageReviewer_Controler:
                               index == item_list_length - 1,
                               index == 0))
             if item_list_length == 1:
-                item_info = (_('Preparing image'), _(u'Please wait…'))
+                item_info = (_('Preparing image'), _('Please wait…'))
             else:
                 item_info = (_('Preparing image %(current_index)s/%(total)s') % \
                              {'current_index': index + 1,
                               'total': item_list_length},
-                             _(u'Please wait…'))
+                             _('Please wait…'))
             item_list.append((item_info,item))
         dialog.setItemsList(item_list)
         dialog.run()
@@ -408,7 +408,7 @@ class ImageReviewer_Controler:
                          (reviewer.path_to_image,),
                          self.__deskewCurrentImageFinishedCb,
                          (dialog, reviewer))
-        item_info = (_('Deskewing image'), _(u'Please wait…'))
+        item_info = (_('Deskewing image'), _('Please wait…'))
         dialog.setItemsList([(item_info, item)])
         dialog.run()
 
@@ -505,7 +505,7 @@ class ImageReviewer_Controler:
                          (page,),
                          self.__performRecognitionForPageFinishedCb,
                          (dialog, page, [page]))
-        info = (_('Recognizing Page'), _(u'Please wait…'))
+        info = (_('Recognizing Page'), _('Please wait…'))
         dialog.setItemsList([(info, item)])
         dialog.run()
 
@@ -523,7 +523,7 @@ class ImageReviewer_Controler:
                              self.__performRecognitionForPageFinishedCb,
                              (dialog, page, pages))
             info = (_('Recognizing Document'),
-                    _(u'Recognizing page %(page_number)s/%(total_pages)s. Please wait…') % {'page_number': i,
+                    _('Recognizing page %(page_number)s/%(total_pages)s. Please wait…') % {'page_number': i,
                                                                                             'total_pages': total})
             items.append((info, item))
             i += 1
@@ -561,8 +561,9 @@ class ImageReviewer_Controler:
                                          clean_text,
                                          adjust_boxes_bounds,
                                          adjustment_size)
-        return layout_analysis.recognize(page.image_path,
+        boxes = layout_analysis.recognize(page.image_path,
                                          page.resolution[1])
+        return boxes
 
     def __getConfiguredOcrEngine(self):
         for engine, path in self.ocr_engines:
@@ -615,7 +616,7 @@ class ImageReviewer_Controler:
                     for box in page.data_boxes:
                         box.updateImage(pixbuf)
                         engine = self.get_configured_ocr_engine()
-                        layout_analysis = LayoutAnalysis(engine, 
+                        layout_analysis = LayoutAnalysis(engine,
                                 clean_text=self.configuration_manager.clean_text)
                         box.setText(layout_analysis.readImage(box.image))
                 document_generator.addPage(page)
@@ -956,7 +957,7 @@ class Editor:
         if index == -1:
             return
         engine = self.ocr_engines[index][0]
-        self.box_editor.setAvailableLanguages(engine.getLanguages().keys())
+        self.box_editor.setAvailableLanguages(list(engine.getLanguages().keys()))
 
     def _onOCREngineChanged(self, combobox):
         self._resetLanguages()
@@ -988,7 +989,7 @@ class Editor:
     def performOcr(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
-            for i in xrange(len(self.ocr_engines)):
+            for i in range(len(self.ocr_engines)):
                 if self.ocr_engines[i][0].name == engine_name:
                     selected_engine_index = i
                     break
@@ -1006,7 +1007,7 @@ class Editor:
     def performClassification(self, engine_name = None):
         selected_engine_index = self.box_editor.getSelectedOcrEngine()
         if engine_name:
-            for i in xrange(len(self.ocr_engines)):
+            for i in range(len(self.ocr_engines)):
                 if self.ocr_engines[i][0].name == engine_name:
                     selected_engine_index = i
                     break

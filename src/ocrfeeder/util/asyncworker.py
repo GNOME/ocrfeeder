@@ -23,9 +23,9 @@
 ###########################################################################
 
 from threading import Thread
-import Queue
+import queue
 from gi.repository import GLib
-from log import debug
+from .log import debug, logger
 
 class AsyncItem(object):
 
@@ -42,8 +42,9 @@ class AsyncItem(object):
         results = error = None
         try:
             results = self.target_method(*self.target_method_args)
-        except Exception, exception:
-            debug(str(exception))
+        except Exception as exception:
+            # debug(exception)
+            logger.exception("this happend", exception)
             error = exception
         if self.canceled or not self.finish_callback:
             return
@@ -58,7 +59,7 @@ class AsyncWorker(Thread):
 
     def __init__(self):
         Thread.__init__(self)
-        self.queue = Queue.Queue(0)
+        self.queue = queue.Queue()
         self.stopped = False
         self.async_item = None
         self.item_number = -1
@@ -74,7 +75,7 @@ class AsyncWorker(Thread):
                 self.async_item.run()
                 self.queue.task_done()
                 self.async_item = None
-            except Exception, exception:
+            except Exception as exception:
                 debug(str(exception))
                 self.stop()
 

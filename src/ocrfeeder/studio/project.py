@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from dataHolder import PageData, DataBox, TextData
+from .dataHolder import PageData, DataBox, TextData
 from ocrfeeder.util.log import debug
 from ocrfeeder.util.configuration import ConfigurationManager
 from xml.dom import minidom
@@ -40,7 +40,7 @@ class ProjectSaver:
     def __handleImageEmbedding(self, page_data):
         base_name = os.path.basename(page_data.image_path)
         embedded_names = []
-        for original_path, embedded_name in self.images.items():
+        for original_path, embedded_name in list(self.images.items()):
             embedded_names.append(embedded_name)
             if os.path.samefile(original_path, page_data.image_path):
                 return embedded_name
@@ -55,7 +55,7 @@ class ProjectSaver:
         for page_data in self.pages_data:
             self.__handleImageEmbedding(page_data)
         images_node = root_node.appendChild(self.document.createElement('images'))
-        for original_name, embedded_name in self.images.items():
+        for original_name, embedded_name in list(self.images.items()):
             original = self.document.createElement('original_name')
             original.appendChild(self.document.createTextNode(original_name))
             embedded = self.document.createElement('embedded_name')
@@ -67,7 +67,7 @@ class ProjectSaver:
 
     def convertToXml(self, item, root_node):
         if type(item) == dict:
-            for key, value in item.items():
+            for key, value in list(item.items()):
                 new_node = self.document.createElement(key)
                 self.convertToXml(value, new_node)
                 root_node.appendChild(new_node)
@@ -75,7 +75,7 @@ class ProjectSaver:
             for element in item:
                 self.convertToXml(element, root_node)
         else:
-            text = unicode(str(item), 'utf-8')
+            text = str(str(item), 'utf-8')
             text_node = self.document.createTextNode(text)
             root_node.appendChild(text_node)
         return root_node
@@ -99,7 +99,7 @@ class ProjectSaver:
         images_dir = os.path.join(os.curdir, 'images')
         os.mkdir(images_dir)
         zip = zipfile.ZipFile(file_name, 'w')
-        for original_name, embbeded_name in self.images.items():
+        for original_name, embbeded_name in list(self.images.items()):
             embedded_name = os.path.join(images_dir, embbeded_name)
             shutil.copy(original_name, embedded_name)
             zip.write(embedded_name)
@@ -135,11 +135,11 @@ class ProjectLoader:
             debug('Page Data: %s' % page_data)
             data_boxes = []
             for data_box in page_data['data_boxes']:
-                args = []
+                args = {}
                 # text variable is to avoid problems with
                 # escaping characters
                 text = ''
-                for var_name, value in data_box.items():
+                for var_name, value in list(data_box.items()):
                     if var_name == 'text':
                         text = value
                         continue
@@ -148,8 +148,8 @@ class ProjectLoader:
                         real_value = int(value)
                     except ValueError:
                         pass
-                    args.append('%s = %s' % (var_name, real_value))
-                exec('box = DataBox(%s)' % ', '.join(args))
+                    args[var_name] = real_value
+                box = DataBox(**args)
                 box.text = text
                 data_boxes.append(box)
             image_path = page_data['image_path']

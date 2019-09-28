@@ -72,7 +72,7 @@ class DataBox(GObject.GObject):
                      (GObject.TYPE_INT,))
         }
 
-    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = u''):
+    def __init__(self, x = 0, y = 0, width = 0, height = 0, image = None, type = TEXT_TYPE, text = ''):
         super(DataBox, self).__init__()
         self.x = int(x)
         self.y = int(y)
@@ -233,7 +233,7 @@ class PageData:
         return {'PageData': dictionary}
 
     def getTextFromBoxes(self, data_boxes=None):
-        text = u''
+        text = ''
         if data_boxes is None:
             data_boxes = self.data_boxes
         number_of_boxes = len(data_boxes)

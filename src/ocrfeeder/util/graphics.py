@@ -19,8 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import getNonExistingFileName
-from log import debug
+from .lib import getNonExistingFileName
+from .log import debug
 from PIL import Image
 from gi.repository import GdkPixbuf
 import math
@@ -61,6 +61,8 @@ def convertPixbufToImage(pixbuf):
     pixels = pixbuf.get_pixels()
     mode = pixbuf.get_has_alpha() and "RGBA" or "RGB"
     num_channels = len(mode)
+    dim_channel = num_channels * dimensions[0]
+    rowstride = pixbuf.get_rowstride()
 
     # When calling get_pixels() on subpixbufs, the buffer is the same
     # as the original pixbuf's but the first character is given by the
@@ -69,11 +71,11 @@ def convertPixbufToImage(pixbuf):
     # creating the Image from bytes.
     if pixbuf.get_byte_length() > num_channels * dimensions[0] * dimensions[1]:
         i = 0
-        p = ''
-        for j in range(pixbuf.get_height()):
-            p += pixels[i:i + pixbuf.get_width() * num_channels]
-            i += pixbuf.get_rowstride()
-        pixels = p
+        p = []
+        for j in range(dimensions[1]): # The height of the pixbuf
+            p.append(pixels[i:i + dim_channel])
+            i += rowstride
+        pixels = b"".join(p)
 
     return Image.frombytes(mode, dimensions, pixels)
 
@@ -86,7 +88,7 @@ def colorsContrast(color1, color2, tolerance = 120):
 
 def getImageResolution(image_object):
     resolution = (300, 300)
-    if 'dpi' in image_object.info.keys():
+    if 'dpi' in list(image_object.info.keys()):
         resolution = image_object.info['dpi']
     return resolution
 
@@ -112,7 +114,7 @@ def getTextSizeFromImage(image):
         colors.sort()
         background_color = colors[-1][1]
     text_sizes = []
-    for i in xrange(1, height):
+    for i in range(1, height):
         blank_line = True
         for j in range(0, width, 3):
             color = image.getpixel((j, i - 1))

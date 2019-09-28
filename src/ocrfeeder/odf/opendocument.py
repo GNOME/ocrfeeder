@@ -21,11 +21,11 @@
 __doc__="""Use OpenDocument to generate your documents."""
 
 import zipfile, time, sys, mimetypes, copy
-import cStringIO
-from namespaces import *
-import manifest, meta
-from office import *
-from element import Node
+import io
+from .namespaces import *
+from . import manifest, meta
+from .office import *
+from .element import Node
 
 __version__= TOOLSVERSION
 
@@ -82,8 +82,8 @@ class OpenDocument:
         self.body = Body()
 
     def toXml(self, filename=''):
-        import cStringIO
-        xml=cStringIO.StringIO()
+        import io
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         self.body.toXml(0, xml)
         if not filename:
@@ -102,14 +102,14 @@ class OpenDocument:
             x.addElement(self.fontfacedecls)
         x.addElement(self.automaticstyles)
         x.addElement(self.body)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
 
     def manifestxml(self):
         """ Generates the manifest.xml file """
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         self.manifest.toXml(0,xml)
         return xml.getvalue()
@@ -118,7 +118,7 @@ class OpenDocument:
         """ Generates the meta.xml file """
         x = DocumentMeta()
         x.addElement(self.meta)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
@@ -127,7 +127,7 @@ class OpenDocument:
         """ Generates the settings.xml file """
         x = DocumentSettings()
         x.addElement(self.settings)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
@@ -136,10 +136,10 @@ class OpenDocument:
         """ Finds references to style objects in master-styles """
         for e in top.elements:
             if e.nodeType == Node.ELEMENT_NODE:
-                for styleref in ( (DRAWNS,u'style-name'), (DRAWNS,u'text-style-name'),
-                        (PRESENTATIONNS,u'style-name'),
-                        (STYLENS,u'style-name'), (STYLENS,u'page-layout-name'),
-                        (TEXTNS,u'style-name')):
+                for styleref in ( (DRAWNS,'style-name'), (DRAWNS,'text-style-name'),
+                        (PRESENTATIONNS,'style-name'),
+                        (STYLENS,'style-name'), (STYLENS,'page-layout-name'),
+                        (TEXTNS,'style-name')):
                     if e.getAttr(styleref[0],styleref[1]):
                         stylename = e.getAttr(styleref[0],styleref[1])
                         stylelist.append(stylename)
@@ -154,7 +154,7 @@ class OpenDocument:
         stylelist = self._parseoneelement(self.masterstyles, [])
         automaticmasterstyles = AutomaticStyles()
         for e in self.automaticstyles.elements:
-            if e.getAttr(STYLENS,u'name') in stylelist:
+            if e.getAttr(STYLENS,'name') in stylelist:
                 automaticmasterstyles.addElement(copy.deepcopy(e))
         return automaticmasterstyles
 
@@ -167,7 +167,7 @@ class OpenDocument:
         x.addElement(self.styles)
         if self.masterstyles.hasChildren():
             x.addElement(self.masterstyles)
-        xml=cStringIO.StringIO()
+        xml=io.StringIO()
         xml.write(_XMLPROLOGUE)
         x.toXml(0,xml)
         return xml.getvalue()
@@ -193,7 +193,7 @@ class OpenDocument:
         """ Add a fixed thumbnail
             The thumbnail in the library is pretty big, so this is pretty useless.
         """
-        import thumbnail
+        from . import thumbnail
         self.thumbnail = thumbnail.thumbnail()
 
     def addObject(self, document):
@@ -206,7 +206,7 @@ class OpenDocument:
 
     def _savePictures(self, object, folder):
         hasPictures = False
-        for arcname, picturerec in object.Pictures.items():
+        for arcname, picturerec in list(object.Pictures.items()):
             filename, mediatype = picturerec
             self.manifest.addElement(manifest.FileEntry(fullpath="%s%s" % ( folder ,arcname), mediatype=mediatype))
             hasPictures = True
@@ -338,8 +338,8 @@ def OpenDocumentText():
     return doc
 
 if __name__=='__main__':
-    import style
-    from text import H, P
+    from . import style
+    from .text import H, P
 
     textdoc=OpenDocumentText()
     # Styles

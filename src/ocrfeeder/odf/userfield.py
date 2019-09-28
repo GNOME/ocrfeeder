@@ -31,9 +31,9 @@ import xml.sax.saxutils
 from odf.namespaces import OFFICENS, TEXTNS
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 
 OUTENCODING = "utf-8"
@@ -41,13 +41,13 @@ OUTENCODING = "utf-8"
 
 # OpenDocument v.1.0 section 6.7.1
 VALUE_TYPES = {
-    'float': (OFFICENS, u'value'),
-    'percentage': (OFFICENS, u'value'),
-    'currency': (OFFICENS, u'value'),
-    'date': (OFFICENS, u'date-value'),
-    'time': (OFFICENS, u'time-value'),
-    'boolean': (OFFICENS, u'boolean-value'),
-    'string': (OFFICENS, u'string-value'),
+    'float': (OFFICENS, 'value'),
+    'percentage': (OFFICENS, 'value'),
+    'currency': (OFFICENS, 'value'),
+    'date': (OFFICENS, 'date-value'),
+    'time': (OFFICENS, 'time-value'),
+    'boolean': (OFFICENS, 'boolean-value'),
+    'string': (OFFICENS, 'string-value'),
     }
 
 
@@ -139,7 +139,7 @@ class UserFields(object):
         def _callback(field_name, value_type, value, attrs):
             if field_name in data:
                 valattr = VALUE_TYPES.get(value_type)
-                attrs = dict(attrs.items())
+                attrs = dict(list(attrs.items()))
                 # Take advantage that startElementNS can take a normal
                 # dict as attrs
                 attrs[valattr] = data[field_name]
@@ -165,7 +165,7 @@ class UserFields(object):
                 pass
 
         # get input
-        if isinstance(self.src_file, basestring):
+        if isinstance(self.src_file, str):
             # src_file is a filename, check if it is a zip-file
             if not zipfile.is_zipfile(self.src_file):
                 raise TypeError("%s is no odt file." % self.src_file)
@@ -231,13 +231,13 @@ class ODFContentParser(xml.sax.saxutils.XMLGenerator):
         xml.sax.saxutils.XMLGenerator.__init__(self, out, encoding)
 
     def startElementNS(self, name, qname, attrs):
-        if name == (TEXTNS, u'user-field-decl'):
-            field_name = attrs.get((TEXTNS, u'name'))
-            value_type = attrs.get((OFFICENS, u'value-type'))
+        if name == (TEXTNS, 'user-field-decl'):
+            field_name = attrs.get((TEXTNS, 'name'))
+            value_type = attrs.get((OFFICENS, 'value-type'))
             if value_type == 'string':
-                value = attrs.get((OFFICENS, u'string-value'))
+                value = attrs.get((OFFICENS, 'string-value'))
             else:
-                value = attrs.get((OFFICENS, u'value'))
+                value = attrs.get((OFFICENS, 'value'))
 
             attrs = self._callback_func(field_name, value_type, value, attrs)
 
@@ -263,7 +263,7 @@ class ODFContentParser(xml.sax.saxutils.XMLGenerator):
                 self._out.write(' xmlns:%s="%s"' % (k,v))
         self._undeclared_ns_maps = []
 
-        for (name, value) in attrs.items():
+        for (name, value) in list(attrs.items()):
             if name[0] is None:
                 name = name[1]
             elif self._current_context[name[0]] is None:

@@ -27,11 +27,11 @@ from ocrfeeder.util import lib
 from ocrfeeder.util.constants import *
 import sys
 import os.path
-import urllib
-import widgetPresenter
-from widgetModeler import ImageReviewer_Controler
-from dataHolder import DataBox, TextData
-from pagesiconview import PagesIconView
+import urllib.request, urllib.parse, urllib.error
+from . import widgetPresenter
+from .widgetModeler import ImageReviewer_Controler
+from .dataHolder import DataBox, TextData
+from .pagesiconview import PagesIconView
 from ocrfeeder.feeder.ocrEngines import Engine, OcrEnginesManager
 from ocrfeeder.feeder.documentGeneration import DocumentGeneratorManager
 from ocrfeeder.util.configuration import ConfigurationManager
@@ -189,7 +189,7 @@ class Studio:
         dialog = widgetPresenter.QueuedEventsProgressDialog(self.main_window)
         item_obtain = AsyncItem(lib.obtainScanners,(),
                                 self.__obtainScannersFinishedCb,(dialog,))
-        info_obtain = (_('Obtaining scanners'), _(u'Please wait…'))
+        info_obtain = (_('Obtaining scanners'), _('Please wait…'))
         dialog.setItemsList([(info_obtain, item_obtain)])
         dialog.run()
 
@@ -215,7 +215,7 @@ class Studio:
                 self.main_window)
             item_scan = AsyncItem(lib.scan,(device,),
                                   self.__scanFinishedCb,(dialog_scan,))
-            info_scan = (_('Scanning'), _(u'Please wait…'))
+            info_scan = (_('Scanning'), _('Please wait…'))
             dialog_scan.setItemsList([(info_scan, item_scan)])
             dialog_scan.run()
         else:
@@ -259,7 +259,7 @@ class Studio:
                               self.configuration_manager.TEMPORARY_FOLDER),
                              self.__loadPdfFinishedCb,
                              (dialog,))
-            info = (_('Loading PDF'), _(u'Please wait…'))
+            info = (_('Loading PDF'), _('Please wait…'))
             dialog.setItemsList([(info, item)])
             dialog.run()
 
@@ -287,7 +287,7 @@ class Studio:
         self.exportToFormat('ODT', 'ODT')
 
     def exportDialog(self, widget):
-        format_names = [format[1] for format in self.EXPORT_FORMATS.values()]
+        format_names = [format[1] for format in list(self.EXPORT_FORMATS.values())]
         export_dialog = widgetPresenter.ExportDialog(self.main_window,
                                                      _('Export pages'),
                                                      format_names)

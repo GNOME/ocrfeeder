@@ -20,9 +20,9 @@
 #
 
 import xml.dom
-from namespaces import nsdict
-import grammar
-from attrconverters import AttrConverters
+from .namespaces import nsdict
+from . import grammar
+from .attrconverters import AttrConverters
 
 # The following code is pasted form xml.sax.saxutils
 # Tt makes it possible to run the code without the xml sax package installed
@@ -37,7 +37,7 @@ def _escape(data, entities={}):
     data = data.replace("&", "&amp;")
     data = data.replace("<", "&lt;")
     data = data.replace(">", "&gt;")
-    for chars, entity in entities.items():
+    for chars, entity in list(entities.items()):
         data = data.replace(chars, entity)
     return data
 
@@ -74,9 +74,9 @@ def _nsassign(namespace):
     return nsdict.setdefault(namespace,"ns" + str(len(nsdict)))
 
 # Exceptions
-class IllegalChild(StandardError):
+class IllegalChild(Exception):
     """ Complains if you add an element to a parent where it is not allowed """
-class IllegalText(StandardError):
+class IllegalText(Exception):
     """ Complains if you add text or cdata to an element where it is not allowed """
 
 class Node(xml.dom.Node):
@@ -90,8 +90,8 @@ class Text(Node):
 
     def toXml(self,level,f):
         if self.data:
-            f.write(_escape(unicode(self.data).encode('utf-8')))
-    
+            f.write(_escape(self.data))
+
 class CDATASection(Text):
     nodeType = Node.CDATA_SECTION_NODE
 
@@ -110,7 +110,7 @@ class Element(Node):
     nodeType = Node.ELEMENT_NODE
     parentNode = None
     namespaces = {}  # Due to shallow copy this is a static variable
-    
+
     def __init__(self, attributes=None, elements=None, text=None, cdata=None, qname=None, qattributes=None, **args):
         if qname is not None:
             self.qname = qname
@@ -119,7 +119,7 @@ class Element(Node):
         self.allowed_children = grammar.allowed_children.get(self.qname)
         namespace = self.qname[0]
         prefix = _nsassign(namespace)
-        if not self.namespaces.has_key(namespace):
+        if namespace not in self.namespaces:
             self.namespaces[namespace] = prefix
         self.type= prefix + ":" + self.qname[1]
         if elements is not None:
@@ -135,25 +135,25 @@ class Element(Node):
         self.attributes={}
         # Load the attributes from the 'attributes' argument
         if attributes:
-            for attr, value in attributes.items():
+            for attr, value in list(attributes.items()):
                 self.addAttribute(attr, value)
         # Load the qualified attributes
         if qattributes:
-            for attr, value in qattributes.items():
+            for attr, value in list(qattributes.items()):
                 self.addAttrNS(attr[0], attr[1], value)
         if allowed_attrs is not None:
             # Load the attributes from the 'args' argument
-            for arg in args.keys():
+            for arg in list(args.keys()):
                 self.addAttribute(arg, args[arg])
         else:
-            for arg in args.keys():  # If any attribute is allowed
+            for arg in list(args.keys()):  # If any attribute is allowed
                 self.attributes[arg]=args[arg]
         # Test that all mandatory attributes have been added.
         required = grammar.required_attributes.get(self.qname)
         if required:
             for r in required:
                 if self.getAttr(r[0],r[1]) is None:
-                    raise AttributeError, "Required attribute missing: %s in <%s>" % (r[1].lower().replace('-',''), self.type)
+                    raise AttributeError("Required attribute missing: %s in <%s>" % (r[1].lower().replace('-',''), self.type))
 
     def allowed_attributes(self):
         return grammar.allowed_attributes.get(self.qname)
@@ -165,20 +165,20 @@ class Element(Node):
         """
         if self.allowed_children is not None:
             if element.qname not in self.allowed_children:
-                raise IllegalChild, "<%s> is not allowed in <%s>" % ( element.type, self.type)
+                raise IllegalChild("<%s> is not allowed in <%s>" % ( element.type, self.type))
         self.elements.append(element)
         element.parentNode = self
 
     def addText(self, text):
         if self.qname not in grammar.allows_text:
-            raise IllegalText, "The <%s> element does not allow text" % self.type
+            raise IllegalText("The <%s> element does not allow text" % self.type)
         else:
             if text != '':
                 self.elements.append(Text(text))
 
     def addCDATA(self, cdata):
         if self.qname not in grammar.allows_text:
-            raise IllegalText, "The <%s> element does not allow text" % self.type
+            raise IllegalText("The <%s> element does not allow text" % self.type)
         else:
             self.elements.append(CDATASection(cdata))
 
@@ -195,12 +195,12 @@ class Element(Node):
                 prefix, localname = attr
                 self.addAttrNS(prefix, localname, value)
             else:
-                raise AttributeError, "Unable to add simple attribute - use (namespace, localpart)"
+                raise AttributeError("Unable to add simple attribute - use (namespace, localpart)")
         else:
             # Construct a list of allowed arguments
             allowed_args = [ a[1].lower().replace('-','') for a in allowed_attrs]
             if attr not in allowed_args:
-                raise AttributeError, "Attribute %s is not allowed in <%s>" % ( attr, self.type)
+                raise AttributeError("Attribute %s is not allowed in <%s>" % ( attr, self.type))
             i = allowed_args.index(attr)
             self.addAttrNS(allowed_attrs[i][0], allowed_attrs[i][1], value)
 
@@ -212,7 +212,7 @@ class Element(Node):
         """
         allowed_attrs = self.allowed_attributes()
         prefix = _nsassign(namespace)
-        if not self.namespaces.has_key(namespace):
+        if namespace not in self.namespaces:
             self.namespaces[namespace] = prefix
 #       if allowed_attrs and (namespace, localpart) not in allowed_attrs:
 #           raise AttributeError, "Attribute %s:%s is not allowed in element <%s>" % ( prefix, localpart, self.type)
@@ -221,7 +221,7 @@ class Element(Node):
 
     def getAttr(self, namespace, localpart):
         prefix = _nsassign(namespace)
-        if not self.namespaces.has_key(namespace):
+        if namespace not in self.namespaces:
             self.namespaces[namespace] = prefix
         return self.attributes.get(prefix + ":" + localpart)
 
@@ -229,10 +229,10 @@ class Element(Node):
         """ Generate XML stream out of the tree structure """
         f.write('<'+self.type)
         if self.parentNode is None:
-            for namespace, prefix in self.namespaces.items():
+            for namespace, prefix in list(self.namespaces.items()):
                 f.write(' xmlns:' + prefix + '="'+ _escape(str(namespace))+'"')
-        for attkey in self.attributes.keys():
-            f.write(' '+_escape(str(attkey))+'='+_quoteattr(unicode(self.attributes[attkey]).encode('utf-8')))
+        for attkey in list(self.attributes.keys()):
+            f.write(' '+_escape(str(attkey))+'='+_quoteattr(str(self.attributes[attkey])))
         if self.elements:
             f.write('>')
         for element in self.elements:

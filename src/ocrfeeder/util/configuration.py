@@ -148,7 +148,7 @@ class ConfigurationManager(object):
     def getEnginesInSystem(self):
         existing_engines = []
         engines_paths = [(name, getExecPath(conf['engine_path']))\
-                         for name, conf in PREDEFINED_ENGINES.items()]
+                         for name, conf in list(PREDEFINED_ENGINES.items())]
         for name, path in engines_paths:
             if not path:
                 continue
@@ -192,7 +192,7 @@ class ConfigurationManager(object):
         color_list = [value.strip('()\ ') for value in color.split(',')]
         try:
             int_color_list = [int(value) for value in color_list]
-        except ValueError, exception:
+        except ValueError as exception:
             return None
         return tuple(int_color_list)
 
@@ -350,14 +350,14 @@ class ConfigurationManager(object):
         ConfigurationManager.conf = dict(self.DEFAULTS)
 
     def getDefault(self, variable_name):
-        if variable_name in self.DEFAULTS.keys():
+        if variable_name in list(self.DEFAULTS.keys()):
             return self.DEFAULTS[variable_name]
         else:
             return ''
 
     def getEngineDefaultConfiguration(self, engine_path):
         path = os.path.basename(engine_path)
-        for name, conf in PREDEFINED_ENGINES.items():
+        for name, conf in list(PREDEFINED_ENGINES.items()):
             if conf['engine_path'] == path:
                 return conf
         return None
@@ -367,7 +367,7 @@ class ConfigurationManager(object):
         if not os.path.isfile(configuration_file):
             return False
         document = minidom.parse(configuration_file)
-        for key in self.DEFAULTS.keys():
+        for key in list(self.DEFAULTS.keys()):
             nodeList = document.getElementsByTagName(key)
             if nodeList:
                 for node in nodeList:
@@ -381,12 +381,12 @@ class ConfigurationManager(object):
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
         doc = minidom.Document()
         root_node = doc.createElement('ocrfeeder')
-        for key, value in ConfigurationManager.conf.items():
+        for key, value in list(ConfigurationManager.conf.items()):
             new_node = doc.createElement(key)
             new_node.appendChild(doc.createTextNode(str(value)))
             root_node.appendChild(new_node)
-        configuration = doc.toxml(encoding = 'utf-8')
-        configuration += '\n' + root_node.toxml(encoding = 'utf-8')
+        configuration = doc.toxml(encoding = 'utf-8').decode()
+        configuration += '\n' + root_node.toxml(encoding = 'utf-8').decode()
         new_configuration_file = open(configuration_file, 'w')
         new_configuration_file.write(configuration)
         new_configuration_file.close()

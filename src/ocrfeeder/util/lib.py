@@ -25,12 +25,12 @@ from PIL import Image
 import tempfile
 from gi.repository import Gtk
 import math
-from constants import *
+from .constants import *
 import sane
 import tempfile
 import locale
 from lxml import etree
-from log import debug
+from .log import debug
 
 def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR):
     icon = Gtk.Image()
@@ -144,7 +144,7 @@ def unpaperImage(configuration_manager, image_path):
     debug(command)
     try:
         os.system(command)
-    except Exception, exception:
+    except Exception as exception:
         debug(exception)
         return None
     finally:
@@ -156,7 +156,7 @@ def obtainScanners():
     try:
         devices = sane.get_devices()
         return devices
-    except (RuntimeError, sane._sane.error), msgerr:
+    except (RuntimeError, sane._sane.error) as msgerr:
         return None
 
 def scan(device):
@@ -169,7 +169,7 @@ def scan(device):
         result.save(filename, 'PNG')
         scandev.close()
         return filename
-    except (RuntimeError, sane._sane.error), msgerr:
+    except (RuntimeError, sane._sane.error) as msgerr:
         return None
 
 languages = {}
@@ -193,7 +193,7 @@ def makeRadioButton(label, from_widget=None):
     return button
 
 def ensureUnicode(text):
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text
 
-    return unicode(text, 'utf-8')
+    return str(text, 'utf-8')

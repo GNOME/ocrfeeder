@@ -19,7 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
+from .dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.util import lib, PAPER_SIZES
 from ocrfeeder.util.configuration import ConfigurationManager
 from ocrfeeder.util.asyncworker import AsyncWorker
@@ -35,7 +35,7 @@ import signal
 import subprocess
 import sys
 import threading
-import Queue
+import queue
 import time
 _ = gettext.gettext
 
@@ -83,12 +83,12 @@ class MainWindow(Gtk.Window):
                                   ('Quit', Gtk.STOCK_QUIT, _('_Quit'), None, _('Exit the program'), menu_items['exit']),
                                   ('OpenProject', Gtk.STOCK_OPEN, _('_Open'), None, _('Open project'), menu_items['open_project']),
                                   ('SaveProject', Gtk.STOCK_SAVE, _('_Save'), None, _('Save project'), menu_items['save_project']),
-                                  ('SaveProjectAs', Gtk.STOCK_SAVE_AS, _(u'_Save As…'), '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
+                                  ('SaveProjectAs', Gtk.STOCK_SAVE_AS, _('_Save As…'), '<control><shift>s', _('Save project with a chosen name'), menu_items['save_project_as']),
                                   ('AddImage', Gtk.STOCK_ADD, _('_Add Image'), None, _('Add another image'), menu_items['add_image']),
                                   ('AddFolder', Gtk.STOCK_ADD, _('Add _Folder'), None, _('Add all images in a folder'), menu_items['add_folder']),
                                   ('AppendProject', Gtk.STOCK_ADD, _('Append Project'), None, _('Load a project and append it to the current one'), menu_items['append_project']),
                                   ('ImportPDF', Gtk.STOCK_ADD, _('_Import PDF'), None, _('Import PDF'), menu_items['import_pdf']),
-                                  ('Export', None, _(u'_Export…'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
+                                  ('Export', None, _('_Export…'), '<control><shift>e', _('Export to a chosen format'), menu_items['export_dialog']),
                                   ('Edit', None, _('_Edit')),
                                   ('EditPage', Gtk.STOCK_EDIT, _('_Edit Page'), None, _('Edit page settings'), menu_items['edit_page']),
                                   ('Preferences', Gtk.STOCK_PREFERENCES, _('_Preferences'), None, _('Configure the application'), menu_items['preferences']),
@@ -278,7 +278,7 @@ class LanguagesComboBox(Gtk.ComboBox):
         model = self.get_model()
         if model.get_n_columns() != 3:
             return
-        cached_languages = self._cached_iters.keys()
+        cached_languages = list(self._cached_iters.keys())
         languages_to_unset = [lang for lang in cached_languages
                               if lang not in languages]
         for lang in languages:
@@ -833,9 +833,9 @@ class PageSizeDialog(Gtk.Dialog):
         page_size_frame = PlainFrame(_('Page size'))
         size_box = Gtk.VBox(spacing = 12)
         self.paper_sizes = Gtk.ComboBoxText.new()
-        papers = PAPER_SIZES.keys()
+        papers = list(PAPER_SIZES.keys())
         papers.sort()
-        self.paper_sizes.append_text(_(u'Custom…'))
+        self.paper_sizes.append_text(_('Custom…'))
         for paper in papers:
             self.paper_sizes.append_text(paper)
         active_index = self.__checkIfSizeIsStandard(page_size)
@@ -892,7 +892,7 @@ class PageSizeDialog(Gtk.Dialog):
     def __checkIfSizeIsStandard(self, page_size):
         width, height = page_size
         i = 1
-        names = PAPER_SIZES.keys()
+        names = list(PAPER_SIZES.keys())
         names.sort()
         for name in names:
             size = PAPER_SIZES[name]
@@ -969,7 +969,7 @@ class UnpaperDialog(Gtk.Dialog):
         if os.path.exists(unpapered_image):
             unpapered_image = lib.getNonExistingFileName(unpapered_image)
         command += ' %s %s' % (name, unpapered_image)
-        progress_bar = CommandProgressBarDialog(self, command, _('Performing Unpaper'), _(u'Performing unpaper. Please wait…'))
+        progress_bar = CommandProgressBarDialog(self, command, _('Performing Unpaper'), _('Performing unpaper. Please wait…'))
         progress_bar.run()
         self.unpapered_image = unpapered_image
 
@@ -979,7 +979,7 @@ class UnpaperDialog(Gtk.Dialog):
             return
         try:
             thumbnail_image = Image.open(image_path)
-        except Exception, exception:
+        except Exception as exception:
             debug(exception.message)
             return
         thumbnail_image.thumbnail((150, 200), Image.ANTIALIAS)
@@ -1979,7 +1979,7 @@ class OcrSettingsDialog(Gtk.Dialog):
             return True
         except:
             SimpleDialog(self, _('Error setting the new engine; please check your engine settings.'), _('Warning'), 'warning').run()
-            print sys.exc_info()
+            print(sys.exc_info())
             return False
 
     def __packSettingInFrame(self, box, size_group, entry_name, entry,
@@ -2102,9 +2102,9 @@ class SpellCheckerDialog():
 
     def __checkHasAlternative(self):
         if not self.word_entry.get_text():
-            [self.dictButtons[button].set_sensitive(False) for button in self.dictButtons.keys() if not button.find('change')]
+            [self.dictButtons[button].set_sensitive(False) for button in list(self.dictButtons.keys()) if not button.find('change')]
         else:
-            [self.dictButtons[button].set_sensitive(True) for button in self.dictButtons.keys() if not button.find('change')]
+            [self.dictButtons[button].set_sensitive(True) for button in list(self.dictButtons.keys()) if not button.find('change')]
 
     def suggestions_list_row_activated_cb(self, widget, x, y):
         self.word_entry.set_text(widget.get_model().get_value(widget.get_model().get_iter(x), 0))
@@ -2141,7 +2141,7 @@ class SpellCheckerDialog():
         append = self.misspelled_word.insert_with_tags_by_name
         append(iter, "No misspelled words", 'fg_red')
         self.word_entry.set_sensitive(False)
-        [self.dictButtons[button].set_sensitive(False) for button in self.dictButtons.keys()]
+        [self.dictButtons[button].set_sensitive(False) for button in list(self.dictButtons.keys())]
 
     def __next(self):
         self.word_entry.set_text('')
@@ -2149,7 +2149,7 @@ class SpellCheckerDialog():
         self.suggestions_list.clear()
 
         try:
-            self._checker.next()
+            next(self._checker)
         except StopIteration:
             self.__set_no_more()
             return False

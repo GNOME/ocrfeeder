@@ -80,7 +80,7 @@ class Engine:
             if self.languages:
                 favorite_language = self.languages.get(self._favorite_language, '')
                 if not favorite_language:
-                    values = self.languages.values()
+                    values = list(self.languages.values())
                     if values:
                         favorite_language = values[0]
                 parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT,
@@ -90,13 +90,15 @@ class Engine:
             parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT, '')
 
         text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
+        '''
         try:
             try:
-                text = unicode(text, 'utf-8', 'replace')
+                text = str(text, 'utf-8', 'replace')
             except UnicodeDecodeError:
-                text = unicode(text, 'ascii', 'replace').encode('utf-8', 'replace')
+                text = str(text, 'ascii', 'replace').encode('utf-8', 'replace')
         finally:
             os.unlink(self.image_path)
+        '''
         return text
 
     def classify(self, reading_output, rules = []):
@@ -138,7 +140,7 @@ class Engine:
                        'languages': self.serializeLanguages(self.languages),
                        'version': self.version}
         root = ET.Element('engine')
-        for key, value in engine_info.items():
+        for key, value in list(engine_info.items()):
             if not key or not value:
                 continue
             subelement = ET.SubElement(root, key)
@@ -156,7 +158,7 @@ class Engine:
 
     def serializeLanguages(self, language_dict):
         return ','.join(['%s:%s' % (lang, engine_lang)
-                         for lang, engine_lang in language_dict.items()])
+                         for lang, engine_lang in list(language_dict.items())])
 
     def hasLanguages(self):
         return self.languages and self.language_argument and \
@@ -192,7 +194,7 @@ class OcrEnginesManager:
         return None
 
     def replaceEngine(self, engine, new_engine):
-        for i in xrange(len(self.ocr_engines)):
+        for i in range(len(self.ocr_engines)):
             eng, path = self.ocr_engines[i]
             if eng == engine:
                 new_path = self.engineToXml(new_engine, path)
@@ -250,10 +252,10 @@ class OcrEnginesManager:
 
         try:
             engine = Engine(**arguments)
-        except TypeError, exception:
+        except TypeError as exception:
             debug('Error when unserializing engine: %s' % exception.message)
             engine = None
-        except WrongSettingsForEngine, we:
+        except WrongSettingsForEngine as we:
             debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
             engine = None
         else:

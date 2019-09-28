@@ -35,9 +35,9 @@ from odf.namespaces import STYLENS, OFFICENS
 
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 
 
@@ -71,13 +71,13 @@ class ODFParser(handler.ContentHandler):
             self.data = []
         # Create the element
         attrdict = {}
-        for (att,value) in attrs.items():
+        for (att,value) in list(attrs.items()):
             attrdict[att] = value
         try:
             e = element.Element(qname = tag, qattributes=attrdict)
             self.curr = e
-        except AttributeError, v:
-            print "Error: %s" % v
+        except AttributeError as v:
+            print("Error: %s" % v)
 
         if tag == (OFFICENS,'styles'):
             self.doc.styles = e

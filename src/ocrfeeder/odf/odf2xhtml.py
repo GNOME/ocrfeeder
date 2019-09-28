@@ -27,11 +27,11 @@ from xml.sax.xmlreader import InputSource
 from xml.sax.saxutils import escape, quoteattr
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
-from namespaces import ANIMNS, CHARTNS, CONFIGNS, DCNS, DR3DNS, DRAWNS, FONS, \
+from .namespaces import ANIMNS, CHARTNS, CONFIGNS, DCNS, DR3DNS, DRAWNS, FONS, \
   FORMNS, MATHNS, METANS, NUMBERNS, OFFICENS, PRESENTATIONNS, SCRIPTNS, \
   SMILNS, STYLENS, SVGNS, TABLENS, TEXTNS, XLINKNS
 
@@ -70,41 +70,41 @@ class StyleToCSS:
         self.fillimages = {}
 
         self.ruleconversions = {
-            (DRAWNS,u'fill-image-name'): self.c_drawfillimage,
-            (FONS,u"background-color"): self.c_fo,
-            (FONS,u"border"): self.c_fo,
-            (FONS,u"border-bottom"): self.c_fo,
-            (FONS,u"border-left"): self.c_fo,
-            (FONS,u"border-right"): self.c_fo,
-            (FONS,u"border-top"): self.c_fo,
-            (FONS,u"color"): self.c_fo,
-            (FONS,u"font-family"): self.c_fo,
-            (FONS,u"font-size"): self.c_fo,
-            (FONS,u"font-style"): self.c_fo,
-            (FONS,u"font-variant"): self.c_fo,
-            (FONS,u"font-weight"): self.c_fo,
-            (FONS,u"line-height"): self.c_fo,
-            (FONS,u"margin"): self.c_fo,
-            (FONS,u"margin-bottom"): self.c_fo,
-            (FONS,u"margin-left"): self.c_fo,
-            (FONS,u"margin-right"): self.c_fo,
-            (FONS,u"margin-top"): self.c_fo,
-            (FONS,u"min-height"): self.c_fo,
-            (FONS,u"padding"): self.c_fo,
-            (FONS,u"padding-bottom"): self.c_fo,
-            (FONS,u"padding-left"): self.c_fo,
-            (FONS,u"padding-right"): self.c_fo,
-            (FONS,u"padding-top"): self.c_fo,
-            (FONS,u"page-width"): self.c_page_width,
-            (FONS,u"page-height"): self.c_page_height,
-            (FONS,u"text-align"): self.c_text_align,
-            (FONS,u"text-indent") :self.c_fo,
-            (TABLENS,u'border-model') :self.c_border_model,
-            (STYLENS,u'width') : self.c_width,
-            (STYLENS,u'column-width') : self.c_width,
-            (STYLENS,u"font-name"): self.c_fn,
-            (STYLENS,u'text-position'): self.c_text_position,
-            (STYLENS,u'horizontal-pos'): self.c_hp,
+            (DRAWNS,'fill-image-name'): self.c_drawfillimage,
+            (FONS,"background-color"): self.c_fo,
+            (FONS,"border"): self.c_fo,
+            (FONS,"border-bottom"): self.c_fo,
+            (FONS,"border-left"): self.c_fo,
+            (FONS,"border-right"): self.c_fo,
+            (FONS,"border-top"): self.c_fo,
+            (FONS,"color"): self.c_fo,
+            (FONS,"font-family"): self.c_fo,
+            (FONS,"font-size"): self.c_fo,
+            (FONS,"font-style"): self.c_fo,
+            (FONS,"font-variant"): self.c_fo,
+            (FONS,"font-weight"): self.c_fo,
+            (FONS,"line-height"): self.c_fo,
+            (FONS,"margin"): self.c_fo,
+            (FONS,"margin-bottom"): self.c_fo,
+            (FONS,"margin-left"): self.c_fo,
+            (FONS,"margin-right"): self.c_fo,
+            (FONS,"margin-top"): self.c_fo,
+            (FONS,"min-height"): self.c_fo,
+            (FONS,"padding"): self.c_fo,
+            (FONS,"padding-bottom"): self.c_fo,
+            (FONS,"padding-left"): self.c_fo,
+            (FONS,"padding-right"): self.c_fo,
+            (FONS,"padding-top"): self.c_fo,
+            (FONS,"page-width"): self.c_page_width,
+            (FONS,"page-height"): self.c_page_height,
+            (FONS,"text-align"): self.c_text_align,
+            (FONS,"text-indent") :self.c_fo,
+            (TABLENS,'border-model') :self.c_border_model,
+            (STYLENS,'width') : self.c_width,
+            (STYLENS,'column-width') : self.c_width,
+            (STYLENS,"font-name"): self.c_fn,
+            (STYLENS,'text-position'): self.c_text_position,
+            (STYLENS,'horizontal-pos'): self.c_hp,
             # FIXME Should do style:vertical-pos here
         }
 
@@ -215,7 +215,7 @@ class StyleToCSS:
                 sdict['float'] = "left"
             else:
                 sdict['position'] = "relative" # No wrapping
-                if ruleset.has_key( (SVGNS,'x') ):
+                if (SVGNS,'x') in ruleset:
                     sdict['left'] = ruleset[(SVGNS,'x')]
 
     def c_page_width(self, ruleset, sdict, rule, val):
@@ -233,7 +233,7 @@ class StyleToCSS:
             it is already CSS2
         """
         sdict = {}
-        for rule,val in ruleset.items():
+        for rule,val in list(ruleset.items()):
             if rule[0] == '':
                 sdict[rule[1]] = val
                 continue
@@ -261,7 +261,7 @@ class TagStack:
     def rfindattr(self, attr):
         """ Find a tag with the given attribute """
         for tag, attrs in self.stack:
-            if attrs.has_key(attr):
+            if attr in attrs:
                 return attrs[attr]
         return None
     def count_tags(self, tag):
@@ -418,7 +418,7 @@ class ODF2XHTML(handler.ContentHandler):
     def opentag(self, tag, attrs={}):
         """ Create an open HTML tag """
         a = []
-        for key,val in attrs.items():
+        for key,val in list(attrs.items()):
             a.append('''%s=%s''' % (key, quoteattr(val)))
         if len(a) == 0:
             self.writeout("<%s>" % tag)
@@ -430,7 +430,7 @@ class ODF2XHTML(handler.ContentHandler):
 
     def emptytag(self, tag, attrs={}):
         a = []
-        for key,val in attrs.items():
+        for key,val in list(attrs.items()):
             a.append('''%s=%s''' % (key, quoteattr(val)))
         self.writeout("<%s %s/>\n" % (tag, " ".join(a)))
 
@@ -526,13 +526,13 @@ class ODF2XHTML(handler.ContentHandler):
             name = "PR-" + attrs.get( (PRESENTATIONNS,'style-name'), "")
         name = name.replace(".","_")
         style = "position: absolute;"
-        if attrs.has_key( (SVGNS,"width") ):
+        if (SVGNS,"width") in attrs:
             style = style + "width:" + attrs[(SVGNS,"width")] + ";"
-        if attrs.has_key( (SVGNS,"height") ):
+        if (SVGNS,"height") in attrs:
             style = style + "height:" +  attrs[(SVGNS,"height")] + ";"
-        if attrs.has_key( (SVGNS,"x") ):
+        if (SVGNS,"x") in attrs:
             style = style + "left:" +  attrs[(SVGNS,"x")] + ";"
-        if attrs.has_key( (SVGNS,"y") ):
+        if (SVGNS,"y") in attrs:
             style = style + "top:" +  attrs[(SVGNS,"y")] + ";"
         self.opentag('div', {'class': name, 'style': style})
 
@@ -598,18 +598,18 @@ class ODF2XHTML(handler.ContentHandler):
         for name in self.stylestack:
             styles = self.styledict.get(name)
             # Preload with the family's default style
-            if styles.has_key('__style-family') and self.styledict.has_key(styles['__style-family']):
+            if '__style-family' in styles and styles['__style-family'] in self.styledict:
                 #if styles['__style-family'] == 'p': pdb.set_trace()
                 familystyle = self.styledict[styles['__style-family']].copy()
                 del styles['__style-family']
-                for style, val in styles.items():
+                for style, val in list(styles.items()):
                     familystyle[style] = val
                 styles = familystyle
             # Resolve the remaining parent styles
-            while styles.has_key('__parent-style-name') and self.styledict.has_key(styles['__parent-style-name']):
+            while '__parent-style-name' in styles and styles['__parent-style-name'] in self.styledict:
                 parentstyle = self.styledict[styles['__parent-style-name']].copy()
                 del styles['__parent-style-name']
-                for style, val in styles.items():
+                for style, val in list(styles.items()):
                     parentstyle[style] = val
                 styles = parentstyle
             self.styledict[name] = styles
@@ -618,12 +618,12 @@ class ODF2XHTML(handler.ContentHandler):
             styles = self.styledict.get(name)
             css2 = self.cs.convert_styles(styles)
             self.writeout("%s {\n" % name)
-            for style, val in css2.items():
+            for style, val in list(css2.items()):
                 self.writeout("\t%s: %s;\n" % (style, val) )
             self.writeout("}\n")
 
     def generate_footnotes(self):
-        for key,note in self.notedict.items():
+        for key,note in list(self.notedict.items()):
             self.opentag('div')
             self.opentag('a', { 'name':"footnote-%d" % key })
             self.closetag('a')
@@ -658,8 +658,8 @@ class ODF2XHTML(handler.ContentHandler):
             for the 'paragraph'. We therefore force a standard when we see
             it is a presentation
         """
-        self.styledict['p'] = {(FONS,u'font-size'): u"24pt" }
-        self.styledict['presentation'] = {(FONS,u'font-size'): u"24pt" }
+        self.styledict['p'] = {(FONS,'font-size'): "24pt" }
+        self.styledict['presentation'] = {(FONS,'font-size'): "24pt" }
         self.html_body(tag, attrs)
 
     def e_office_presentation(self, tag, attrs):
@@ -678,7 +678,7 @@ class ODF2XHTML(handler.ContentHandler):
 
     def s_office_text(self, tag, attrs):
         """ OpenDocument text """
-        self.styledict['frame'] = { (STYLENS,'wrap'): u'parallel'}
+        self.styledict['frame'] = { (STYLENS,'wrap'): 'parallel'}
         self.html_body(tag, attrs)
 
     def e_office_text(self, tag, attrs):
@@ -689,7 +689,7 @@ class ODF2XHTML(handler.ContentHandler):
         """ Copy all attributes to a struct.
             We will later convert them to CSS2
         """
-        for key,attr in attrs.items():
+        for key,attr in list(attrs.items()):
             self.styledict[self.currentstyle][key] = attr
 
 
@@ -749,9 +749,9 @@ class ODF2XHTML(handler.ContentHandler):
         pagelayout = attrs.get( (STYLENS,'page-layout-name'), None)
         if pagelayout:
             pagelayout = ".PL-" + pagelayout
-            if self.styledict.has_key( pagelayout ):
+            if pagelayout in self.styledict:
                 styles = self.styledict[pagelayout]
-                for style, val in styles.items():
+                for style, val in list(styles.items()):
                     self.styledict[self.currentstyle][style] = val
             else:
                 self.styledict[self.currentstyle]['__parent-style-name'] = pagelayout
@@ -787,9 +787,9 @@ class ODF2XHTML(handler.ContentHandler):
         if parent:
             parent = "%s-%s" % (sfamily, parent)
             parent = special_styles.get(parent, "."+parent)
-            if self.styledict.has_key( parent ):
+            if parent in self.styledict:
                 styles = self.styledict[parent]
-                for style, val in styles.items():
+                for style, val in list(styles.items()):
                     self.styledict[self.currentstyle][style] = val
             else:
                 self.styledict[self.currentstyle]['__parent-style-name'] = parent
@@ -845,7 +845,7 @@ class ODF2XHTML(handler.ContentHandler):
         htmlattrs = {}
         if c:
             htmlattrs['class'] = "TC-%s" % c.replace(".","_")
-        for x in xrange(repeated):
+        for x in range(repeated):
             self.emptytag('col', htmlattrs)
         self.purgedata()
 
@@ -1046,7 +1046,7 @@ class ODF2XHTML(handler.ContentHandler):
             We use &#160; so we can send the output through an XML parser if we desire to
         """
         c = attrs.get( (TEXTNS,'c'),"1")
-        for x in xrange(int(c)):
+        for x in range(int(c)):
             self.writeout('&#160;')
 
     def s_text_span(self, tag, attrs):

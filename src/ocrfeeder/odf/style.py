@@ -18,12 +18,12 @@
 # Contributor(s):
 #
 
-from namespaces import STYLENS
-from element import Element
+from .namespaces import STYLENS
+from .element import Element
 
 def StyleElement(name, **args):
     e = Element(name=name, **args)
-    if not args.has_key('displayname'):
+    if 'displayname' not in args:
         e.addAttrNS(STYLENS,'display-name', name)
     return e
 

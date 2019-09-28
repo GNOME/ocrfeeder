@@ -1,4 +1,4 @@
-from style import Style, ParagraphProperties, TextProperties
+from .style import Style, ParagraphProperties, TextProperties
 
 def addOOoStandardStyles(styles):
     style = Style(name="Standard", family="paragraph", attributes={'class':"text"})

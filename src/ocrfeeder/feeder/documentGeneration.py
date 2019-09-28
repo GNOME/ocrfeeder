@@ -62,6 +62,7 @@ class DocumentGenerator(object):
         raise NotImplementedError('Method not defined!')
 
     def addBox(self, data_box):
+        print(data_box)
         if data_box.getType() == TEXT_TYPE:
             self.addText(data_box)
         elif data_box.getType() == IMAGE_TYPE:
@@ -467,7 +468,7 @@ class MarkdownGenerator(DocumentGenerator):
             os.mkdir(images_folder)
         for image in self.images:
             shutil.move(image, images_folder)
-        with io.open(os.path.join(self.name, 'document.md'), 'w') as fle:
+        with open(os.path.join(self.name, 'document.md'), 'w') as fle:
             for line in self.text:
                 try:
                     fle.write(line)

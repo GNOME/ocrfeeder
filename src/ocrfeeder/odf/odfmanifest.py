@@ -26,9 +26,9 @@ from xml.sax.xmlreader import InputSource
 import xml.sax.saxutils
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 
 MANIFESTNS="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0"
@@ -115,6 +115,6 @@ def odfmanifest(odtfile):
 if __name__ == "__main__":
     import sys
     result = odfmanifest(sys.argv[1])
-    for file in result.values():
-        print "%-40s %-40s" % (file['media-type'], file['full-path'])
+    for file in list(result.values()):
+        print("%-40s %-40s" % (file['media-type'], file['full-path']))
 
