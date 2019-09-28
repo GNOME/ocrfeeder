@@ -614,8 +614,17 @@ class ImageReviewer_Controler:
                     pixbuf = GdkPixbuf.Pixbuf.new_from_file(page.image_path)
                     for box in page.data_boxes:
                         box.updateImage(pixbuf)
+                        engine = self.get_configured_ocr_engine()
+                        layout_analysis = LayoutAnalysis(engine, 
+                                clean_text=self.configuration_manager.clean_text)
+                        box.setText(layout_analysis.readImage(box.image))
                 document_generator.addPage(page)
             document_generator.save()
+
+    def get_configured_ocr_engine(self):
+        for engine, path in self.ocr_engines:
+            if engine.name == self.configuration_manager.favorite_engine:
+                return engine
 
     def __askPdfFromScratch(self):
         ask_pdf_type_dialog = Gtk.MessageDialog(self.main_window,
