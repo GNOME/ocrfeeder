@@ -64,7 +64,8 @@ class Studio:
         self.EXPORT_FORMATS = {0: ('ODT', _('ODT')),
                                1: ('HTML', _('HTML')),
                                2: ('PDF', _('PDF')),
-                               3: ('TXT', _('Plain Text'))}
+                               3: ('TXT', _('Plain Text')),
+                               4: ('MD', "Markdown")}
 
         self.title = OCRFEEDER_STUDIO_NAME
         self.main_window = widgetPresenter.MainWindow()

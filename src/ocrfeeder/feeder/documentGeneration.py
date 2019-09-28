@@ -435,8 +435,49 @@ class PdfGenerator(DocumentGenerator):
     def save(self):
         self.canvas.save()
 
+class MarkDownGenerator(DocumentGenerator):
+    def __init__(self, name):
+        self.name = name
+        self.document = ''
+        self.images = []
+        self.text = []
+        self.image_counter = 1
+
+    def addPage(self, page):
+        self.addBoxes(page.data_boxes)
+
+    def addText(self, data_box):
+        self.text.append(data_box.getText())
+
+    def addImage(self, data_box):
+        format = 'PNG'
+        image_file = tempfile.mkstemp(dir = ConfigurationManager.TEMPORARY_FOLDER,
+                                      suffix = '.' + format.lower())[1]
+        data_box.image.save(image_file, format = format)
+        self.images.append(image_file)
+        alt_text = "Image " + str(self.image_counter)
+        self.text.append(unicode('![%s](%s) "%s")' % (alt_text, image_file, alt_text)))
+        self.image_counter += 1 
+
+    def save(self):
+        if not os.path.isdir(self.name):
+            os.mkdir(self.name)
+        images_folder = os.path.join(self.name, 'images')
+        if not os.path.exists(images_folder):
+            os.mkdir(images_folder)
+        for image in self.images:
+            shutil.move(image, images_folder)
+        with io.open(os.path.join(self.name, 'document.md'), 'w') as fle:
+            for line in self.text:
+                try:
+                    fle.write(line)
+                except:
+                    print('could not write')
+                    print(line)
+
 manager = DocumentGeneratorManager()
 manager.register('HTML', HtmlGenerator)
 manager.register('ODT', OdtGenerator)
 manager.register('TXT', PlaintextGenerator)
 manager.register('PDF', PdfGenerator)
+manager.register('MD', MarkdownGenerator)
