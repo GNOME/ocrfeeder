@@ -51,7 +51,7 @@ class DocumentGeneratorManager(object):
         return self.GENERATORS.get(id)
 
     def getFormats(self):
-        return self.GENERATORS.keys()
+        return list(self.GENERATORS.keys())
 
 class DocumentGenerator(object):
 
@@ -174,7 +174,7 @@ class HtmlGenerator(DocumentGenerator):
 
     def save(self):
         pages = []
-        for i in xrange(len(self.bodies)):
+        for i in range(len(self.bodies)):
             previous_page = ''
             next_page = ''
             if i != 0:
@@ -216,7 +216,7 @@ class HtmlGenerator(DocumentGenerator):
             file.write(pages[0].encode('utf-8'))
             file.close()
             if len(pages) > 1:
-                for i in xrange(1, len(pages)):
+                for i in range(1, len(pages)):
                     file = open(os.path.join(self.name, 'page%s.html' % (i + 1)), 'w')
                     file.write(pages[i].encode('utf-8'))
                     file.close()
@@ -355,7 +355,7 @@ class OdtGenerator(DocumentGenerator):
 class PlaintextGenerator(DocumentGenerator):
     def __init__(self, name):
         self.name = name
-        self.text = u''
+        self.text = ''
 
     def addText(self, newText):
         self.text += newText
@@ -435,7 +435,7 @@ class PdfGenerator(DocumentGenerator):
     def save(self):
         self.canvas.save()
 
-class MarkDownGenerator(DocumentGenerator):
+class MarkdownGenerator(DocumentGenerator):
     def __init__(self, name):
         self.name = name
         self.document = ''
@@ -456,7 +456,7 @@ class MarkDownGenerator(DocumentGenerator):
         data_box.image.save(image_file, format = format)
         self.images.append(image_file)
         alt_text = "Image " + str(self.image_counter)
-        self.text.append(unicode('![%s](%s) "%s")\n' % (alt_text, image_file, alt_text)))
+        self.text.append(str('![%s](%s) "%s")\n' % (alt_text, image_file, alt_text)))
         self.image_counter += 1
 
     def save(self):
