@@ -2061,10 +2061,10 @@ class SpellCheckerDialog():
     def __init__(self, parent, current_reviewer, language):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(OCRFEEDER_SPELLCHECKER_UI)
-        self = self.builder.get_object('check_spelling_window')
-        self.set_transient_for(parent)
+        self.window = self.builder.get_object('check_spelling_window')
+        self.window.set_transient_for(parent)
         self.builder.connect_signals(self)
-        self.present()
+        self.window.present()
         self.reviewer = current_reviewer
         self.text = self.reviewer.editor.box_editor.getText()
         self.dictButtons = {'change_button':self.builder.get_object('change_button'),
@@ -2133,10 +2133,10 @@ class SpellCheckerDialog():
         self.__next()
 
     def close_button_clicked_cb(self, widget):
-        self.destroy()
+        self.window.destroy()
 
     def check_spelling_window_delete_event_cb(self, widget, data):
-        self.destroy()
+        self.window.destroy()
 
     def __set_no_more(self):
         self.misspelled_word.set_text('')
