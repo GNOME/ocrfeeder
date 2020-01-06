@@ -200,10 +200,10 @@ class Studio:
             Gdk.threads_enter()
             response = scanner_chooser_dialog.run()
             Gdk.threads_leave()
-            scanner_chooser_dialog.destroy()
             if response == Gtk.ResponseType.ACCEPT:
                 device = scanner_chooser_dialog.getSelectedDevice()
-            else:
+            scanner_chooser_dialog.destroy()
+            if response != Gtk.ResponseType.ACCEPT:
                 return
         elif len(devices) == 1:
             device = devices[0][0]
