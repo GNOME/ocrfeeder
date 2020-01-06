@@ -32,6 +32,7 @@ AX_PYTHON_MODULE([enchant],[needed])
 AX_PYTHON_MODULE([sane],[needed])
 AX_PYTHON_MODULE([PIL],[needed])
 AX_PYTHON_MODULE([reportlab],[needed])
+AX_PYTHON_MODULE([odf],[needed])
 
 dnl == Introspection Dependencies ==
 
@@ -74,7 +75,6 @@ bin/ocrfeeder-cli
 src/Makefile
 src/ocrfeeder/Makefile
 src/ocrfeeder/feeder/Makefile
-src/ocrfeeder/odf/Makefile
 src/ocrfeeder/studio/Makefile
 src/ocrfeeder/util/Makefile
 src/ocrfeeder/util/constants.py

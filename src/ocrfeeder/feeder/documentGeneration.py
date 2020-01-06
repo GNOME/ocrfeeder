@@ -18,11 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from ocrfeeder.odf.draw import Frame, TextBox, Image
-from ocrfeeder.odf.opendocument import OpenDocumentText
-from ocrfeeder.odf.style import Style, MasterPage, GraphicProperties, ParagraphProperties, \
+from odf.draw import Frame, TextBox, Image
+from odf.opendocument import OpenDocumentText
+from odf.style import Style, MasterPage, GraphicProperties, ParagraphProperties, \
     TextProperties, PageLayout, PageLayoutProperties
-from ocrfeeder.odf.text import P, Page, PageSequence
+from odf.text import P, Page, PageSequence
 from ocrfeeder.util import TEXT_TYPE, IMAGE_TYPE, ALIGN_LEFT, ALIGN_RIGHT, ALIGN_CENTER, \
     ALIGN_FILL
 from ocrfeeder.util.configuration import ConfigurationManager

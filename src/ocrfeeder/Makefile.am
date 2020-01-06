@@ -6,8 +6,7 @@ ocrfeeder_PYTHON = \
 SUBDIRS = \
 	feeder/ \
 	studio/ \
-	util/ \
-	odf/
+	util/
 
 clean-local:
 	rm -rf *.pyc *.pyo
