@@ -231,7 +231,7 @@ class Studio:
             self.__addImagesToReviewer([image_path])
             Gdk.threads_leave()
         else:
-            error = widgetPresenter.SimpleDialog(\
+            error = widgetPresenter.SimpleDialog(self.main_window,
                                              _("Error scanning page"),
                                              _("Error"),
                                              'warning')
