@@ -160,8 +160,18 @@ def obtainScanners():
 def scan(device):
     try:
         scandev = sane.open(device)
-        scandev.mode = 'color'
-        scandev.resolution = 300
+        try:
+            scandev.mode = 'Color24'
+        except:
+            debug('Unable to set scanner mode to "Color24".')
+            try:
+                scandev.mode = 'Color'
+            except:
+                debug('Unable to set scanner mode to "Color". Using default.')
+        try:
+            scandev.resolution = 300
+        except:
+            debug('Unable to set scanner resolution to 300 DPI. Using default.')
         result = scandev.scan()
         filename = tempfile.mktemp(suffix='.png')
         result.save(filename, 'PNG')
