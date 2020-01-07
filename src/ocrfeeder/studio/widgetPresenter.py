@@ -692,13 +692,13 @@ class BoxEditor(Gtk.ScrolledWindow):
         for engine in engines_list:
             self.ocr_combo_box.append_text(engine)
         if engines_list:
-            engine_index = None
+            engine_index = -1
             if current_engine:
                 try:
                     engine_index = engines_list.index(current_engine)
                 except ValueError:
-                    engine_index = -1
-            if not engine_index >= 0:
+                    pass
+            if engine_index < 0:
                 try:
                     engine_index = engines_list.index(ConfigurationManager().favorite_engine)
                 except ValueError:
