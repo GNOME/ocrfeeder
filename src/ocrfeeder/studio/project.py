@@ -135,7 +135,7 @@ class ProjectLoader:
             debug('Page Data: %s' % page_data)
             data_boxes = []
             for data_box in page_data['data_boxes']:
-                args = []
+                args = {}
                 # text variable is to avoid problems with
                 # escaping characters
                 text = ''
@@ -143,13 +143,12 @@ class ProjectLoader:
                     if var_name == 'text':
                         text = value
                         continue
-                    real_value = '"""%s"""' % re.escape(value)
                     try:
                         real_value = int(value)
                     except ValueError:
-                        pass
-                    args.append('%s = %s' % (var_name, real_value))
-                exec('box = DataBox(%s)' % ', '.join(args))
+                        real_value = value
+                    args[var_name] = real_value
+                box = DataBox(**args)
                 box.text = text
                 data_boxes.append(box)
             image_path = page_data['image_path']
