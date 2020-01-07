@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -192,7 +190,7 @@ class ConfigurationManager(object):
         color_list = [value.strip('()\ ') for value in color.split(',')]
         try:
             int_color_list = [int(value) for value in color_list]
-        except ValueError, exception:
+        except ValueError as exception:
             return None
         return tuple(int_color_list)
 
@@ -381,13 +379,13 @@ class ConfigurationManager(object):
         configuration_file = os.path.join(self.user_configuration_folder, 'preferences.xml')
         doc = minidom.Document()
         root_node = doc.createElement('ocrfeeder')
-        for key, value in ConfigurationManager.conf.items():
+        for key, value in list(ConfigurationManager.conf.items()):
             new_node = doc.createElement(key)
             new_node.appendChild(doc.createTextNode(str(value)))
             root_node.appendChild(new_node)
         configuration = doc.toxml(encoding = 'utf-8')
-        configuration += '\n' + root_node.toxml(encoding = 'utf-8')
-        new_configuration_file = open(configuration_file, 'w')
+        configuration += b'\n' + root_node.toxml(encoding = 'utf-8')
+        new_configuration_file = open(configuration_file, 'wb')
         new_configuration_file.write(configuration)
         new_configuration_file.close()
 
@@ -404,8 +402,8 @@ class ConfigurationManager(object):
            not os.path.exists(self.user_configuration_folder):
             shutil.copytree(old_config_folder, self.user_configuration_folder)
             debug('Migrated old configuration directory "%s" to the '
-                  'new one: "%s"' %
-                  (old_config_folder, self.user_configuration_folder))
+                  'new one: "%s"',
+                  old_config_folder, self.user_configuration_folder)
 
     text_fill = property(getTextFill,
                          setTextFill)

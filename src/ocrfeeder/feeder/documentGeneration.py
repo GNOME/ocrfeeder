@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -51,7 +49,7 @@ class DocumentGeneratorManager(object):
         return self.GENERATORS.get(id)
 
     def getFormats(self):
-        return self.GENERATORS.keys()
+        return list(self.GENERATORS.keys())
 
 class DocumentGenerator(object):
 
@@ -174,7 +172,7 @@ class HtmlGenerator(DocumentGenerator):
 
     def save(self):
         pages = []
-        for i in xrange(len(self.bodies)):
+        for i in range(len(self.bodies)):
             previous_page = ''
             next_page = ''
             if i != 0:
@@ -213,12 +211,12 @@ class HtmlGenerator(DocumentGenerator):
             os.mkdir(images_folder)
         if pages:
             file = open(os.path.join(self.name, 'index.html'), 'w')
-            file.write(pages[0].encode('utf-8'))
+            file.write(pages[0])
             file.close()
             if len(pages) > 1:
-                for i in xrange(1, len(pages)):
+                for i in range(1, len(pages)):
                     file = open(os.path.join(self.name, 'page%s.html' % (i + 1)), 'w')
-                    file.write(pages[i].encode('utf-8'))
+                    file.write(pages[i])
                     file.close()
         if self.styles:
             file = open(os.path.join(self.name, 'style.css'), 'w')
@@ -250,7 +248,7 @@ class OdtGenerator(DocumentGenerator):
     def addText(self, data_box):
         text = data_box.getText()
         frame_style = Style(name='FrameStyle', family = 'graphic')
-        debug('Angle: %s' % data_box.text_data.angle)
+        debug('Angle: %s', data_box.text_data.angle)
         angle = data_box.text_data.angle
         if angle:
             frame_style = Style(name='FrameStyleRotated', family = 'graphic')
@@ -301,7 +299,7 @@ class OdtGenerator(DocumentGenerator):
             try:
                 os.unlink(image)
             except:
-                debug('Error removing image: %s' % image)
+                debug('Error removing image: %s', image)
 
     def __handlePageMaster(self, page_data):
         layout_name = 'Page%s%s' % (page_data.width, page_data.height)
@@ -355,7 +353,7 @@ class OdtGenerator(DocumentGenerator):
 class PlaintextGenerator(DocumentGenerator):
     def __init__(self, name):
         self.name = name
-        self.text = u''
+        self.text = ''
 
     def addText(self, newText):
         self.text += newText
@@ -368,7 +366,7 @@ class PlaintextGenerator(DocumentGenerator):
             # This will create a new file or **overwrite an existing file
             f = open(self.name, "w")
             try:
-                f.write(self.text.encode('utf-8'))
+                f.write(self.text)
             finally:
                 f.close() # Close the file
         except IOError:

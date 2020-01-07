@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -22,7 +20,7 @@ from ocrfeeder.util.log import debug
 from ocrfeeder.util import graphics, lib
 from ocrfeeder.util.constants import OCRFEEDER_DEBUG, DTP
 from ocrfeeder.studio.dataHolder import DataBox
-from imageManipulation import ImageProcessor
+from .imageManipulation import ImageProcessor
 from PIL import Image
 import re
 import math
@@ -93,10 +91,10 @@ class Block:
             self.extra_charge = NONE
 
     def __getVerticalRange(self):
-        return xrange(self.start_line, self.finish_line + 1)
+        return range(self.start_line, self.finish_line + 1)
 
     def __getHorizontalRange(self):
-        return xrange(self.first_one, self.last_one + 1)
+        return range(self.first_one, self.last_one + 1)
 
     def __inVerticalRange(self, verticalRange):
         begin = self.start_line
@@ -430,7 +428,7 @@ class ImageDeskewer(object):
 
         if not hough_accumulator:
             return 0
-        max_voted = hough_accumulator.keys()[0]
+        max_voted = list(hough_accumulator.keys())[0]
         for r_angle in hough_accumulator:
             max_voted_value = hough_accumulator.get(max_voted)
             if hough_accumulator[r_angle] > max_voted_value:
@@ -547,7 +545,7 @@ class LayoutAnalysis(object):
         text = self.ocr_engine.read()
         if self.clean_text:
             text = self.__cleanText(text)
-        return lib.ensureUnicode(text)
+        return text
 
     def __cleanText(self, text):
         clean_text = re.sub(r'(?<!-)-\n(?!\n)', r'', text)

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -42,7 +40,7 @@ class ImageProcessor:
                 self.black_n_white_image = self.original_image.convert('L')
                 if not self.window_size:
                     self.window_size = self.original_image.size[1] / 60.
-                debug('Window Size: %s' % self.window_size)
+                debug('Window Size: %s', self.window_size)
             except:
                 debug(sys.exc_info())
                 raise ImageManipulationError(error_message)

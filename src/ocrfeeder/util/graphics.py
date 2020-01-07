@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009-2013 Joaquim Rocha <me@joaquimrocha.com>
@@ -19,8 +17,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from lib import getNonExistingFileName
-from log import debug
+from .lib import getNonExistingFileName
+from .log import debug
 from PIL import Image
 from gi.repository import GdkPixbuf
 import math
@@ -69,7 +67,7 @@ def convertPixbufToImage(pixbuf):
     # creating the Image from bytes.
     if pixbuf.get_byte_length() > num_channels * dimensions[0] * dimensions[1]:
         i = 0
-        p = ''
+        p = b''
         for j in range(pixbuf.get_height()):
             p += pixels[i:i + pixbuf.get_width() * num_channels]
             i += pixbuf.get_rowstride()
@@ -112,7 +110,7 @@ def getTextSizeFromImage(image):
         colors.sort()
         background_color = colors[-1][1]
     text_sizes = []
-    for i in xrange(1, height):
+    for i in range(1, height):
         blank_line = True
         for j in range(0, width, 3):
             color = image.getpixel((j, i - 1))
@@ -137,7 +135,7 @@ def getTextSizeFromImage(image):
                 text_size = math.floor(i)
                 break
         text_size = max(text_sizes)
-    debug('Text Size: %s' % text_size)
+    debug('Text Size: %s', text_size)
     return text_size
 
 def getTextBeginHeight(image):
@@ -200,7 +198,7 @@ def convertMultiImage(image_path, temp_dir):
                                      extension)
             image_name = getNonExistingFileName(file_name)
             image.save(image_name, format='TIFF')
-            debug('Saved %s' % image_name)
+            debug('Saved %s', image_name)
             converted_paths.append(image_name)
             i += 1
     except EOFError:

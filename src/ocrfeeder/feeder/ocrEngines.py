@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -80,7 +78,7 @@ class Engine:
             if self.languages:
                 favorite_language = self.languages.get(self._favorite_language, '')
                 if not favorite_language:
-                    values = self.languages.values()
+                    values = list(self.languages.values())
                     if values:
                         favorite_language = values[0]
                 parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT,
@@ -89,15 +87,7 @@ class Engine:
         else:
             parsed_arguments = parsed_arguments.replace(LANGUAGE_ARGUMENT, '')
 
-        text = os.popen(self.engine_path + ' ' + parsed_arguments).read()
-        try:
-            try:
-                text = unicode(text, 'utf-8', 'replace')
-            except UnicodeDecodeError:
-                text = unicode(text, 'ascii', 'replace').encode('utf-8', 'replace')
-        finally:
-            os.unlink(self.image_path)
-        return text
+        return os.popen(self.engine_path + ' ' + parsed_arguments).read()
 
     def classify(self, reading_output, rules = []):
         stripped_output = reading_output.strip()
@@ -192,7 +182,7 @@ class OcrEnginesManager:
         return None
 
     def replaceEngine(self, engine, new_engine):
-        for i in xrange(len(self.ocr_engines)):
+        for i in range(len(self.ocr_engines)):
             eng, path = self.ocr_engines[i]
             if eng == engine:
                 new_path = self.engineToXml(new_engine, path)
@@ -250,11 +240,11 @@ class OcrEnginesManager:
 
         try:
             engine = Engine(**arguments)
-        except TypeError, exception:
-            debug('Error when unserializing engine: %s' % exception.message)
+        except TypeError as exception:
+            debug('Error when unserializing engine: %s', exception.message)
             engine = None
-        except WrongSettingsForEngine, we:
-            debug("Cannot load engine at %s: %s" %( xml_file_name, str(we)))
+        except WrongSettingsForEngine as we:
+            debug("Cannot load engine at %s: %s", xml_file_name, str(we))
             engine = None
         else:
             engine.temporary_folder = self.configuration_manager.TEMPORARY_FOLDER

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2013 Joaquim Rocha <me@joaquimrocha.com>
@@ -25,12 +23,12 @@ from PIL import Image
 import tempfile
 from gi.repository import Gtk
 import math
-from constants import *
+from .constants import *
 import sane
 import tempfile
 import locale
 import xml.etree.ElementTree as etree
-from log import debug
+from .log import debug
 
 def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR):
     icon = Gtk.Image()
@@ -46,7 +44,7 @@ def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR
 
 def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
     dir_name = tempfile.mkdtemp(dir = temp_dir)
-    debug('Converting PDF: %s to image' % pdf_file)
+    debug('Converting PDF: %s to image', pdf_file)
     resolution = 300
     file_name = os.path.splitext(os.path.basename(pdf_file))[0]
     command = 'gs -SDEVICE=jpeg -r%(resolution)sx%(resolution)s -sPAPERSIZE=letter ' \
@@ -144,7 +142,7 @@ def unpaperImage(configuration_manager, image_path):
     debug(command)
     try:
         os.system(command)
-    except Exception, exception:
+    except Exception as exception:
         debug(exception)
         return None
     finally:
@@ -156,7 +154,7 @@ def obtainScanners():
     try:
         devices = sane.get_devices()
         return devices
-    except (RuntimeError, sane._sane.error), msgerr:
+    except (RuntimeError, sane._sane.error) as msgerr:
         return None
 
 def scan(device):
@@ -169,7 +167,7 @@ def scan(device):
         result.save(filename, 'PNG')
         scandev.close()
         return filename
-    except (RuntimeError, sane._sane.error), msgerr:
+    except (RuntimeError, sane._sane.error) as msgerr:
         return None
 
 languages = {}
@@ -191,9 +189,3 @@ def makeRadioButton(label, from_widget=None):
     button.set_use_underline(True)
 
     return button
-
-def ensureUnicode(text):
-    if isinstance(text, unicode):
-        return text
-
-    return unicode(text, 'utf-8')

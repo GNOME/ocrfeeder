@@ -25,7 +25,7 @@ AS_IF([test "x$enable_sandbox" = "xyes"], [
 ])
 
 dnl == check for python ==
-AM_PATH_PYTHON(2.5)
+AM_PATH_PYTHON(3.5)
 
 dnl == Python dependencies ==
 AX_PYTHON_MODULE([enchant],[needed])

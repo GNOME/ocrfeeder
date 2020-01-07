@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 ###########################################################################
 #    OCRFeeder - The complete OCR suite
 #    Copyright (C) 2009 Joaquim Rocha
@@ -18,7 +16,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-from dataHolder import PageData, DataBox, TextData
+from .dataHolder import PageData, DataBox, TextData
 from ocrfeeder.util.log import debug
 from ocrfeeder.util.configuration import ConfigurationManager
 from xml.dom import minidom
@@ -75,7 +73,7 @@ class ProjectSaver:
             for element in item:
                 self.convertToXml(element, root_node)
         else:
-            text = unicode(str(item), 'utf-8')
+            text = str(item)
             text_node = self.document.createTextNode(text)
             root_node.appendChild(text_node)
         return root_node
@@ -103,7 +101,7 @@ class ProjectSaver:
             embedded_name = os.path.join(images_dir, embbeded_name)
             shutil.copy(original_name, embedded_name)
             zip.write(embedded_name)
-        f = open(os.path.join(os.curdir, 'project.xml'), 'w')
+        f = open(os.path.join(os.curdir, 'project.xml'), 'wb')
         f.write(xml_content)
         f.close()
         zip.write(os.path.join(os.curdir, 'project.xml'))
