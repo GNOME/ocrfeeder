@@ -157,6 +157,14 @@ def obtainScanners():
     except (RuntimeError, sane._sane.error) as msgerr:
         return None
 
+def getScannerOption (scandev, name):
+    options = scandev.get_options()
+
+    for option in options:
+        if option[1] == name:
+            return option
+    return None
+
 def scan(device):
     try:
         scandev = sane.open(device)
@@ -172,6 +180,13 @@ def scan(device):
             scandev.resolution = 300
         except:
             debug('Unable to set scanner resolution to 300 DPI. Using default.')
+        try:
+            scandev.tl_x = 0
+            scandev.tl_y = 0
+            scandev.br_x = getScannerOption(scandev, 'br-x')[8][1]
+            scandev.br_y = getScannerOption(scandev, 'br-y')[8][1]
+        except:
+            debug('Unable to set scan geometry. Using default.')
         result = scandev.scan()
         filename = tempfile.mktemp(suffix='.png')
         result.save(filename, 'PNG')
