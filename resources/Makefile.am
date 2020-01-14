@@ -1,5 +1,8 @@
 SUBDIRS = icons
 
+appicondir = $(datadir)/icons/hicolor/scalable/apps
+appicon_DATA = icons/org.gnome.OCRFeeder.svg
+
 desktopdir = $(datadir)/applications
 desktop_in_files = org.gnome.OCRFeeder.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
@@ -15,6 +18,6 @@ ui_files_DATA = spell-checker.ui menubar.ui
 
 man_MANS = ocrfeeder.1 ocrfeeder-cli.1
 
-EXTRA_DIST = $(desktop_in_files) $(appdata_in_files) $(man_MANS) $(ui_files_DATA)
+EXTRA_DIST = $(appicon_DATA) $(desktop_in_files) $(appdata_in_files) $(man_MANS) $(ui_files_DATA)
 
 CLEANFILES = $(desktop_DATA) $(appstream_DATA)
