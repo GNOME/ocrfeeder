@@ -2034,7 +2034,7 @@ class ScannerChooserDialog(Gtk.Dialog):
         self.devices = devices
         self.label = Gtk.Label('_Select one of the scanner devices found:')
         self.label.set_use_underline(True)
-        self.vbox.pack_start(self.label, padding = 5)
+        self.vbox.pack_start(self.label, expand = True, fill = True, padding = 5)
 
         self.selected_device = None
         self.__combo_box = Gtk.ComboBoxText.new()
@@ -2045,7 +2045,7 @@ class ScannerChooserDialog(Gtk.Dialog):
 
         self.__combo_box.set_active(0)
 
-        self.vbox.pack_start(self.__combo_box)
+        self.vbox.add(self.__combo_box)
 
         self.vbox.show_all()
 
