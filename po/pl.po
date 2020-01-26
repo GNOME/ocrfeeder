@@ -9,9 +9,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-12 17:40+0100\n"
-"PO-Revision-Date: 2020-01-12 17:42+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
+"POT-Creation-Date: 2020-01-22 22:40+0000\n"
+"PO-Revision-Date: 2020-01-26 14:49+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -29,6 +29,14 @@ msgstr "OCRFeeder"
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
 msgstr "Pełny zestaw narzędzi do OCR"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:3
+msgid ""
+"OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
+"Recognition;Scanner;Scanning;"
+msgstr ""
+"OCR;Optyczne rozpoznawanie znaków;CuneiForm;GOCR;Ocrad;Tesseract;"
+"Rozpoznawanie dokumentów;Skaner;Skanowanie;Skanuj;"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
 msgid "The complete OCR suite"
@@ -1401,6 +1409,3 @@ msgstr ""
 "Łukasz Jernaś <deejay1@srem.org>, 2011\n"
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2020\n"
 "Aviary.pl <community-poland@mozilla.org>, 2011-2020"
-
-msgid "OCR;optical character recognition;Scanner;tesseract;"
-msgstr "OCR;optyczne rozpoznawanie znaków;skaner;skanowanie;skanuj;tesseract;"
