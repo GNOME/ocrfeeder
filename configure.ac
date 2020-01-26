@@ -1,7 +1,7 @@
 AC_PREREQ([2.63])
 AC_INIT([ocrfeeder],
         [0.8.1],
-        [https://bugzilla.gnome.org/enter_bug.cgi?product=ocrfeeder],
+        [https://gitlab.gnome.org/GNOME/ocrfeeder/issues],
         [ocrfeeder])
 
 AC_CONFIG_MACRO_DIR([m4])
