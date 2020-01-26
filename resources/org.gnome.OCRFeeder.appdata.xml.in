@@ -35,6 +35,27 @@
   </provides>
   <content_rating type="oars-1.0" />
   <releases>
+    <release version="0.8.2" date="2020-01-26">
+      <description>
+        <_p>
+          Improvements:
+        </_p>
+        <ul>
+          <_li>Python 3 is now used, making the unicode issues go away for good</_li>
+          <_li>The main window is now bigger</_li>
+          <_li>The image clip is now expandible</_li>
+          <_li>The manpages have been updated with the missing options</_li>
+        </ul>
+        <_p>
+          Bug Fixes:
+        </_p>
+        <ul>
+          <_li>Fix icons in the boxes' editor text align buttons</_li>
+          <_li>Install the application icon in the right place</_li>
+          <_li>Many issues in the scanner dialog have been fixed (scanner options, UI problems, etc.)</_li>
+        </ul>
+      </description>
+    </release>
     <release version="0.8.1" date="2014-12-22">
       <description>
         <_p>
