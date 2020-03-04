@@ -287,7 +287,7 @@ msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
 "\n"
 "The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
-msgstr "\"%(name)s\" izeneko fitxategia badago lehendik. Ordeztu nahi duzu?</b>\n"
+msgstr "<b>\"%(name)s\" izeneko fitxategia badago lehendik. Ordeztu nahi duzu?</b>\n"
 "\n"
 "Fitxategia badago lehendik \"%(dir)s\" direktorioan. Hura ordezten bada, edukiak gainidatzi egingo dira."
 
