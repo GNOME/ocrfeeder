@@ -13,11 +13,18 @@ appstream_in_files = org.gnome.OCRFeeder.appdata.xml.in
 appstream_DATA = $(appstream_in_files:.xml.in=.xml)
 @INTLTOOL_XML_RULE@
 
+
 ui_filesdir = $(datadir)/ocrfeeder
 ui_files_DATA = spell-checker.ui menubar.ui
 
 man_MANS = ocrfeeder.1 ocrfeeder-cli.1
 
-EXTRA_DIST = $(appicon_DATA) $(desktop_in_files) $(appdata_in_files) $(man_MANS) $(ui_files_DATA)
+EXTRA_DIST = 			\
+	$(appicon_DATA) 	\
+	$(desktop_in_files)	\
+	$(appdata_in_files)	\
+	$(man_MANS)		\
+	$(ui_files_DATA)	\
+	$(appstream_in_files)
 
 CLEANFILES = $(desktop_DATA) $(appstream_DATA)
