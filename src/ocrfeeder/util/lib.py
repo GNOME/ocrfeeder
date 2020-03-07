@@ -18,6 +18,7 @@
 ###########################################################################
 
 import os
+import subprocess
 import mimetypes
 from PIL import Image
 import tempfile
@@ -54,7 +55,7 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
                'file_name': file_name,
                'pdf_file': pdf_file,
                'resolution': resolution}
-    os.popen(command)
+    process = subprocess.run(command, shell=True)
     return dir_name
 
 def getImagesFromFolder(folder):
