@@ -1,3 +1,14 @@
+Version 0.8.3
+~~~~~~~~~~~~~
+Released: 2020-03-08
+
+Bug Fixes:
+ * Fix PDF importation, which was broken after the Python 3 port (thanks to
+   @scx)
+ * Allow to import PDF files whose paths have characters Ghostscript doesn't
+   like
+ * Ship the appdata.xml.in the tarball
+
 Version 0.8.2
 ~~~~~~~~~~~~~
 Released: 2020-01-26

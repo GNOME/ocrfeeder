@@ -35,6 +35,18 @@
   </provides>
   <content_rating type="oars-1.0" />
   <releases>
+    <release version="0.8.3" date="2020-03-08">
+      <description>
+        <_p>
+          Bug Fixes:
+        </_p>
+        <ul>
+          <_li>Fix PDF importation, which was broken after the Python 3 port (thanks to @scx)</_li>
+          <_li>Allow to import PDF files whose paths have characters Ghostscript doesn't like</_li>
+          <_li>Ship the appdata.xml.in the tarball</_li>
+        </ul>
+      </description>
+    </release>
     <release version="0.8.2" date="2020-01-26">
       <description>
         <_p>
