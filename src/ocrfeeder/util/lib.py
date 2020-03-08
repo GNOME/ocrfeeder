@@ -75,6 +75,9 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
     if pdf_file != pdf_file_safe:
         try:
             pdf_path_safe = os.path.join(dir_name, file_name_safe)
+            # The prefix added here is for extra safety so there are less chances
+            # for this path to match the original one in future changes.
+            pdf_path_safe = os.path.join(dir_name, 'OCRFEEDER_' + file_name_safe)
             os.symlink(pdf_file, pdf_path_safe)
         except:
             debug('Unable to convert PDF: Cannot create temp symlink in: %s', dir_name)
