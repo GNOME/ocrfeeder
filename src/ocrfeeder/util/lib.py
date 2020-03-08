@@ -108,6 +108,8 @@ def runGhostscript(dir_name, base_name, pdf_path):
     process = subprocess.run(command, shell=True)
 
 def getImagesFromFolder(folder):
+    if folder is None:
+        return []
     if not os.path.isdir(folder):
         return []
     content = os.listdir(folder)
