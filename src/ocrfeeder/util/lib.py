@@ -92,10 +92,7 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
 
     return dir_name
 
-def runGhostscript(dir_name, base_name, pdf_path):
-    format='jpeg'
-    resolution = 300
-    size = 'letter'
+def runGhostscript(dir_name, base_name, pdf_path, format = 'jpeg', resolution = 300, size = 'letter'):
     command = 'gs -SDEVICE=%(format)s -r%(resolution)sx%(resolution)s -sPAPERSIZE=%(size)s ' \
               '-sOutputFile=\'%(temp_name)s/%(file_name)s_%%04d.jpg\' ' \
               '-dNOPAUSE -dBATCH -- \'%(pdf_file)s\'' % \
