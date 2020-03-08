@@ -28,6 +28,7 @@ from .constants import *
 import sane
 import tempfile
 import locale
+import re
 import xml.etree.ElementTree as etree
 from .log import debug
 
@@ -43,20 +44,66 @@ def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR
         label = None
     return icon, label
 
+def getSafeGhostscriptPath(file_path):
+    return re.sub(r'[^\w !#$%&()*+,./:;<=>?@\[\\\]^_`{|}~-]', '_', file_path)
+
+def getSafeGhostscriptInputFilename(file_name):
+    return re.sub(r'[/]', '_', getSafeGhostscriptPath(file_name))
+
+def getSafeGhostscriptOutputBasename(file_name):
+    return re.sub(r'[%]', '_', getSafeGhostscriptInputFilename(file_name))
+
 def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
-    dir_name = tempfile.mkdtemp(dir = temp_dir)
+    if not os.path.isfile(pdf_file):
+        debug('Unable to convert PDF: File does not exist: %s', pdf_file)
+        return None
+    try:
+        dir_name = tempfile.mkdtemp(dir = temp_dir)
+    except:
+        debug('Unable to convert PDF: Cannot create temp dir in: %s', temp_dir)
+        return None
+
     debug('Converting PDF: %s to image', pdf_file)
-    resolution = 300
-    file_name = os.path.splitext(os.path.basename(pdf_file))[0]
-    command = 'gs -SDEVICE=jpeg -r%(resolution)sx%(resolution)s -sPAPERSIZE=letter ' \
-              '-sOutputFile="%(temp_name)s/%(file_name)s_%%04d.jpg" ' \
-              '-dNOPAUSE -dBATCH -- "%(pdf_file)s"' % \
-              {'temp_name': dir_name,
-               'file_name': file_name,
-               'pdf_file': pdf_file,
-               'resolution': resolution}
-    process = subprocess.run(command, shell=True)
+
+    file_name = os.path.basename(pdf_file)
+    base_name = os.path.splitext(file_name)[0]
+    pdf_path = pdf_file
+    file_name_safe = getSafeGhostscriptInputFilename(file_name)
+    base_name_safe = getSafeGhostscriptOutputBasename(base_name)
+    pdf_file_safe = getSafeGhostscriptPath(pdf_file)
+
+    if pdf_file != pdf_file_safe:
+        try:
+            pdf_path_safe = os.path.join(dir_name, file_name_safe)
+            os.symlink(pdf_file, pdf_path_safe)
+        except:
+            debug('Unable to convert PDF: Cannot create temp symlink in: %s', dir_name)
+            return None
+
+        runGhostscript(dir_name, base_name_safe, pdf_path_safe)
+        try:
+            os.unlink(pdf_path_safe)
+        except:
+            debug('PDF conversion warning: Cannot remove temp symlink: %s', pdf_path_safe)
+    else:
+        runGhostscript(dir_name, base_name_safe, pdf_path)
+
     return dir_name
+
+def runGhostscript(dir_name, base_name, pdf_path):
+    format='jpeg'
+    resolution = 300
+    size = 'letter'
+    command = 'gs -SDEVICE=%(format)s -r%(resolution)sx%(resolution)s -sPAPERSIZE=%(size)s ' \
+              '-sOutputFile=\'%(temp_name)s/%(file_name)s_%%04d.jpg\' ' \
+              '-dNOPAUSE -dBATCH -- \'%(pdf_file)s\'' % \
+              {'format': format,
+               'temp_name': dir_name,
+               'file_name': base_name,
+               'pdf_file': pdf_path,
+               'resolution': resolution,
+               'size': size}
+    process = subprocess.run(command, shell=True)
 
 def getImagesFromFolder(folder):
     if not os.path.isdir(folder):
