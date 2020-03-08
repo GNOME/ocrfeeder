@@ -67,7 +67,6 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
 
     file_name = os.path.basename(pdf_file)
     base_name = os.path.splitext(file_name)[0]
-    pdf_path = pdf_file
     file_name_safe = getSafeGhostscriptInputFilename(file_name)
     base_name_safe = getSafeGhostscriptOutputBasename(base_name)
     pdf_file_safe = getSafeGhostscriptPath(pdf_file)
@@ -89,7 +88,7 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
         except:
             debug('PDF conversion warning: Cannot remove temp symlink: %s', pdf_path_safe)
     else:
-        runGhostscript(dir_name, base_name_safe, pdf_path)
+        runGhostscript(dir_name, base_name_safe, pdf_file)
 
     return dir_name
 
