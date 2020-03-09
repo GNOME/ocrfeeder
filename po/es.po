@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: orcfeeder.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
-"POT-Creation-Date: 2020-01-26 15:20+0000\n"
-"PO-Revision-Date: 2020-01-28 15:43+0100\n"
+"POT-Creation-Date: 2020-03-08 21:05+0000\n"
+"PO-Revision-Date: 2020-03-09 13:11+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -89,41 +89,61 @@ msgid "Check spelling"
 msgstr "Comprobar ortografía"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
+msgid "Bug Fixes:"
+msgstr "Correcciones de errores:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+msgid ""
+"Fix PDF importation, which was broken after the Python 3 port (thanks to "
+"@scx)"
+msgstr ""
+"Importación de PDF corregida, que estaba rota después de la migración a "
+"Python 3 (gracias a @scx)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+msgid ""
+"Allow to import PDF files whose paths have characters Ghostscript doesn't "
+"like"
+msgstr ""
+"Permitir importar archivos PDF cuyas rutas tengan caracteres que Ghostscript "
+"no admita"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+msgid "Ship the appdata.xml.in the tarball"
+msgstr "Distribuido el archivo appdata.xml en el árbol"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
 msgid "Improvements:"
 msgstr "Mejoras:"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
 msgid "Python 3 is now used, making the unicode issues go away for good"
 msgstr "Ahora se usa Python 3, lo que resuelve los problemas de Unicode"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
 msgid "The main window is now bigger"
 msgstr "La ventana principal es más grande"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
 msgid "The image clip is now expandible"
 msgstr "El recorte de la imagen se puede ampliar"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
 msgid "The manpages have been updated with the missing options"
 msgstr ""
 "Las páginas del manual se han actualizado con las opciones que faltaban"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
-msgid "Bug Fixes:"
-msgstr "Correcciones de errores:"
-
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
 msgid "Fix icons in the boxes' editor text align buttons"
 msgstr ""
 "Corregidos los iconos en los botones de alineación de texto del editor de "
 "cajas"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
 msgid "Install the application icon in the right place"
 msgstr "Instalar el icono de la aplicación en la ubicación correcta"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
 msgid ""
 "Many issues in the scanner dialog have been fixed (scanner options, UI "
 "problems, etc.)"
@@ -131,7 +151,7 @@ msgstr ""
 "Se han corregido varios errores en el diálogo de escáneres (opciones del "
 "escáner, problemas de la IU, , etc.)"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
 msgid ""
 "The Preferences dialog is now smaller (the big contents are wrapped in a "
 "scrolled window)"
@@ -139,55 +159,55 @@ msgstr ""
 "El diálogo de preferencias es más pequeño (los contenidos grandes se ajustan "
 "en una ventana desplazada)"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
 msgid "All dialogs are now centered to the main window"
 msgstr "Todos los diálogos se centran en la ventana principal"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
 msgid "Use XDG user's configuration directory instead of .ocrfeeder"
 msgstr ""
 "Usar la configuración de carpetas XDG del usuario en lugar de .ocrfeeder"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
 msgid "Fix Gtk thread related problems"
 msgstr "Problemas relacionados con hilos de GTK corregidos"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
 msgid "Fix unicode issues when saving a project and exporting a document"
 msgstr ""
 "Errores de unicode al guardar un proyecto y exportar un documento corregidos"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
 msgid "Fix issue when exporting a picture in a document from a loaded project"
 msgstr ""
 "Error al exportar una imagen en un documento desde un proyecto cargado "
 "corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
 msgid "Fix ODT exportation button's icon"
 msgstr "Icono del botón de exportación a ODT corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
 msgid "New Features:"
 msgstr "Funcionalidades nuevas:"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
 msgid "Add support for multiple image TIFFs"
 msgstr "Añadido soporte para varias imágenes TIFF"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
 msgid "Port the application to GObject Introspection"
 msgstr "Soporte de introspección de GObject en la aplicación"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
 msgid "Scan with 300 DPI and in color mode"
 msgstr "Escaneo con 300 PPP y en modo a color"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
 msgid "Use the last visited directory when adding a new image"
 msgstr "Usar la última carpeta visitada al añadir una imagen nueva"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
 msgid ""
 "Warn when no OCR engines are found on startup or when performing the "
 "recognition"
@@ -195,7 +215,7 @@ msgstr ""
 "Advertir cuando no se encuentren motores al inicio o al realizar el "
 "reconocimiento"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
 msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
@@ -203,92 +223,92 @@ msgstr ""
 "Actualizar la sensibilidad de los controles OCR del editor de cajas de "
 "acuerdo a la existencia de motores OCR"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
 msgstr "Importación PIL corregida"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
 msgid "Fix error when exporting a PDF with empty text areas"
 msgstr "Error al exportar un PDF con áreas de texto vacías corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
 msgid "Fix PDF output options in ocrfeeder-cli"
 msgstr "Opciones de salida PDF en ocrfeeder-cli corregidas"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
 msgid "Fix getting engine name in ocrfeeder-cli"
 msgstr "Obtener el nombre del motor en ocrfeeder-cli corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
 msgid "Fix the use of newer versions of Unpaper"
 msgstr "Uso de versiones nuevas de Unpaper corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
 msgid "Fix text in the pages icon view"
 msgstr "Texto en la vista de icono de páginas corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
 msgid "Fix reordering pages in the icon view"
 msgstr "Reordenar páginas en la vista de icono corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
 msgid "Fix issues when no locale is set"
 msgstr ""
 "Problemas cuando no se ha establecido configuración regional corregidos"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
 msgid "Fix loading project with more than one page"
 msgstr "Carga de un proyecto con más de una página corregida"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
 msgid "Fix updating the OCR engines in the BoxEditor"
 msgstr "Actualizar los motores OCR en el editor de cajas corregido"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
 msgid "New and Updated Translations:"
 msgstr "Traducciones nuevas y actualizadas:"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
 msgid "Marek Černocký [cz]"
 msgstr "Marek Černocký [cz]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
 msgid "Daniel Mustieles [es]"
 msgstr "Daniel Mustieles [es]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
 msgid "Fran Diéguez [gl]"
 msgstr "Fran Diéguez [gl]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
 msgid "Dimitris Spingos [el]"
 msgstr "Dimitris Spingos [el]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
 msgid "Aharon Don [he]"
 msgstr "Aharon Don [he]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
 msgid "Attila Hammer, Gabor Kelemen [hu]"
 msgstr "Attila Hammer, Gabor Kelemen [hu]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
 msgid "Rafael Ferreira [pt_BR]"
 msgstr "Rafael Ferreira [pt_BR]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
 msgid "Martin Srebotnjak [sl]"
 msgstr "Martin Srebotnjak [sl]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:54
 msgid "Мирослав Николић [sr]"
 msgstr "Мирослав Николић [sr]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:55
 msgid "Piotr Drąg [uk]"
 msgstr "Piotr Drąg [uk]"
 
-#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:56
 msgid "Wylmer Wang [zh_CN]"
 msgstr "Wylmer Wang [zh_CN]"
 
