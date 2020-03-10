@@ -549,11 +549,11 @@ msgstr "Detecta i reconeix de forma automàtica la pàgina actual"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:123
 msgid "Recognize _Selected Areas"
-msgstr "Reconeix les àrees _seleccionades "
+msgstr "Reconeix les àrees _seleccionades"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:124
 msgid "Recognize Selected Areas"
-msgstr "Reconeix les àrees seleccionades "
+msgstr "Reconeix les àrees seleccionades"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:127
 msgid "Select _All Areas"
@@ -722,7 +722,7 @@ msgstr "Omple"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:536
 msgid "Set text to be fill its area"
-msgstr "Estableix el text per omplir aquesta àrea"
+msgstr "Estableix el text per a omplir aquesta àrea"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:546
 msgid "OC_R"
@@ -735,7 +735,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:554
 msgid "OCR engine to recognize this content area"
-msgstr "Motor OCR per reconèixer aquesta àrea de contingut"
+msgstr "Motor OCR per a reconèixer aquesta àrea de contingut"
 
 #. Text Properties
 #: ../src/ocrfeeder/studio/widgetPresenter.py:562
@@ -789,7 +789,7 @@ msgstr "Idioma"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:648
 msgid "OCR engine to recogni_ze this area:"
-msgstr "_Motor OCR per reconèixer aquesta àrea:"
+msgstr "_Motor OCR per a reconèixer aquesta àrea:"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:662
 msgid "Detect"
@@ -921,7 +921,7 @@ msgstr "S'ha produït un error"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1289
 msgid "Cancelled"
-msgstr "Cancel·lat "
+msgstr "Cancel·lat"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1305
 msgid "Preferences"
@@ -1051,12 +1051,12 @@ msgstr "A_justa la vora de les àrees de contingut"
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1570
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr ""
-"Usa un algoritme de post detecció per escurçar els marges de les àrees de "
+"Usa un algoritme de post detecció per a escurçar els marges de les àrees de "
 "contingut"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1586
 msgid "The maximum size for the content areas' margins in pixels"
-msgstr "La mida màxima per als màrgens de les àrees de contingut en píxels"
+msgstr "La mida màxima per als marges de les àrees de contingut en píxels"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1603
 msgid "Maximum size that the content areas' margins should have:"
@@ -1094,9 +1094,9 @@ msgid ""
 "You can choose \"No Language\" to prevent this."
 msgstr ""
 "L'idioma pot afectar a com els motors OCR treballen.\n"
-"Si un motor està configurat per suportar idiomes, però no és compatible amb "
+"Si un motor està configurat per a suportar idiomes, però no és compatible amb "
 "el triat, pot resultar en un text en blanc.\n"
-"Podeu triar «Sense idioma» per prevenir això."
+"Podeu triar «Sense idioma» per a prevenir això."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1699
 msgid "Default _language:"
@@ -1195,7 +1195,7 @@ msgid ""
 msgstr ""
 "Els idiomes d'aquest motor són compatibles. Això s'ha de gestionar com "
 "parells de l'idioma en la norma ISO 639-1 i l'idioma corresponent del motor "
-"(per exemple \"en:eng,pt:por,es:esp\"). Per treballar així, els arguments "
+"(per exemple \"en:eng,pt:por,es:esp\"). Per a treballar així, els arguments "
 "del motor han de tindre la paraula clau $LANG."
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1980
