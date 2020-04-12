@@ -1111,7 +1111,7 @@ msgstr "Усі"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:791
 msgid "Current"
-msgstr "Теперішні"
+msgstr "Поточна"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:811
 msgid "Choose the format"
