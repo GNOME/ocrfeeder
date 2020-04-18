@@ -248,7 +248,7 @@ languages = {}
 def getLanguages():
     global languages
     if not languages:
-        root = etree.parse(ISO_CODES_PATH + 'iso_639.xml')
+        root = etree.parse(os.path.join(ISO_CODES_PATH, 'iso_639.xml'))
         for element in root.findall('.//iso_639_entry[@iso_639_1_code]'):
             languages[element.get('iso_639_1_code')] = element.get('name')
     return languages
