@@ -93,7 +93,14 @@ OCRFEEDER_SPELLCHECKER_UI = os.path.join(RESOURCES_DIR, 'spell-checker.ui')
 OCRFEEDER_MENUBAR_UI = os.path.join(RESOURCES_DIR, 'menubar.ui')
 
 # ISO-codes location
-ISO_CODES_PATH = '/usr/share/xml/iso-codes/'
+iso_codes_dir = os.environ.get('ISO_CODES_DIR')
+if iso_codes_dir is None:
+    for dir in GLib.get_system_data_dirs():
+        iso_codes_dir = os.path.join(dir, 'xml', 'iso-codes')
+        if os.path.isdir(iso_codes_dir):
+            break
+
+ISO_CODES_PATH = iso_codes_dir
 
 APP_ID = 'org.gnome.OCRFeeder'
 
