@@ -15,7 +15,7 @@ The graphical interface also features documentation on how to use it, which can 
 Building from git
 ==================
 
-$ git clone git://git.gnome.org/ocrfeeder
+$ git clone https://gitlab.gnome.org/GNOME/ocrfeeder.git
 $ cd ocrfeeder
 $ ./autogen.sh
 $ make
