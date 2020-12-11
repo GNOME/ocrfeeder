@@ -233,7 +233,7 @@ class OcrEnginesManager:
         document = ET.parse(xml_file_name)
         root_node = document.getroot()
         arguments = {}
-        for child in root_node.getchildren():
+        for child in list(root_node):
             arg_name = child.tag
             arg_value = child.text
             arguments[arg_name] = arg_value
