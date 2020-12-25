@@ -1,5 +1,5 @@
 # Swedish translation for ocrfeeder.
-# Copyright © 2009, 2010, 2011, 2015, 2017, 2020 Free Software Foundation, Inc.
+# Copyright © 2009-2020 Free Software Foundation, Inc.
 # This file is distributed under the same license as the ocrfeeder package.
 # Daniel Nylander <po@danielnylander.se>, 2009, 2010, 2011.
 # Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2020.
@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
-"POT-Creation-Date: 2020-03-21 22:51+0000\n"
-"PO-Revision-Date: 2020-04-22 15:00+0200\n"
+"POT-Creation-Date: 2020-11-30 22:24+0000\n"
+"PO-Revision-Date: 2020-12-25 12:05+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
@@ -46,6 +46,8 @@ msgid ""
 "OCRFeeder is a document layout analysis and optical character recognition "
 "system."
 msgstr ""
+"OCRFeeder är ett system för dokumentlayoutanalys och optisk "
+"teckenigenkänning."
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:4
 msgid ""
@@ -53,7 +55,11 @@ msgid ""
 "between what's graphics and text and perform OCR over the latter. It "
 "generates multiple formats being its main one ODT."
 msgstr ""
+"Programmet kommer automatiskt att beskriva bildens innehåll, skilja mellan "
+"vad som är grafik och text, och utföra OCR på texten. Det genererar flera "
+"olika format men dess huvudformat är ODT."
 
+# TODO: define or correct
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:5
 msgid ""
 "It features a complete GTK graphical user interface that allows the users to "
@@ -61,6 +67,10 @@ msgid ""
 "paragraph styles, clean the input images, import PDFs, save and load the "
 "project, export everything to multiple formats, etc."
 msgstr ""
+"Det har ett fullständigt grafiskt GTK-användargränssnitt som låter "
+"användarna korrigera ej igenkända tecken, definiera eller korrigera "
+"begränsningsrutor, ställa in styckestilar, rensa indatabilderna, importera "
+"PDF-filer, spara och läsa in projekt, exportera allt till olika format o.s.v."
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1571
@@ -79,107 +89,117 @@ msgstr "Kontrollera stavning"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
 msgid "Bug Fixes:"
-msgstr ""
+msgstr "Felfixar:"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
 msgid ""
 "Fix PDF importation, which was broken after the Python 3 port (thanks to "
 "@scx)"
 msgstr ""
+"Fixa PDF-import, vilken var trasig efter Python 3-porteringen (tack till "
+"@scx)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
 msgid ""
 "Allow to import PDF files whose paths have characters Ghostscript doesn't "
 "like"
 msgstr ""
+"Tillåt import av PDF-filer vars sökvägar innehåller tecken som Ghostscript "
+"inte tycker om"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
 msgid "Ship the appdata.xml.in the tarball"
-msgstr ""
+msgstr "Skicka med appdata.xml.in i tarbollen"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
 msgid "Improvements:"
-msgstr ""
+msgstr "Förbättringar:"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
 msgid "Python 3 is now used, making the unicode issues go away for good"
 msgstr ""
+"Python 3 används nu, vilket får Unicode-problemen att försvinna för gott"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
 msgid "The main window is now bigger"
-msgstr ""
+msgstr "Huvudfönstret är nu större"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
 msgid "The image clip is now expandible"
-msgstr ""
+msgstr "Bildklippet är nu expanderbart"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
 msgid "The manpages have been updated with the missing options"
-msgstr ""
+msgstr "Manualsidorna har uppdaterats med de saknade flaggorna"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
 msgid "Fix icons in the boxes' editor text align buttons"
-msgstr ""
+msgstr "Fixa ikoner i områdesredigerarens textjusteringsknappar"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
 msgid "Install the application icon in the right place"
-msgstr ""
+msgstr "Installera programikonen på rätt plats"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
 msgid ""
 "Many issues in the scanner dialog have been fixed (scanner options, UI "
 "problems, etc.)"
 msgstr ""
+"Många problem i inläsningsdialogen har fixats (inläsningsalternativ, "
+"användargränssnittsproblem o.s.v.)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
 msgid ""
 "The Preferences dialog is now smaller (the big contents are wrapped in a "
 "scrolled window)"
 msgstr ""
+"Inställningsdialogen är nu mindre (de stora innehållen radbryts i ett rullat "
+"fönster)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
 msgid "All dialogs are now centered to the main window"
-msgstr ""
+msgstr "Alla dialogrutor centreras nu till huvudfönstret"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
 msgid "Use XDG user's configuration directory instead of .ocrfeeder"
-msgstr ""
+msgstr "Använd användarens XDG-konfigurationskatalog istället för .ocrfeeder"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
 msgid "Fix Gtk thread related problems"
-msgstr ""
+msgstr "Fixa Gtk-trådrelaterade problem"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
 msgid "Fix unicode issues when saving a project and exporting a document"
-msgstr ""
+msgstr "Fixa Unicode-problem vid sparande av projekt och export av dokument"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
 msgid "Fix issue when exporting a picture in a document from a loaded project"
 msgstr ""
+"Fixa problem vid export av en bild i ett dokument från ett inläst projekt"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
 msgid "Fix ODT exportation button's icon"
-msgstr ""
+msgstr "Fixa ikon för ODT-exportknapp"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
 msgid "New Features:"
-msgstr ""
+msgstr "Nya funktioner:"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
 msgid "Add support for multiple image TIFFs"
-msgstr ""
+msgstr "Lägg till stöd för TIFF-filer med flera bilder"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
 msgid "Port the application to GObject Introspection"
-msgstr ""
+msgstr "Portera programmet till GObject Introspection"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
 msgid "Scan with 300 DPI and in color mode"
-msgstr ""
+msgstr "Läs in med 300 DPI och i färgläge"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
 msgid "Use the last visited directory when adding a new image"
-msgstr ""
+msgstr "Använd den senast besökta katalogen då en bild läggs till"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
 msgid ""
@@ -193,46 +213,48 @@ msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
 msgstr ""
+"Uppdatera områdesredigerarens OCR-kontrollers känslighet enligt existensen "
+"av OCR-motorer"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
-msgstr ""
+msgstr "Fixa PIL-import"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
 msgid "Fix error when exporting a PDF with empty text areas"
-msgstr ""
+msgstr "Fixa fel vid export av en PDF med tomma textområden"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
 msgid "Fix PDF output options in ocrfeeder-cli"
-msgstr ""
+msgstr "Fixa PDF-utmatningsalternativ i ocrfeeder-cli"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
 msgid "Fix getting engine name in ocrfeeder-cli"
-msgstr ""
+msgstr "Fixa erhållande av motorns namn i ocrfeeder-cli"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
 msgid "Fix the use of newer versions of Unpaper"
-msgstr ""
+msgstr "Fixa användning av nyare versioner av Unpaper"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
 msgid "Fix text in the pages icon view"
-msgstr ""
+msgstr "Fixa text i sidikonvyn"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
 msgid "Fix reordering pages in the icon view"
-msgstr ""
+msgstr "Fixa ändring av ordning av sidor i ikonvyn"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
 msgid "Fix issues when no locale is set"
-msgstr ""
+msgstr "Fixa problem då ingen lokal ställts in"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
 msgid "Fix loading project with more than one page"
-msgstr ""
+msgstr "Fixa inläsning av projekt med mer än en sida"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
 msgid "Fix updating the OCR engines in the BoxEditor"
-msgstr ""
+msgstr "Fixa uppdatering av OCR-motorerna i BoxEditor"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
 msgid "New and Updated Translations:"
