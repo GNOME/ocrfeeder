@@ -116,7 +116,7 @@ msgstr "Millores:"
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
 msgid "Python 3 is now used, making the unicode issues go away for good"
 msgstr ""
-"Ara s'utilitza Python 3, eliminant per a millor els problemes amb el unicode"
+"Ara s'utilitza Python 3, solucionant així per sempre els problemes amb unicode"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
 msgid "The main window is now bigger"
@@ -145,8 +145,8 @@ msgid ""
 "Many issues in the scanner dialog have been fixed (scanner options, UI "
 "problems, etc.)"
 msgstr ""
-"S'han corregit molts problemes al diàleg de l'escànner (opcions de "
-"l'escànner, problemes d'IU, etc.)"
+"S'han corregit molts problemes al diàleg de l'escàner (opcions de "
+"l'escàner, problemes d'IU, etc.)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
 msgid ""
@@ -187,7 +187,7 @@ msgstr "S'ha corregit la icona del botó d'exportació a ODT"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
 msgid "New Features:"
-msgstr "Noves funcionalitats:"
+msgstr "Funcionalitats noves:"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
 msgid "Add support for multiple image TIFFs"
@@ -217,7 +217,7 @@ msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
 msgstr ""
-"Actualitzat la sensibilitat dels controls OCR de l'editor de caixes segons "
+"Actualitzada la sensibilitat dels controls OCR de l'editor de caixes segons "
 "l'existència de motors OCR"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
@@ -1274,7 +1274,7 @@ msgstr "_Millora la detecció de les columnes"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1504
 msgid "Use a post-detection algorithm to improve the detection of columns"
-msgstr "Usa un algoritme de post detecció per millorar la detecció de columnes"
+msgstr "Usa un algoritme de post detecció per a millorar la detecció de columnes"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1515
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1589
