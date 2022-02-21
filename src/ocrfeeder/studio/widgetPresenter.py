@@ -17,6 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
+import shlex
 from .dataHolder import DataBox, TEXT_TYPE, IMAGE_TYPE
 from ocrfeeder.util import lib, PAPER_SIZES
 from ocrfeeder.util.configuration import ConfigurationManager
@@ -972,7 +973,7 @@ class UnpaperDialog(Gtk.Dialog):
         unpapered_image = os.path.splitext(name)[0] + '_unpapered.ppm'
         if os.path.exists(unpapered_image):
             unpapered_image = lib.getNonExistingFileName(unpapered_image)
-        command += ' %s %s' % (name, unpapered_image)
+        command += [name, unpapered_image]
         progress_bar = CommandProgressBarDialog(self, command, _('Performing Unpaper'), _('Performing unpaper. Please wait…'))
         progress_bar.run()
         self.unpapered_image = unpapered_image
@@ -1107,22 +1108,23 @@ class UnpaperPreferences(Gtk.VBox):
         self.gray_filter_size.set_sensitive(has_gray_filter)
 
     def getUnpaperCommand(self):
-        command = '%s --layout single' % self.configuration_manager.unpaper
+        command = [
+            self.configuration_manager.unpaper,
+            '--layout', 'single',
+        ]
         if not self.black_filter_usage.get_active():
-            command += ' --no-blackfilter'
+            command.append('--no-blackfilter')
         if self.noise_filter_none.get_active():
-            command += ' --no-noisefilter'
+            command.append('--no-noisefilter')
         elif self.noise_filter_custom.get_active():
-            command += ' --noisefilter-intensity %s' % \
-                       self.noise_filter_intensity.get_value()
+            command += ['--noisefilter-intensity', self.noise_filter_intensity.get_value()]
         if self.gray_filter_none.get_active():
-            command += ' --no-grayfilter'
+            command.append('--no-grayfilter')
         elif self.gray_filter_custom.get_active():
-            command += ' --grayfilter-size %s' % \
-                       self.gray_filter_size.get_value()
-        extra_options_text = self.extra_options.get_text()
-        if extra_options_text.strip():
-            command += ' %s ' % extra_options_text
+            command += ['--grayfilter-size', self.gray_filter_size.get_value()]
+        extra_options_text = self.extra_options.get_text().strip()
+        if extra_options_text:
+            command += shlex.split(extra_options_text)
         return command
 
     def save(self):
@@ -1206,7 +1208,7 @@ class CommandProgressBarDialog(Gtk.Dialog):
 
     def __startPulse(self):
         try:
-            self.process = subprocess.Popen(self.command.split(), stdout = subprocess.PIPE, stderr = subprocess.STDOUT, bufsize=1)
+            self.process = subprocess.Popen(self.command, stdout = subprocess.PIPE, stderr = subprocess.STDOUT, bufsize=1)
         except:
             warning = SimpleDialog(self, _('An error occurred!'), _('Error'), 'warning')
             warning.run()
