@@ -78,7 +78,7 @@ def runGhostscript(dir_name, base_name, pdf_path, format = 'jpeg', resolution = 
     command = [
         'gs',
         f'-SDEVICE={format}',
-        f'-r{resolution}x{resolution}s',
+        f'-r{resolution}x{resolution}',
         f'-sPAPERSIZE={size}',
         f'-sOutputFile={dir_name}/{base_name}_%04d.jpg',
         '-dNOPAUSE',
