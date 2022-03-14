@@ -1,6 +1,6 @@
 AC_PREREQ([2.63])
 AC_INIT([ocrfeeder],
-        [0.8.3],
+        [0.8.4],
         [https://gitlab.gnome.org/GNOME/ocrfeeder/issues],
         [ocrfeeder])
 
