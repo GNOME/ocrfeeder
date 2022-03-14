@@ -17,20 +17,22 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###########################################################################
 
-import os
-import subprocess
-import mimetypes
-from PIL import Image
-import tempfile
-from gi.repository import Gtk
 import math
-from .constants import *
-import sane
-import tempfile
-import locale
+import mimetypes
+import os
 import re
+import shlex
+import subprocess
+import tempfile
 import xml.etree.ElementTree as etree
+
+import sane
+from gi.repository import Gtk
+from PIL import Image
+
+from .constants import *
 from .log import debug
+
 
 def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR):
     icon = Gtk.Image()
@@ -47,11 +49,8 @@ def getIconOrLabel(icon_name, label_text, icon_size = Gtk.IconSize.SMALL_TOOLBAR
 def getSafeGhostscriptPath(file_path):
     return re.sub(r'[^\w !#$%&()*+,./:;<=>?@\[\\\]^_`{|}~-]', '_', file_path)
 
-def getSafeGhostscriptInputFilename(file_name):
-    return re.sub(r'[/]', '_', getSafeGhostscriptPath(file_name))
-
 def getSafeGhostscriptOutputBasename(file_name):
-    return re.sub(r'[%]', '_', getSafeGhostscriptInputFilename(file_name))
+    return re.sub(r'[%]', '_', getSafeGhostscriptPath(file_name))
 
 def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
     if not os.path.isfile(pdf_file):
@@ -67,41 +66,27 @@ def convertPdfToImages(pdf_file, temp_dir = '/tmp'):
 
     file_name = os.path.basename(pdf_file)
     base_name = os.path.splitext(file_name)[0]
-    file_name_safe = getSafeGhostscriptInputFilename(file_name)
+    # GhostScript will interpret the '%' character, which is allowed
+    # in Unix file names, so we need to escape it
     base_name_safe = getSafeGhostscriptOutputBasename(base_name)
-    pdf_file_safe = getSafeGhostscriptPath(pdf_file)
 
-    if pdf_file != pdf_file_safe:
-        try:
-            # The prefix added here is for extra safety so there are less chances
-            # for this path to match the original one in future changes.
-            pdf_path_safe = os.path.join(dir_name, 'OCRFEEDER_' + file_name_safe)
-            os.symlink(pdf_file, pdf_path_safe)
-        except:
-            debug('Unable to convert PDF: Cannot create temp symlink in: %s', dir_name)
-            return None
-
-        runGhostscript(dir_name, base_name_safe, pdf_path_safe)
-        try:
-            os.unlink(pdf_path_safe)
-        except:
-            debug('PDF conversion warning: Cannot remove temp symlink: %s', pdf_path_safe)
-    else:
-        runGhostscript(dir_name, base_name_safe, pdf_file)
+    runGhostscript(dir_name, base_name_safe, pdf_file)
 
     return dir_name
 
 def runGhostscript(dir_name, base_name, pdf_path, format = 'jpeg', resolution = 300, size = 'letter'):
-    command = 'gs -SDEVICE=%(format)s -r%(resolution)sx%(resolution)s -sPAPERSIZE=%(size)s ' \
-              '-sOutputFile=\'%(temp_name)s/%(file_name)s_%%04d.jpg\' ' \
-              '-dNOPAUSE -dBATCH -- \'%(pdf_file)s\'' % \
-              {'format': format,
-               'temp_name': dir_name,
-               'file_name': base_name,
-               'pdf_file': pdf_path,
-               'resolution': resolution,
-               'size': size}
-    process = subprocess.run(command, shell=True)
+    command = [
+        'gs',
+        f'-SDEVICE={format}',
+        f'-r{resolution}x{resolution}',
+        f'-sPAPERSIZE={size}',
+        f'-sOutputFile={dir_name}/{base_name}_%04d.jpg',
+        '-dNOPAUSE',
+        '-dBATCH',
+        '--',
+        pdf_path
+    ]
+    subprocess.run(command)
 
 def getImagesFromFolder(folder):
     if folder is None:
@@ -159,20 +144,24 @@ def getExecPath(exec_name):
     return real_exec_name
 
 def getUnpaperCommand(configuration_manager):
-    command = '%s --layout single --overwrite ' % configuration_manager.unpaper
+    command = [
+        configuration_manager.unpaper,
+        '--layout', 'single',
+        '--overwrite',
+    ]
     if not configuration_manager.unpaper_use_black_filter:
-        command += ' --no-blackfilter'
+        command.append('--no-blackfilter')
     if configuration_manager.unpaper_noise_filter_intensity == 'none':
-        command += ' --no-noisefilter'
+        command.append('--no-noisefilter')
     elif configuration_manager.unpaper_noise_filter_intensity != 'auto':
-        command += ' --noisefilter-intensity %s' % \
-            configuration_manager.unpaper_noise_filter_intensity
+        command += ['--noisefilter-intensity', configuration_manager.unpaper_noise_filter_intensity]
     if configuration_manager.unpaper_gray_filter_size == 'none':
-        command += ' --no-grayfilter'
+        command.append('--no-grayfilter')
     elif configuration_manager.unpaper_gray_filter_size != 'auto':
-        command += ' --grayfilter-size %s' % \
-            configuration_manager.unpaper_gray_filter_size
-    command += ' %s ' % configuration_manager.unpaper_extra_options
+        command += ['--grayfilter-size', configuration_manager.unpaper_gray_filter_size]
+    extra_options = configuration_manager.unpaper_extra_options.strip()
+    if extra_options:
+        command += shlex.split(extra_options)
     return command
 
 def unpaperImage(configuration_manager, image_path):
@@ -186,10 +175,10 @@ def unpaperImage(configuration_manager, image_path):
     image_path = Image.open(image_path)
     image_path.save(unpapered_in, format = 'PPM')
     command = getUnpaperCommand(configuration_manager)
-    command += ' %s %s' % (unpapered_in, unpapered_name)
+    command += [unpapered_in, unpapered_name]
     debug(command)
     try:
-        os.system(command)
+        subprocess.run(command)
     except Exception as exception:
         debug(exception)
         return None
