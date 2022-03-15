@@ -1,10 +1,21 @@
+Version 0.8.5
+~~~~~~~~~~~~~
+Released: 2022-03-15
+
+Bug Fixes:
+ * Fix arguments for ghostscript invocation (thanks to @RenWal)
+
+Other:
+ * The previously pushed tag was a mistake as it was pointing to a
+   temporary branch. No real issues for the user, but this release/tag
+   now fixes that.
+
 Version 0.8.4
 ~~~~~~~~~~~~~
 Released: 2022-03-14
 
 Bug Fixes:
  * Prevent invoking shell commands from the file name (thanks to @RenWal)
- * Fix arguments for ghostscript invocation (thanks to @RenWal)
 
 Version 0.8.3
 ~~~~~~~~~~~~~
