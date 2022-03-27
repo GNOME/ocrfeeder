@@ -1,0 +1,1491 @@
+# Dutch translation for ocrfeeder.
+# Copyright (C) 2022 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Nathan Follens <nfollens@gnome.org>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
+"POT-Creation-Date: 2022-03-15 16:49+0000\n"
+"PO-Revision-Date: 2022-03-27 20:07+0200\n"
+"Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
+"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "De volledige OCR-suite."
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:3
+msgid ""
+"OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
+"Recognition;Scanner;Scanning;"
+msgstr ""
+"OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
+"Recognition;Scanner;Scanning;documentherkenning;scannen;optische "
+"tekenherkenning;tekst uit afbeelding;tekst uit foto;"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "De volledige OCR-suite"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:3
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+"OCRFeeder is een systeem voor documentindelingsanalyse en optische "
+"tekenherkenning."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:4
+msgid ""
+"Given the images it will automatically outline its contents, distinguish "
+"between what's graphics and text and perform OCR over the latter. It "
+"generates multiple formats being its main one ODT."
+msgstr ""
+"Uit de aangeleverde afbeeldingen leidt het de inhoud af, maakt het een "
+"onderscheid tussen afbeeldingen en tekst en voert het OCR uit op de tekst. "
+"Het genereert verschillende bestandsformaten, waarvan ODT het belangrijkste "
+"is."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:5
+msgid ""
+"It features a complete GTK graphical user interface that allows the users to "
+"correct any unrecognized characters, defined or correct bounding boxes, set "
+"paragraph styles, clean the input images, import PDFs, save and load the "
+"project, export everything to multiple formats, etc."
+msgstr ""
+"Het bevat een volledige grafische gebruikersinterface in GTK, die de "
+"gebruikers de mogelijkheid biedt om niet-herkende tekens te verbeteren, "
+"selectiekaders in te stellen of te verbeteren, alineastijlen in te stellen, "
+"de invoerafbeeldingen op te ruimen, PDF-bestanden te importeren, het project "
+"op te slaan en te laden, alles te exporteren naar verscheidene formaten, enz."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
+msgid "Content Areas"
+msgstr "Inhoudsgebieden"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7
+#: ../src/ocrfeeder/studio/widgetPresenter.py:925
+msgid "Unpaper Image Processor"
+msgstr "Unpaper-afbeeldingsverwerker"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:8
+#: ../resources/spell-checker.ui.h:1
+msgid "Check spelling"
+msgstr "Spelling controleren"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
+msgid "Bug Fixes:"
+msgstr "Probleemoplossingen:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+msgid ""
+"Fix PDF importation, which was broken after the Python 3 port (thanks to "
+"@scx)"
+msgstr ""
+"PDF-bestanden importeren werkt weer, nadat de functie gebroken was door de "
+"overstap naar Python 3 (met dank aan @scx)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+msgid ""
+"Allow to import PDF files whose paths have characters Ghostscript doesn't "
+"like"
+msgstr ""
+"Het importeren van PDF-bestanden in paden met tekens die Ghostscript niet "
+"kan lezen is voortaan mogelijk"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+msgid "Ship the appdata.xml.in the tarball"
+msgstr "Appdata.xml wordt nu meegeleverd in de tarbal"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
+msgid "Improvements:"
+msgstr "Verbeteringen:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
+msgid "Python 3 is now used, making the unicode issues go away for good"
+msgstr ""
+"OCRFeeder gebruikt nu Python 3, waardoor de Unicode-problemen voorgoed van "
+"de baan zijn"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
+msgid "The main window is now bigger"
+msgstr "Het hoofdvenster is nu groter"
+
+# ? - Nathan
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
+msgid "The image clip is now expandible"
+msgstr "De afbeeldingsclip is nu uitbreidbaar"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
+msgid "The manpages have been updated with the missing options"
+msgstr "De ontbrekende opties zijn toegevoegd aan de gebruikershandleiding"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
+msgid "Fix icons in the boxes' editor text align buttons"
+msgstr ""
+"Pictogrammen in de tekstuitlijningsknoppen van de kaderbewerker werken weer"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
+msgid "Install the application icon in the right place"
+msgstr "Het toepassingspictogram wordt nu op de juiste plaats geïnstalleerd"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
+msgid ""
+"Many issues in the scanner dialog have been fixed (scanner options, UI "
+"problems, etc.)"
+msgstr ""
+"Veel problemen met het scannerdialoogvenster zijn opgelost (scanneropties, "
+"interfaceproblemen, enz.)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
+msgid ""
+"The Preferences dialog is now smaller (the big contents are wrapped in a "
+"scrolled window)"
+msgstr ""
+"Het dialoogvenster Voorkeuren is verkleind (de grote inhoud wordt nu in een "
+"venster met scrolmogelijkheid weergegeven)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
+msgid "All dialogs are now centered to the main window"
+msgstr "Alle dialoogvensters zijn nu gecentreerd op het hoofdvenster"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
+msgid "Use XDG user's configuration directory instead of .ocrfeeder"
+msgstr "Configuratiemap van XDG-gebruiker gebruiken in plaats van .ocrfeeder"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
+msgid "Fix Gtk thread related problems"
+msgstr "Problemen met Gtk-processen zijn opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
+msgid "Fix unicode issues when saving a project and exporting a document"
+msgstr ""
+"Unicodeproblemen bij het opslaan en exporteren van documenten zijn opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
+msgid "Fix issue when exporting a picture in a document from a loaded project"
+msgstr ""
+"Probleem bij het exporteren van een afbeelding in een document van een "
+"geladen project is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
+msgid "Fix ODT exportation button's icon"
+msgstr "Pictogram van de ODT-exportknop werkt nu zoals het hoort"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
+msgid "New Features:"
+msgstr "Nieuwe functies:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
+msgid "Add support for multiple image TIFFs"
+msgstr "Ondersteuning toegevoegd voor TIFF’s met meerdere afbeeldingen"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
+msgid "Port the application to GObject Introspection"
+msgstr "Toepassing overgezet naar GObject Introspection"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
+msgid "Scan with 300 DPI and in color mode"
+msgstr "Scannen met 300 DPI en in kleurenmodus"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
+msgid "Use the last visited directory when adding a new image"
+msgstr ""
+"Gebruik de laatst bezochte map bij het toevoegen van een nieuwe afbeelding"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
+msgid ""
+"Warn when no OCR engines are found on startup or when performing the "
+"recognition"
+msgstr ""
+"Waarschuw als er geen OCR-motoren gevonden zijn bij het opstarten, of bij "
+"het uitvoeren van de herkenning"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
+msgid ""
+"Update the box editor's OCR controls sensitiveness according to the "
+"existence of OCR engines"
+msgstr ""
+"Werk de gevoeligheid van de OCR-besturing van de kaderbewerker bij volgens "
+"het bestaan van OCR-motoren"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
+msgid "Fix PIL importation"
+msgstr "PIL-import is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
+msgid "Fix error when exporting a PDF with empty text areas"
+msgstr "Fout bij importeren van PDF met lege tekstvakken is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
+msgid "Fix PDF output options in ocrfeeder-cli"
+msgstr "PDF-uitvoeropties in ocrfeeder-cli zijn opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
+msgid "Fix getting engine name in ocrfeeder-cli"
+msgstr "Ophalen van motornaam in ocrfeeder-cli is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
+msgid "Fix the use of newer versions of Unpaper"
+msgstr "Gebruik van nieuwere versies van Unpaper is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
+msgid "Fix text in the pages icon view"
+msgstr "Tekst in de paginapictogramweergave werkt weer"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
+msgid "Fix reordering pages in the icon view"
+msgstr "Pagina’s ordenen in de pictogramweergave werkt weer"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
+msgid "Fix issues when no locale is set"
+msgstr "Problemen wanneer er geen regio ingesteld is zijn opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
+msgid "Fix loading project with more than one page"
+msgstr "Het laden van projecten met meer dan één pagina is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
+msgid "Fix updating the OCR engines in the BoxEditor"
+msgstr "Het bijwerken van de OCR-motoren in de Kaderbewerker is opgelost"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
+msgid "New and Updated Translations:"
+msgstr "Nieuwe en bijgewerkte vertalingen:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
+msgid "Marek Černocký [cz]"
+msgstr "Marek Černocký [cz]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
+msgid "Daniel Mustieles [es]"
+msgstr "Daniel Mustieles [es]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
+msgid "Fran Diéguez [gl]"
+msgstr "Fran Diéguez [gl]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
+msgid "Dimitris Spingos [el]"
+msgstr "Dimitris Spingos [el]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
+msgid "Aharon Don [he]"
+msgstr "Aharon Don [he]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
+msgid "Attila Hammer, Gabor Kelemen [hu]"
+msgstr "Attila Hammer, Gabor Kelemen [hu]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
+msgid "Rafael Ferreira [pt_BR]"
+msgstr "Rafael Ferreira [pt_BR]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
+msgid "Martin Srebotnjak [sl]"
+msgstr "Martin Srebotnjak [sl]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:54
+msgid "Мирослав Николић [sr]"
+msgstr "Мирослав Николић [sr]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:55
+msgid "Piotr Drąg [uk]"
+msgstr "Piotr Drąg [uk]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:56
+msgid "Wylmer Wang [zh_CN]"
+msgstr "Wylmer Wang [zh_CN]"
+
+#: ../resources/spell-checker.ui.h:2
+msgid "Misspelled word:"
+msgstr "Verkeerd gespeld woord:"
+
+#: ../resources/spell-checker.ui.h:3
+msgid "Change _to:"
+msgstr "Wijzigen _naar:"
+
+#: ../resources/spell-checker.ui.h:4
+msgid "_Suggestions:"
+msgstr "_Suggesties:"
+
+#: ../resources/spell-checker.ui.h:5
+msgid "Cha_nge"
+msgstr "_Wijzigen"
+
+#: ../resources/spell-checker.ui.h:6
+msgid "Ignore _All"
+msgstr "_Alles negeren"
+
+#: ../resources/spell-checker.ui.h:7
+msgid "Change A_ll"
+msgstr "A_lles wijzigen"
+
+#: ../resources/spell-checker.ui.h:8
+#: ../src/ocrfeeder/studio/studioBuilder.py:422
+msgid "_Ignore"
+msgstr "_Negeren"
+
+#: ../resources/spell-checker.ui.h:9
+msgid "Language:"
+msgstr "Taal:"
+
+#: ../resources/spell-checker.ui.h:10
+msgid "<b>Language</b>"
+msgstr "<b>Taal</b>"
+
+#: ../src/ocrfeeder/feeder/imageManipulation.py:35
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"Er trad een probleem op bij het openen van de afbeelding:\n"
+" %s\n"
+"Zorg dat de afbeelding bestaat of probeer deze te converteren naar een ander "
+"bestandsformaat."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:63
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:64
+#: ../src/ocrfeeder/studio/studioBuilder.py:245
+msgid "PDF"
+msgstr "PDF"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:65
+msgid "Plain Text"
+msgstr "Platte tekst"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:171
+msgid "Images"
+msgstr "Afbeeldingen"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+msgid "Obtaining scanners"
+msgstr "Scanners worden opgehaald"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Please wait…"
+msgstr "Even geduld…"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+msgid "Scanning"
+msgstr "Scannen"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+msgid "No scanner devices were found"
+msgstr "Er zijn geen scannerapparaten gevonden"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:221
+#: ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "Error"
+msgstr "Fout"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
+msgid "Error scanning page"
+msgstr "Fout bij scannen van pagina"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+msgid "Loading PDF"
+msgstr "PDF wordt geladen"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:289
+msgid "Export pages"
+msgstr "Pagina’s exporteren"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
+msgid "Are you sure you want to delete the current image?"
+msgstr "Weet u zeker dat u de huidige afbeelding wilt verwijderen?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:380
+msgid "Are you sure you want to clear the project?"
+msgstr "Weet u zeker dat u het project wilt wissen?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:418
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1860
+msgid "No OCR engines available"
+msgstr "Geen OCR-motoren beschikbaar"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1861
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"Er zijn geen OCR-motoren gevonden op het systeem.\n"
+"Zorg ervoor dat er OCR-motoren geïnstalleerd en beschikbaar zijn."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/studioBuilder.py:479
+msgid "_Open OCR Engines Manager Dialog"
+msgstr "_OCR-motorbeheerdialoogvenster openen"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:477
+msgid "_Keep Current Configuration"
+msgstr "Huidige configuratie _behouden"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:481
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
+"manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
+msgstr ""
+"De parameters van de volgende OCR-motoren moeten misschien bijgewerkt "
+"worden, maar het lijkt erop dat u hun standaardconfiguratie hebt gewijzigd, "
+"waardoor u ze handmatig zult moeten bijwerken:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"Als u uw wijzigingen niet wilt bewaren kunt u gewoon de huidige configuratie "
+"verwijderen, dan worden uw OCR-motoren weer gedetecteerd."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:502
+msgid "The project hasn't been saved."
+msgstr "Het project is nog niet opgeslagen."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:503
+msgid "Do you want to save it before closing?"
+msgstr "Wilt u het opslaan vooraleer het te sluiten?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:504
+msgid "Close anyway"
+msgstr "Toch sluiten"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:69
+msgid "Selectable areas"
+msgstr "Selecteerbare gebieden"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+msgid "Preparing image"
+msgstr "Afbeelding wordt voorbereid"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
+#, python-format
+msgid "Preparing image %(current_index)s/%(total)s"
+msgstr "Afbeelding wordt voorbereid %(current_index)s/%(total)s"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+msgid "Deskewing image"
+msgstr "Afbeelding rechtzetten"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
+msgid "No images added"
+msgstr "Geen afbeeldingen toegevoegd"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
+#, python-format
+msgid "Zoom: %s %%"
+msgstr "Zoomniveau: %s %%"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
+#, python-format
+msgid "Resolution: %.2f x %.2f"
+msgstr "Resolutie: %.2f x %.2f"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:446
+#, python-format
+msgid "Page size: %i x %i"
+msgstr "Paginagrootte: %i x %i"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:487
+msgid ""
+"There are changes that may be overwritten by the new recognition.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+"Er zijn wijzigingen die door de nieuwe herkenning overschreven kunnen "
+"worden.\n"
+"\n"
+"Wilt u verdergaan?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Recognizing Page"
+msgstr "Herkennen van pagina"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:526
+msgid "Recognizing Document"
+msgstr "Herkennen van document"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:527
+#, python-format
+msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgstr "Herkennen van pagina %(page_number)s/%(total_pages)s. Even geduld…"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:601
+#, python-format
+msgid "Export to %(format_name)s"
+msgstr "Exporteren naar %(format_name)s"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:625
+msgid "What kind of PDF document do you wish?"
+msgstr "Wat voor PDF-document wilt u?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
+msgid "From scratch"
+msgstr "Vanaf nul"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:629
+msgid "Creates a new PDF from scratch."
+msgstr "Maakt een nieuw PDF-document aan vanaf nul."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
+msgid "Searchable PDF"
+msgstr "Doorzoekbare PDF"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:633
+msgid "Creates a PDF based on the images but with searchable text."
+msgstr ""
+"Maakt een PDF aan op basis van de afbeeldingen maar met doorzoekbare tekst."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:667
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder-projecten"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:714
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+"<b>Er bestaat al een bestand met de naam ‘%(name)s’. Wilt u het vervangen?</"
+"b>\n"
+"\n"
+"Het bestand bevindt zich in ‘%(dir)s’. Dit bestand vervangen zal de inhoud "
+"ervan overschrijven."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:721
+msgid "Replace"
+msgstr "Vervangen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
+#: ../src/ocrfeeder/studio/pagesiconview.py:78
+msgid "Pages"
+msgstr "Pagina’s"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "_File"
+msgstr "_Bestand"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "_Quit"
+msgstr "Afsl_uiten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "Exit the program"
+msgstr "Programma afsluiten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "_Open"
+msgstr "_Openen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "Open project"
+msgstr "Project openen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "_Save"
+msgstr "Op_slaan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "Save project"
+msgstr "Project opslaan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "_Save As…"
+msgstr "Op_slaan als…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Save project with a chosen name"
+msgstr "Project opslaan met gekozen naam"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "_Add Image"
+msgstr "_Afbeelding toevoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Add another image"
+msgstr "Nog een afbeelding toevoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add _Folder"
+msgstr "_Map toevoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add all images in a folder"
+msgstr "Alle afbeeldingen in een map toevoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Append Project"
+msgstr "Project bijvoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Load a project and append it to the current one"
+msgstr "Laad en project en voeg het bij het huidige"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "_Import PDF"
+msgstr "PDF _importeren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "Import PDF"
+msgstr "PDF importeren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "_Export…"
+msgstr "_Exporteren…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "Export to a chosen format"
+msgstr "Exporteren naar gekozen formaat"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+msgid "_Edit"
+msgstr "B_ewerken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "_Edit Page"
+msgstr "Pagina b_ewerken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "Edit page settings"
+msgstr "Pagina-instellingen bewerken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "_Preferences"
+msgstr "_Voorkeuren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "Configure the application"
+msgstr "De toepassing configureren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "_Delete Page"
+msgstr "Pagina verwij_deren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Delete current page"
+msgstr "Huidige pagina verwijderen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move Page Do_wn"
+msgstr "Pagina om_laag verplaatsen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move page down"
+msgstr "Pagina omlaag verplaatsen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move Page Up"
+msgstr "Pagina omhoog verplaatsen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move page up"
+msgstr "Pagina omhoog verplaatsen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select Next Page"
+msgstr "Volgende pagina selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select next page"
+msgstr "Volgende pagina selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select Previous Page"
+msgstr "Vorige pagina selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select previous page"
+msgstr "Vorige pagina selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "_Clear Project"
+msgstr "Project _wissen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "Delete all images"
+msgstr "Alle afbeeldingen verwijderen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+msgid "_View"
+msgstr "Weerga_ve"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+msgid "Best Fit"
+msgstr "Passend"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+msgid "Normal Size"
+msgstr "Normale grootte"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+msgid "_Document"
+msgstr "_Document"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1429
+msgid "_Tools"
+msgstr "H_ulpmiddelen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "_OCR Engines"
+msgstr "_OCR-motoren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "Manage OCR engines"
+msgstr "Beheer OCR-motoren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "_Unpaper"
+msgstr "_Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "Process image with unpaper"
+msgstr "Afbeelding verwerken met Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+msgid "Image Des_kewer"
+msgstr "Afbeeldingen re_chtzetten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+msgid "Tries to straighten the image"
+msgstr "Probeert de afbeelding recht te zetten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "_Help"
+msgstr "_Hulp"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "Help contents"
+msgstr "Hulpinhoud"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "_About"
+msgstr "In_fo"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "About this application"
+msgstr "Info over deze toepassing"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
+msgid "_Recognize Document"
+msgstr "Document he_rkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:118
+msgid "Automatically detect and recognize all pages"
+msgstr "Alle pagina’s automatisch detecteren en herkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
+msgid "R_ecognize Page"
+msgstr "Pagina h_erkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:122
+msgid "Automatically detect and recognize the current page"
+msgstr "De huidige pagina automatisch detecteren en herkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
+msgid "Recognize _Selected Areas"
+msgstr "Ge_selecteerde gebieden herkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:126
+msgid "Recognize Selected Areas"
+msgstr "Geselecteerde gebieden herkennen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
+msgid "Select _All Areas"
+msgstr "_Alle gebieden selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:130
+msgid "Select all content areas"
+msgstr "Alle inhoudsgebieden selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
+msgid "Select _Previous Area"
+msgstr "_Vorig gebied selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:134
+msgid "Select the previous area from the content areas"
+msgstr "Selecteer het vorige gebied uit de inhoudsgebieden"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
+msgid "Select _Next Area"
+msgstr "Volge_nd gebied selecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:138
+msgid "Select the next area from the content areas"
+msgstr "Selecteer het volgende gebied uit de inhoudsgebieden"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
+msgid "Delete Selected Areas"
+msgstr "Geselecteerde gebieden verwijderen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "Deletes all the currently selected content areas"
+msgstr "Verwijdert alle huidig geselecteerde inhoudsgebieden"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "_Generate ODT"
+msgstr "ODT _genereren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "Export to ODT"
+msgstr "Exporteren naar ODT"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:146
+msgid "Import Page From S_canner"
+msgstr "Pagina importeren vanuit s_canner"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:148
+msgid "Import From Scanner"
+msgstr "Importeren vanuit scanner"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:151
+msgid "_Copy to Clipboard"
+msgstr "_Kopiëren naar klembord"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:153
+msgid "Copy recognized text to clipboard"
+msgstr "Herkende tekst kopiëren naar klembord"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+msgid "Spell_checker"
+msgstr "Spelling_controle"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+msgid "Spell Check Recognized Text"
+msgstr "Spellingcontrole toepassen op herkende tekst"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:262
+msgid "No language"
+msgstr "Geen taal"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:330
+msgid "Area editor"
+msgstr "Gebiedsbewerker"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr "Stelt de X-coördinaat van de linkerbovenhoek van het inhoudsgebied in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr "Stelt de Y-coördinaat van de linkerbovenhoek van het inhoudsgebied in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
+msgid "Sets the content area's width"
+msgstr "Stelt de breedte van het inhoudsgebied in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+msgid "Sets the content area's height"
+msgstr "Stelt de hoogte van het inhoudsgebied in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
+msgid "_Text"
+msgstr "_Tekst"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
+msgid "Set this content area to be the text type"
+msgstr "Dit inhoudsgebied instellen als tekst"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
+msgid "_Image"
+msgstr "Afbeeld_ing"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
+msgid "Set this content area to be the image type"
+msgstr "Dit inhoudsgebied instellen als afbeelding"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:360
+msgid "Type"
+msgstr "Type"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:372
+msgid "Clip"
+msgstr "Clip"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
+msgid "Bounds"
+msgstr "Afgrenzing"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:461
+msgid "_X:"
+msgstr "_X:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:470
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:482
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
+msgid "_Width:"
+msgstr "_Breedte:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:491
+msgid "Hei_ght:"
+msgstr "Hoo_gte:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+msgid "Left"
+msgstr "Links"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
+msgid "Set text to be left aligned"
+msgstr "Tekst links uitlijnen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
+msgid "Center"
+msgstr "Midden"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
+msgid "Set text to be centered"
+msgstr "Tekst centreren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
+msgid "Right"
+msgstr "Rechts"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+msgid "Set text to be right aligned"
+msgstr "Tekst rechts uitlijnen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:535
+msgid "Fill"
+msgstr "Vullen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
+msgid "Set text to be fill its area"
+msgstr "Tekst regels doen uitvullen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+msgid "OC_R"
+msgstr "OC_R"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr "Voer OCR uit op dit inhoudsgebied met de geselecteerde OCR-motor."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+msgid "OCR engine to recognize this content area"
+msgstr "OCR-motor om dit inhoudsgebied mee te herkennen"
+
+#. Text Properties
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
+msgid "Text Properties"
+msgstr "Teksteigenschappen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
+msgid "Font"
+msgstr "Lettertype"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+msgid "Align"
+msgstr "Uitlijnen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
+msgid "Spacing"
+msgstr "Spatiëring"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
+msgid "Set the text's letter spacing"
+msgstr "Stel de spatiëring tussen letters in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
+msgid "Set the text's line spacing"
+msgstr "Stel de spatiëring tussen regels in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
+msgid "_Line:"
+msgstr "Rege_l:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
+msgid "L_etter:"
+msgstr "L_etter:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
+msgid "Sty_le"
+msgstr "Stij_l"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
+msgid "Angle"
+msgstr "Hoek"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
+msgid "Mis_c"
+msgstr "Al_g"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1696
+msgid "Language"
+msgstr "Taal"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+msgid "OCR engine to recogni_ze this area:"
+msgstr "OCR-motor om dit _gebied mee te herkennen:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
+msgid "Detect"
+msgstr "Detecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
+msgid "Angle:"
+msgstr "Hoek:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:751
+msgid "Save File"
+msgstr "Bestand opslaan"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:754
+msgid "Open File"
+msgstr "Bestand openen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:758
+msgid "Open Folder"
+msgstr "Map openen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:789
+msgid "Pages to export"
+msgstr "Pagina’s te exporteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:791
+msgid "All"
+msgstr "Alles"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:792
+msgid "Current"
+msgstr "Huidige"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
+msgid "Choose the format"
+msgstr "Kies het formaat"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
+msgid "Page size"
+msgstr "Paginagrootte"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
+msgid "Custom…"
+msgstr "Aangepast…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
+msgid "_Height:"
+msgstr "_Hoogte:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:868
+msgid "Affected pages"
+msgstr "Betrokken pagina’s"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
+msgid "C_urrent"
+msgstr "H_uidige"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:871
+msgid "_All"
+msgstr "_Alles"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:943
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:950
+msgid "_Preview"
+msgstr "_Voorbeeld"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing Unpaper"
+msgstr "Unpaper wordt uitgevoerd"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing unpaper. Please wait…"
+msgstr "Unpaper wordt uitgevoerd. Even geduld…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
+msgid "Noise Filter Intensity"
+msgstr "Ruisfilterintensiteit"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1023
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1055
+msgid "Default"
+msgstr "Standaard"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1058
+msgid "None"
+msgstr "Geen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1053
+msgid "Gray Filter Size"
+msgstr "Grijsfiltergrootte"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1056
+msgid "Custom"
+msgstr "Aangepast"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
+msgid "Black Filter"
+msgstr "Zwartfilter"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1086
+msgid "Use"
+msgstr "Gebruiken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
+msgid "Extra Options"
+msgstr "Extra opties"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1095
+msgid "Unpaper's command line arguments"
+msgstr "Opdrachtregelparameters voor Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1153
+msgid "Unpaper Preferences"
+msgstr "Unpaper-voorkeuren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "An error occurred!"
+msgstr "Er is een fout opgetreden!"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1294
+msgid "Cancelled"
+msgstr "Geannuleerd"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1310
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
+msgid "_General"
+msgstr "Al_gemeen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1387
+msgid "_Recognition"
+msgstr "He_rkenning"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
+msgid "Select boxes' colors"
+msgstr "Stel kaderkleuren in"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1402
+msgid "Te_xt areas' fill color"
+msgstr "Vulkleur voor te_kstvakken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1408
+msgid "Text areas' _stroke color"
+msgstr "Tek_stkleur voor tekstvakken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1414
+msgid "_Image areas' fill color"
+msgstr "Vulkleur voor afbeeld_ingsvakken"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
+msgid "Path to unpaper"
+msgstr "Pad naar Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
+msgid "Choose"
+msgstr "Kiezen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1761
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+msgid "OCR Engines"
+msgstr "OCR-motoren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
+msgid ""
+"The engine that should be used when performing the automatic recognition."
+msgstr ""
+"De motor die gebruikt moet worden bij het uitvoeren van de automatische "
+"herkenning."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1459
+msgid "Favorite _engine:"
+msgstr "Favoriete _motor:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
+msgid "Window size"
+msgstr "Venstergrootte"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
+msgid "A_utomatic"
+msgstr "A_utomatisch"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
+msgid "Cu_stom"
+msgstr "Aangepa_st"
+
+# ? - Nathan
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr ""
+"De venstergrootte is de grootte van de onderverdeelde vakken van het "
+"detectiealgoritme."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1499
+msgid "Columns Detection"
+msgstr "Kolomherkenning"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
+msgid "_Improve columns detection"
+msgstr "Kolomherkenning ver_beteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+msgid "Use a post-detection algorithm to improve the detection of columns"
+msgstr ""
+"Gebruik een postherkenningsalgoritme om de herkenning van kolommen te "
+"verbeteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1591
+msgid "_Automatic"
+msgstr "_Automatisch"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1592
+msgid "Custo_m"
+msgstr "Aange_past"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+msgid "The columns' minimum width in pixels"
+msgstr "Minimale breedte van de kolommen in pixels"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
+msgid "Minimum width that a column should have:"
+msgstr "De minimale breedte voor kolommen:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
+msgid "Recognized Text"
+msgstr "Herkende tekst"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
+msgid "_Fix line breaks and hyphenization"
+msgstr "Regeleinden en woorda_fbreking oplossen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
+msgid ""
+"Removes single line breaks and hyphenization from text generated by OCR "
+"engines"
+msgstr ""
+"Verwijdert enkele regeleinden en woordafbreking uit tekst gegenereerd door "
+"OCR-motoren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+msgid "A_djust content areas' bounds"
+msgstr "Afgrenzing van inhou_dsgebieden aanpassen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1580
+msgid "Use a post-detection algorithm to shorten the contents areas' margins"
+msgstr ""
+"Gebruik een postdetectiealgoritme om de marges van de inhoudsgebieden te "
+"verkorten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1596
+msgid "The maximum size for the content areas' margins in pixels"
+msgstr "De maximale grootte voor de marges van de inhoudsgebieden in pixels"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1613
+msgid "Maximum size that the content areas' margins should have:"
+msgstr "Maximale grootte die de marges van de inhoudsgebieden mogen hebben:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1660
+msgid "Image Pre-processing"
+msgstr "Voorverwerking van afbeelding"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
+msgid "Des_kew images"
+msgstr "Afbeeldingen _rechtzetten"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+msgid "Tries to straighten the images before they are added"
+msgstr "Probeert de afbeeldingen recht te zetten vooraleer ze toe te voegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
+msgid "_Unpaper images"
+msgstr "_Unpaper-afbeeldingen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+msgid "Cleans the image using the Unpaper pre-processor"
+msgstr "Ruimt de afbeelding op met behulp van de Unpaper-voorverwerker"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1678
+msgid "Unpaper _Preferences"
+msgstr "Unpaper-_voorkeuren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1700
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one "
+"chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+"De taal kan een invloed hebben op hoe de OCR-motoren werken.\n"
+"Als een bepaalde motor ondersteuning biedt voor talen, maar niet voor de "
+"gekozen taal, kan dit leiden tot blanco tekst.\n"
+"Om dit te vermijden kunt u ‘Geen taal’ kiezen."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
+msgid "Default _language:"
+msgstr "Standaardtaa_l:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+msgid "Engines to be added"
+msgstr "Toe te voegen motoren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1742
+msgid "Include"
+msgstr "Invoegen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1787
+msgid "Engine"
+msgstr "Motor"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
+msgid "De_tect"
+msgstr "De_tecteren"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1809
+msgid "Are you sure you want to delete this engine?"
+msgstr "Weet u zeker dat u deze motor wilt verwijderen?"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
+#, python-format
+msgid "%s engine"
+msgstr "%s-motor"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
+msgid "_Name:"
+msgstr "_Naam:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
+msgid "Engine name"
+msgstr "Motornaam"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
+msgid "_Image format:"
+msgstr "Afbeeld_ingsformaat:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
+msgid "The required image format"
+msgstr "Het vereiste afbeeldingsformaat"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
+msgid "_Failure string:"
+msgstr "_Mislukkingstekenreeks:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
+msgid "The failure string or character that this engine uses"
+msgstr ""
+"De tekenreeks of het teken dat door deze motor wordt gebruikt wanneer iets "
+"niet herkend kan worden"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
+msgid "Engine _path:"
+msgstr "Motor_pad:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
+msgid "The path to the engine program"
+msgstr "Het pad naar het motorprogramma"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
+msgid "Engine _arguments:"
+msgstr "Motorp_arameters:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1932
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr ""
+"Parameters: gebruik $IMAGE voor een afbeelding en $FILE als het naar een "
+"bestand schrijft"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
+msgid "Engine _language argument:"
+msgstr "Motortaa_lparameter:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In "
+"order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr ""
+"De taalparameter ingeval deze motor die gebruikt (bijvoorbeeld ‘-l’). Om dit "
+"te doen werken moeten de motorparameters het sleutelwoord $LANG bevatten."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
+msgid "Engine lan_guages:"
+msgstr "Motor_talen:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1946
+msgid ""
+"The languages this engine supports. This should be given as pairs of the "
+"language in the ISO 639-1 and the engine's corresponding language (for "
+"example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
+"arguments should have the $LANG keyword."
+msgstr ""
+"De talen die door deze motor ondersteund worden. Deze moeten ingevoerd "
+"worden als koppels van enerzijds de taal in ISO 639-1-formaat, en anderzijds "
+"de overeenkomstige taal in de motor (bijvoorbeeld ‘en:eng,pt:por,es:esp’). "
+"Om dit te doen werken moeten de motorparameters het sleutelwoord $LANG "
+"bevatten."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Error setting the new engine; please check your engine settings."
+msgstr ""
+"Fout bij het instellen van de nieuwe motor; controleer de instellingen van "
+"de motor."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Warning"
+msgstr "Waarschuwing"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2023
+msgid "translator-credits"
+msgstr ""
+"Nathan Follens <nfollens@gnome.org>\n"
+"\n"
+"Meer info over Gnome-NL http://nl.gnome.org"
