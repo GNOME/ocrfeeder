@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
-"POT-Creation-Date: 2022-09-22 20:36+0000\n"
-"PO-Revision-Date: 2022-09-27 18:46+0200\n"
+"POT-Creation-Date: 2022-09-27 16:47+0000\n"
+"PO-Revision-Date: 2022-10-04 22:34+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -97,12 +97,16 @@ msgid ""
 "Fix PDF importation, which was broken after the Python 3 port (thanks to "
 "@scx)"
 msgstr ""
+"Popravljen uvoz PDF, ki je bil okvarjen po prehodu na Python 3 (zahvaljujoč "
+"@scx)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
 msgid ""
 "Allow to import PDF files whose paths have characters Ghostscript doesn't "
 "like"
 msgstr ""
+"Dovoljen uvoz datotek PDF, katerih poti imajo znake, ki Ghostscriptu niso "
+"všeč"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
 msgid "Ship the appdata.xml.in the tarball"
@@ -124,15 +128,15 @@ msgstr "Glavno okno je zdaj večje"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
 msgid "The image clip is now expandible"
-msgstr ""
+msgstr "Izrezek slike je zdaj mogoče razširiti"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
 msgid "The manpages have been updated with the missing options"
-msgstr ""
+msgstr "Strani pomoči manpage so bile posodobljene z manjkajočimi možnostmi"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
 msgid "Fix icons in the boxes' editor text align buttons"
-msgstr ""
+msgstr "Popravljene ikone v gumbih za poravnavo besedila v polju urejevalnika"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
 msgid "Install the application icon in the right place"
@@ -143,12 +147,16 @@ msgid ""
 "Many issues in the scanner dialog have been fixed (scanner options, UI "
 "problems, etc.)"
 msgstr ""
+"Številne težave v pogovornem oknu optičnega bralnika so odpravljene "
+"(možnosti optičnega bralnika, težave z up. vmesnikom itn.)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
 msgid ""
 "The Preferences dialog is now smaller (the big contents are wrapped in a "
 "scrolled window)"
 msgstr ""
+"Pogovorno okno Nastavitve je zdaj manjše (obsežna vsebina je vključena v "
+"okno z drsnikom)"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
 msgid "All dialogs are now centered to the main window"
@@ -156,7 +164,7 @@ msgstr "Vsa pogovorna okna so zdaj na sredi glavnega okna"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
 msgid "Use XDG user's configuration directory instead of .ocrfeeder"
-msgstr ""
+msgstr "Namesto .ocrfeeder uporaba uporabnikovega imenika prilagoditev XDG"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
 msgid "Fix Gtk thread related problems"
@@ -165,10 +173,12 @@ msgstr "Odpravljene težave, povezane z nitmi Gtk"
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
 msgid "Fix unicode issues when saving a project and exporting a document"
 msgstr ""
+"Odpravljene težave z znaki Unicode pri shranjevanju projekta in izvozu "
+"dokumenta"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
 msgid "Fix issue when exporting a picture in a document from a loaded project"
-msgstr ""
+msgstr "Odpravljene težave pri izvozu slike v dokument iz naloženega projekta"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
 msgid "Fix ODT exportation button's icon"
@@ -184,7 +194,7 @@ msgstr "Dodajanje podpore za TIFF-e z več slikami"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
 msgid "Port the application to GObject Introspection"
-msgstr ""
+msgstr "Program je prenesen v GObject Introspection"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
 msgid "Scan with 300 DPI and in color mode"
@@ -206,6 +216,8 @@ msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
 msgstr ""
+"Posodobljena občutljivost kontrolnikov polja urejevalnika OCR glede na "
+"obstoj pogonov OCR"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
@@ -226,7 +238,7 @@ msgstr "Popravljeno pridobivanje imena pogona v ocrfeeder-cli"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
 msgid "Fix the use of newer versions of Unpaper"
-msgstr ""
+msgstr "Popravljena uporaba novejših različic Unpaper"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
 msgid "Fix text in the pages icon view"
