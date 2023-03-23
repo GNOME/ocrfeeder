@@ -1,21 +1,21 @@
 # Indonesian translation for ocrfeeder.
 # Copyright (C) 2020 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
-# Andika Triwidada <atriwidada@gnome.org>, 2020.
+# Andika Triwidada <atriwidada@gnome.org>, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
-"POT-Creation-Date: 2020-09-02 04:38+0000\n"
-"PO-Revision-Date: 2021-06-07 16:17+0700\n"
+"POT-Creation-Date: 2022-09-22 20:36+0000\n"
+"PO-Revision-Date: 2023-03-23 13:02+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
@@ -70,15 +70,14 @@ msgstr ""
 "format, dll."
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1571
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
 msgid "Content Areas"
 msgstr "Area Konten"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7
-#: ../src/ocrfeeder/studio/widgetPresenter.py:924
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:925
 msgid "Unpaper Image Processor"
-msgstr "Unpaper Image Processor"
+msgstr "Prosesor Gambar Unpaper"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:8
 #: ../resources/spell-checker.ui.h:1
@@ -106,9 +105,8 @@ msgstr ""
 "disukai oleh Ghostscript"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
-#, fuzzy
 msgid "Ship the appdata.xml.in the tarball"
-msgstr "Kemas appdata.xml.in tarball"
+msgstr "Kirim tarball appdata.xml.in"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
 msgid "Improvements:"
@@ -204,56 +202,48 @@ msgstr ""
 "Menggunakan direktori yang terakhir dikunjungi saat menambahkan gambar baru"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
-#, fuzzy
 msgid ""
 "Warn when no OCR engines are found on startup or when performing the "
 "recognition"
 msgstr ""
-"Peringatkan ketika tidak ada mesin OCR yang ditemukan pada startup atau saat "
-"melakukan"
+"Peringatkan ketika tidak ada mesin OCR yang ditemukan pada awal mula atau "
+"saat melakukan pengenalan"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
-#, fuzzy
 msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
 msgstr ""
-"Memperbarui OCR editor kotak mengontrol sensitifitas sesuai dengan "
-"keberadaan mesin OCR"
+"Perbarui kepekaan kontrol OCR penyunting kotak sesuai dengan keberadaan "
+"mesin OCR"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
 msgstr "Memperbaiki impor PIL"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
-#, fuzzy
 msgid "Fix error when exporting a PDF with empty text areas"
-msgstr "Memperbaiki kesalahan saat mengekspor PDF dengan area teks kosong"
+msgstr "Perbaiki kesalahan saat mengekspor PDF dengan area teks kosong"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
-#, fuzzy
 msgid "Fix PDF output options in ocrfeeder-cli"
-msgstr "Perbaiki opsi output PDF di ocrfeeder-cli"
+msgstr "Perbaiki opsi keluaran PDF di ocrfeeder-cli"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
-#, fuzzy
 msgid "Fix getting engine name in ocrfeeder-cli"
-msgstr "Memperbaiki mendapatkan nama mesin di ocrfeeder-cli"
+msgstr "Perbaiki mendapatkan nama mesin di ocrfeeder-cli"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
-#, fuzzy
 msgid "Fix the use of newer versions of Unpaper"
-msgstr "Memperbaiki penggunaan Unpaper versi yang lebih baru"
+msgstr "Perbaiki penggunaan Unpaper versi yang lebih baru"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
-#, fuzzy
 msgid "Fix text in the pages icon view"
-msgstr "Memperbaiki teks dalam tampilan ikon halaman"
+msgstr "Perbaiki teks dalam tampilan ikon halaman"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
-#, fuzzy
 msgid "Fix reordering pages in the icon view"
-msgstr "Memperbaiki menyusun ulang halaman dalam tampilan ikon"
+msgstr "Perbaiki menyusun ulang halaman dalam tampilan ikon"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
 msgid "Fix issues when no locale is set"
@@ -264,9 +254,8 @@ msgid "Fix loading project with more than one page"
 msgstr "Memperbaiki pemuatan proyek dengan lebih dari satu halaman"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
-#, fuzzy
 msgid "Fix updating the OCR engines in the BoxEditor"
-msgstr "Memperbaiki pembaruan mesin OCR di BoxEditor"
+msgstr "Perbaiki pembaruan mesin OCR di BoxEditor"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
 msgid "New and Updated Translations:"
@@ -354,7 +343,7 @@ msgid "<b>Language</b>"
 msgstr "<b>Bahasa</b>"
 
 #: ../src/ocrfeeder/feeder/imageManipulation.py:35
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "A problem occurred while trying to open the image:\n"
 " %s\n"
@@ -404,14 +393,13 @@ msgid "Scanning"
 msgstr "Memindai"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:220
-#, fuzzy
 msgid "No scanner devices were found"
 msgstr "Tidak ada perangkat pemindai yang ditemukan"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:221
 #: ../src/ocrfeeder/studio/studioBuilder.py:236
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1211
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1222
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
 msgid "Error"
 msgstr "Galat"
 
@@ -436,13 +424,12 @@ msgid "Are you sure you want to clear the project?"
 msgstr "Anda yakin ingin menghapus proyek?"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:418
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1858
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1860
 msgid "No OCR engines available"
 msgstr "Tidak ada mesin OCR yang tersedia"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:419
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1859
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1861
 #, fuzzy
 msgid ""
 "No OCR engines were found in the system.\n"
@@ -576,7 +563,6 @@ msgid "Searchable PDF"
 msgstr "PDF yang dapat dicari"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:633
-#, fuzzy
 msgid "Creates a PDF based on the images but with searchable text."
 msgstr "Membuat PDF berdasarkan gambar tetapi dengan teks yang dapat dicari."
 
@@ -585,7 +571,7 @@ msgid "OCRFeeder Projects"
 msgstr "Proyek OCRFeeder"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:714
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
 "\n"
@@ -600,774 +586,741 @@ msgstr ""
 msgid "Replace"
 msgstr "Gantikan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:61
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
 #: ../src/ocrfeeder/studio/pagesiconview.py:78
 msgid "Pages"
 msgstr "Halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:81
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
 msgid "_File"
 msgstr "_Berkas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "_Quit"
 msgstr "_Keluar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
 msgid "Exit the program"
 msgstr "Keluar dari program"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "_Open"
 msgstr "_Buka"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
 msgid "Open project"
 msgstr "Buka Proyek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "_Save"
 msgstr "_Simpan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
 msgid "Save project"
 msgstr "Simpan projek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "_Save As…"
 msgstr "_Simpan Sebagai…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:85
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
 msgid "Save project with a chosen name"
 msgstr "Menyimpan proyek dengan nama yang dipilih"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "_Add Image"
 msgstr "T_ambah gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:86
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add another image"
 msgstr "Menambahkan gambar lain"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Add _Folder"
 msgstr "Tambah _Folder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:87
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Add all images in a folder"
 msgstr "Menambahkan semua gambar dalam folder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Append Project"
 msgstr "Tambahkan Proyek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Load a project and append it to the current one"
 msgstr "Muat proyek dan tambahkan ke proyek saat ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "_Import PDF"
 msgstr "_Impor PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "Import PDF"
 msgstr "Mengimpor PDF"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "_Export…"
 msgstr "_Ekspor…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "Export to a chosen format"
 msgstr "Mengekspor ke format yang dipilih"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "_Edit"
 msgstr "Sunt_ing"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "_Edit Page"
 msgstr "_Sunting Halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:92
-#, fuzzy
-msgid "Edit page settings"
-msgstr "Mengedit setelan halaman"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "Edit page settings"
+msgstr "Sunting pengaturan halaman"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "_Preferences"
 msgstr "_Preferensi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "Configure the application"
 msgstr "Konfigurasikan aplikasi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "_Delete Page"
-msgstr "Hapus Halaman"
+msgstr "_Hapus Halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "Delete current page"
 msgstr "Menghapus halaman saat ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move Page Do_wn"
-msgstr "Pindahkan Halaman Do_wn"
+msgstr "_Turunkan Halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move page down"
 msgstr "Memindahkan halaman ke bawah"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Move Page Up"
-msgstr "Pindahkan Halaman Ke Atas"
+msgstr "Naikkan Halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Move page up"
 msgstr "Memindahkan halaman ke atas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
 msgid "Select Next Page"
 msgstr "Pilih Halaman Berikutnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
 msgid "Select next page"
 msgstr "Pilih halaman berikutnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Select Previous Page"
 msgstr "Pilih Halaman Sebelumnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Select previous page"
 msgstr "Pilih halaman sebelumnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "_Clear Project"
 msgstr "_Bersihkan Proyek"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "Delete all images"
 msgstr "Menghapus semua gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
 msgid "_View"
 msgstr "_Tampilan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
 msgid "Zoom In"
 msgstr "Perbesar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
 msgid "Zoom Out"
 msgstr "Perkecil"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
 msgid "Best Fit"
 msgstr "Pas Terbaik"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
 msgid "Normal Size"
 msgstr "Ukuran Normal"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
 msgid "_Document"
 msgstr "_Dokumen"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:106
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1427
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1429
 msgid "_Tools"
 msgstr "_Perkakas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 #, fuzzy
 msgid "_OCR Engines"
 msgstr "_OCR Engine"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:107
-#, fuzzy
-msgid "Manage OCR engines"
-msgstr "Mengelola mesin OCR"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "Manage OCR engines"
+msgstr "Kelola mesin OCR"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "Process image with unpaper"
 msgstr "Memroses citra dengan unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
 #, fuzzy
 msgid "Image Des_kewer"
 msgstr "Gambar Des_kewer"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:110
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
 msgid "Tries to straighten the image"
 msgstr "Mencoba meluruskan gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:112
 #: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "_Help"
 msgstr "_Bantuan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "Help contents"
 msgstr "Isi bantuan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "_About"
 msgstr "Tent_ang"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "About this application"
 msgstr "Tentang aplikasi ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:116
-#, fuzzy
-msgid "_Recognize Document"
-msgstr "_Recognize Dokumen"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:117
-#, fuzzy
+msgid "_Recognize Document"
+msgstr "_Kenali Dokumen"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:118
 msgid "Automatically detect and recognize all pages"
 msgstr "Mendeteksi dan mengenali semua halaman secara otomatis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:120
-#, fuzzy
-msgid "R_ecognize Page"
-msgstr "R_ecognize Halaman"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:121
-#, fuzzy
+msgid "R_ecognize Page"
+msgstr "K_enali Halaman"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:122
 msgid "Automatically detect and recognize the current page"
 msgstr "Mendeteksi dan mengenali halaman saat ini secara otomatis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:124
-#, fuzzy
-msgid "Recognize _Selected Areas"
-msgstr "Kenali _Selected Area"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:125
-#, fuzzy
-msgid "Recognize Selected Areas"
-msgstr "Kenali Area yang Dipilih"
+msgid "Recognize _Selected Areas"
+msgstr "Kenali _Wilayah yang Dipilih"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:128
+#: ../src/ocrfeeder/studio/widgetPresenter.py:126
+msgid "Recognize Selected Areas"
+msgstr "Kenali Wilayag yang Dipilih"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
 msgid "Select _All Areas"
 msgstr "Pilih Semu_a Area"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:129
+#: ../src/ocrfeeder/studio/widgetPresenter.py:130
 msgid "Select all content areas"
 msgstr "Pilih semua area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:132
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
 msgid "Select _Previous Area"
 msgstr "Pilih Area Se_belumnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:133
+#: ../src/ocrfeeder/studio/widgetPresenter.py:134
 msgid "Select the previous area from the content areas"
 msgstr "Memilih area sebelumnya dari area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:136
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
 msgid "Select _Next Area"
 msgstr "Pilih Area Sela_njutnya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:137
+#: ../src/ocrfeeder/studio/widgetPresenter.py:138
 msgid "Select the next area from the content areas"
 msgstr "Pilih area berikutnya dari area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:140
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
 msgid "Delete Selected Areas"
 msgstr "Menghapus Area yang Dipilih"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:141
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
 msgid "Deletes all the currently selected content areas"
 msgstr "Menghapus semua area konten yang dipilih saat ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:143
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
 #, fuzzy
 msgid "_Generate ODT"
 msgstr "_Generate ODT"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:143
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
 msgid "Export to ODT"
 msgstr "Ekspor ke ODT"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:145
+#: ../src/ocrfeeder/studio/widgetPresenter.py:146
 #, fuzzy
 msgid "Import Page From S_canner"
 msgstr "Impor Halaman Dari S_canner"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:147
+#: ../src/ocrfeeder/studio/widgetPresenter.py:148
 msgid "Import From Scanner"
 msgstr "Impor Dari Pemindai"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:150
+#: ../src/ocrfeeder/studio/widgetPresenter.py:151
 msgid "_Copy to Clipboard"
 msgstr "Salin ke Papan _Klip"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:152
+#: ../src/ocrfeeder/studio/widgetPresenter.py:153
 msgid "Copy recognized text to clipboard"
 msgstr "Menyalin teks yang dikenali ke papan klip"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:155
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
 msgid "Spell_checker"
 msgstr "Pemeriksa _Ejaan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:157
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
 msgid "Spell Check Recognized Text"
 msgstr "Periksa Ejaan Teks yang Dikenali"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:261
+#: ../src/ocrfeeder/studio/widgetPresenter.py:262
 msgid "No language"
 msgstr "Tidak ada bahasa"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:329
+#: ../src/ocrfeeder/studio/widgetPresenter.py:330
 msgid "Area editor"
 msgstr "Penyunting area"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
 msgid "Sets the content area's upper left corner's X coordinate"
 msgstr "Mengatur koordinat X sudut kiri atas area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:341
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
 msgid "Sets the content area's upper left corner's Y coordinate"
 msgstr "Mengatur koordinat Y sudut kiri atas area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:345
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
 msgid "Sets the content area's width"
 msgstr "Mengatur lebar area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
 msgid "Sets the content area's height"
 msgstr "Mengatur tinggi area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:351
-#: ../src/ocrfeeder/studio/widgetPresenter.py:576
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
 msgid "_Text"
 msgstr "_Text"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
 msgid "Set this content area to be the text type"
 msgstr "Atur area konten ini menjadi tipe teks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:355
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
 msgid "_Image"
 msgstr "C_itra"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:356
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
 msgid "Set this content area to be the image type"
 msgstr "Atur area konten ini menjadi tipe citra"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:359
+#: ../src/ocrfeeder/studio/widgetPresenter.py:360
 msgid "Type"
 msgstr "Tipe"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:371
+#: ../src/ocrfeeder/studio/widgetPresenter.py:372
 msgid "Clip"
 msgstr "Klip"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:455
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
 msgid "Bounds"
 msgstr "Batas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:460
+#: ../src/ocrfeeder/studio/widgetPresenter.py:461
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:469
+#: ../src/ocrfeeder/studio/widgetPresenter.py:470
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:481
-#: ../src/ocrfeeder/studio/widgetPresenter.py:853
+#: ../src/ocrfeeder/studio/widgetPresenter.py:482
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
 msgid "_Width:"
 msgstr "_Lebar:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:490
+#: ../src/ocrfeeder/studio/widgetPresenter.py:491
 msgid "Hei_ght:"
 msgstr "Tin_ggi:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:516
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
 msgid "Left"
 msgstr "Kiri"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
 msgid "Set text to be left aligned"
 msgstr "Mengatur teks menjadi rata kiri"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:522
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
 msgid "Center"
 msgstr "Pusat"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:524
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
 msgid "Set text to be centered"
-msgstr "Mengatur teks untuk dipusatkan"
+msgstr "Atur teks rata tengah"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:528
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
 msgid "Right"
 msgstr "Kanan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:530
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
 msgid "Set text to be right aligned"
 msgstr "Mengatur teks menjadi rata kanan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:534
+#: ../src/ocrfeeder/studio/widgetPresenter.py:535
 msgid "Fill"
 msgstr "Mengisi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:536
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
 #, fuzzy
 msgid "Set text to be fill its area"
 msgstr "Mengatur teks untuk mengisi areanya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:546
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OC_R"
 msgstr "OC_R"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:548
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
 #, fuzzy
 msgid "Perform OCR on this content area using the selected OCR engine."
 msgstr "Lakukan OCR pada area konten ini menggunakan mesin OCR yang dipilih."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:554
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 #, fuzzy
 msgid "OCR engine to recognize this content area"
 msgstr "mesin OCR untuk mengenali area konten ini"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:561
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
 msgid "Text Properties"
 msgstr "Properti Teks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:584
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
 msgid "Font"
 msgstr "Fonta"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:591
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
 msgid "Align"
 msgstr "Rataan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:595
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
 msgid "Spacing"
 msgstr "Jarak"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:597
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
 #, fuzzy
 msgid "Set the text's letter spacing"
 msgstr "Mengatur spasi huruf teks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:599
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
 #, fuzzy
 msgid "Set the text's line spacing"
 msgstr "Mengatur penspaspasan baris teks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:604
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
 #, fuzzy
 msgid "_Line:"
 msgstr "Garis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:615
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
 msgid "L_etter:"
-msgstr "L_etter:"
+msgstr "_Huruf:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:627
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
 msgid "Sty_le"
 msgstr "Ga_ya"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:634
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
 msgid "Angle"
 msgstr "Sudut"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:637
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
 msgid "Mis_c"
-msgstr "Mis_c"
+msgstr "Ru_pa-rupa"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:640
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1694
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1696
 msgid "Language"
 msgstr "Bahasa"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:647
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
 #, fuzzy
 msgid "OCR engine to recogni_ze this area:"
 msgstr "Ocr mesin untuk recogni_ze daerah ini:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:661
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
 msgid "Detect"
 msgstr "Mendeteksi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:663
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
 msgid "Angle:"
 msgstr "Sudut:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:750
+#: ../src/ocrfeeder/studio/widgetPresenter.py:751
 msgid "Save File"
 msgstr "Simpan Berkas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:753
+#: ../src/ocrfeeder/studio/widgetPresenter.py:754
 msgid "Open File"
 msgstr "Buka Berkas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:757
+#: ../src/ocrfeeder/studio/widgetPresenter.py:758
 msgid "Open Folder"
 msgstr "Buka Folder"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:788
+#: ../src/ocrfeeder/studio/widgetPresenter.py:789
 msgid "Pages to export"
 msgstr "Halaman yang akan diekspor"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:790
+#: ../src/ocrfeeder/studio/widgetPresenter.py:791
 msgid "All"
 msgstr "Semua"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:791
+#: ../src/ocrfeeder/studio/widgetPresenter.py:792
 msgid "Current"
 msgstr "Saat Ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:811
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
 msgid "Choose the format"
 msgstr "PIlih format"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:828
-#: ../src/ocrfeeder/studio/widgetPresenter.py:839
+#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
 msgid "Page size"
 msgstr "Ukuran halaman"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:844
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
 msgid "Custom…"
 msgstr "Ubahan…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:858
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
 msgid "_Height:"
 msgstr "_Tinggi:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:867
+#: ../src/ocrfeeder/studio/widgetPresenter.py:868
 msgid "Affected pages"
 msgstr "Halaman yang terpengaruh"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:869
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
 #, fuzzy
 msgid "C_urrent"
 msgstr "Halaman Sekarang"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:870
+#: ../src/ocrfeeder/studio/widgetPresenter.py:871
 msgid "_All"
 msgstr "Semu_a"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:942
+#: ../src/ocrfeeder/studio/widgetPresenter.py:943
 msgid "Preview"
 msgstr "Pratinjau"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:949
+#: ../src/ocrfeeder/studio/widgetPresenter.py:950
 msgid "_Preview"
 msgstr "_Pratinjau"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:976
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
 msgid "Performing Unpaper"
 msgstr "Melakukan Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:976
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
 msgid "Performing unpaper. Please wait…"
-msgstr "Melakukan unpaper. Harap tunggu..."
+msgstr "Melakukan unpaper. Harap tunggu…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1020
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
 msgid "Noise Filter Intensity"
-msgstr "Intensitas Filter Kebisingan"
+msgstr "Intensitas Filter Derau"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1022
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1054
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1023
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1055
 msgid "Default"
 msgstr "Default"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1025
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1057
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1058
 msgid "None"
 msgstr "Nihil"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1052
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1053
 msgid "Gray Filter Size"
 msgstr "Ukuran Filter Abu-abu"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1055
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1056
 msgid "Custom"
 msgstr "Ubahan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1084
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
 msgid "Black Filter"
 msgstr "Filter Hitam"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1086
 msgid "Use"
 msgstr "Gunakan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1092
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
 msgid "Extra Options"
 msgstr "Opsi Ekstra"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1094
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1095
 msgid "Unpaper's command line arguments"
 msgstr "Argumen baris perintah Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1151
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1153
 msgid "Unpaper Preferences"
 msgstr "Preferensi Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1211
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1222
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
 msgid "An error occurred!"
-msgstr "Terjadi galat."
+msgstr "Terjadi galat!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1292
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1294
 msgid "Cancelled"
 msgstr "Dibatalkan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1308
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1310
 msgid "Preferences"
 msgstr "Preferensi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
 msgid "_General"
 msgstr "_Umum"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1385
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1387
 #, fuzzy
 msgid "_Recognition"
 msgstr "Mematikan Pengenalan URL Otomatis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1394
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
 #, fuzzy
 msgid "Select boxes' colors"
 msgstr "Pilih warna kotak"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1400
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1402
 msgid "Te_xt areas' fill color"
 msgstr "Warna isian area te_ks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1406
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1408
 msgid "Text areas' _stroke color"
 msgstr "Warna _sapuan area teks"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1412
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1414
 msgid "_Image areas' fill color"
 msgstr "Warna isian area c_itra"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1432
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
 msgid "Path to unpaper"
 msgstr "Path ke unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1436
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
 msgid "Choose"
 msgstr "Pilih"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1721
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1759
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1781
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1878
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1761
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
 msgid "OCR Engines"
 msgstr "Mesin OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
 #, fuzzy
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr "Mesin yang harus digunakan saat melakukan pengenalan otomatis."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1457
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1459
 #, fuzzy
 msgid "Favorite _engine:"
 msgstr "Favorit _engine:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1472
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
 msgid "Window size"
 msgstr "Ukuran jendela"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1473
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
 msgid "A_utomatic"
 msgstr "O_tomatis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
 #, fuzzy
 msgid "Cu_stom"
 msgstr "Cu_stom"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
 #, fuzzy
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr "Ukuran jendela adalah ukuran area subdivisi algoritma deteksi."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1497
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1499
 #, fuzzy
 msgid "Columns Detection"
 msgstr "Deteksi Kolom"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1502
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
 #, fuzzy
 msgid "_Improve columns detection"
 msgstr "_Improve deteksi kolom"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
 #, fuzzy
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "Menggunakan algoritme pasca deteksi untuk meningkatkan deteksi kolom"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1515
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1589
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1591
 msgid "_Automatic"
 msgstr "Otom_atis"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1516
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1590
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1592
 msgid "Custo_m"
 msgstr "Ubaha_n"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1520
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
 #, fuzzy
 msgid "The columns' minimum width in pixels"
 msgstr "Lebar minimum kolom dalam piksel"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1536
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
 #, fuzzy
 msgid "Minimum width that a column should have:"
 msgstr "Lebar minimum yang harus memiliki kolom:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1558
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
 msgid "Recognized Text"
 msgstr "Teks yang Dikenali"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1559
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
 #, fuzzy
 msgid "_Fix line breaks and hyphenization"
 msgstr "_Fix jeda baris dan tanda hubung"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
 #, fuzzy
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
@@ -1376,58 +1329,58 @@ msgstr ""
 "Menghapus jeda satu baris dan tanda hubung dari teks yang dihasilkan oleh "
 "mesin OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1576
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
 #, fuzzy
 msgid "A_djust content areas' bounds"
 msgstr "A_djust area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1580
 #, fuzzy
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
 msgstr ""
 "Menggunakan algoritme pasca deteksi untuk mempersingkat margin area konten"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1594
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1596
 #, fuzzy
 msgid "The maximum size for the content areas' margins in pixels"
 msgstr "Ukuran maksimum untuk margin area konten dalam piksel"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1611
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1613
 #, fuzzy
 msgid "Maximum size that the content areas' margins should have:"
 msgstr "Ukuran maksimum margin area konten harus memiliki:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1658
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1660
 #, fuzzy
 msgid "Image Pre-processing"
 msgstr "Pra-pemrosesan Gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1659
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
 #, fuzzy
 msgid "Des_kew images"
 msgstr "Des_kew gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
 #, fuzzy
 msgid "Tries to straighten the images before they are added"
 msgstr "Mencoba meluruskan gambar sebelum ditambahkan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1670
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
 #, fuzzy
 msgid "_Unpaper images"
 msgstr "_Unpaper gambar"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
 #, fuzzy
 msgid "Cleans the image using the Unpaper pre-processor"
 msgstr "Membersihkan gambar menggunakan pra-prosesor Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1676
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1678
 #, fuzzy
 msgid "Unpaper _Preferences"
 msgstr "Unpaper _Preferences"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1698
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1700
 #, fuzzy
 msgid ""
 "The language may affect how the OCR engines work.\n"
@@ -1440,87 +1393,86 @@ msgstr ""
 "dipilih, mungkin mengakibatkan teks kosong.\n"
 "Anda dapat memilih \"Tidak ada bahasa\" untuk mencegah hal ini."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
-#, fuzzy
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
 msgid "Default _language:"
-msgstr "Standar _language:"
+msgstr "_Bahasa baku:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1735
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
 #, fuzzy
 msgid "Engines to be added"
 msgstr "Mesin yang akan ditambahkan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1740
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1742
 msgid "Include"
 msgstr "Termasuk"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1785
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1787
 msgid "Engine"
 msgstr "Engine"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1792
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
 msgid "De_tect"
 msgstr "De_teksi"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1807
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1809
 msgid "Are you sure you want to delete this engine?"
 msgstr "Anda yakin ingin menghapus mesin ini?"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
 #, fuzzy, python-format
 msgid "%s engine"
 msgstr "Mesin %s"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1912
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
 msgid "_Name:"
 msgstr "_Nama:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1913
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
 msgid "Engine name"
 msgstr "Nama mesin"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
 msgid "_Image format:"
 msgstr "Format c_itra:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
 msgid "The required image format"
 msgstr "Format citra yang diperlukan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
 msgid "_Failure string:"
 msgstr "String _kegagalan:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
 #, fuzzy
 msgid "The failure string or character that this engine uses"
 msgstr "String atau karakter kegagalan yang digunakan mesin ini"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1924
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
 msgid "Engine _path:"
 msgstr "_Path mesin:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
 msgid "The path to the engine program"
 msgstr "Path ke program mesin"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
 msgid "Engine _arguments:"
 msgstr "_Argumen mesin:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1932
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
 msgstr ""
 "Argumen: gunakan $IMAGE untuk citra dan $FILE jika itu menulis ke suatu "
 "berkas"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1934
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
 #, fuzzy
 msgid "Engine _language argument:"
 msgstr "Argumen _language mesin:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
 #, fuzzy
 msgid ""
 "The language argument in case this engine uses it (for example \"-l\"). In "
@@ -1529,12 +1481,12 @@ msgstr ""
 "Argumen bahasa jika mesin ini menggunakannya (misalnya \"-l\"). Agar dapat "
 "bekerja, argumen mesin harus memiliki kata kunci $LANG baik."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1942
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
 #, fuzzy
 msgid "Engine lan_guages:"
 msgstr "Mesin lan_guages:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1946
 #, fuzzy
 msgid ""
 "The languages this engine supports. This should be given as pairs of the "
@@ -1547,15 +1499,15 @@ msgstr ""
 "por,es:esp\"). Agar dapat bekerja, argumen mesin harus memiliki kata kunci "
 "$LANG baik."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1985
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
 #, fuzzy
 msgid "Error setting the new engine; please check your engine settings."
 msgstr "Galat saat mengatur mesin baru; silakan periksa pengaturan mesin Anda."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1985
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
 msgid "Warning"
 msgstr "Peringatan"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:2021
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2023
 msgid "translator-credits"
 msgstr "Andika Triwidada <andika@gmail.com>, 2020, 2021."
