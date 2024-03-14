@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Joaquim Rocha <jrocha@igalia.com>
 Build-Depends: debhelper (>= 7), python, python-support (>= 0.6), cdbs (>= 0.4.49), intltool
 Standards-Version: 3.8.4
-Homepage: http://live.gnome.org/OCRFeeder
+Homepage: https://wiki.gnome.org/Apps/OCRFeeder
 
 Package: ocrfeeder
 Architecture: all
