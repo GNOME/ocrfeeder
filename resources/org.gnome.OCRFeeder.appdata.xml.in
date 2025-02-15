@@ -15,15 +15,15 @@
   <screenshots>
     <screenshot type="default">
       <_caption>Content Areas</_caption>
-      <image>https://wiki.gnome.org/Apps/OCRFeeder?action=AttachFile&amp;do=get&amp;target=ocrfeeder.jpeg</image>
+      <image>https://wiki.gnome.org/attachments/Apps(2f)OCRFeeder/ocrfeeder.jpeg</image>
     </screenshot>
     <screenshot>
       <_caption>Unpaper Image Processor</_caption>
-      <image>https://wiki.gnome.org/Apps/OCRFeeder?action=AttachFile&amp;do=get&amp;target=ocrfeeder_unpaper.jpeg</image>
+      <image>https://wiki.gnome.org/attachments/Apps(2f)OCRFeeder/ocrfeeder_unpaper.jpeg</image>
     </screenshot>
     <screenshot>
       <_caption>Check spelling</_caption>
-      <image>https://wiki.gnome.org/Apps/OCRFeeder?action=AttachFile&amp;do=get&amp;target=ocrfeeder_spellchecker.png</image>
+      <image>https://wiki.gnome.org/attachments/Apps(2f)OCRFeeder/ocrfeeder_spellchecker.png</image>
     </screenshot>
   </screenshots>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/ocrfeeder/issues</url>
