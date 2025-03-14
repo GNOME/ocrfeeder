@@ -6,33 +6,280 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: orcfeeder.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=ocrfeeder&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-02-20 19:54+0000\n"
-"PO-Revision-Date: 2013-02-22 14:04+0200\n"
-"Last-Translator: A. Don <aronrefael@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
+"POT-Creation-Date: 2022-09-22 20:36+0000\n"
+"PO-Revision-Date: 2025-03-14 15:47+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <sh.yaron@gmail.com>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"Language: he\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
 msgid "OCRFeeder"
 msgstr "OCRFeeder"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
 msgid "The complete OCR suite."
-msgstr "החבילה המושלמת לזיהי OCR."
+msgstr "החבילה השלמה לזיהוי OCR."
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:3
+msgid ""
+"OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
+"Recognition;Scanner;Scanning;"
+msgstr ""
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
 msgid "The complete OCR suite"
-msgstr "החבילה המושלמת לזיהי OCR"
+msgstr "החבילה השלמה לזיהוי OCR"
 
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:3
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr "OCRFeeder היא מערכת לניתוח פריסת מסמכים ומזהה תווים אופטי."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:4
+msgid ""
+"Given the images it will automatically outline its contents, distinguish "
+"between what's graphics and text and perform OCR over the latter. It "
+"generates multiple formats being its main one ODT."
+msgstr ""
+"כשהתמונות מסופקות התוכן יסומן אוטומטית, על מנת להבין בין מה נחשב תוכן גרפי "
+"למה שנחשב טקסט ולבצע OCR (זיהוי תווים אופטי) על המאוחר מביניהם. הוא מייצר "
+"מגוון תסדירים כשהעיקרי מביניהם הוא ODT."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:5
+msgid ""
+"It features a complete GTK graphical user interface that allows the users to "
+"correct any unrecognized characters, defined or correct bounding boxes, set "
+"paragraph styles, clean the input images, import PDFs, save and load the "
+"project, export everything to multiple formats, etc."
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
+msgid "Content Areas"
+msgstr "קטעי תוכן"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7
+#: ../src/ocrfeeder/studio/widgetPresenter.py:925
+msgid "Unpaper Image Processor"
+msgstr "מעבד תמונות unpaper"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:8
 #: ../resources/spell-checker.ui.h:1
 msgid "Check spelling"
-msgstr "בודק איות"
+msgstr "בדיקת איות"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
+msgid "Bug Fixes:"
+msgstr "תיקוני תקלות:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+msgid ""
+"Fix PDF importation, which was broken after the Python 3 port (thanks to "
+"@scx)"
+msgstr "תוקן ייבוא PDF, שהיה פגום אחרי ההסבה ל־Python 3 (תודות ל־‎@scx)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+msgid ""
+"Allow to import PDF files whose paths have characters Ghostscript doesn't "
+"like"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+msgid "Ship the appdata.xml.in the tarball"
+msgstr "הקובץ appdata.xml.in יושק עם מארז היישום"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
+msgid "Improvements:"
+msgstr "שיפורים:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
+msgid "Python 3 is now used, making the unicode issues go away for good"
+msgstr "מעתה ייעשה שימוש ב־Python 3 מה שמסלק את בעיות היוניקוד אחת ולתמיד"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
+msgid "The main window is now bigger"
+msgstr "החלון הראשי מעכשיו גדול יותר"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
+msgid "The image clip is now expandible"
+msgstr "חיתוך התמונה זמין להגדלה מעכשיו"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
+msgid "The manpages have been updated with the missing options"
+msgstr "עמודי ההדרכה עודכנו ונוספו להם האפשרויות החסרות"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
+msgid "Fix icons in the boxes' editor text align buttons"
+msgstr "תוקנו הסמלים בכפתור יישור הטקסט בעורך התיבות"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
+msgid "Install the application icon in the right place"
+msgstr "התקנת סמל היישום במקום הנכון"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
+msgid ""
+"Many issues in the scanner dialog have been fixed (scanner options, UI "
+"problems, etc.)"
+msgstr ""
+"תקלות רבות בחלונית הסריקה תוקנו (אפשרויות סריקה, תקלות מנשק משתמש וכו׳)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
+msgid ""
+"The Preferences dialog is now smaller (the big contents are wrapped in a "
+"scrolled window)"
+msgstr ""
+"חלונית ההעדפות קטנה יותר מעכשיו (התכנים הגדולים ביותר עטופים בחלון נגלל)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
+msgid "All dialogs are now centered to the main window"
+msgstr "כל החלוניות ממורכזות לעומת החלון הראשי"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
+msgid "Use XDG user's configuration directory instead of .ocrfeeder"
+msgstr "נעשה שימוש בתיקיית ההגדרות של המשתמש דרך XDG במקום ‎.ocrfeeder"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
+msgid "Fix Gtk thread related problems"
+msgstr "תיקון תקלות שקשורות לתהליך Gtk"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
+msgid "Fix unicode issues when saving a project and exporting a document"
+msgstr "תוקנו תקלות יוניקוד בעת שמירת מיזם וייצוא מסמך"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
+msgid "Fix issue when exporting a picture in a document from a loaded project"
+msgstr "תוקנה תקלה בייצוא תמונה במסמך ממיזם שנטען"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
+msgid "Fix ODT exportation button's icon"
+msgstr "תוקן סמל ייצוא ODT"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
+msgid "New Features:"
+msgstr "יכולות חדשות:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
+msgid "Add support for multiple image TIFFs"
+msgstr "הוספת תמיכה בריבוי תמונות TIFF"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
+msgid "Port the application to GObject Introspection"
+msgstr "הסבת היישום לחקירת GObject"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
+msgid "Scan with 300 DPI and in color mode"
+msgstr "סריקת עם 300 נק׳ לאינטש במצב צבע"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
+msgid "Use the last visited directory when adding a new image"
+msgstr "להשתמש בתיקייה האחרונה שביקרת בה בעת הוספת תמונה חדשה"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
+msgid ""
+"Warn when no OCR engines are found on startup or when performing the "
+"recognition"
+msgstr "שלא נמצאים מנועי OCR עם ההתחלה או בעת ביצוע הזיהוי"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
+msgid ""
+"Update the box editor's OCR controls sensitiveness according to the "
+"existence of OCR engines"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
+msgid "Fix PIL importation"
+msgstr "תיקון ייבוא PIL"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
+msgid "Fix error when exporting a PDF with empty text areas"
+msgstr "תוקנה שגיאה בייצוא PDF עם אזורי טקסט ריקים"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
+msgid "Fix PDF output options in ocrfeeder-cli"
+msgstr "תוקנו אפשרויות פלט PDF ב־ocrfeeder-cli"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
+msgid "Fix getting engine name in ocrfeeder-cli"
+msgstr "תוקנה קבלת שם המנוע ב־ocrfeeder-cli"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
+msgid "Fix the use of newer versions of Unpaper"
+msgstr "תוקן השימוש בגרסאות חדשות יותר של Unpaper"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
+msgid "Fix text in the pages icon view"
+msgstr "תוקן הטקסט בתצוגת סמל העמודים"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
+msgid "Fix reordering pages in the icon view"
+msgstr "תוקן סידור עמודים מחדש בתצוגת הסמלים"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
+msgid "Fix issues when no locale is set"
+msgstr "תוקנו תקלות כשלא מוגדרת שפה"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
+msgid "Fix loading project with more than one page"
+msgstr "תוקנה טעינת מיזם עם יותר מעמוד אחד"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
+msgid "Fix updating the OCR engines in the BoxEditor"
+msgstr "תוקן עדכון מנועי OCR בעורך התיבות"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
+msgid "New and Updated Translations:"
+msgstr "תרגומים חדשים ומעודכנים:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
+msgid "Marek Černocký [cz]"
+msgstr "מארק צ׳רנוצקי [צ׳כית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
+msgid "Daniel Mustieles [es]"
+msgstr "דניאל מוסטיילס [ספרדית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
+msgid "Fran Diéguez [gl]"
+msgstr "פראן דיגז [גליסית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
+msgid "Dimitris Spingos [el]"
+msgstr "דמיטריס ספינגוס [יוונית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
+msgid "Aharon Don [he]"
+msgstr "אהרון דון [עברית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
+msgid "Attila Hammer, Gabor Kelemen [hu]"
+msgstr "אטילה האמר, גאבור קלמן [הונגרית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
+msgid "Rafael Ferreira [pt_BR]"
+msgstr "רפאל פררה [פורטוגלית ברזילאית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
+msgid "Martin Srebotnjak [sl]"
+msgstr "מרטין סרבוטניאק [סלובנית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:54
+msgid "Мирослав Николић [sr]"
+msgstr "מירוסלב ניקוליץ׳ [סרבית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:55
+msgid "Piotr Drąg [uk]"
+msgstr "פיוטר דראג [אוקראינית]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:56
+msgid "Wylmer Wang [zh_CN]"
+msgstr "וילמר וונג [סינית מפושטת]"
 
 #: ../resources/spell-checker.ui.h:2
 msgid "Misspelled word:"
@@ -40,7 +287,7 @@ msgstr "מילה שגויה:"
 
 #: ../resources/spell-checker.ui.h:3
 msgid "Change _to:"
-msgstr "החלף ל:"
+msgstr "החל_פה ל־:"
 
 #: ../resources/spell-checker.ui.h:4
 msgid "_Suggestions:"
@@ -48,19 +295,20 @@ msgstr "ה_צעות:"
 
 #: ../resources/spell-checker.ui.h:5
 msgid "Cha_nge"
-msgstr "ש_נה"
+msgstr "שי_נוי"
 
 #: ../resources/spell-checker.ui.h:6
 msgid "Ignore _All"
-msgstr "הת_עלם מהכל"
+msgstr "הת_עלמות מהכל"
 
 #: ../resources/spell-checker.ui.h:7
 msgid "Change A_ll"
-msgstr "_שנה הכל"
+msgstr "_שינוי הכול"
 
 #: ../resources/spell-checker.ui.h:8
+#: ../src/ocrfeeder/studio/studioBuilder.py:422
 msgid "_Ignore"
-msgstr "_התעלם"
+msgstr "הת_עלמות"
 
 #: ../resources/spell-checker.ui.h:9
 msgid "Language:"
@@ -70,16 +318,16 @@ msgstr "שפה:"
 msgid "<b>Language</b>"
 msgstr "<b>שפה</b>"
 
-#: ../src/ocrfeeder/feeder/imageManipulation.py:37
+#: ../src/ocrfeeder/feeder/imageManipulation.py:35
 #, python-format
 msgid ""
 "A problem occurred while trying to open the image:\n"
 " %s\n"
 "Ensure the image exists or try converting it to another format."
 msgstr ""
-"נתקל בבעיה בפתיחת תמונה:\n"
+"אירעה תקלה בפתיחת תמונה:\n"
 " %s\n"
-"נא וודא כי התמונה קיימת או נסה להמר אותה לפורמט אחר."
+"נא לוודא כי התמונה קיימת או לנסות להמיר אותה לתסדיר אחר."
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:62
 msgid "ODT"
@@ -90,7 +338,7 @@ msgid "HTML"
 msgstr "HTML"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:64
-#: ../src/ocrfeeder/studio/studioBuilder.py:269
+#: ../src/ocrfeeder/studio/studioBuilder.py:245
 msgid "PDF"
 msgstr "PDF"
 
@@ -98,68 +346,83 @@ msgstr "PDF"
 msgid "Plain Text"
 msgstr "טקסט פשוט"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:203
+#: ../src/ocrfeeder/studio/studioBuilder.py:171
 msgid "Images"
 msgstr "תמונות"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
 msgid "Obtaining scanners"
-msgstr "מאתר סורקים"
+msgstr "הסורקים מתקבלים"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Please wait…"
+msgstr "נא להמתין…"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:215
-#: ../src/ocrfeeder/studio/studioBuilder.py:241
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
-#: ../src/ocrfeeder/studio/widgetModeler.py:476
-#: ../src/ocrfeeder/studio/widgetModeler.py:481
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
-#: ../src/ocrfeeder/studio/widgetModeler.py:627
-msgid "Please wait…"
-msgstr "נא להמתין..."
-
-#: ../src/ocrfeeder/studio/studioBuilder.py:241
 msgid "Scanning"
-msgstr "סורק"
+msgstr "מתבצעת סריקה"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:246
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
 msgid "No scanner devices were found"
-msgstr "לא זוהה התקן סריקה"
+msgstr "לא נמצאו מכשירי סריקה"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:247
-#: ../src/ocrfeeder/studio/studioBuilder.py:262
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
+#: ../src/ocrfeeder/studio/studioBuilder.py:221
+#: ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
 msgid "Error"
 msgstr "שגיאה"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:261
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
 msgid "Error scanning page"
-msgstr "שגיאה בסריקת הדף"
+msgstr "סריקת העמוד נתקלה בשגיאה"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:283
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
 msgid "Loading PDF"
-msgstr "טוען PDF"
+msgstr "PDF נטען"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:311
+#: ../src/ocrfeeder/studio/studioBuilder.py:289
 msgid "Export pages"
-msgstr "ייצא דפים"
+msgstr "ייצוא עמודים"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:329
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
 msgid "Are you sure you want to delete the current image?"
-msgstr "האם אתה רוצה למחוק את התמונה הנוכחית ?"
+msgstr "למחוק את התמונה הנוכחית?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:388
+#: ../src/ocrfeeder/studio/studioBuilder.py:380
 msgid "Are you sure you want to clear the project?"
-msgstr "אתה מעוניין לנקות פרוייקט נוכחי ?"
+msgstr "לרוקן את המיזם הנוכחי?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:458
-msgid "_Keep Current Configuration"
-msgstr "שמור הג_דרות נוכחיות"
+#: ../src/ocrfeeder/studio/studioBuilder.py:418
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1860
+msgid "No OCR engines available"
+msgstr "אין מנוע OCR זמין"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:460
+#: ../src/ocrfeeder/studio/studioBuilder.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1861
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"לא נמצאו מנועי OCR מותקנים במערכת.\n"
+"נא לוודא שמותקן מנוע OCR זמין."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/studioBuilder.py:479
 msgid "_Open OCR Engines Manager Dialog"
-msgstr "פתח את חלון ניהול מנועי OCR"
+msgstr "פתיחת חלון _ניהול מנועי OCR"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:462
+#: ../src/ocrfeeder/studio/studioBuilder.py:477
+msgid "_Keep Current Configuration"
+msgstr "שמירת הג_דרות נוכחיות"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:481
 #, python-format
 msgid ""
 "The following OCR engines' arguments might need to be updated but it appears "
@@ -171,898 +434,884 @@ msgid ""
 "configuration and have your OCR engines detected again."
 msgstr ""
 "הארגומנטים למנועי OCR הבאים דורשים עדכון, אבל כנראה שינית מהגדרות ברירת "
-"המחדל ולכן תצטרך לעדכן אותם באופן ידני:\n"
+"המחדל ולכן יש לעדכן אותם באופן ידני:\n"
 "  <b>%(engines)s</b>\n"
 "\n"
-"אם אינך מעוניין לשמור שינויים, תוכל למחוק ההגדרה נוכחית ולנסות זיהוי חוזר "
-"עבור מנועי OCR."
+"כדי לא לשמור שינויים, ניתן למחוק ההגדרה נוכחית ולנסות לזהות את מנועי ה־OCR "
+"מחדש."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:482
+#: ../src/ocrfeeder/studio/studioBuilder.py:502
 msgid "The project hasn't been saved."
-msgstr "הפרוייקט לא נשמר."
+msgstr "המיזם לא נשמר."
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:483
+#: ../src/ocrfeeder/studio/studioBuilder.py:503
 msgid "Do you want to save it before closing?"
-msgstr "אתה מעוניין לשמור לפני סגירה?"
+msgstr "לשמור לפני סגירה?"
 
-#: ../src/ocrfeeder/studio/studioBuilder.py:484
+#: ../src/ocrfeeder/studio/studioBuilder.py:504
 msgid "Close anyway"
-msgstr "סגור בכל מקרה"
+msgstr "לסגור בכל מקרה"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:104
-#: ../src/ocrfeeder/studio/widgetPresenter.py:66
-msgid "Pages"
-msgstr "דפים"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1753
-msgid "Delete"
-msgstr "מחק"
-
-#: ../src/ocrfeeder/studio/widgetModeler.py:219
+#: ../src/ocrfeeder/studio/widgetModeler.py:69
 msgid "Selectable areas"
-msgstr "איזורי בחירה"
+msgstr "קטעים שאפשר לבחור"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:476
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
 msgid "Preparing image"
-msgstr "מכין תמונה"
+msgstr "התמונה בהכנה"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:478
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
-msgstr "מכין תמונה %(current_index)s/%(total)s"
+msgstr "התמונה בהכנה %(current_index)s/%(total)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:535
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
 msgid "Deskewing image"
 msgstr "מתקן הטיית תמונה"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:562
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
 msgid "No images added"
 msgstr "לא נוספו תמונות"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:565
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
 #, python-format
 msgid "Zoom: %s %%"
-msgstr "הגדלה: %s %%"
+msgstr "תקריב: %s %%"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:567
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
 #, python-format
 msgid "Resolution: %.2f x %.2f"
 msgstr "רזולוציה: %.2f x %.2f"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:569
+#: ../src/ocrfeeder/studio/widgetModeler.py:446
 #, python-format
 msgid "Page size: %i x %i"
-msgstr "גודל דף: %i x %i"
+msgstr "גודל עמוד: %i x %i"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:608
+#: ../src/ocrfeeder/studio/widgetModeler.py:487
 msgid ""
 "There are changes that may be overwritten by the new recognition.\n"
 "\n"
 "Do you want to continue?"
 msgstr ""
-"בזיהוי נוסף ייתכן ויהיו שינויים שישוכתבו על הקיים.\n"
+"בזיהוי החדש ייתכן ויהיו שינויים שישוכתבו על הקיים.\n"
 "\n"
 "להמשיך בכל זאת?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:627
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
 msgid "Recognizing Page"
-msgstr "מזהה דף"
+msgstr "מזהה עמוד"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:644
+#: ../src/ocrfeeder/studio/widgetModeler.py:526
 msgid "Recognizing Document"
 msgstr "מזהה מסמך"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:645
+#: ../src/ocrfeeder/studio/widgetModeler.py:527
 #, python-format
 msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
-msgstr "מזהה דף %(page_number)s/%(total_pages)s. נא להמתין..."
+msgstr "העמוד %(page_number)s/%(total_pages)s מזוהה. נא להמתין…"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:719
+#: ../src/ocrfeeder/studio/widgetModeler.py:601
 #, python-format
 msgid "Export to %(format_name)s"
-msgstr "ייצא ל %(format_name)s"
+msgstr "ייצוא ל־%(format_name)s"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:736
+#: ../src/ocrfeeder/studio/widgetModeler.py:625
 msgid "What kind of PDF document do you wish?"
-msgstr "באיזה סוג PDF אתה מעוניין?"
+msgstr "מה סוג ה־PDF המבוקש?"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:738
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
 msgid "From scratch"
-msgstr "ריק"
+msgstr "מאפס"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:740
+#: ../src/ocrfeeder/studio/widgetModeler.py:629
 msgid "Creates a new PDF from scratch."
-msgstr "יצירת מסמך PDF ריק חדש."
+msgstr "יצירת PDF חדש מאפס."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:742
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
 msgid "Searchable PDF"
-msgstr "עם תכונת חיפוש ב-PDF"
+msgstr "PDF שאפשר לחפש בו"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:743
+#: ../src/ocrfeeder/studio/widgetModeler.py:633
 msgid "Creates a PDF based on the images but with searchable text."
-msgstr "צור PDF מבוסס תמונות, הכולל תכונת חיפוש טקסט."
+msgstr "יצירת PDF מבוסס תמונות אבל עם יכולת חיפוש טקסט."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:776
+#: ../src/ocrfeeder/studio/widgetModeler.py:667
 msgid "OCRFeeder Projects"
-msgstr "פרוייקטים OCRFeeder"
+msgstr "מיזמי OCRFeeder"
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:824
+#: ../src/ocrfeeder/studio/widgetModeler.py:714
 #, python-format
 msgid ""
 "<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
 "\n"
 "The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
 msgstr ""
-"<b>כבר קיים קובץ בשם «%(name)s». להחליף? </b>\n"
+"<b>כבר קיים קובץ בשם „%(name)s”. להחליף אותו? </b>\n"
 "\n"
-"המסמך כבר קיים ב-«%(dir)s». החלפתו יגרום לשכתב את תוכנו."
+"המסמך כבר קיים ב־„%(dir)s”. החלפתו תגרום לשכתוב תוכנו."
 
-#: ../src/ocrfeeder/studio/widgetModeler.py:831
+#: ../src/ocrfeeder/studio/widgetModeler.py:721
 msgid "Replace"
-msgstr "החלף"
+msgstr "החלפה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
+#: ../src/ocrfeeder/studio/pagesiconview.py:78
+msgid "Pages"
+msgstr "עמודים"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "_File"
+msgstr "_קובץ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "_Quit"
+msgstr "י_ציאה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "Exit the program"
+msgstr "יציאה מהתוכנית"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "_Open"
+msgstr "_פתיחה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "Open project"
+msgstr "פתיחת מיזם"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "_Save"
+msgstr "_שמירה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "Save project"
+msgstr "שמירת מיזם"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "_Save As…"
+msgstr "שמירה _בשם…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Save project with a chosen name"
+msgstr "שמירת המיזם בשם נבחר"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:87
-msgid "_File"
-msgstr "קובץ"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
-msgid "_Quit"
-msgstr "צא"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:88
-msgid "Exit the program"
-msgstr "סגור את התוכנה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
-msgid "_Open"
-msgstr "פתח"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:89
-msgid "Open project"
-msgstr "פתח פרוייקט"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
-msgid "_Save"
-msgstr "שמור"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:90
-msgid "Save project"
-msgstr "שמור פרוייקט"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:91
-msgid "_Save As…"
-msgstr "שמור בשם..."
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:91
-msgid "Save project with a chosen name"
-msgstr "שמור פרוייקט בשם נבחר"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "_Add Image"
-msgstr "הוסף תמונה"
+msgstr "הוס_פת תמונה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Add another image"
+msgstr "הוספת תמונה נוספת"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add _Folder"
+msgstr "הוספת _תיקייה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add all images in a folder"
+msgstr "הוספת כל התמונות מתיקייה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Append Project"
+msgstr "צירוף מיזם לסוף"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Load a project and append it to the current one"
+msgstr "טעינת מיזם והוספתי לנוכחי"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "_Import PDF"
+msgstr "יי_בוא PDF"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "Import PDF"
+msgstr "ייבוא PDF"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "_Export…"
+msgstr "יי_צוא…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "Export to a chosen format"
+msgstr "ייצוא לתסדיר הנבחר"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:92
-msgid "Add another image"
-msgstr "הוסף תמונה אחרת"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:93
-msgid "Add _Folder"
-msgstr "הוסף תיקייה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:93
-msgid "Add all images in a folder"
-msgstr "הוסף את כל התמונות מתיקייה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
-msgid "Append Project"
-msgstr "צרף פרוייקט"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:94
-msgid "Load a project and append it to the current one"
-msgstr "טען וצרף לפרוייקט הנוכחי"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
-msgid "_Import PDF"
-msgstr "יי_בא PDF"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:95
-msgid "Import PDF"
-msgstr "ייבא PDF"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
-msgid "_Export…"
-msgstr "יי_צא..."
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:96
-msgid "Export to a chosen format"
-msgstr "ייצא לפורמט נבחר"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "_Edit"
 msgstr "ע_ריכה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "_Edit Page"
-msgstr "ערוך דף"
+msgstr "ע_ריכת עמוד"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "Edit page settings"
-msgstr "ערוך הגדרות דף"
+msgstr "עריכת הגדרות עמוד"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "_Preferences"
 msgstr "העד_פות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "Configure the application"
-msgstr "הגדר יישום"
+msgstr "הגדרת היישום"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "_Delete Page"
-msgstr "מחק דף"
+msgstr "מ_חיקת עמוד"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Delete current page"
+msgstr "מחיקת העמוד נוכחי"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move Page Do_wn"
+msgstr "הורדת עמוד למ_טה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move page down"
+msgstr "הורדת עמוד למטה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move Page Up"
+msgstr "העלאת עמוד למעלה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move page up"
+msgstr "העלאת עמוד למעלה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select Next Page"
+msgstr "בחירת העמוד הבא"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select next page"
+msgstr "בחירת העמוד הבא"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select Previous Page"
+msgstr "בחירת העמוד קודם"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select previous page"
+msgstr "בחירת העמוד הקודם"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:100
-msgid "Delete current page"
-msgstr "מחק דף נוכחי"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:101
-msgid "Move Page Do_wn"
-msgstr "הזז דף למ_טה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:101
-msgid "Move page down"
-msgstr "הזז דף למטה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:102
-msgid "Move Page Up"
-msgstr "הזז דף למעלה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:102
-msgid "Move page up"
-msgstr "הזז דף למעלה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:103
-msgid "Select Next Page"
-msgstr "בחר דף הבא"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:103
-msgid "Select next page"
-msgstr "בחר דף הבא"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:104
-msgid "Select Previous Page"
-msgstr "בחר דף קודם"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:104
-msgid "Select previous page"
-msgstr "בחר דף קודם"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:105
 msgid "_Clear Project"
-msgstr "נקה פרוייקט"
+msgstr "_פינוי מיזם"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "Delete all images"
-msgstr "מחק את כל התמונות"
+msgstr "מחיקת כל התמונות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
 msgid "_View"
-msgstr "הצג"
+msgstr "ה_צגה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
 msgid "Zoom In"
 msgstr "הגדלה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
 msgid "Zoom Out"
 msgstr "הקטנה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
 msgid "Best Fit"
 msgstr "התאמה מיטבית"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
 msgid "Normal Size"
 msgstr "גודל רגיל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
 msgid "_Document"
-msgstr "מסמך"
+msgstr "מ_סמך"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:112
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1398
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1429
 msgid "_Tools"
-msgstr "כלים"
+msgstr "_כלים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "_OCR Engines"
-msgstr "מנועי זיהוי _OCR"
+msgstr "מנו_עי זיהוי OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "Manage OCR engines"
 msgstr "ניהול מנועי OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "_Unpaper"
 msgstr "_Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "Process image with unpaper"
-msgstr "עבד תמונה באמצעות unpaper"
+msgstr "עיבוד תמונה עם unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
 msgid "Image Des_kewer"
-msgstr "תיקון הטיית תמונה"
+msgstr "מ_תקן הטיות תמונה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:116
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
 msgid "Tries to straighten the image"
-msgstr "נסה יישור תמונה"
+msgstr "מנסה ליישר את התמונה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:118
-#: ../src/ocrfeeder/studio/widgetPresenter.py:119
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "_Help"
-msgstr "עזרה"
+msgstr "ע_זרה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:119
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "Help contents"
 msgstr "תוכן עזרה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:120
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "_About"
-msgstr "אודות"
+msgstr "על _אודות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:120
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "About this application"
-msgstr "אודות יישום זה"
+msgstr "על היישום הזה"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
+msgid "_Recognize Document"
+msgstr "_זיהוי מסמך"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:118
+msgid "Automatically detect and recognize all pages"
+msgstr "איתור וזיהוי כל העמודים אוטומטית"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
+msgid "R_ecognize Page"
+msgstr "_זיהוי עמוד"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:122
-msgid "_Recognize Document"
-msgstr "זהה מסמך"
+msgid "Automatically detect and recognize the current page"
+msgstr "איתור וזיהוי אוטומטי של העמוד הנוכחי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:123
-msgid "Automatically detect and recognize all pages"
-msgstr "אתר וזהה דפים אוטומטית"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
+msgid "Recognize _Selected Areas"
+msgstr "זיהוי קטעים _נבחרים"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:126
-msgid "R_ecognize Page"
-msgstr "זהה דף"
+msgid "Recognize Selected Areas"
+msgstr "זיהוי קטעים נבחרים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:127
-msgid "Automatically detect and recognize the current page"
-msgstr "אתר וזהה אוטומטית דף נוכחי"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
+msgid "Select _All Areas"
+msgstr "בחירת _כל הקטעים"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:130
-msgid "Recognize _Selected Areas"
-msgstr "זהה קטעים נבחרים"
+msgid "Select all content areas"
+msgstr "בחירת כל קטעי התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:131
-msgid "Recognize Selected Areas"
-msgstr "זהה קטעים נבחרים"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
+msgid "Select _Previous Area"
+msgstr "בחירת הקטע ה_קודם"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:134
-msgid "Select _All Areas"
-msgstr "בחר את כל הקטעים"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:135
-msgid "Select all content areas"
-msgstr "בחר את כל קטעי התוכן"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:138
-msgid "Select _Previous Area"
-msgstr "בחר קטע קודם"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:139
 msgid "Select the previous area from the content areas"
-msgstr "בחר קטע שלפני התוכן"
+msgstr "בחירת הקטע שלפני התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
 msgid "Select _Next Area"
 msgstr "בחר קטע הבא"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:143
+#: ../src/ocrfeeder/studio/widgetPresenter.py:138
 msgid "Select the next area from the content areas"
-msgstr "בחר קטע שלאחר התוכן"
+msgstr "בחירת הקטע הבא שלאחר התוכן"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
+msgid "Delete Selected Areas"
+msgstr "מחיקת קטעים נבחרים"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "Deletes all the currently selected content areas"
+msgstr "מחיקת כל קטעי התוכן שנבחרו"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "_Generate ODT"
+msgstr "יצי_רת ODT"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "Export to ODT"
+msgstr "ייצוא ל־ODT"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:146
-msgid "Delete Selected Areas"
-msgstr "מחק קטעים נבחרים"
+msgid "Import Page From S_canner"
+msgstr "ייבוא עמוד מסורק"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:147
-msgid "Deletes all the currently selected content areas"
-msgstr "מחק את כל קטעי התוכן שנבחרו"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:149
-msgid "_Generate ODT"
-msgstr "צור ODT"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:149
-msgid "Export to ODT"
-msgstr "ייצא ל- ODT"
+#: ../src/ocrfeeder/studio/widgetPresenter.py:148
+msgid "Import From Scanner"
+msgstr "ייבוא מסורק"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:151
-msgid "Import Page From S_canner"
-msgstr "ייבא דף מסורק"
+msgid "_Copy to Clipboard"
+msgstr "ה_עתקה ללוח הגזירים"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:153
-msgid "Import From Scanner"
-msgstr "ייבא מסורק"
+msgid "Copy recognized text to clipboard"
+msgstr "העתקת הטקסט שזוהה ללוח הגזירים"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:156
-msgid "_Copy to Clipboard"
-msgstr "העתק ללוח"
+msgid "Spell_checker"
+msgstr "_בודק איות"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:158
-msgid "Copy recognized text to clipboard"
-msgstr "העתק טקסט מזוהה ללוח"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:161
-msgid "Spell_checker"
-msgstr "בודק איות"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:163
 msgid "Spell Check Recognized Text"
-msgstr "בדוק איות טקסט מזוהה"
+msgstr "בדיקת איות של הטקסט שזוהה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:263
+#: ../src/ocrfeeder/studio/widgetPresenter.py:262
 msgid "No language"
 msgstr "ללא שפה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:329
+#: ../src/ocrfeeder/studio/widgetPresenter.py:330
 msgid "Area editor"
-msgstr "עורך קטעים"
+msgstr "עורך האזורים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:337
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
 msgid "Sets the content area's upper left corner's X coordinate"
-msgstr "הגדר את קואורדינטה X בפינה שמאלית עליונה של קטע התוכן"
+msgstr "הגדרת נקודת הציון ב־X של הפינה השמאלית העליונה של קטע התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:341
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
 msgid "Sets the content area's upper left corner's Y coordinate"
-msgstr "הגדר את קואורדינטה Y בפינה שמאלית עליונה של קטע התוכן"
+msgstr "הגדרת נקודת הציון ב־Y של הפינה השמאלית העליונה של קטע התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:345
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
 msgid "Sets the content area's width"
-msgstr "הגדר רוחב קטע התוכן"
+msgstr "הגדרת רוחב קטע התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:348
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
 msgid "Sets the content area's height"
-msgstr "הגדר גובה קטע התוכן"
+msgstr "הגדרת גובה קטע התוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:351
-#: ../src/ocrfeeder/studio/widgetPresenter.py:569
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
 msgid "_Text"
 msgstr "טקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:352
-msgid "Set this content area to be the text type"
-msgstr "הגדר קטע תוכן זה כסוג טקסט"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:353
+msgid "Set this content area to be the text type"
+msgstr "הגדרת סוג קטע תוכן זה כטקסט"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
 msgid "_Image"
 msgstr "תמונה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:354
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
 msgid "Set this content area to be the image type"
-msgstr "הגדר קטע תוכן זה כסוג תמונה"
+msgstr "הגדרת סוג קטע תוכן זה כתמונה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:355
+#: ../src/ocrfeeder/studio/widgetPresenter.py:360
 msgid "Type"
 msgstr "סוג"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:372
 msgid "Clip"
 msgstr "לוח"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:448
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
 msgid "Bounds"
 msgstr "גבולות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:453
+#: ../src/ocrfeeder/studio/widgetPresenter.py:461
 msgid "_X:"
 msgstr "_X:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:462
+#: ../src/ocrfeeder/studio/widgetPresenter.py:470
 msgid "_Y:"
 msgstr "_Y:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:474
-#: ../src/ocrfeeder/studio/widgetPresenter.py:840
+#: ../src/ocrfeeder/studio/widgetPresenter.py:482
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
 msgid "_Width:"
-msgstr "רוחב:"
+msgstr "_רוחב:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:483
+#: ../src/ocrfeeder/studio/widgetPresenter.py:491
 msgid "Hei_ght:"
-msgstr "גובה:"
+msgstr "_גובה:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:506
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
 msgid "Left"
 msgstr "שמאל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:510
-msgid "Set text to be left aligned"
-msgstr "קבע יישור טקסט לשמאל"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:512
-msgid "Center"
-msgstr "מרכז"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:517
-msgid "Set text to be centered"
-msgstr "קבע יישור טקסט למרכז"
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:519
+msgid "Set text to be left aligned"
+msgstr "יישור הטקסט לשמאל"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
+msgid "Center"
+msgstr "מירכוז"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
+msgid "Set text to be centered"
+msgstr "מירכוז הטקסט"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
 msgid "Right"
 msgstr "ימין"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:524
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
 msgid "Set text to be right aligned"
-msgstr "קבע יישור טקסט לימין"
+msgstr "יישור הטקסט לימין"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:526
+#: ../src/ocrfeeder/studio/widgetPresenter.py:535
 msgid "Fill"
 msgstr "מילוי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
 msgid "Set text to be fill its area"
-msgstr "הגדר את הקטע כטקסט"
+msgstr "הגדרת הקטע כטקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:540
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
 msgid "OC_R"
 msgstr "OC_R"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:541
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
 msgid "Perform OCR on this content area using the selected OCR engine."
-msgstr "בצע זיהוי לקטע תוכן זה בשימוש מנוע OCR נבחר."
+msgstr "ביצוע זיהוי לקטע תוכן זה בשימוש מנוע OCR נבחר."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
 msgid "OCR engine to recognize this content area"
 msgstr "מנוע OCR לזיהוי קטע תוכן זה"
 
 #. Text Properties
-#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
 msgid "Text Properties"
 msgstr "מאפייני טקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:577
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
 msgid "Font"
 msgstr "גופן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:584
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
 msgid "Align"
 msgstr "יישור"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:588
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
 msgid "Spacing"
-msgstr "מרווח"
+msgstr "ריווח"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:590
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
 msgid "Set the text's letter spacing"
-msgstr "קבע את מרווח אותיות הטקסט"
+msgstr "הגדרת הריווח בין אותיות הטקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
 msgid "Set the text's line spacing"
-msgstr "קבע את מרווח שורות הטקסט"
+msgstr "הגדרת הריווח בין שורות הטקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:597
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
 msgid "_Line:"
 msgstr "_קו:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:608
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
 msgid "L_etter:"
-msgstr "אות:"
+msgstr "_אות:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:620
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
 msgid "Sty_le"
-msgstr "סגנון"
+msgstr "_סגנון"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:627
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
 msgid "Angle"
 msgstr "זווית"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:630
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
 msgid "Mis_c"
-msgstr "שונות"
+msgstr "_שונות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:633
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1696
 msgid "Language"
 msgstr "שפה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:640
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
 msgid "OCR engine to recogni_ze this area:"
-msgstr "מנוע OCR לזיהוי אזור זה:"
+msgstr "מנוע OCR ל_זיהוי אזור זה:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:654
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
 msgid "Detect"
-msgstr "זהה"
+msgstr "זיהוי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:656
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
 msgid "Angle:"
 msgstr "זווית:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:749
+#: ../src/ocrfeeder/studio/widgetPresenter.py:751
 msgid "Save File"
-msgstr "שמור קובץ"
+msgstr "שמירת קובץ"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:752
+#: ../src/ocrfeeder/studio/widgetPresenter.py:754
 msgid "Open File"
-msgstr "פתח קובץ"
+msgstr "פתיחת קובץ"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:756
+#: ../src/ocrfeeder/studio/widgetPresenter.py:758
 msgid "Open Folder"
-msgstr "פתח תיקייה"
+msgstr "פתיחת תיקייה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:789
 msgid "Pages to export"
 msgstr "דפים לייצוא"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:785
+#: ../src/ocrfeeder/studio/widgetPresenter.py:791
 msgid "All"
 msgstr "הכל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:786
+#: ../src/ocrfeeder/studio/widgetPresenter.py:792
 msgid "Current"
 msgstr "נוכחי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:802
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
 msgid "Choose the format"
 msgstr "בחר פורמט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:819
-#: ../src/ocrfeeder/studio/widgetPresenter.py:826
+#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
 msgid "Page size"
 msgstr "גודל דף"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:831
-msgid "Custom…"
-msgstr "מותאם..."
-
 #: ../src/ocrfeeder/studio/widgetPresenter.py:845
+msgid "Custom…"
+msgstr "מותאם…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
 msgid "_Height:"
 msgstr "גובה:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:854
+#: ../src/ocrfeeder/studio/widgetPresenter.py:868
 msgid "Affected pages"
 msgstr "דפים מושפעים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:856
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
 msgid "C_urrent"
 msgstr "נוכחי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:859
+#: ../src/ocrfeeder/studio/widgetPresenter.py:871
 msgid "_All"
 msgstr "הכל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:919
-msgid "Unpaper Image Processor"
-msgstr "מעבד תמונות unpaper"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:933
+#: ../src/ocrfeeder/studio/widgetPresenter.py:943
 msgid "Preview"
 msgstr "תצוגה מקדימה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:950
 msgid "_Preview"
 msgstr "תצוגה מקדימה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:965
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
 msgid "Performing Unpaper"
 msgstr "מבצע Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:965
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
 msgid "Performing unpaper. Please wait…"
-msgstr "מבצע unpaper. נא המתן..."
+msgstr "מתבצע unpaper. נא להמתין…"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1009
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
 msgid "Noise Filter Intensity"
 msgstr "צפיפות מסנן הרעש"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1011
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1043
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1023
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1055
 msgid "Default"
 msgstr "ברירת מחדל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1013
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1045
-msgid "Custom"
-msgstr "מותאם"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1015
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1047
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1058
 msgid "None"
 msgstr "כלום"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1041
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1053
 msgid "Gray Filter Size"
 msgstr "גודל מסנן אפור"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1073
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1056
+msgid "Custom"
+msgstr "מותאם"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
 msgid "Black Filter"
 msgstr "מסנן שחור"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1074
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1086
 msgid "Use"
 msgstr "השתמש"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1081
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
 msgid "Extra Options"
 msgstr "אפשרויות נוספות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1083
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1095
 msgid "Unpaper's command line arguments"
-msgstr "unpaper ארגומנטים לשורת פקודה של"
+msgstr "ארגומנטים לשורת הפקודה של Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1140
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1153
 msgid "Unpaper Preferences"
 msgstr "Unpaper העדפות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1197
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1208
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
 msgid "An error occurred!"
 msgstr "התרחש שגיאה!"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1279
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1294
 msgid "Cancelled"
 msgstr "בוטל"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1293
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1310
 msgid "Preferences"
 msgstr "העדפות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
 msgid "_General"
 msgstr "כללי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1360
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1387
 msgid "_Recognition"
 msgstr "זיהוי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1365
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
 msgid "Select boxes' colors"
 msgstr "בחר צבע 'תיבות'"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1371
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1402
 msgid "Te_xt areas' fill color"
 msgstr "צבע מילוי קטעי טקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1377
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1408
 msgid "Text areas' _stroke color"
 msgstr "צבע קו מקווקו לקטעי טקסט"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1383
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1414
 msgid "_Image areas' fill color"
 msgstr "צבע מילוי לקטע תמונה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1403
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
 msgid "Path to unpaper"
-msgstr "unpaper נתיב"
+msgstr "נתיב ל־unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1407
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
 msgid "Choose"
 msgstr "בחר"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1415
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1688
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1726
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1744
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1835
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1761
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
 msgid "OCR Engines"
 msgstr "OCR מנועי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1417
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
 msgid ""
 "The engine that should be used when performing the automatic recognition."
 msgstr "מנוע לשימוש בזיהוי אוטומטי."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1428
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1459
 msgid "Favorite _engine:"
-msgstr ":מנוע זיהוי מועדף"
+msgstr "מנוע מוע_דף:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1443
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
 msgid "Window size"
 msgstr "גדול חלון"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1444
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
 msgid "A_utomatic"
 msgstr "אוטומטי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1445
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
 msgid "Cu_stom"
 msgstr "התאמה אישית"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1454
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
 msgid "The window size is the detection algorithm's subdivision areas' size."
 msgstr "גודל החלון הוא הגודל שזוהה מאלגוריתם קטעי חלוקה."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1466
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1499
 msgid "Columns Detection"
 msgstr "זיהוי עמודות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1471
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
 msgid "_Improve columns detection"
 msgstr "שפר זיהוי עמודות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1473
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
 msgid "Use a post-detection algorithm to improve the detection of columns"
 msgstr "השתמש באלגוריתם פוסט-זיהוי לשיפור זיהוי עמודות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1484
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1558
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1591
 msgid "_Automatic"
 msgstr "אוטומטי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1592
 msgid "Custo_m"
 msgstr "מותאם"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1490
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
 msgid "The columns' minimum width in pixels"
 msgstr "רוחב מינימלי לעמודה, בפיקסלים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
 msgid "Minimum width that a column should have:"
 msgstr "רוחב מינימלי לעמודה:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1527
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
 msgid "Recognized Text"
 msgstr "טקסט מזוהה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1528
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
 msgid "_Fix line breaks and hyphenization"
 msgstr "תקן מעברי שורה ומיקוף"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1530
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
 msgid ""
 "Removes single line breaks and hyphenization from text generated by OCR "
 "engines"
-msgstr "הסר מעבר שורה בודדת ומיקוף מטקסט שנוצר על ידי מנועי OCR"
+msgstr "הסרת מעברי שורה בודדת ומיקוף מטקסט שנוצר על ידי מנועי OCR"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1540
-msgid "Content Areas"
-msgstr "קטעי תוכן"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1545
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
 msgid "A_djust content areas' bounds"
-msgstr "התאם גבולות קטעי תוכן"
+msgstr "הת_אמת גבולות קטעי תוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1547
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1580
 msgid "Use a post-detection algorithm to shorten the contents areas' margins"
-msgstr "השתמש באלגוריתם פוסט-זיהוי לחיתוך גבולות קטע תוכן"
+msgstr "להשתמש באלגוריתם זיהוי סופי לחיתוך גבולות קטע תוכן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1564
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1596
 msgid "The maximum size for the content areas' margins in pixels"
-msgstr "גודל מרבי לגבולות קטע תוכן, בפיקסלים"
+msgstr "גודל מרבי לשולי קטע תוכן, בפיקסלים"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1581
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1613
 msgid "Maximum size that the content areas' margins should have:"
-msgstr "גודל מרבי לגבולות קטע תוכן:"
+msgstr "גודל מרבי לשולי קטע תוכן:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1627
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1660
 msgid "Image Pre-processing"
-msgstr "עיבוד תמונה"
+msgstr "עיבוד תמונה טרומי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1628
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
 msgid "Des_kew images"
-msgstr "תיקון הטיית תמונות"
+msgstr "תיקון ה_טיית תמונות"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1630
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
 msgid "Tries to straighten the images before they are added"
-msgstr "מנסה ליישר תמונות לפני הוספה"
+msgstr "מנסה ליישר תמונות לפני הוספתן"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1639
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
 msgid "_Unpaper images"
-msgstr "Unpaper תמונות"
+msgstr "תמו_נות Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
 msgid "Cleans the image using the Unpaper pre-processor"
-msgstr "Unpaper נקה תמונה באמצעות עיבוד"
+msgstr "ניקוי התמונה באמצעות ניקוי טרומי עם Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1645
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1678
 msgid "Unpaper _Preferences"
-msgstr "העדפות Unpaper"
+msgstr "ה_עדפות Unpaper"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1667
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1700
 msgid ""
 "The language may affect how the OCR engines work.\n"
 "If an engine is set to support languages but does not support the one "
@@ -1070,134 +1319,125 @@ msgid ""
 "You can choose \"No Language\" to prevent this."
 msgstr ""
 "השפה משפיעה על תהליך הזיהוי. \n"
-"במידה ומנוע הזיהוי הוגדר לתמוך בשפות מסויימות אבל לא תומך בשפה"
-"שנבחרה, תתקבל דף ריק. \n"
-"תוכל לבחור ב \"No Language\" למנוע מצב זה."
+"אם המנוע הוגדר לתמוך בשפות מסוימות אבל לא תומך בשפה שנבחרה, יתקבל טקסט ריק.\n"
+"אפשר לבחור ב„ללא שפה” כדי למנוע מצב זה."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
 msgid "Default _language:"
-msgstr "שפת ברירת מחדל"
+msgstr "שפת ברירת המ_חדל:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1702
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
 msgid "Engines to be added"
 msgstr "מנוע להוספה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1707
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1742
 msgid "Include"
-msgstr "כלול"
+msgstr "לכלול"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1711
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1748
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1787
 msgid "Engine"
 msgstr "מנוע"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1752
-msgid "Add"
-msgstr "הוסף"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1754
-msgid "Edit"
-msgstr "עריכה"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1755
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
 msgid "De_tect"
 msgstr "זהה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1769
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1809
 msgid "Are you sure you want to delete this engine?"
-msgstr "אתה מעוניין למחוק מנוע זיהוי זה?"
+msgstr "למחוק את המנוע הזה?"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1817
-msgid "No OCR engines available"
-msgstr "אין מנוע OCR זמין"
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1818
-msgid ""
-"No OCR engines were found in the system.\n"
-"Please make sure you have OCR engines installed and available."
-msgstr ""
-"לא נמצאו מנוע OCR מותקן במערכת.\n"
-"וודא שמותקן מנוע OCR זמין."
-
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1837
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
 #, python-format
 msgid "%s engine"
-msgstr "מנוע זיהוי %s"
+msgstr "מנוע %s"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1866
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
 msgid "_Name:"
 msgstr "שם:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1867
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
 msgid "Engine name"
 msgstr "שם מנוע זיהוי"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1869
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
 msgid "_Image format:"
-msgstr "פורמט תמונה:"
+msgstr "תס_דיר תמונה:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1871
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
 msgid "The required image format"
-msgstr "פורמט תמונה נדרש"
+msgstr "תסדיר התמונה הרצויה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1873
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
 msgid "_Failure string:"
-msgstr "מחרוזת כשל"
+msgstr "מחרוזת _כשל:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1875
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
 msgid "The failure string or character that this engine uses"
-msgstr "מחרוזת או תו כשל בשימוש ע\"י מנוע זיהוי"
+msgstr "מחרוזת או תו כשל בהם המנוע הזה משתמש"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1878
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
 msgid "Engine _path:"
-msgstr "הנתיב למנוע זיהוי:"
+msgstr "_נתיב מנוע:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
 msgid "The path to the engine program"
-msgstr "הנתיב ליישום מנוע הזיהוי"
+msgstr "הנתיב לתוכנית המנוע"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
 msgid "Engine _arguments:"
-msgstr "ארגומנטים למנוע זיהוי:"
+msgstr "ארגומנטים למנוע:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1884
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1932
 msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
-msgstr "ארגומנטים: השתמש ב-$IMAGE עבור תמונה ו-$FILE לשכתוב קובץ"
+msgstr "ארגומנטים: יש להשתמש ב־‎$IMAGE עבור תמונה וב־$FILE לכתיבה לקובץ"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1888
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
 msgid "Engine _language argument:"
-msgstr "ארגומנט שפה למנוע זיהוי"
+msgstr "ארגומנט _שפה למנוע:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1890
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
 msgid ""
 "The language argument in case this engine uses it (for example \"-l\"). In "
 "order for it to work, the engine's arguments should have the $LANG keyword."
 msgstr ""
-"ארגומנט השפה לשימוש ע''י מנוע הזיהוי (לדוגמא \"-l\").ארגומנט השפה חייב להכיל "
-"את מילת המפתח $LANG."
+"ארגומנט השפה במקרה שהמנוע הזה משתמש בו (למשל „‎-l”). כדי שהוא יעבוד, "
+"לארגומנטים של המנוע צריכה להיות מילת המפתח ‎$LANG."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1896
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
 msgid "Engine lan_guages:"
-msgstr "שפת מנוע זיהוי"
+msgstr "ש_פות המנוע:"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1898
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1946
 msgid ""
 "The languages this engine supports. This should be given as pairs of the "
 "language in the ISO 639-1 and the engine's corresponding language (for "
 "example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
 "arguments should have the $LANG keyword."
 msgstr ""
-"השפות הנתמכות במנוע הזיהוי. חייב להתאים לשפות ISO 639-1(לדוגמא: \"en:eng,pt:"
-"por,es:esp\") בכדי שהמנוע תעבודהארגומנט חייב להכיל את מילת המפתח $LANG"
+"השפות בהן המנוע תומך. יש לציין אותן כצמדים של שפה בתקן ISO 639-1 והשפה "
+"התואמת במנוע (למשל „en:eng,pt:por,es:esp,he:heb”). כדי שזה יעבוד, לארגומנטים "
+"של המנוע אמורה להיות מילת המפתח ‎$LANG."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
 msgid "Error setting the new engine; please check your engine settings."
-msgstr "שגיאה בהגדרת מנוע זיהוי החדש, נא בדוק הגדרות."
+msgstr "שגיאה בהגדרת מנוע זיהוי החדש, נא לבדוק את ההגדרות."
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1939
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
 msgid "Warning"
 msgstr "אזהרה"
 
-#: ../src/ocrfeeder/studio/widgetPresenter.py:1975
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2023
 msgid "translator-credits"
-msgstr "Aharon Don <aronrefael@gmail.com>, 2013"
+msgstr ""
+"Aharon Don <aronrefael@gmail.com>, 2013\n"
+"ירון שהרבני <sh.yaron@gmail.com>, 2025"
+
+#~ msgid "Delete"
+#~ msgstr "מחק"
+
+#~ msgid "Add"
+#~ msgstr "הוסף"
+
+#~ msgid "Edit"
+#~ msgstr "עריכה"
