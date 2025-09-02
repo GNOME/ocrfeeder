@@ -6,16 +6,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: orcfeeder.master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues\n"
-"POT-Creation-Date: 2022-09-22 20:36+0000\n"
-"PO-Revision-Date: 2025-03-14 15:47+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues/\n"
+"POT-Creation-Date: 2025-08-10 23:24+0000\n"
+"PO-Revision-Date: 2025-09-02 08:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <sh.yaron@gmail.com>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
@@ -31,6 +31,8 @@ msgid ""
 "OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
 "Recognition;Scanner;Scanning;"
 msgstr ""
+"OCR;זיהוי תווים אופטי;זיהוי מסמך;מסמך לטקסט;המרה של טקסט;המרת "
+"טקסט;סורק;סריקה;"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
 msgid "The complete OCR suite"
@@ -59,6 +61,9 @@ msgid ""
 "paragraph styles, clean the input images, import PDFs, save and load the "
 "project, export everything to multiple formats, etc."
 msgstr ""
+"יש לו ממשק GTK גרפי מלא שמאפשר למשתמשים לתקן תווים שלא זוהו כראוי, הגדרת או "
+"תיקון תיבות תוחמות, הגדרת סגנונות פסקאות, לנקות את תמונות הפלט, לייבא קובצי "
+"PDF, לשמור ולטעון את המיזם, לייצא הכול למגוון רחב של סוגי קבצים ועוד."
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1573
@@ -89,7 +94,7 @@ msgstr "תוקן ייבוא PDF, שהיה פגום אחרי ההסבה ל־Pytho
 msgid ""
 "Allow to import PDF files whose paths have characters Ghostscript doesn't "
 "like"
-msgstr ""
+msgstr "לאפשר לייבא קובצי PDF שבנתיבים שלהם יש תווים ש־Ghostscript לא מחבב"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
 msgid "Ship the appdata.xml.in the tarball"
@@ -192,6 +197,8 @@ msgid ""
 "Update the box editor's OCR controls sensitiveness according to the "
 "existence of OCR engines"
 msgstr ""
+"לעדכן את רגישות פקדי זיהוי התווים האופטי של עורך התיבה בהתאם להימצאות מנועי "
+"זיהוי תווים אופטי"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
