@@ -1,0 +1,1402 @@
+# Georgian translation for ocrfeeder.
+# Copyright (C) 2025 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Ekaterine Papava <papava.e@gtu.ge>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues/\n"
+"POT-Creation-Date: 2025-09-10 22:18+0000\n"
+"PO-Revision-Date: 2025-09-17 18:00+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
+"Language-Team: Georgian <ka@li.org>\n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "OCR-ის სრული პაკეტი."
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:3
+msgid ""
+"OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document "
+"Recognition;Scanner;Scanning;"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "OCR-ის სრული პაკეტი"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:3
+msgid ""
+"OCRFeeder is a document layout analysis and optical character recognition "
+"system."
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:4
+msgid ""
+"Given the images it will automatically outline its contents, distinguish "
+"between what's graphics and text and perform OCR over the latter. It "
+"generates multiple formats being its main one ODT."
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:5
+msgid ""
+"It features a complete GTK graphical user interface that allows the users to "
+"correct any unrecognized characters, defined or correct bounding boxes, set "
+"paragraph styles, clean the input images, import PDFs, save and load the "
+"project, export everything to multiple formats, etc."
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1573
+msgid "Content Areas"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7
+#: ../src/ocrfeeder/studio/widgetPresenter.py:925
+msgid "Unpaper Image Processor"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:8
+#: ../resources/spell-checker.ui.h:1
+msgid "Check spelling"
+msgstr "მართლწერის შემოწმება"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
+msgid "Bug Fixes:"
+msgstr "შეცდომების გასწორება:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+msgid ""
+"Fix PDF importation, which was broken after the Python 3 port (thanks to "
+"@scx)"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+msgid ""
+"Allow to import PDF files whose paths have characters Ghostscript doesn't "
+"like"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+msgid "Ship the appdata.xml.in the tarball"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
+msgid "Improvements:"
+msgstr "გაუმჯობესებები:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
+msgid "Python 3 is now used, making the unicode issues go away for good"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
+msgid "The main window is now bigger"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
+msgid "The image clip is now expandible"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
+msgid "The manpages have been updated with the missing options"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
+msgid "Fix icons in the boxes' editor text align buttons"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
+msgid "Install the application icon in the right place"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
+msgid ""
+"Many issues in the scanner dialog have been fixed (scanner options, UI "
+"problems, etc.)"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
+msgid ""
+"The Preferences dialog is now smaller (the big contents are wrapped in a "
+"scrolled window)"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
+msgid "All dialogs are now centered to the main window"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
+msgid "Use XDG user's configuration directory instead of .ocrfeeder"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
+msgid "Fix Gtk thread related problems"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
+msgid "Fix unicode issues when saving a project and exporting a document"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
+msgid "Fix issue when exporting a picture in a document from a loaded project"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
+msgid "Fix ODT exportation button's icon"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
+msgid "New Features:"
+msgstr "ახალი ფუნქციები:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
+msgid "Add support for multiple image TIFFs"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
+msgid "Port the application to GObject Introspection"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
+msgid "Scan with 300 DPI and in color mode"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
+msgid "Use the last visited directory when adding a new image"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
+msgid ""
+"Warn when no OCR engines are found on startup or when performing the "
+"recognition"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
+msgid ""
+"Update the box editor's OCR controls sensitiveness according to the "
+"existence of OCR engines"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
+msgid "Fix PIL importation"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
+msgid "Fix error when exporting a PDF with empty text areas"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
+msgid "Fix PDF output options in ocrfeeder-cli"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
+msgid "Fix getting engine name in ocrfeeder-cli"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
+msgid "Fix the use of newer versions of Unpaper"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
+msgid "Fix text in the pages icon view"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
+msgid "Fix reordering pages in the icon view"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
+msgid "Fix issues when no locale is set"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
+msgid "Fix loading project with more than one page"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
+msgid "Fix updating the OCR engines in the BoxEditor"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
+msgid "New and Updated Translations:"
+msgstr "ახალი და განახლებული თარგმანები:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
+msgid "Marek Černocký [cz]"
+msgstr "მარეკ ჩერნოვიცკი [cz]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
+msgid "Daniel Mustieles [es]"
+msgstr "დანიელ მუსტიელესი [es]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
+msgid "Fran Diéguez [gl]"
+msgstr ""
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
+msgid "Dimitris Spingos [el]"
+msgstr "დიმიტრის სპინგოსი [el]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
+msgid "Aharon Don [he]"
+msgstr "აჰარონ დონი [he]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
+msgid "Attila Hammer, Gabor Kelemen [hu]"
+msgstr "ატილა ჰამერი, გაბორ კელემენი [hu]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
+msgid "Rafael Ferreira [pt_BR]"
+msgstr "რაფაელ ფერეირა [pt_BR]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
+msgid "Martin Srebotnjak [sl]"
+msgstr "მატინ სრებოტიაკი [sl]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:54
+msgid "Мирослав Николић [sr]"
+msgstr "მიროსლავ ნიკოლი [sr]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:55
+msgid "Piotr Drąg [uk]"
+msgstr "პიოტრ დრაგი [uk]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:56
+msgid "Wylmer Wang [zh_CN]"
+msgstr "ვილმერ ვანგი [zh_CN]"
+
+#: ../resources/spell-checker.ui.h:2
+msgid "Misspelled word:"
+msgstr "არასწორად დაწერილი სიტყვა:"
+
+#: ../resources/spell-checker.ui.h:3
+msgid "Change _to:"
+msgstr "შეცვლა:"
+
+#: ../resources/spell-checker.ui.h:4
+msgid "_Suggestions:"
+msgstr "_რჩევები:"
+
+#: ../resources/spell-checker.ui.h:5
+msgid "Cha_nge"
+msgstr "შე_ცვლა"
+
+#: ../resources/spell-checker.ui.h:6
+msgid "Ignore _All"
+msgstr "ყველას იგნორი"
+
+#: ../resources/spell-checker.ui.h:7
+msgid "Change A_ll"
+msgstr "ყვ_ელას შეცვლა"
+
+#: ../resources/spell-checker.ui.h:8
+#: ../src/ocrfeeder/studio/studioBuilder.py:422
+msgid "_Ignore"
+msgstr "გამ_ოტოვება"
+
+#: ../resources/spell-checker.ui.h:9
+msgid "Language:"
+msgstr "ენა:"
+
+#: ../resources/spell-checker.ui.h:10
+msgid "<b>Language</b>"
+msgstr "<b>ენა</b>"
+
+#: ../src/ocrfeeder/feeder/imageManipulation.py:35
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:63
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:64
+#: ../src/ocrfeeder/studio/studioBuilder.py:245
+msgid "PDF"
+msgstr "PDF"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:65
+msgid "Plain Text"
+msgstr "უბრალო ტექსტი"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:171
+msgid "Images"
+msgstr "გამოსახულებები"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+msgid "Obtaining scanners"
+msgstr "სკანერების მიღება"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Please wait…"
+msgstr "გთხოვთ, მოითმინოთ…"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+msgid "Scanning"
+msgstr "სკანირება"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+msgid "No scanner devices were found"
+msgstr "მხარდაჭერილი მოწყობილობები ნაპოვნი არაა"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:221
+#: ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "Error"
+msgstr "შეცდომა"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
+msgid "Error scanning page"
+msgstr "გვერდის სკანირების შეცდომა"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+msgid "Loading PDF"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:289
+msgid "Export pages"
+msgstr "გვერდების გატანა"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
+msgid "Are you sure you want to delete the current image?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:380
+msgid "Are you sure you want to clear the project?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:418
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1860
+msgid "No OCR engines available"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:419
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1861
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424
+#: ../src/ocrfeeder/studio/studioBuilder.py:479
+msgid "_Open OCR Engines Manager Dialog"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:477
+msgid "_Keep Current Configuration"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:481
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears "
+"you have changed their default configuration so they need to be updated "
+"manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current "
+"configuration and have your OCR engines detected again."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:502
+msgid "The project hasn't been saved."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:503
+msgid "Do you want to save it before closing?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:504
+msgid "Close anyway"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:69
+msgid "Selectable areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+msgid "Preparing image"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
+#, python-format
+msgid "Preparing image %(current_index)s/%(total)s"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+msgid "Deskewing image"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
+msgid "No images added"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
+#, python-format
+msgid "Zoom: %s %%"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
+#, python-format
+msgid "Resolution: %.2f x %.2f"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:446
+#, python-format
+msgid "Page size: %i x %i"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:487
+msgid ""
+"There are changes that may be overwritten by the new recognition.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Recognizing Page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:526
+msgid "Recognizing Document"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:527
+#, python-format
+msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:601
+#, python-format
+msgid "Export to %(format_name)s"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:625
+msgid "What kind of PDF document do you wish?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
+msgid "From scratch"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:629
+msgid "Creates a new PDF from scratch."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
+msgid "Searchable PDF"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:633
+msgid "Creates a PDF based on the images but with searchable text."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:667
+msgid "OCRFeeder Projects"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:714
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:721
+msgid "Replace"
+msgstr "ჩანაცვლება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62
+#: ../src/ocrfeeder/studio/pagesiconview.py:78
+msgid "Pages"
+msgstr "გვერდები"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "_File"
+msgstr "_ფაილი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "_Quit"
+msgstr "გასვ_ლა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "Exit the program"
+msgstr "პროგრამიდან გასვლა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "_Open"
+msgstr "_გახსნა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "Open project"
+msgstr "პროექტის გახსნა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "_Save"
+msgstr "_შენახვა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "Save project"
+msgstr "პროექტის შენახვა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "_Save As…"
+msgstr "_შენახვა, როგორც…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Save project with a chosen name"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "_Add Image"
+msgstr "გ_ამოსახულების დამატება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Add another image"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add _Folder"
+msgstr "_საქაღალდის დამატება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add all images in a folder"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Append Project"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Load a project and append it to the current one"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "_Import PDF"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "Import PDF"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "_Export…"
+msgstr "_გატანა…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "Export to a chosen format"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+msgid "_Edit"
+msgstr "_ჩასწორება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "_Edit Page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "Edit page settings"
+msgstr "გვერდის პარამეტრების ჩასწორება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "_Preferences"
+msgstr "_მორგება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "Configure the application"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "_Delete Page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Delete current page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move Page Do_wn"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move page down"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move Page Up"
+msgstr "გვერდის აწევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move page up"
+msgstr "გვერდის ზემოთ აწევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select Next Page"
+msgstr "შემდეგი გვერდის არჩევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select next page"
+msgstr "შემდეგი გვერდის არჩევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select Previous Page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select previous page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "_Clear Project"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "Delete all images"
+msgstr "ყველა ასლის წაშლა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+msgid "_View"
+msgstr "_ხედი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+msgid "Zoom In"
+msgstr "გადიდება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+msgid "Zoom Out"
+msgstr "დაპატარავება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+msgid "Best Fit"
+msgstr "საუკეთესოდ ჩატევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+msgid "Normal Size"
+msgstr "ნორმალური ზომა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+msgid "_Document"
+msgstr "_დოკუმენტი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1429
+msgid "_Tools"
+msgstr "_ხელსაწყოები"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "_OCR Engines"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "Manage OCR engines"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "_Unpaper"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "Process image with unpaper"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+msgid "Image Des_kewer"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+msgid "Tries to straighten the image"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "_Help"
+msgstr "_დახმარება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "Help contents"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "_About"
+msgstr "_შესახებ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "About this application"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
+msgid "_Recognize Document"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:118
+msgid "Automatically detect and recognize all pages"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
+msgid "R_ecognize Page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:122
+msgid "Automatically detect and recognize the current page"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
+msgid "Recognize _Selected Areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:126
+msgid "Recognize Selected Areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
+msgid "Select _All Areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:130
+msgid "Select all content areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
+msgid "Select _Previous Area"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:134
+msgid "Select the previous area from the content areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
+msgid "Select _Next Area"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:138
+msgid "Select the next area from the content areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
+msgid "Delete Selected Areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "Deletes all the currently selected content areas"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "_Generate ODT"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "Export to ODT"
+msgstr "გატანა ODT-ში"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:146
+msgid "Import Page From S_canner"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:148
+msgid "Import From Scanner"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:151
+msgid "_Copy to Clipboard"
+msgstr "_ბუფერში კოპირება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:153
+msgid "Copy recognized text to clipboard"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+msgid "Spell_checker"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+msgid "Spell Check Recognized Text"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:262
+msgid "No language"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:330
+msgid "Area editor"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
+msgid "Sets the content area's width"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+msgid "Sets the content area's height"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352
+#: ../src/ocrfeeder/studio/widgetPresenter.py:577
+msgid "_Text"
+msgstr "_ტექსტი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
+msgid "Set this content area to be the text type"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
+msgid "_Image"
+msgstr "_გამოსახულება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
+msgid "Set this content area to be the image type"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:360
+msgid "Type"
+msgstr "ტიპი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:372
+msgid "Clip"
+msgstr "Clip"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
+msgid "Bounds"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:461
+msgid "_X:"
+msgstr "_X:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:470
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:482
+#: ../src/ocrfeeder/studio/widgetPresenter.py:854
+msgid "_Width:"
+msgstr "_სიგანე:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:491
+msgid "Hei_ght:"
+msgstr "სი_მაღლე:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+msgid "Left"
+msgstr "მარცხენა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
+msgid "Set text to be left aligned"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
+msgid "Center"
+msgstr "ცენტრი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
+msgid "Set text to be centered"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
+msgid "Right"
+msgstr "მარჯვენა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+msgid "Set text to be right aligned"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:535
+msgid "Fill"
+msgstr "შევსება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
+msgid "Set text to be fill its area"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+msgid "OC_R"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+msgid "OCR engine to recognize this content area"
+msgstr ""
+
+#. Text Properties
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
+msgid "Text Properties"
+msgstr "ტექსტის თვისებები"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
+msgid "Font"
+msgstr "ფონტი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+msgid "Align"
+msgstr "სწორება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
+msgid "Spacing"
+msgstr "გამოტოვება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
+msgid "Set the text's letter spacing"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
+msgid "Set the text's line spacing"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
+msgid "_Line:"
+msgstr "_ხაზი:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
+msgid "L_etter:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
+msgid "Sty_le"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
+msgid "Angle"
+msgstr "კუთხე"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
+msgid "Mis_c"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1696
+msgid "Language"
+msgstr "ენა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+msgid "OCR engine to recogni_ze this area:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
+msgid "Detect"
+msgstr "აღმოჩენა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
+msgid "Angle:"
+msgstr "კუთხე:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:751
+msgid "Save File"
+msgstr "ფაილის შენახვა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:754
+msgid "Open File"
+msgstr "ფაილის გახსნა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:758
+msgid "Open Folder"
+msgstr "საქაღალდის გახსნა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:789
+msgid "Pages to export"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:791
+msgid "All"
+msgstr "ყველა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:792
+msgid "Current"
+msgstr "მიმდინარე"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
+msgid "Choose the format"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:829
+#: ../src/ocrfeeder/studio/widgetPresenter.py:840
+msgid "Page size"
+msgstr "გვერდის ზომა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
+msgid "Custom…"
+msgstr "ხელით…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
+msgid "_Height:"
+msgstr "_სიმაღლე:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:868
+msgid "Affected pages"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
+msgid "C_urrent"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:871
+msgid "_All"
+msgstr "ყველ_ა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:943
+msgid "Preview"
+msgstr "მინიატურა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:950
+msgid "_Preview"
+msgstr "_მინიატურა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing Unpaper"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing unpaper. Please wait…"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
+msgid "Noise Filter Intensity"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1023
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1055
+msgid "Default"
+msgstr "ნაგულისხმევი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1058
+msgid "None"
+msgstr "არცერთი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1053
+msgid "Gray Filter Size"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1056
+msgid "Custom"
+msgstr "ხელით"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
+msgid "Black Filter"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1086
+msgid "Use"
+msgstr "გამოყენება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
+msgid "Extra Options"
+msgstr "დამატებითი პარამეტრები"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1095
+msgid "Unpaper's command line arguments"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1153
+msgid "Unpaper Preferences"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "An error occurred!"
+msgstr "აღმოჩენილია შეცდომა!"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1294
+msgid "Cancelled"
+msgstr "გაუქმებულია"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1310
+msgid "Preferences"
+msgstr "მორგება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
+msgid "_General"
+msgstr "_ზოგადი"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1387
+msgid "_Recognition"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
+msgid "Select boxes' colors"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1402
+msgid "Te_xt areas' fill color"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1408
+msgid "Text areas' _stroke color"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1414
+msgid "_Image areas' fill color"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
+msgid "Path to unpaper"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
+msgid "Choose"
+msgstr "არჩევა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1446
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1761
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+msgid "OCR Engines"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
+msgid ""
+"The engine that should be used when performing the automatic recognition."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1459
+msgid "Favorite _engine:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
+msgid "Window size"
+msgstr "ფანჯრის ზომა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
+msgid "A_utomatic"
+msgstr "ა_ვტომატური"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
+msgid "Cu_stom"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1499
+msgid "Columns Detection"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
+msgid "_Improve columns detection"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+msgid "Use a post-detection algorithm to improve the detection of columns"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1517
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1591
+msgid "_Automatic"
+msgstr "_ავტომატური"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1592
+msgid "Custo_m"
+msgstr "_ხელით"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+msgid "The columns' minimum width in pixels"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
+msgid "Minimum width that a column should have:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
+msgid "Recognized Text"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
+msgid "_Fix line breaks and hyphenization"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
+msgid ""
+"Removes single line breaks and hyphenization from text generated by OCR "
+"engines"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+msgid "A_djust content areas' bounds"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1580
+msgid "Use a post-detection algorithm to shorten the contents areas' margins"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1596
+msgid "The maximum size for the content areas' margins in pixels"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1613
+msgid "Maximum size that the content areas' margins should have:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1660
+msgid "Image Pre-processing"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
+msgid "Des_kew images"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+msgid "Tries to straighten the images before they are added"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
+msgid "_Unpaper images"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+msgid "Cleans the image using the Unpaper pre-processor"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1678
+msgid "Unpaper _Preferences"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1700
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one "
+"chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
+msgid "Default _language:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+msgid "Engines to be added"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1742
+msgid "Include"
+msgstr "ჩართვა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1746
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1787
+msgid "Engine"
+msgstr "ძრავა"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
+msgid "De_tect"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1809
+msgid "Are you sure you want to delete this engine?"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
+#, python-format
+msgid "%s engine"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
+msgid "_Name:"
+msgstr "_სახელი:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
+msgid "Engine name"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
+msgid "_Image format:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
+msgid "The required image format"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
+msgid "_Failure string:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
+msgid "The failure string or character that this engine uses"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
+msgid "Engine _path:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
+msgid "The path to the engine program"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
+msgid "Engine _arguments:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1932
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
+msgid "Engine _language argument:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In "
+"order for it to work, the engine's arguments should have the $LANG keyword."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
+msgid "Engine lan_guages:"
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1946
+msgid ""
+"The languages this engine supports. This should be given as pairs of the "
+"language in the ISO 639-1 and the engine's corresponding language (for "
+"example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's "
+"arguments should have the $LANG keyword."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Error setting the new engine; please check your engine settings."
+msgstr ""
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Warning"
+msgstr "გაფრთხილება"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2023
+msgid "translator-credits"
+msgstr "თემური დოღონაძე"
