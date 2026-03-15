@@ -1,0 +1,1376 @@
+# Kazakh translation for ocrfeeder.
+# Copyright (C) 2026 ocrfeeder's COPYRIGHT HOLDER
+# This file is distributed under the same license as the ocrfeeder package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>,  2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ocrfeeder master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues/\n"
+"POT-Creation-Date: 2026-03-10 21:25+0000\n"
+"PO-Revision-Date: 2026-03-15 13:08+0500\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <Kazakh>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:1 ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
+msgid "OCRFeeder"
+msgstr "OCRFeeder"
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:2
+msgid "The complete OCR suite."
+msgstr "Толық OCR жинағы."
+
+#: ../resources/org.gnome.OCRFeeder.desktop.in.h:3
+msgid "OCR;Optical Character Recognition;CuneiForm;GOCR;Ocrad;Tesseract;Document Recognition;Scanner;Scanning;"
+msgstr "OCR;Оптикалық таңбаларды тану;CuneiForm;GOCR;Ocrad;Tesseract;Құжаттарды тану;Сканер;Сканерлеу;"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:2
+msgid "The complete OCR suite"
+msgstr "Толық OCR жинағы"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:3
+msgid "OCRFeeder is a document layout analysis and optical character recognition system."
+msgstr "OCRFeeder — құжат жаймасын талдау және оптикалық таңбаларды тану жүйесі."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:4
+msgid ""
+"Given the images it will automatically outline its contents, distinguish between what's graphics and text and perform OCR over "
+"the latter. It generates multiple formats being its main one ODT."
+msgstr ""
+"Суреттер берілгенде, ол оның мазмұнын автоматты түрде анықтайды, графика мен мәтінді ажыратады және соңғысына OCR орындайды. "
+"Ол бірнеше пішімді жасайды, оның негізгісі — ODT."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:5
+msgid ""
+"It features a complete GTK graphical user interface that allows the users to correct any unrecognized characters, defined or "
+"correct bounding boxes, set paragraph styles, clean the input images, import PDFs, save and load the project, export "
+"everything to multiple formats, etc."
+msgstr ""
+"Онда пайдаланушыларға танылмаған таңбаларды түзетуге, шектеуші жақтауларды анықтауға немесе түзетуге, абзац стильдерін "
+"орнатуға, кіріс суреттерін тазалауға, PDF файлдарын импорттауға, жобаны сақтауға және жүктеуге, барлығын бірнеше пішімге "
+"экспорттауға және т.б. мүмкіндік беретін толық GTK графикалық пайдаланушы интерфейсі бар."
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6 ../src/ocrfeeder/studio/widgetPresenter.py:1573
+msgid "Content Areas"
+msgstr "Мазмұн аймақтары"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7 ../src/ocrfeeder/studio/widgetPresenter.py:925
+msgid "Unpaper Image Processor"
+msgstr "Unpaper сурет процессоры"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:8 ../resources/spell-checker.ui.h:1
+msgid "Check spelling"
+msgstr "Емлені тексеру"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:9
+msgid "Bug Fixes:"
+msgstr "Қателерді түзету:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:10
+msgid "Fix PDF importation, which was broken after the Python 3 port (thanks to @scx)"
+msgstr "Python 3 портынан кейін бұзылған PDF импорттауды түзету (@scx-ке рахмет)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:11
+msgid "Allow to import PDF files whose paths have characters Ghostscript doesn't like"
+msgstr "Ghostscript-ке ұнамайтын таңбалары бар жолдары бар PDF файлдарын импорттауға рұқсат беру"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:12
+msgid "Ship the appdata.xml.in the tarball"
+msgstr "Tarball ішінде appdata.xml.in жеткізу"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:13
+msgid "Improvements:"
+msgstr "Жақсартулар:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:14
+msgid "Python 3 is now used, making the unicode issues go away for good"
+msgstr "Енді Python 3 қолданылады, бұл юникод мәселелерін біржола жояды"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:15
+msgid "The main window is now bigger"
+msgstr "Негізгі терезе енді үлкенірек"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:16
+msgid "The image clip is now expandible"
+msgstr "Сурет үзіндісі енді кеңейтіледі"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:17
+msgid "The manpages have been updated with the missing options"
+msgstr "Манырақ беттері жетіспейтін опциялармен жаңартылды"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:18
+msgid "Fix icons in the boxes' editor text align buttons"
+msgstr "Жақтаулар редакторындағы мәтінді туралау батырмаларындағы таңбашаларды түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:19
+msgid "Install the application icon in the right place"
+msgstr "Қолданба таңбашасын дұрыс жерге орнату"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:20
+msgid "Many issues in the scanner dialog have been fixed (scanner options, UI problems, etc.)"
+msgstr "Сканер сұхбат терезесіндегі көптеген мәселелер түзетілді (сканер опциялары, интерфейс мәселелері және т.б.)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:21
+msgid "The Preferences dialog is now smaller (the big contents are wrapped in a scrolled window)"
+msgstr "Баптаулар сұхбат терезесі енді кішірек (үлкен мазмұн айналдыру терезесіне салынған)"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:22
+msgid "All dialogs are now centered to the main window"
+msgstr "Барлық сұхбат терезелері енді негізгі терезеге қатысты ортаға тураланған"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:23
+msgid "Use XDG user's configuration directory instead of .ocrfeeder"
+msgstr ".ocrfeeder орнына XDG пайдаланушы конфигурация бумасын пайдалану"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:24
+msgid "Fix Gtk thread related problems"
+msgstr "Gtk ағындарына қатысты мәселелерді түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:25
+msgid "Fix unicode issues when saving a project and exporting a document"
+msgstr "Жобаны сақтау және құжатты экспорттау кезіндегі юникод мәселелерін түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:26
+msgid "Fix issue when exporting a picture in a document from a loaded project"
+msgstr "Жүктелген жобадан құжатқа суретті экспорттау кезіндегі мәселені түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:27
+msgid "Fix ODT exportation button's icon"
+msgstr "ODT экспорттау батырмасының таңбашасын түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:28
+msgid "New Features:"
+msgstr "Жаңа мүмкіндіктер:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:29
+msgid "Add support for multiple image TIFFs"
+msgstr "Көп суретті TIFF қолдауын қосу"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:30
+msgid "Port the application to GObject Introspection"
+msgstr "Қолданбаны GObject Introspection-ға көшіру"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:31
+msgid "Scan with 300 DPI and in color mode"
+msgstr "300 DPI және түрлі-түсті режимде сканерлеу"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:32
+msgid "Use the last visited directory when adding a new image"
+msgstr "Жаңа сурет қосқан кезде соңғы кірілген буманы пайдалану"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:33
+msgid "Warn when no OCR engines are found on startup or when performing the recognition"
+msgstr "Іске қосылғанда немесе тануды орындағанда OCR қозғалтқыштары табылмаса ескерту"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:34
+msgid "Update the box editor's OCR controls sensitiveness according to the existence of OCR engines"
+msgstr "OCR қозғалтқыштарының болуына байланысты жақтау редакторының OCR басқару элементтерінің сезімталдығын жаңарту"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
+msgid "Fix PIL importation"
+msgstr "PIL импорттауды түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
+msgid "Fix error when exporting a PDF with empty text areas"
+msgstr "Бос мәтін аймақтары бар PDF-ті экспорттау кезіндегі қатені түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:37
+msgid "Fix PDF output options in ocrfeeder-cli"
+msgstr "ocrfeeder-cli ішіндегі PDF шығыс опцияларын түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:38
+msgid "Fix getting engine name in ocrfeeder-cli"
+msgstr "ocrfeeder-cli ішінде қозғалтқыш атын алуды түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:39
+msgid "Fix the use of newer versions of Unpaper"
+msgstr "Unpaper-дің жаңа нұсқаларын пайдалануды түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:40
+msgid "Fix text in the pages icon view"
+msgstr "Беттер таңбашаларының көрінісіндегі мәтінді түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:41
+msgid "Fix reordering pages in the icon view"
+msgstr "Таңбашалар көрінісінде беттердің ретін өзгертуді түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:42
+msgid "Fix issues when no locale is set"
+msgstr "Локаль орнатылмаған кездегі мәселелерді түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:43
+msgid "Fix loading project with more than one page"
+msgstr "Бірден көп беті бар жобаны жүктеуді түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:44
+msgid "Fix updating the OCR engines in the BoxEditor"
+msgstr "BoxEditor ішіндегі OCR қозғалтқыштарын жаңартуды түзету"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:45
+msgid "New and Updated Translations:"
+msgstr "Жаңа және жаңартылған аудармалар:"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:46
+msgid "Marek Černocký [cz]"
+msgstr "Marek Černocký [cz]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:47
+msgid "Daniel Mustieles [es]"
+msgstr "Daniel Mustieles [es]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
+msgid "Fran Diéguez [gl]"
+msgstr "Fran Diéguez [gl]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
+msgid "Dimitris Spingos [el]"
+msgstr "Dimitris Spingos [el]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:50
+msgid "Aharon Don [he]"
+msgstr "Aharon Don [he]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:51
+msgid "Attila Hammer, Gabor Kelemen [hu]"
+msgstr "Attila Hammer, Gabor Kelemen [hu]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:52
+msgid "Rafael Ferreira [pt_BR]"
+msgstr "Rafael Ferreira [pt_BR]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:53
+msgid "Martin Srebotnjak [sl]"
+msgstr "Martin Srebotnjak [sl]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:54
+msgid "Мирослав Николић [sr]"
+msgstr "Мирослав Николић [sr]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:55
+msgid "Piotr Drąg [uk]"
+msgstr "Piotr Drąg [uk]"
+
+#: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:56
+msgid "Wylmer Wang [zh_CN]"
+msgstr "Wylmer Wang [zh_CN]"
+
+#: ../resources/spell-checker.ui.h:2
+msgid "Misspelled word:"
+msgstr "Қате жазылған сөз:"
+
+#: ../resources/spell-checker.ui.h:3
+msgid "Change _to:"
+msgstr "Келесіге ө_згерту:"
+
+#: ../resources/spell-checker.ui.h:4
+msgid "_Suggestions:"
+msgstr "Ұ_сыныстар:"
+
+#: ../resources/spell-checker.ui.h:5
+msgid "Cha_nge"
+msgstr "Өзгер_ту"
+
+#: ../resources/spell-checker.ui.h:6
+msgid "Ignore _All"
+msgstr "Б_арлығын елемеу"
+
+#: ../resources/spell-checker.ui.h:7
+msgid "Change A_ll"
+msgstr "Барлы_ғын өзгерту"
+
+#: ../resources/spell-checker.ui.h:8 ../src/ocrfeeder/studio/studioBuilder.py:422
+msgid "_Ignore"
+msgstr "_Елемеу"
+
+#: ../resources/spell-checker.ui.h:9
+msgid "Language:"
+msgstr "Тіл:"
+
+#: ../resources/spell-checker.ui.h:10
+msgid "<b>Language</b>"
+msgstr "<b>Тіл</b>"
+
+#: ../src/ocrfeeder/feeder/imageManipulation.py:35
+#, python-format
+msgid ""
+"A problem occurred while trying to open the image:\n"
+" %s\n"
+"Ensure the image exists or try converting it to another format."
+msgstr ""
+"Суретті ашу кезінде мәселе туындады:\n"
+" %s\n"
+"Суреттің бар екеніне көз жеткізіңіз немесе оны басқа пішімге түрлендіріп көріңіз."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:62
+msgid "ODT"
+msgstr "ODT"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:63
+msgid "HTML"
+msgstr "HTML"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:64 ../src/ocrfeeder/studio/studioBuilder.py:245
+msgid "PDF"
+msgstr "PDF"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:65
+msgid "Plain Text"
+msgstr "Қарапайым мәтін"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:171
+msgid "Images"
+msgstr "Суреттер"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189
+msgid "Obtaining scanners"
+msgstr "Сканерлерді алу"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:189 ../src/ocrfeeder/studio/studioBuilder.py:215
+#: ../src/ocrfeeder/studio/studioBuilder.py:259 ../src/ocrfeeder/studio/widgetModeler.py:353
+#: ../src/ocrfeeder/studio/widgetModeler.py:358 ../src/ocrfeeder/studio/widgetModeler.py:412
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Please wait…"
+msgstr "Күте тұрыңыз…"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:215
+msgid "Scanning"
+msgstr "Сканерлеу"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:220
+msgid "No scanner devices were found"
+msgstr "Сканер құрылғылары табылмады"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:221 ../src/ocrfeeder/studio/studioBuilder.py:236
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213 ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "Error"
+msgstr "Қате"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:235
+msgid "Error scanning page"
+msgstr "Бетті сканерлеу қатесі"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:259
+msgid "Loading PDF"
+msgstr "PDF жүктелуде"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:289
+msgid "Export pages"
+msgstr "Беттерді экспорттау"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:308
+msgid "Are you sure you want to delete the current image?"
+msgstr "Ағымдағы суретті өшіруді шынымен қалайсыз ба?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:380
+msgid "Are you sure you want to clear the project?"
+msgstr "Жобаны тазартуды шынымен қалайсыз ба?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:418 ../src/ocrfeeder/studio/widgetPresenter.py:1860
+msgid "No OCR engines available"
+msgstr "Қолжетімді OCR қозғалтқыштары жоқ"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:419 ../src/ocrfeeder/studio/widgetPresenter.py:1861
+msgid ""
+"No OCR engines were found in the system.\n"
+"Please make sure you have OCR engines installed and available."
+msgstr ""
+"Жүйеде ешқандай OCR қозғалтқыштары табылмады.\n"
+"OCR қозғалтқыштарының орнатылғанына және қолжетімді екеніне көз жеткізіңіз."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:424 ../src/ocrfeeder/studio/studioBuilder.py:479
+msgid "_Open OCR Engines Manager Dialog"
+msgstr "OCR қозғалтқыштарын басқару сұхбат терезесін _ашу"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:477
+msgid "_Keep Current Configuration"
+msgstr "Ағымдағы конфигурацияны _сақтау"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:481
+#, python-format
+msgid ""
+"The following OCR engines' arguments might need to be updated but it appears you have changed their default configuration so "
+"they need to be updated manually:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"If you do not want to keep your changes you can just remove the current configuration and have your OCR engines detected again."
+msgstr ""
+"Келесі OCR қозғалтқыштарының аргументтерін жаңарту қажет болуы мүмкін, бірақ сіз олардың бастапқы конфигурациясын өзгерткен "
+"сияқтысыз, сондықтай оларды қолмен жаңарту керек:\n"
+"  <b>%(engines)s</b>\n"
+"\n"
+"Егер өзгерістерді сақтағыңыз келмесе, ағымдағы конфигурацияны өшіріп, OCR қозғалтқыштарын қайта анықтауға болады."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:502
+msgid "The project hasn't been saved."
+msgstr "Жоба сақталмады."
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:503
+msgid "Do you want to save it before closing?"
+msgstr "Жабу алдында оны сақтағыңыз келе ме?"
+
+#: ../src/ocrfeeder/studio/studioBuilder.py:504
+msgid "Close anyway"
+msgstr "Бәрібір жабу"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:69
+msgid "Selectable areas"
+msgstr "Таңдалатын аймақтар"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:353
+msgid "Preparing image"
+msgstr "Суретті дайындау"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:355
+#, python-format
+msgid "Preparing image %(current_index)s/%(total)s"
+msgstr "Суретті дайындау %(current_index)s/%(total)s"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:412
+msgid "Deskewing image"
+msgstr "Суреттің қисаюын түзету"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:439
+msgid "No images added"
+msgstr "Суреттер қосылмаған"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:442
+#, python-format
+msgid "Zoom: %s %%"
+msgstr "Масштаб: %s %%"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:444
+#, python-format
+msgid "Resolution: %.2f x %.2f"
+msgstr "Ажыратылымдығы: %.2f x %.2f"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:446
+#, python-format
+msgid "Page size: %i x %i"
+msgstr "Бет өлшемі: %i x %i"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:487
+msgid ""
+"There are changes that may be overwritten by the new recognition.\n"
+"\n"
+"Do you want to continue?"
+msgstr ""
+"Жаңа тану арқылы қайта жазылуы мүмкін өзгерістер бар.\n"
+"\n"
+"Жалғастыруды қалайсыз ба?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:509
+msgid "Recognizing Page"
+msgstr "Бетті тану"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:526
+msgid "Recognizing Document"
+msgstr "Құжатты тану"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:527
+#, python-format
+msgid "Recognizing page %(page_number)s/%(total_pages)s. Please wait…"
+msgstr "%(page_number)s/%(total_pages)s бетін тану. Күте тұрыңыз…"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:601
+#, python-format
+msgid "Export to %(format_name)s"
+msgstr "%(format_name)s пішіміне экспорттау"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:625
+msgid "What kind of PDF document do you wish?"
+msgstr "PDF құжатының қай түрін қалайсыз?"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:627
+msgid "From scratch"
+msgstr "Нөлден бастап"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:629
+msgid "Creates a new PDF from scratch."
+msgstr "Нөлден бастап жаңа PDF жасайды."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:632
+msgid "Searchable PDF"
+msgstr "Іздеуге болатын PDF"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:633
+msgid "Creates a PDF based on the images but with searchable text."
+msgstr "Суреттер негізінде, бірақ мәтіні ізделетін PDF жасайды."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:667
+msgid "OCRFeeder Projects"
+msgstr "OCRFeeder жобалары"
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:714
+#, python-format
+msgid ""
+"<b>A file named \"%(name)s\" already exists. Do you want to replace it?</b>\n"
+"\n"
+"The file exists in \"%(dir)s\". Replacing it will overwrite its contents."
+msgstr ""
+"<b>«%(name)s» атты файл бұрыннан бар. Оны алмастыруды қалайсыз ба?</b>\n"
+"\n"
+"Файл «%(dir)s» ішінде бар. Оны алмастыру мазмұнының үстінен жазады."
+
+#: ../src/ocrfeeder/studio/widgetModeler.py:721
+msgid "Replace"
+msgstr "Алмастыру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:62 ../src/ocrfeeder/studio/pagesiconview.py:78
+msgid "Pages"
+msgstr "Беттер"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:82
+msgid "_File"
+msgstr "_Файл"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "_Quit"
+msgstr "_Шығу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:83
+msgid "Exit the program"
+msgstr "Бағдарламадан шығу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "_Open"
+msgstr "_Ашу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:84
+msgid "Open project"
+msgstr "Жобаны ашу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "_Save"
+msgstr "_Сақтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:85
+msgid "Save project"
+msgstr "Жобаны сақтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "_Save As…"
+msgstr "Қалайша _сақтау…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:86
+msgid "Save project with a chosen name"
+msgstr "Жобаны таңдалған атпен сақтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "_Add Image"
+msgstr "Суретті _қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:87
+msgid "Add another image"
+msgstr "Басқа суретті қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add _Folder"
+msgstr "Бу_маны қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:88
+msgid "Add all images in a folder"
+msgstr "Бумадағы барлық суреттерді қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Append Project"
+msgstr "Жобаны қосып алу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:89
+msgid "Load a project and append it to the current one"
+msgstr "Жобаны жүктеп, оны ағымдағы жобаға қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "_Import PDF"
+msgstr "PDF _импорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:90
+msgid "Import PDF"
+msgstr "PDF импорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "_Export…"
+msgstr "_Экспорттау…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:91
+msgid "Export to a chosen format"
+msgstr "Таңдалған пішімге экспорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:92
+msgid "_Edit"
+msgstr "_Түзету"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "_Edit Page"
+msgstr "Бетті _түзету"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:93
+msgid "Edit page settings"
+msgstr "Бет баптауларын түзету"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "_Preferences"
+msgstr "_Баптаулар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:94
+msgid "Configure the application"
+msgstr "Қолданбаны баптау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "_Delete Page"
+msgstr "Бетті _өшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:95
+msgid "Delete current page"
+msgstr "Ағымдағы бетті өшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move Page Do_wn"
+msgstr "Бетті тө_мен жылжыту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:96
+msgid "Move page down"
+msgstr "Бетті төмен жылжыту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move Page Up"
+msgstr "Бетті жоғары жылжыту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:97
+msgid "Move page up"
+msgstr "Бетті жоғары жылжыту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select Next Page"
+msgstr "Келесі бетті таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:98
+msgid "Select next page"
+msgstr "Келесі бетті таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select Previous Page"
+msgstr "Алдыңғы бетті таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:99
+msgid "Select previous page"
+msgstr "Алдыңғы бетті таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "_Clear Project"
+msgstr "Жобаны _тазарту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:100
+msgid "Delete all images"
+msgstr "Барлық суреттерді өшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:101
+msgid "_View"
+msgstr "_Көрініс"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:102
+msgid "Zoom In"
+msgstr "Үлкейту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:103
+msgid "Zoom Out"
+msgstr "Кішірейту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:104
+msgid "Best Fit"
+msgstr "Ең жақсы сыйдыру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:105
+msgid "Normal Size"
+msgstr "Қалыпты өлшемі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:106
+msgid "_Document"
+msgstr "_Құжат"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:107 ../src/ocrfeeder/studio/widgetPresenter.py:1429
+msgid "_Tools"
+msgstr "_Саймандар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "_OCR Engines"
+msgstr "OCR қ_озғалтқыштары"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:108
+msgid "Manage OCR engines"
+msgstr "OCR қозғалтқыштарын басқару"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "_Unpaper"
+msgstr "_Unpaper"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:109
+msgid "Process image with unpaper"
+msgstr "Суретті unpaper көмегімен өңдеу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:110
+msgid "Image Des_kewer"
+msgstr "Суреттің _қисаюын түзетуші"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:111
+msgid "Tries to straighten the image"
+msgstr "Суретті түзулеуге тырысады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:113 ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "_Help"
+msgstr "_Көмек"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:114
+msgid "Help contents"
+msgstr "Көмек мазмұны"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "_About"
+msgstr "_Осы туралы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:115
+msgid "About this application"
+msgstr "Бұл қолданба туралы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:117
+msgid "_Recognize Document"
+msgstr "Құжатты _тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:118
+msgid "Automatically detect and recognize all pages"
+msgstr "Барлық беттерді автоматты түрде анықтау және тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:121
+msgid "R_ecognize Page"
+msgstr "Бетті т_ану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:122
+msgid "Automatically detect and recognize the current page"
+msgstr "Ағымдағы бетті автоматты түрде анықтау және тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:125
+msgid "Recognize _Selected Areas"
+msgstr "Т_аңдалған аймақтарды тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:126
+msgid "Recognize Selected Areas"
+msgstr "Тандалған аймақтарды тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:129
+msgid "Select _All Areas"
+msgstr "Б_арлық аймақтарды таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:130
+msgid "Select all content areas"
+msgstr "Барлық мазмұн аймақтарын таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:133
+msgid "Select _Previous Area"
+msgstr "_Алдыңғы аймақты таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:134
+msgid "Select the previous area from the content areas"
+msgstr "Мазмұн аймақтарынан алдыңғы аймақты таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:137
+msgid "Select _Next Area"
+msgstr "_Келесі аймақты таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:138
+msgid "Select the next area from the content areas"
+msgstr "Мазмұн аймақтарынан келесі аймақты таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:141
+msgid "Delete Selected Areas"
+msgstr "Таңдалған аймақтарды өшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:142
+msgid "Deletes all the currently selected content areas"
+msgstr "Қазіргі уақытта таңдалған барлық мазмұн аймақтарын өшіреді"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "_Generate ODT"
+msgstr "ODT _жасау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:144
+msgid "Export to ODT"
+msgstr "ODT пішіміне экспорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:146
+msgid "Import Page From S_canner"
+msgstr "Бетті с_канерден импорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:148
+msgid "Import From Scanner"
+msgstr "Сканерден импорттау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:151
+msgid "_Copy to Clipboard"
+msgstr "Алмасу буферіне _көшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:153
+msgid "Copy recognized text to clipboard"
+msgstr "Танылған мәтінді алмасу буферіне көшіру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:156
+msgid "Spell_checker"
+msgstr "Ем_лені тексеруші"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:158
+msgid "Spell Check Recognized Text"
+msgstr "Танылған мәтіннің емлесін тексеру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:262
+msgid "No language"
+msgstr "Тілсіз"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:330
+msgid "Area editor"
+msgstr "Аймақ редакторы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:338
+msgid "Sets the content area's upper left corner's X coordinate"
+msgstr "Мазмұн аймағының жоғарғы сол жақ бұрышының X координатасын орнатады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:342
+msgid "Sets the content area's upper left corner's Y coordinate"
+msgstr "Мазмұн аймағының жоғарғы сол жақ бұрышының Y координатасын орнатады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:346
+msgid "Sets the content area's width"
+msgstr "Мазмұн аймағының енін орнатады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:349
+msgid "Sets the content area's height"
+msgstr "Мазмұн аймағының биіктігін орнатады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:352 ../src/ocrfeeder/studio/widgetPresenter.py:577
+msgid "_Text"
+msgstr "_Мәтін"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:353
+msgid "Set this content area to be the text type"
+msgstr "Бұл мазмұн аймағын мәтін түріне орнату"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:356
+msgid "_Image"
+msgstr "_Сурет"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:357
+msgid "Set this content area to be the image type"
+msgstr "Бұл мазмұн аймағын сурет түріне орнату"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:360
+msgid "Type"
+msgstr "Түрі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:372
+msgid "Clip"
+msgstr "Үзінді"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:456
+msgid "Bounds"
+msgstr "Шекаралар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:461
+msgid "_X:"
+msgstr "_X:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:470
+msgid "_Y:"
+msgstr "_Y:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:482 ../src/ocrfeeder/studio/widgetPresenter.py:854
+msgid "_Width:"
+msgstr "_Ені:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:491
+msgid "Hei_ght:"
+msgstr "Биі_ктігі:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:517
+msgid "Left"
+msgstr "Сол жақ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:519
+msgid "Set text to be left aligned"
+msgstr "Мәтінді сол жаққа туралау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:523
+msgid "Center"
+msgstr "Ортасы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:525
+msgid "Set text to be centered"
+msgstr "Мәтінді ортаға туралау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:529
+msgid "Right"
+msgstr "Оң жақ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:531
+msgid "Set text to be right aligned"
+msgstr "Мәтінді оң жаққа туралау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:535
+msgid "Fill"
+msgstr "Толтыру"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:537
+msgid "Set text to be fill its area"
+msgstr "Мәтінді өз аймағын толтыратындай орнату"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:547
+msgid "OC_R"
+msgstr "OC_R"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:549
+msgid "Perform OCR on this content area using the selected OCR engine."
+msgstr "Таңдалған OCR қозғалтқышын пайдаланып осы мазмұн аймағында OCR орындау."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:555
+msgid "OCR engine to recognize this content area"
+msgstr "Осы мазмұн аймағын тануға арналған OCR қозғалтқышы"
+
+#. Text Properties
+#: ../src/ocrfeeder/studio/widgetPresenter.py:562
+msgid "Text Properties"
+msgstr "Мәтін қасиеттері"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:585
+msgid "Font"
+msgstr "Қаріп"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:592
+msgid "Align"
+msgstr "Туралау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:596
+msgid "Spacing"
+msgstr "Аралық"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:598
+msgid "Set the text's letter spacing"
+msgstr "Мәтіннің әріп аралығын орнату"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:600
+msgid "Set the text's line spacing"
+msgstr "Мәтіннің жол аралығын орнату"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:605
+msgid "_Line:"
+msgstr "_Жол:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:616
+msgid "L_etter:"
+msgstr "Ә_ріп:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:628
+msgid "Sty_le"
+msgstr "Ст_илі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:635
+msgid "Angle"
+msgstr "Бұрыш"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:638
+msgid "Mis_c"
+msgstr "Әр т_үрлі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:641 ../src/ocrfeeder/studio/widgetPresenter.py:1696
+msgid "Language"
+msgstr "Тіл"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:648
+msgid "OCR engine to recogni_ze this area:"
+msgstr "Осы аймақты т_ануға арналған OCR қозғалтқышы:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:662
+msgid "Detect"
+msgstr "Анықтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:664
+msgid "Angle:"
+msgstr "Бұрыш:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:751
+msgid "Save File"
+msgstr "Файлды сақтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:754
+msgid "Open File"
+msgstr "Файлды ашу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:758
+msgid "Open Folder"
+msgstr "Буманы ашу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:789
+msgid "Pages to export"
+msgstr "Экспортталатын беттер"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:791
+msgid "All"
+msgstr "Барлығы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:792
+msgid "Current"
+msgstr "Ағымдағы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:812
+msgid "Choose the format"
+msgstr "Пішімді таңдаңыз"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:829 ../src/ocrfeeder/studio/widgetPresenter.py:840
+msgid "Page size"
+msgstr "Бет өлшемі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:845
+msgid "Custom…"
+msgstr "Таңдаулы…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:859
+msgid "_Height:"
+msgstr "_Биіктігі:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:868
+msgid "Affected pages"
+msgstr "Әсер ететін беттер"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:870
+msgid "C_urrent"
+msgstr "_Ағымдағы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:871
+msgid "_All"
+msgstr "Б_арлығы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:943
+msgid "Preview"
+msgstr "Алдын ала қарау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:950
+msgid "_Preview"
+msgstr "_Алдын ала қарау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing Unpaper"
+msgstr "Unpaper орындалуда"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:977
+msgid "Performing unpaper. Please wait…"
+msgstr "Unpaper орындалуда. Күте тұрыңыз…"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1021
+msgid "Noise Filter Intensity"
+msgstr "Шу сүзгісінің қарқындылығы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1023 ../src/ocrfeeder/studio/widgetPresenter.py:1055
+msgid "Default"
+msgstr "Бастапқы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1026 ../src/ocrfeeder/studio/widgetPresenter.py:1058
+msgid "None"
+msgstr "Жоқ"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1053
+msgid "Gray Filter Size"
+msgstr "Сұр сүзгісінің өлшемі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1056
+msgid "Custom"
+msgstr "Таңдаулы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1085
+msgid "Black Filter"
+msgstr "Қара сүзгісі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1086
+msgid "Use"
+msgstr "Пайдалану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1093
+msgid "Extra Options"
+msgstr "Қосымша опциялар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1095
+msgid "Unpaper's command line arguments"
+msgstr "Unpaper-дің командалық жол аргументтері"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1153
+msgid "Unpaper Preferences"
+msgstr "Unpaper баптаулары"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1213 ../src/ocrfeeder/studio/widgetPresenter.py:1224
+msgid "An error occurred!"
+msgstr "Қате орын алды!"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1294
+msgid "Cancelled"
+msgstr "Болдырылмады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1310
+msgid "Preferences"
+msgstr "Баптаулар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1379
+msgid "_General"
+msgstr "_Жалпы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1387
+msgid "_Recognition"
+msgstr "_Тану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1396
+msgid "Select boxes' colors"
+msgstr "Жақтаулар түстерін таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1402
+msgid "Te_xt areas' fill color"
+msgstr "Мә_тін аймақтарының толтыру түсі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1408
+msgid "Text areas' _stroke color"
+msgstr "Мәтін аймақтарының _жиек түсі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1414
+msgid "_Image areas' fill color"
+msgstr "С_урет аймақтарының толтыру түсі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1434
+msgid "Path to unpaper"
+msgstr "Unpaper-ге дейінгі жол"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1438
+msgid "Choose"
+msgstr "Таңдау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1446 ../src/ocrfeeder/studio/widgetPresenter.py:1723
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1761 ../src/ocrfeeder/studio/widgetPresenter.py:1783
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1880
+msgid "OCR Engines"
+msgstr "OCR қозғалтқыштары"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1448
+msgid "The engine that should be used when performing the automatic recognition."
+msgstr "Автоматты түрде тануды орындау кезінде қолданылатын қозғалтқыш."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1459
+msgid "Favorite _engine:"
+msgstr "Таңдаулы қ_озғалтқыш:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1474
+msgid "Window size"
+msgstr "Терезе өлшемі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1475
+msgid "A_utomatic"
+msgstr "А_втоматты"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1476
+msgid "Cu_stom"
+msgstr "Таң_даулы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1486
+msgid "The window size is the detection algorithm's subdivision areas' size."
+msgstr "Терезе өлшемі — анықтау алгоритмінің бөлініс аймақтарының өлшемі."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1499
+msgid "Columns Detection"
+msgstr "Бағандарды анықтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1504
+msgid "_Improve columns detection"
+msgstr "Бағандарды анықтауды _жақсарту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1506
+msgid "Use a post-detection algorithm to improve the detection of columns"
+msgstr "Бағандарды анықтауды жақсарту үшін анықтаудан кейінгі алгоритмді пайдалану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1517 ../src/ocrfeeder/studio/widgetPresenter.py:1591
+msgid "_Automatic"
+msgstr "_Автоматты"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1518 ../src/ocrfeeder/studio/widgetPresenter.py:1592
+msgid "Custo_m"
+msgstr "Таңд_аулы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1522
+msgid "The columns' minimum width in pixels"
+msgstr "Бағандардың пиксельдегі ең аз ені"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1538
+msgid "Minimum width that a column should have:"
+msgstr "Баған болуы тиіс ең аз ені:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1560
+msgid "Recognized Text"
+msgstr "Танылған мәтін"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1561
+msgid "_Fix line breaks and hyphenization"
+msgstr "Жол үзілімдері мен тасымалдауды _түзету"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1563
+msgid "Removes single line breaks and hyphenization from text generated by OCR engines"
+msgstr "OCR қозғалтқыштары жасаған мәтіннен жалғыз жол үзілімдері мен тасымалдауларды алып тастайды"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1578
+msgid "A_djust content areas' bounds"
+msgstr "Мазмұн аймақтарының шекараларын _реттеу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1580
+msgid "Use a post-detection algorithm to shorten the contents areas' margins"
+msgstr "Мазмұн аймақтарының жиектерін қысқарту үшін анықтаудан кейінгі алгоритмді пайдалану"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1596
+msgid "The maximum size for the content areas' margins in pixels"
+msgstr "Мазмұн аймақтары жиектерінің пиксельдегі ең үлкен өлшемі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1613
+msgid "Maximum size that the content areas' margins should have:"
+msgstr "Мазмұн аймақтары жиектерінің болуы тиіс ең үлкен өлшемі:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1660
+msgid "Image Pre-processing"
+msgstr "Суретті алдын ала өңдеу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1661
+msgid "Des_kew images"
+msgstr "Суреттердің _қисаюын түзету"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1663
+msgid "Tries to straighten the images before they are added"
+msgstr "Суреттер қосылғанға дейін оларды түзулеуге тырысады"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1672
+msgid "_Unpaper images"
+msgstr "Суреттерді _Unpaper арқылы өңдеу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1674
+msgid "Cleans the image using the Unpaper pre-processor"
+msgstr "Unpaper алдын ала процессорын пайдаланып суретті тазалайды"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1678
+msgid "Unpaper _Preferences"
+msgstr "Unpaper _баптаулары"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1700
+msgid ""
+"The language may affect how the OCR engines work.\n"
+"If an engine is set to support languages but does not support the one chosen, it may result in blank text.\n"
+"You can choose \"No Language\" to prevent this."
+msgstr ""
+"Тіл OCR қозғалтқыштарының жұмысына әсер етуі мүмкін.\n"
+"Егер қозғалтқыш тілдерді қолдауға орнатылған болса, бірақ таңдалған тілді қолдамаса, бұл бос мәтінге әкелуі мүмкін.\n"
+"Мұның алдын алу үшін «Тілсіз» опциясын таңдауға болады."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1709
+msgid "Default _language:"
+msgstr "Бастапқы _тіл:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1737
+msgid "Engines to be added"
+msgstr "Қосылатын қозғалтқыштар"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1742
+msgid "Include"
+msgstr "Қосу"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1746 ../src/ocrfeeder/studio/widgetPresenter.py:1787
+msgid "Engine"
+msgstr "Қозғалтқыш"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1794
+msgid "De_tect"
+msgstr "Аны_қтау"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1809
+msgid "Are you sure you want to delete this engine?"
+msgstr "Бұл қозғалтқышты өшіруді шынымен қалайсыз ба?"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1882
+#, python-format
+msgid "%s engine"
+msgstr "%s қозғалтқышы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1914
+msgid "_Name:"
+msgstr "_Аты:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1915
+msgid "Engine name"
+msgstr "Қозғалтқыш аты"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1917
+msgid "_Image format:"
+msgstr "_Сурет пішімі:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1919
+msgid "The required image format"
+msgstr "Қажетті сурет пішімі"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1921
+msgid "_Failure string:"
+msgstr "_Сәтсіздік жолы:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1923
+msgid "The failure string or character that this engine uses"
+msgstr "Бұл қозғалтқыш қолданатын сәтсіздік жолы немесе таңбасы"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1926
+msgid "Engine _path:"
+msgstr "Қозғалтқыш _жолы:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1928
+msgid "The path to the engine program"
+msgstr "Қозғалтқыш бағдарламасына дейінгі жол"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1930
+msgid "Engine _arguments:"
+msgstr "Қозғалтқыш _аргументтері:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1932
+msgid "Arguments: use $IMAGE for image and $FILE if it writes to a file"
+msgstr "Аргументтер: сурет үшін $IMAGE және файлға жазса $FILE пайдаланыңыз"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1936
+msgid "Engine _language argument:"
+msgstr "Қозғалтқыш _тілінің аргументі:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1938
+msgid ""
+"The language argument in case this engine uses it (for example \"-l\"). In order for it to work, the engine's arguments should "
+"have the $LANG keyword."
+msgstr ""
+"Бұл қозғалтқыш тіл аргументін қолданған жағдайдағы аргумент (мысалы, «-l»). Ол жұмыс істеуі үшін қозғалтқыш аргументтерінде "
+"$LANG кілт сөзі болуы керек."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1944
+msgid "Engine lan_guages:"
+msgstr "Қозғалтқыш т_ілдері:"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1946
+msgid ""
+"The languages this engine supports. This should be given as pairs of the language in the ISO 639-1 and the engine's "
+"corresponding language (for example \"en:eng,pt:por,es:esp\"). In order for it to work, the engine's arguments should have the "
+"$LANG keyword."
+msgstr ""
+"Бұл қозғалтқыш қолдайтын тілдер. Бұл ISO 639-1 тіл кодтары мен қозғалтқыштың сәйкес тілінің жұбы ретінде берілуі керек "
+"(мысалы, «en:eng,pt:por,es:esp»). Ол жұмыс істеуі үшін қозғалтқыш аргументтерінде $LANG кілт сөзі болуы керек."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Error setting the new engine; please check your engine settings."
+msgstr "Жаңа қозғалтқышты орнату кезінде қате кетті; қозғалтқыш баптауларын тексеріңіз."
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:1987
+msgid "Warning"
+msgstr "Ескерту"
+
+#: ../src/ocrfeeder/studio/widgetPresenter.py:2023
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
