@@ -1,21 +1,21 @@
 # Georgian translation for ocrfeeder.
-# Copyright (C) 2025 ocrfeeder's COPYRIGHT HOLDER
+# Copyright (C) 2025 ocrfeeder's authors
 # This file is distributed under the same license as the ocrfeeder package.
-# Ekaterine Papava <papava.e@gtu.ge>,  2025.
+# Ekaterine Papava <papava.e@gtu.ge>, 2025 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/ocrfeeder/issues/\n"
-"POT-Creation-Date: 2025-09-10 22:18+0000\n"
-"PO-Revision-Date: 2025-09-17 18:00+0200\n"
+"POT-Creation-Date: 2026-04-10 20:16+0000\n"
+"PO-Revision-Date: 2026-04-14 06:22+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ../resources/org.gnome.OCRFeeder.desktop.in.h:1
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:1
@@ -60,7 +60,7 @@ msgstr ""
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:6
 #: ../src/ocrfeeder/studio/widgetPresenter.py:1573
 msgid "Content Areas"
-msgstr ""
+msgstr "შემცველობის არეები"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:7
 #: ../src/ocrfeeder/studio/widgetPresenter.py:925
@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:35
 msgid "Fix PIL importation"
-msgstr ""
+msgstr "გასწორდა PIL-ის შემოტანა"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:36
 msgid "Fix error when exporting a PDF with empty text areas"
@@ -242,7 +242,7 @@ msgstr "დანიელ მუსტიელესი [es]"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:48
 msgid "Fran Diéguez [gl]"
-msgstr ""
+msgstr "Fran Diéguez [gl]"
 
 #: ../resources/org.gnome.OCRFeeder.appdata.xml.in.h:49
 msgid "Dimitris Spingos [el]"
@@ -377,7 +377,7 @@ msgstr "გვერდის სკანირების შეცდომ�
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:259
 msgid "Loading PDF"
-msgstr ""
+msgstr "PDF-ის ჩატვირთვა"
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:289
 msgid "Export pages"
@@ -426,7 +426,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:502
 msgid "The project hasn't been saved."
-msgstr ""
+msgstr "პროექტი არ შენახულა."
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:503
 msgid "Do you want to save it before closing?"
@@ -434,20 +434,20 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/studioBuilder.py:504
 msgid "Close anyway"
-msgstr ""
+msgstr "მაინც დახურვა"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:69
 msgid "Selectable areas"
-msgstr ""
+msgstr "მონიშვნადი არეები"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:353
 msgid "Preparing image"
-msgstr ""
+msgstr "გამოსახულების მომზადება"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:355
 #, python-format
 msgid "Preparing image %(current_index)s/%(total)s"
-msgstr ""
+msgstr "მზადდება გამოსახულება %(current_index)s/%(total)s"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:412
 msgid "Deskewing image"
@@ -455,22 +455,22 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:439
 msgid "No images added"
-msgstr ""
+msgstr "გამოსახულება არ დამატებულა"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:442
 #, python-format
 msgid "Zoom: %s %%"
-msgstr ""
+msgstr "მასშტაბი: %s %%"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:444
 #, python-format
 msgid "Resolution: %.2f x %.2f"
-msgstr ""
+msgstr "გარჩევადობა: %.2f x %.2f"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:446
 #, python-format
 msgid "Page size: %i x %i"
-msgstr ""
+msgstr "გვერდის ზომა: %i x %i"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:487
 msgid ""
@@ -481,11 +481,11 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:509
 msgid "Recognizing Page"
-msgstr ""
+msgstr "გვერდის ამოცნობა"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:526
 msgid "Recognizing Document"
-msgstr ""
+msgstr "დოკუმენტის ამოცნობა"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:527
 #, python-format
@@ -511,7 +511,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:632
 msgid "Searchable PDF"
-msgstr ""
+msgstr "ძებნადი PDF"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:633
 msgid "Creates a PDF based on the images but with searchable text."
@@ -519,7 +519,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:667
 msgid "OCRFeeder Projects"
-msgstr ""
+msgstr "OCRFeeder-ის პროექტები"
 
 #: ../src/ocrfeeder/studio/widgetModeler.py:714
 #, python-format
@@ -580,7 +580,7 @@ msgstr "გ_ამოსახულების დამატება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:87
 msgid "Add another image"
-msgstr ""
+msgstr "კიდევ ერთი გამოსახულების დამატება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:88
 msgid "Add _Folder"
@@ -592,7 +592,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Append Project"
-msgstr ""
+msgstr "პროექტის ბოლოში მიწერა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:89
 msgid "Load a project and append it to the current one"
@@ -600,11 +600,11 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "_Import PDF"
-msgstr ""
+msgstr "PDF-_ის შემოტანა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:90
 msgid "Import PDF"
-msgstr ""
+msgstr "PDF-ის შემოტანა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "_Export…"
@@ -612,7 +612,7 @@ msgstr "_გატანა…"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:91
 msgid "Export to a chosen format"
-msgstr ""
+msgstr "გატანა არჩეულ ფორმატში"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:92
 msgid "_Edit"
@@ -620,7 +620,7 @@ msgstr "_ჩასწორება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "_Edit Page"
-msgstr ""
+msgstr "გვერდის ჩასწორ_ება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:93
 msgid "Edit page settings"
@@ -632,23 +632,23 @@ msgstr "_მორგება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:94
 msgid "Configure the application"
-msgstr ""
+msgstr "აპლიკაციის მორგება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "_Delete Page"
-msgstr ""
+msgstr "გვერ_დის წაშლა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:95
 msgid "Delete current page"
-msgstr ""
+msgstr "მიმდინარე გვერდის წაშლა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move Page Do_wn"
-msgstr ""
+msgstr "გვერდის ჩამო_წევა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:96
 msgid "Move page down"
-msgstr ""
+msgstr "გვერდის ქვემოთ ჩამოწევა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:97
 msgid "Move Page Up"
@@ -668,15 +668,15 @@ msgstr "შემდეგი გვერდის არჩევა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Select Previous Page"
-msgstr ""
+msgstr "წინა გვერდის მონიშვნა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:99
 msgid "Select previous page"
-msgstr ""
+msgstr "წინა გვერდის მონიშვნა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "_Clear Project"
-msgstr ""
+msgstr "პროე_ქტის გასუფთავება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:100
 msgid "Delete all images"
@@ -713,11 +713,11 @@ msgstr "_ხელსაწყოები"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "_OCR Engines"
-msgstr ""
+msgstr "_OCR ძრავები"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:108
 msgid "Manage OCR engines"
-msgstr ""
+msgstr "OCR ძრავების მართვა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:109
 msgid "_Unpaper"
@@ -742,7 +742,7 @@ msgstr "_დახმარება"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:114
 msgid "Help contents"
-msgstr ""
+msgstr "დახმარების შემცველობა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "_About"
@@ -750,11 +750,11 @@ msgstr "_შესახებ"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:115
 msgid "About this application"
-msgstr ""
+msgstr "ამ აპლიკაციის შესახებ"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:117
 msgid "_Recognize Document"
-msgstr ""
+msgstr "დოკუმენტის ამო_ცნობა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:118
 msgid "Automatically detect and recognize all pages"
@@ -762,7 +762,7 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:121
 msgid "R_ecognize Page"
-msgstr ""
+msgstr "გვ_ერდის ამოცნობა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:122
 msgid "Automatically detect and recognize the current page"
@@ -770,11 +770,11 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:125
 msgid "Recognize _Selected Areas"
-msgstr ""
+msgstr "მონიშნული ადგილები_ს ამოცნობა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:126
 msgid "Recognize Selected Areas"
-msgstr ""
+msgstr "მონიშნული ადგილების ამოცნობა"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:129
 msgid "Select _All Areas"
@@ -842,11 +842,11 @@ msgstr ""
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:262
 msgid "No language"
-msgstr ""
+msgstr "ენის გარეშე"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:330
 msgid "Area editor"
-msgstr ""
+msgstr "არეს რედაქტორი"
 
 #: ../src/ocrfeeder/studio/widgetPresenter.py:338
 msgid "Sets the content area's upper left corner's X coordinate"
