@@ -1,21 +1,22 @@
 # Swedish translation for ocrfeeder.
-# Copyright © 2017 ocrfeeder's COPYRIGHT HOLDER
+# Copyright © 2017-2026 ocrfeeder's COPYRIGHT HOLDER
 # This file is distributed under the same license as the ocrfeeder package.
 # Erik Sköldås <erik.skoldas@tele2.se>, 2017.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ocrfeeder master\n"
-"POT-Creation-Date: 2017-11-11 17:59+0000\n"
-"PO-Revision-Date: 2018-03-18 00:27+0100\n"
-"Last-Translator: Erik Sköldås <erik.skoldas@tele2.se>\n"
+"POT-Creation-Date: 2026-09-10 18:15+0000\n"
+"PO-Revision-Date: 2026-09-17 21:15+0200\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.9\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -424,7 +425,7 @@ msgstr ""
 "vilket är uppdelningen av bilden i små fönster. En mindre fönsterstorlek "
 "betyder att det är sannolikt att detektera fler innehållsområden men om "
 "storleken är för liten kan resultatet av innehållet vara en del som borde "
-"tillhört ett större område istället. Å andra sidan betyder en större "
+"tillhört ett större område i stället. Å andra sidan betyder en större "
 "fönsterstorlek färre indelningar av innehåll vilket kan innebära innehåll "
 "som borde ha delats upp."
 
@@ -730,7 +731,7 @@ msgstr ""
 #. (itstool) path: media/p
 #: C/manualeditionandcorrection.page:27
 msgid "A picture of two content areas with one of them selected."
-msgstr "En bild av två innehållsområden där det ena av dem är markerad."
+msgstr "En bild av två innehållsområden där det ena av dem är markerat."
 
 #. (itstool) path: section/p
 #: C/manualeditionandcorrection.page:30
@@ -1038,11 +1039,11 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/ocrconfiguration.page:70
 msgid ""
-"Since the image's path to be read is always needed, a special argument <em>"
-"$IMAGE</em> is provided for this and will be replaced by the image path when "
-"the engine is run. For the cases where a file name is needed, like the one "
-"mentioned previously, a special argument <em>$FILE</em> is provided and will "
-"be replaced by a temporary file name."
+"Since the image's path to be read is always needed, a special argument "
+"<em>$IMAGE</em> is provided for this and will be replaced by the image path "
+"when the engine is run. For the cases where a file name is needed, like the "
+"one mentioned previously, a special argument <em>$FILE</em> is provided and "
+"will be replaced by a temporary file name."
 msgstr ""
 "Eftersom sökvägen till bilden som ska läsas in alltid behövs, tillhandahålls "
 "ett speciellt argument <em>$IMAGE</em> för detta och kommer att ersättas av "
@@ -1252,6 +1253,3 @@ msgstr ""
 "av <em>Unpaper</em> när det automatiskt anropats efter att en bild lagts "
 "till kan konfigureras genom att klicka på knappen <gui>Inställningar för "
 "Unpaper</gui>."
-
-#~ msgid "<_:p-1/>. <_:note-2/>"
-#~ msgstr "<_:p-1/>. <_:note-2/>"
